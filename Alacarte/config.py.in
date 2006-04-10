@@ -1,0 +1,7 @@
+prefix="@prefix@"
+datadir="@datadir@"
+pkgdatadir="@pkgdatadir@"
+libdir="@libdir@"
+libexecdir="@libexecdir@"
+PACKAGE="@PACKAGE@"
+VERSION="@VERSION@"

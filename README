@@ -1,0 +1,17 @@
+Alacarte 0.9
+========
+
+Alacarte is a menu editor for GNOME using the freedesktop.org menu
+specification.
+
+Installation
+============
+
+See the 'INSTALL' file.
+
+How to report bugs
+==================
+
+Bugs should be filed at launchpad.net against the alacarte product 
+(https://launchpad.net/products/alacarte/+filebug) You will
+need to create an account for yourself.

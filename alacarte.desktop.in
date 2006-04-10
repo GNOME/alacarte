@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+_Name=Alacarte Menu Editor
+_Comment=Add, change, remove menu entries
+Exec=alacarte
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;Application;Utility;
+NotShowIn=KDE;

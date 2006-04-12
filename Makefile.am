@@ -37,5 +37,21 @@ alacarte: Makefile
 
 EXTRA_DIST += alacarte.in
 
-pkgdata_DATA = alacarte.glade alacarte.svg
+pkgdata_DATA = alacarte.glade
 EXTRA_DIST += $(pkgdata_DATA)
+
+icondir = $(datadir)/icons/hicolor/48x48/apps
+icon_DATA = alacarte.png
+svgicondir = $(datadir)/icons/hicolor/scalable/apps
+svgicon_DATA = alacarte.svg
+
+gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
+
+install-data-hook:
+	@-if test -z "$(DESTDIR)"; then \
+		echo "Updating Gtk icon cache."; \
+		$(gtk_update_icon_cache); \
+	else \
+		echo "*** Icon cache not updated. After install, run this:"; \
+		echo "***   $(gtk_update_icon_cache)"; \
+	fi

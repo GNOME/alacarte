@@ -31,9 +31,8 @@ class DialogHandler:
 	editor = None
 	file_path = None
 
-	def __init__(self, editor, window_icon, file_path):
+	def __init__(self, editor, file_path):
 		self.editor = editor
-		self.window_icon = window_icon
 		self.file_path = file_path
 
 	def showError(self, message):

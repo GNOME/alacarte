@@ -44,10 +44,8 @@ class MainWindow:
 		self.tree.signal_autoconnect(signals)
 		self.setupMenuTree()
 		self.setupItemTree()
-		self.logo = gtk.gdk.pixbuf_new_from_file(os.path.join(self.file_path, 'alacarte.svg'))
-		self.icon = gtk.gdk.pixbuf_new_from_file_at_size(os.path.join(self.file_path, 'alacarte.svg'), 24, 24)
-		self.tree.get_widget('mainwindow').set_icon(self.icon)
-		self.dialogs = DialogHandler(self.editor, self.icon, self.file_path)
+		self.tree.get_widget('mainwindow').set_icon_name('alacarte')
+		self.dialogs = DialogHandler(self.editor, self.file_path)
 
 	def run(self):
 		self.loadMenus()

@@ -1,5 +1,9 @@
 2006-04-12  Travis Watkins  <alleykat@gmail.com>
 
+	* Makefile.am: distcheck fixes
+
+2006-04-12  Travis Watkins  <alleykat@gmail.com>
+
 	* Makefile.am:
 	* Alacarte/MainWindow.py:
 	* Alacarte/DialogHandler.py: AppIcon goal

@@ -7,8 +7,7 @@ CLEANFILES=
 bin_SCRIPTS = alacarte
 CLEANFILES += alacarte alacarte-dbg
 
-EXTRA_DIST = $(bin_SCRIPTS)
-EXTRA_DIST += intltool-extract.in intltool-merge.in intltool-update.in
+EXTRA_DIST = intltool-extract.in intltool-merge.in intltool-update.in
 DISTCLEANFILES = intltool-extract intltool-merge intltool-update
 
 install-data-local:
@@ -27,14 +26,6 @@ alacarte: alacarte.in
 	    < $< > $@
 alacarte: Makefile
 
-BUILT_SOURCES = alacarte-dbg
-alacarte-dbg: alacarte.in
-	sed -e s!\@PYTHON\@!@PYTHON@!		\
-	    -e s!\@PYOPTIONS\@!!		\
-	    < $< > $@
-	chmod a+x $@
-alacarte: Makefile
-
 EXTRA_DIST += alacarte.in
 
 pkgdata_DATA = alacarte.glade
@@ -42,8 +33,10 @@ EXTRA_DIST += $(pkgdata_DATA)
 
 icondir = $(datadir)/icons/hicolor/48x48/apps
 icon_DATA = alacarte.png
+EXTRA_DIST += $(icon_DATA)
 svgicondir = $(datadir)/icons/hicolor/scalable/apps
 svgicon_DATA = alacarte.svg
+EXTRA_DIST += $(svgicon_DATA)
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 

@@ -1,3 +1,7 @@
+2005-04-12  Travis Watkins  <alleykat@gmail.com>
+
+	* Alacarte/MainWindow.py: make shift-f10 work
+
 2006-04-12  Travis Watkins  <alleykat@gmail.com>
 
 	* Makefile.am: distcheck fixes

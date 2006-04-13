@@ -195,6 +195,8 @@ class MainWindow:
 			item_tree.set_cursor(path, item_tree.get_columns()[0], 0)
 		popup = self.tree.get_widget('edit_menu_menu')
 		popup.popup( None, None, None, button, event_time)
+		#without this shift-f10 won't work
+		return True
 
 	def on_help_about_activate(self, menu):
 		tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'), 'aboutdialog')

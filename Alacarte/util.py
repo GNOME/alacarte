@@ -21,10 +21,16 @@ import gtk, gmenu
 from ConfigParser import ConfigParser
 
 class DesktopParser(ConfigParser):
-	def __init__(self, filename=None):
+	def __init__(self, filename=None, file_type='Application'):
 		ConfigParser.__init__(self)
+		self.filename = filename
+		self.file_type = file_type
 		if filename:
-			self.read(filename)
+			if len(self.read(filename)) == 0:
+				#file doesn't exist
+				self.add_section('Desktop Entry')
+		else:
+			self.add_section('Desktop Entry')
 		self._list_separator = ';'
 
 	def optionxform(self, option):
@@ -57,11 +63,31 @@ class DesktopParser(ConfigParser):
 	def write(self, file_object):
 		file_object.write('[Desktop Entry]\n')
 		items = []
+		if not self.filename:
+			file_object.write('Encoding=UTF-8\n')
+			file_object.write('Type=' + str(self.file_type) + '\n')
 		for item in self.items('Desktop Entry'):
 			items.append(item)
 		items.sort()
 		for item in items:
 			file_object.write(item[0] + '=' + item[1] + '\n')
+
+def getUniqueFileId(name, extension):
+	append = 0
+	while 1:
+		if append == 0:
+			filename = name + extension
+		else:
+			filename = name + '-' + str(append) + extension
+		if extension == '.desktop':
+			path = getUserItemPath()
+		elif extension == '.directory':
+			path = getUserDirectoryPath()
+		if not os.path.isfile(os.path.join(path, filename)):
+			break
+		else:
+			append += 1
+	return filename
 
 def getUserMenuPath():
 	menu_dir = None
@@ -141,9 +167,8 @@ def getIcon(item, for_properties=False):
 				return gtk.gdk.pixbuf_new_from_file_at_size(iconName, 24, 24)
 			except:
 				pass
-		print "Can't find " + str(iconName)
 		if for_properties:
-			return None
+			return None, None
 		if item.get_type() == gmenu.TYPE_DIRECTORY:
 			iconName = 'gnome-fs-directory'
 		elif item.get_type() == gmenu.TYPE_ENTRY:

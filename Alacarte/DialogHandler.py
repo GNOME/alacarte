@@ -43,10 +43,107 @@ class DialogHandler:
 		dialog.run()
 		dialog.destroy()
 
-	def editItemDialog(self, item_row):
+	def on_icon_button_clicked(self, button):
+		self.showIconDialog(button)
+
+	def showIconDialog(self, button):
+		dialog = gtk.FileChooserDialog('Choose an Icon', None, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OK, gtk.RESPONSE_OK))
+		dialog.set_icon_name('alacarte')
+		if button.icon_path:
+			dialog.set_current_folder(button.icon_path.rsplit('/', 1)[0])
+		else:
+			dialog.set_current_folder('/usr/share/icons/')
+		preview = gtk.VBox()
+		preview.set_spacing(8)
+		preview.set_size_request(92, 92)
+		preview_text = gtk.Label('Preview')
+		preview.pack_start(preview_text, False, False)
+		preview_image = gtk.Image()
+		preview.pack_start(preview_image, False, False)
+		preview.show()
+		preview_text.show()
+		preview_image.show()
+		dialog.set_preview_widget(preview)
+		dialog.set_preview_widget_active(False)
+		dialog.set_use_preview_label(False)
+		dialog.connect('selection-changed', self.on_icon_dialog_selection_changed, preview_image)
+		dialog.show_all()
+		if dialog.run() == gtk.RESPONSE_OK:
+			button.remove(button.get_children()[0])
+			pixbuf = util.getIcon(dialog.get_filename())
+			button.icon_path = dialog.get_filename()
+			image = gtk.Image()
+			image.set_from_pixbuf(pixbuf)
+			image.show()
+			button.add(image)
+		dialog.destroy()
+
+	def on_icon_dialog_selection_changed(self, dialog, image):
+		icon_file = dialog.get_preview_filename()
+		try:
+			pixbuf = gtk.gdk.pixbuf_new_from_file(icon_file)
+		except:
+			dialog.set_preview_widget_active(False)
+			return
+		if pixbuf.get_width() > 64 or pixbuf.get_height() > 64:
+			pixbuf = pixbuf.scale_simple(32, 32, gtk.gdk.INTERP_HYPER)
+		image.set_from_pixbuf(pixbuf)
+		dialog.set_preview_widget_active(True)
+
+	def newItemDialog(self):
+		tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'), 'newitemproperties')
+		signals = {}
+		for attr in dir(self):
+			signals[attr] = getattr(self, attr)
+		tree.signal_autoconnect(signals)
+		def responseChecker(response):
+			if response == gtk.RESPONSE_OK:
+				if len(tree.get_widget('newitem_name_entry').get_text()) == 0:
+					self.showError(_('A name is required.'))
+					return False
+				if len(tree.get_widget('newitem_command_entry').get_text()) == 0:
+					self.showError(_('A command is required.'))
+					return False
+				return 'save'
+			return True
+		icon_button = tree.get_widget('newitem_icon_button')
+		icon_button.remove(icon_button.get_children()[0])
+		label = gtk.Label('No Icon')
+		icon_button.add(label)
+		icon_button.icon_path = None
+		dialog = tree.get_widget('newitemproperties')
+		dialog.set_icon_name('alacarte')
+		dialog.show_all()
+		can_close = False
+		while can_close == False:
+			response = dialog.run()
+			can_close = responseChecker(response)
+		if can_close == 'save':
+			name_entry = tree.get_widget('newitem_name_entry')
+			comment_entry = tree.get_widget('newitem_comment_entry')
+			command_entry = tree.get_widget('newitem_command_entry')
+			command_button = tree.get_widget('newitem_command_button')
+			term_check = tree.get_widget('newitem_terminal_check')
+			dialog.destroy()
+			return (icon_button.icon_path, name_entry.get_text(), comment_entry.get_text(), command_entry.get_text(), term_check.get_active())
+		dialog.destroy()
+
+	def editItemDialog(self, item):
+		def responseChecker(response):
+			if response == gtk.RESPONSE_REJECT:
+				self.revertItem()
+				return False
+			if response == gtk.RESPONSE_CLOSE or response == gtk.RESPONSE_DELETE_EVENT:
+				if len(self.tree.get_widget('item_name_entry').get_text()) == 0:
+					self.showError(_('A name is required.'))
+					return False
+				if len(self.tree.get_widget('item_command_entry').get_text()) == 0:
+					self.showError(_('A command is required.'))
+					return False
+				return True
+			return False
 		self.in_dialog_setup = True
-		self.item_row = item_row
-		self.item = item_row[3]
+		self.item = item
 		#load widgets
 		self.tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'), 'itemproperties')
 		signals = {}
@@ -54,6 +151,7 @@ class DialogHandler:
 			signals[attr] = getattr(self, attr)
 		self.tree.signal_autoconnect(signals)
 		dialog = self.tree.get_widget('itemproperties')
+		dialog.set_icon_name('alacarte')
 		icon_button = self.tree.get_widget('item_icon_button')
 		name_entry = self.tree.get_widget('item_name_entry')
 		comment_entry = self.tree.get_widget('item_comment_entry')
@@ -71,12 +169,13 @@ class DialogHandler:
 		else:
 			label = gtk.Label('No Icon')
 			icon_button.add(label)
+			icon_button.icon_path = None
 		name_entry.set_text(self.item.get_name())
 		if self.item.get_comment():
 			comment_entry.set_text(self.item.get_comment())
 		if self.item.get_exec():
 			command_entry.set_text(self.item.get_exec())
-		if self.item.get_terminal():
+		if self.item.get_launch_in_terminal():
 			term_check.set_active(True)
 		dialog.set_icon(self.window_icon)
 		dialog.show_all()
@@ -88,6 +187,11 @@ class DialogHandler:
 			term_check.get_active()
 			)
 		self.in_dialog_setup = False
+		can_close = False
+		while can_close == False:
+			response = dialog.run()
+			can_close = responseChecker(response)
+		dialog.destroy()
 
 	def saveItem(self, values):
 		pixbuf, path = util.getIcon(self.item, True)
@@ -108,10 +212,8 @@ class DialogHandler:
 				self.tree.get_widget('item_terminal_check').get_active()
 				)
 			self.saveItem(values)
-			self.item_row[1] = util.getIcon(values[0])
-			self.item_row[2] = values[1]
 
-	def on_item_revert_button_clicked(self, button):
+	def revertItem(self):
 		icon_button = self.tree.get_widget('item_icon_button')
 		icon_button.remove(icon_button.get_children()[0])
 		if self.item_original_values[0]:
@@ -124,19 +226,48 @@ class DialogHandler:
 		else:
 			label = gtk.Label('No Icon')
 			icon_button.add(label)
-		self.tree.get_widget('item_name_entry').set_text(self.item_original_values[1]),
-		self.tree.get_widget('item_comment_entry').set_text(self.item_original_values[2]),
-		self.tree.get_widget('item_command_entry').set_text(self.item_original_values[3]),
+		self.tree.get_widget('item_name_entry').set_text(self.item_original_values[1])
+		self.tree.get_widget('item_comment_entry').set_text(self.item_original_values[2])
+		self.tree.get_widget('item_command_entry').set_text(self.item_original_values[3])
 		self.tree.get_widget('item_terminal_check').set_active(self.item_original_values[4])
 		self.tree.get_widget('item_revert_button').set_sensitive(False)
 
-	def on_item_close_button_clicked(self, button):
-		if len(self.tree.get_widget('item_name_entry').get_text()) == 0:
-			self.showError(_('A name is required.'))
-		elif len(self.tree.get_widget('item_command_entry').get_text()) == 0:
-			self.showError(_('A command is required.'))
-		else:
-			self.tree.get_widget('itemproperties').destroy()
+	def newMenuDialog(self):
+		tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'), 'newmenuproperties')
+		signals = {}
+		for attr in dir(self):
+			signals[attr] = getattr(self, attr)
+		tree.signal_autoconnect(signals)
+		def responseChecker(response):
+			if response == gtk.RESPONSE_OK:
+				if len(tree.get_widget('newmenu_name_entry').get_text()) == 0:
+					self.showError(_('A name is required.'))
+					return False
+				if tree.get_widget('newmenu_name_entry').get_text() == 'Other':
+					self.showError(_('A menu cannot be named "Other".'))
+					return False
+				return 'save'
+			return True
+		dialog = tree.get_widget('newmenuproperties')
+		dialog.set_icon_name('alacarte')
+		icon_button = tree.get_widget('newmenu_icon_button')
+		icon_button.remove(icon_button.get_children()[0])
+		label = gtk.Label('No Icon')
+		icon_button.add(label)
+		icon_button.icon_path = None
+		dialog.set_icon(self.window_icon)
+		dialog.show_all()
+		can_close = False
+		while can_close == False:
+			response = dialog.run()
+			can_close = responseChecker(response)
+		if can_close == 'save':
+			name_entry = tree.get_widget('newmenu_name_entry')
+			comment_entry = tree.get_widget('newmenu_comment_entry')
+			dialog.destroy()
+			return (icon_button.icon_path, name_entry.get_text(), comment_entry.get_text())
+		dialog.destroy()
+		
 
 	def editMenuDialog(self, menu_row):
 		def responseChecker(response):
@@ -162,12 +293,14 @@ class DialogHandler:
 			signals[attr] = getattr(self, attr)
 		self.tree.signal_autoconnect(signals)
 		dialog = self.tree.get_widget('menuproperties')
+		dialog.set_icon_name('alacarte')
 		icon_button = self.tree.get_widget('menu_icon_button')
 		name_entry = self.tree.get_widget('menu_name_entry')
 		comment_entry = self.tree.get_widget('menu_comment_entry')
 
 		icon_button.remove(icon_button.get_children()[0])
 		pixbuf, path = util.getIcon(self.menu, True)
+		icon_button.icon_path = None
 		if pixbuf:
 			image = gtk.Image()
 			image.set_from_pixbuf(pixbuf)
@@ -210,8 +343,8 @@ class DialogHandler:
 				self.tree.get_widget('menu_comment_entry').get_text()
 				)
 			self.saveMenu(values)
-			self.menu_row[1] = util.getIcon(values[0])
-			self.menu_row[2] = values[1]
+			self.menu_row[1] = util.getIcon(self.tree.get_widget('menu_icon_button').icon_path)
+			self.menu_row[2] = self.tree.get_widget('menu_name_entry').get_text()
 
 	def revertMenu(self):
 		icon_button = self.tree.get_widget('menu_icon_button')
@@ -226,13 +359,5 @@ class DialogHandler:
 		else:
 			label = gtk.Label('No Icon')
 			icon_button.add(label)
-		self.tree.get_widget('menu_name_entry').set_text(self.menu_original_values[1]),
-		self.tree.get_widget('menu_comment_entry').set_text(self.menu_original_values[2]),
-
-	def on_menu_close_button_clicked(self, button):
-		if len(self.tree.get_widget('menu_name_entry').get_text()) == 0:
-			self.showError(_('A name is required.'))
-		elif self.tree.get_widget('menu_name_entry').get_text() == 'Other':
-			self.showError(_('A menu cannot be named "Other".'))
-		else:
-			return True
+		self.tree.get_widget('menu_name_entry').set_text(self.menu_original_values[1])
+		self.tree.get_widget('menu_comment_entry').set_text(self.menu_original_values[2])

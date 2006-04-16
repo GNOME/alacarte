@@ -28,8 +28,13 @@ _ = gettext.gettext
 from Alacarte.MenuEditor import MenuEditor
 from Alacarte.DialogHandler import DialogHandler
 from Alacarte import util
+import time
 
 class MainWindow:
+	timer = None
+	#hack to make editing menu properties work
+	allow_update = True
+
 	def __init__(self, datadir, version, argv):
 		self.file_path = datadir
 		self.version = version
@@ -47,8 +52,43 @@ class MainWindow:
 		self.tree.get_widget('mainwindow').set_icon_name('alacarte')
 		self.dialogs = DialogHandler(self.editor, self.file_path)
 
+	def menuChanged(self, *a):
+		if self.timer:
+			gobject.source_remove(self.timer)
+			self.timer = None
+		self.timer = gobject.timeout_add(500, self.loadUpdates)
+
+	def loadUpdates(self):
+		if not self.allow_update:
+			return
+		item_tree = self.tree.get_widget('item_tree')
+		items, iter = item_tree.get_selection().get_selected()
+		update_items = False
+		item_id, menu_id = None, None
+		if iter:
+			if items[iter][3].get_type() == gmenu.TYPE_DIRECTORY:
+				menu_id = items[iter][3].get_menu_id()
+				update_items = True
+			elif items[iter][3].get_type() == gmenu.TYPE_ENTRY:
+				item_id = items[iter][3].get_desktop_file_id()
+				update_items = True
+		self.reloadMenus()
+		#find current item in new list
+		if update_items:
+			i = 0
+			for item in item_tree.get_model():
+				if item_id:
+					if item[3].get_type() == gmenu.TYPE_ENTRY and item[3].get_desktop_file_id() == item_id:
+						item_tree.get_selection().select_path((i,))
+				else:
+					if item[3].get_type() == gmenu.TYPE_DIRECTORY and item[3].get_menu_id() == menu_id:
+						item_tree.get_selection().select_path((i,))
+				i += 1
+
 	def run(self):
 		self.loadMenus()
+		self.editor.applications.tree.add_monitor(self.menuChanged)
+		self.editor.settings.tree.add_monitor(self.menuChanged)
 		self.tree.get_widget('mainwindow').show_all()
 		gtk.main()
 
@@ -134,23 +174,57 @@ class MainWindow:
 		menus, iter = menu_tree.get_selection().get_selected()
 		menu_path = menus.get_path(iter)
 		self.loadMenus()
+		menu_tree.expand_to_path(menu_path)
 		menu_tree.get_selection().select_path(menu_path)
+		self.on_menu_tree_cursor_changed(menu_tree)
 		return False
 
-	def reloadItems(self):
+	def reloadItems(self, item_id=None):
 		item_tree = self.tree.get_widget('item_tree')
-		items, iter = item_tree.get_selection().get_selected()
-		item_path = items.get_path(iter)
+		if not item_id:
+			items, iter = item_tree.get_selection().get_selected()
+			item_id = items[iter][3].get_desktop_file_id()
 		menu_tree = self.tree.get_widget('menu_tree')
 		self.on_menu_tree_cursor_changed(menu_tree)
-		item_tree.get_selection().select_path(item_path)
+		i = 0
+		for item in item_tree.get_model():
+			print i, item[3].get_desktop_file_id(), item_id
+			if item[3].get_desktop_file_id() == item_id:
+				item_tree.get_selection().select_path((i,))
+			i += 1
 		return False
+
+	def on_file_new_menu_activate(self, menu):
+		menu_tree = self.tree.get_widget('menu_tree')
+		menus, iter = menu_tree.get_selection().get_selected()
+		parent = menus[iter][2]
+		values = self.dialogs.newMenuDialog()
+		if values:
+			self.editor.createMenu(parent, values[0], values[1], values[2])
+		#FIXME: make gnome-menus update monitors when menus are added
+		gobject.timeout_add(500, self.loadUpdates)
+
+	def on_file_new_item_activate(self, menu):
+		menu_tree = self.tree.get_widget('menu_tree')
+		menus, iter = menu_tree.get_selection().get_selected()
+		parent = menus[iter][2]
+		values = self.dialogs.newItemDialog()
+		if values:
+			self.editor.createItem(parent, values[0], values[1], values[2], values[3], values[4])
+
+	def on_help_about_activate(self, menu):
+		tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'), 'aboutdialog')
+		dialog = tree.get_widget('aboutdialog')
+		dialog.set_icon(self.icon)
+		dialog.set_version(self.version)
+		dialog.set_logo(self.logo)
+		dialog.show()
 
 	def on_menu_tree_cursor_changed(self, treeview):
 		menus, iter = treeview.get_selection().get_selected()
 		menu_path = menus.get_path(iter)
-		items = self.tree.get_widget('item_tree')
-		items.get_selection().unselect_all()
+		item_tree = self.tree.get_widget('item_tree')
+		item_tree.get_selection().unselect_all()
 		self.loadItems(self.menu_store[menu_path][2], menu_path)
 
 	def on_item_tree_show_toggled(self, cell, path):
@@ -168,11 +242,12 @@ class MainWindow:
 	def on_item_tree_row_activated(self, treeview, path, column):
 		item = self.item_store[path][3]
 		if item.get_type() == gmenu.TYPE_ENTRY:
-			self.dialogs.editItemDialog(self.item_store[path])
+			self.dialogs.editItemDialog(self.item_store[path][3])
 		elif item.get_type() == gmenu.TYPE_DIRECTORY:
+			self.allow_update = False
 			self.dialogs.editMenuDialog(self.item_store[path])
-		gobject.idle_add(self.reloadMenus)
-		gobject.idle_add(self.reloadItems)
+			self.allow_update = True
+			self.loadUpdates()
 
 	def on_item_tree_popup_menu(self, item_tree, event=None):
 		model, iter = item_tree.get_selection().get_selected()
@@ -198,10 +273,5 @@ class MainWindow:
 		#without this shift-f10 won't work
 		return True
 
-	def on_help_about_activate(self, menu):
-		tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'), 'aboutdialog')
-		dialog = tree.get_widget('aboutdialog')
-		dialog.set_icon(self.icon)
-		dialog.set_version(self.version)
-		dialog.set_logo(self.logo)
-		dialog.show()
+	def on_close_button_clicked(self, button):
+		gtk.main_quit()

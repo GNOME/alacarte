@@ -1,3 +1,8 @@
+2005-04-17  Travis Watkins  <alleykat@gmail.com>
+
+	* Alacarte/MainWindow.py:
+	* Alacarte/MenuEditor.py: small speedups, fixes
+
 2005-04-15  Travis Watkins  <alleykat@gmail.com>
 
 	* too much stuff, need to commit more often

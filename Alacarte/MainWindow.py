@@ -56,11 +56,12 @@ class MainWindow:
 		if self.timer:
 			gobject.source_remove(self.timer)
 			self.timer = None
-		self.timer = gobject.timeout_add(500, self.loadUpdates)
+		self.timer = gobject.timeout_add(3, self.loadUpdates)
 
 	def loadUpdates(self):
 		if not self.allow_update:
 			return
+		print 'reloading'
 		item_tree = self.tree.get_widget('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
 		update_items = False
@@ -148,8 +149,11 @@ class MainWindow:
 			icon = util.getIcon(parent)
 			iters[depth] = self.menu_store.append(None, (icon, cgi.escape(parent.get_name()), parent))
 		depth += 1
-		for menu in self.editor.getMenus(parent):
-			name = cgi.escape(menu.get_name())
+		for menu, show in self.editor.getMenus(parent):
+			if show:
+				name = cgi.escape(menu.get_name())
+			else:
+				name = '<small><i>' + cgi.escape(menu.get_name()) + '</i></small>'
 			icon = util.getIcon(menu)
 			iters[depth] = self.menu_store.append(iters[depth-1], (icon, name, menu))
 			self.loadMenu(iters, menu, depth)
@@ -233,11 +237,11 @@ class MainWindow:
 			return
 		if self.item_store[path][0]:
 			self.editor.hideItem(item)
-			self.item_store[path][2] = '<small><i>' + self.item_store[path][2] + '</i></small>'
+#			self.item_store[path][2] = '<small><i>' + self.item_store[path][2] + '</i></small>'
 		else:
 			self.editor.showItem(item)
-			self.item_store[path][2] = cgi.escape(item.get_name())
-		self.item_store[path][0] = not self.item_store[path][0]
+#			self.item_store[path][2] = cgi.escape(item.get_name())
+#		self.item_store[path][0] = not self.item_store[path][0]
 
 	def on_item_tree_row_activated(self, treeview, path, column):
 		item = self.item_store[path][3]

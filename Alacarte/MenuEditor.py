@@ -61,25 +61,23 @@ class MenuEditor:
 
 	def getMenus(self, parent=None):
 		if parent == None:
-			return (self.applications.tree.root, self.settings.tree.root)
-		temp = []
-		for menu in parent.get_contents():
-			if menu.get_type() == gmenu.TYPE_DIRECTORY:
-				if menu.menu_id == 'Other' and len(menu.get_contents()) == 0:
-					continue
-				temp.append(menu)
-		return temp
+			yield self.applications.tree.root
+			yield self.settings.tree.root
+		else:
+			for menu in parent.get_contents():
+				if menu.get_type() == gmenu.TYPE_DIRECTORY:
+					if menu.menu_id == 'Other' and len(menu.get_contents()) == 0:
+						continue
+					yield (menu, self.__isVisible(menu))
 
 	def getItems(self, menu):
-		temp = []
 		for item in menu.get_contents():
 			if item.get_type() == gmenu.TYPE_SEPARATOR:
-				temp.append((item, True))
+				yield (item, True)
 			else:
 				if item.get_type() == gmenu.TYPE_ENTRY and item.get_desktop_file_id()[-19:] == '-usercustom.desktop':
 					continue
-				temp.append((item, self.__isVisible(item)))
-		return temp
+				yield (item, self.__isVisible(item))
 
 	def setVisible(self, item, visible):
 		dom = self.__getMenu(item).dom
@@ -91,6 +89,9 @@ class MenuEditor:
 			else:
 				self.__addXmlFilename(menu_xml, dom, item.get_desktop_file_id(), 'Exclude')
 		elif item.get_type() == gmenu.TYPE_DIRECTORY:
+			#don't mess with it if it's empty
+			if len(item.get_contents()) == 0:
+				return
 			menu_xml = self.__getXmlMenu(self.__getPath(item), dom, dom)
 			for node in self.__getXmlNodesByName(['Deleted', 'NotDeleted'], menu_xml):
 				node.parentNode.removeChild(node)

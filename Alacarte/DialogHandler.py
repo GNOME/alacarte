@@ -48,7 +48,6 @@ class DialogHandler:
 
 	def showIconDialog(self, button):
 		dialog = gtk.FileChooserDialog('Choose an Icon', None, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OK, gtk.RESPONSE_OK))
-		dialog.set_icon_name('alacarte')
 		if button.icon_path:
 			dialog.set_current_folder(button.icon_path.rsplit('/', 1)[0])
 		else:
@@ -112,7 +111,6 @@ class DialogHandler:
 		icon_button.add(label)
 		icon_button.icon_path = None
 		dialog = tree.get_widget('newitemproperties')
-		dialog.set_icon_name('alacarte')
 		dialog.show_all()
 		can_close = False
 		while can_close == False:
@@ -151,7 +149,6 @@ class DialogHandler:
 			signals[attr] = getattr(self, attr)
 		self.tree.signal_autoconnect(signals)
 		dialog = self.tree.get_widget('itemproperties')
-		dialog.set_icon_name('alacarte')
 		icon_button = self.tree.get_widget('item_icon_button')
 		name_entry = self.tree.get_widget('item_name_entry')
 		comment_entry = self.tree.get_widget('item_comment_entry')
@@ -249,7 +246,6 @@ class DialogHandler:
 				return 'save'
 			return True
 		dialog = tree.get_widget('newmenuproperties')
-		dialog.set_icon_name('alacarte')
 		icon_button = tree.get_widget('newmenu_icon_button')
 		icon_button.remove(icon_button.get_children()[0])
 		label = gtk.Label('No Icon')
@@ -293,7 +289,6 @@ class DialogHandler:
 			signals[attr] = getattr(self, attr)
 		self.tree.signal_autoconnect(signals)
 		dialog = self.tree.get_widget('menuproperties')
-		dialog.set_icon_name('alacarte')
 		icon_button = self.tree.get_widget('menu_icon_button')
 		name_entry = self.tree.get_widget('menu_name_entry')
 		comment_entry = self.tree.get_widget('menu_comment_entry')

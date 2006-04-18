@@ -1,5 +1,13 @@
 2005-04-18  Travis Watkins  <alleykat@gmail.com>
 
+	* Alacarte/MenuEditor.py: moveItem fully implemented
+	* Alacarte/DialogHandler.py:
+	* Alacarte/MainWindow.py: set default icon
+	* alacarte.svg:
+	* alacarte.png: new icon from Andreas Nilsson
+
+2005-04-18  Travis Watkins  <alleykat@gmail.com>
+
 	* Alacarte/MainWindow.py:
 	* Alacarte/MenuEditor.py: DnD copy of items, basic layout support
 

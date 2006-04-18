@@ -5,7 +5,7 @@ SUBDIRS = po Alacarte
 CLEANFILES=
 
 bin_SCRIPTS = alacarte
-CLEANFILES += alacarte alacarte-dbg
+CLEANFILES += alacarte
 
 EXTRA_DIST = intltool-extract.in intltool-merge.in intltool-update.in
 DISTCLEANFILES = intltool-extract intltool-merge intltool-update
@@ -28,10 +28,10 @@ alacarte: Makefile
 
 EXTRA_DIST += alacarte.in
 
-pkgdata_DATA = alacarte.glade
+pkgdata_DATA = alacarte.glade logo.svg
 EXTRA_DIST += $(pkgdata_DATA)
 
-icondir = $(datadir)/icons/hicolor/48x48/apps
+icondir = $(datadir)/icons/hicolor/22x22/apps
 icon_DATA = alacarte.png
 EXTRA_DIST += $(icon_DATA)
 svgicondir = $(datadir)/icons/hicolor/scalable/apps

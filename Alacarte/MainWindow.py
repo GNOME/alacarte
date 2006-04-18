@@ -17,7 +17,6 @@
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 import gtk, gtk.glade, gmenu, gobject
-import LaunchpadIntegration
 import cgi, os
 import gettext
 gettext.bindtextdomain('alacarte')
@@ -46,15 +45,13 @@ class MainWindow:
 		self.editor = MenuEditor()
 		self.tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'), 'mainwindow')
 		self.tree.get_widget('mainwindow').connect('destroy', lambda *a: gtk.main_quit())
-		LaunchpadIntegration.set_sourcepackagename('alacarte')
-		LaunchpadIntegration.add_items(self.tree.get_widget('help_menu_menu'), -1, False, True)
 		signals = {}
 		for attr in dir(self):
 			signals[attr] = getattr(self, attr)
 		self.tree.signal_autoconnect(signals)
 		self.setupMenuTree()
 		self.setupItemTree()
-		self.tree.get_widget('mainwindow').set_icon_name('alacarte')
+		gtk.window_set_default_icon_name('alacarte')
 		self.dialogs = DialogHandler(self.editor, self.file_path)
 
 	def menuChanged(self, *a):
@@ -230,9 +227,8 @@ class MainWindow:
 	def on_help_about_activate(self, menu):
 		tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'), 'aboutdialog')
 		dialog = tree.get_widget('aboutdialog')
-		dialog.set_icon(self.icon)
 		dialog.set_version(self.version)
-		dialog.set_logo(self.logo)
+		dialog.set_logo(gtk.gdk.pixbuf_new_from_file(os.path.join(self.file_path, 'logo.svg')))
 		dialog.show()
 
 	def on_menu_tree_cursor_changed(self, treeview):

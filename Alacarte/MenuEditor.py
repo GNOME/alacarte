@@ -154,19 +154,37 @@ class MenuEditor:
 		self.save()
 
 	def moveItem(self, item, old_parent, new_parent, before=None, after=None):
-		if old_parent == new_parent:
-			if after or before:
-				if after:
-					index = new_parent.contents.index(after) + 1
-				elif before:
-					index = new_parent.contents.index(before)
-				contents = new_parent.contents
+		if old_parent != new_parent:
+			#hide old item
+			self.__writeItem(item, hidden=True)
+			dom = self.__getMenu(new_parent).dom
+			file_path = item.get_desktop_file_path()
+			keyfile = util.DesktopParser(file_path)
+			#erase Categories in new file
+			keyfile.set('Categories', ('',))
+			#make sure new item isn't hidden
+			keyfile.set('Hidden', False)
+			file_id = util.getUniqueFileId(item.get_name(), '.desktop')
+			out_path = os.path.join(util.getUserItemPath(), file_id)
+			keyfile.write(open(out_path, 'w'))
+			self.__addItem(new_parent, file_id, dom)
+			item = ('Item', file_id)
+		if after or before:
+			if after:
+				index = new_parent.contents.index(after) + 1
+			elif before:
+				index = new_parent.contents.index(before)
+			contents = new_parent.contents
+			#if this is a move to a new parent you can't remove the item
+			try:
 				contents.remove(item)
-				contents.insert(index, item)
-				layout = self.__createLayout(contents)
-				dom = self.__getMenu(new_parent).dom
-				menu_xml = self.__getXmlMenu(self.__getPath(new_parent), dom, dom)
-				self.__addXmlLayout(menu_xml, layout, dom)
+			except:
+				pass
+			contents.insert(index, item)
+			layout = self.__createLayout(contents)
+			dom = self.__getMenu(new_parent).dom
+			menu_xml = self.__getXmlMenu(self.__getPath(new_parent), dom, dom)
+			self.__addXmlLayout(menu_xml, layout, dom)
 		self.save()
 
 	#private stuff
@@ -267,7 +285,7 @@ class MenuEditor:
 		node = dom.createElement('Deleted')
 		return element.appendChild(node)
 
-	def __writeItem(self, item=None, icon=None, name=None, comment=None, command=None, use_term=None, no_display=None, startup_notify=None):
+	def __writeItem(self, item=None, icon=None, name=None, comment=None, command=None, use_term=None, no_display=None, startup_notify=None, hidden=None):
 		if item:
 			file_path = item.get_desktop_file_path()
 			file_id = item.get_desktop_file_id()
@@ -294,6 +312,8 @@ class MenuEditor:
 			keyfile.set('NoDisplay', no_display)
 		if startup_notify != None:
 			keyfile.set('StartupNotify', startup_notify)
+		if hidden != None:
+			keyfile.set('Hidden', hidden)
 		out_path = os.path.join(util.getUserItemPath(), file_id)
 		keyfile.write(open(out_path, 'w'))
 		return file_id
@@ -372,7 +392,14 @@ class MenuEditor:
 
 		layout.order.append(['Merge', 'menus'])
 		for item in items:
-			if item.get_type() == gmenu.TYPE_DIRECTORY:
+			if isinstance(item, tuple):
+				if item[0] == 'Separator':
+					layout.parseSeparator()
+				elif item[0] == 'Menu':
+					layout.parseMenuname(item[1])
+				elif item[0] == 'Item':
+					layout.parseFilename(item[1])
+			elif item.get_type() == gmenu.TYPE_DIRECTORY:
 				layout.parseMenuname(item.get_menu_id())
 			elif item.get_type() == gmenu.TYPE_ENTRY:
 				layout.parseFilename(item.get_desktop_file_id())

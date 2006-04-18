@@ -99,6 +99,17 @@ def getUserMenuPath():
 		os.makedirs(menu_dir)
 	return menu_dir
 
+def getItemPath(file_id):
+	if os.environ.has_key('XDG_DATA_DIRS'):
+		for system_path in os.environ['XDG_DATA_DIRS'].split(':'):
+			file_path = os.path.join(system_path, 'applications', file_id)
+			if os.path.isfile(file_path):
+				return file_path
+	file_path = os.path.join('/', 'usr', 'share', 'applications', file_id)
+	if os.path.isfile(file_path):
+		return file_path
+	return False
+
 def getUserItemPath():
 	item_dir = None
 	if os.environ.has_key('XDG_DATA_HOME'):
@@ -120,7 +131,9 @@ def getDirectoryPath(file_id):
 			if os.path.isfile(file_path):
 				return file_path
 	file_path = os.path.join('/', 'usr', 'share', 'desktop-directories', file_id)
-	return file_path
+	if os.path.isfile(file_path):
+		return file_path
+	return False
 
 def getUserDirectoryPath():
 	menu_dir = None

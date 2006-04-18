@@ -43,6 +43,7 @@ class MainWindow:
 		self.file_path = datadir
 		self.version = version
 		self.editor = MenuEditor()
+		gtk.window_set_default_icon_name('alacarte')
 		self.tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'), 'mainwindow')
 		self.tree.get_widget('mainwindow').connect('destroy', lambda *a: gtk.main_quit())
 		signals = {}
@@ -51,8 +52,10 @@ class MainWindow:
 		self.tree.signal_autoconnect(signals)
 		self.setupMenuTree()
 		self.setupItemTree()
-		gtk.window_set_default_icon_name('alacarte')
 		self.dialogs = DialogHandler(self.editor, self.file_path)
+		self.tree.get_widget('edit_delete').set_sensitive(False)
+		self.tree.get_widget('edit_revert_to_original').set_sensitive(False)
+		self.tree.get_widget('edit_properties').set_sensitive(False)
 
 	def menuChanged(self, *a):
 		if self.timer:
@@ -67,13 +70,17 @@ class MainWindow:
 		item_tree = self.tree.get_widget('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
 		update_items = False
+		item_id, separator_path = None, None
 		if iter:
+			update_items = True
 			if items[iter][3].get_type() == gmenu.TYPE_DIRECTORY:
 				item_id = items[iter][3].get_menu_id()
 				update_items = True
 			elif items[iter][3].get_type() == gmenu.TYPE_ENTRY:
 				item_id = items[iter][3].get_desktop_file_id()
 				update_items = True
+			elif items[iter][3].get_type() == gmenu.TYPE_SEPARATOR:
+				separator_path = items.get_path(iter)				
 		menus, iter = menu_tree.get_selection().get_selected()
 		update_menus = False
 		menu_id = None
@@ -84,16 +91,27 @@ class MainWindow:
 		#find current menu in new tree
 		if update_menus:
 			menu_tree.get_model().foreach(self.findMenu, menu_id)
-		self.on_menu_tree_cursor_changed(menu_tree)
+			menus, iter = menu_tree.get_selection().get_selected()
+			if iter:
+				self.on_menu_tree_cursor_changed(menu_tree)
 		#find current item in new list
 		if update_items:
 			i = 0
 			for item in item_tree.get_model():
-				if item_id:
-					if item[3].get_type() == gmenu.TYPE_ENTRY and item[3].get_desktop_file_id() == item_id:
+				if item[3].get_type() == gmenu.TYPE_ENTRY and item[3].get_desktop_file_id() == item_id:
+					item_tree.get_selection().select_path((i,))
+				if item[3].get_type() == gmenu.TYPE_DIRECTORY and item[3].get_menu_id() == item_id:
+					item_tree.get_selection().select_path((i,))
+				if item[3].get_type() == gmenu.TYPE_SEPARATOR:
+					if not separator_path:
+						continue
+					#separators have no id, have to find them manually
+					#probably won't work with two separators together
+					if (separator_path[0] - 1,) == (i,):
 						item_tree.get_selection().select_path((i,))
-				else:
-					if item[3].get_type() == gmenu.TYPE_DIRECTORY and item[3].get_menu_id() == item_id:
+					elif (separator_path[0] + 1,) == (i,):
+						item_tree.get_selection().select_path((i,))
+					elif (separator_path[0],) == (i,):
 						item_tree.get_selection().select_path((i,))
 				i += 1
 
@@ -152,7 +170,9 @@ class MainWindow:
 		items.enable_model_drag_source(gtk.gdk.BUTTON1_MASK, self.dnd_items, gtk.gdk.ACTION_DEFAULT | gtk.gdk.ACTION_MOVE)
 
 	def _cell_data_toggle_func(self, tree_column, renderer, model, treeiter):
-		if not model[treeiter][3].get_type() == gmenu.TYPE_SEPARATOR:
+		if model[treeiter][3].get_type() == gmenu.TYPE_SEPARATOR:
+			renderer.set_property('visible', False)
+		else:
 			renderer.set_property('visible', True)
 
 	def loadMenus(self):
@@ -197,7 +217,12 @@ class MainWindow:
 	def on_file_new_menu_activate(self, menu):
 		menu_tree = self.tree.get_widget('menu_tree')
 		menus, iter = menu_tree.get_selection().get_selected()
-		parent = menus[iter][2]
+		if not iter:
+			parent = menus[(0,)][2]
+			menu_tree.expand_to_path((0,))
+			menu_tree.get_selection().select_path((0,))
+		else:
+			parent = menus[iter][2]
 		values = self.dialogs.newMenuDialog()
 		if values:
 			self.editor.createMenu(parent, values[0], values[1], values[2])
@@ -207,20 +232,63 @@ class MainWindow:
 	def on_file_new_item_activate(self, menu):
 		menu_tree = self.tree.get_widget('menu_tree')
 		menus, iter = menu_tree.get_selection().get_selected()
-		parent = menus[iter][2]
+		if not iter:
+			parent = menus[(0,)][2]
+			menu_tree.expand_to_path((0,))
+			menu_tree.get_selection().select_path((0,))
+		else:
+			parent = menus[iter][2]
 		values = self.dialogs.newItemDialog()
 		if values:
 			self.editor.createItem(parent, values[0], values[1], values[2], values[3], values[4])
 
+	def on_file_new_separator_activate(self, menu):
+		item_tree = self.tree.get_widget('item_tree')
+		items, iter = item_tree.get_selection().get_selected()
+		if not iter:
+			return
+		else:
+			after = items[iter][3]
+			menu_tree = self.tree.get_widget('menu_tree')
+			menus, iter = menu_tree.get_selection().get_selected()
+			parent = menus[iter][2]
+			self.editor.createSeparator(parent, after=after)
+
+	def on_edit_delete_activate(self, menu):
+		item_tree = self.tree.get_widget('item_tree')
+		items, iter = item_tree.get_selection().get_selected()
+		if not iter:
+			return
+		item = items[iter][3]
+		if item.get_type() == gmenu.TYPE_ENTRY:
+			self.editor.deleteItem(item)
+		elif item.get_type() == gmenu.TYPE_DIRECTORY:
+			self.editor.deleteMenu(item)
+		elif item.get_type() == gmenu.TYPE_SEPARATOR:
+			self.editor.deleteSeparator(item)
+
+	def on_edit_revert_to_original_activate(self, menu):
+		item_tree = self.tree.get_widget('item_tree')
+		items, iter = item_tree.get_selection().get_selected()
+		if not iter:
+			return
+		item = items[iter][3]
+		if item.get_type() == gmenu.TYPE_ENTRY:
+			self.editor.revertItem(item)
+		elif item.get_type() == gmenu.TYPE_DIRECTORY:
+			self.editor.revertMenu(item)
+
 	def on_edit_properties_activate(self, menu):
 		item_tree = self.tree.get_widget('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
-		item = self.item_store[iter][3]
+		if not iter:
+			return
+		item = items[iter][3]
 		if item.get_type() == gmenu.TYPE_ENTRY:
-			self.dialogs.editItemDialog(self.item_store[iter][3])
+			self.dialogs.editItemDialog(items[iter][3])
 		elif item.get_type() == gmenu.TYPE_DIRECTORY:
 			self.allow_update = False
-			self.dialogs.editMenuDialog(self.item_store[iter])
+			self.dialogs.editMenuDialog(items[iter])
 			self.allow_update = True
 			self.loadUpdates()
 
@@ -237,6 +305,9 @@ class MainWindow:
 		item_tree = self.tree.get_widget('item_tree')
 		item_tree.get_selection().unselect_all()
 		self.loadItems(self.menu_store[menu_path][2], menu_path)
+		self.tree.get_widget('edit_delete').set_sensitive(False)
+		self.tree.get_widget('edit_revert_to_original').set_sensitive(False)
+		self.tree.get_widget('edit_properties').set_sensitive(False)
 
 	def on_menu_tree_drag_data_received(self, treeview, context, x, y, selection, info, etime):
 		menus = treeview.get_model()
@@ -268,6 +339,19 @@ class MainWindow:
 			self.editor.hideItem(item)
 		else:
 			self.editor.showItem(item)
+
+	def on_item_tree_cursor_changed(self, treeview):
+		items, iter = treeview.get_selection().get_selected()
+		item = items[iter][3]
+		self.tree.get_widget('edit_delete').set_sensitive(True)
+		if self.editor.canRevert(item):
+			self.tree.get_widget('edit_revert_to_original').set_sensitive(True)
+		else:
+			self.tree.get_widget('edit_revert_to_original').set_sensitive(False)
+		if not item.get_type() == gmenu.TYPE_SEPARATOR:
+			self.tree.get_widget('edit_properties').set_sensitive(True)
+		else:
+			self.tree.get_widget('edit_properties').set_sensitive(False)
 
 	def on_item_tree_row_activated(self, treeview, path, column):
 		self.on_edit_properties_activate(None)
@@ -304,24 +388,28 @@ class MainWindow:
 	def on_move_up_button_clicked(self, button):
 		item_tree = self.tree.get_widget('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
+		if not iter:
+			return
 		path = items.get_path(iter)
 		#at top, can't move up
 		if path[0] == 0:
 			return
 		item = items[path][3]
 		before = items[(path[0] - 1,)][3]
-		self.editor.moveItem(item, item.get_parent(), item.get_parent(), before=before)
+		self.editor.moveItem(item, item.get_parent(), before=before)
 
 	def on_move_down_button_clicked(self, button):
 		item_tree = self.tree.get_widget('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
+		if not iter:
+			return
 		path = items.get_path(iter)
 		#at bottom, can't move down
 		if path[0] == (len(items) - 1):
 			return
 		item = items[path][3]
 		after = items[path][3]
-		self.editor.moveItem(item, item.get_parent(), item.get_parent(), after=after)
+		self.editor.moveItem(item, item.get_parent(), after=after)
 
 	def on_close_button_clicked(self, button):
 		gtk.main_quit()

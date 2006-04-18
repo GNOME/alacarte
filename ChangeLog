@@ -1,5 +1,11 @@
 2005-04-18  Travis Watkins  <alleykat@gmail.com>
 
+	* Alacarte/util.py:
+	* Alacarte/MenuEditor.py:
+	* Alacarte/MainWindow.py: implement revert and delete
+
+2005-04-18  Travis Watkins  <alleykat@gmail.com>
+
 	* Alacarte/MenuEditor.py: moveItem fully implemented
 	* Alacarte/DialogHandler.py:
 	* Alacarte/MainWindow.py: set default icon

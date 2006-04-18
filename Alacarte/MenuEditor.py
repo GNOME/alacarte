@@ -79,6 +79,20 @@ class MenuEditor:
 					continue
 				yield (item, self.__isVisible(item))
 
+	def canRevert(self, item):
+		if item.get_type() == gmenu.TYPE_ENTRY:
+			if util.getItemPath(item.get_desktop_file_id()):
+				path = util.getUserItemPath()
+				if os.path.isfile(os.path.join(path, item.get_desktop_file_id())):
+					return True
+		elif item.get_type() == gmenu.TYPE_DIRECTORY:
+			file_id = item.get_menu_id() + '.directory'
+			if util.getDirectoryPath(file_id):
+				path = util.getUserDirectoryPath()
+				if os.path.isfile(os.path.join(path, file_id)):
+					return True
+		return False
+
 	def setVisible(self, item, visible):
 		dom = self.__getMenu(item).dom
 		if item.get_type() == gmenu.TYPE_ENTRY:
@@ -110,7 +124,7 @@ class MenuEditor:
 	def createItem(self, parent, icon, name, comment, command, use_term, before=None, after=None):
 		file_id = self.__writeItem(None, icon, name, comment, command, use_term)
 		dom = self.__getMenu(parent).dom
-		self.__addItem(parent, file_id, dom, before, after)
+		self.__addItem(parent, file_id, dom)
 		self.save()
 
 	def createMenu(self, parent, icon, name, comment, before=None, after=None):
@@ -119,6 +133,21 @@ class MenuEditor:
 		dom = self.__getMenu(parent).dom
 		menu_xml = self.__getXmlMenu(self.__getPath(parent) + '/' + menu_id, dom, dom)
 		self.__addXmlTextElement(menu_xml, 'Directory', file_id, dom)
+		self.save()
+
+	def createSeparator(self, parent, before=None, after=None):
+		if not before and not after:
+			return
+		if after:
+			index = parent.contents.index(after) + 1
+		elif before:
+			index = parent.contents.index(before)
+		contents = parent.contents
+		contents.insert(index, ('Separator',))
+		layout = self.__createLayout(contents)
+		dom = self.__getMenu(parent).dom
+		menu_xml = self.__getXmlMenu(self.__getPath(parent), dom, dom)
+		self.__addXmlLayout(menu_xml, layout, dom)
 		self.save()
 
 	def editItem(self, item, icon, name, comment, command, use_term):
@@ -153,8 +182,8 @@ class MenuEditor:
 		self.__addItem(new_parent, file_id, dom)
 		self.save()
 
-	def moveItem(self, item, old_parent, new_parent, before=None, after=None):
-		if old_parent != new_parent:
+	def moveItem(self, item, new_parent, before=None, after=None):
+		if item.get_parent() != new_parent:
 			#hide old item
 			self.__writeItem(item, hidden=True)
 			dom = self.__getMenu(new_parent).dom
@@ -187,14 +216,54 @@ class MenuEditor:
 			self.__addXmlLayout(menu_xml, layout, dom)
 		self.save()
 
+	def deleteItem(self, item):
+		self.__writeItem(item, hidden=True)
+		self.save()
+
+	def deleteMenu(self, menu):
+		dom = self.__getMenu(menu).dom
+		menu_xml = self.__getXmlMenu(self.__getPath(menu), dom, dom)
+		self.__addDeleted(menu_xml, dom)
+		self.save()
+
+	def deleteSeparator(self, item):
+		parent = item.get_parent()
+		contents = parent.get_contents()
+		contents.remove(item)
+		layout = self.__createLayout(contents)
+		dom = self.__getMenu(parent).dom
+		menu_xml = self.__getXmlMenu(self.__getPath(parent), dom, dom)
+		self.__addXmlLayout(menu_xml, layout, dom)
+		self.save()
+
+	def revertItem(self, item):
+		try:
+			os.remove(item.get_desktop_file_path())
+		except OSError:
+			pass
+		self.save()
+
+	def revertMenu(self, menu):
+		file_id = menu.get_menu_id() + '.directory'
+		path = os.path.join(util.getUserDirectoryPath(), file_id)
+		try:
+			os.remove(path)
+		except OSError:
+			pass
+		self.save()
+
 	#private stuff
 	def __getMenu(self, item):
 		root = item.get_parent()
-		while True:
-			if root.get_parent():
-				root = root.get_parent()
-			else:
-				break
+		if not root:
+			#already at the top
+			root = item
+		else:
+			while True:
+				if root.get_parent():
+					root = root.get_parent()
+				else:
+					break
 		if root.menu_id == self.applications.tree.root.menu_id:
 			return self.applications
 		return self.settings

@@ -141,8 +141,33 @@ class MenuEditor:
 		self.__writeMenu(menu, icon, name, comment)
 		self.save()
 
-	def moveItem(self, item, after=None):
-		pass
+	def copyItem(self, item, new_parent, before=None, after=None):
+		dom = self.__getMenu(new_parent).dom
+		file_path = item.get_desktop_file_path()
+		keyfile = util.DesktopParser(file_path)
+		#erase Categories in new file
+		keyfile.set('Categories', ('',))
+		file_id = util.getUniqueFileId(item.get_name(), '.desktop')
+		out_path = os.path.join(util.getUserItemPath(), file_id)
+		keyfile.write(open(out_path, 'w'))
+		self.__addItem(new_parent, file_id, dom)
+		self.save()
+
+	def moveItem(self, item, old_parent, new_parent, before=None, after=None):
+		if old_parent == new_parent:
+			if after or before:
+				if after:
+					index = new_parent.contents.index(after) + 1
+				elif before:
+					index = new_parent.contents.index(before)
+				contents = new_parent.contents
+				contents.remove(item)
+				contents.insert(index, item)
+				layout = self.__createLayout(contents)
+				dom = self.__getMenu(new_parent).dom
+				menu_xml = self.__getXmlMenu(self.__getPath(new_parent), dom, dom)
+				self.__addXmlLayout(menu_xml, layout, dom)
+		self.save()
 
 	#private stuff
 	def __getMenu(self, item):
@@ -179,7 +204,10 @@ class MenuEditor:
 
 	def __getPath(self, menu, path=None):
 		if not path:
-			path = 'Applications'
+			if self.__getMenu(menu) == self.applications:
+				path = 'Applications'
+			else:
+				path = 'Desktop'
 		if menu.get_parent():
 			path = self.__getPath(menu.get_parent(), path)
 			path += '/'
@@ -329,16 +357,16 @@ class MenuEditor:
 				child = dom.createElement('Separator')
 				node.appendChild(child)
 			elif order[0] == 'Filename':
-				child = self.__addXmlTextElement(node, 'Filename', order[1])
+				child = self.__addXmlTextElement(node, 'Filename', order[1], dom)
 			elif order[0] == 'Menuname':
-				child = self.__addXmlTextElement(node, 'Menuname', order[1])
+				child = self.__addXmlTextElement(node, 'Menuname', order[1], dom)
 			elif order[0] == 'Merge':
 				child = dom.createElement('Merge')
 				child.setAttribute('type', order[1])
 				node.appendChild(child)
 		return element.appendChild(node)
 
-	def __addLayout(self, items):
+	def __createLayout(self, items):
 		layout = Layout()
 		layout.order = []
 
@@ -354,16 +382,7 @@ class MenuEditor:
 		return layout
 
 	#AFTER THIS STILL NOT PORTED
-	def __addItem(self, parent, file_id, dom, before=None, after=None):
-#		if after or before:
-#			if after:
-#				index = parent.contents.index(after) + 1
-#			elif before:
-#				index = parent.contents.index(before)
-#			parent.Entries.insert(index, entry)
-#		else:
-#			parent.Entries.append(entry)
-
+	def __addItem(self, parent, file_id, dom):
 		xml_parent = self.__getXmlMenu(self.__getPath(parent), dom, dom)
 		self.__addXmlFilename(xml_parent, dom, file_id, 'Include')
 #		elif isinstance(entry, Menu):
@@ -373,21 +392,22 @@ class MenuEditor:
 #			self.__addLayout(parent)
 #			self.__addXmlLayout(xml_parent, parent.Layout)
 
-	def __deleteEntry(self, parent, entry, after=None, before=None):
-		parent.Entries.remove(entry)
+	def __deleteItem(self, parent, file_id, dom, before=None, after=None):
+#		parent.Entries.remove(entry)
 
-		xml_parent = self.__getXmlMenu(parent.getPath(True, True))
+		xml_parent = self.__getXmlMenu(self.__getPath(parent), dom, dom)
+		self.__addXmlFilename(xml_parent, dom, file_id, 'Exclude')
 
-		if isinstance(entry, MenuEntry):
-			entry.Parents.remove(parent)
-			parent.MenuEntries.remove(entry)
-			self.__addXmlFilename(xml_parent, entry.DesktopFileID, "Exclude")
-		elif isinstance(entry, Menu):
-			parent.Submenus.remove(entry)
+#		if isinstance(entry, MenuEntry):
+#			entry.Parents.remove(parent)
+#			parent.MenuEntries.remove(entry)
+#			self.__addXmlFilename(xml_parent, entry.DesktopFileID, "Exclude")
+#		elif isinstance(entry, Menu):
+#			parent.Submenus.remove(entry)
 
-		if after or before:
-			self.__addLayout(parent)
-			self.__addXmlLayout(xml_parent, parent.Layout)
+#		if after or before:
+#			self.__addLayout(parent)
+#			self.__addXmlLayout(xml_parent, parent.Layout)
 
 class Layout:
 	"Menu Layout class"

@@ -1,3 +1,8 @@
+2005-04-18  Travis Watkins  <alleykat@gmail.com>
+
+	* Alacarte/MainWindow.py:
+	* Alacarte/MenuEditor.py: DnD copy of items, basic layout support
+
 2005-04-17  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/MainWindow.py:

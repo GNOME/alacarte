@@ -57,7 +57,7 @@ class DesktopParser(ConfigParser):
 		if value == False:
 			value = 'false'
 		if isinstance(value, tuple) or isinstance(value, list):
-			value = self._list_seperator.join(value) + ';'
+			value = self._list_separator.join(value) + ';'
 		ConfigParser.set(self, 'Desktop Entry', option, value)
 
 	def write(self, file_object):

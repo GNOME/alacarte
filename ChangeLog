@@ -1,5 +1,11 @@
 2005-04-18  Travis Watkins  <alleykat@gmail.com>
 
+	* Alacarte/MainWindow.py:
+	* Alacarte/MenuEditor.py: finish DnD, finish layout support, add
+	full revert (all menus) support
+
+2005-04-18  Travis Watkins  <alleykat@gmail.com>
+
 	* Alacarte/util.py:
 	* Alacarte/MenuEditor.py:
 	* Alacarte/MainWindow.py: implement revert and delete

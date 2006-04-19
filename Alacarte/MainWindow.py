@@ -143,6 +143,7 @@ class MainWindow:
 		column.set_attributes(cell, markup=1)
 		column.set_sizing(gtk.TREE_VIEW_COLUMN_FIXED)
 		menus.append_column(column)
+		menus.enable_model_drag_source(gtk.gdk.BUTTON1_MASK, self.dnd_menus, gtk.gdk.ACTION_COPY)
 		menus.enable_model_drag_dest(self.dnd_both, gtk.gdk.ACTION_PRIVATE)
 
 	def setupItemTree(self):
@@ -167,7 +168,8 @@ class MainWindow:
 		items.append_column(column)
 		self.item_store = gtk.ListStore(bool, gtk.gdk.Pixbuf, str, object)
 		items.set_model(self.item_store)
-		items.enable_model_drag_source(gtk.gdk.BUTTON1_MASK, self.dnd_items, gtk.gdk.ACTION_DEFAULT | gtk.gdk.ACTION_MOVE)
+		items.enable_model_drag_source(gtk.gdk.BUTTON1_MASK, self.dnd_items, gtk.gdk.ACTION_COPY)
+		items.enable_model_drag_dest(self.dnd_items, gtk.gdk.ACTION_PRIVATE)
 
 	def _cell_data_toggle_func(self, tree_column, renderer, model, treeiter):
 		if model[treeiter][3].get_type() == gmenu.TYPE_SEPARATOR:
@@ -227,7 +229,7 @@ class MainWindow:
 		if values:
 			self.editor.createMenu(parent, values[0], values[1], values[2])
 		#FIXME: make gnome-menus update monitors when menus are added
-		gobject.timeout_add(500, self.loadUpdates)
+		gobject.timeout_add(3, self.loadUpdates)
 
 	def on_file_new_item_activate(self, menu):
 		menu_tree = self.tree.get_widget('menu_tree')
@@ -309,24 +311,27 @@ class MainWindow:
 		self.tree.get_widget('edit_revert_to_original').set_sensitive(False)
 		self.tree.get_widget('edit_properties').set_sensitive(False)
 
+	def on_menu_tree_drag_data_get(self, treeview, context, selection, target_id, etime):
+		menus, iter = treeview.get_selection().get_selected()
+		self.drag_data = menus[iter][2]
+
 	def on_menu_tree_drag_data_received(self, treeview, context, x, y, selection, info, etime):
 		menus = treeview.get_model()
-		if selection.target == 'ALACARTE_ITEM_ROW':
-			drop_info = treeview.get_dest_row_at_pos(x, y)
-			if drop_info:
-				path, position = drop_info
-				types = (gtk.TREE_VIEW_DROP_INTO_OR_BEFORE, gtk.TREE_VIEW_DROP_INTO_OR_AFTER
-					)
-				if position not in types:
-					context.finish(False, False, etime)
-					return False
+		drop_info = treeview.get_dest_row_at_pos(x, y)
+		if drop_info:
+			path, position = drop_info
+			types = (gtk.TREE_VIEW_DROP_INTO_OR_BEFORE, gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
+			if position not in types:
+				context.finish(False, False, etime)
+				return False
+			if selection.target in ('ALACARTE_ITEM_ROW', 'ALACARTE_MENU_ROW'):
 				item = self.drag_data
-				old_parent = item.get_parent()
 				new_parent = menus[path][2]
 				if item.get_type() == gmenu.TYPE_ENTRY:
 					self.editor.copyItem(item, new_parent)
 				elif item.get_type() == gmenu.TYPE_DIRECTORY:
-					self.editor.moveMenu(item, old_parent, new_parent)
+					if self.editor.moveMenu(item, new_parent) == False:
+						self.loadUpdates()
 				else:
 					context.finish(False, False, etime) 
 				context.finish(True, True, etime)
@@ -336,9 +341,9 @@ class MainWindow:
 		if item.get_type() == gmenu.TYPE_SEPARATOR:
 			return
 		if self.item_store[path][0]:
-			self.editor.hideItem(item)
+			self.editor.setVisible(item, False)
 		else:
-			self.editor.showItem(item)
+			self.editor.setVisible(item, True)
 
 	def on_item_tree_cursor_changed(self, treeview):
 		items, iter = treeview.get_selection().get_selected()
@@ -383,7 +388,35 @@ class MainWindow:
 	def on_item_tree_drag_data_get(self, treeview, context, selection, target_id, etime):
 		items, iter = treeview.get_selection().get_selected()
 		self.drag_data = items[iter][3]
-		selection.set(selection.target, 8, 'items')
+
+	def on_item_tree_drag_data_received(self, treeview, context, x, y, selection, info, etime):
+		items = treeview.get_model()
+		types = (gtk.TREE_VIEW_DROP_BEFORE,	gtk.TREE_VIEW_DROP_INTO_OR_BEFORE)
+		if selection.target == 'ALACARTE_ITEM_ROW':
+			drop_info = treeview.get_dest_row_at_pos(x, y)
+			before = None
+			after = None
+			if drop_info:
+				path, position = drop_info
+				item = self.drag_data
+				if position in types:
+					before = items[path][3]
+					item = self.drag_data
+				else:
+					after = items[path][3]
+					item = self.drag_data
+			else:
+				path = (len(items) - 1,)
+				after = items[path][3]
+				item = self.drag_data
+			if item.get_type() == gmenu.TYPE_ENTRY:
+				self.editor.moveItem(item, item.get_parent(), before, after)
+			elif item.get_type() == gmenu.TYPE_DIRECTORY:
+				if self.editor.moveMenu(item, item.get_parent(), before, after) == False:
+					self.loadUpdates()
+			elif item.get_type() == gmenu.TYPE_SEPARATOR:
+				self.editor.moveSeparator(item, item.get_parent(), before, after)
+			context.finish(True, True, etime)
 
 	def on_move_up_button_clicked(self, button):
 		item_tree = self.tree.get_widget('item_tree')
@@ -410,6 +443,12 @@ class MainWindow:
 		item = items[path][3]
 		after = items[path][3]
 		self.editor.moveItem(item, item.get_parent(), after=after)
+
+	def on_revert_button_clicked(self, button):
+		dialog = gtk.MessageDialog(None, gtk.DIALOG_MODAL, gtk.MESSAGE_QUESTION, gtk.BUTTONS_YES_NO, _('Revert all menus to original settings?'))
+		if dialog.run() == gtk.RESPONSE_YES:
+			self.editor.revert()
+		dialog.destroy()
 
 	def on_close_button_clicked(self, button):
 		gtk.main_quit()

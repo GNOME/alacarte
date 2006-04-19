@@ -59,6 +59,30 @@ class MenuEditor:
 			fd.close()
 		self.__loadMenus()
 
+	def revert(self):
+		for menu in ('applications', 'settings'):
+			self.revertTree(getattr(self, menu).tree.root)
+			path = os.path.join(util.getUserMenuPath(), menu + '.menu')
+			try:
+				os.unlink(path)
+			except OSError:
+				pass
+
+	def revertTree(self, menu):
+		for child in menu.get_contents():
+			if child.get_type() == gmenu.TYPE_DIRECTORY:
+				self.revertTree(child)
+			elif child.get_type() == gmenu.TYPE_ENTRY:
+				try:
+					os.unlink(child.get_desktop_file_path())
+				except OSError:
+					pass
+		path = os.path.join(util.getUserDirectoryPath(), menu.get_menu_id() + '.directory')
+		try:
+			os.unlink(path)
+		except OSError:
+			pass
+
 	def getMenus(self, parent=None):
 		if parent == None:
 			yield self.applications.tree.root
@@ -115,16 +139,11 @@ class MenuEditor:
 				self.__writeMenu(item, no_display=True)
 		self.save()
 
-	def hideItem(self, item):
-		self.setVisible(item, False)
-
-	def showItem(self, item):
-		self.setVisible(item, True)
-
 	def createItem(self, parent, icon, name, comment, command, use_term, before=None, after=None):
 		file_id = self.__writeItem(None, icon, name, comment, command, use_term)
 		dom = self.__getMenu(parent).dom
 		self.__addItem(parent, file_id, dom)
+		self.__positionItem(parent, ('Item', file_id), before, after)
 		self.save()
 
 	def createMenu(self, parent, icon, name, comment, before=None, after=None):
@@ -133,28 +152,16 @@ class MenuEditor:
 		dom = self.__getMenu(parent).dom
 		menu_xml = self.__getXmlMenu(self.__getPath(parent) + '/' + menu_id, dom, dom)
 		self.__addXmlTextElement(menu_xml, 'Directory', file_id, dom)
+		self.__positionItem(parent, ('Menu', menu_id), before, after)
 		self.save()
 
 	def createSeparator(self, parent, before=None, after=None):
-		if not before and not after:
-			return
-		if after:
-			index = parent.contents.index(after) + 1
-		elif before:
-			index = parent.contents.index(before)
-		contents = parent.contents
-		contents.insert(index, ('Separator',))
-		layout = self.__createLayout(contents)
-		dom = self.__getMenu(parent).dom
-		menu_xml = self.__getXmlMenu(self.__getPath(parent), dom, dom)
-		self.__addXmlLayout(menu_xml, layout, dom)
+		self.__positionItem(parent, ('Separator',), before, after)
 		self.save()
 
 	def editItem(self, item, icon, name, comment, command, use_term):
 		#if nothing changed don't make a user copy
-		if icon == item.get_icon() and name == item.get_name() and \
-			comment == item.get_comment() and command == item.get_exec() and \
-			use_term == item.get_launch_in_terminal():
+		if icon == item.get_icon() and name == item.get_name() and comment == item.get_comment() and command == item.get_exec() and use_term == item.get_launch_in_terminal():
 			return
 		self.__writeItem(item, icon, name, comment, command, use_term)
 		self.save()
@@ -176,44 +183,50 @@ class MenuEditor:
 		keyfile = util.DesktopParser(file_path)
 		#erase Categories in new file
 		keyfile.set('Categories', ('',))
+		keyfile.set('Hidden', False)
 		file_id = util.getUniqueFileId(item.get_name(), '.desktop')
 		out_path = os.path.join(util.getUserItemPath(), file_id)
 		keyfile.write(open(out_path, 'w'))
 		self.__addItem(new_parent, file_id, dom)
+		self.__positionItem(new_parent, ('Item', file_id), before, after)
 		self.save()
+		return file_id
 
 	def moveItem(self, item, new_parent, before=None, after=None):
 		if item.get_parent() != new_parent:
 			#hide old item
-			self.__writeItem(item, hidden=True)
-			dom = self.__getMenu(new_parent).dom
-			file_path = item.get_desktop_file_path()
-			keyfile = util.DesktopParser(file_path)
-			#erase Categories in new file
-			keyfile.set('Categories', ('',))
-			#make sure new item isn't hidden
-			keyfile.set('Hidden', False)
-			file_id = util.getUniqueFileId(item.get_name(), '.desktop')
-			out_path = os.path.join(util.getUserItemPath(), file_id)
-			keyfile.write(open(out_path, 'w'))
-			self.__addItem(new_parent, file_id, dom)
+			self.deleteItem(item)
+			file_id = self.copyItem(item, new_parent)
 			item = ('Item', file_id)
-		if after or before:
-			if after:
-				index = new_parent.contents.index(after) + 1
-			elif before:
-				index = new_parent.contents.index(before)
-			contents = new_parent.contents
-			#if this is a move to a new parent you can't remove the item
-			try:
-				contents.remove(item)
-			except:
-				pass
-			contents.insert(index, item)
-			layout = self.__createLayout(contents)
-			dom = self.__getMenu(new_parent).dom
-			menu_xml = self.__getXmlMenu(self.__getPath(new_parent), dom, dom)
-			self.__addXmlLayout(menu_xml, layout, dom)
+		self.__positionItem(new_parent, item, before, after)
+		self.save()
+
+	def moveMenu(self, menu, new_parent, before=None, after=None):
+		parent = new_parent
+		#don't move a menu into it's child
+		while parent.get_parent():
+			parent = parent.get_parent()
+			if parent == menu:
+				return False
+		#can't move between top-level menus
+		if self.__getMenu(menu) != self.__getMenu(new_parent):
+			return False
+		if menu.get_parent() != new_parent:
+			dom = self.__getMenu(menu).dom
+			root_path = self.__getPath(menu).split('/', 1)[0]
+			xml_root = self.__getXmlMenu(root_path, dom, dom)
+			old_path = self.__getPath(menu).split('/', 1)[1]
+			#root menu's path has no /
+			if '/' in self.__getPath(new_parent):
+				new_path = self.__getPath(new_parent).split('/', 1)[1] + '/' + menu.get_menu_id()
+			else:
+				new_path = menu.get_menu_id()
+			self.__addXmlMove(xml_root, old_path, new_path, dom)
+		self.__positionItem(new_parent, menu, before, after)
+		self.save()
+
+	def moveSeparator(self, separator, new_parent, before=None, after=None):
+		self.__positionItem(new_parent, separator, before, after)
 		self.save()
 
 	def deleteItem(self, item):
@@ -429,10 +442,11 @@ class MenuEditor:
 			node.parentNode.removeChild(node)
 
 	def __addXmlMove(self, element, old, new, dom):
-		node = dom.createElement('Move')
-		node.appendChild(self.__addXmlTextElement(node, 'Old', old))
-		node.appendChild(self.__addXmlTextElement(node, 'New', new))
-		return element.appendChild(node)
+		if not self.__undoMoves(element, old, new, dom):
+			node = dom.createElement('Move')
+			node.appendChild(self.__addXmlTextElement(node, 'Old', old, dom))
+			node.appendChild(self.__addXmlTextElement(node, 'New', new, dom))
+			return element.appendChild(node)
 
 	def __addXmlLayout(self, element, layout, dom):
 		# remove old layout
@@ -477,88 +491,95 @@ class MenuEditor:
 		layout.order.append(['Merge', 'files'])
 		return layout
 
-	#AFTER THIS STILL NOT PORTED
 	def __addItem(self, parent, file_id, dom):
 		xml_parent = self.__getXmlMenu(self.__getPath(parent), dom, dom)
 		self.__addXmlFilename(xml_parent, dom, file_id, 'Include')
-#		elif isinstance(entry, Menu):
-#			parent.addSubmenu(entry)
-
-#		if after or before:
-#			self.__addLayout(parent)
-#			self.__addXmlLayout(xml_parent, parent.Layout)
 
 	def __deleteItem(self, parent, file_id, dom, before=None, after=None):
-#		parent.Entries.remove(entry)
-
 		xml_parent = self.__getXmlMenu(self.__getPath(parent), dom, dom)
 		self.__addXmlFilename(xml_parent, dom, file_id, 'Exclude')
 
-#		if isinstance(entry, MenuEntry):
-#			entry.Parents.remove(parent)
-#			parent.MenuEntries.remove(entry)
-#			self.__addXmlFilename(xml_parent, entry.DesktopFileID, "Exclude")
-#		elif isinstance(entry, Menu):
-#			parent.Submenus.remove(entry)
+	def __positionItem(self, parent, item, before=None, after=None):
+		if not before and not after:
+			return
+		if after:
+			index = parent.contents.index(after) + 1
+		elif before:
+			index = parent.contents.index(before)
+		contents = parent.contents
+		#if this is a move to a new parent you can't remove the item
+		try:
+			contents.remove(item)
+		except:
+			pass
+		contents.insert(index, item)
+		layout = self.__createLayout(contents)
+		dom = self.__getMenu(parent).dom
+		menu_xml = self.__getXmlMenu(self.__getPath(parent), dom, dom)
+		self.__addXmlLayout(menu_xml, layout, dom)
 
-#		if after or before:
-#			self.__addLayout(parent)
-#			self.__addXmlLayout(xml_parent, parent.Layout)
+	def __undoMoves(self, element, old, new, dom):
+		nodes = []
+		matches = []
+		original_old = old
+		final_old = old
+		#get all <Move> elements
+		for node in self.__getXmlNodesByName(['Move'], element):
+			nodes.insert(0, node)
+		#if the <New> matches our old parent we've found a stage to undo
+		for node in nodes:
+			xml_old = node.getElementsByTagName('Old')[0]
+			xml_new = node.getElementsByTagName('New')[0]
+			if xml_new.childNodes[0].nodeValue == old:
+				matches.append(node)
+				#we should end up with this path when completed
+				final_old = xml_old.childNodes[0].nodeValue
+		#undoing <Move>s
+		for node in matches:
+			element.removeChild(node)
+		if len(matches) > 0:
+			for node in nodes:
+				xml_old = node.getElementsByTagName('Old')[0]
+				xml_new = node.getElementsByTagName('New')[0]
+				path = os.path.split(xml_new.childNodes[0].nodeValue)
+				if path[0] == original_old:
+					element.removeChild(node)
+					for node in dom.getElementsByTagName('Menu'):
+						name_node = node.getElementsByTagName('Name')[0]
+						name = name_node.childNodes[0].nodeValue
+						if name == os.path.split(new)[1]:
+							#copy app and dir directory info from old <Menu>
+							root_path = dom.getElementsByTagName('Menu')[0].getElementsByTagName('Name')[0].childNodes[0].nodeValue
+							xml_menu = self.__getXmlMenu(root_path + '/' + new, dom, dom)
+							for app_dir in node.getElementsByTagName('AppDir'):
+								xml_menu.appendChild(app_dir)
+							for dir_dir in node.getElementsByTagName('DirectoryDir'):
+								xml_menu.appendChild(dir_dir)
+							parent = node.parentNode
+							parent.removeChild(node)
+					node = dom.createElement('Move')
+					node.appendChild(self.__addXmlTextElement(node, 'Old', xml_old.childNodes[0].nodeValue, dom))
+					node.appendChild(self.__addXmlTextElement(node, 'New', os.path.join(new, path[1]), dom))
+					element.appendChild(node)
+			if final_old == new:
+				return True
+			node = dom.createElement('Move')
+			node.appendChild(self.__addXmlTextElement(node, 'Old', final_old, dom))
+			node.appendChild(self.__addXmlTextElement(node, 'New', new, dom))
+			return element.appendChild(node)
 
 class Layout:
-	"Menu Layout class"
 	def __init__(self, node=None):
 		self.order = []
-		if node:
-			self.show_empty = node.getAttribute("show_empty") or "false"
-			self.inline = node.getAttribute("inline") or "false"
-			self.inline_limit = node.getAttribute("inline_limit") or 4
-			self.inline_header = node.getAttribute("inline_header") or "true"
-			self.inline_alias = node.getAttribute("inline_alias") or "false"
-			self.inline_limit = int(self.inline_limit)
-			self.parseNode(node)
-		else:
-			self.show_empty = "false"
-			self.inline = "false"
-			self.inline_limit = 4
-			self.inline_header = "true"
-			self.inline_alias = "false"
-			self.order.append(["Merge", "menus"])
-			self.order.append(["Merge", "files"])
 
-	def parseNode(self, node):
-		for child in node.childNodes:
-			if child.nodeType == ELEMENT_NODE:
-				if child.tagName == "Menuname":
-					try:
-						self.parseMenuname(
-							child.childNodes[0].nodeValue,
-							child.getAttribute("show_empty") or "false",
-							child.getAttribute("inline") or "false",
-							child.getAttribute("inline_limit") or 4,
-							child.getAttribute("inline_header") or "true",
-							child.getAttribute("inline_alias") or "false" )
-					except IndexError:
-						raise ValidationError('Menuname cannot be empty', "")
-				elif child.tagName == "Separator":
-					self.parseSeparator()
-				elif child.tagName == "Filename":
-					try:
-						self.parseFilename(child.childNodes[0].nodeValue)
-					except IndexError:
-						raise ValidationError('Filename cannot be empty', "")
-				elif child.tagName == "Merge":
-					self.parseMerge(child.getAttribute("type") or "all")
-
-	def parseMenuname(self, value, empty="false", inline="false", inline_limit=4, inline_header="true", inline_alias="false"):
-		self.order.append(["Menuname", value, empty, inline, inline_limit, inline_header, inline_alias])
-		self.order[-1][4] = int(self.order[-1][4])
+	def parseMenuname(self, value):
+		self.order.append(['Menuname', value])
 
 	def parseSeparator(self):
-		self.order.append(["Separator"])
+		self.order.append(['Separator'])
 
 	def parseFilename(self, value):
-		self.order.append(["Filename", value])
+		self.order.append(['Filename', value])
 
-	def parseMerge(self, type="all"):
-		self.order.append(["Merge", type])
+	def parseMerge(self, merge_type='all'):
+		self.order.append(['Merge', merge_type])

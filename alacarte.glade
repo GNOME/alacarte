@@ -226,6 +226,7 @@
 		  <property name="hover_expand">False</property>
 		  <signal name="cursor-changed" handler="on_menu_tree_cursor_changed"/>
 		  <signal name="drag_data_received" handler="on_menu_tree_drag_data_received" last_modification_time="Tue, 18 Apr 2006 01:13:34 GMT"/>
+		  <signal name="drag_data_get" handler="on_menu_tree_drag_data_get" last_modification_time="Tue, 18 Apr 2006 23:58:24 GMT"/>
 		</widget>
 	      </child>
 	    </widget>
@@ -262,6 +263,7 @@
 		  <signal name="button_press_event" handler="on_item_tree_popup_menu" last_modification_time="Thu, 06 Apr 2006 01:25:48 GMT"/>
 		  <signal name="drag_data_get" handler="on_item_tree_drag_data_get" last_modification_time="Tue, 18 Apr 2006 01:13:21 GMT"/>
 		  <signal name="cursor_changed" handler="on_item_tree_cursor_changed" last_modification_time="Tue, 18 Apr 2006 15:32:26 GMT"/>
+		  <signal name="drag_data_received" handler="on_item_tree_drag_data_received" last_modification_time="Tue, 18 Apr 2006 23:58:15 GMT"/>
 		</widget>
 	      </child>
 	    </widget>

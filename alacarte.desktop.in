@@ -8,3 +8,4 @@ Type=Application
 StartupNotify=true
 Categories=GNOME;Application;Utility;
 NotShowIn=KDE;
+Icon=alacarte

@@ -1,5 +1,12 @@
 2005-04-18  Travis Watkins  <alleykat@gmail.com>
 
+	* autogen.sh: require automake 1.9
+	* configure.ac: PoLinguas goal
+	* alacarte.desktop.in: add Icon key
+	* alacarte.glade: add translator-credits to about dialog
+
+2005-04-18  Travis Watkins  <alleykat@gmail.com>
+
 	* Alacarte/MainWindow.py:
 	* Alacarte/MenuEditor.py: finish DnD, finish layout support, add
 	full revert (all menus) support

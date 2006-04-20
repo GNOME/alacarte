@@ -1,5 +1,10 @@
 2005-04-18  Travis Watkins  <alleykat@gmail.com>
 
+	* alacarte.glade:
+	* Alacarte/DialogHandler.py: add simple command completion
+
+2005-04-18  Travis Watkins  <alleykat@gmail.com>
+
 	* Alacarte/DialogHandler.py: add image filters, add command dialog
 
 2005-04-18  Travis Watkins  <alleykat@gmail.com>

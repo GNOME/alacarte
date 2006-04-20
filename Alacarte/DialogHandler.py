@@ -17,7 +17,7 @@
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 import os, cgi
-import gmenu, gtk, gtk.glade
+import gmenu, gtk, gtk.glade, gobject
 import gettext
 gettext.bindtextdomain('alacarte')
 gettext.textdomain('alacarte')
@@ -34,6 +34,21 @@ class DialogHandler:
 	def __init__(self, editor, file_path):
 		self.editor = editor
 		self.file_path = file_path
+		self.command_completion = gtk.EntryCompletion()
+		self.command_completion.set_property('popup-completion', False)
+		self.command_completion.set_inline_completion(True)
+		self.completion_full = gtk.ListStore(str)
+		self.completion_used = gtk.ListStore(str)
+		self.command_completion.set_text_column(0)
+		paths = os.getenv('PATH')
+		for path in paths.split(':'):
+			if os.path.isdir(path):
+				try:
+					for name in os.listdir(path):
+						self.completion_full.append([name,])
+				except:
+					pass
+		self.command_completion.set_model(self.completion_used)
 
 	def showError(self, message):
 		dialog = gtk.MessageDialog(None, 0, gtk.MESSAGE_WARNING, gtk.BUTTONS_CLOSE, None)
@@ -128,6 +143,8 @@ class DialogHandler:
 					return False
 				return 'save'
 			return True
+		command_entry = tree.get_widget('newitem_command_entry')
+		command_entry.set_completion(self.command_completion)
 		icon_button = tree.get_widget('newitem_icon_button')
 		icon_button.remove(icon_button.get_children()[0])
 		label = gtk.Label('No Icon')
@@ -142,7 +159,6 @@ class DialogHandler:
 		if can_close == 'save':
 			name_entry = tree.get_widget('newitem_name_entry')
 			comment_entry = tree.get_widget('newitem_comment_entry')
-			command_entry = tree.get_widget('newitem_command_entry')
 			command_button = tree.get_widget('newitem_command_button')
 			term_check = tree.get_widget('newitem_terminal_check')
 			dialog.destroy()
@@ -176,6 +192,7 @@ class DialogHandler:
 		name_entry = self.tree.get_widget('item_name_entry')
 		comment_entry = self.tree.get_widget('item_comment_entry')
 		command_entry = self.tree.get_widget('item_command_entry')
+		command_entry.set_completion(self.command_completion)
 		command_button = self.tree.get_widget('item_command_button')
 		term_check = self.tree.get_widget('item_terminal_check')
 
@@ -228,6 +245,29 @@ class DialogHandler:
 	def on_item_icon_button_clicked(self, button):
 		if self.showIconDialog(button):
 			self.on_item_contents_changed(button)	
+
+	def on_item_command_entry_key_press_event(self, entry, event):
+		if event.keyval == gtk.keysyms.BackSpace:
+			return
+		if event.keyval == gtk.keysyms.Delete:
+			start, end = entry.get_selection_bounds()
+			entry.delete_text(start, end)
+		if event.keyval == gtk.keysyms.Tab:
+			start, end = entry.get_selection_bounds()
+			if start != end and start != 1 and end == len(entry.get_text()):
+				entry.select_region(end, end)
+				entry.set_position(-1)
+				return True
+		elif len(entry.get_text()) == 1:
+			char = entry.get_text()[0]
+			self.completion_used.clear()
+			for item in self.completion_full:
+				gobject.idle_add(self.compareCommands, item[0], char)
+
+	def compareCommands(self, possible_command, typed_char):
+		if possible_command[0] == typed_char:
+			self.completion_used.append((possible_command,))
+		return False
 
 	def on_item_command_button_clicked(self, button):
 		self.showCommandDialog(self.tree.get_widget('item_command_entry'))

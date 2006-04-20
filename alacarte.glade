@@ -1049,6 +1049,7 @@
 		  <property name="invisible_char">*</property>
 		  <property name="activates_default">False</property>
 		  <signal name="changed" handler="on_item_contents_changed" last_modification_time="Tue, 28 Mar 2006 21:16:52 GMT"/>
+		  <signal name="key_press_event" handler="on_item_command_entry_key_press_event" last_modification_time="Thu, 20 Apr 2006 02:47:00 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -1396,6 +1397,7 @@
 		  <property name="has_frame">True</property>
 		  <property name="invisible_char">*</property>
 		  <property name="activates_default">True</property>
+		  <signal name="key_press_event" handler="on_item_command_entry_key_press_event" last_modification_time="Thu, 20 Apr 2006 02:47:14 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>

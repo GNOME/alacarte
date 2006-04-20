@@ -43,6 +43,21 @@ class DialogHandler:
 		dialog.run()
 		dialog.destroy()
 
+	def showCommandDialog(self, command_entry):
+		dialog = gtk.FileChooserDialog('Choose a Program', None, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OK, gtk.RESPONSE_OK))
+		if len(command_entry.get_text()) and '/' in command_entry.get_text():
+			dialog.set_current_folder(command_entry.get_text().rsplit('/', 1)[0])
+		else:
+			dialog.set_current_folder('/usr/bin/')
+		file_filter = gtk.FileFilter()
+		file_filter.add_mime_type('application/x-executable')
+		file_filter.add_mime_type('application/x-shellscript')
+		dialog.set_filter(file_filter)
+		dialog.show_all()
+		if dialog.run() == gtk.RESPONSE_OK:
+			command_entry.set_text(dialog.get_filename())
+		dialog.destroy()
+
 	def showIconDialog(self, button):
 		dialog = gtk.FileChooserDialog('Choose an Icon', None, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OK, gtk.RESPONSE_OK))
 		if button.icon_path:
@@ -63,6 +78,11 @@ class DialogHandler:
 		dialog.set_preview_widget_active(False)
 		dialog.set_use_preview_label(False)
 		dialog.connect('selection-changed', self.on_icon_dialog_selection_changed, preview_image)
+		file_filter = gtk.FileFilter()
+		file_filter.add_mime_type('image/png')
+		file_filter.add_mime_type('image/x-xpixmap')
+		file_filter.add_mime_type('image/svg+xml')
+		dialog.set_filter(file_filter)
 		dialog.show_all()
 		if dialog.run() == gtk.RESPONSE_OK:
 			button.remove(button.get_children()[0])
@@ -207,7 +227,13 @@ class DialogHandler:
 
 	def on_item_icon_button_clicked(self, button):
 		if self.showIconDialog(button):
-			self.on_item_contents_changed(button)		
+			self.on_item_contents_changed(button)	
+
+	def on_item_command_button_clicked(self, button):
+		self.showCommandDialog(self.tree.get_widget('item_command_entry'))
+
+	def on_newitem_command_button_clicked(self, button):
+		self.showCommandDialog(self.tree.get_widget('newitem_command_entry'))
 
 	def saveItem(self, values):
 		pixbuf, path = util.getIcon(self.item, True)

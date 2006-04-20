@@ -43,9 +43,6 @@ class DialogHandler:
 		dialog.run()
 		dialog.destroy()
 
-	def on_icon_button_clicked(self, button):
-		self.showIconDialog(button)
-
 	def showIconDialog(self, button):
 		dialog = gtk.FileChooserDialog('Choose an Icon', None, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OK, gtk.RESPONSE_OK))
 		if button.icon_path:
@@ -75,7 +72,13 @@ class DialogHandler:
 			image.set_from_pixbuf(pixbuf)
 			image.show()
 			button.add(image)
+			dialog.destroy()
+			return True
 		dialog.destroy()
+		return False
+
+	def on_icon_button_clicked(self, button):
+		self.showIconDialog(button)
 
 	def on_icon_dialog_selection_changed(self, dialog, image):
 		icon_file = dialog.get_preview_filename()
@@ -190,14 +193,6 @@ class DialogHandler:
 			can_close = responseChecker(response)
 		dialog.destroy()
 
-	def saveItem(self, values):
-		pixbuf, path = util.getIcon(self.item, True)
-		#if the icon hasn't changed don't save the themed path
-		if path == values[0]:
-			self.editor.editItem(self.item, None, values[1], values[2], values[3], values[4])
-		else:
-			self.editor.editItem(self.item, values[0], values[1], values[2], values[3], values[4])
-
 	def on_item_contents_changed(self, garbage):
 		if not self.in_dialog_setup:
 			self.tree.get_widget('item_revert_button').set_sensitive(True)
@@ -209,6 +204,18 @@ class DialogHandler:
 				self.tree.get_widget('item_terminal_check').get_active()
 				)
 			self.saveItem(values)
+
+	def on_item_icon_button_clicked(self, button):
+		if self.showIconDialog(button):
+			self.on_item_contents_changed(button)		
+
+	def saveItem(self, values):
+		pixbuf, path = util.getIcon(self.item, True)
+		#if the icon hasn't changed don't save the themed path
+		if path == values[0]:
+			self.editor.editItem(self.item, None, values[1], values[2], values[3], values[4])
+		else:
+			self.editor.editItem(self.item, values[0], values[1], values[2], values[3], values[4])
 
 	def revertItem(self):
 		icon_button = self.tree.get_widget('item_icon_button')
@@ -251,7 +258,6 @@ class DialogHandler:
 		label = gtk.Label('No Icon')
 		icon_button.add(label)
 		icon_button.icon_path = None
-		dialog.set_icon(self.window_icon)
 		dialog.show_all()
 		can_close = False
 		while can_close == False:
@@ -307,7 +313,6 @@ class DialogHandler:
 		name_entry.set_text(self.menu.get_name())
 		if self.menu.get_comment():
 			comment_entry.set_text(self.menu.get_comment())
-		dialog.set_icon(self.window_icon)
 		dialog.show_all()
 		self.menu_original_values = (
 			icon_button.icon_path,
@@ -321,14 +326,6 @@ class DialogHandler:
 			can_close = responseChecker(response)
 		dialog.destroy()
 
-	def saveMenu(self, values):
-		pixbuf, path = util.getIcon(self.menu, True)
-		#if the icon hasn't changed don't save the themed path
-		if path == values[0]:
-			self.editor.editMenu(self.menu, None, values[1], values[2])
-		else:
-			self.editor.editMenu(self.menu, values[0], values[1], values[2])
-
 	def on_menu_contents_changed(self, garbage):
 		if not self.in_dialog_setup:
 			self.tree.get_widget('menu_revert_button').set_sensitive(True)
@@ -340,6 +337,18 @@ class DialogHandler:
 			self.saveMenu(values)
 			self.menu_row[1] = util.getIcon(self.tree.get_widget('menu_icon_button').icon_path)
 			self.menu_row[2] = self.tree.get_widget('menu_name_entry').get_text()
+
+	def on_menu_icon_button_clicked(self, button):
+		if self.showIconDialog(button):
+			self.on_menu_contents_changed(button)
+
+	def saveMenu(self, values):
+		pixbuf, path = util.getIcon(self.menu, True)
+		#if the icon hasn't changed don't save the themed path
+		if path == values[0]:
+			self.editor.editMenu(self.menu, None, values[1], values[2])
+		else:
+			self.editor.editMenu(self.menu, values[0], values[1], values[2])
 
 	def revertMenu(self):
 		icon_button = self.tree.get_widget('menu_icon_button')

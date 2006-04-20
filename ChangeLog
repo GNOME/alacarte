@@ -1,5 +1,10 @@
 2005-04-18  Travis Watkins  <alleykat@gmail.com>
 
+	* alacarte.glade:
+	* Alacarte/DialogHandler.py: fix icon selection
+
+2005-04-18  Travis Watkins  <alleykat@gmail.com>
+
 	* autogen.sh: require automake 1.9
 	* configure.ac: PoLinguas goal
 	* alacarte.desktop.in: add Icon key

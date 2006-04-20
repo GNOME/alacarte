@@ -41,11 +41,14 @@ class DialogHandler:
 		self.completion_used = gtk.ListStore(str)
 		self.command_completion.set_text_column(0)
 		paths = os.getenv('PATH')
-		for path in paths.split(':'):
+		for path in paths.split(os.pathsep):
 			if os.path.isdir(path):
 				try:
 					for name in os.listdir(path):
-						self.completion_full.append([name,])
+						f = os.path.join(path, name)
+						if os.path.isfile(f):
+							if os.access(f, os.X_OK):
+								self.completion_full.append([name,])
 				except:
 					pass
 		self.command_completion.set_model(self.completion_used)

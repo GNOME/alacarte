@@ -1,3 +1,7 @@
+2005-04-20  Travis Watkins  <alleykat@gmail.com>
+
+	* Alacarte/DialogHandler.py: only add executable files to completion
+
 2005-04-18  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.glade:

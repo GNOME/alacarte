@@ -18,4 +18,6 @@ intltool-update.in
 missing
 py-compile
 alacarte-dbg
+*.gladep
+*.pyc
 

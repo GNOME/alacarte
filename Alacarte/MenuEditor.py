@@ -60,13 +60,20 @@ class MenuEditor:
 		self.__loadMenus()
 
 	def revert(self):
-		for menu in ('applications', 'settings'):
-			self.revertTree(getattr(self, menu).tree.root)
-			path = os.path.join(util.getUserMenuPath(), menu + '.menu')
+		for name in ('applications', 'settings'):
+			menu = getattr(self, name)
+			self.revertTree(menu.tree.root)
+			path = os.path.join(util.getUserMenuPath(), menu.tree.get_menu_file())
 			try:
 				os.unlink(path)
 			except OSError:
 				pass
+			#reload DOM for each menu
+			if not os.path.isfile(menu.path):
+				menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
+			else:
+				menu.dom = xml.dom.minidom.parse(menu.path)
+			self.__remove_whilespace_nodes(menu.dom)
 
 	def revertTree(self, menu):
 		for child in menu.get_contents():
@@ -77,7 +84,7 @@ class MenuEditor:
 					os.unlink(child.get_desktop_file_path())
 				except OSError:
 					pass
-		path = os.path.join(util.getUserDirectoryPath(), menu.get_menu_id() + '.directory')
+		path = os.path.join(util.getUserDirectoryPath(), os.path.split(menu.get_desktop_file_path())[1])
 		try:
 			os.unlink(path)
 		except OSError:
@@ -126,6 +133,7 @@ class MenuEditor:
 				self.__writeItem(item, no_display=False)
 			else:
 				self.__addXmlFilename(menu_xml, dom, item.get_desktop_file_id(), 'Exclude')
+			self.__addXmlTextElement(menu_xml, 'AppDir', util.getUserItemPath(), dom)
 		elif item.get_type() == gmenu.TYPE_DIRECTORY:
 			#don't mess with it if it's empty
 			if len(item.get_contents()) == 0:
@@ -137,6 +145,7 @@ class MenuEditor:
 				self.__writeMenu(item, no_display=False)
 			else:
 				self.__writeMenu(item, no_display=True)
+			self.__addXmlTextElement(menu_xml, 'DirectoryDir', util.getUserDirectoryPath(), dom)
 		self.save()
 
 	def createItem(self, parent, icon, name, comment, command, use_term, before=None, after=None):
@@ -164,6 +173,13 @@ class MenuEditor:
 		if icon == item.get_icon() and name == item.get_name() and comment == item.get_comment() and command == item.get_exec() and use_term == item.get_launch_in_terminal():
 			return
 		self.__writeItem(item, icon, name, comment, command, use_term)
+		#FIXME: only works once but that's all we need
+		try:
+			dom = self.__getMenu(item.get_parent()).dom
+			menu_xml = self.__getXmlMenu(self.__getPath(item.get_parent()), dom, dom)
+			self.__addXmlTextElement(menu_xml, 'AppDir', util.getUserItemPath(), dom)
+		except:
+			pass
 		self.save()
 
 	def editMenu(self, menu, icon, name, comment):
@@ -174,7 +190,8 @@ class MenuEditor:
 		#otherwise changes won't show up
 		dom = self.__getMenu(menu).dom
 		menu_xml = self.__getXmlMenu(self.__getPath(menu), dom, dom)
-		self.__writeMenu(menu, icon, name, comment)
+		file_id = self.__writeMenu(menu, icon, name, comment)
+		self.__addXmlTextElement(menu_xml, 'DirectoryDir', util.getUserDirectoryPath(), dom)
 		self.save()
 
 	def copyItem(self, item, new_parent, before=None, after=None):
@@ -402,8 +419,8 @@ class MenuEditor:
 
 	def __writeMenu(self, menu=None, icon=None, name=None, comment=None, no_display=None):
 		if menu:
-			file_id = menu.get_menu_id() + '.directory'
-			file_path = util.getDirectoryPath(file_id)
+			file_id = os.path.split(menu.get_desktop_file_path())[1]
+			file_path = menu.get_desktop_file_path()
 			keyfile = util.DesktopParser(file_path)
 		elif menu == None and name == None:
 			raise Exception('New menus need a name')
@@ -426,8 +443,12 @@ class MenuEditor:
 
 	def __getXmlNodesByName(self, name, element):
 		for	child in element.childNodes:
-			if child.nodeType == xml.dom.Node.ELEMENT_NODE and child.nodeName in name:
-				yield child
+			if child.nodeType == xml.dom.Node.ELEMENT_NODE:
+				if isinstance(name, str) and child.nodeName == name:
+					yield child
+				elif isinstance(name, list) or isinstance(name, tuple):
+					if child.nodeName in name:
+						yield child
 
 	def __remove_whilespace_nodes(self, node):
 		remove_list = []
@@ -446,7 +467,8 @@ class MenuEditor:
 			node = dom.createElement('Move')
 			node.appendChild(self.__addXmlTextElement(node, 'Old', old, dom))
 			node.appendChild(self.__addXmlTextElement(node, 'New', new, dom))
-			return element.appendChild(node)
+			#are parsed in reverse order, need to put at the beginning
+			return element.insertBefore(node, element.firstChild)
 
 	def __addXmlLayout(self, element, layout, dom):
 		# remove old layout

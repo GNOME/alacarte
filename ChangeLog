@@ -1,3 +1,12 @@
+2005-04-21  Travis Watkins  <alleykat@gmail.com>
+
+	* Alacarte/MenuEditor.py
+	* Alacarte/MainWindow.py: use new gnome-menus API
+	* Alacarte/MenuEditor.py: reload ROM on full revert
+                                  better legacy menu support
+                                  make multiple moves work
+	* Alacarte/util.py: resize icons to 24x24
+
 2005-04-20  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/DialogHandler.py: only add executable files to completion

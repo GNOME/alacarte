@@ -74,7 +74,7 @@ class MainWindow:
 		if iter:
 			update_items = True
 			if items[iter][3].get_type() == gmenu.TYPE_DIRECTORY:
-				item_id = items[iter][3].get_menu_id()
+				item_id = os.path.split(items[iter][3].get_desktop_file_path())[1]
 				update_items = True
 			elif items[iter][3].get_type() == gmenu.TYPE_ENTRY:
 				item_id = items[iter][3].get_desktop_file_id()
@@ -85,7 +85,7 @@ class MainWindow:
 		update_menus = False
 		menu_id = None
 		if iter:
-			menu_id = menus[iter][2].get_menu_id()
+			menu_id = os.path.split(menus[iter][2].get_desktop_file_path())[1]
 			update_menus = True
 		self.loadMenus()
 		#find current menu in new tree
@@ -100,7 +100,7 @@ class MainWindow:
 			for item in item_tree.get_model():
 				if item[3].get_type() == gmenu.TYPE_ENTRY and item[3].get_desktop_file_id() == item_id:
 					item_tree.get_selection().select_path((i,))
-				if item[3].get_type() == gmenu.TYPE_DIRECTORY and item[3].get_menu_id() == item_id:
+				if item[3].get_type() == gmenu.TYPE_DIRECTORY and os.path.split(item[3].get_desktop_file_path())[1] == item_id:
 					item_tree.get_selection().select_path((i,))
 				if item[3].get_type() == gmenu.TYPE_SEPARATOR:
 					if not separator_path:
@@ -116,7 +116,7 @@ class MainWindow:
 				i += 1
 
 	def findMenu(self, menus, path, iter, menu_id):
-		 if menus[path][2].get_menu_id() == menu_id:
+		 if os.path.split(menus[path][2].get_desktop_file_path())[1] == menu_id:
 			menu_tree = self.tree.get_widget('menu_tree')
 			menu_tree.expand_to_path(path)
 			menu_tree.get_selection().select_path(path)
@@ -429,7 +429,12 @@ class MainWindow:
 			return
 		item = items[path][3]
 		before = items[(path[0] - 1,)][3]
-		self.editor.moveItem(item, item.get_parent(), before=before)
+		if item.get_type() == gmenu.TYPE_ENTRY:
+			self.editor.moveItem(item, item.get_parent(), before=before)
+		elif item.get_type() == gmenu.TYPE_DIRECTORY:
+			self.editor.moveMenu(item, item.get_parent(), before=before)
+		elif item.get_type() == gmenu.TYPE_SEPARATOR:
+			self.editor.moveSeparator(item, item.get_parent(), before=before)
 
 	def on_move_down_button_clicked(self, button):
 		item_tree = self.tree.get_widget('item_tree')
@@ -442,7 +447,12 @@ class MainWindow:
 			return
 		item = items[path][3]
 		after = items[path][3]
-		self.editor.moveItem(item, item.get_parent(), after=after)
+		if item.get_type() == gmenu.TYPE_ENTRY:
+			self.editor.moveItem(item, item.get_parent(), after=after)
+		elif item.get_type() == gmenu.TYPE_DIRECTORY:
+			self.editor.moveMenu(item, item.get_parent(), after=after)
+		elif item.get_type() == gmenu.TYPE_SEPARATOR:
+			self.editor.moveSeparator(item, item.get_parent(), after=after)
 
 	def on_revert_button_clicked(self, button):
 		dialog = gtk.MessageDialog(None, gtk.DIALOG_MODAL, gtk.MESSAGE_QUESTION, gtk.BUTTONS_YES_NO, _('Revert all menus to original settings?'))

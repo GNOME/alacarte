@@ -161,6 +161,7 @@ def getUserMenuXml(tree):
 	return menu_xml
 
 def getIcon(item, for_properties=False):
+	pixbuf, path = None, None
 	if isinstance(item, str):
 		iconName = item
 	else:
@@ -169,24 +170,30 @@ def getIcon(item, for_properties=False):
 		iconName = iconName[:-4]
 	icon_theme = gtk.icon_theme_get_default()
 	try:
-		if for_properties:
-			return icon_theme.load_icon(iconName, 24, 0), icon_theme.lookup_icon(iconName, 24, 0).get_filename()
-		return icon_theme.load_icon(iconName, 24, 0)
+		pixbuf = icon_theme.load_icon(iconName, 24, 0)
+		path = icon_theme.lookup_icon(iconName, 24, 0).get_filename()
 	except:
 		if iconName and '/' in iconName:
 			try:
-				if for_properties:
-					return gtk.gdk.pixbuf_new_from_file_at_size(iconName, 24, 24), iconName
-				return gtk.gdk.pixbuf_new_from_file_at_size(iconName, 24, 24)
+				pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(iconName, 24, 24)
+				path = iconName
 			except:
 				pass
-		if for_properties:
-			return None, None
-		if item.get_type() == gmenu.TYPE_DIRECTORY:
-			iconName = 'gnome-fs-directory'
-		elif item.get_type() == gmenu.TYPE_ENTRY:
-			iconName = 'application-default-icon'
-		try:
-			return icon_theme.load_icon(iconName, 24, 0)
-		except:
-			return None
+		if pixbuf == None:
+			if for_properties:
+				return None, None
+			if item.get_type() == gmenu.TYPE_DIRECTORY:
+				iconName = 'gnome-fs-directory'
+			elif item.get_type() == gmenu.TYPE_ENTRY:
+				iconName = 'application-default-icon'
+			try:
+				pixbuf = icon_theme.load_icon(iconName, 24, 0)
+				path = icon_theme.lookup_icon(iconName, 24, 0).get_filename()
+			except:
+				return None
+	if pixbuf == None:
+		return None
+	pixbuf = pixbuf.scale_simple(24, 24, gtk.gdk.INTERP_HYPER)
+	if for_properties:
+		return pixbuf, path
+	return pixbuf

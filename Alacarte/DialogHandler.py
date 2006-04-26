@@ -350,8 +350,9 @@ class DialogHandler:
 					self.showError(_('A name is required.'))
 					return False
 				if self.tree.get_widget('menu_name_entry').get_text() == 'Other':
-					self.showError(_('A menu cannot be named "Other".'))
-					return False
+					if self.menu_original_values[1] != 'Other':
+						self.showError(_('A menu cannot be named "Other".'))
+						return False
 				return True
 			return False
 		self.in_dialog_setup = True

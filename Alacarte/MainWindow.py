@@ -44,7 +44,7 @@ class MainWindow:
 		self.version = version
 		self.editor = MenuEditor()
 		gtk.window_set_default_icon_name('alacarte')
-		self.tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'), 'mainwindow')
+		self.tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'))
 		self.tree.get_widget('mainwindow').connect('destroy', lambda *a: gtk.main_quit())
 		signals = {}
 		for attr in dir(self):
@@ -56,6 +56,8 @@ class MainWindow:
 		self.tree.get_widget('edit_delete').set_sensitive(False)
 		self.tree.get_widget('edit_revert_to_original').set_sensitive(False)
 		self.tree.get_widget('edit_properties').set_sensitive(False)
+		self.tree.get_widget('move_up_button').set_sensitive(False)
+		self.tree.get_widget('move_down_button').set_sensitive(False)
 
 	def menuChanged(self, *a):
 		if self.timer:
@@ -182,9 +184,12 @@ class MainWindow:
 		for menu in self.editor.getMenus():
 			iters = [None]*20
 			self.loadMenu(iters, menu)
-		self.tree.get_widget('menu_tree').set_model(self.menu_store)
+		menu_tree = self.tree.get_widget('menu_tree')
+		menu_tree.set_model(self.menu_store)
 		for menu in self.menu_store:
-			self.tree.get_widget('menu_tree').expand_to_path(menu.path)
+			menu_tree.expand_to_path(menu.path)
+		menu_tree.get_selection().select_path((0,))
+		self.on_menu_tree_cursor_changed(menu_tree)
 
 	def loadMenu(self, iters, parent, depth=0):
 		if depth == 0:
@@ -216,7 +221,7 @@ class MainWindow:
 				icon = util.getIcon(item)
 			self.item_store.append((show, icon, name, item))
 
-	def on_file_new_menu_activate(self, menu):
+	def on_new_menu_button_clicked(self, button):
 		menu_tree = self.tree.get_widget('menu_tree')
 		menus, iter = menu_tree.get_selection().get_selected()
 		if not iter:
@@ -231,7 +236,7 @@ class MainWindow:
 		#FIXME: make gnome-menus update monitors when menus are added
 		gobject.timeout_add(3, self.loadUpdates)
 
-	def on_file_new_item_activate(self, menu):
+	def on_new_item_button_clicked(self, button):
 		menu_tree = self.tree.get_widget('menu_tree')
 		menus, iter = menu_tree.get_selection().get_selected()
 		if not iter:
@@ -244,7 +249,7 @@ class MainWindow:
 		if values:
 			self.editor.createItem(parent, values[0], values[1], values[2], values[3], values[4])
 
-	def on_file_new_separator_activate(self, menu):
+	def on_new_separator_button_clicked(self, button):
 		item_tree = self.tree.get_widget('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
 		if not iter:
@@ -294,13 +299,6 @@ class MainWindow:
 			self.allow_update = True
 			self.loadUpdates()
 
-	def on_help_about_activate(self, menu):
-		tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'), 'aboutdialog')
-		dialog = tree.get_widget('aboutdialog')
-		dialog.set_version(self.version)
-		dialog.set_logo(gtk.gdk.pixbuf_new_from_file(os.path.join(self.file_path, 'logo.svg')))
-		dialog.show()
-
 	def on_menu_tree_cursor_changed(self, treeview):
 		menus, iter = treeview.get_selection().get_selected()
 		menu_path = menus.get_path(iter)
@@ -310,6 +308,8 @@ class MainWindow:
 		self.tree.get_widget('edit_delete').set_sensitive(False)
 		self.tree.get_widget('edit_revert_to_original').set_sensitive(False)
 		self.tree.get_widget('edit_properties').set_sensitive(False)
+		self.tree.get_widget('move_up_button').set_sensitive(False)
+		self.tree.get_widget('move_down_button').set_sensitive(False)
 
 	def on_menu_tree_drag_data_get(self, treeview, context, selection, target_id, etime):
 		menus, iter = treeview.get_selection().get_selected()
@@ -327,6 +327,7 @@ class MainWindow:
 			if selection.target in ('ALACARTE_ITEM_ROW', 'ALACARTE_MENU_ROW'):
 				item = self.drag_data
 				new_parent = menus[path][2]
+				treeview.get_selection().select_path(path)
 				if item.get_type() == gmenu.TYPE_ENTRY:
 					self.editor.copyItem(item, new_parent)
 				elif item.get_type() == gmenu.TYPE_DIRECTORY:
@@ -357,6 +358,8 @@ class MainWindow:
 			self.tree.get_widget('edit_properties').set_sensitive(True)
 		else:
 			self.tree.get_widget('edit_properties').set_sensitive(False)
+		self.tree.get_widget('move_up_button').set_sensitive(True)
+		self.tree.get_widget('move_down_button').set_sensitive(True)
 
 	def on_item_tree_row_activated(self, treeview, path, column):
 		self.on_edit_properties_activate(None)
@@ -380,8 +383,8 @@ class MainWindow:
 			event_time = 0
 			item_tree.grab_focus()
 			item_tree.set_cursor(path, item_tree.get_columns()[0], 0)
-		popup = self.tree.get_widget('edit_menu_menu')
-		popup.popup( None, None, None, button, event_time)
+		popup = self.tree.get_widget('edit_menu')
+		popup.popup(None, None, None, button, event_time)
 		#without this shift-f10 won't work
 		return True
 

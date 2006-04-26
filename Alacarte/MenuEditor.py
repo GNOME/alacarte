@@ -97,8 +97,8 @@ class MenuEditor:
 		else:
 			for menu in parent.get_contents():
 				if menu.get_type() == gmenu.TYPE_DIRECTORY:
-					if menu.menu_id == 'Other' and len(menu.get_contents()) == 0:
-						continue
+#					if menu.menu_id == 'Other' and len(menu.get_contents()) == 0:
+#						continue
 					yield (menu, self.__isVisible(menu))
 
 	def getItems(self, menu):

@@ -1,5 +1,12 @@
 2005-04-21  Travis Watkins  <alleykat@gmail.com>
 
+	* alacarte.glade:
+	* Alacarte/MainWindow.py: UI redesign
+	* Alacarte/DialogHandler.py:
+	* Alacarte/MenuEditor.py: treat 'Other' menu like a normal one
+
+2005-04-21  Travis Watkins  <alleykat@gmail.com>
+
 	* Alacarte/MenuEditor.py
 	* Alacarte/MainWindow.py: use new gnome-menus API
 	* Alacarte/MenuEditor.py: reload ROM on full revert

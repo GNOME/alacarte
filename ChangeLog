@@ -1,3 +1,9 @@
+2005-04-27  Travis Watkins  <alleykat@gmail.com>
+
+	* alacarte.glade: UI tweaks
+	* Alacarte/util.py: don't resize icons unless needed, makes them
+	blurry
+
 2005-04-26  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.glade: make up/down buttons work

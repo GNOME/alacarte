@@ -223,7 +223,8 @@ def getIcon(item, for_properties=False):
 				return None
 	if pixbuf == None:
 		return None
-	pixbuf = pixbuf.scale_simple(24, 24, gtk.gdk.INTERP_HYPER)
+	if pixbuf.get_width() != 24 or pixbuf.get_height() != 24:
+		pixbuf = pixbuf.scale_simple(24, 24, gtk.gdk.INTERP_HYPER)
 	if for_properties:
 		return pixbuf, path
 	return pixbuf

@@ -96,6 +96,7 @@ class MenuEditor:
 			self.__remove_whilespace_nodes(menu.dom)
 			#reset undo/redo, no way to recover from this
 			self.__undo, self.__redo = [], []
+		self.save()
 
 	def revertTree(self, menu):
 		for child in menu.get_contents():
@@ -328,7 +329,7 @@ class MenuEditor:
 		dom = self.__getMenu(parent).dom
 		menu_xml = self.__getXmlMenu(self.__getPath(parent), dom, dom)
 		self.__addXmlLayout(menu_xml, layout, dom)
-		self.__addUndo([self.__getMenu(separator.get_parent()),])
+		self.__addUndo([self.__getMenu(item.get_parent()),])
 		self.save()
 
 	def revertItem(self, item):

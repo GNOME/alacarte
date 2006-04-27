@@ -1,5 +1,13 @@
 2005-04-27  Travis Watkins  <alleykat@gmail.com>
 
+	* alacarte.glade: allow resizing
+	* Alacarte/MenuEditor.py: small bug fix
+	* Alacarte/MainWindow.py:
+	* Alacarte/DialogHandler.py: speed up editing by not instantly
+	updating
+
+2005-04-27  Travis Watkins  <alleykat@gmail.com>
+
 	* alacarte.glade: UI tweaks
 	* Alacarte/util.py: don't resize icons unless needed, makes them
 	blurry

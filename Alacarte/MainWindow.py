@@ -72,7 +72,7 @@ class MainWindow:
 
 	def loadUpdates(self):
 		if not self.allow_update:
-			return
+			return False
 		menu_tree = self.tree.get_widget('menu_tree')
 		item_tree = self.tree.get_widget('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
@@ -87,7 +87,8 @@ class MainWindow:
 				item_id = items[iter][3].get_desktop_file_id()
 				update_items = True
 			elif items[iter][3].get_type() == gmenu.TYPE_SEPARATOR:
-				separator_path = items.get_path(iter)				
+				item_id = items.get_path(iter)
+				update_items = True
 		menus, iter = menu_tree.get_selection().get_selected()
 		update_menus = False
 		menu_id = None
@@ -105,23 +106,28 @@ class MainWindow:
 		if update_items:
 			i = 0
 			for item in item_tree.get_model():
+				found = False
 				if item[3].get_type() == gmenu.TYPE_ENTRY and item[3].get_desktop_file_id() == item_id:
-					item_tree.get_selection().select_path((i,))
+					found = True
 				if item[3].get_type() == gmenu.TYPE_DIRECTORY and os.path.split(item[3].get_desktop_file_path())[1] == item_id:
-					item_tree.get_selection().select_path((i,))
+					found = True
 				if item[3].get_type() == gmenu.TYPE_SEPARATOR:
-					if not separator_path:
+					if not isinstance(item_id, tuple):
 						continue
 					#separators have no id, have to find them manually
 					#probably won't work with two separators together
-					if (separator_path[0] - 1,) == (i,):
-						item_tree.get_selection().select_path((i,))
-					elif (separator_path[0] + 1,) == (i,):
-						item_tree.get_selection().select_path((i,))
-					elif (separator_path[0],) == (i,):
-						item_tree.get_selection().select_path((i,))
+					if (item_id[0] - 1,) == (i,):
+						found = True
+					elif (item_id[0] + 1,) == (i,):
+						found = True
+					elif (item_id[0],) == (i,):
+						found = True
+				if found:
+					item_tree.get_selection().select_path((i,))
+					self.on_item_tree_cursor_changed(item_tree)
+					break
 				i += 1
-			self.on_item_tree_cursor_changed(item_tree)
+		return False
 
 	def findMenu(self, menus, path, iter, menu_id):
 		 if os.path.split(menus[path][2].get_desktop_file_path())[1] == menu_id:
@@ -297,13 +303,13 @@ class MainWindow:
 		if not iter:
 			return
 		item = items[iter][3]
+		self.allow_update = False
 		if item.get_type() == gmenu.TYPE_ENTRY:
-			self.dialogs.editItemDialog(items[iter][3])
+			self.dialogs.editItemDialog(items[iter])
 		elif item.get_type() == gmenu.TYPE_DIRECTORY:
-			self.allow_update = False
 			self.dialogs.editMenuDialog(items[iter])
-			self.allow_update = True
-			self.loadUpdates()
+		self.allow_update = True
+		self.loadUpdates()
 
 	def on_menu_tree_cursor_changed(self, treeview):
 		menus, iter = treeview.get_selection().get_selected()
@@ -477,5 +483,8 @@ class MainWindow:
 
 	def on_close_button_clicked(self, button):
 		self.tree.get_widget('mainwindow').hide()
+		gobject.timeout_add(10, self.quit)
+
+	def quit(self):
 		self.editor.quit()
-		gtk.main_quit()
+		gtk.main_quit()		

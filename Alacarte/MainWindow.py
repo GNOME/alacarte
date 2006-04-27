@@ -45,7 +45,6 @@ class MainWindow:
 		self.editor = MenuEditor()
 		gtk.window_set_default_icon_name('alacarte')
 		self.tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'))
-		self.tree.get_widget('mainwindow').connect('destroy', lambda *a: gtk.main_quit())
 		signals = {}
 		for attr in dir(self):
 			signals[attr] = getattr(self, attr)
@@ -58,6 +57,12 @@ class MainWindow:
 		self.tree.get_widget('edit_properties').set_sensitive(False)
 		self.tree.get_widget('move_up_button').set_sensitive(False)
 		self.tree.get_widget('move_down_button').set_sensitive(False)
+		accelgroup = gtk.AccelGroup()
+		keyval, modifier = gtk.accelerator_parse('<Ctrl>Z')
+		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_mainwindow_undo)
+		keyval, modifier = gtk.accelerator_parse('<Ctrl><Shift>Z')
+		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_mainwindow_redo)
+		self.tree.get_widget('mainwindow').add_accel_group(accelgroup)
 
 	def menuChanged(self, *a):
 		if self.timer:
@@ -116,6 +121,7 @@ class MainWindow:
 					elif (separator_path[0],) == (i,):
 						item_tree.get_selection().select_path((i,))
 				i += 1
+			self.on_item_tree_cursor_changed(item_tree)
 
 	def findMenu(self, menus, path, iter, menu_id):
 		 if os.path.split(menus[path][2].get_desktop_file_path())[1] == menu_id:
@@ -457,6 +463,12 @@ class MainWindow:
 		elif item.get_type() == gmenu.TYPE_SEPARATOR:
 			self.editor.moveSeparator(item, item.get_parent(), after=after)
 
+	def on_mainwindow_undo(self, accelgroup, window, keyval, modifier):
+		self.editor.undo()
+
+	def on_mainwindow_redo(self, accelgroup, window, keyval, modifier):
+		self.editor.redo()
+
 	def on_revert_button_clicked(self, button):
 		dialog = gtk.MessageDialog(None, gtk.DIALOG_MODAL, gtk.MESSAGE_QUESTION, gtk.BUTTONS_YES_NO, _('Revert all menus to original settings?'))
 		if dialog.run() == gtk.RESPONSE_YES:
@@ -464,4 +476,6 @@ class MainWindow:
 		dialog.destroy()
 
 	def on_close_button_clicked(self, button):
+		self.tree.get_widget('mainwindow').hide()
+		self.editor.quit()
 		gtk.main_quit()

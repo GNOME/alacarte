@@ -1,3 +1,11 @@
+2005-04-26  Travis Watkins  <alleykat@gmail.com>
+
+	* alacarte.glade: make up/down buttons work
+	* Alacarte/MainWindow.py:
+	* Alacarte/MenuEditor.py:
+	* Alacarte/DialogHandler.py: add undo/redo support!
+	* Alacarte/MenuEditor.py: make revert less destructive as root
+
 2005-04-21  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.glade:

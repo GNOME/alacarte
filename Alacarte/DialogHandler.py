@@ -184,6 +184,8 @@ class DialogHandler:
 			return False
 		self.in_dialog_setup = True
 		self.item = item
+		#item likes to lose it's parent
+		self.item_parent = item.get_parent()
 		#load widgets
 		self.tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'), 'itemproperties')
 		signals = {}
@@ -227,6 +229,8 @@ class DialogHandler:
 			term_check.get_active()
 			)
 		self.in_dialog_setup = False
+		#hack to make undo work
+		self.saveItem(self.item_original_values, True)
 		can_close = False
 		while can_close == False:
 			response = dialog.run()
@@ -278,13 +282,13 @@ class DialogHandler:
 	def on_newitem_command_button_clicked(self, button):
 		self.showCommandDialog(self.tree.get_widget('newitem_command_entry'))
 
-	def saveItem(self, values):
+	def saveItem(self, values, final=False):
 		pixbuf, path = util.getIcon(self.item, True)
 		#if the icon hasn't changed don't save the themed path
 		if path == values[0]:
-			self.editor.editItem(self.item, None, values[1], values[2], values[3], values[4])
+			self.editor.editItem(self.item, None, values[1], values[2], values[3], values[4], self.item_parent, final)
 		else:
-			self.editor.editItem(self.item, values[0], values[1], values[2], values[3], values[4])
+			self.editor.editItem(self.item, values[0], values[1], values[2], values[3], values[4], self.item_parent, final)
 
 	def revertItem(self):
 		icon_button = self.tree.get_widget('item_icon_button')
@@ -316,9 +320,6 @@ class DialogHandler:
 				if len(tree.get_widget('newmenu_name_entry').get_text()) == 0:
 					self.showError(_('A name is required.'))
 					return False
-				if tree.get_widget('newmenu_name_entry').get_text() == 'Other':
-					self.showError(_('A menu cannot be named "Other".'))
-					return False
 				return 'save'
 			return True
 		dialog = tree.get_widget('newmenuproperties')
@@ -349,10 +350,6 @@ class DialogHandler:
 				if len(self.tree.get_widget('menu_name_entry').get_text()) == 0:
 					self.showError(_('A name is required.'))
 					return False
-				if self.tree.get_widget('menu_name_entry').get_text() == 'Other':
-					if self.menu_original_values[1] != 'Other':
-						self.showError(_('A menu cannot be named "Other".'))
-						return False
 				return True
 			return False
 		self.in_dialog_setup = True
@@ -390,6 +387,8 @@ class DialogHandler:
 			comment_entry.get_text()
 			)
 		self.in_dialog_setup = False
+		#hack to make undo work
+		self.saveMenu(self.menu_original_values, True)
 		can_close = False
 		while can_close == False:
 			response = dialog.run()
@@ -412,13 +411,13 @@ class DialogHandler:
 		if self.showIconDialog(button):
 			self.on_menu_contents_changed(button)
 
-	def saveMenu(self, values):
+	def saveMenu(self, values, final=False):
 		pixbuf, path = util.getIcon(self.menu, True)
 		#if the icon hasn't changed don't save the themed path
 		if path == values[0]:
-			self.editor.editMenu(self.menu, None, values[1], values[2])
+			self.editor.editMenu(self.menu, None, values[1], values[2], final)
 		else:
-			self.editor.editMenu(self.menu, values[0], values[1], values[2])
+			self.editor.editMenu(self.menu, values[0], values[1], values[2], final)
 
 	def revertMenu(self):
 		icon_button = self.tree.get_widget('menu_icon_button')

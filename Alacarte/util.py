@@ -89,6 +89,33 @@ def getUniqueFileId(name, extension):
 			append += 1
 	return filename
 
+def getUniqueRedoFile(filepath):
+	append = 0
+	while 1:
+		new_filepath = filepath + '.redo-' + str(append)
+		if not os.path.isfile(new_filepath):
+			break
+		else:
+			append += 1
+	return new_filepath
+
+def getUniqueUndoFile(filepath):
+	filename, extension = os.path.split(filepath)[1].rsplit('.', 1)
+	append = 0
+	while 1:
+		if extension == 'desktop':
+			path = getUserItemPath()
+		elif extension == 'directory':
+			path = getUserDirectoryPath()
+		elif extension == 'menu':
+			path = getUserMenuPath()
+		new_filepath = os.path.join(path, filename + '.' + extension + '.undo-' + str(append))
+		if not os.path.isfile(new_filepath):
+			break
+		else:
+			append += 1
+	return new_filepath
+
 def getUserMenuPath():
 	menu_dir = None
 	if os.environ.has_key('XDG_CONFIG_HOME'):
@@ -145,15 +172,18 @@ def getUserDirectoryPath():
 		os.makedirs(menu_dir)
 	return menu_dir
 
-def getSystemMenu(file_name):
+def getSystemMenuPath(file_name):
 	if os.environ.has_key('XDG_CONFIG_DIRS'):
 		for system_path in os.environ['XDG_CONFIG_DIRS'].split(':'):
 			if os.path.isfile(os.path.join(system_path, 'menus', file_name)):
 				return os.path.join(system_path, file_name)
-	return os.path.join('/', 'etc', 'xdg', 'menus', file_name)
+	file_path = os.path.join('/', 'etc', 'xdg', 'menus', file_name)
+	if os.path.isfile(file_path):
+		return file_path
+	return False
 
 def getUserMenuXml(tree):
-	system_file = getSystemMenu(tree.get_menu_file())
+	system_file = getSystemMenuPath(tree.get_menu_file())
 	name = tree.root.get_menu_id()
 	menu_xml = "<!DOCTYPE Menu PUBLIC '-//freedesktop//DTD Menu 1.0//EN' 'http://standards.freedesktop.org/menu-spec/menu-1.0.dtd'>\n"
 	menu_xml += "<Menu>\n  <Name>" + name + "</Name>\n  "

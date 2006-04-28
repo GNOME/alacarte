@@ -192,6 +192,10 @@ def getUserMenuXml(tree):
 
 def getIcon(item, for_properties=False):
 	pixbuf, path = None, None
+	if item == None:
+		if for_properties:
+			return None, None
+		return None
 	if isinstance(item, str):
 		iconName = item
 	else:

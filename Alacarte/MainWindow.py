@@ -93,7 +93,10 @@ class MainWindow:
 		update_menus = False
 		menu_id = None
 		if iter:
-			menu_id = os.path.split(menus[iter][2].get_desktop_file_path())[1]
+			if menus[iter][2].get_desktop_file_path():
+				menu_id = os.path.split(menus[iter][2].get_desktop_file_path())[1]
+			else:
+				menu_id = menus[iter][2].get_menu_id()
 			update_menus = True
 		self.loadMenus()
 		#find current menu in new tree
@@ -130,7 +133,14 @@ class MainWindow:
 		return False
 
 	def findMenu(self, menus, path, iter, menu_id):
-		 if os.path.split(menus[path][2].get_desktop_file_path())[1] == menu_id:
+		if not menus[path][2].get_desktop_file_path():
+			if menu_id == menus[path][2].get_menu_id():
+				menu_tree = self.tree.get_widget('menu_tree')
+				menu_tree.expand_to_path(path)
+				menu_tree.get_selection().select_path(path)
+				return True
+			return False
+		if os.path.split(menus[path][2].get_desktop_file_path())[1] == menu_id:
 			menu_tree = self.tree.get_widget('menu_tree')
 			menu_tree.expand_to_path(path)
 			menu_tree.get_selection().select_path(path)
@@ -482,7 +492,10 @@ class MainWindow:
 		dialog.destroy()
 
 	def on_close_button_clicked(self, button):
-		self.tree.get_widget('mainwindow').hide()
+		try:
+			self.tree.get_widget('mainwindow').hide()
+		except:
+			pass
 		gobject.timeout_add(10, self.quit)
 
 	def quit(self):

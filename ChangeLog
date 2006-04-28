@@ -1,3 +1,9 @@
+2005-04-28  Travis Watkins  <alleykat@gmail.com>
+
+	* alacarte.glade: add destroy handler
+	* Alacarte/MainWindow.py: fix for legacy menus
+	* Alacarte/util.py: fix for items without icons
+
 2005-04-27  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.glade: allow resizing

@@ -1264,6 +1264,7 @@
   <property name="urgency_hint">False</property>
   <property name="has_separator">False</property>
   <signal name="close" handler="on_close_button_clicked" last_modification_time="Wed, 26 Apr 2006 18:46:45 GMT"/>
+  <signal name="destroy" handler="on_close_button_clicked" last_modification_time="Fri, 28 Apr 2006 10:49:37 GMT"/>
   <accelerator key="Escape" modifiers="0" signal="close"/>
 
   <child internal-child="vbox">

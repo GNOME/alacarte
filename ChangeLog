@@ -1,5 +1,9 @@
 2005-04-29  Travis Watkins  <alleykat@gmail.com>
 
+	* Alacarte/MenuEditor.py: legacydirs fix
+
+2005-04-29  Travis Watkins  <alleykat@gmail.com>
+
 	* alacarte.desktop.in: change Name and Categories
 
 2005-04-28  Travis Watkins  <alleykat@gmail.com>

@@ -163,7 +163,10 @@ class MenuEditor:
 				if os.path.isfile(os.path.join(path, item.get_desktop_file_id())):
 					return True
 		elif item.get_type() == gmenu.TYPE_DIRECTORY:
-			file_id = os.path.split(item.get_desktop_file_path())[1]
+			if item.get_desktop_file_path():
+				file_id = os.path.split(item.get_desktop_file_path())[1]
+			else:
+				file_id = item.get_menu_id() + '.directory'
 			if util.getDirectoryPath(file_id):
 				path = util.getUserDirectoryPath()
 				if os.path.isfile(os.path.join(path, file_id)):

@@ -38,9 +38,14 @@ class DesktopParser(ConfigParser):
 		return option
 
 	def get(self, option, locale=None):
-		if locale:
-			option = option + '[%s]' % locale
-		value = ConfigParser.get(self, 'Desktop Entry', option)
+		locale_option = option + '[%s]' % locale
+		try:
+			value = ConfigParser.get(self, 'Desktop Entry', locale_option)
+		except:
+			try:
+				value = ConfigParser.get(self, 'Desktop Entry', option)
+			except:
+				return None
 		if self._list_separator in value:
 			value = value.split(self._list_separator)
 		if value == 'true':
@@ -81,12 +86,13 @@ def getUniqueFileId(name, extension):
 			filename = name + '-' + str(append) + extension
 		if extension == '.desktop':
 			path = getUserItemPath()
+			if not os.path.isfile(os.path.join(path, filename)) and not getItemPath(filename):
+				break
 		elif extension == '.directory':
 			path = getUserDirectoryPath()
-		if not os.path.isfile(os.path.join(path, filename)):
-			break
-		else:
-			append += 1
+			if not os.path.isfile(os.path.join(path, filename)) and not getDirectoryPath(filename):
+				break
+		append += 1
 	return filename
 
 def getUniqueRedoFile(filepath):

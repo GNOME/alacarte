@@ -204,7 +204,7 @@ class MenuEditor:
 		dom = self.__getMenu(parent).dom
 		self.__addItem(parent, file_id, dom)
 		self.__positionItem(parent, ('Item', file_id), before, after)
-		self.__addUndo.append([self.__getMenu(parent), ('Item', file_id)])
+		self.__addUndo([self.__getMenu(parent), ('Item', file_id)])
 		self.save()
 
 	def createMenu(self, parent, icon, name, comment, before=None, after=None):
@@ -214,12 +214,12 @@ class MenuEditor:
 		menu_xml = self.__getXmlMenu(self.__getPath(parent) + '/' + menu_id, dom, dom)
 		self.__addXmlTextElement(menu_xml, 'Directory', file_id, dom)
 		self.__positionItem(parent, ('Menu', menu_id), before, after)
-		self.__addUndo.append([self.__getMenu(parent), ('Menu', file_id)])
+		self.__addUndo([self.__getMenu(parent), ('Menu', file_id)])
 		self.save()
 
 	def createSeparator(self, parent, before=None, after=None):
 		self.__positionItem(parent, ('Separator',), before, after)
-		self.__addUndo.append([self.__getMenu(parent), ('Separator',)])
+		self.__addUndo([self.__getMenu(parent), ('Separator',)])
 		self.save()
 
 	def editItem(self, item, icon, name, comment, command, use_term, parent=None, final=True):

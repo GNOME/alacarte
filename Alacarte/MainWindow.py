@@ -16,7 +16,7 @@
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import gtk, gtk.glade, gmenu, gobject
+import gtk, gtk.glade, gmenu, gobject, gnomevfs, gnome.ui
 import cgi, os
 import gettext
 gettext.bindtextdomain('alacarte')
@@ -34,9 +34,9 @@ class MainWindow:
 	#hack to make editing menu properties work
 	allow_update = True
 	#drag-and-drop stuff
-	dnd_items = [('ALACARTE_ITEM_ROW', gtk.TARGET_SAME_APP, 0)]
+	dnd_items = [('ALACARTE_ITEM_ROW', gtk.TARGET_SAME_APP, 0), ('text/plain', 0, 1)]
 	dnd_menus = [('ALACARTE_MENU_ROW', gtk.TARGET_SAME_APP, 0)]
-	dnd_both = dnd_items + dnd_menus
+	dnd_both = [dnd_items[0],] + dnd_menus
 	drag_data = None
 
 	def __init__(self, datadir, version, argv):
@@ -63,6 +63,7 @@ class MainWindow:
 		keyval, modifier = gtk.accelerator_parse('<Ctrl><Shift>Z')
 		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_mainwindow_redo)
 		self.tree.get_widget('mainwindow').add_accel_group(accelgroup)
+		gnome.ui.authentication_manager_init()
 
 	def menuChanged(self, *a):
 		if self.timer:
@@ -421,19 +422,16 @@ class MainWindow:
 			drop_info = treeview.get_dest_row_at_pos(x, y)
 			before = None
 			after = None
+			item = self.drag_data
 			if drop_info:
 				path, position = drop_info
-				item = self.drag_data
 				if position in types:
 					before = items[path][3]
-					item = self.drag_data
 				else:
 					after = items[path][3]
-					item = self.drag_data
 			else:
 				path = (len(items) - 1,)
 				after = items[path][3]
-				item = self.drag_data
 			if item.get_type() == gmenu.TYPE_ENTRY:
 				self.editor.moveItem(item, item.get_parent(), before, after)
 			elif item.get_type() == gmenu.TYPE_DIRECTORY:
@@ -442,6 +440,41 @@ class MainWindow:
 			elif item.get_type() == gmenu.TYPE_SEPARATOR:
 				self.editor.moveSeparator(item, item.get_parent(), before, after)
 			context.finish(True, True, etime)
+		elif selection.target == 'text/plain':
+			menus, iter = self.tree.get_widget('menu_tree').get_selection().get_selected()
+			parent = menus[iter][2]
+			drop_info = treeview.get_dest_row_at_pos(x, y)
+			before = None
+			after = None
+			if drop_info:
+				path, position = drop_info
+				if position in types:
+					before = items[path][3]
+				else:
+					after = items[path][3]
+			else:
+				path = (len(items) - 1,)
+				after = items[path][3]
+			file_path = gnomevfs.unescape_string(selection.data, '').strip()
+			if not file_path.startswith('file:'):
+				return
+			file_info = gnomevfs.get_file_info(
+				file_path, gnomevfs.FILE_INFO_GET_MIME_TYPE|
+				gnomevfs.FILE_INFO_FORCE_SLOW_MIME_TYPE|
+				gnomevfs.FILE_INFO_FOLLOW_LINKS|gnomevfs.FILE_INFO_DEFAULT
+				)
+			if file_info.mime_type == 'application/x-desktop':
+				handle = gnomevfs.open(file_path)
+				data = handle.read(file_info.size)
+				open('/tmp/alacarte-dnd.desktop', 'w').write(data)
+				parser = util.DesktopParser('/tmp/alacarte-dnd.desktop')
+				self.editor.createItem(parent, parser.get('Icon'), parser.get('Name', self.editor.locale), parser.get('Comment', self.editor.locale), parser.get('Exec'), parser.get('Terminal'), before, after)
+			elif file_info.mime_type in ('application/x-shellscript', 'application/x-executable'):
+				self.editor.createItem(parent, None, os.path.split(file_path)[1].strip(), None, file_path.replace('file://', '').strip(), False, before, after)
+
+	def on_item_tree_key_press_event(self, item_tree, event):
+		if event.keyval == gtk.keysyms.Delete:
+			self.on_edit_delete_activate(item_tree)
 
 	def on_move_up_button_clicked(self, button):
 		item_tree = self.tree.get_widget('item_tree')

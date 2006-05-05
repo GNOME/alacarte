@@ -1,18 +1,25 @@
-2005-04-29  Travis Watkins  <alleykat@gmail.com>
+2006-05-04  Travis Watkins  <alleykat@gmail.com>
+
+	* Alacarte/MainWindow.py: make Delete delete items
+	* Alacarte/MenuEditor.py:
+	* Alacarte/MainWindow.py:
+	* Alacarte/util.py: add DnD for .desktop files and executable files
+
+2006-04-29  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/MenuEditor.py: legacydirs fix
 
-2005-04-29  Travis Watkins  <alleykat@gmail.com>
+2006-04-29  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.desktop.in: change Name and Categories
 
-2005-04-28  Travis Watkins  <alleykat@gmail.com>
+2006-04-28  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.glade: add destroy handler
 	* Alacarte/MainWindow.py: fix for legacy menus
 	* Alacarte/util.py: fix for items without icons
 
-2005-04-27  Travis Watkins  <alleykat@gmail.com>
+2006-04-27  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.glade: allow resizing
 	* Alacarte/MenuEditor.py: small bug fix
@@ -20,13 +27,13 @@
 	* Alacarte/DialogHandler.py: speed up editing by not instantly
 	updating
 
-2005-04-27  Travis Watkins  <alleykat@gmail.com>
+2006-04-27  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.glade: UI tweaks
 	* Alacarte/util.py: don't resize icons unless needed, makes them
 	blurry
 
-2005-04-26  Travis Watkins  <alleykat@gmail.com>
+2006-04-26  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.glade: make up/down buttons work
 	* Alacarte/MainWindow.py:
@@ -34,14 +41,14 @@
 	* Alacarte/DialogHandler.py: add undo/redo support!
 	* Alacarte/MenuEditor.py: make revert less destructive as root
 
-2005-04-21  Travis Watkins  <alleykat@gmail.com>
+2006-04-21  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.glade:
 	* Alacarte/MainWindow.py: UI redesign
 	* Alacarte/DialogHandler.py:
 	* Alacarte/MenuEditor.py: treat 'Other' menu like a normal one
 
-2005-04-21  Travis Watkins  <alleykat@gmail.com>
+2006-04-21  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/MenuEditor.py
 	* Alacarte/MainWindow.py: use new gnome-menus API
@@ -50,44 +57,44 @@
                                   make multiple moves work
 	* Alacarte/util.py: resize icons to 24x24
 
-2005-04-20  Travis Watkins  <alleykat@gmail.com>
+2006-04-20  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/DialogHandler.py: only add executable files to completion
 
-2005-04-18  Travis Watkins  <alleykat@gmail.com>
+2006-04-18  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.glade:
 	* Alacarte/DialogHandler.py: add simple command completion
 
-2005-04-18  Travis Watkins  <alleykat@gmail.com>
+2006-04-18  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/DialogHandler.py: add image filters, add command dialog
 
-2005-04-18  Travis Watkins  <alleykat@gmail.com>
+2006-04-18  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.glade:
 	* Alacarte/DialogHandler.py: fix icon selection
 
-2005-04-18  Travis Watkins  <alleykat@gmail.com>
+2006-04-18  Travis Watkins  <alleykat@gmail.com>
 
 	* autogen.sh: require automake 1.9
 	* configure.ac: PoLinguas goal
 	* alacarte.desktop.in: add Icon key
 	* alacarte.glade: add translator-credits to about dialog
 
-2005-04-18  Travis Watkins  <alleykat@gmail.com>
+2006-04-18  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/MainWindow.py:
 	* Alacarte/MenuEditor.py: finish DnD, finish layout support, add
 	full revert (all menus) support
 
-2005-04-18  Travis Watkins  <alleykat@gmail.com>
+2006-04-18  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/util.py:
 	* Alacarte/MenuEditor.py:
 	* Alacarte/MainWindow.py: implement revert and delete
 
-2005-04-18  Travis Watkins  <alleykat@gmail.com>
+2006-04-18  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/MenuEditor.py: moveItem fully implemented
 	* Alacarte/DialogHandler.py:
@@ -95,21 +102,21 @@
 	* alacarte.svg:
 	* alacarte.png: new icon from Andreas Nilsson
 
-2005-04-18  Travis Watkins  <alleykat@gmail.com>
+2006-04-18  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/MainWindow.py:
 	* Alacarte/MenuEditor.py: DnD copy of items, basic layout support
 
-2005-04-17  Travis Watkins  <alleykat@gmail.com>
+2006-04-17  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/MainWindow.py:
 	* Alacarte/MenuEditor.py: small speedups, fixes
 
-2005-04-15  Travis Watkins  <alleykat@gmail.com>
+2006-04-15  Travis Watkins  <alleykat@gmail.com>
 
 	* too much stuff, need to commit more often
 
-2005-04-12  Travis Watkins  <alleykat@gmail.com>
+2006-04-12  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/MainWindow.py: make shift-f10 work
 

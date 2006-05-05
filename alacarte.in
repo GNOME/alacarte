@@ -21,7 +21,7 @@
 import sys
 from Alacarte.MainWindow import MainWindow
 
-if __name__ == '__main__':
+def main():
 	try:
 		from Alacarte import config
 		datadir = config.pkgdatadir
@@ -31,3 +31,7 @@ if __name__ == '__main__':
 		version = '0.9'
 	app = MainWindow(datadir, version, sys.argv)
 	app.run()
+
+if __name__ == '__main__':
+	main()
+

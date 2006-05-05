@@ -65,6 +65,13 @@ class MainWindow:
 		self.tree.get_widget('mainwindow').add_accel_group(accelgroup)
 		gnome.ui.authentication_manager_init()
 
+	def run(self):
+		self.loadMenus()
+		self.editor.applications.tree.add_monitor(self.menuChanged)
+		self.editor.settings.tree.add_monitor(self.menuChanged)
+		self.tree.get_widget('mainwindow').show_all()
+		gtk.main()
+
 	def menuChanged(self, *a):
 		if self.timer:
 			gobject.source_remove(self.timer)
@@ -146,13 +153,6 @@ class MainWindow:
 			menu_tree.expand_to_path(path)
 			menu_tree.get_selection().select_path(path)
 			return True
-
-	def run(self):
-		self.loadMenus()
-		self.editor.applications.tree.add_monitor(self.menuChanged)
-		self.editor.settings.tree.add_monitor(self.menuChanged)
-		self.tree.get_widget('mainwindow').show_all()
-		gtk.main()
 
 	def setupMenuTree(self):
 		self.menu_store = gtk.TreeStore(gtk.gdk.Pixbuf, str, object)

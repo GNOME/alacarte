@@ -1,3 +1,7 @@
+2006-05-05  Travis Watkins  <alleykat@gmail.com>
+
+	* alacarte.in: order things for easier profiling
+
 2006-05-04  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/MainWindow.py: make Delete delete items

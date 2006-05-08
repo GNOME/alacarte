@@ -27,13 +27,14 @@ _ = gettext.gettext
 from Alacarte import util
 
 class DialogHandler:
-	window_icon = None
 	editor = None
 	file_path = None
 	timer = None
 	in_revert = False
+	first_change = False
 
-	def __init__(self, editor, file_path):
+	def __init__(self, parent, editor, file_path):
+		self.parent = parent
 		self.editor = editor
 		self.file_path = file_path
 		self.command_completion = gtk.EntryCompletion()
@@ -156,6 +157,7 @@ class DialogHandler:
 		icon_button.add(label)
 		icon_button.icon_path = None
 		dialog = tree.get_widget('newitemproperties')
+		dialog.set_transient_for(self.parent)
 		dialog.show_all()
 		can_close = False
 		while can_close == False:
@@ -204,6 +206,7 @@ class DialogHandler:
 		command_button = self.tree.get_widget('item_command_button')
 		term_check = self.tree.get_widget('item_terminal_check')
 
+		dialog.set_transient_for(self.parent)
 		icon_button.remove(icon_button.get_children()[0])
 		pixbuf, path = util.getIcon(self.item, True)
 		if pixbuf:
@@ -222,7 +225,6 @@ class DialogHandler:
 			command_entry.set_text(self.item.get_exec())
 		if self.item.get_launch_in_terminal():
 			term_check.set_active(True)
-		dialog.set_icon(self.window_icon)
 		dialog.show_all()
 		self.item_original_values = (
 			icon_button.icon_path,
@@ -233,26 +235,24 @@ class DialogHandler:
 			)
 		self.in_dialog_setup = False
 		#hack to make undo work
-		self.saveItem(self.item_original_values, True)
+		self.first_change = True
 		can_close = False
 		while can_close == False:
 			response = dialog.run()
 			can_close = responseChecker(response)
 		dialog.destroy()
+		self.first_change = False
 
 	def on_item_contents_changed(self, garbage):
 		self.item_row[1] = util.getIcon(self.tree.get_widget('item_icon_button').icon_path)
 		self.item_row[2] = self.tree.get_widget('item_name_entry').get_text()
+		if self.first_change:
+			self.saveItem(self.item_original_values, True)
+			self.first_change = False
 		if self.in_revert:
 			self.in_revert = False
 			self.saveItemChanges()
 			return
-		if self.timer:
-			gobject.source_remove(self.timer)
-			self.timer = None
-		self.timer = gobject.timeout_add(250, self.saveItemChanges)
-
-	def saveItemChanges(self):
 		if not self.in_dialog_setup:
 			self.tree.get_widget('item_revert_button').set_sensitive(True)
 			values = (
@@ -280,14 +280,14 @@ class DialogHandler:
 				entry.select_region(end, end)
 				entry.set_position(-1)
 				return True
-		elif len(entry.get_text()) == 1:
-			char = entry.get_text()[0]
+		elif len(entry.get_text()) == 2:
+			chars = entry.get_text()[:2]
 			self.completion_used.clear()
 			for item in self.completion_full:
-				gobject.idle_add(self.compareCommands, item[0], char)
+				gobject.idle_add(self.compareCommands, item[0], chars)
 
-	def compareCommands(self, possible_command, typed_char):
-		if possible_command[0] == typed_char:
+	def compareCommands(self, possible_command, typed_chars):
+		if possible_command[:2] == typed_chars:
 			self.completion_used.append((possible_command,))
 		return False
 
@@ -339,6 +339,7 @@ class DialogHandler:
 				return 'save'
 			return True
 		dialog = tree.get_widget('newmenuproperties')
+		dialog.set_transient_for(self.parent)
 		icon_button = tree.get_widget('newmenu_icon_button')
 		icon_button.remove(icon_button.get_children()[0])
 		label = gtk.Label('No Icon')
@@ -382,6 +383,7 @@ class DialogHandler:
 		name_entry = self.tree.get_widget('menu_name_entry')
 		comment_entry = self.tree.get_widget('menu_comment_entry')
 
+		dialog.set_transient_for(self.parent)
 		icon_button.remove(icon_button.get_children()[0])
 		pixbuf, path = util.getIcon(self.menu, True)
 		icon_button.icon_path = None
@@ -404,7 +406,7 @@ class DialogHandler:
 			)
 		self.in_dialog_setup = False
 		#hack to make undo work
-		self.saveMenu(self.menu_original_values, True)
+		self.first_change = True
 		can_close = False
 		while can_close == False:
 			response = dialog.run()
@@ -414,16 +416,13 @@ class DialogHandler:
 	def on_menu_contents_changed(self, garbage):
 		self.menu_row[1] = util.getIcon(self.tree.get_widget('menu_icon_button').icon_path)
 		self.menu_row[2] = self.tree.get_widget('menu_name_entry').get_text()
+		if self.first_change:
+			self.saveMenu(self.menu_original_values, True)
+			self.first_change = False
 		if self.in_revert:
 			self.in_revert = False
 			self.saveMenuChanges()
 			return
-		if self.timer:
-			gobject.source_remove(self.timer)
-			self.timer = None
-		self.timer = gobject.timeout_add(250, self.saveMenuChanges)
-
-	def saveMenuChanges(self):
 		if not self.in_dialog_setup:
 			self.tree.get_widget('menu_revert_button').set_sensitive(True)
 			values = (

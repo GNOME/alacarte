@@ -51,7 +51,7 @@ class MainWindow:
 		self.tree.signal_autoconnect(signals)
 		self.setupMenuTree()
 		self.setupItemTree()
-		self.dialogs = DialogHandler(self.editor, self.file_path)
+		self.dialogs = DialogHandler(self.tree.get_widget('mainwindow'), self.editor, self.file_path)
 		self.tree.get_widget('edit_delete').set_sensitive(False)
 		self.tree.get_widget('edit_revert_to_original').set_sensitive(False)
 		self.tree.get_widget('edit_properties').set_sensitive(False)

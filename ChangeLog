@@ -1,3 +1,11 @@
+2006-05-07  Travis Watkins  <alleykat@gmail.com>
+
+	* Alacarte/DialogHandler.py:
+	* Alacarte/MainWindow.py: add set_transient_for to make real modal
+	dialogs
+	* Alacarte/DialogHandler.py: remove timer ugliness, don't save unless
+	the user changed something
+
 2006-05-05  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.in: order things for easier profiling

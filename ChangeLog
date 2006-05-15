@@ -1,5 +1,9 @@
 2006-05-15  Travis Watkins  <alleykat@gmail.com>
 
+	* configure.ac: post-release bump to 0.9.2
+
+2006-05-15  Travis Watkins  <alleykat@gmail.com>
+
 	* Alacarte/MainWindow.py:
 	* alacarte.glade: HIG fixes
 

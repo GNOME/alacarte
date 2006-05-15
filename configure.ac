@@ -1,7 +1,7 @@
 dnl -*- Mode: autoconf -*-
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.53)
-AC_INIT(alacarte, 0.9.1, https://launchpad.net/products/alacarte/+filebug)
+AC_INIT(alacarte, 0.9.2, https://launchpad.net/products/alacarte/+filebug)
 AC_CONFIG_SRCDIR(alacarte.in)
 AM_INIT_AUTOMAKE([1.7])
 AM_MAINTAINER_MODE
@@ -17,7 +17,7 @@ GETTEXT_PACKAGE=alacarte
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext package])
 AM_GLIB_GNU_GETTEXT
-IT_PROG_INTLTOOL([0.34.90])
+IT_PROG_INTLTOOL([0.35.0])
 
 AM_PATH_PYTHON_VERSION(2.4, 2.4.0)
 

@@ -519,10 +519,12 @@ class MainWindow:
 		self.editor.redo()
 
 	def on_revert_button_clicked(self, button):
-		dialog = gtk.MessageDialog(None, gtk.DIALOG_MODAL, gtk.MESSAGE_QUESTION, gtk.BUTTONS_YES_NO, _('Revert all menus to original settings?'))
+		dialog = self.tree.get_widget('revertdialog')
+		dialog.set_transient_for(self.tree.get_widget('mainwindow'))
+		dialog.show_all()
 		if dialog.run() == gtk.RESPONSE_YES:
 			self.editor.revert()
-		dialog.destroy()
+		dialog.hide()
 
 	def on_close_button_clicked(self, button):
 		try:

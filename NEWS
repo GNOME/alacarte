@@ -1,3 +1,14 @@
+=============
+version 0.9.1
+=============
+
+	* resigned to be HIG compliant
+	* undo/redo support
+	* better support for legacy dirs
+	* drag-and-drop of .desktop files and executables from nautilus
+	creates menu items
+	* various bug fixes
+
 ===========
 Version 0.9
 ===========

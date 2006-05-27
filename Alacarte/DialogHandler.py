@@ -134,29 +134,29 @@ class DialogHandler:
 		dialog.set_preview_widget_active(True)
 
 	def newItemDialog(self):
-		tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'), 'newitemproperties')
+		self.tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'), 'newitemproperties')
 		signals = {}
 		for attr in dir(self):
 			signals[attr] = getattr(self, attr)
-		tree.signal_autoconnect(signals)
+		self.tree.signal_autoconnect(signals)
 		def responseChecker(response):
 			if response == gtk.RESPONSE_OK:
-				if len(tree.get_widget('newitem_name_entry').get_text()) == 0:
+				if len(self.tree.get_widget('newitem_name_entry').get_text()) == 0:
 					self.showError(_('A name is required.'))
 					return False
-				if len(tree.get_widget('newitem_command_entry').get_text()) == 0:
+				if len(self.tree.get_widget('newitem_command_entry').get_text()) == 0:
 					self.showError(_('A command is required.'))
 					return False
 				return 'save'
 			return True
-		command_entry = tree.get_widget('newitem_command_entry')
+		command_entry = self.tree.get_widget('newitem_command_entry')
 		command_entry.set_completion(self.command_completion)
-		icon_button = tree.get_widget('newitem_icon_button')
+		icon_button = self.tree.get_widget('newitem_icon_button')
 		icon_button.remove(icon_button.get_children()[0])
 		label = gtk.Label('No Icon')
 		icon_button.add(label)
 		icon_button.icon_path = None
-		dialog = tree.get_widget('newitemproperties')
+		dialog = self.tree.get_widget('newitemproperties')
 		dialog.set_transient_for(self.parent)
 		dialog.show_all()
 		can_close = False
@@ -164,10 +164,10 @@ class DialogHandler:
 			response = dialog.run()
 			can_close = responseChecker(response)
 		if can_close == 'save':
-			name_entry = tree.get_widget('newitem_name_entry')
-			comment_entry = tree.get_widget('newitem_comment_entry')
-			command_button = tree.get_widget('newitem_command_button')
-			term_check = tree.get_widget('newitem_terminal_check')
+			name_entry = self.tree.get_widget('newitem_name_entry')
+			comment_entry = self.tree.get_widget('newitem_comment_entry')
+			command_button = self.tree.get_widget('newitem_command_button')
+			term_check = self.tree.get_widget('newitem_terminal_check')
 			dialog.destroy()
 			return (icon_button.icon_path, name_entry.get_text(), comment_entry.get_text(), command_entry.get_text(), term_check.get_active())
 		dialog.destroy()

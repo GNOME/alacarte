@@ -1,3 +1,7 @@
+2006-05-27  Travis Watkins  <alleykat@gmail.com>
+
+	* Alacarte/DialogHandler.py: fix new entry command browsing
+
 2006-05-15  Travis Watkins  <alleykat@gmail.com>
 
 	* configure.ac: post-release bump to 0.9.2

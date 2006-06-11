@@ -1,0 +1,5 @@
+2006-06-11  Christian Rose  <menthos@menthos.com>
+
+	* .cvsignore: Added more entries.
+	* LINGUAS, sv.po: Added Swedish translation.
+

@@ -1,0 +1,141 @@
+# translation of alacarte.HEAD.gu.po to Gujarati
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Ankit Patel <ankit644@yahoo.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte.HEAD.gu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-06-14 05:51+0200\n"
+"PO-Revision-Date: 2006-06-14 11:55+0530\n"
+"Last-Translator: Ankit Patel <ankit644@yahoo.com>\n"
+"Language-Team: Gujarati <indianoss-gujarati@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+
+#: ../Alacarte/MainWindow.py:160
+msgid "Name"
+msgstr "નામ"
+
+#: ../Alacarte/MainWindow.py:176
+msgid "Show"
+msgstr "બતાવો"
+
+#: ../Alacarte/MainWindow.py:184
+msgid "Item"
+msgstr "વસ્તુ"
+
+#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
+#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+msgid "A name is required."
+msgstr "નામ જરૂરી છે."
+
+#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+msgid "A command is required."
+msgstr "આદેશ જરૂરી છે."
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "ઉમેરો, બદલો, દૂર કરો મેનુ વસ્તુઓ"
+
+#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "મેનુ દેખાવ"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "Alacarte મેનુ સંપાદક"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "બ્રાઉઝ કરો..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "આદેશ:"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "ટિપ્પણી:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "Copyright © 2006 Travis Watkins"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "ચિહ્ન:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "વસ્તુઓ (_e):"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "મેનુ વસ્તુ ગુણધર્મો"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "મેનુ ગુણધર્મો"
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "નીચે ખસેડો"
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "ઉપર ખસેડો"
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "નામ:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "નવી વસ્તુ (_w)"
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "નવો વિભાજક (_S)"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "મૂળભૂત મેનુ દેખાવ પુનઃસંગ્રહો"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "શું ફેરફારો ઉલટાવવા છે?"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "શું બધા મેનુઓને મૂળ સુયોજનોમાં ઉલટાવવા છે?"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "આદેશને ટર્મિનલમાં ચલાવો"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "સાદું fd.o સુસંગત મેનુ સંપાદક"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "મેનુઓ (_M):"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "નવું મેનુ (_N)"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "મૂળમાં ઉલટાવો (_R)"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
+msgid "translator-credits"
+msgstr "અંકિત પટેલ <ankit644@yahoo.com>"
+

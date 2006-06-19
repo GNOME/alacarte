@@ -1,0 +1,141 @@
+# translation of alacarte.HEAD.po to Tamil
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Felix <ifelix@redhat.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-06-15 05:50+0200\n"
+"PO-Revision-Date: 2006-06-18 15:56+0530\n"
+"Last-Translator: Felix <ifelix@redhat.com>\n"
+"Language-Team: Tamil <ta@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+
+#: ../Alacarte/MainWindow.py:160
+msgid "Name"
+msgstr "பெயர்"
+
+#: ../Alacarte/MainWindow.py:176
+msgid "Show"
+msgstr "காட்சி"
+
+#: ../Alacarte/MainWindow.py:184
+msgid "Item"
+msgstr "உருப்படி"
+
+#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
+#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+msgid "A name is required."
+msgstr "ஒரு பெயர் தேவைப்படுகிறது."
+
+#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+msgid "A command is required."
+msgstr "ஒரு கட்டளை தேவைப்படுகிறது."
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "பட்டி உள்ளீடுகளை சேர், மாற்று, நீக்கு"
+
+#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "பட்டி அமைப்பு"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "Alacarte பட்டி தொகுப்பி"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "உலாவு..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "கட்டளை:"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "குறிப்பு:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "காப்புரிமை © 2006 Travis Watkins"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "சின்னம்:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "உருப்படிகள்: (_e)"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "பட்டி உருப்படி பண்புகள்"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "பட்டி பண்புகள்"
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "கீழே நகர்த்து"
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "மேலே நகர்த்து"
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "பெயர்:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "புதிய உருப்படி (_w)"
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "புதிய பிரிப்பி (_S)"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "முன்னிருப்பு பட்டி அமைப்பினை மறுஅமை"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "மாற்றங்களை திரும்பப்பெற வேண்டுமா?"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "அனைத்து பட்டிகள் அசல் அமைவுகளையும் திரும்ப பெற வேண்டுமா?"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "முனையத்தில் கட்டளையை இயக்கு"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "சாதாரண fd.o புகார் பட்டி தொகுப்பி"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "பட்டிகள்: (_M)"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "புதிய பட்டி (_N)"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "அசலை திரும்பப்பெறு"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
+msgid "translator-credits"
+msgstr "மொழிபெயர்ப்பாளர்-சன்மானம்"
+

@@ -1,3 +1,8 @@
+2006-06-19  I Felix  <ifelix25@gmail.com>
+
+	* ta.po: Added Tamil Translation
+	* LINGUAS: Added 'ta' to the list.
+
 2006-06-18  Gintautas Miliauskas  <gintas@akl.lt>
 
 	* lt.po: Added Lithuanian Translation

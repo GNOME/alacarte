@@ -1,0 +1,142 @@
+# translation of alacarte.HEAD.po to Macedonian
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Jovan Naumovski <jovan@lugola.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-06-21 14:44+0200\n"
+"PO-Revision-Date: 2006-06-21 20:39+0200\n"
+"Last-Translator: Jovan Naumovski <jovan@lugola.net>\n"
+"Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
+
+#: ../Alacarte/MainWindow.py:160
+msgid "Name"
+msgstr "Име"
+
+#: ../Alacarte/MainWindow.py:176
+msgid "Show"
+msgstr "Прикажи"
+
+#: ../Alacarte/MainWindow.py:184
+msgid "Item"
+msgstr "Предмет"
+
+#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
+#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+msgid "A name is required."
+msgstr "Потребно е име."
+
+#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+msgid "A command is required."
+msgstr "Потребна е команда"
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "Додавај, променувај и отстранувај записи во менито"
+
+#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "Изглед на менито"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "Alacarte уредувач на мени"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "Разгледај..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "Команда:"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "Коментар:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "Авторски права © 2006 Travis Watkins"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "Икона:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "Пр_едмети:"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "Својства на предметот од менито"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "Својства на менито"
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "Помести надолу"
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "Помести нагоре"
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "Име:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "Но_в предмет"
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "Нов _разделувач"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "Врати го стандардниот изглед на менито"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "Да ги занемарам промените?"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "Да ги вратам сите менија на оригиналните поставувања?"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "Изврши ја командата во терминал"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "Едноставен fd.o компилантен уредувач на менија"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "_Менија:"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "_Ново мени"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "_Врати на оригиналот"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
+msgid "translator-credits"
+msgstr ""
+"Александар Савиќ <aleksandar.savic@gmail.com> <http://www.slobodensoftver.org.mk> 2006"
+"Jovan Naumovski <jovan@lugola.net>, 2006"
+

@@ -1,3 +1,8 @@
+2006-06-21  Jovan Naumovski  <jovan@lugola.net>
+
+	* mk.po: Added Macedonian Translation
+	* LINGUAS: Added 'mk' to the list.
+
 2006-06-19  I Felix  <ifelix25@gmail.com>
 
 	* ta.po: Added Tamil Translation

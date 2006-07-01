@@ -1,3 +1,8 @@
+2006-07-01  Lukas Novotny  <lukasnov@cvs.gnome.org>
+
+	* cs.po: Added Czech translation.
+	* LINGUAS: Added 'cs' to the list.
+
 2006-06-29  Guntupalli Karunakar  <karunakar@indlinux.org>
 
 	* dz.po: Added Dzongkha translation by Dzonkhalinux team

@@ -1,0 +1,141 @@
+# translation of eu.po to Basque
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: eu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-07-06 21:48+0000\n"
+"PO-Revision-Date: 2006-07-06 21:53+0000\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
+"Language-Team: Basque <itzulpena@euskalgnu.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms: Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../Alacarte/MainWindow.py:160
+msgid "Name"
+msgstr "Izena"
+
+#: ../Alacarte/MainWindow.py:176
+msgid "Show"
+msgstr "Erakutsi"
+
+#: ../Alacarte/MainWindow.py:184
+msgid "Item"
+msgstr "Elementua"
+
+#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
+#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+msgid "A name is required."
+msgstr "Izen bat beharrezkoa da."
+
+#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+msgid "A command is required."
+msgstr "Komando bat beharrezkoa da."
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "Gehitu, aldatu edo kendu menuko elementuak"
+
+#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "Menuaren diseinua"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "Alacarte, menu-editorea"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "Arakatu..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "Komandoa:"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "Iruzkina:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "Copyright © 2006 Travis Watkins"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "Ikonoa:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "_Elementuak:"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "Menuko elementuaren propietateak"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "Menuaren propietateak"
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "Eraman behera"
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "Eraman gora"
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "Izena:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "_Elementu berria"
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "_Bereizle berria"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "Berrezarri menuaren diseinu lehenetsia"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "Leheneratu aldaketak?"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "Leheneratu menu guztiak jatorrizko ezarpenetara?"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "Exekutatu komandoa terminalean"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "Menu bakunen editorea"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "_Menuak:"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "Menu _berria"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "_LEheneratu jatorrizkora"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
+msgid "translator-credits"
+msgstr "Iñaki Larrañaga <dooteo@euskalgnu.org>"
+

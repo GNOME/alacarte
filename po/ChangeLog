@@ -1,3 +1,8 @@
+2006-07-06  Inaki Larranaga  <dooteo@euskalgnu.org>
+
+	* eu.po: Added Basque translation.
+	* LINGUAS: Added "eu" (Basque) to the list of languages.
+
 2006-07=04  Runa Bhattacharjee <runabh@gmail.com>
 
 	* bn_IN.po: Updated Bengali India Translation.

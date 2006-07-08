@@ -1,0 +1,143 @@
+# Alacarte Menu Editor.
+# Copyright (C) 2006 Travis Watkins
+# This file is distributed under the same license as the Alacarte package.
+# Licio Fonseca <licio@ubuntu.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-07-04 14:39+0200\n"
+"PO-Revision-Date: 2006-07-04 13:37-0300\n"
+"Last-Translator: Raphael Higino <phhigino@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../Alacarte/MainWindow.py:160
+msgid "Name"
+msgstr "Nome"
+
+#: ../Alacarte/MainWindow.py:176
+msgid "Show"
+msgstr "Exibir"
+
+#: ../Alacarte/MainWindow.py:184
+msgid "Item"
+msgstr "Item"
+
+#: ../Alacarte/DialogHandler.py:145
+#: ../Alacarte/DialogHandler.py:182
+#: ../Alacarte/DialogHandler.py:337
+#: ../Alacarte/DialogHandler.py:368
+msgid "A name is required."
+msgstr "É necessario um nome."
+
+#: ../Alacarte/DialogHandler.py:148
+#: ../Alacarte/DialogHandler.py:185
+msgid "A command is required."
+msgstr "É necessario um comando."
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "Adicionar, alterar e remover entradas do menu"
+
+#: ../alacarte.desktop.in.h:2
+#: ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "Layout do Menu"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "Editor de Menu Alacarte"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "Navegar..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "Comando:"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "Comentário:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "Copyright © 2006 Travis Watkins"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "Ícone:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "It_ens:"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "Propriedades dos Itens de Menu"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "Propriedades do Menu"
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "Mover para baixo"
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "Mover para cima"
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "Nome:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "No_vo item"
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "Novo _separador"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "Restaurar o layout padrão do menu"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "Desfazer alterações?"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "Restaurar todos os menus às configurações originais?"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "Executar comando num terminal"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "Editor de menu simples aderente ao freedesktop.org"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "_Menus:"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "_Novo menu"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "_Reverter ao original"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
+msgid "translator-credits"
+msgstr "Licio Fernando <licio@ubuntu.com>"
+

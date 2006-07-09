@@ -1,4 +1,33 @@
 =============
+Version 0.9.2
+=============
+
+	* various bug fixes
+	* depend on gnome-menus 2.14.1 or newer (doesn't exist yet!)
+
+Translations
+	* Alexander Shopov (bg)
+	* Runa Bhattacharjee (bn_IN)
+	* Khandakar Mujahidul Islam (bn)
+	* Lukas Novotny (cs)
+	* Mindu Dorji (dz)
+	* Francisco Javier F. Serrador (es)
+	* Iñaki Larrañaga Murgoitio (eu)
+	* Timo Jyrinki (fi)
+	* Ignacio Casal Quinteiro (gl)
+	* Ankit Patel (gu)
+	* Rajesh Ranjan (hi)
+	* Gintautas Miliauskas (lt)
+	* Jovan Naumovski (mk)
+	* Tino Meinen (nl)
+	* Raphael Higino (pt_BR)
+	* Felix (ta)
+	* Roys Hengwatanakul (th)
+	* Funda Wang (zh_CN)
+	* Woodman Tuen (zh_HK)
+	* Woodman Tuen (zh_TW)
+
+=============
 version 0.9.1
 =============
 

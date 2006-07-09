@@ -1,5 +1,9 @@
 2006-07-09  Travis Watkins  <alleykat@gmail.com>
 
+	* configure.ac: post-release bump to 0.9.3
+
+2006-07-09  Travis Watkins  <alleykat@gmail.com>
+
 	* Alacarte/MainWindow.py: make sure desktop file exists before
 	checking it
 	* Alacarte/MenuEditor.py: reload DOM on undo/redo to make changes

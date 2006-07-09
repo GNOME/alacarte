@@ -1,3 +1,10 @@
+2006-07-09  Travis Watkins  <alleykat@gmail.com>
+
+	* Alacarte/MainWindow.py: make sure desktop file exists before
+	checking it
+	* Alacarte/MenuEditor.py: reload DOM on undo/redo to make changes
+	stick
+
 2006-05-27  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/DialogHandler.py: fix new entry command browsing

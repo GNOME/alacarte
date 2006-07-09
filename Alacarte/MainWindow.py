@@ -120,8 +120,9 @@ class MainWindow:
 				found = False
 				if item[3].get_type() == gmenu.TYPE_ENTRY and item[3].get_desktop_file_id() == item_id:
 					found = True
-				if item[3].get_type() == gmenu.TYPE_DIRECTORY and os.path.split(item[3].get_desktop_file_path())[1] == item_id:
-					found = True
+				if item[3].get_type() == gmenu.TYPE_DIRECTORY and item[3].get_desktop_file_path():
+					if os.path.split(item[3].get_desktop_file_path())[1] == item_id:
+						found = True
 				if item[3].get_type() == gmenu.TYPE_SEPARATOR:
 					if not isinstance(item_id, tuple):
 						continue

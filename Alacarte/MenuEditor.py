@@ -120,6 +120,14 @@ class MenuEditor:
 			open(new_path, 'w').write(data)
 			os.unlink(file_path)
 			redo.append(redo_path)
+		#reload DOM to make changes stick
+		for name in ('applications', 'settings'):
+			menu = getattr(self, name)
+			if not os.path.isfile(menu.path):
+				menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
+			else:
+				menu.dom = xml.dom.minidom.parse(menu.path)
+			self.__remove_whilespace_nodes(menu.dom)
 		self.__redo.append(redo)
 
 	def redo(self):
@@ -136,6 +144,14 @@ class MenuEditor:
 			open(new_path, 'w').write(data)
 			os.unlink(file_path)
 			undo.append(undo_path)
+		#reload DOM to make changes stick
+		for name in ('applications', 'settings'):
+			menu = getattr(self, name)
+			if not os.path.isfile(menu.path):
+				menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
+			else:
+				menu.dom = xml.dom.minidom.parse(menu.path)
+			self.__remove_whilespace_nodes(menu.dom)
 		self.__undo.append(undo)
 
 	def getMenus(self, parent=None):

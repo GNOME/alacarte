@@ -1,0 +1,163 @@
+# Greek, Modern (1453-) translation for alacarte
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the alacarte package.
+# Kostas Papadimas <pkst@gmx.net>, 2006.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-07-10 19:46+0300\n"
+"PO-Revision-Date: 2006-07-10 19:46+0300\n"
+"Last-Translator: Kostas Papadimas <pkst@gmx.net>\n"
+"Language-Team: Greek, Modern (1453-) <el@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../Alacarte/MainWindow.py:161
+msgid "Name"
+msgstr "Όνομα"
+
+#: ../Alacarte/MainWindow.py:177
+msgid "Show"
+msgstr "Προβολή"
+
+#: ../Alacarte/MainWindow.py:185
+msgid "Item"
+msgstr "Αντικείμενο"
+
+#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
+#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+msgid "A name is required."
+msgstr "Απαιτείται ένα όνομα"
+
+#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+msgid "A command is required."
+msgstr "Απαιτείται μια εντολή."
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "Προσθήκη, αλλαγή ή απομάκρυνση αντικειμένων μενού"
+
+#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "Διάταξη μενού"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "Επεξεργαστής μενού Alacarte"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "Περιήγηση..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "Εντολή:"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "Σχόλιο:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "Πνευματικά δικαιώματα © 2006 Travis Watkins"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "Εικονίδιο:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "Αντι_κείμενα:"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "Ιδιότητες αντικειμένου μενού"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "Ιδιότητες μενού "
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "Μετακίνηση πάνω "
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "Μετακίνηση κάτω "
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "Όνομα:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "Νέ_ο αντικείμενο "
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "Νέο δια_χωριστικό"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "Επαναφορά της προεπιλεγμένης διάταξης"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "Επαναφορά αλλαγών;"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "Επαναφορά όλων των μενού στις αρχικές τους ρυθμίσεις;"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "Εκτέλεση εντολής σε τερματικό"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "Ένας απλός επεξεργαστής μενού συμβατός με το freedesktop.org"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "_Μενού:"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "Νέο _μενού"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "Επανα_φορά σε αρχικό"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
+msgid "translator-credits"
+msgstr "pkst@gnome.org"
+
+#~ msgid "A menu can't be named \"Other\"."
+#~ msgstr "Ένα μενού δεν μπορεί να έχει το όνομα \"Other\"."
+
+#~ msgid "Loading..."
+#~ msgstr "Φόρτωση..."
+
+#~ msgid "Visible"
+#~ msgstr "Ορατό"
+
+#~ msgid "Entry Editor"
+#~ msgstr "Επεξεργαστής καταχώρισης"
+
+#~ msgid "Icon Selector"
+#~ msgstr "Επιλογέας εικονιδίου"
+
+#~ msgid "Menu Editor"
+#~ msgstr "Επεξεργαστής μενού"
+
+#~ msgid "New _Entry"
+#~ msgstr "Νέα καταχώ_ριση"
+
+#~ msgid "_Delete"
+#~ msgstr "_Διαγραφή"

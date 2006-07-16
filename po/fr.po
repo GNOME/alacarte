@@ -1,11 +1,11 @@
 # French translation of alacarte.
 # Copyright (C) 2006 Free Software Foundation, Inc.
-# This file is distributed under the same license as the bug-buddy package.
+# This file is distributed under the same license as the alacarte package.
 # Jonathan Ernst <jonathan@ernstfamily.ch>, 2006.
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: alacarte\n"
+"Project-Id-Version: alacarte 0.9.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-17 00:21+0200\n"
 "PO-Revision-Date: 2006-06-27 11:42+0100\n"

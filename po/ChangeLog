@@ -1,3 +1,9 @@
+2006-07-21  Josep Puigdemont i Casamajó  <josep.puigdemont@gmail.com>
+
+	* ca.po: Added Catalan translation by
+	Esteve Blanch Sanmartí <anakinjinn@gmail.com>
+	* LINGUAS: Added ca
+
 2006-07-17  Benoît Dejean  <benoit@placenet.org>
 
 	* fr.po: Updated French translation.
@@ -10,7 +16,7 @@
 2006-07-10  Kostas Papadimas <pkst@gnome.org>
 
 	* el.po: Added Greek translation.
-         * LINGUAS: Added el
+	 * LINGUAS: Added el
 2006-07-09  Alexander Shopov  <ash@contact.bg>
 
 	* bg.po: Updated Bulgarian translation by

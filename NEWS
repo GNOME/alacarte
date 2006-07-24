@@ -1,3 +1,16 @@
+==============
+Version 0.9.90
+==============
+
+	* small HIG fixes
+	* depend on gnome-menus 2.15.4 or newer
+
+Translations
+	* Esteve Blanch Sanmartí (ca)
+	* Kostas Papadimas (el)
+	* Jonathan Ernst (fr)
+	* Satoru SATOH (ja)
+
 =============
 Version 0.9.2
 =============

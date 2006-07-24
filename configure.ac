@@ -1,7 +1,7 @@
 dnl -*- Mode: autoconf -*-
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.53)
-AC_INIT(alacarte, 0.9.3, http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte)
+AC_INIT(alacarte, 0.9.90, http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte)
 AC_CONFIG_SRCDIR(alacarte.in)
 AM_INIT_AUTOMAKE([1.7])
 AM_MAINTAINER_MODE
@@ -21,7 +21,7 @@ IT_PROG_INTLTOOL([0.35.0])
 
 AM_PATH_PYTHON_VERSION(2.4, 2.4.0)
 
-PKG_CHECK_MODULES(ALACARTE, libgnome-menu >= 2.14)
+PKG_CHECK_MODULES(ALACARTE, libgnome-menu >= 2.15)
 
 dnl Check for correctly installed pygtk
 AC_MSG_CHECKING(for pygtk required_pygtk_version installed for python required_python_abi)

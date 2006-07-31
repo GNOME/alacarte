@@ -3,14 +3,14 @@
 # Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Beni Goll <>, 2006.
+# Beni Goll <Beni.Goll@web.de>, 2006.
 # Hendrik Brandt <heb@gnome-de.org>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-30 16:52+0200\n"
-"PO-Revision-Date: 2006-07-30 17:03+0200\n"
+"POT-Creation-Date: 2006-07-31 16:06+0200\n"
+"PO-Revision-Date: 2006-07-31 16:06+0200\n"
 "Last-Translator: Hendrik Brandt <heb@gnome-de.org>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgid "Comment:"
 msgstr "Kommentar:"
 
 #: ../alacarte.glade.h:5
-msgid "Copyright Â© 2006 Travis Watkins"
+msgid "Copyright © 2006 Travis Watkins"
 msgstr "Copyright © 2006 Travis Watkins"
 
 #: ../alacarte.glade.h:6
@@ -140,6 +140,5 @@ msgstr "_Original wiederherstellen"
 #: ../alacarte.glade.h:25
 msgid "translator-credits"
 msgstr ""
-"Benjamin Goll\n"
+"Beni Goll <Beni.Goll@web.de>\n"
 "Hendrik Brandt <heb@gnome-de.org>"
-

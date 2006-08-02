@@ -1,0 +1,138 @@
+# Norwegian bokmål translation of alacarte
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the alacarte package
+# Kjartan Maraas <kmaraas@gnome.org>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-menu-editor 0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-08-02 12:48+0200\n"
+"PO-Revision-Date: 2006-08-02 12:53+0200\n"
+"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
+"Language-Team: Norwegian bokmal <i18n-nb@lister.ping.uio.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../Alacarte/MainWindow.py:161
+msgid "Name"
+msgstr "Navn"
+
+#: ../Alacarte/MainWindow.py:177
+msgid "Show"
+msgstr "Vis"
+
+#: ../Alacarte/MainWindow.py:185
+msgid "Item"
+msgstr "Oppføring"
+
+#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
+#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+msgid "A name is required."
+msgstr "Du må oppgi et navn"
+
+#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+msgid "A command is required."
+msgstr "Du må oppgi en kommando"
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "Legg til, endre eller fjern menyoppføringer"
+
+#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "Menyutføring"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "Alacarte menyredigering"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "Bla gjennom..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "Kommando:"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "Kommentar:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "Opphavsrett @ 2006 Travis Watkins"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "Ikon:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "Oppføring_er:"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "Egenskaper for menyoppføring"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "Egenskaper for meny"
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "Flytt ned"
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "Flytt opp"
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "Navn:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "N_y oppføring"
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "Ny _separator"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "Gjenopprett forvalgt menyutføring"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "Angre endringer?"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "Sett menyene tilbake til opprinnelig tilstand?"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "Kjør kommando i en terminal"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "Enkel menyredigerer"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "_Menyer:"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "_Ny meny"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "_Angre alle endringer"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
+msgid "translator-credits"
+msgstr "Kjartan Maraas <kmaraas@gnome.org>"

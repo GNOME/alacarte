@@ -1,3 +1,7 @@
+2006-08-03  Jovan Naumovski  <jovan@lugola.net>
+
+	* Added sl.po to po/ and 'sl' to LINGUAS.
+
 2006-07-24  Travis Watkins  <alleykat@gmail.com>
 
 	* configure.ac: post-release bump to 0.9.91

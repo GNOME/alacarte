@@ -1,3 +1,8 @@
+2006-08-03  Jovan Naumovski  <jovan@lugola.net>
+
+	* sl.po: Added Slovenian translation by Matic Žgur.
+	* LINGUAS: Added 'sl'
+
 2006-08-02  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* nb.po: Added Norwegian bokmål translation.

@@ -1,0 +1,144 @@
+# Alacarte eesti keele tõlge.
+# Estonian translation of Bug-Buddy.
+# Copyright (C) 2006 Free Software Foundation, Inc.
+# This file is distributed under the same license as the alacarte package.
+# Priit Laes <amd store20 com>, 2006
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-08-05 06:38+0200\n"
+"PO-Revision-Date: 2006-08-05 09:36+0200\n"
+"Last-Translator: Priit Laes <plaes@plaes.org>\n"
+"Language-Team: Estonian <gnome-et@linux.ee>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../Alacarte/MainWindow.py:161
+msgid "Name"
+msgstr "Nimi"
+
+#: ../Alacarte/MainWindow.py:177
+msgid "Show"
+msgstr "Näita"
+
+#: ../Alacarte/MainWindow.py:185
+msgid "Item"
+msgstr "Element"
+
+#: ../Alacarte/DialogHandler.py:145
+#: ../Alacarte/DialogHandler.py:182
+#: ../Alacarte/DialogHandler.py:337
+#: ../Alacarte/DialogHandler.py:368
+msgid "A name is required."
+msgstr "Nimi on vajalik."
+
+#: ../Alacarte/DialogHandler.py:148
+#: ../Alacarte/DialogHandler.py:185
+msgid "A command is required."
+msgstr "Käsk on vajalik"
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "Lisa, muuda ja eemalda menüüelemente"
+
+#: ../alacarte.desktop.in.h:2
+#: ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "Menüü paigutus"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "Alacarte menüüredaktor"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "Sirvi..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "Käsk:"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "Kommentaar:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "Autoriõigus © 2006 Travis Watkins"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "Ikoon:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "_Elemendid:"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "Menüüelemendi omadused"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "Menüü omadused"
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "Liiguta alla"
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "Liiguta üles"
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "Nimi:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "_Uus element"
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "Uus _eraldaja"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "Taasta vaikimisi menüüpaigutus"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "Pööra muudatused tagasi?"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "Taasta kõigi menüüde algseaded?"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "Käivita käsk terminalis"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "Lihtne menüüredaktor"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "_Menüüd:"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "_Uus menüü"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "_Taasta originaal"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
+msgid "translator-credits"
+msgstr "Priit Laes <amd@store20.com>, 2006"
+

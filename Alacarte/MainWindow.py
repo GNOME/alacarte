@@ -67,8 +67,8 @@ class MainWindow:
 
 	def run(self):
 		self.loadMenus()
-		self.editor.applications.tree.add_monitor(self.menuChanged)
-		self.editor.settings.tree.add_monitor(self.menuChanged)
+		self.editor.applications.tree.add_monitor(self.menuChanged, None)
+		self.editor.settings.tree.add_monitor(self.menuChanged, None)
 		self.tree.get_widget('mainwindow').show_all()
 		gtk.main()
 

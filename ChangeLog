@@ -1,3 +1,8 @@
+2006-08-04  Travis Watkins  <alleykat@gmail.com>
+
+	* Fix crash caused by API change in gnome-menus (thanks Joe Marcus
+	Clarke)
+
 2006-08-03  Jovan Naumovski  <jovan@lugola.net>
 
 	* Added sl.po to po/ and 'sl' to LINGUAS.

@@ -1,0 +1,141 @@
+# translation of or.po to Oriya
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Subhransu Behera <arya_subhransu@yahoo.co.in>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: or\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-08-11 07:41+0200\n"
+"PO-Revision-Date: 2006-08-11 17:41+0530\n"
+"Last-Translator: Subhransu Behera <arya_subhransu@yahoo.co.in>\n"
+"Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+
+#: ../Alacarte/MainWindow.py:161
+msgid "Name"
+msgstr "ନାମ"
+
+#: ../Alacarte/MainWindow.py:177
+msgid "Show"
+msgstr "ପ୍ରଦର୍ଶନ"
+
+#: ../Alacarte/MainWindow.py:185
+msgid "Item"
+msgstr "ବସ୍ତୁ"
+
+#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
+#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+msgid "A name is required."
+msgstr "ଗୋଟିଏ ନାମ ଆବଶ୍ଯକ।"
+
+#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+msgid "A command is required."
+msgstr "ଗୋଟିଏ କମ୍ପୁଟର ଆବଶ୍ଯକ।"
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "ତାଲିକାରେ ଥିବା ପ୍ରବିଷ୍ଟି ମାନଙ୍କୁ ଯୋଗ କରନ୍ତୁ, ପରିବର୍ତ୍ତନ କରନ୍ତୁ, ଅପସାରଣ କରନ୍ତୁ"
+
+#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "ତାଲିକା ବିନ୍ଯାସ"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "ଆଲାକ୍ରେଟ ତାଲିକା ସମ୍ପାଦକ"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "ଖୋଜନ୍ତୁ ..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "ନିର୍ଦ୍ଦେଶ:"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "ଟିପ୍ପଣୀ:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "ସ୍ବତ୍ତ୍ବାଧୀକାର © ୨୦୦୬ ଟ୍ରାଭିସ ଓ୍ବାଟକିନ୍ସ"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "ଚିତ୍ରସଙ୍କେତ:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "ବସ୍ତୁ (_e):"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "ତାଲିକା ବସ୍ତୁ ଗୁଣଧର୍ମ"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "ତାଲିକା ଗୁଣଧର୍ମ"
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "ତଳକୁ ଯାଆନ୍ତୁ"
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "ଉପରକୁ ଯାଆନ୍ତୁ"
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "ନାମ:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "ନୂତନ ବସ୍ତୁ (_w)"
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "ନୂତନ ବିଭାଜକ (_S)"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "ପୂର୍ବ ନିର୍ଦ୍ଧାରିତ ବିନ୍ଯାସକୁ ପୁନଃସ୍ଥାପନ କରନ୍ତୁ"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "ପରିବର୍ତ୍ତନ ମାନଙ୍କୁ ପ୍ରତ୍ଯାବ୍ରୁତ କରିବ କି?"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "ସମସ୍ତ ତାଲିକାକୁ ମୌଳିକ ବିନ୍ଯାସକୁ ପ୍ରତ୍ଯାବ୍ରୁତ କରିବ କି?"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "ଗୋଟିଏ ଟର୍ମିନାଲରେ ନିର୍ଦ୍ଦେଶକୁ ଚଳାନ୍ତୁ"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "ସାଧାରଣ fd.o ଅନୁପୂରକ ତାଲିକା ସମ୍ପାଦକ"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "ତାଲିକା (_M):"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "ନୂତନ ତାଲିକା (_N)"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "ମୌଳିକ ରୂପକୁ ପ୍ରତ୍ଯାବ୍ରୁତ କରନ୍ତୁ (_R)"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
+msgid "translator-credits"
+msgstr "ଶୁଭ୍ରାଂଶୁ ବେହେରା <arya_subhransu@yahoo.co.in>"
+

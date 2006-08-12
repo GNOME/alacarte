@@ -1,0 +1,138 @@
+# alacarte Korean translation
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Changwoo Ryu <cwryu@debian.org>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-08-12 13:33+0900\n"
+"PO-Revision-Date: 2006-08-12 13:41+0900\n"
+"Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
+"Language-Team: Korean <gnome-kr-hackers@lists.kldp.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../Alacarte/MainWindow.py:161
+msgid "Name"
+msgstr "이름"
+
+#: ../Alacarte/MainWindow.py:177
+msgid "Show"
+msgstr "보기"
+
+#: ../Alacarte/MainWindow.py:185
+msgid "Item"
+msgstr "항목"
+
+#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
+#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+msgid "A name is required."
+msgstr "이름이 필요합니다."
+
+#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+msgid "A command is required."
+msgstr "명령이 필요합니다."
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "메뉴 항목을 더하거나, 바꾸거나, 지웁니다"
+
+#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "메뉴 배치"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "알라카르테 메뉴 편집기"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "찾아보기..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "명령:"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "설명:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "Copyright © 2006 Travis Watkins"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "아이콘:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "항목(_E):"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "메뉴 항목 등록 정보"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "메뉴 등록 정보"
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "아래로 옮기기"
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "위로 옮기기"
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "이름:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "새 항목(_W)"
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "새 구분선(_S)"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "기본 메뉴 배치로 되돌리기"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "바꾼 사항을 되돌리시겠습니까?"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "메뉴를 전부 원래의 설정으로 되돌리시겠습니까?"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "터미널에서 명령 실행"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "간단한 fd.o 표준을 따르는 메뉴 편집기"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "메뉴(_M):"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "새 메뉴(_N)"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "원래대로 되돌리기(_R)"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
+msgid "translator-credits"
+msgstr "류창우 <cwryu@debian.org>"

@@ -1,3 +1,8 @@
+2006-08-14  Sanlig Badral  <badral@openmn.org>
+
+        * mn.po: Updated Mongolian translation.
+	* LINGUAS: Added entry for Mongolian (mn).
+ 
 2006-08-13  Rahul Bhalerao  <b.rahul.pm@gmail.com>
 
 	* LINGUAS: Added entry for Marathi(mr)

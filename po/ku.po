@@ -1,0 +1,116 @@
+# Kurdish translation for alacarte
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the alacarte package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2006-05-13 01:17+0000\n"
+"PO-Revision-Date: 2006-08-18 18:45+0000\n"
+"Last-Translator: Erdal Ronahi <erdal.ronahi@gmail.com>\n"
+"Language-Team: Kurdish <ku@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/Alacarte/GnomeDialogHandler.py:62
+#: ../src/Alacarte/GnomeDialogHandler.py:117
+#: ../src/Alacarte/GnomeDialogHandler.py:172
+msgid "A name is required."
+msgstr "Navek pêwist e."
+
+#: ../src/Alacarte/GnomeDialogHandler.py:66
+#: ../src/Alacarte/GnomeDialogHandler.py:121
+msgid "A menu can't be named \"Other\"."
+msgstr "Pêşek wekî \"Yên din\" nikare bête binavkirin."
+
+#: ../src/Alacarte/GnomeDialogHandler.py:175
+msgid "A command is required."
+msgstr "Fermanek pêwist e."
+
+#: ../src/Alacarte/GnomeFront.py:96 ../src/Alacarte/GnomeFront.py:125
+msgid "Name"
+msgstr "Nav"
+
+#: ../src/Alacarte/GnomeFront.py:111
+msgid "Loading..."
+msgstr "Tê barkirin..."
+
+#: ../src/Alacarte/GnomeFront.py:119
+msgid "Visible"
+msgstr "Pêkane"
+
+#: ../src/Alacarte/GnomeFront.py:450
+msgid "translator-credits"
+msgstr "Rêzan Tovjîn <rezan@bername.net>, 2006"
+
+#: ../src/Alacarte/GnomeFront.py:452 ../src/alacarte.desktop.in.h:2
+msgid "Alacarte Menu Editor"
+msgstr "Pergalkerê Pêşeka Alacarte"
+
+#: ../src/Alacarte/GnomeFront.py:454
+msgid "Simple freedesktop.org Compliant Menu Editor"
+msgstr "Edîtora Pêşekan a hesan û li gora freedesktop.org"
+
+#: ../src/Alacarte/GnomeFront.py:770
+msgid "Revert all menus to original settings?"
+msgstr "Bila hemû pêşek vegere mîhengên sereke?"
+
+#: ../src/Alacarte/alacarte.glade.h:1
+msgid "Command:"
+msgstr "Ferman:"
+
+#: ../src/Alacarte/alacarte.glade.h:2
+msgid "Comment:"
+msgstr "Şîrove:"
+
+#: ../src/Alacarte/alacarte.glade.h:3
+msgid "Entry Editor"
+msgstr "Edîtorê Daneyê"
+
+#: ../src/Alacarte/alacarte.glade.h:4
+msgid "Icon Selector"
+msgstr "Hilbijêrê Sembolê"
+
+#: ../src/Alacarte/alacarte.glade.h:5
+msgid "Icon:"
+msgstr "Sembol"
+
+#: ../src/Alacarte/alacarte.glade.h:6
+msgid "Menu Editor"
+msgstr "Edîtorê Pêşekê"
+
+#: ../src/Alacarte/alacarte.glade.h:7
+msgid "Name:"
+msgstr "Nav:"
+
+#: ../src/Alacarte/alacarte.glade.h:8
+msgid "New S_eparator"
+msgstr "V_eqetandeka Nû"
+
+#: ../src/Alacarte/alacarte.glade.h:9
+msgid "New _Entry"
+msgstr "_Daneya nû"
+
+#: ../src/Alacarte/alacarte.glade.h:10
+msgid "New _Menu"
+msgstr "_Pêşeka nû"
+
+#: ../src/Alacarte/alacarte.glade.h:11
+msgid "Run In Terminal"
+msgstr "Li Termînalê Bixebitîne"
+
+#: ../src/Alacarte/alacarte.glade.h:12
+msgid "_Delete"
+msgstr "_Jê bibe"
+
+#: ../src/Alacarte/alacarte.glade.h:13
+msgid "_Revert to Original"
+msgstr "_Vegerîne Orjînalê"
+
+#: ../src/alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "Daneyên pêşekê lê zêde bike, biguhere, jê bibe"

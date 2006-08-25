@@ -19,10 +19,6 @@
 import os, cgi
 import gmenu, gtk, gtk.glade, gobject
 import gettext
-gettext.bindtextdomain('alacarte')
-gettext.textdomain('alacarte')
-gtk.glade.bindtextdomain('alacarte')
-gtk.glade.textdomain('alacarte')
 _ = gettext.gettext
 from Alacarte import util
 

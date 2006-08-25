@@ -43,6 +43,7 @@ class MainWindow:
 		self.file_path = datadir
 		self.version = version
 		self.editor = MenuEditor()
+		self.gnome_program = gnome.init('alacarte', version)
 		gtk.window_set_default_icon_name('alacarte')
 		self.tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'))
 		signals = {}
@@ -62,6 +63,8 @@ class MainWindow:
 		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_mainwindow_undo)
 		keyval, modifier = gtk.accelerator_parse('<Ctrl><Shift>Z')
 		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_mainwindow_redo)
+		keyval, modifier = gtk.accelerator_parse('F1')
+		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_help_button_clicked)
 		self.tree.get_widget('mainwindow').add_accel_group(accelgroup)
 		gnome.ui.authentication_manager_init()
 
@@ -518,6 +521,9 @@ class MainWindow:
 
 	def on_mainwindow_redo(self, accelgroup, window, keyval, modifier):
 		self.editor.redo()
+
+	def on_help_button_clicked(self, *args):
+		gnome.help_display_desktop(self.gnome_program, 'user-guide', 'user-guide.xml', 'menu-editor')
 
 	def on_revert_button_clicked(self, button):
 		dialog = self.tree.get_widget('revertdialog')

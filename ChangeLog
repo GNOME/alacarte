@@ -1,3 +1,9 @@
+2006-08-24  Travis Watkins  <alleykat@gmail.com>
+
+	* MainWindow.py: add keyboard accelerator for help and make help
+	button work
+	* Dialoghandler.py: fix crash on Solaris (maybe)
+
 2006-08-04  Travis Watkins  <alleykat@gmail.com>
 
 	* Fix crash caused by API change in gnome-menus (thanks Joe Marcus

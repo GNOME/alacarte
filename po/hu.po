@@ -1,120 +1,144 @@
 # Hungarian translation for alacarte
 # Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
 # This file is distributed under the same license as the alacarte package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
 #
+# Gabor Burján <buga@buvoshetes.hu>, 2006.
+# Gabor Kelemen <kelemeng@gnome.hu>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2006-05-13 01:17+0000\n"
-"PO-Revision-Date: 2006-05-13 08:15+0000\n"
-"Last-Translator: Gabor Kelemen <kelemengabor@linuxforum.hu>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-08-17 09:12+0200\n"
+"PO-Revision-Date: 2006-08-26 13:13+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
+"Language-Team: Hungarian <gnome@gnome.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../src/Alacarte/GnomeDialogHandler.py:62
-#: ../src/Alacarte/GnomeDialogHandler.py:117
-#: ../src/Alacarte/GnomeDialogHandler.py:172
-msgid "A name is required."
-msgstr "Egy név megadása szükséges."
-
-#: ../src/Alacarte/GnomeDialogHandler.py:66
-#: ../src/Alacarte/GnomeDialogHandler.py:121
-msgid "A menu can't be named \"Other\"."
-msgstr "A menü neve nem lehet \"Other\"."
-
-#: ../src/Alacarte/GnomeDialogHandler.py:175
-msgid "A command is required."
-msgstr "Egy parancs megadása szükséges."
-
-#: ../src/Alacarte/GnomeFront.py:96 ../src/Alacarte/GnomeFront.py:125
+#: ../Alacarte/MainWindow.py:161
 msgid "Name"
 msgstr "Név"
 
-#: ../src/Alacarte/GnomeFront.py:111
-msgid "Loading..."
-msgstr "Betöltés..."
+#: ../Alacarte/MainWindow.py:177
+msgid "Show"
+msgstr "Megjelenítés"
 
-#: ../src/Alacarte/GnomeFront.py:119
-msgid "Visible"
-msgstr "Látható"
+#: ../Alacarte/MainWindow.py:185
+msgid "Item"
+msgstr "Elem"
 
-#: ../src/Alacarte/GnomeFront.py:450
+#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
+#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+msgid "A name is required."
+msgstr "Egy név megadása szükséges."
+
+#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+msgid "A command is required."
+msgstr "Egy parancs megadása szükséges."
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "Menübejegyzések hozzáadása, módosítása és törlése"
+
+#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "Menüelrendezés"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "Alacarte menüszerkesztő"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "Tallózás..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "Parancs:"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "Megjegyzés:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "Copyright © 2006 Travis Watkins"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "Ikon:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "_Elemek:"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "Menüelem tulajdonságai"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "Menü tulajdonságai"
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "Lefelé"
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "Felfelé"
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "Név:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "Ú_j elem"
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "Új _elválasztó"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "Az alapértelmezett menüelrendezés visszaállítása"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "Visszavonja a módosításokat?"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "Visszaállítja a menük eredeti állapotát?"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "Futtatás terminálban"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "Egy egyszerű fd.o szerint szabványos menüszerkesztő"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "_Menük:"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "Új _menü"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "_Visszatérés az eredeti állapothoz"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
 msgid "translator-credits"
 msgstr ""
 "Burján Gábor <buga@buvoshetes.hu>\n"
 "Kelemen Gábor <kelemeng@gnome.hu>"
 
-#: ../src/Alacarte/GnomeFront.py:452 ../src/alacarte.desktop.in.h:2
-msgid "Alacarte Menu Editor"
-msgstr "Alacarte menüszerkesztő"
-
-#: ../src/Alacarte/GnomeFront.py:454
-msgid "Simple freedesktop.org Compliant Menu Editor"
-msgstr "Egyszerű, a freedesktop.org szabványainak megfelelő menüszerkesztő"
-
-#: ../src/Alacarte/GnomeFront.py:770
-msgid "Revert all menus to original settings?"
-msgstr "Visszaállítja a menük eredeti állapotát?"
-
-#: ../src/Alacarte/alacarte.glade.h:1
-msgid "Command:"
-msgstr "Parancs:"
-
-#: ../src/Alacarte/alacarte.glade.h:2
-msgid "Comment:"
-msgstr "Megjegyzés:"
-
-#: ../src/Alacarte/alacarte.glade.h:3
-msgid "Entry Editor"
-msgstr "Bejegyzésszerkesztő"
-
-#: ../src/Alacarte/alacarte.glade.h:4
-msgid "Icon Selector"
-msgstr "Ikonválasztó"
-
-#: ../src/Alacarte/alacarte.glade.h:5
-msgid "Icon:"
-msgstr "Ikon:"
-
-#: ../src/Alacarte/alacarte.glade.h:6
-msgid "Menu Editor"
-msgstr "Menüszerkesztő"
-
-#: ../src/Alacarte/alacarte.glade.h:7
-msgid "Name:"
-msgstr "Név:"
-
-#: ../src/Alacarte/alacarte.glade.h:8
-msgid "New S_eparator"
-msgstr "Új _elválasztó"
-
-#: ../src/Alacarte/alacarte.glade.h:9
-msgid "New _Entry"
-msgstr "Új bejegy_zés"
-
-#: ../src/Alacarte/alacarte.glade.h:10
-msgid "New _Menu"
-msgstr "Új _menü"
-
-#: ../src/Alacarte/alacarte.glade.h:11
-msgid "Run In Terminal"
-msgstr "Futtatás terminálban"
-
-#: ../src/Alacarte/alacarte.glade.h:12
-msgid "_Delete"
-msgstr "_Törlés"
-
-#: ../src/Alacarte/alacarte.glade.h:13
-msgid "_Revert to Original"
-msgstr "_Visszatérés az eredeti állapothoz"
-
-#: ../src/alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "Menübejegyzések hozzáadása, módosítása és törlése"
-
-#~ msgid "Simple fd.o Compliant Menu Editor"
-#~ msgstr "Egy egyszerű fd.o szerint szabványos menüszerkesztő"

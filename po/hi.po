@@ -1,3 +1,4 @@
+# translation of alacarte.HEAD.hi.po to Hindi
 # translation of alacarte.HEAD.po to Hindi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
@@ -5,10 +6,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: alacarte.HEAD\n"
+"Project-Id-Version: alacarte.HEAD.hi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-29 06:18+0200\n"
-"PO-Revision-Date: 2006-06-29 11:36+0530\n"
+"POT-Creation-Date: 2006-08-29 07:24+0200\n"
+"PO-Revision-Date: 2006-08-29 15:35+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,39 +17,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"\n"
 
-#: ../Alacarte/MainWindow.py:160
+#: ../Alacarte/MainWindow.py:164
 msgid "Name"
 msgstr "नाम"
 
-#: ../Alacarte/MainWindow.py:176
+#: ../Alacarte/MainWindow.py:180
 msgid "Show"
 msgstr "दिखाएँ"
 
-#: ../Alacarte/MainWindow.py:184
+#: ../Alacarte/MainWindow.py:188
 msgid "Item"
 msgstr "वस्तु"
 
-#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+#: ../Alacarte/DialogHandler.py:141 ../Alacarte/DialogHandler.py:178
+#: ../Alacarte/DialogHandler.py:333 ../Alacarte/DialogHandler.py:364
 msgid "A name is required."
-msgstr ""
+msgstr "एक नाम जरूरी है."
 
-#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+#: ../Alacarte/DialogHandler.py:144 ../Alacarte/DialogHandler.py:181
 msgid "A command is required."
-msgstr ""
+msgstr "एक कमांड जरूरी है"
 
 #: ../alacarte.desktop.in.h:1
 msgid "Add, change, remove menu entries"
-msgstr ""
+msgstr "मेनू प्रविष्टि जोड़ें, बदलें, हटायें"
 
 #: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
 msgid "Menu Layout"
-msgstr ""
+msgstr "मेनू लेआउट"
 
 #: ../alacarte.glade.h:1
 msgid "Alacarte Menu Editor"
-msgstr ""
+msgstr "Alacarte मेनू संपादक"
 
 #: ../alacarte.glade.h:2
 msgid "Browse..."
@@ -64,23 +66,23 @@ msgstr "टिप्पणीः"
 
 #: ../alacarte.glade.h:5
 msgid "Copyright © 2006 Travis Watkins"
-msgstr ""
+msgstr "कॉपीराइट © 2006 Travis Watkins"
 
 #: ../alacarte.glade.h:6
 msgid "Icon:"
-msgstr ""
+msgstr "प्रतीक:"
 
 #: ../alacarte.glade.h:7
 msgid "It_ems:"
-msgstr ""
+msgstr "मद (_e):"
 
 #: ../alacarte.glade.h:8
 msgid "Menu Item Properties"
-msgstr ""
+msgstr "मेनू मद गुण"
 
 #: ../alacarte.glade.h:10
 msgid "Menu Properties"
-msgstr ""
+msgstr "मेनू गुण"
 
 #: ../alacarte.glade.h:11
 msgid "Move Down"
@@ -96,31 +98,31 @@ msgstr "नाम:"
 
 #: ../alacarte.glade.h:14
 msgid "Ne_w Item"
-msgstr ""
+msgstr "नया मद (_w)"
 
 #: ../alacarte.glade.h:15
 msgid "New _Separator"
-msgstr ""
+msgstr "नया पृथक्कारक (_S)"
 
 #: ../alacarte.glade.h:16
 msgid "Restore the default menu layout"
-msgstr ""
+msgstr "मूलभूत मेनू लेआउट फिर भंडारित करें"
 
 #: ../alacarte.glade.h:17
 msgid "Revert Changes?"
-msgstr ""
+msgstr "बदलाव वापस लें?"
 
 #: ../alacarte.glade.h:18
 msgid "Revert all menus to original settings?"
-msgstr ""
+msgstr "सारे मेनू मूल जमावट में वापस करें?"
 
 #: ../alacarte.glade.h:19
 msgid "Run command in a terminal"
-msgstr ""
+msgstr "टर्मिनल में कमांड चलायें"
 
 #: ../alacarte.glade.h:20
 msgid "Simple fd.o compliant menu editor"
-msgstr ""
+msgstr "सरल fd.o सुसंगत मेनू संपादक"
 
 #: ../alacarte.glade.h:21
 msgid "_Menus:"
@@ -128,11 +130,11 @@ msgstr "मेनू (_M):"
 
 #: ../alacarte.glade.h:22
 msgid "_New Menu"
-msgstr ""
+msgstr "नया मेनू (_N)"
 
 #: ../alacarte.glade.h:23
 msgid "_Revert to Original"
-msgstr ""
+msgstr "मूल में वापस करें (_R)"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../alacarte.glade.h:25

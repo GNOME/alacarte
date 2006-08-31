@@ -1,3 +1,8 @@
+2006-08-31  Danilo Šegan  <danilo@gnome.org>
+
+	* sr.po, sr@Latn.po: Added Serbian.
+	* LINGUAS: Added Serbian (sr, sr@Latn).
+
 2006-08-29  Rajesh Ranjan <rajeshkajha@yahoo.com>
 
         * hi.po: Updated Hindi Translation.

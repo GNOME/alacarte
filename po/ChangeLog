@@ -1,3 +1,8 @@
+2006-09-02  Yair Hershkovitz  <yairhr@gmail.com>
+
+	* LINGUAS: Added Hebrew translation.
+	* he.po: Added Hebrew translation.
+
 2006-09-01  Abel Cheung  <abelcheung@gmail.com>
 
 	* LINGUAS: Add missing entries

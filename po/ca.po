@@ -7,38 +7,38 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catalan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-11 09:36+0200\n"
-"PO-Revision-Date: 2006-08-11 09:37+0200\n"
+"POT-Creation-Date: 2006-09-03 13:46+0200\n"
+"PO-Revision-Date: 2006-09-03 13:47+0200\n"
 "Last-Translator: Esteve Blanch Sanmartí <anakinjinn@gmail.com>\n"
 "Language-Team: catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:161
+#: ../Alacarte/MainWindow.py:164
 msgid "Name"
 msgstr "Nom"
 
-#: ../Alacarte/MainWindow.py:177
+#: ../Alacarte/MainWindow.py:180
 msgid "Show"
 msgstr "Mostra"
 
-#: ../Alacarte/MainWindow.py:185
+#: ../Alacarte/MainWindow.py:188
 msgid "Item"
 msgstr "Element"
 
-#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+#: ../Alacarte/DialogHandler.py:141 ../Alacarte/DialogHandler.py:178
+#: ../Alacarte/DialogHandler.py:333 ../Alacarte/DialogHandler.py:364
 msgid "A name is required."
 msgstr "Es requereix un nom"
 
-#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+#: ../Alacarte/DialogHandler.py:144 ../Alacarte/DialogHandler.py:181
 msgid "A command is required."
 msgstr "Es requereix una ordre"
 
 #: ../alacarte.desktop.in.h:1
 msgid "Add, change, remove menu entries"
-msgstr "Afegeix, canvia, elimina entrades del menú"
+msgstr "Afegiu, canvieu, elimineu entrades del menú"
 
 #: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
 msgid "Menu Layout"
@@ -74,7 +74,7 @@ msgstr "_Elements:"
 
 #: ../alacarte.glade.h:8
 msgid "Menu Item Properties"
-msgstr "Propietats de l'element de menú"
+msgstr "Propietats de l'element del menú"
 
 #: ../alacarte.glade.h:10
 msgid "Menu Properties"
@@ -82,11 +82,11 @@ msgstr "Propietats del menú"
 
 #: ../alacarte.glade.h:11
 msgid "Move Down"
-msgstr "Mou avall"
+msgstr "Mou cap avall"
 
 #: ../alacarte.glade.h:12
 msgid "Move Up"
-msgstr "Mou amunt"
+msgstr "Mou cap amunt"
 
 #: ../alacarte.glade.h:13
 msgid "Name:"
@@ -126,7 +126,7 @@ msgstr "_Menús:"
 
 #: ../alacarte.glade.h:22
 msgid "_New Menu"
-msgstr "_Menú nou"
+msgstr "Nou _menú"
 
 #: ../alacarte.glade.h:23
 msgid "_Revert to Original"

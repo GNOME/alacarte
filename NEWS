@@ -1,4 +1,42 @@
 ==============
+Version 0.10.0
+==============
+
+	* fix crashed caused by new gnome-menus
+	* potentially fix crash on solaris
+	* make help button and F1 work
+
+Translations
+	* Esteve Blanch Sanmartí (ca)
+	* Hendrik Brandt (de)
+	* Priit Laes (et)
+	* Iñaki Larrañaga Murgoitio (eu)
+	* Meelad Zakaria (fa)
+	* Zohar Snir (he)
+	* Rajesh Ranjan (hi)
+	* Gabor Kelemen (hu)
+	* Vladimer Sichinava (ka)
+	* Changwoo Ryu (ko)
+	* Erdal Ronahi (ku)
+	* Raivis Dejus (lv)
+	* Ani Peter (ml)
+	* Badral (mn)
+	* Rahul Bhalerao (mr)
+	* Kjartan Maraas (nb)
+	* Subhransu Behera (or)
+	* Artur Flinta (pl)
+	* Duarte Loreto (pt)
+	* Leonid Kanter (ru)
+	* Matic Žgur (sl)
+	* Igor Miletić (sr)
+	* Christian Rose (sv)
+	* Volkan Güney (tr)
+	* Maxim Dziumanenko (uk)
+	* Clytie Siddall (vi)
+	* Woodman Tuen (zh_HK)
+	* Woodman Tuen (zh_TW)
+
+==============
 Version 0.9.90
 ==============
 

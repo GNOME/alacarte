@@ -1,16 +1,19 @@
 # Alacarte eesti keele tõlge.
-# Estonian translation of Bug-Buddy.
+# Estonian translation of Alacarte.
+#
 # Copyright (C) 2006 Free Software Foundation, Inc.
 # This file is distributed under the same license as the alacarte package.
-# Priit Laes <amd store20 com>, 2006
+#
+# Priit Laes <amd store20 com>, 2006.
+# Ivar Smolin <okul linux ee>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-05 06:38+0200\n"
-"PO-Revision-Date: 2006-08-05 09:36+0200\n"
-"Last-Translator: Priit Laes <plaes@plaes.org>\n"
+"PO-Revision-Date: 2006-09-05 17:31+0300\n"
+"Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +29,7 @@ msgstr "Näita"
 
 #: ../Alacarte/MainWindow.py:185
 msgid "Item"
-msgstr "Element"
+msgstr "Kirje"
 
 #: ../Alacarte/DialogHandler.py:145
 #: ../Alacarte/DialogHandler.py:182
@@ -42,7 +45,7 @@ msgstr "Käsk on vajalik"
 
 #: ../alacarte.desktop.in.h:1
 msgid "Add, change, remove menu entries"
-msgstr "Lisa, muuda ja eemalda menüüelemente"
+msgstr "Menüükirjete lisamine, muutmine ja eemaldamine"
 
 #: ../alacarte.desktop.in.h:2
 #: ../alacarte.glade.h:9
@@ -67,7 +70,7 @@ msgstr "Kommentaar:"
 
 #: ../alacarte.glade.h:5
 msgid "Copyright © 2006 Travis Watkins"
-msgstr "Autoriõigus © 2006 Travis Watkins"
+msgstr "Autoriõigused © 2006 Travis Watkins"
 
 #: ../alacarte.glade.h:6
 msgid "Icon:"
@@ -79,7 +82,7 @@ msgstr "_Elemendid:"
 
 #: ../alacarte.glade.h:8
 msgid "Menu Item Properties"
-msgstr "Menüüelemendi omadused"
+msgstr "Menüükirje omadused"
 
 #: ../alacarte.glade.h:10
 msgid "Menu Properties"
@@ -99,7 +102,7 @@ msgstr "Nimi:"
 
 #: ../alacarte.glade.h:14
 msgid "Ne_w Item"
-msgstr "_Uus element"
+msgstr "_Uus kirje"
 
 #: ../alacarte.glade.h:15
 msgid "New _Separator"
@@ -111,15 +114,15 @@ msgstr "Taasta vaikimisi menüüpaigutus"
 
 #: ../alacarte.glade.h:17
 msgid "Revert Changes?"
-msgstr "Pööra muudatused tagasi?"
+msgstr "Pöörata muudatused tagasi?"
 
 #: ../alacarte.glade.h:18
 msgid "Revert all menus to original settings?"
-msgstr "Taasta kõigi menüüde algseaded?"
+msgstr "Taastada kõigi menüüde algseaded?"
 
 #: ../alacarte.glade.h:19
 msgid "Run command in a terminal"
-msgstr "Käivita käsk terminalis"
+msgstr "Käsk käivitatakse terminalis"
 
 #: ../alacarte.glade.h:20
 msgid "Simple fd.o compliant menu editor"
@@ -135,10 +138,11 @@ msgstr "_Uus menüü"
 
 #: ../alacarte.glade.h:23
 msgid "_Revert to Original"
-msgstr "_Taasta originaal"
+msgstr "_Taasta algne seis"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../alacarte.glade.h:25
 msgid "translator-credits"
-msgstr "Priit Laes <amd@store20.com>, 2006"
-
+msgstr ""
+"Priit Laes <amd@store20.com>, 2006.\n"
+"Ivar Smolin <okul linux ee>, 2006."

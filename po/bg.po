@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the Alacarte package.
 # Stanimir Djevelekov <kori.mendocino@gmail.com>, 2005.
 # Alexander Shopov <ash@contact.bg>, 2006.
-#
+# Vladimir "Kaladan" Petkov <vpetkov@i-space.org>, 2006.
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Alacarte HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-09 15:57+0300\n"
-"PO-Revision-Date: 2006-07-09 15:54+0300\n"
+"POT-Creation-Date: 2006-09-09 19:07+0300\n"
+"PO-Revision-Date: 2006-09-08 16:25+0300\n"
 "Last-Translator: Alexander Shopov <ash@contact.bg>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,38 +19,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../Alacarte/MainWindow.py:160
+#: ../Alacarte/MainWindow.py:164
 msgid "Name"
 msgstr "Име"
 
-#: ../Alacarte/MainWindow.py:176
+#: ../Alacarte/MainWindow.py:180
 msgid "Show"
 msgstr "Показване"
 
-#: ../Alacarte/MainWindow.py:184
+#: ../Alacarte/MainWindow.py:188
 msgid "Item"
 msgstr "Елемент"
 
-#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+#: ../Alacarte/DialogHandler.py:141 ../Alacarte/DialogHandler.py:178
+#: ../Alacarte/DialogHandler.py:333 ../Alacarte/DialogHandler.py:364
 msgid "A name is required."
 msgstr "Изисква се име."
 
-#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+#: ../Alacarte/DialogHandler.py:144 ../Alacarte/DialogHandler.py:181
 msgid "A command is required."
 msgstr "Изисква се команда."
 
 #: ../alacarte.desktop.in.h:1
 msgid "Add, change, remove menu entries"
-msgstr "Добавяне, промяна или изтриване на елемент от меню"
+msgstr "Добавяне, промяна или изтриване на елемент от менюто"
 
 #: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
 msgid "Menu Layout"
-msgstr "Подредба на меню"
+msgstr "Подредба на менюто"
 
 #: ../alacarte.glade.h:1
 msgid "Alacarte Menu Editor"
-msgstr "Alacarte - Редактор на менюта"
+msgstr "Редактор на менюта (Alacarte)"
 
 #: ../alacarte.glade.h:2
 msgid "Browse..."
@@ -66,7 +66,7 @@ msgstr "Коментар:"
 
 #: ../alacarte.glade.h:5
 msgid "Copyright © 2006 Travis Watkins"
-msgstr "Авторски права: © 2006 Travis Watkins"
+msgstr "Авторски права © 2006 Travis Watkins"
 
 #: ../alacarte.glade.h:6
 msgid "Icon:"
@@ -78,7 +78,7 @@ msgstr "_Елементи:"
 
 #: ../alacarte.glade.h:8
 msgid "Menu Item Properties"
-msgstr "Настройки на елемент от меню"
+msgstr "Настройки на елемент от менюто"
 
 #: ../alacarte.glade.h:10
 msgid "Menu Properties"
@@ -110,7 +110,7 @@ msgstr "Възстановяване на първоначалната подр�
 
 #: ../alacarte.glade.h:17
 msgid "Revert Changes?"
-msgstr "Забравяне на промените?"
+msgstr "Връщане на промените?"
 
 #: ../alacarte.glade.h:18
 msgid "Revert all menus to original settings?"
@@ -126,7 +126,7 @@ msgstr "Опростен редактор на менюта, съвместим 
 
 #: ../alacarte.glade.h:21
 msgid "_Menus:"
-msgstr "_Меню:"
+msgstr "_Менюта:"
 
 #: ../alacarte.glade.h:22
 msgid "_New Menu"
@@ -140,6 +140,7 @@ msgstr "_Връщане към начални стойности"
 #: ../alacarte.glade.h:25
 msgid "translator-credits"
 msgstr ""
+"Владимир „Kaladan“ Петков <vpetkov@i-space.org>\n"
 "Станимир Джевелеков <kori.mendocino@gmail.com>\n"
 "Александър Шопов <ash@contact.bg>\n"
 "\n"

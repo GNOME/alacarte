@@ -1,0 +1,143 @@
+# English (British) translation
+# Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same licence as the alacarte package.
+# David Lodge <dave@cirt.net>, 2006
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-11 22:15+0100\n"
+"PO-Revision-Date: 2006-09-11 22:16-0000\n"
+"Last-Translator: David Lodge <dave@cirt.net>\n"
+"Language-Team: en_GB <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../Alacarte/MainWindow.py:164
+msgid "Name"
+msgstr "Name"
+
+#: ../Alacarte/MainWindow.py:180
+msgid "Show"
+msgstr "Show"
+
+#: ../Alacarte/MainWindow.py:188
+msgid "Item"
+msgstr "Item"
+
+#: ../Alacarte/DialogHandler.py:141
+#: ../Alacarte/DialogHandler.py:178
+#: ../Alacarte/DialogHandler.py:333
+#: ../Alacarte/DialogHandler.py:364
+msgid "A name is required."
+msgstr "A name is required."
+
+#: ../Alacarte/DialogHandler.py:144
+#: ../Alacarte/DialogHandler.py:181
+msgid "A command is required."
+msgstr "A command is required."
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "Add, change, remove menu entries"
+
+#: ../alacarte.desktop.in.h:2
+#: ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "Menu Layout"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "Alacarte Menu Editor"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "Browse..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "Command:"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "Comment:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "Copyright © 2006 Travis Watkins"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "Icon:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "It_ems:"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "Menu Item Properties"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "Menu Properties"
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "Move Down"
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "Move Up"
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "Name:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "Ne_w Item"
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "New _Separator"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "Restore the default menu layout"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "Revert Changes?"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "Revert all menus to original settings?"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "Run command in a terminal"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "Simple fd.o compliant menu editor"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "_Menus:"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "_New Menu"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "_Revert to Original"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
+msgid "translator-credits"
+msgstr "David Lodge <dave@cirt.net>"
+

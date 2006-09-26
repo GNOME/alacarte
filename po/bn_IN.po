@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-03 06:17+0200\n"
+"POT-Creation-Date: 2006-09-26 01:40+0200\n"
 "PO-Revision-Date: 2006-07-04 19:33+0530\n"
 "Last-Translator: Runa Bhattacharjee <runabh@gmail.com>\n"
 "Language-Team: Bangla (INDIA) <gnome-translation@bengalinux.org>\n"
@@ -18,24 +18,24 @@ msgstr ""
 "X-Generator: KBabel 1.9.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../Alacarte/MainWindow.py:160
+#: ../Alacarte/MainWindow.py:164
 msgid "Name"
 msgstr "নাম"
 
-#: ../Alacarte/MainWindow.py:176
+#: ../Alacarte/MainWindow.py:180
 msgid "Show"
 msgstr "প্রদর্শন"
 
-#: ../Alacarte/MainWindow.py:184
+#: ../Alacarte/MainWindow.py:188
 msgid "Item"
 msgstr "বস্তু"
 
-#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+#: ../Alacarte/DialogHandler.py:141 ../Alacarte/DialogHandler.py:178
+#: ../Alacarte/DialogHandler.py:333 ../Alacarte/DialogHandler.py:364
 msgid "A name is required."
 msgstr "নাম উল্লেখ করা আবশ্যক।"
 
-#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+#: ../Alacarte/DialogHandler.py:144 ../Alacarte/DialogHandler.py:181
 msgid "A command is required."
 msgstr "কমান্ড লেখা আবশ্যক।"
 
@@ -138,5 +138,6 @@ msgstr "মূল অবস্থায় প্রত্যাবর্তন ক
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../alacarte.glade.h:25
 msgid "translator-credits"
-msgstr "রুণা ভট্টাচার্য [runabh@gmail.com]"
-
+msgstr ""
+"অঙ্কুর গ্রুপের পক্ষ থেকে খন্দকার মুজাহিদুল ইসলাম সুজন <suzan@bengalinux.org>, ২০০৬।\n"
+"রুণা ভট্টাচার্য [runabh@gmail.com]"

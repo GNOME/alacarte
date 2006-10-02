@@ -174,7 +174,7 @@ def getDirectoryPath(file_id):
 def getUserDirectoryPath():
 	menu_dir = None
 	if os.environ.has_key('XDG_DATA_HOME'):
-		menu_dir = os.path.join(os.envrion['XDG_DATA_HOME'], 'desktop-directories')
+		menu_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'desktop-directories')
 	else:
 		menu_dir = os.path.join(os.environ['HOME'], '.local', 'share', 'desktop-directories')
 	if not os.path.isdir(menu_dir):

@@ -1,3 +1,11 @@
+2006-10-02  Frederic Crozat  <fcrozat@mandriva.com>
+
+	* Alacarte/util.py: fix typo in code.
+	* Alacarte/MenuEditor.py: disable inlining in newly created menu
+	(GNOME bug #359003).
+	* Alacarte/MenuEditor.py: don't hardcode root menu node name 
+	(GNOME bug #355828).
+
 2006-10-02  Travis Watkins  <alleykat@gmail.com>
 
 	* Alacarte/DialogHandler.py: escape non-alphanum chars in command dialog

@@ -227,6 +227,7 @@ class MenuEditor:
 		file_id = self.__writeMenu(None, icon, name, comment)
 		menu_id = file_id.rsplit('.', 1)[0]
 		dom = self.__getMenu(parent).dom
+		self.__addXmlDefaultLayout(self.__getXmlMenu(self.__getPath(parent), dom, dom) , dom)
 		menu_xml = self.__getXmlMenu(self.__getPath(parent) + '/' + menu_id, dom, dom)
 		self.__addXmlTextElement(menu_xml, 'Directory', file_id, dom)
 		self.__positionItem(parent, ('Menu', menu_id), before, after)
@@ -443,10 +444,7 @@ class MenuEditor:
 
 	def __getPath(self, menu, path=None):
 		if not path:
-			if self.__getMenu(menu) == self.applications:
-				path = 'Applications'
-			else:
-				path = 'Desktop'
+                        path = menu.tree.root.get_menu_id()
 		if menu.get_parent():
 			path = self.__getPath(menu.get_parent(), path)
 			path += '/'
@@ -615,6 +613,16 @@ class MenuEditor:
 				child = dom.createElement('Merge')
 				child.setAttribute('type', order[1])
 				node.appendChild(child)
+		return element.appendChild(node)
+
+	def __addXmlDefaultLayout(self, element, dom):
+		# remove old default layout
+		for node in self.__getXmlNodesByName('DefaultLayout', element):
+			element.removeChild(node)
+
+		# add new layout
+		node = dom.createElement('DefaultLayout')
+		node.setAttribute('inline', 'false')
 		return element.appendChild(node)
 
 	def __createLayout(self, items):

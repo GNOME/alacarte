@@ -248,7 +248,7 @@ class DialogHandler:
 			self.first_change = False
 		if self.in_revert:
 			self.in_revert = False
-			self.saveItemChanges()
+			self.saveItem(self.item_original_values)
 			return
 		if not self.in_dialog_setup:
 			self.tree.get_widget('item_revert_button').set_sensitive(True)
@@ -401,13 +401,14 @@ class DialogHandler:
 			name_entry.get_text(),
 			comment_entry.get_text()
 			)
-		self.in_dialog_setup = False
 		#hack to make undo work
 		self.first_change = True
+		self.in_dialog_setup = False
 		can_close = False
 		while can_close == False:
 			response = dialog.run()
 			can_close = responseChecker(response)
+		self.menu_original_values = ()
 		dialog.destroy()
 
 	def on_menu_contents_changed(self, garbage):
@@ -418,7 +419,7 @@ class DialogHandler:
 			self.first_change = False
 		if self.in_revert:
 			self.in_revert = False
-			self.saveMenuChanges()
+			self.saveMenu(self.menu_original_values)
 			return
 		if not self.in_dialog_setup:
 			self.tree.get_widget('menu_revert_button').set_sensitive(True)

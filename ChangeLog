@@ -1,5 +1,10 @@
 2006-10-01  Travis Watkins  <alleykat@gmail.com>
 
+	* Alacarte/DialogHandler.py: don't set menu values to values of last
+	menu looked at (oops)
+
+2006-10-01  Travis Watkins  <alleykat@gmail.com>
+
 	* Alacarte/MainWindow.py: ignore expanding errors
 
 2006-10-01  Travis Watkins  <alleykat@gmail.com>

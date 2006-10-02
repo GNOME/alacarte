@@ -486,6 +486,10 @@ class MenuEditor:
 		return element.appendChild(node)
 
 	def __addXmlTextElement(self, element, name, text, dom):
+		for temp in element.childNodes:
+			if temp.nodeName == name:
+				if temp.childNodes[0].nodeValue == text:
+					return
 		node = dom.createElement(name)
 		text = dom.createTextNode(text)
 		node.appendChild(text)

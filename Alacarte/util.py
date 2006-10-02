@@ -146,7 +146,7 @@ def getItemPath(file_id):
 def getUserItemPath():
 	item_dir = None
 	if os.environ.has_key('XDG_DATA_HOME'):
-		item_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'share', 'applications')
+		item_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'applications')
 	else:
 		item_dir = os.path.join(os.environ['HOME'], '.local', 'share', 'applications')
 	if not os.path.isdir(item_dir):
@@ -171,7 +171,7 @@ def getDirectoryPath(file_id):
 def getUserDirectoryPath():
 	menu_dir = None
 	if os.environ.has_key('XDG_DATA_HOME'):
-		menu_dir = os.path.join(os.envrion['XDG_DATA_HOME'], 'share', 'desktop-directories')
+		menu_dir = os.path.join(os.envrion['XDG_DATA_HOME'], 'desktop-directories')
 	else:
 		menu_dir = os.path.join(os.environ['HOME'], '.local', 'share', 'desktop-directories')
 	if not os.path.isdir(menu_dir):

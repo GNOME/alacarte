@@ -1,5 +1,9 @@
 2006-10-01  Travis Watkins  <alleykat@gmail.com>
 
+	* Alacarte/MainWindow.py: ignore expanding errors
+
+2006-10-01  Travis Watkins  <alleykat@gmail.com>
+
 	* Alacarte/util.py: move .config out of the way if it's not a directory
 
 2006-10-01  Travis Watkins  <alleykat@gmail.com>

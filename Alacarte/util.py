@@ -128,6 +128,9 @@ def getUserMenuPath():
 		menu_dir = os.path.join(os.environ['XDG_CONFIG_HOME'], 'menus')
 	else:
 		menu_dir = os.path.join(os.environ['HOME'], '.config', 'menus')
+	#move .config out of the way if it's not a dir, it shouldn't be there
+	if os.path.isfile(os.path.split(menu_dir)[0]):
+		os.rename(os.path.split(menu_dir)[0], os.path.split(menu_dir)[0] + '.old')
 	if not os.path.isdir(menu_dir):
 		os.makedirs(menu_dir)
 	return menu_dir

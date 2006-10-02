@@ -181,8 +181,9 @@ def getUserDirectoryPath():
 def getSystemMenuPath(file_name):
 	if os.environ.has_key('XDG_CONFIG_DIRS'):
 		for system_path in os.environ['XDG_CONFIG_DIRS'].split(':'):
-			if os.path.isfile(os.path.join(system_path, 'menus', file_name)):
-				return os.path.join(system_path, file_name)
+			file_path = os.path.join(system_path, 'menus', file_name)
+			if os.path.isfile(file_path):
+				return file_path
 	file_path = os.path.join('/', 'etc', 'xdg', 'menus', file_name)
 	if os.path.isfile(file_path):
 		return file_path

@@ -1,5 +1,9 @@
 2006-10-01  Travis Watkins  <alleykat@gmail.com>
 
+	* Alacarte/util.py: fix invalid system menu path (thanks fcrozat)
+
+2006-10-01  Travis Watkins  <alleykat@gmail.com>
+
 	* Alacarte/util.py: fix XDG_DATA_HOME paths
 
 2006-10-01  Travis Watkins  <alleykat@gmail.com>

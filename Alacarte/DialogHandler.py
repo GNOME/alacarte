@@ -213,11 +213,16 @@ class DialogHandler:
 			label = gtk.Label('No Icon')
 			icon_button.add(label)
 			icon_button.icon_path = None
-		name_entry.set_text(self.item.get_name())
+		name_entry.set_text(cgi.escape(self.item.get_name()))
 		if self.item.get_comment():
 			comment_entry.set_text(self.item.get_comment())
 		if self.item.get_exec():
-			command_entry.set_text(self.item.get_exec())
+			command = self.item.get_exec()
+			#escape a few common things in commands
+			command = command.replace('\r', '\\r')
+			command = command.replace('\n', '\\n')
+			command = command.replace('\t', '\\t')
+			command_entry.set_text(cgi.escape(command))
 		#hack to work around weird bug
 		command_entry.set_completion(self.command_completion)
 		if self.item.get_launch_in_terminal():

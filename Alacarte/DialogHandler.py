@@ -198,7 +198,6 @@ class DialogHandler:
 		name_entry = self.tree.get_widget('item_name_entry')
 		comment_entry = self.tree.get_widget('item_comment_entry')
 		command_entry = self.tree.get_widget('item_command_entry')
-		command_entry.set_completion(self.command_completion)
 		command_button = self.tree.get_widget('item_command_button')
 		term_check = self.tree.get_widget('item_terminal_check')
 
@@ -219,6 +218,8 @@ class DialogHandler:
 			comment_entry.set_text(self.item.get_comment())
 		if self.item.get_exec():
 			command_entry.set_text(self.item.get_exec())
+		#hack to work around weird bug
+		command_entry.set_completion(self.command_completion)
 		if self.item.get_launch_in_terminal():
 			term_check.set_active(True)
 		dialog.show_all()

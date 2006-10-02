@@ -1,3 +1,7 @@
+2006-10-02  Travis Watkins  <alleykat@gmail.com>
+
+	* configure.ac: post-release bump to 0.10.2
+
 2006-10-02  Frederic Crozat  <fcrozat@mandriva.com>
 
 	* Alacarte/util.py: fix typo in code.

@@ -72,7 +72,25 @@ class DialogHandler:
 		dialog.set_filter(file_filter)
 		dialog.show_all()
 		if dialog.run() == gtk.RESPONSE_OK:
-			command_entry.set_text(dialog.get_filename())
+			command = dialog.get_filename()
+			new_command = ''
+			length, i = len(command), 0
+			while i < length:
+				char = command[i]
+				if not (ord(char) >= ord('a') and ord(char) <= ord('z')):
+					if not (ord(char) >= ord('A') and ord(char) <= ord('Z')):
+						if char == '/':
+							new_command += char
+						else:
+							new_command += '\\' + char
+					else:
+						new_command += char
+				else:
+					new_command += char
+				i += 1
+			command_entry.set_completion(None)
+			command_entry.set_text(new_command)
+			command_entry.set_completion(self.command_completion)
 		dialog.destroy()
 
 	def showIconDialog(self, button):

@@ -1,3 +1,8 @@
+2006-10-06  Thierry Randrianiriana  <thierry@isvtec.com>
+
+	* mg: Added Malagasy translation.
+	* LINGUAS: Added Malagasy 'mg'.
+
 2006-09-27  Runa Bhattacharjee <runabh@gmail.com>
 
 	* si.po: Added Sinhala Translation by Tyronne Wickramaratne.
@@ -114,12 +119,12 @@
 
         * mn.po: Updated Mongolian translation.
 	* LINGUAS: Added entry for Mongolian (mn).
- 
+
 2006-08-13  Rahul Bhalerao  <b.rahul.pm@gmail.com>
 
 	* LINGUAS: Added entry for Marathi(mr)
 	* mr.po: Updated Marathi translations
-	
+
 2006-08-12  Changwoo Ryu  <cwryu@debian.org>
 
 	* ko.po: Added Korean translation.
@@ -128,12 +133,12 @@
 2006-08-11  Clytie Siddall <clytie@riverland.net.au>
 
 	* vi.po: Added Vietnamese translation.
-	* LINGUAS: Added vi to the list of languages. 
+	* LINGUAS: Added vi to the list of languages.
 
 2006-08-11  Subhransu Behera  <arya_subhransu@yahoo.co.in>
 
 	* or.po: Added and Updated Oriya Translation.
-	* LINGUAS: Added Oriya to The List of Languages. 
+	* LINGUAS: Added Oriya to The List of Languages.
 
 2006-08-11  Josep Puigdemont i Casamajó  <josep.puigdemont@gmail.com>
 
@@ -315,4 +320,3 @@
 
 	* .cvsignore: Added more entries.
 	* LINGUAS, sv.po: Added Swedish translation.
-

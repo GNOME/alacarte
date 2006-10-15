@@ -1,0 +1,165 @@
+# Esperanto translation for alacarte
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the alacarte package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-22 06:41+0200\n"
+"PO-Revision-Date: 2006-09-22 01:33+0000\n"
+"Last-Translator: Dominique PELLÉ <dominique.pelle@free.fr>\n"
+"Language-Team: Esperanto <eo-tradukado@lists.tuxfamily.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../Alacarte/MainWindow.py:164
+msgid "Name"
+msgstr "Nomo"
+
+#: ../Alacarte/MainWindow.py:180
+msgid "Show"
+msgstr "Montru"
+
+#: ../Alacarte/MainWindow.py:188
+msgid "Item"
+msgstr "Menuero"
+
+#: ../Alacarte/DialogHandler.py:141 ../Alacarte/DialogHandler.py:178
+#: ../Alacarte/DialogHandler.py:333 ../Alacarte/DialogHandler.py:364
+msgid "A name is required."
+msgstr "Nomo estas bezonata."
+
+#: ../Alacarte/DialogHandler.py:144 ../Alacarte/DialogHandler.py:181
+msgid "A command is required."
+msgstr "Komando estas bezonata."
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "Aldonu, ŝanĝu, forigu menuerojn"
+
+#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "Aranĝo de menuo"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "Menuredaktilo Alacarte"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "Foliumu..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "Komando:"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "Komento:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "Kopirajto © 2006 Tavis Watkins"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "Bildsimbolo:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "Menueroj:"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "Atributoj de menuero"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "Menuaj atributoj"
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "Movu suben"
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "Movu supren"
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "Nomo:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "Nova menuero"
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "Nova _apartigilo"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "Restaŭru la defaŭltan menuan aranĝon"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "Ĉu malfaru ŝanĝojn?"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "Ĉu reagordu ĉiujn menuojn al originaj agordoj?"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "Ruligu komandon en terminalo"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "Simpla menuredaktilo kongrua kun freedesktop.org"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "_Menuoj:"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "_Nova menuo"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "_Reagordu al origina"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
+msgid "translator-credits"
+msgstr ""
+"Donald ROGERS\n"
+"Dominique PELLÉ"
+
+#~ msgid "A menu can't be named \"Other\"."
+#~ msgstr "Ne eblas nomi menuon \"Alia\"."
+
+#~ msgid "Loading..."
+#~ msgstr "Ŝargado..."
+
+#~ msgid "Visible"
+#~ msgstr "Videbla"
+
+#~ msgid "Entry Editor"
+#~ msgstr "Eroredaktilo"
+
+#~ msgid "Icon Selector"
+#~ msgstr "Bildsimbola elektilo"
+
+#~ msgid "Menu Editor"
+#~ msgstr "Menuredaktilo"
+
+#~ msgid "New _Entry"
+#~ msgstr "Nova ero"
+
+#~ msgid "_Delete"
+#~ msgstr "Forigi"

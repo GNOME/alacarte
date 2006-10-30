@@ -1,0 +1,141 @@
+# translation of alacarte.HEAD.po to Arabic
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Yousef Raffah <yousef@raffah.com>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-10-30 00:51+0000\n"
+"PO-Revision-Date: 2006-10-05 21:07-0000\n"
+"Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
+"Language-Team: Arabic <support@arabeyes.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
+"3\n"
+
+#: ../Alacarte/MainWindow.py:164
+msgid "Name"
+msgstr "اسم"
+
+#: ../Alacarte/MainWindow.py:180
+msgid "Show"
+msgstr "عرض"
+
+#: ../Alacarte/MainWindow.py:188
+msgid "Item"
+msgstr "عنصر"
+
+#: ../Alacarte/DialogHandler.py:159 ../Alacarte/DialogHandler.py:196
+#: ../Alacarte/DialogHandler.py:357 ../Alacarte/DialogHandler.py:388
+msgid "A name is required."
+msgstr "الاسم مطلوب"
+
+#: ../Alacarte/DialogHandler.py:162 ../Alacarte/DialogHandler.py:199
+msgid "A command is required."
+msgstr "الأمر مطلوب"
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "إضافة، تعديل، حذف مدخلات القائمة"
+
+#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "مخطط القائمة"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "محرر قائمة ألاكارت"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "استعرض..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "أمر:"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "تعليق:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "حقوق النشر © 2006 Travis Watkins"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "أيقونة:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "ع_ناصر:"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "خصائص عنصر القائمة"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "خصائص القائمة"
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "التحرك للأسفل"
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "التحرك للأعلى"
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "اسم:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "عنصر _جديد"
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "فا_صل جديد"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "استعادة المخطط الإفتراضي للقائمة"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "التراجع عن التغييرات؟"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "استرجاع كافة القوائم إلى الإعدادات الأصلية؟"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "تشغيل الأمر في الشاشة الطرفية"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "محرر قائمة متوافق مع fd.o"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "_قوائم:"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "قائمة _جديدة"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "ا_ستعادة الحالة الأصلية"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
+msgid "translator-credits"
+msgstr "Yousef Raffah يوسف رفه (yousef@raffah.com)"

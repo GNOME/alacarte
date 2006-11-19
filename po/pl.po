@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-16 22:54+0200\n"
+"POT-Creation-Date: 2006-11-12 14:57+0100\n"
 "PO-Revision-Date: 2006-08-12 23:02+0200\n"
 "Last-Translator: Artur Flinta <aflinta@at.kernel.pl>\n"
 "Language-Team: Polish <translators@gnomepl.org>\n"
@@ -18,24 +18,24 @@ msgstr ""
 "Plural-Forms:  nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%"
 "100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../Alacarte/MainWindow.py:161
+#: ../Alacarte/MainWindow.py:164
 msgid "Name"
 msgstr "Nazwa"
 
-#: ../Alacarte/MainWindow.py:177
+#: ../Alacarte/MainWindow.py:180
 msgid "Show"
 msgstr "Wyświetlanie"
 
-#: ../Alacarte/MainWindow.py:185
+#: ../Alacarte/MainWindow.py:188
 msgid "Item"
 msgstr "element"
 
-#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+#: ../Alacarte/DialogHandler.py:159 ../Alacarte/DialogHandler.py:196
+#: ../Alacarte/DialogHandler.py:357 ../Alacarte/DialogHandler.py:388
 msgid "A name is required."
 msgstr "Nazwa jest wymagana."
 
-#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+#: ../Alacarte/DialogHandler.py:162 ../Alacarte/DialogHandler.py:199
 msgid "A command is required."
 msgstr "Polecenie jest wymagane."
 

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-25 09:08+0300\n"
-"PO-Revision-Date: 2006-10-25 09:07+0300\n"
+"POT-Creation-Date: 2006-11-21 06:33+0300\n"
+"PO-Revision-Date: 2006-11-21 06:35+0300\n"
 "Last-Translator: Timo Jyrinki <timo.jyrinki@iki.fi>\n"
 "Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "Kohta"
 #: ../Alacarte/DialogHandler.py:159 ../Alacarte/DialogHandler.py:196
 #: ../Alacarte/DialogHandler.py:357 ../Alacarte/DialogHandler.py:388
 msgid "A name is required."
-msgstr "Nimi on pakollinen."
+msgstr "Nimi vaaditaan."
 
 #: ../Alacarte/DialogHandler.py:162 ../Alacarte/DialogHandler.py:199
 msgid "A command is required."
@@ -44,7 +44,7 @@ msgstr "Lisää, muokkaa ja poista valikon kohtia"
 
 #: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
 msgid "Menu Layout"
-msgstr "Valikkojen asettelu"
+msgstr "Valikkojen muokkaus"
 
 #: ../alacarte.glade.h:1
 msgid "Alacarte Menu Editor"
@@ -128,7 +128,7 @@ msgstr "_Valikot:"
 
 #: ../alacarte.glade.h:22
 msgid "_New Menu"
-msgstr "Uusi _valikko"
+msgstr "_Uusi valikko"
 
 #: ../alacarte.glade.h:23
 msgid "_Revert to Original"

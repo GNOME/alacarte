@@ -1,22 +1,23 @@
-# translation of alacarte.HEAD.po to Arabic
+# translation of alacarte.HEAD.ar.po to Arabic
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Yousef Raffah <yousef@raffah.com>, 2006.
+# Khaled Hosny <khaledhosny@eglug.org>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: alacarte.HEAD\n"
+"Project-Id-Version: alacarte.HEAD.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-30 00:51+0000\n"
-"PO-Revision-Date: 2006-10-05 21:07-0000\n"
-"Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
+"POT-Creation-Date: 2006-11-24 13:00+0000\n"
+"PO-Revision-Date: 2006-11-23 22:59+0200\n"
+"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <support@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.2\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
-"3\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && "
+"n<=10 ? 2 : 3\n"
 
 #: ../Alacarte/MainWindow.py:164
 msgid "Name"
@@ -24,7 +25,7 @@ msgstr "اسم"
 
 #: ../Alacarte/MainWindow.py:180
 msgid "Show"
-msgstr "عرض"
+msgstr "اعرض"
 
 #: ../Alacarte/MainWindow.py:188
 msgid "Item"
@@ -33,7 +34,7 @@ msgstr "عنصر"
 #: ../Alacarte/DialogHandler.py:159 ../Alacarte/DialogHandler.py:196
 #: ../Alacarte/DialogHandler.py:357 ../Alacarte/DialogHandler.py:388
 msgid "A name is required."
-msgstr "الاسم مطلوب"
+msgstr "الإسم مطلوب"
 
 #: ../Alacarte/DialogHandler.py:162 ../Alacarte/DialogHandler.py:199
 msgid "A command is required."
@@ -41,7 +42,7 @@ msgstr "الأمر مطلوب"
 
 #: ../alacarte.desktop.in.h:1
 msgid "Add, change, remove menu entries"
-msgstr "إضافة، تعديل، حذف مدخلات القائمة"
+msgstr "أضف، عدّل، احذف مدخلات القائمة"
 
 #: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
 msgid "Menu Layout"
@@ -49,7 +50,7 @@ msgstr "مخطط القائمة"
 
 #: ../alacarte.glade.h:1
 msgid "Alacarte Menu Editor"
-msgstr "محرر قائمة ألاكارت"
+msgstr "محرر القائمة ألاكارت"
 
 #: ../alacarte.glade.h:2
 msgid "Browse..."
@@ -65,7 +66,7 @@ msgstr "تعليق:"
 
 #: ../alacarte.glade.h:5
 msgid "Copyright © 2006 Travis Watkins"
-msgstr "حقوق النشر © 2006 Travis Watkins"
+msgstr "حقوق النسخ © 2006 Travis Watkins"
 
 #: ../alacarte.glade.h:6
 msgid "Icon:"
@@ -85,11 +86,11 @@ msgstr "خصائص القائمة"
 
 #: ../alacarte.glade.h:11
 msgid "Move Down"
-msgstr "التحرك للأسفل"
+msgstr "تحرك لأسفل"
 
 #: ../alacarte.glade.h:12
 msgid "Move Up"
-msgstr "التحرك للأعلى"
+msgstr "تحرك لأعلى"
 
 #: ../alacarte.glade.h:13
 msgid "Name:"
@@ -105,7 +106,7 @@ msgstr "فا_صل جديد"
 
 #: ../alacarte.glade.h:16
 msgid "Restore the default menu layout"
-msgstr "استعادة المخطط الإفتراضي للقائمة"
+msgstr "استعِد المخطط الإفتراضي للقائمة"
 
 #: ../alacarte.glade.h:17
 msgid "Revert Changes?"
@@ -117,7 +118,7 @@ msgstr "استرجاع كافة القوائم إلى الإعدادات الأ�
 
 #: ../alacarte.glade.h:19
 msgid "Run command in a terminal"
-msgstr "تشغيل الأمر في الشاشة الطرفية"
+msgstr "شغّل الأمر في طرفيّة"
 
 #: ../alacarte.glade.h:20
 msgid "Simple fd.o compliant menu editor"
@@ -133,9 +134,12 @@ msgstr "قائمة _جديدة"
 
 #: ../alacarte.glade.h:23
 msgid "_Revert to Original"
-msgstr "ا_ستعادة الحالة الأصلية"
+msgstr "ا_ستعِد الحالة الأصلية"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../alacarte.glade.h:25
 msgid "translator-credits"
-msgstr "Yousef Raffah يوسف رفه (yousef@raffah.com)"
+msgstr ""
+"فريق عربآيز للترجمة http://www.arabeyes.org :\n"
+"جهاد عفيفي\t<djihed@gmail.com>\n"
+"يوسف رفه\t<yousef@raffah.com>"

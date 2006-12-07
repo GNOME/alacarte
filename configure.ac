@@ -54,6 +54,7 @@ AC_CONFIG_FILES([
         Makefile
         po/Makefile.in
         Alacarte/Makefile
+        alacarte.desktop.in
         ])
 
 AC_OUTPUT

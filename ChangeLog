@@ -1,5 +1,13 @@
 2006-12-07  Rob Bradford  <rob@robster.org.uk>
 
+	* Alacarte/MainWindow.py:
+	* Alacarte/config.py.in:
+	  Make gettext look for the locale data in the correct place. My patch
+	  is a hybrid of the solution from Scott Reeves (see #376486) and
+	  Takao Fujiwara (see #377301). With some adjustments of my own.
+
+2006-12-07  Rob Bradford  <rob@robster.org.uk>
+
 	* alacarte.desktop.in.in: added _GenericName (see #352105) and changed
 	  the _Name and _Comment to match the recommendations from the Sun
 	  usability guys (see #375629).

@@ -19,9 +19,10 @@
 import gtk, gtk.glade, gmenu, gobject, gnomevfs, gnome.ui
 import cgi, os
 import gettext
-gettext.bindtextdomain('alacarte')
+from Alacarte import config
+gettext.bindtextdomain('alacarte',config.localedir)
 gettext.textdomain('alacarte')
-gtk.glade.bindtextdomain('alacarte')
+gtk.glade.bindtextdomain('alacarte',config.localedir)
 gtk.glade.textdomain('alacarte')
 _ = gettext.gettext
 from Alacarte.MenuEditor import MenuEditor

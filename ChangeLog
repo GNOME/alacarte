@@ -1,5 +1,10 @@
 2006-12-07  Rob Bradford  <rob@robster.org.uk>
 
+	* Alacarte/MainWindow.py: Disable the up/down arrows when on the
+	  first/last items (see #352103)
+
+2006-12-07  Rob Bradford  <rob@robster.org.uk>
+
 	* alacarte.desktop.in: removed
 	* alacarte.desktop.in.in: added and include bug-buddy magic 
 	  (see #363186)

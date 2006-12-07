@@ -389,8 +389,18 @@ class MainWindow:
 			self.tree.get_widget('edit_properties').set_sensitive(True)
 		else:
 			self.tree.get_widget('edit_properties').set_sensitive(False)
-		self.tree.get_widget('move_up_button').set_sensitive(True)
-		self.tree.get_widget('move_down_button').set_sensitive(True)
+
+		# If first item...
+		if (items.get_path(iter)[0]==0):
+			self.tree.get_widget('move_up_button').set_sensitive(False)
+		else:
+			self.tree.get_widget('move_up_button').set_sensitive(True)
+
+		# If last item...
+		if (items.get_path(iter)[0] == (len(items)-1)):
+			self.tree.get_widget('move_down_button').set_sensitive(False)
+		else:
+			self.tree.get_widget('move_down_button').set_sensitive(True)
 
 	def on_item_tree_row_activated(self, treeview, path, column):
 		self.on_edit_properties_activate(None)

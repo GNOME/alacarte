@@ -61,7 +61,7 @@ class DialogHandler:
 		dialog.destroy()
 
 	def showCommandDialog(self, command_entry):
-		dialog = gtk.FileChooserDialog('Choose a Program', None, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OK, gtk.RESPONSE_OK))
+		dialog = gtk.FileChooserDialog(_('Choose a Program'), None, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OK, gtk.RESPONSE_OK))
 		if len(command_entry.get_text()) and '/' in command_entry.get_text():
 			dialog.set_current_folder(command_entry.get_text().rsplit('/', 1)[0])
 		else:
@@ -94,7 +94,7 @@ class DialogHandler:
 		dialog.destroy()
 
 	def showIconDialog(self, button):
-		dialog = gtk.FileChooserDialog('Choose an Icon', None, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OK, gtk.RESPONSE_OK))
+		dialog = gtk.FileChooserDialog(_('Choose an Icon'), None, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OK, gtk.RESPONSE_OK))
 		if button.icon_path:
 			dialog.set_current_folder(button.icon_path.rsplit('/', 1)[0])
 		else:
@@ -167,7 +167,7 @@ class DialogHandler:
 		command_entry.set_completion(self.command_completion)
 		icon_button = self.tree.get_widget('newitem_icon_button')
 		icon_button.remove(icon_button.get_children()[0])
-		label = gtk.Label('No Icon')
+		label = gtk.Label(_('No Icon'))
 		icon_button.add(label)
 		icon_button.icon_path = None
 		dialog = self.tree.get_widget('newitemproperties')
@@ -337,7 +337,7 @@ class DialogHandler:
 			image.show()
 			icon_button.icon_path = self.item_original_values[0]
 		else:
-			label = gtk.Label('No Icon')
+			label = gtk.Label(_('No Icon'))
 			icon_button.add(label)
 		self.tree.get_widget('item_name_entry').set_text(self.item_original_values[1])
 		self.tree.get_widget('item_comment_entry').set_text(self.item_original_values[2])
@@ -362,7 +362,7 @@ class DialogHandler:
 		dialog.set_transient_for(self.parent)
 		icon_button = tree.get_widget('newmenu_icon_button')
 		icon_button.remove(icon_button.get_children()[0])
-		label = gtk.Label('No Icon')
+		label = gtk.Label(_('No Icon'))
 		icon_button.add(label)
 		icon_button.icon_path = None
 		dialog.show_all()
@@ -413,7 +413,7 @@ class DialogHandler:
 			icon_button.add(image)
 			icon_button.icon_path = path
 		else:
-			label = gtk.Label('No Icon')
+			label = gtk.Label(_('No Icon'))
 			icon_button.add(label)
 		name_entry.set_text(self.menu.get_name())
 		if self.menu.get_comment():
@@ -477,7 +477,7 @@ class DialogHandler:
 			image.show()
 			icon_button.icon_path = self.menu_original_values[0]
 		else:
-			label = gtk.Label('No Icon')
+			label = gtk.Label(_('No Icon'))
 			icon_button.add(label)
 		self.tree.get_widget('menu_name_entry').set_text(self.menu_original_values[1])
 		self.tree.get_widget('menu_comment_entry').set_text(self.menu_original_values[2])

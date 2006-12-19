@@ -1,33 +1,4 @@
 ==============
-Version 0.10.2
-==============
-
-Kjartan Maraas:
-
-        * Mark all strings for translation
-
-Rob Bradford:
-
-        * Support for Python 2.5
-        * Included hints for bug-buddy in the .desktop file
-        * Translations are now searched for in the correct place
-        * Improved the description in the .desktop file
-
-Kevin Tighe:
-
-        * Minimize/maximize buttons added to main window
-
-Translations
-
-        * Khaled Hosny (ar)
-        * Dominique PELLÉ (eo)
-        * Timo Jyrinki (fi)
-        * Kjartan Maraas (nb)
-        * Artur Flinta (pl)
-        * Laurent Dhima (sq)
-
-
-==============
 Version 0.10.1
 ==============
 

@@ -1,6 +1,5 @@
 prefix="@prefix@"
 datadir="@datadir@"
-localedir=datadir+"/locale"
 pkgdatadir="@pkgdatadir@"
 libdir="@libdir@"
 libexecdir="@libexecdir@"

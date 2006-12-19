@@ -19,10 +19,9 @@
 import gtk, gtk.glade, gmenu, gobject, gnomevfs, gnome.ui
 import cgi, os
 import gettext
-from Alacarte import config
-gettext.bindtextdomain('alacarte',config.localedir)
+gettext.bindtextdomain('alacarte')
 gettext.textdomain('alacarte')
-gtk.glade.bindtextdomain('alacarte',config.localedir)
+gtk.glade.bindtextdomain('alacarte')
 gtk.glade.textdomain('alacarte')
 _ = gettext.gettext
 from Alacarte.MenuEditor import MenuEditor
@@ -390,18 +389,8 @@ class MainWindow:
 			self.tree.get_widget('edit_properties').set_sensitive(True)
 		else:
 			self.tree.get_widget('edit_properties').set_sensitive(False)
-
-		# If first item...
-		if (items.get_path(iter)[0]==0):
-			self.tree.get_widget('move_up_button').set_sensitive(False)
-		else:
-			self.tree.get_widget('move_up_button').set_sensitive(True)
-
-		# If last item...
-		if (items.get_path(iter)[0] == (len(items)-1)):
-			self.tree.get_widget('move_down_button').set_sensitive(False)
-		else:
-			self.tree.get_widget('move_down_button').set_sensitive(True)
+		self.tree.get_widget('move_up_button').set_sensitive(True)
+		self.tree.get_widget('move_down_button').set_sensitive(True)
 
 	def on_item_tree_row_activated(self, treeview, path, column):
 		self.on_edit_properties_activate(None)

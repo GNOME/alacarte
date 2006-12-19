@@ -1,7 +1,7 @@
 dnl -*- Mode: autoconf -*-
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.53)
-AC_INIT(alacarte, 0.10.3, http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte)
+AC_INIT(alacarte, 0.10.2, http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte)
 AC_CONFIG_SRCDIR(alacarte.in)
 AM_INIT_AUTOMAKE([1.7])
 AM_MAINTAINER_MODE
@@ -19,7 +19,7 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext package])
 AM_GLIB_GNU_GETTEXT
 IT_PROG_INTLTOOL([0.35.0])
 
-AM_PATH_PYTHON_VERSION(2.4, 2.4.0, 2.5, 2.5.0)
+AM_PATH_PYTHON_VERSION(2.4, 2.4.0)
 
 PKG_CHECK_MODULES(ALACARTE, libgnome-menu >= 2.15)
 
@@ -54,7 +54,6 @@ AC_CONFIG_FILES([
         Makefile
         po/Makefile.in
         Alacarte/Makefile
-        alacarte.desktop.in
         ])
 
 AC_OUTPUT

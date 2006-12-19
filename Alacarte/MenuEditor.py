@@ -514,7 +514,7 @@ class MenuEditor:
 			file_id = item.get_desktop_file_id()
 			keyfile = util.DesktopParser(file_path)
 		elif item == None and name == None:
-			raise Exception(_('New menu items need a name'))
+			raise Exception('New menu items need a name')
 		else:
 			file_id = util.getUniqueFileId(name, '.desktop')
 			keyfile = util.DesktopParser()
@@ -547,7 +547,7 @@ class MenuEditor:
 			file_path = menu.get_desktop_file_path()
 			keyfile = util.DesktopParser(file_path)
 		elif menu == None and name == None:
-			raise Exception(_('New menus need a name'))
+			raise Exception('New menus need a name')
 		else:
 			file_id = util.getUniqueFileId(name, '.directory')
 			keyfile = util.DesktopParser(file_type='Directory')

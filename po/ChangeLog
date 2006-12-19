@@ -1,3 +1,9 @@
+2006-12-19  Mugurel Tudor  <mugurelu@gnome.ro>
+
+	* ro.po: Added Romanian translation by
+	Alexandru Szasz <alexxed@gmail.com>
+	* LINGUAS: Added Romanian "ro".
+
 2006-12-08  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* nb.po: Updated Norwegian bokmål translation.

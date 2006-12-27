@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte.gnome-2-16.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-24 21:01+0000\n"
+"POT-Creation-Date: 2006-12-27 16:30+0000\n"
 "PO-Revision-Date: 2006-12-21 19:48+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <support@arabeyes.org>\n"
@@ -30,6 +30,14 @@ msgstr "اعرض"
 #: ../Alacarte/MainWindow.py:189
 msgid "Item"
 msgstr "عنصر"
+
+#: ../Alacarte/MenuEditor.py:517
+msgid "New menu items need a name"
+msgstr ""
+
+#: ../Alacarte/MenuEditor.py:550
+msgid "New menus need a name"
+msgstr ""
 
 #: ../Alacarte/DialogHandler.py:64
 msgid "Choose a Program"

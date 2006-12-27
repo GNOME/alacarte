@@ -1,5 +1,6 @@
 [encoding: UTF-8]
 Alacarte/MainWindow.py
+Alacarte/MenuEditor.py
 Alacarte/DialogHandler.py
-alacarte.desktop.in
+alacarte.desktop.in.in
 alacarte.glade

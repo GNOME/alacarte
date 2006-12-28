@@ -5,48 +5,75 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: alacarte \n"
+"Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-11 22:15+0100\n"
-"PO-Revision-Date: 2006-09-11 22:16-0000\n"
+"POT-Creation-Date: 2006-12-28 18:42+0000\n"
+"PO-Revision-Date: 2006-12-28 18:42-0000\n"
 "Last-Translator: David Lodge <dave@cirt.net>\n"
 "Language-Team: en_GB <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:165
 msgid "Name"
 msgstr "Name"
 
-#: ../Alacarte/MainWindow.py:180
+#: ../Alacarte/MainWindow.py:181
 msgid "Show"
 msgstr "Show"
 
-#: ../Alacarte/MainWindow.py:188
+#: ../Alacarte/MainWindow.py:189
 msgid "Item"
 msgstr "Item"
 
-#: ../Alacarte/DialogHandler.py:141
-#: ../Alacarte/DialogHandler.py:178
-#: ../Alacarte/DialogHandler.py:333
-#: ../Alacarte/DialogHandler.py:364
+#: ../Alacarte/MenuEditor.py:517
+msgid "New menu items need a name"
+msgstr "New menu items need a name"
+
+#: ../Alacarte/MenuEditor.py:550
+msgid "New menus need a name"
+msgstr "New menus need a name"
+
+#: ../Alacarte/DialogHandler.py:64
+msgid "Choose a Program"
+msgstr "Choose a Program"
+
+#: ../Alacarte/DialogHandler.py:97
+msgid "Choose an Icon"
+msgstr "Choose an Icon"
+
+#: ../Alacarte/DialogHandler.py:159
+#: ../Alacarte/DialogHandler.py:196
+#: ../Alacarte/DialogHandler.py:357
+#: ../Alacarte/DialogHandler.py:388
 msgid "A name is required."
 msgstr "A name is required."
 
-#: ../Alacarte/DialogHandler.py:144
-#: ../Alacarte/DialogHandler.py:181
+#: ../Alacarte/DialogHandler.py:162
+#: ../Alacarte/DialogHandler.py:199
 msgid "A command is required."
 msgstr "A command is required."
 
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "Add, change, remove menu entries"
+#: ../Alacarte/DialogHandler.py:170
+#: ../Alacarte/DialogHandler.py:340
+#: ../Alacarte/DialogHandler.py:365
+#: ../Alacarte/DialogHandler.py:416
+#: ../Alacarte/DialogHandler.py:480
+msgid "No Icon"
+msgstr "No Icon"
 
-#: ../alacarte.desktop.in.h:2
-#: ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "Menu Layout"
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "Change which applications are shown on the main menu"
+
+#: ../alacarte.desktop.in.in.h:2
+msgid "Main Menu Editor"
+msgstr "Main Menu Editor"
+
+#: ../alacarte.desktop.in.in.h:3
+msgid "Menu Editor"
+msgstr "Menu Editor"
 
 #: ../alacarte.glade.h:1
 msgid "Alacarte Menu Editor"
@@ -79,6 +106,10 @@ msgstr "It_ems:"
 #: ../alacarte.glade.h:8
 msgid "Menu Item Properties"
 msgstr "Menu Item Properties"
+
+#: ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "Menu Layout"
 
 #: ../alacarte.glade.h:10
 msgid "Menu Properties"
@@ -140,4 +171,7 @@ msgstr "_Revert to Original"
 #: ../alacarte.glade.h:25
 msgid "translator-credits"
 msgstr "David Lodge <dave@cirt.net>"
+
+#~ msgid "Add, change, remove menu entries"
+#~ msgstr "Add, change, remove menu entries"
 

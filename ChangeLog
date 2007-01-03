@@ -1,3 +1,7 @@
+2007-01-03  Travis Watkins  <alleykat@gmail.com>
+
+	* alacarte.glade: minor UI fix (from Christian Persch)
+
 2006-12-18  Rob Bradford  <rob@robster.org.uk>
 
 	* configure.ac: post-release bump to 0.10.3

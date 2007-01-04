@@ -1,17 +1,17 @@
 # Bulgarian translation of Alacarte.
-# Copyright (C) 2005, 2006 THE Alacarte'S COPYRIGHT HOLDER
+# Copyright (C) 2005, 2006, 2007 THE Alacarte'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the Alacarte package.
 # Stanimir Djevelekov <kori.mendocino@gmail.com>, 2005.
-# Alexander Shopov <ash@contact.bg>, 2006.
+# Alexander Shopov <ash@contact.bg>, 2006, 2007.
 # Vladimir "Kaladan" Petkov <vpetkov@i-space.org>, 2006.
 #
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Alacarte HEAD\n"
+"Project-Id-Version: Alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-09 19:07+0300\n"
-"PO-Revision-Date: 2006-09-08 16:25+0300\n"
+"POT-Creation-Date: 2007-01-04 19:02+0200\n"
+"PO-Revision-Date: 2007-01-04 19:07+0200\n"
 "Last-Translator: Alexander Shopov <ash@contact.bg>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,38 +19,64 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:165
 msgid "Name"
 msgstr "Име"
 
-#: ../Alacarte/MainWindow.py:180
+#: ../Alacarte/MainWindow.py:181
 msgid "Show"
 msgstr "Показване"
 
-#: ../Alacarte/MainWindow.py:188
+#: ../Alacarte/MainWindow.py:189
 msgid "Item"
 msgstr "Елемент"
 
-#: ../Alacarte/DialogHandler.py:141 ../Alacarte/DialogHandler.py:178
-#: ../Alacarte/DialogHandler.py:333 ../Alacarte/DialogHandler.py:364
+#: ../Alacarte/MenuEditor.py:517
+msgid "New menu items need a name"
+msgstr "Необходимо е име за новия елемент в менюто"
+
+#: ../Alacarte/MenuEditor.py:550
+msgid "New menus need a name"
+msgstr "Необходимо е име за новото меню"
+
+#: ../Alacarte/DialogHandler.py:64
+msgid "Choose a Program"
+msgstr "Избор на програма"
+
+#: ../Alacarte/DialogHandler.py:97
+msgid "Choose an Icon"
+msgstr "Избор на икона"
+
+#: ../Alacarte/DialogHandler.py:159 ../Alacarte/DialogHandler.py:196
+#: ../Alacarte/DialogHandler.py:357 ../Alacarte/DialogHandler.py:388
 msgid "A name is required."
 msgstr "Изисква се име."
 
-#: ../Alacarte/DialogHandler.py:144 ../Alacarte/DialogHandler.py:181
+#: ../Alacarte/DialogHandler.py:162 ../Alacarte/DialogHandler.py:199
 msgid "A command is required."
 msgstr "Изисква се команда."
 
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "Добавяне, промяна или изтриване на елемент от менюто"
+#: ../Alacarte/DialogHandler.py:170 ../Alacarte/DialogHandler.py:340
+#: ../Alacarte/DialogHandler.py:365 ../Alacarte/DialogHandler.py:416
+#: ../Alacarte/DialogHandler.py:480
+msgid "No Icon"
+msgstr "Без икона"
 
-#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "Подредба на менюто"
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "Промяна на програмите в основното меню"
+
+#: ../alacarte.desktop.in.in.h:2
+msgid "Main Menu Editor"
+msgstr "Редактор на основното меню"
+
+#: ../alacarte.desktop.in.in.h:3
+msgid "Menu Editor"
+msgstr "Редактор на основното меню"
 
 #: ../alacarte.glade.h:1
 msgid "Alacarte Menu Editor"
-msgstr "Редактор на менюта (Alacarte)"
+msgstr "Редактор на основното меню"
 
 #: ../alacarte.glade.h:2
 msgid "Browse..."
@@ -80,17 +106,21 @@ msgstr "_Елементи:"
 msgid "Menu Item Properties"
 msgstr "Настройки на елемент от менюто"
 
+#: ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "Подредба на менюто"
+
 #: ../alacarte.glade.h:10
 msgid "Menu Properties"
 msgstr "Настройки на меню"
 
 #: ../alacarte.glade.h:11
 msgid "Move Down"
-msgstr "Преместване надолу"
+msgstr "Надолу"
 
 #: ../alacarte.glade.h:12
 msgid "Move Up"
-msgstr "Преместване нагоре"
+msgstr "Нагоре"
 
 #: ../alacarte.glade.h:13
 msgid "Name:"
@@ -106,7 +136,7 @@ msgstr "Нов _разделител"
 
 #: ../alacarte.glade.h:16
 msgid "Restore the default menu layout"
-msgstr "Възстановяване на първоначалната подредба на меню"
+msgstr "Възстановяване на първоначалната подредба на менюто"
 
 #: ../alacarte.glade.h:17
 msgid "Revert Changes?"

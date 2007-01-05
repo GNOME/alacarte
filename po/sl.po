@@ -1,54 +1,83 @@
 # Slovenian translation for alacarte.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the alacarte package.
+#
 # Matic Zgur <mr.zgur@gmail.com>, 2006.
+# Matic Žgur <mr.zgur@gmail.com>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-23 15:29+0200\n"
-"PO-Revision-Date: 2006-07-29 16:19+0100\n"
+"POT-Creation-Date: 2007-01-02 03:52+0000\n"
+"PO-Revision-Date: 2007-01-05 11:53+0100\n"
 "Last-Translator: Matic Žgur <mr.zgur@gmail.com>\n"
-"Language-Team: Slovenian <LL@li.org>\n"
+"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3\n"
 "X-Poedit-Language: Slovenian\n"
 
-#: ../Alacarte/MainWindow.py:161
+#: ../Alacarte/MainWindow.py:165
 msgid "Name"
 msgstr "Ime"
 
-#: ../Alacarte/MainWindow.py:177
+#: ../Alacarte/MainWindow.py:181
 msgid "Show"
 msgstr "Prikaži"
 
-#: ../Alacarte/MainWindow.py:185
+#: ../Alacarte/MainWindow.py:189
 msgid "Item"
 msgstr "Predmet"
 
-#: ../Alacarte/DialogHandler.py:145
-#: ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337
-#: ../Alacarte/DialogHandler.py:368
+#: ../Alacarte/MenuEditor.py:517
+msgid "New menu items need a name"
+msgstr "Novi menijski predmeti potrebujejo ime"
+
+#: ../Alacarte/MenuEditor.py:550
+msgid "New menus need a name"
+msgstr "Novi meniji potrebujejo ime"
+
+#: ../Alacarte/DialogHandler.py:64
+msgid "Choose a Program"
+msgstr "Izberite program"
+
+#: ../Alacarte/DialogHandler.py:97
+msgid "Choose an Icon"
+msgstr "Izberite ikono"
+
+#: ../Alacarte/DialogHandler.py:159
+#: ../Alacarte/DialogHandler.py:196
+#: ../Alacarte/DialogHandler.py:357
+#: ../Alacarte/DialogHandler.py:388
 msgid "A name is required."
 msgstr "Potrebno je ime."
 
-#: ../Alacarte/DialogHandler.py:148
-#: ../Alacarte/DialogHandler.py:185
+#: ../Alacarte/DialogHandler.py:162
+#: ../Alacarte/DialogHandler.py:199
 msgid "A command is required."
 msgstr "Potreben je ukaz."
 
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "Dodaj, spremeni, odstrani menijske vnose"
+#: ../Alacarte/DialogHandler.py:170
+#: ../Alacarte/DialogHandler.py:340
+#: ../Alacarte/DialogHandler.py:365
+#: ../Alacarte/DialogHandler.py:416
+#: ../Alacarte/DialogHandler.py:480
+msgid "No Icon"
+msgstr "Ni ikone"
 
-#: ../alacarte.desktop.in.h:2
-#: ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "Postavitev menija"
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "Spremenite, kateri programi so prikazani v osnovnem meniju"
+
+#: ../alacarte.desktop.in.in.h:2
+msgid "Main Menu Editor"
+msgstr "Urejevalnik osnovnega menija"
+
+#: ../alacarte.desktop.in.in.h:3
+msgid "Menu Editor"
+msgstr "Urejevalnik menijev"
 
 #: ../alacarte.glade.h:1
 msgid "Alacarte Menu Editor"
@@ -82,6 +111,10 @@ msgstr "_Predmeti:"
 msgid "Menu Item Properties"
 msgstr "Lastnosti menijskega predmeta"
 
+#: ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "Postavitev menija"
+
 #: ../alacarte.glade.h:10
 msgid "Menu Properties"
 msgstr "Lastnosti menija"
@@ -108,7 +141,7 @@ msgstr "Nova _ločilna črta"
 
 #: ../alacarte.glade.h:16
 msgid "Restore the default menu layout"
-msgstr "Povrni privzeto postavitev menija"
+msgstr "Povrne privzeto postavitev menija"
 
 #: ../alacarte.glade.h:17
 msgid "Revert Changes?"
@@ -116,7 +149,7 @@ msgstr "Ali želite povrniti spremembe?"
 
 #: ../alacarte.glade.h:18
 msgid "Revert all menus to original settings?"
-msgstr "Ali želite povrniti vse menije na originalne nastavitve?"
+msgstr "Ali želite povrniti vse menije na izvirne nastavitve?"
 
 #: ../alacarte.glade.h:19
 msgid "Run command in a terminal"
@@ -136,10 +169,13 @@ msgstr "Nov _meni"
 
 #: ../alacarte.glade.h:23
 msgid "_Revert to Original"
-msgstr "_Povrni na originalne vrednosti"
+msgstr "_Povrni na izvirne vrednosti"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../alacarte.glade.h:25
 msgid "translator-credits"
 msgstr "Matic Žgur <mr.zgur@gmail.com>"
+
+#~ msgid "Add, change, remove menu entries"
+#~ msgstr "Dodaj, spremeni, odstrani menijske vnose"
 

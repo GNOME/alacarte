@@ -2,16 +2,17 @@
 # Estonian translation of Alacarte.
 #
 # Copyright (C) 2006 Free Software Foundation, Inc.
+# Copyright (C) 2007, The GNOME Project.
 # This file is distributed under the same license as the alacarte package.
 #
 # Priit Laes <amd store20 com>, 2006.
-# Ivar Smolin <okul linux ee>, 2006.
+# Ivar Smolin <okul linux ee>, 2006, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-05 06:38+0200\n"
+"POT-Creation-Date: 2007-01-02 03:52+0000\n"
 "PO-Revision-Date: 2006-09-05 17:31+0300\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
@@ -19,38 +20,60 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:161
+#: ../Alacarte/MainWindow.py:165
 msgid "Name"
 msgstr "Nimi"
 
-#: ../Alacarte/MainWindow.py:177
+#: ../Alacarte/MainWindow.py:181
 msgid "Show"
 msgstr "Näita"
 
-#: ../Alacarte/MainWindow.py:185
+#: ../Alacarte/MainWindow.py:189
 msgid "Item"
 msgstr "Kirje"
 
-#: ../Alacarte/DialogHandler.py:145
-#: ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337
-#: ../Alacarte/DialogHandler.py:368
+#: ../Alacarte/MenuEditor.py:517
+msgid "New menu items need a name"
+msgstr "Uuel menüükirjel peab nimi olema"
+
+#: ../Alacarte/MenuEditor.py:550
+msgid "New menus need a name"
+msgstr "Uutel menüüdel peab nimi olema"
+
+#: ../Alacarte/DialogHandler.py:64
+msgid "Choose a Program"
+msgstr "Programmi valimine"
+
+#: ../Alacarte/DialogHandler.py:97
+msgid "Choose an Icon"
+msgstr "Ikooni valimine"
+
+#: ../Alacarte/DialogHandler.py:159 ../Alacarte/DialogHandler.py:196
+#: ../Alacarte/DialogHandler.py:357 ../Alacarte/DialogHandler.py:388
 msgid "A name is required."
 msgstr "Nimi on vajalik."
 
-#: ../Alacarte/DialogHandler.py:148
-#: ../Alacarte/DialogHandler.py:185
+#: ../Alacarte/DialogHandler.py:162 ../Alacarte/DialogHandler.py:199
 msgid "A command is required."
 msgstr "Käsk on vajalik"
 
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "Menüükirjete lisamine, muutmine ja eemaldamine"
+#: ../Alacarte/DialogHandler.py:170 ../Alacarte/DialogHandler.py:340
+#: ../Alacarte/DialogHandler.py:365 ../Alacarte/DialogHandler.py:416
+#: ../Alacarte/DialogHandler.py:480
+msgid "No Icon"
+msgstr "Ikooni pole"
 
-#: ../alacarte.desktop.in.h:2
-#: ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "Menüü paigutus"
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "Peamenüüs näidatavate rakenduste valimine"
+
+#: ../alacarte.desktop.in.in.h:2
+msgid "Main Menu Editor"
+msgstr "Peamenüü redaktor"
+
+#: ../alacarte.desktop.in.in.h:3
+msgid "Menu Editor"
+msgstr "Menüüredaktor"
 
 #: ../alacarte.glade.h:1
 msgid "Alacarte Menu Editor"
@@ -83,6 +106,10 @@ msgstr "_Elemendid:"
 #: ../alacarte.glade.h:8
 msgid "Menu Item Properties"
 msgstr "Menüükirje omadused"
+
+#: ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "Menüü paigutus"
 
 #: ../alacarte.glade.h:10
 msgid "Menu Properties"
@@ -145,4 +172,7 @@ msgstr "_Taasta algne seis"
 msgid "translator-credits"
 msgstr ""
 "Priit Laes <amd@store20.com>, 2006.\n"
-"Ivar Smolin <okul linux ee>, 2006."
+"Ivar Smolin <okul linux ee>, 2006, 2007."
+
+#~ msgid "Add, change, remove menu entries"
+#~ msgstr "Menüükirjete lisamine, muutmine ja eemaldamine"

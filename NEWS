@@ -1,4 +1,30 @@
 ==============
+Version 0.11.0
+==============
+
+Travis Watkins:
+
+	* respond to show/hide immediately
+	* use gnome-desktop-item-edit for all menu and item editing
+
+Translations
+
+	* Adam Weinberger (en_CA)
+	* Alexander Shopov (bg)
+	* Alexandru Szasz (ro)
+	* Clytie Siddall (vi)
+	* Daniel Nylander (sv)
+	* David Lodge (en_GB)
+	* Ivar Smolin (et)
+	* Jovan Naumovski (mk)
+	* Khaled Hosny (ar)
+	* Kjartan Maraas (nb)
+	* Matic Žgur (sl)
+	* Og Maciel (pt_BR)
+	* Theppitak Karoonboonyanan (th)
+
+
+==============
 Version 0.10.2
 ==============
 

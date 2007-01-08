@@ -20,4 +20,7 @@ py-compile
 alacarte-dbg
 *.gladep
 *.pyc
+config.guess
+config.sub
+alacarte.desktop.in
 

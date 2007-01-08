@@ -1,5 +1,9 @@
 2007-01-08  Travis Watkins  <alleykat@gmail.com>
 
+	* Alacarte/MainWindow.py: add a small hack to make menu creation work
+
+2007-01-08  Travis Watkins  <alleykat@gmail.com>
+
 	* Alacarte/MenuEditor.py: add support for adding external files
 	* Alacarte/MainWindow.py: use gnome-desktop-item-edit for all menu
 	  and item dialogs

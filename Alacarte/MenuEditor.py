@@ -436,6 +436,10 @@ class MenuEditor:
 				return menu
 			else:
 				return self.__findMenu(menu_id, self.settings.tree.root)
+		if menu_id == self.applications.tree.root.menu_id:
+			return self.applications.tree.root
+		if menu_id == self.settings.tree.root:
+			return self.settings.tree.root
 		for item in parent.get_contents():
 			if item.get_type() == gmenu.TYPE_DIRECTORY:
 				if item.menu_id == menu_id:

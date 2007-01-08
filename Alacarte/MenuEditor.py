@@ -217,6 +217,10 @@ class MenuEditor:
 
 	def createItem(self, parent, icon, name, comment, command, use_term, before=None, after=None):
 		file_id = self.__writeItem(None, icon, name, comment, command, use_term)
+		self.insertExternalItem(file_id, parent.menu_id, before, after)
+
+	def insertExternalItem(self, file_id, parent_id, before=None, after=None):
+		parent = self.__findMenu(parent_id)
 		dom = self.__getMenu(parent).dom
 		self.__addItem(parent, file_id, dom)
 		self.__positionItem(parent, ('Item', file_id), before, after)
@@ -225,7 +229,11 @@ class MenuEditor:
 
 	def createMenu(self, parent, icon, name, comment, before=None, after=None):
 		file_id = self.__writeMenu(None, icon, name, comment)
+		self.insertExternalMenu(file_id, parent.menu_id, before, after)
+
+	def insertExternalMenu(self, file_id, parent_id, before=None, after=None):
 		menu_id = file_id.rsplit('.', 1)[0]
+		parent = self.__findMenu(parent_id)
 		dom = self.__getMenu(parent).dom
 		self.__addXmlDefaultLayout(self.__getXmlMenu(self.__getPath(parent), dom, dom) , dom)
 		menu_xml = self.__getXmlMenu(self.__getPath(parent) + '/' + menu_id, dom, dom)
@@ -421,25 +429,32 @@ class MenuEditor:
 			return self.applications
 		return self.settings
 
+	def __findMenu(self, menu_id, parent=None):
+		if parent == None:
+			menu = self.__findMenu(menu_id, self.applications.tree.root)
+			if menu != None:
+				return menu
+			else:
+				return self.__findMenu(menu_id, self.settings.tree.root)
+		for item in parent.get_contents():
+			if item.get_type() == gmenu.TYPE_DIRECTORY:
+				if item.menu_id == menu_id:
+					return item
+				menu = self.__findMenu(menu_id, item)
+				if menu != None:
+					return menu
+
 	def __isVisible(self, item):
 		if item.get_type() == gmenu.TYPE_ENTRY:
 			return not (item.get_is_excluded() or item.get_is_nodisplay())
-		def loop_for_menu(parent, menu):
-			for item in parent.get_contents():
-				if item.get_type() == gmenu.TYPE_DIRECTORY:
-					if item.menu_id == menu.menu_id:
-						return True
-					temp = loop_for_menu(item, menu)
-					if temp:
-						return True
-			return False
 		menu = self.__getMenu(item)
 		if menu == self.applications:
 			root = self.applications.visible_tree.root
 		elif menu == self.settings:
 			root = self.settings.visible_tree.root
 		if item.get_type() == gmenu.TYPE_DIRECTORY:
-			return loop_for_menu(root, item)
+			if self.__findMenu(item.menu_id, root) == None:
+				return False
 		return True
 
 	def __getPath(self, menu, path=None):

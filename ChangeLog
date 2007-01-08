@@ -1,3 +1,11 @@
+2007-01-08  Travis Watkins  <alleykat@gmail.com>
+
+	* Alacarte/MenuEditor.py: add support for adding external files
+	* Alacarte/MainWindow.py: use gnome-desktop-item-edit for all menu
+	  and item dialogs
+	* Alacarte/DialogHandler.py: removed, no longer needed
+	* alacarte.glade: remove unused dialogs
+
 2007-01-03  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.glade: minor UI fix (from Christian Persch)

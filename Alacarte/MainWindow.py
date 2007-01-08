@@ -19,10 +19,14 @@
 import gtk, gtk.glade, gmenu, gobject, gnomevfs, gnome.ui
 import cgi, os
 import gettext
-from Alacarte import config
-gettext.bindtextdomain('alacarte',config.localedir)
-gettext.textdomain('alacarte')
-gtk.glade.bindtextdomain('alacarte',config.localedir)
+import subprocess
+try:
+	from Alacarte import config
+	gettext.bindtextdomain('alacarte',config.localedir)
+	gettext.textdomain('alacarte')
+	gtk.glade.bindtextdomain('alacarte',config.localedir)
+except:
+	pass
 gtk.glade.textdomain('alacarte')
 _ = gettext.gettext
 from Alacarte.MenuEditor import MenuEditor
@@ -39,6 +43,7 @@ class MainWindow:
 	dnd_menus = [('ALACARTE_MENU_ROW', gtk.TARGET_SAME_APP, 0)]
 	dnd_both = [dnd_items[0],] + dnd_menus
 	drag_data = None
+	edit_pool = []
 
 	def __init__(self, datadir, version, argv):
 		self.file_path = datadir
@@ -53,7 +58,6 @@ class MainWindow:
 		self.tree.signal_autoconnect(signals)
 		self.setupMenuTree()
 		self.setupItemTree()
-		self.dialogs = DialogHandler(self.tree.get_widget('mainwindow'), self.editor, self.file_path)
 		self.tree.get_widget('edit_delete').set_sensitive(False)
 		self.tree.get_widget('edit_revert_to_original').set_sensitive(False)
 		self.tree.get_widget('edit_properties').set_sensitive(False)
@@ -253,6 +257,29 @@ class MainWindow:
 				icon = util.getIcon(item)
 			self.item_store.append((show, icon, name, item))
 
+	#this is a little timeout callback to insert new items after
+	#gnome-desktop-item-edit has finished running
+	def waitForNewItemProcess(self, process, parent_id, file_path):
+		if process.poll() != None:
+			if os.path.isfile(file_path):
+				self.editor.insertExternalItem(os.path.split(file_path)[1], parent_id)
+			return False
+		return True
+
+	def waitForNewMenuProcess(self, process, parent_id, file_path):
+		if process.poll() != None:
+			if os.path.isfile(file_path):
+				self.editor.insertExternalMenu(os.path.split(file_path)[1], parent_id)
+			return False
+		return True
+
+	#this callback keeps you from editing the same item twice
+	def waitForEditProcess(self, process, file_path):
+		if process.poll() != None:
+			self.edit_pool.remove(file_path)
+			return False
+		return True
+
 	def on_new_menu_button_clicked(self, button):
 		menu_tree = self.tree.get_widget('menu_tree')
 		menus, iter = menu_tree.get_selection().get_selected()
@@ -262,11 +289,9 @@ class MainWindow:
 			menu_tree.get_selection().select_path((0,))
 		else:
 			parent = menus[iter][2]
-		values = self.dialogs.newMenuDialog()
-		if values:
-			self.editor.createMenu(parent, values[0], values[1], values[2])
-		#FIXME: make gnome-menus update monitors when menus are added
-		gobject.timeout_add(3, self.loadUpdates)
+		file_path = os.path.join(util.getUserDirectoryPath(), util.getUniqueFileId('alacarte-made', '.directory'))
+		process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
+		gobject.timeout_add(100, self.waitForNewMenuProcess, process, parent.menu_id, file_path)
 
 	def on_new_item_button_clicked(self, button):
 		menu_tree = self.tree.get_widget('menu_tree')
@@ -277,9 +302,9 @@ class MainWindow:
 			menu_tree.get_selection().select_path((0,))
 		else:
 			parent = menus[iter][2]
-		values = self.dialogs.newItemDialog()
-		if values:
-			self.editor.createItem(parent, values[0], values[1], values[2], values[3], values[4])
+		file_path = os.path.join(util.getUserItemPath(), util.getUniqueFileId('alacarte-made', '.desktop'))
+		process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
+		gobject.timeout_add(100, self.waitForNewItemProcess, process, parent.menu_id, file_path)
 
 	def on_new_separator_button_clicked(self, button):
 		item_tree = self.tree.get_widget('item_tree')
@@ -323,13 +348,26 @@ class MainWindow:
 		if not iter:
 			return
 		item = items[iter][3]
-		self.allow_update = False
+		if item.get_type() not in (gmenu.TYPE_ENTRY, gmenu.TYPE_DIRECTORY):
+			return
+
 		if item.get_type() == gmenu.TYPE_ENTRY:
-			self.dialogs.editItemDialog(items[iter])
+			file_path = os.path.join(util.getUserItemPath(), item.get_desktop_file_id())
+			file_type = 'Item'
 		elif item.get_type() == gmenu.TYPE_DIRECTORY:
-			self.dialogs.editMenuDialog(items[iter])
-		self.allow_update = True
-		self.loadUpdates()
+			file_path = os.path.join(util.getUserDirectoryPath(), os.path.split(item.get_desktop_file_path())[1])
+			file_type = 'Menu'
+
+		if not os.path.isfile(file_path):
+			data = open(item.get_desktop_file_path()).read()
+			open(file_path, 'w').write(data)
+			self.editor._MenuEditor__addUndo([(file_type, os.path.split(file_path)[1]),])
+		else:
+			self.editor._MenuEditor__addUndo([item,])
+		if file_path not in self.edit_pool:
+			self.edit_pool.append(file_path)
+			process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
+			gobject.timeout_add(100, self.waitForEditProcess, process, file_path)
 
 	def on_menu_tree_cursor_changed(self, treeview):
 		menus, iter = treeview.get_selection().get_selected()
@@ -377,6 +415,7 @@ class MainWindow:
 			self.editor.setVisible(item, False)
 		else:
 			self.editor.setVisible(item, True)
+		self.item_store[path][0] = not self.item_store[path][0]
 
 	def on_item_tree_cursor_changed(self, treeview):
 		items, iter = treeview.get_selection().get_selected()
@@ -392,13 +431,13 @@ class MainWindow:
 			self.tree.get_widget('edit_properties').set_sensitive(False)
 
 		# If first item...
-		if (items.get_path(iter)[0]==0):
+		if items.get_path(iter)[0] == 0:
 			self.tree.get_widget('move_up_button').set_sensitive(False)
 		else:
 			self.tree.get_widget('move_up_button').set_sensitive(True)
 
 		# If last item...
-		if (items.get_path(iter)[0] == (len(items)-1)):
+		if items.get_path(iter)[0] == (len(items)-1):
 			self.tree.get_widget('move_down_button').set_sensitive(False)
 		else:
 			self.tree.get_widget('move_down_button').set_sensitive(True)

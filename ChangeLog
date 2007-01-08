@@ -1,5 +1,9 @@
 2007-01-08  Travis Watkins  <alleykat@gmail.com>
 
+	* configure.ac: pre-release bump to 0.11.0
+
+2007-01-08  Travis Watkins  <alleykat@gmail.com>
+
 	* Alacarte/MainWindow.py: add a small hack to make menu creation work
 
 2007-01-08  Travis Watkins  <alleykat@gmail.com>

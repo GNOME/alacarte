@@ -1,5 +1,9 @@
 2007-01-10  Travis Watkins  <alleykat@gmail.com>
 
+	* configure.ac: post-release bump to 0.11.2
+
+2007-01-10  Travis Watkins  <alleykat@gmail.com>
+
 	* Alacarte/MainWindow.py: remove DialogHandler and time imports
 	* Alacarte/MenuEditor.py: remove settings.menu support, potential errors
 

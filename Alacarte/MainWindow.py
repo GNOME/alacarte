@@ -30,9 +30,7 @@ except:
 gtk.glade.textdomain('alacarte')
 _ = gettext.gettext
 from Alacarte.MenuEditor import MenuEditor
-from Alacarte.DialogHandler import DialogHandler
 from Alacarte import util
-import time
 
 class MainWindow:
 	timer = None
@@ -76,7 +74,6 @@ class MainWindow:
 	def run(self):
 		self.loadMenus()
 		self.editor.applications.tree.add_monitor(self.menuChanged, None)
-		self.editor.settings.tree.add_monitor(self.menuChanged, None)
 		self.tree.get_widget('mainwindow').show_all()
 		gtk.main()
 

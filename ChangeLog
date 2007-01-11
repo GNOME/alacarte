@@ -1,3 +1,7 @@
+2007-01-11  Travis Watkins  <alleykat@gmail.com>
+
+	* alacarte.desktop.in.in: remove GenericName, add specific category
+
 2007-01-10  Travis Watkins  <alleykat@gmail.com>
 
 	* configure.ac: post-release bump to 0.11.2

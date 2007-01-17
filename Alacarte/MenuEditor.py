@@ -30,16 +30,53 @@ class MenuEditor:
 	#lists for undo/redo functionality
 	__undo = []
 	__redo = []
+	cur_menu_names, orig_menu_names = None, None;
 
-	def __init__(self):
+	def __init__(self, m_names):
+		print "Enter " + __name__ + ":__init__"
 		self.locale = locale.getdefaultlocale()[0]
+		self.cur_menu_names = m_names[:]
+		self.orig_menu_names = m_names[:]
+		self.using_absolute_menu_names = False
 		self.__loadMenus()
 
+	def set_absolute_menu_names(self, prefix):
+		self.cur_menu_names[0] = prefix + self.orig_menu_names[0]
+		self.cur_menu_names[1] = prefix + self.orig_menu_names[1]
+		self.using_absolute_menu_names = True
+		self.__loadMenus();
+
+	def remove_absolute_menu_names(self):
+		self.cur_menu_names[0] = self.orig_menu_names[0]
+		self.cur_menu_names[1] = self.orig_menu_names[1]
+		self.using_absolute_menu_names = False
+		self.__loadMenus();
+
 	def __loadMenus(self):
+		print "Enter " + __name__ + ":__loadMenus"
+		if hasattr(self, "applications"):
+			if hasattr(self.applications, "tree"):
+				print "have a tree"
+				#print self.applications.tree.get_root_directory();
+				#self.applications.tree.tree_dealloc();
+
 		self.applications = Menu()
-		self.applications.tree = gmenu.lookup_tree('applications.menu', gmenu.FLAGS_SHOW_EMPTY|gmenu.FLAGS_INCLUDE_EXCLUDED|gmenu.FLAGS_INCLUDE_NODISPLAY)
-		self.applications.visible_tree = gmenu.lookup_tree('applications.menu')
-		self.applications.path = os.path.join(util.getUserMenuPath(), self.applications.tree.get_menu_file())
+		self.applications.tree = gmenu.lookup_tree(self.cur_menu_names[0], gmenu.FLAGS_SHOW_EMPTY|gmenu.FLAGS_INCLUDE_EXCLUDED|gmenu.FLAGS_INCLUDE_NODISPLAY)
+		self.applications.visible_tree = gmenu.lookup_tree(self.cur_menu_names[0])
+		if self.applications.tree.root == None:
+			if self.using_absolute_menu_names:
+				print "custom system menu file does not exist " + self.cur_menu_names[0]
+				print "loading default system menu " + self.orig_menu_names[0]
+				self.applications.tree = gmenu.lookup_tree(self.orig_menu_names[0], gmenu.FLAGS_SHOW_EMPTY|gmenu.FLAGS_INCLUDE_EXCLUDED|gmenu.FLAGS_INCLUDE_NODISPLAY)
+				self.applications.visible_tree = gmenu.lookup_tree(self.orig_menu_names[0])
+		if self.applications.tree.root == None:
+			raise Exception('Cant find menu file ' + self.cur_menu_names[0]) #Fixme need to _("blah")
+
+		if self.using_absolute_menu_names:
+			self.applications.path = self.cur_menu_names[0]
+		else:
+			self.applications.path = os.path.join(util.getUserMenuPath(), self.applications.tree.get_menu_file())
+
 		if not os.path.isfile(self.applications.path):
 			self.applications.dom = xml.dom.minidom.parseString(util.getUserMenuXml(self.applications.tree))
 		else:
@@ -49,6 +86,7 @@ class MenuEditor:
 		self.save(True)
 
 	def save(self, from_loading=False):
+		print "Enter " + __name__ + ":save"
 		fd = open(self.applications.path, 'w')
 		fd.write(re.sub("\n[\s]*([^\n<]*)\n[\s]*</", "\\1</", self.applications.dom.toprettyxml().replace('<?xml version="1.0" ?>\n', '')))
 		fd.close()

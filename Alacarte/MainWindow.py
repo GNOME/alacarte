@@ -19,6 +19,7 @@
 import gtk, gtk.glade, gmenu, gobject, gnomevfs, gnome.ui
 import cgi, os
 import gettext
+from optparse import OptionParser
 import subprocess
 try:
 	from Alacarte import config
@@ -31,6 +32,7 @@ gtk.glade.textdomain('alacarte')
 _ = gettext.gettext
 from Alacarte.MenuEditor import MenuEditor
 from Alacarte import util
+from Alacarte.SysAdmin import SysAdmin
 
 class MainWindow:
 	timer = None
@@ -41,19 +43,73 @@ class MainWindow:
 	dnd_menus = [('ALACARTE_MENU_ROW', gtk.TARGET_SAME_APP, 0)]
 	dnd_both = [dnd_items[0],] + dnd_menus
 	drag_data = None
+	orig_config_home = None
 	edit_pool = []
 
 	def __init__(self, datadir, version, argv):
+		#print "Enter " + __name__ + ":__init__"
+
+		self.checkRights(argv)
+
 		self.file_path = datadir
 		self.version = version
-		self.editor = MenuEditor()
+		#print "args are ",
+		#print argv
+		print "options are ",
+		print self.options
+		if os.environ.has_key('XDG_CONFIG_HOME'):
+			self.orig_config_home = os.environ['XDG_CONFIG_HOME']
+
+		if(self.options.systemview):
+			print 'setting up system view with dir ',
+			print self.options.systemview
+			if not self.options.systemview.startswith('/'):
+				raise Exception(_('Invalid --system-view path given: ') + self.options.systemview + _('. Relative paths are a security risk'))
+			os.environ['XDG_CONFIG_HOME'] = self.options.systemview
+			os.environ['XDG_DATA_HOME'] = self.options.systemview
+			fd = open('/etc/profile.d/xdg-enviroment.sh', 'a+')
+			already_added = False
+			try:
+				for line in fd:
+					if line.startswith('#START  SECTION ADDED BY ALACARTE'):
+						already_added = True
+						continue
+					if already_added:
+						if not line.startswith("export XDG_DATA_DIRS=" + self.options.systemview) :
+							raise Exception(_('Multiple directories not supported. Clear the existing alacarte section from xdg-enviroment'))
+						print 'already got it'
+						break
+				if not already_added:
+					print 'about to add'
+					fd.seek(0, 2) #move to end of file
+					fd.write('#START  SECTION ADDED BY ALACARTE\n')
+					fd.write('export XDG_DATA_DIRS=' + self.options.systemview + ':$XDG_DATA_DIRS\n')
+					fd.write('export XDG_CONFIG_DIRS=' + self.options.systemview + ':$XDG_CONFIG_DIRS\n')
+					fd.write('#END    SECTION ADDED BY ALACARTE\n')
+			finally:
+				fd.close()
+			
+		self.editor = MenuEditor([self.options.menu1, self.options.menu2])
+		self.sysadmin = SysAdmin(self.options.systemview)
+		#self.sysadmin = SysAdmin(False)
+		
 		self.gnome_program = gnome.init('alacarte', version)
+		print "After gnome.init"
 		gtk.window_set_default_icon_name('alacarte')
-		self.tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'))
+		print "After set_def_icon"
+		print "self.file_path=" + self.file_path
+
+		self.gladefiledude = os.path.join(self.file_path, 'alacarte.glade')
+		print self.gladefiledude
+		self.tree = gtk.glade.XML(self.gladefiledude)
+		#self.tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'))
+
+		print "After glade"
 		signals = {}
 		for attr in dir(self):
 			signals[attr] = getattr(self, attr)
 		self.tree.signal_autoconnect(signals)
+		print "after autoconnect"
 		self.setupMenuTree()
 		self.setupItemTree()
 		self.tree.get_widget('edit_delete').set_sensitive(False)
@@ -61,6 +117,8 @@ class MainWindow:
 		self.tree.get_widget('edit_properties').set_sensitive(False)
 		self.tree.get_widget('move_up_button').set_sensitive(False)
 		self.tree.get_widget('move_down_button').set_sensitive(False)
+		self.sysadmin.setup_ab(self.tree)
+		self.sysadmin.setup_viewmode(self.tree, self.options.systemview)
 		accelgroup = gtk.AccelGroup()
 		keyval, modifier = gtk.accelerator_parse('<Ctrl>Z')
 		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_mainwindow_undo)
@@ -70,20 +128,89 @@ class MainWindow:
 		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_help_button_clicked)
 		self.tree.get_widget('mainwindow').add_accel_group(accelgroup)
 		gnome.ui.authentication_manager_init()
+		print "Leave MainWindow:__init__"
+
+	def checkRights(self, argv):
+		#print "Enter checkRights with argv",
+		#print argv
+		gnomesu_option = "--Special_Internal_Only_Option_Indicating_gnomesu_Launch"
+		
+		parser = OptionParser()
+		#parser.add_option("-s", "--SystemView", action="store_true", dest="systemview",
+		#	default=False, help="Run in system view mode")
+		parser.add_option("--system-view", dest="systemview", metavar="<system_dir>",
+			help="Run in system view mode and use <system_dir>")
+		parser.add_option("--menufile", dest="menu1", metavar="<menufile>",
+			help="Filename of menu to display")
+		#parser.add_option("--menu2", dest="menu2", metavar="<menufile2>",
+		#	help="Filename of menu2")
+		parser.add_option(gnomesu_option, action="store_true",
+			dest="gnomesu_launched", default=False)
+		
+		(self.options, args) = parser.parse_args()
+		
+		if self.options.systemview and not self.options.gnomesu_launched:
+			print "system view mode requested: launching gnomesu " + argv[0]
+			new_argv = argv[:]
+			new_argv.insert(0, '--')
+			new_argv.insert(1, 'python')
+			new_argv.insert(3, '--')
+			new_argv.append(gnomesu_option)
+			print "args are now ",
+			print new_argv
+		
+			os.execvp("gnomesu", new_argv)
+		
+			#os.execlp("gnomesu", new_argv[0], new_argv[1], new_argv[2], new_argv[3])
+			#args_str = new_argv[0] + " \"" + new_argv[1] + " " + new_argv[2] + " " + new_argv[3] + "\""
+			#print "dude new args_str is " + args_str
+			#os.execlp("gnomesu", new_argv[0] + " " + new_argv[1] + " " + new_argv[2] + " " + new_argv[3])
+			print "SHOULD NEVER NEVER NEVER GET HERE"
+
+		if(not self.options.menu1):
+			self.options.menu1 = 'applications.menu'
+		#if(not self.options.menu2):
+		self.options.menu2 = 'settings.menu'
 
 	def run(self):
+		print "Enter MainWindow:run"
 		self.loadMenus()
 		self.editor.applications.tree.add_monitor(self.menuChanged, None)
 		self.tree.get_widget('mainwindow').show_all()
 		gtk.main()
+		print "Leave MainWindow:run"
+
+	def on_ab_newapps_max_activate (self, entry):
+		print "Enter " + __name__ + ":on_ab_newapps_max_activate"
+		print "text entry is " + entry.get_text()
+		self.sysadmin.setGConfValue(SysAdmin.ab_max_newapps_key, int(entry.get_text()))
+		
+	def on_editing_mode_toggled(self, toggle_button, *a):
+		print toggle_button.get_label()
+		if toggle_button.get_label() == "System view":
+			if toggle_button.get_active():
+				print "system set to active"
+				os.environ['XDG_CONFIG_HOME'] = '/home/user1/mymenus'
+				self.editor.set_absolute_menu_names('/home/user1/mymenus/menus/')
+			else:
+				print "system set to inactive"
+				if self.orig_config_home:
+					os.environ['XDG_CONFIG_HOME'] = self.orig_config_home
+				else:
+					if os.environ.has_key('XDG_CONFIG_HOME'):
+						del os.environ['XDG_CONFIG_HOME']
+				self.editor.remove_absolute_menu_names()
+			self.loadUpdates();
 
 	def menuChanged(self, *a):
+		print "Enter " + __name__ + ":menuChanged"
 		if self.timer:
 			gobject.source_remove(self.timer)
 			self.timer = None
 		self.timer = gobject.timeout_add(3, self.loadUpdates)
 
 	def loadUpdates(self):
+		print "Enter " + __name__ + ":loadUpdates"
 		if not self.allow_update:
 			return False
 		menu_tree = self.tree.get_widget('menu_tree')
@@ -209,6 +336,7 @@ class MainWindow:
 			renderer.set_property('visible', True)
 
 	def loadMenus(self):
+		print "Enter " + __name__ + ":loadMenus"
 		self.menu_store.clear()
 		for menu in self.editor.getMenus():
 			iters = [None]*20
@@ -344,6 +472,7 @@ class MainWindow:
 			self.editor.revertMenu(item)
 
 	def on_edit_properties_activate(self, menu):
+		print 'Enter on_edit_properties_activate'
 		item_tree = self.tree.get_widget('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
 		if not iter:

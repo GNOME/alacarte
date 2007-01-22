@@ -67,6 +67,19 @@ class MainWindow:
 				raise Exception(_('Invalid --system-view path given: ') + self.options.systemview + _('. Relative paths are a security risk'))
 			os.environ['XDG_CONFIG_HOME'] = self.options.systemview
 			os.environ['XDG_DATA_HOME'] = self.options.systemview
+
+			#remove possible duplicate entry - causes gmenu parse errors
+			print 'XDG_CONFIG_DIRS before:' + os.environ['XDG_CONFIG_DIRS']
+			print 'XDG_DATA_DIRS before:' + os.environ['XDG_DATA_DIRS']
+			path_components = os.environ['XDG_CONFIG_DIRS'].split(':')
+			if path_components[0] == self.options.systemview :
+				os.environ['XDG_CONFIG_DIRS'] = ':'.join(path_components[1:])
+			path_components = os.environ['XDG_DATA_DIRS'].split(':')
+			if path_components[0] == self.options.systemview :
+				os.environ['XDG_DATA_DIRS'] = ':'.join(path_components[1:])
+			print 'XDG_CONFIG_DIRS after:' + os.environ['XDG_CONFIG_DIRS']
+			print 'XDG_DATA_DIRS after:' + os.environ['XDG_DATA_DIRS']
+				
 			fd = open('/etc/profile.d/xdg-enviroment.sh', 'a+')
 			already_added = False
 			try:
@@ -387,6 +400,8 @@ class MainWindow:
 	def waitForNewItemProcess(self, process, parent_id, file_path):
 		if process.poll() != None:
 			if os.path.isfile(file_path):
+				#hack for broken gnome-desktop-item-edit - makes the file '700'
+				subprocess.Popen(['chmod', '644', file_path])
 				self.editor.insertExternalItem(os.path.split(file_path)[1], parent_id)
 			return False
 		return True
@@ -398,6 +413,8 @@ class MainWindow:
 			if os.path.isfile(broken_path):
 				os.rename(broken_path, file_path)
 			if os.path.isfile(file_path):
+				#hack for broken gnome-desktop-item-edit - makes the file '700'
+				subprocess.Popen(['chmod', '644', file_path])
 				self.editor.insertExternalMenu(os.path.split(file_path)[1], parent_id)
 			return False
 		return True

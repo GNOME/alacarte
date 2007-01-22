@@ -19,6 +19,8 @@
 import os, re, xml.dom.minidom, locale
 import gmenu
 from Alacarte import util
+import gettext
+_ = gettext.gettext
 
 class Menu:
 	tree = None
@@ -70,7 +72,7 @@ class MenuEditor:
 				self.applications.tree = gmenu.lookup_tree(self.orig_menu_names[0], gmenu.FLAGS_SHOW_EMPTY|gmenu.FLAGS_INCLUDE_EXCLUDED|gmenu.FLAGS_INCLUDE_NODISPLAY)
 				self.applications.visible_tree = gmenu.lookup_tree(self.orig_menu_names[0])
 		if self.applications.tree.root == None:
-			raise Exception('Cant find menu file ' + self.cur_menu_names[0]) #Fixme need to _("blah")
+			raise Exception(_('Cant find menu file ') + self.cur_menu_names[0])
 
 		if self.using_absolute_menu_names:
 			self.applications.path = self.cur_menu_names[0]

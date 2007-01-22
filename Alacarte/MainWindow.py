@@ -403,8 +403,12 @@ class MainWindow:
 		return True
 
 	#this callback keeps you from editing the same item twice
-	def waitForEditProcess(self, process, file_path):
+	def waitForEditProcess(self, process, file_path, broken_path):
 		if process.poll() != None:
+			#hack for broken gnome-desktop-item-edit - see on_edit_properties_activate
+			if broken_path != file_path:
+				if os.path.isfile(broken_path):
+					os.rename(broken_path, file_path)
 			self.edit_pool.remove(file_path)
 			return False
 		return True
@@ -496,8 +500,20 @@ class MainWindow:
 			self.editor._MenuEditor__addUndo([item,])
 		if file_path not in self.edit_pool:
 			self.edit_pool.append(file_path)
-			process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
-			gobject.timeout_add(100, self.waitForEditProcess, process, file_path)
+
+			#nasty hack for broken gnome-desktop-item-edit in gnome 2.12
+			#when editing a *.directory file it reads/writes
+			#to a hardcoded ".directory" file in the filepath dir and ignores the filename
+			if file_type == 'Menu':
+				broken_path = os.path.join(os.path.split(file_path)[0], '.directory')
+				data = open(file_path).read()
+				open(broken_path, 'w').write(data)
+			else:
+				broken_path = file_path
+			
+			process = subprocess.Popen(['gnome-desktop-item-edit', broken_path], env=os.environ)
+			#process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
+			gobject.timeout_add(100, self.waitForEditProcess, process, file_path, broken_path)
 
 	def on_menu_tree_cursor_changed(self, treeview):
 		menus, iter = treeview.get_selection().get_selected()

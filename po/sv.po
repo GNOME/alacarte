@@ -1,69 +1,33 @@
 # Swedish messages for alacarte.
-# Copyright (C) 2006 Free Software Foundation, Inc.
-# Daniel Nylander <po@danielnylander.se>, 2006.
+# Copyright (C) 2006, 2007 Free Software Foundation, Inc.
+# Daniel Nylander <po@danielnylander.se>, 2006, 2007.
 # Christian Rose <menthos@menthos.com>, 2006.
 #
-# $Id$
+# $Id: sv.po,v 1.3 2006/12/28 06:52:28 dnylande Exp $
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-28 03:53+0000\n"
-"PO-Revision-Date: 2006-12-28 07:43+0100\n"
+"POT-Creation-Date: 2007-01-23 03:42+0000\n"
+"PO-Revision-Date: 2007-01-25 23:10+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
-"Language-Team: Swedish <sv@li.org>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:165
+#: ../Alacarte/MainWindow.py:166
 msgid "Name"
 msgstr "Namn"
 
-#: ../Alacarte/MainWindow.py:181
+#: ../Alacarte/MainWindow.py:182
 msgid "Show"
 msgstr "Visa"
 
-#: ../Alacarte/MainWindow.py:189
+#: ../Alacarte/MainWindow.py:190
 msgid "Item"
 msgstr "Post"
-
-#: ../Alacarte/MenuEditor.py:517
-msgid "New menu items need a name"
-msgstr "Nya menyposter behöver ett namn"
-
-#: ../Alacarte/MenuEditor.py:550
-msgid "New menus need a name"
-msgstr "Nya menyer behöver ett namn"
-
-#: ../Alacarte/DialogHandler.py:64
-msgid "Choose a Program"
-msgstr "Välj ett program"
-
-#: ../Alacarte/DialogHandler.py:97
-msgid "Choose an Icon"
-msgstr "Välj en ikon"
-
-#: ../Alacarte/DialogHandler.py:159
-#: ../Alacarte/DialogHandler.py:196
-#: ../Alacarte/DialogHandler.py:357
-#: ../Alacarte/DialogHandler.py:388
-msgid "A name is required."
-msgstr "Ett namn krävs."
-
-#: ../Alacarte/DialogHandler.py:162
-#: ../Alacarte/DialogHandler.py:199
-msgid "A command is required."
-msgstr "Ett kommando krävs."
-
-#: ../Alacarte/DialogHandler.py:170
-#: ../Alacarte/DialogHandler.py:340
-#: ../Alacarte/DialogHandler.py:365
-#: ../Alacarte/DialogHandler.py:416
-#: ../Alacarte/DialogHandler.py:480
-msgid "No Icon"
-msgstr "Ingen ikon"
 
 #: ../alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
@@ -73,112 +37,99 @@ msgstr "Ändra vilka program som visas på huvudmenyn"
 msgid "Main Menu Editor"
 msgstr "Huvudmenyredigerare"
 
-#: ../alacarte.desktop.in.in.h:3
-msgid "Menu Editor"
-msgstr "Menyredigerare"
-
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Menyredigeraren Alacarte"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "Bläddra..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "Kommando:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "Kommentar:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "Copyright © 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "Ikon:"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "P_oster:"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "Egenskaper för menypost"
-
-#: ../alacarte.glade.h:9
+#: ../alacarte.glade.h:2
 msgid "Menu Layout"
 msgstr "Menylayout"
 
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "Menyegenskaper"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
 msgstr "Flytta ned"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "Flytta upp"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "Namn:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "N_y post"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "Ny _avgränsare"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "Återställ standardmenylayouten"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "Återställ ändringar?"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "Återställ alla menyer till originalinställningarna?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "Kör kommandot i en terminal"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "Enkel, fd.o-kompatibel menyredigerare"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_Menyer:"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "_Ny meny"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_Återställ till original"
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr ""
-"Daniel Nylander\n"
-"Christian Rose\n"
-"\n"
-"Skicka synpunkter på översättningen till\n"
-"tp-sv@listor.tp-sv.se"
-
+#~ msgid "New menu items need a name"
+#~ msgstr "Nya menyposter behöver ett namn"
+#~ msgid "New menus need a name"
+#~ msgstr "Nya menyer behöver ett namn"
+#~ msgid "Choose a Program"
+#~ msgstr "Välj ett program"
+#~ msgid "Choose an Icon"
+#~ msgstr "Välj en ikon"
+#~ msgid "A name is required."
+#~ msgstr "Ett namn krävs."
+#~ msgid "A command is required."
+#~ msgstr "Ett kommando krävs."
+#~ msgid "No Icon"
+#~ msgstr "Ingen ikon"
+#~ msgid "Menu Editor"
+#~ msgstr "Menyredigerare"
+#~ msgid "Alacarte Menu Editor"
+#~ msgstr "Menyredigeraren Alacarte"
+#~ msgid "Browse..."
+#~ msgstr "Bläddra..."
+#~ msgid "Command:"
+#~ msgstr "Kommando:"
+#~ msgid "Comment:"
+#~ msgstr "Kommentar:"
+#~ msgid "Copyright © 2006 Travis Watkins"
+#~ msgstr "Copyright © 2006 Travis Watkins"
+#~ msgid "Icon:"
+#~ msgstr "Ikon:"
+#~ msgid "Menu Item Properties"
+#~ msgstr "Egenskaper för menypost"
+#~ msgid "Menu Properties"
+#~ msgstr "Menyegenskaper"
+#~ msgid "Name:"
+#~ msgstr "Namn:"
+#~ msgid "Run command in a terminal"
+#~ msgstr "Kör kommandot i en terminal"
+#~ msgid "Simple fd.o compliant menu editor"
+#~ msgstr "Enkel, fd.o-kompatibel menyredigerare"
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Daniel Nylander\n"
+#~ "Christian Rose\n"
+#~ "\n"
+#~ "Skicka synpunkter på översättningen till\n"
+#~ "tp-sv@listor.tp-sv.se"
 #~ msgid "Add, change, remove menu entries"
 #~ msgstr "Lägg till, ändra, ta bort menyposter"
 #~ msgid "_Browse..."

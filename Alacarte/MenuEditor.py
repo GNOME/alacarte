@@ -46,12 +46,23 @@ class MenuEditor:
 			self.applications.dom = xml.dom.minidom.parse(self.applications.path)
 		self.__remove_whilespace_nodes(self.applications.dom)
 
+		self.settings = Menu() 	 
+		self.settings.tree = gmenu.lookup_tree('settings.menu', gmenu.FLAGS_SHOW_EMPTY|gmenu.FLAGS_INCLUDE_EXCLUDED|gmenu.FLAGS_INCLUDE_NODISPLAY) 	 
+		self.settings.visible_tree = gmenu.lookup_tree('settings.menu') 	 
+		self.settings.path = os.path.join(util.getUserMenuPath(), self.settings.tree.get_menu_file()) 	 
+		if not os.path.isfile(self.settings.path): 	 
+			self.settings.dom = xml.dom.minidom.parseString(util.getUserMenuXml(self.settings.tree)) 	 
+		else: 	 
+			self.settings.dom = xml.dom.minidom.parse(self.settings.path) 	 
+		self.__remove_whilespace_nodes(self.settings.dom)
+
 		self.save(True)
 
 	def save(self, from_loading=False):
-		fd = open(self.applications.path, 'w')
-		fd.write(re.sub("\n[\s]*([^\n<]*)\n[\s]*</", "\\1</", self.applications.dom.toprettyxml().replace('<?xml version="1.0" ?>\n', '')))
-		fd.close()
+		for menu in ('applications', 'settings'):
+			fd = open(getattr(self, menu).path, 'w')
+			fd.write(re.sub("\n[\s]*([^\n<]*)\n[\s]*</", "\\1</", getattr(self, menu).dom.toprettyxml().replace('<?xml version="1.0" ?>\n', '')))
+			fd.close()
 		if not from_loading:
 			self.__loadMenus()
 
@@ -70,19 +81,20 @@ class MenuEditor:
 				os.unlink(file_path)
 
 	def revert(self):
-		menu = self.applications
-		self.revertTree(menu.tree.root)
-		path = os.path.join(util.getUserMenuPath(), menu.tree.get_menu_file())
-		try:
-			os.unlink(path)
-		except OSError:
-			pass
-		#reload DOM for each menu
-		if not os.path.isfile(menu.path):
-			menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
-		else:
-			menu.dom = xml.dom.minidom.parse(menu.path)
-		self.__remove_whilespace_nodes(menu.dom)
+		for name in ('applications', 'settings'):
+			menu = getattr(self, name)
+			self.revertTree(menu.tree.root)
+			path = os.path.join(util.getUserMenuPath(), menu.tree.get_menu_file())
+			try:
+				os.unlink(path)
+			except OSError:
+				pass
+			#reload DOM for each menu
+			if not os.path.isfile(menu.path):
+				menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
+			else:
+				menu.dom = xml.dom.minidom.parse(menu.path)
+			self.__remove_whilespace_nodes(menu.dom)
 		#reset undo/redo, no way to recover from this
 		self.__undo, self.__redo = [], []
 		self.save()
@@ -110,12 +122,13 @@ class MenuEditor:
 			os.unlink(file_path)
 			redo.append(redo_path)
 		#reload DOM to make changes stick
-		menu = self.applications
-		if not os.path.isfile(menu.path):
-			menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
-		else:
-			menu.dom = xml.dom.minidom.parse(menu.path)
-		self.__remove_whilespace_nodes(menu.dom)
+		for name in ('applications', 'settings'):
+			menu = getattr(self, name)
+			if not os.path.isfile(menu.path):
+				menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
+			else:
+				menu.dom = xml.dom.minidom.parse(menu.path)
+			self.__remove_whilespace_nodes(menu.dom)
 		self.__redo.append(redo)
 
 	def redo(self):
@@ -133,17 +146,19 @@ class MenuEditor:
 			os.unlink(file_path)
 			undo.append(undo_path)
 		#reload DOM to make changes stick
-		menu = self.applications
-		if not os.path.isfile(menu.path):
-			menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
-		else:
-			menu.dom = xml.dom.minidom.parse(menu.path)
-		self.__remove_whilespace_nodes(menu.dom)
+		for name in ('applications', 'settings'):
+			menu = getattr(self, name)
+			if not os.path.isfile(menu.path):
+				menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
+			else:
+				menu.dom = xml.dom.minidom.parse(menu.path)
+			self.__remove_whilespace_nodes(menu.dom)
 		self.__undo.append(undo)
 
 	def getMenus(self, parent=None):
 		if parent == None:
 			yield self.applications.tree.root
+			yield self.settings.tree.root
 		else:
 			for menu in parent.get_contents():
 				if menu.get_type() == gmenu.TYPE_DIRECTORY:
@@ -401,13 +416,31 @@ class MenuEditor:
 			self.__undo[-1].append(undo_path)
 
 	def __getMenu(self, item):
-		return self.applications
+		root = item.get_parent()
+		if not root:
+			#already at the top
+			root = item
+		else:
+			while True:
+				if root.get_parent():
+					root = root.get_parent()
+				else:
+					break
+		if root.menu_id == self.applications.tree.root.menu_id:
+			return self.applications
+		return self.settings
 
 	def __findMenu(self, menu_id, parent=None):
 		if parent == None:
-			return self.__findMenu(menu_id, self.applications.tree.root)
+			menu = self.__findMenu(menu_id, self.applications.tree.root)
+			if menu != None:
+				return menu
+			else:
+				return self.__findMenu(menu_id, self.settings.tree.root)
 		if menu_id == self.applications.tree.root.menu_id:
 			return self.applications.tree.root
+		if menu_id == self.settings.tree.root.menu_id:
+			return self.settings.tree.root
 		for item in parent.get_contents():
 			if item.get_type() == gmenu.TYPE_DIRECTORY:
 				if item.menu_id == menu_id:
@@ -420,7 +453,10 @@ class MenuEditor:
 		if item.get_type() == gmenu.TYPE_ENTRY:
 			return not (item.get_is_excluded() or item.get_is_nodisplay())
 		menu = self.__getMenu(item)
-		root = self.applications.visible_tree.root
+		if menu == self.applications:
+			root = self.applications.visible_tree.root
+		elif menu == self.settings:
+			root = self.settings.visible_tree.root
 		if item.get_type() == gmenu.TYPE_DIRECTORY:
 			if self.__findMenu(item.menu_id, root) == None:
 				return False

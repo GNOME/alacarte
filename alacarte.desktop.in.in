@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-_Name=Main Menu Editor
+_Name=Main Menu
 _Comment=Change which applications are shown on the main menu
 Exec=alacarte
 Terminal=false

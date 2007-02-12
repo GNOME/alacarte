@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-03 12:14+0200\n"
+"POT-Creation-Date: 2007-02-12 20:18+0200\n"
 "PO-Revision-Date: 2007-02-03 12:17+0300\n"
 "Last-Translator: Ihar Hrachyshka <iharh@gnome.org>\n"
 "Language-Team: Belarusian Language Team <i18n@mova.org>\n"
@@ -15,15 +15,15 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:166
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Назва"
 
-#: ../Alacarte/MainWindow.py:182
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "Паказаць"
 
-#: ../Alacarte/MainWindow.py:190
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "Элемэнт"
 
@@ -31,17 +31,13 @@ msgstr "Элемэнт"
 msgid "Change which applications are shown on the main menu"
 msgstr "Вызначыць, якія праграмы трэба паказваць у мэню"
 
-#: ../alacarte.desktop.in.in.h:2
-msgid "Main Menu Editor"
-msgstr "Рэдактар галоўнага мэню"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "Галоўнае мэню"
 
 #: ../alacarte.glade.h:1
 msgid "It_ems:"
 msgstr "_Элемэнты:"
-
-#: ../alacarte.glade.h:2
-msgid "Menu Layout"
-msgstr "Расклад мэню"
 
 #: ../alacarte.glade.h:3
 msgid "Move Down"
@@ -83,3 +79,5 @@ msgstr "_Новае мэню"
 msgid "_Revert to Original"
 msgstr "_Вярнуцца да пачатковага"
 
+#~ msgid "Menu Layout"
+#~ msgstr "Расклад мэню"

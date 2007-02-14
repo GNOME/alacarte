@@ -8,167 +8,142 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-04 10:02-0200\n"
-"PO-Revision-Date: 2007-01-04 10:20-0200\n"
+"POT-Creation-Date: 2007-02-14 01:35-0200\n"
+"PO-Revision-Date: 2007-02-14 01:36-0200\n"
 "Last-Translator: Og Maciel <ogmaciel@ubuntu.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:165
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Nome"
 
-#: ../Alacarte/MainWindow.py:181
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "Exibir"
 
-#: ../Alacarte/MainWindow.py:189
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "Item"
-
-#: ../Alacarte/MenuEditor.py:517
-msgid "New menu items need a name"
-msgstr "É necessário nomear os novos itens do menu"
-
-#: ../Alacarte/MenuEditor.py:550
-msgid "New menus need a name"
-msgstr "É necessário nomear os novos menus"
-
-#: ../Alacarte/DialogHandler.py:64
-msgid "Choose a Program"
-msgstr "Escolha um Programa"
-
-#: ../Alacarte/DialogHandler.py:97
-msgid "Choose an Icon"
-msgstr "Escolha um Ícone"
-
-#: ../Alacarte/DialogHandler.py:159 ../Alacarte/DialogHandler.py:196
-#: ../Alacarte/DialogHandler.py:357 ../Alacarte/DialogHandler.py:388
-msgid "A name is required."
-msgstr "É necessario um nome."
-
-#: ../Alacarte/DialogHandler.py:162 ../Alacarte/DialogHandler.py:199
-msgid "A command is required."
-msgstr "É necessario um comando."
-
-#: ../Alacarte/DialogHandler.py:170 ../Alacarte/DialogHandler.py:340
-#: ../Alacarte/DialogHandler.py:365 ../Alacarte/DialogHandler.py:416
-#: ../Alacarte/DialogHandler.py:480
-msgid "No Icon"
-msgstr "Sem Ícone"
 
 #: ../alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
 msgstr "Modifique quais aplicativos são exibidos no menu principal"
 
-#: ../alacarte.desktop.in.in.h:2
-msgid "Main Menu Editor"
-msgstr "Editor do Menu Principal"
-
-#: ../alacarte.desktop.in.in.h:3
-msgid "Menu Editor"
-msgstr "Editor de Menu"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "Menu Principal"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Editor de Menu Alacarte"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "Navegar..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "Comando:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "Comentário:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "Copyright © 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "Ícone:"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "It_ens:"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "Propriedades dos Itens de Menu"
-
-#: ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "Disposição do Menu"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "Propriedades do Menu"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
 msgstr "Mover Para Baixo"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "Mover Para Cima"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "Nome:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "No_vo item"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "Novo _Separador"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "Restaurar a disposição padrão do menu"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "Reverter Alterações?"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "Reverter todos os menus às configurações originais?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "Executar comando em um terminal"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "Editor de menu simples aderente ao freedesktop.org"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_Menus:"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "_Novo Menu"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_Restaurar ao Original"
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr ""
-"Licio Fernando <licio@ubuntu.com>\n"
-"Og Maciel <ogmaciel@ubuntu.com>"
+#~ msgid "New menu items need a name"
+#~ msgstr "É necessário nomear os novos itens do menu"
+
+#~ msgid "New menus need a name"
+#~ msgstr "É necessário nomear os novos menus"
+
+#~ msgid "Choose a Program"
+#~ msgstr "Escolha um Programa"
+
+#~ msgid "Choose an Icon"
+#~ msgstr "Escolha um Ícone"
+
+#~ msgid "A name is required."
+#~ msgstr "É necessario um nome."
+
+#~ msgid "A command is required."
+#~ msgstr "É necessario um comando."
+
+#~ msgid "No Icon"
+#~ msgstr "Sem Ícone"
+
+#~ msgid "Menu Editor"
+#~ msgstr "Editor de Menu"
+
+#~ msgid "Alacarte Menu Editor"
+#~ msgstr "Editor de Menu Alacarte"
+
+#~ msgid "Browse..."
+#~ msgstr "Navegar..."
+
+#~ msgid "Command:"
+#~ msgstr "Comando:"
+
+#~ msgid "Comment:"
+#~ msgstr "Comentário:"
+
+#~ msgid "Copyright © 2006 Travis Watkins"
+#~ msgstr "Copyright © 2006 Travis Watkins"
+
+#~ msgid "Icon:"
+#~ msgstr "Ícone:"
+
+#~ msgid "Menu Item Properties"
+#~ msgstr "Propriedades dos Itens de Menu"
+
+#~ msgid "Menu Layout"
+#~ msgstr "Disposição do Menu"
+
+#~ msgid "Menu Properties"
+#~ msgstr "Propriedades do Menu"
+
+#~ msgid "Name:"
+#~ msgstr "Nome:"
+
+#~ msgid "Run command in a terminal"
+#~ msgstr "Executar comando em um terminal"
+
+#~ msgid "Simple fd.o compliant menu editor"
+#~ msgstr "Editor de menu simples aderente ao freedesktop.org"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Licio Fernando <licio@ubuntu.com>\n"
+#~ "Og Maciel <ogmaciel@ubuntu.com>"
 
 #~ msgid "Add, change, remove menu entries"
 #~ msgstr "Adicionar, alterar e remover entradas do menu"

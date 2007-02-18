@@ -1,31 +1,31 @@
 # Danish translation of alacarte.
-# Copyright (C) 2006 Free Software Foundation, Inc.
+# Copyright (C) 2006, 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the alacarte
 # package.
+#
 # Peter Bach <bach.peter@gmail.com>, 2007.
-# 
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-28 22:19+0100\n"
-"PO-Revision-Date: 2007-01-26 20:18+0200\n"
-"Last-Translator: Peter Bach <bach.peter@gmail.com>\n"
+"POT-Creation-Date: 2007-02-18 20:44+0100\n"
+"PO-Revision-Date: 2007-02-18 19:57+0200\n"
+"Last-Translator: Peter bach <bach.peter@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:166
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Navn"
 
-#: ../Alacarte/MainWindow.py:182
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "Vis"
 
-#: ../Alacarte/MainWindow.py:190
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "Punkt"
 
@@ -33,17 +33,13 @@ msgstr "Punkt"
 msgid "Change which applications are shown on the main menu"
 msgstr "Tilret hvilke programmer der vises i hovedmenuen"
 
-#: ../alacarte.desktop.in.in.h:2
-msgid "Main Menu Editor"
-msgstr "Hovedmenuredigering"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "Hovedmenu"
 
 #: ../alacarte.glade.h:1
 msgid "It_ems:"
 msgstr "Punkt_er:"
-
-#: ../alacarte.glade.h:2
-msgid "Menu Layout"
-msgstr "Menu-udseende"
 
 #: ../alacarte.glade.h:3
 msgid "Move Down"
@@ -71,7 +67,7 @@ msgstr "Fortryd ændringer?"
 
 #: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
-msgstr "Gendan alle menuer fra standardopsætning?"
+msgstr "Gendan alle menuer til standardopsætninger?"
 
 #: ../alacarte.glade.h:10
 msgid "_Menus:"
@@ -83,68 +79,4 @@ msgstr "_Ny menu"
 
 #: ../alacarte.glade.h:12
 msgid "_Revert to Original"
-msgstr "Gendan til standa_rdopsætning"
-
-#~ msgid "A name is required."
-#~ msgstr "Et navn skal angives."
-
-#~ msgid "A command is required."
-#~ msgstr "En kommando skal angives."
-
-#~ msgid "Alacarte Menu Editor"
-#~ msgstr "Alacarte-menuredigering"
-
-#~ msgid "Browse..."
-#~ msgstr "Søg..."
-
-#~ msgid "Command:"
-#~ msgstr "Kommando:"
-
-#~ msgid "Comment:"
-#~ msgstr "Kommentar:"
-
-#~ msgid "Copyright © 2006 Travis Watkins"
-#~ msgstr "Copyright © 2006 Travis Watkins"
-
-#~ msgid "Icon:"
-#~ msgstr "Ikon:"
-
-#~ msgid "Menu Item Properties"
-#~ msgstr "Egenskaber for menupunkt"
-
-#~ msgid "Menu Properties"
-#~ msgstr "Egenskaber for menu"
-
-#~ msgid "Name:"
-#~ msgstr "Navn:"
-
-#~ msgid "Run command in a terminal"
-#~ msgstr "Kør kommando i en terminal"
-
-#~ msgid "Simple fd.o compliant menu editor"
-#~ msgstr "Simpel fd.o kompatibel menuredigering"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Peter Bach\n"
-#~ "\n"
-#~ "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
-#~ "Mere info: http://www.dansk-gruppen.dk"
-
-#~ msgid "New menu items need a name"
-#~ msgstr "Nye menupunkter mangler et navn"
-
-#~ msgid "New menus need a name"
-#~ msgstr "Nye menuer mangler et navn"
-
-#~ msgid "Choose a Program"
-#~ msgstr "Vælg et program"
-
-#~ msgid "Choose an Icon"
-#~ msgstr "Vælg et ikon"
-
-#~ msgid "No Icon"
-#~ msgstr "Intet ikon"
-
-#~ msgid "Menu Editor"
-#~ msgstr "Menuredigering"
+msgstr "Gendan til original"

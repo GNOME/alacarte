@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-12 14:57+0100\n"
+"POT-Creation-Date: 2007-02-19 09:22+0100\n"
 "PO-Revision-Date: 2006-08-12 23:02+0200\n"
 "Last-Translator: Artur Flinta <aflinta@at.kernel.pl>\n"
 "Language-Team: Polish <translators@gnomepl.org>\n"
@@ -18,124 +18,114 @@ msgstr ""
 "Plural-Forms:  nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%"
 "100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Nazwa"
 
-#: ../Alacarte/MainWindow.py:180
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "Wyświetlanie"
 
-#: ../Alacarte/MainWindow.py:188
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "element"
 
-#: ../Alacarte/DialogHandler.py:159 ../Alacarte/DialogHandler.py:196
-#: ../Alacarte/DialogHandler.py:357 ../Alacarte/DialogHandler.py:388
-msgid "A name is required."
-msgstr "Nazwa jest wymagana."
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "Zmienia, które aplikacje mają być wyświetlane w menu głównym"
 
-#: ../Alacarte/DialogHandler.py:162 ../Alacarte/DialogHandler.py:199
-msgid "A command is required."
-msgstr "Polecenie jest wymagane."
-
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "Dodaje, zmienia, usuwa elementy menu"
-
-#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "Układ menu"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "Menu główne"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Alacarte - edytor menu"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "Przeglądaj..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "Polecenie:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "Komentarz:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "Copyright © 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "Ikona:"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "_Elementy:"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "Właściwości elementu menu"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "Właściwości menu"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
 msgstr "Przenieś w dół"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "Przenieś w górę"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "Nazwa:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "No_wy element"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "Nowy _separator"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "Przywraca domyślny układ menu"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "Cofnąć zmiany?"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "Cofnąć zmiany wszystkich menu do oryginalnych ustawień?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "Uruchomienie polecenia w terminalu"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "Prosty edytor menu zgodny z fd.o"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_Menu:"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "_Nowe menu"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_Przywróć oryginalne"
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr "GNOME PL Team <translators@gnomepl.org>"
+#~ msgid "A name is required."
+#~ msgstr "Nazwa jest wymagana."
+
+#~ msgid "A command is required."
+#~ msgstr "Polecenie jest wymagane."
+
+#~ msgid "Add, change, remove menu entries"
+#~ msgstr "Dodaje, zmienia, usuwa elementy menu"
+
+#~ msgid "Menu Layout"
+#~ msgstr "Układ menu"
+
+#~ msgid "Alacarte Menu Editor"
+#~ msgstr "Alacarte - edytor menu"
+
+#~ msgid "Browse..."
+#~ msgstr "Przeglądaj..."
+
+#~ msgid "Command:"
+#~ msgstr "Polecenie:"
+
+#~ msgid "Comment:"
+#~ msgstr "Komentarz:"
+
+#~ msgid "Copyright © 2006 Travis Watkins"
+#~ msgstr "Copyright © 2006 Travis Watkins"
+
+#~ msgid "Icon:"
+#~ msgstr "Ikona:"
+
+#~ msgid "Menu Item Properties"
+#~ msgstr "Właściwości elementu menu"
+
+#~ msgid "Menu Properties"
+#~ msgstr "Właściwości menu"
+
+#~ msgid "Name:"
+#~ msgstr "Nazwa:"
+
+#~ msgid "Run command in a terminal"
+#~ msgstr "Uruchomienie polecenia w terminalu"
+
+#~ msgid "Simple fd.o compliant menu editor"
+#~ msgstr "Prosty edytor menu zgodny z fd.o"
+
+#~ msgid "translator-credits"
+#~ msgstr "GNOME PL Team <translators@gnomepl.org>"

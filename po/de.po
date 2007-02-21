@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-26 10:56+0100\n"
-"PO-Revision-Date: 2007-01-26 10:57+0100\n"
+"POT-Creation-Date: 2007-02-21 12:37+0100\n"
+"PO-Revision-Date: 2007-02-21 12:37+0100\n"
 "Last-Translator: Hendrik Richter <hendrikr@gnome.org>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,15 @@ msgstr ""
 "X-Generator: KBabel 1.11.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../Alacarte/MainWindow.py:166
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Name"
 
-#: ../Alacarte/MainWindow.py:182
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "Anzeigen"
 
-#: ../Alacarte/MainWindow.py:190
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "Eintrag"
 
@@ -37,17 +37,13 @@ msgstr "Eintrag"
 msgid "Change which applications are shown on the main menu"
 msgstr "Legt fest, welche Anwendungen im Hauptmenü angezeigt werden"
 
-#: ../alacarte.desktop.in.in.h:2
-msgid "Main Menu Editor"
-msgstr "Menüeditor"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "Hauptmenü"
 
 #: ../alacarte.glade.h:1
 msgid "It_ems:"
 msgstr "_Einträge:"
-
-#: ../alacarte.glade.h:2
-msgid "Menu Layout"
-msgstr "Menüstruktur"
 
 #: ../alacarte.glade.h:3
 msgid "Move Down"
@@ -88,6 +84,9 @@ msgstr "_Neues Menü"
 #: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_Original wiederherstellen"
+
+#~ msgid "Menu Layout"
+#~ msgstr "Menüstruktur"
 
 #~ msgid "A name is required."
 #~ msgstr "Bitte geben Sie einen Namen ein."

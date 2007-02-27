@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-18 00:50+0300\n"
+"POT-Creation-Date: 2007-02-27 16:15+0200\n"
 "PO-Revision-Date: 2006-06-18 00:35+0300\n"
 "Last-Translator: Gintautas Miliauskas <gintas@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
@@ -15,124 +15,114 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:160
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Vardas"
 
-#: ../Alacarte/MainWindow.py:176
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "Rodyti"
 
-#: ../Alacarte/MainWindow.py:184
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "Įrašas"
 
-#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
-msgid "A name is required."
-msgstr "Reikia nurodyti vardą"
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr ""
 
-#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
-msgid "A command is required."
-msgstr "Reikia nurodyti komandą"
-
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "Pridėti, keisti, šalinti meniu įrašus"
-
-#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "Meniu išdėstymas"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr ""
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Alacarte meniu redaktorius"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "Naršyti..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "Komanda:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "Komentaras:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "© 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "Piktograma:"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "Į_rašai"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "Meniu įrašo savybės"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "Meniu savybės"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
 msgstr "Slinkti žemyn"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "Slinkti aukštyn"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "Vardas:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "_Naujas įrašas"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "Naujas _skirtukas"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "Atkurti standartinį meniu išdėstymą"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "Atmesti pakeitimus?"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "Atkurti visus meniu į pradinius nustatymus?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "Leisti komandą terminale"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "Paprastas meniu redaktorius, suderinamas su fd.o"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_Meniu:"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "_Naujas meniu"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_Atkurti originalų"
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr "Gintautas Miliauskas <gintas@akl.lt>"
+#~ msgid "A name is required."
+#~ msgstr "Reikia nurodyti vardą"
+
+#~ msgid "A command is required."
+#~ msgstr "Reikia nurodyti komandą"
+
+#~ msgid "Add, change, remove menu entries"
+#~ msgstr "Pridėti, keisti, šalinti meniu įrašus"
+
+#~ msgid "Menu Layout"
+#~ msgstr "Meniu išdėstymas"
+
+#~ msgid "Alacarte Menu Editor"
+#~ msgstr "Alacarte meniu redaktorius"
+
+#~ msgid "Browse..."
+#~ msgstr "Naršyti..."
+
+#~ msgid "Command:"
+#~ msgstr "Komanda:"
+
+#~ msgid "Comment:"
+#~ msgstr "Komentaras:"
+
+#~ msgid "Copyright © 2006 Travis Watkins"
+#~ msgstr "© 2006 Travis Watkins"
+
+#~ msgid "Icon:"
+#~ msgstr "Piktograma:"
+
+#~ msgid "Menu Item Properties"
+#~ msgstr "Meniu įrašo savybės"
+
+#~ msgid "Menu Properties"
+#~ msgstr "Meniu savybės"
+
+#~ msgid "Name:"
+#~ msgstr "Vardas:"
+
+#~ msgid "Run command in a terminal"
+#~ msgstr "Leisti komandą terminale"
+
+#~ msgid "Simple fd.o compliant menu editor"
+#~ msgstr "Paprastas meniu redaktorius, suderinamas su fd.o"
+
+#~ msgid "translator-credits"
+#~ msgstr "Gintautas Miliauskas <gintas@akl.lt>"

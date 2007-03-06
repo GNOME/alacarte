@@ -1,3 +1,7 @@
+2007-03-06  Thierry Randrianiriana <randrianiriana@gmail.com>
+
+	* mg.po: Updated Malagasy translation.
+
 2007-03-06  Goran Rakić <grakic@devbase.net>
 
 	* sr.po, sr@Latn.po: Updated Serbian translation.
@@ -96,7 +100,7 @@
 
 	* en_GB.po: Updated English (British) translation
 
-2007-02-16  Djihed Afifi <djihed@gmail.com> 
+2007-02-16  Djihed Afifi <djihed@gmail.com>
 
 	* ar.po: Updated Arabic Translation by Djihed Afifi.
 
@@ -142,7 +146,7 @@
 
 	* th.po: Updated Thai translation.
 
-2007-02-8  Djihed Afifi <djihed@gmail.com> 
+2007-02-8  Djihed Afifi <djihed@gmail.com>
 
 	* ar.po: Updated Arabic Translation by Khaled Hosny.
 
@@ -182,7 +186,7 @@
 2007-01-25  Daniel Nylander <po@danielnylander.se>
 
 	* sv.po: Updated Swedish translation.
-	
+
 2007-01-24  Pema Geyleg  <pema.geyleg@gmail.com>
 
 	* dz.po: Updated Dzongkha Translation.
@@ -198,7 +202,7 @@
 2007-01-07  Priit Laes  <plaes@svn.gnome.org>
 
 	* et.po: Estonian translation update by Ivar Smolin.
-	
+
 2007-01-05  Matic Zgur <mr.zgur@gmail.com>
 
 	* sl.po: Updated Slovenian translation.
@@ -216,12 +220,12 @@
 
 	* pt_BR.po: Updated Brazilian Portuguese translation by Og Maciel.
 
-2007-01-3  Djihed Afifi <djihed@gmail.com> 
+2007-01-3  Djihed Afifi <djihed@gmail.com>
 
 	* ar.po: Updated Arabic Translation by Khaled Hosny.
 
 2007-01-02  Jovan Naumovski  <jovan@lugola.net>
- 
+
  	 * mk.po: Updated Macedonian translation.
 
 2006-12-29  Adam Weinberger  <adamw@gnome.org>
@@ -240,8 +244,8 @@
 2006-12-28  Daniel Nylander <po@danielnylander.se>
 
 	* sv.po: Updated Swedish translation.
-	
-2006-12-27  Djihed Afifi <djihed@gmail.com> 
+
+2006-12-27  Djihed Afifi <djihed@gmail.com>
 
 	* ar.po: Updated Arabic Translation.
 
@@ -251,7 +255,7 @@
 	* POTFILES.skip: Add alacarte.desktop.in
 	* nb.po: Updated Norwegian bokmål translation.
 
-2006-12-24  Djihed Afifi <djihed@gmail.com> 
+2006-12-24  Djihed Afifi <djihed@gmail.com>
 
 	* ar.po: Updated Arabic Translation.
 
@@ -269,7 +273,7 @@
 
 	* sq.po: Updated Albanian translation.
 
-2006-11-24  Djihed Afifi" <djihed@gmail.com> 
+2006-11-24  Djihed Afifi" <djihed@gmail.com>
 
 	* ar.po: Updated Arabic Translation.
 
@@ -281,7 +285,7 @@
 
 	* pl.po: Translation updated by Artur Flinta.
 
-2006-10-30  Djihed Afifi <djihed@gmail.com> 
+2006-10-30  Djihed Afifi <djihed@gmail.com>
 
 	* ar.po Added Arabic Translation.
 

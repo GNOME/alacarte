@@ -3,60 +3,44 @@
 # This file is distributed under the same license as the alacarte package.
 #
 # Gabor Burján <buga@buvoshetes.hu>, 2006.
-# Gabor Kelemen <kelemeng@gnome.hu>, 2006.
+# Gabor Kelemen <kelemeng@gnome.hu>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-09 03:28+0000\n"
-"PO-Revision-Date: 2006-08-26 13:13+0200\n"
+"POT-Creation-Date: 2007-02-12 04:30+0000\n"
+"PO-Revision-Date: 2007-03-09 13:06+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.2\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../Alacarte/MainWindow.py:169
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Név"
 
-#: ../Alacarte/MainWindow.py:185
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "Megjelenítés"
 
-#: ../Alacarte/MainWindow.py:193
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "Elem"
-
-#: ../Alacarte/MenuEditor.py:536
-msgid "New menu items need a name"
-msgstr "Az új menüelemeknek nevet kell adni"
-
-#: ../Alacarte/MenuEditor.py:569
-msgid "New menus need a name"
-msgstr "Az új menüknek nevet kell adni"
 
 #: ../alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
 msgstr "A főmenüben megjelenő alkalmazások módosítása"
 
-#: ../alacarte.desktop.in.in.h:2
-msgid "Main Menu Editor"
-msgstr "Főmenüszerkesztő"
-
-#: ../alacarte.desktop.in.in.h:3
-msgid "Menu Editor"
-msgstr "Menüszerkesztő"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "Főmenü"
 
 #: ../alacarte.glade.h:1
 msgid "It_ems:"
 msgstr "_Elemek:"
-
-#: ../alacarte.glade.h:2
-msgid "Menu Layout"
-msgstr "Menüelrendezés"
 
 #: ../alacarte.glade.h:3
 msgid "Move Down"
@@ -98,46 +82,3 @@ msgstr "Új _menü"
 msgid "_Revert to Original"
 msgstr "_Visszatérés az eredeti állapothoz"
 
-#~ msgid "A name is required."
-#~ msgstr "Egy név megadása szükséges."
-
-#~ msgid "A command is required."
-#~ msgstr "Egy parancs megadása szükséges."
-
-#~ msgid "Add, change, remove menu entries"
-#~ msgstr "Menübejegyzések hozzáadása, módosítása és törlése"
-
-#~ msgid "Browse..."
-#~ msgstr "Tallózás..."
-
-#~ msgid "Command:"
-#~ msgstr "Parancs:"
-
-#~ msgid "Comment:"
-#~ msgstr "Megjegyzés:"
-
-#~ msgid "Copyright © 2006 Travis Watkins"
-#~ msgstr "Copyright © 2006 Travis Watkins"
-
-#~ msgid "Icon:"
-#~ msgstr "Ikon:"
-
-#~ msgid "Menu Item Properties"
-#~ msgstr "Menüelem tulajdonságai"
-
-#~ msgid "Menu Properties"
-#~ msgstr "Menü tulajdonságai"
-
-#~ msgid "Name:"
-#~ msgstr "Név:"
-
-#~ msgid "Run command in a terminal"
-#~ msgstr "Futtatás terminálban"
-
-#~ msgid "Simple fd.o compliant menu editor"
-#~ msgstr "Egy egyszerű fd.o szerint szabványos menüszerkesztő"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Burján Gábor <buga@buvoshetes.hu>\n"
-#~ "Kelemen Gábor <kelemeng@gnome.hu>"

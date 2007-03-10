@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-09 15:54+0200\n"
-"PO-Revision-Date: 2007-03-09 12:57+0300\n"
-"Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
+"POT-Creation-Date: 2007-03-10 02:26+0200\n"
+"PO-Revision-Date: 2007-03-09 18:58+0100\n"
+"Last-Translator: Alaksandar Navicki <zolak@lacinka.org>\n"
 "Language-Team: Belarusian Latin <i18n@mova.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -43,11 +43,11 @@ msgstr "_Elementy:"
 
 #: ../alacarte.glade.h:3
 msgid "Move Down"
-msgstr "Pasuń dołu"
+msgstr "Pasuń nižej"
 
 #: ../alacarte.glade.h:4
 msgid "Move Up"
-msgstr "Pasuń uhoru"
+msgstr "Pasuń vyšej"
 
 #: ../alacarte.glade.h:5
 msgid "Ne_w Item"
@@ -63,7 +63,7 @@ msgstr "Viarni zmoŭčany vyhlad menu"
 
 #: ../alacarte.glade.h:8
 msgid "Revert Changes?"
-msgstr "Viarnuć?"
+msgstr "Anulavać źmieny?"
 
 #: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"

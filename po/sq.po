@@ -1,13 +1,13 @@
-# Përkthimi i alacarte.HEAD në shqip.
-# Laurent Dhima <laurenti@alblinux.net>, 2006.
-# Copyright (C) 2006 Free Software Foundation, Inc.
+# Përkthimi i alacarte në shqip.
+# Laurent Dhima <laurenti@alblinux.net>, 2006, 2007.
+# Copyright (C) 2006, 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the alacarte package.
 msgid ""
 msgstr ""
-"Project-Id-Version: alacarte.HEAD\n"
+"Project-Id-Version: alacarte HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-24 17:32+0100\n"
-"PO-Revision-Date: 2006-07-18 12:09+0200\n"
+"POT-Creation-Date: 2007-03-13 16:52+0100\n"
+"PO-Revision-Date: 2007-03-13 16:54+0100\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -15,124 +15,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Emri"
 
-#: ../Alacarte/MainWindow.py:180
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "Shfaq"
 
-#: ../Alacarte/MainWindow.py:188
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "Element"
 
-#: ../Alacarte/DialogHandler.py:159 ../Alacarte/DialogHandler.py:196
-#: ../Alacarte/DialogHandler.py:357 ../Alacarte/DialogHandler.py:388
-msgid "A name is required."
-msgstr "Një emër është i nevojshëm."
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "Ndrysho çfarë aplikativësh do të shfaqen tek menuja kryesore"
 
-#: ../Alacarte/DialogHandler.py:162 ../Alacarte/DialogHandler.py:199
-msgid "A command is required."
-msgstr "Një komandë është e nevojshme."
-
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "Shto, ndrysho, elemino elementët e menusë"
-
-#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "Struktura e menusë"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "Menuja kryesore"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Alacarte, një editor për menu"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "Shfleto..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "Komanda:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "Komenti:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "Copyright © 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "Ikona:"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "El_ementët:"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "Pronësitë e elementit të menusë"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "Pronësitë e menusë"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
 msgstr "Lëviz poshtë"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "Lëviz sipër"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "Emri:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "Element i _ri"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "Ndarë_s i ri"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "Rivendos strukturën e paracaktuar të menusë"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "Anullon ndryshimet?"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "Kthen të gjithë menutë tek rregullimet origjinale?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "Ekzekuto komandën në një terminal"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "Editues i thjeshtë menuje fd.o kompatibël"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_Menutë:"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "Menu e _re"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_Kthe tek origjinali"
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr "Laurent Dhima <laurenti@alblinux.net>"

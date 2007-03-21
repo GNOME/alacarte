@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-15 22:28+0200\n"
+"POT-Creation-Date: 2007-03-22 00:42+0100\n"
 "PO-Revision-Date: 2006-06-15 22:28+0200\n"
 "Last-Translator: Ignacio Casal Quinteiro <nacho.resa@gmail.com>\n"
 "Language-Team: Galego <trasno@ceu.fi.udc.es>\n"
@@ -16,34 +16,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.2\n"
 
-#: ../Alacarte/MainWindow.py:160
+#: ../Alacarte/MainWindow.py:164
 msgid "Name"
 msgstr "Nome"
 
-#: ../Alacarte/MainWindow.py:176
+#: ../Alacarte/MainWindow.py:180
 msgid "Show"
-msgstr "Amosar"
+msgstr "Mostrar"
 
-#: ../Alacarte/MainWindow.py:184
+#: ../Alacarte/MainWindow.py:188
 msgid "Item"
 msgstr "Elemento"
 
-#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
+#: ../Alacarte/DialogHandler.py:159 ../Alacarte/DialogHandler.py:196
+#: ../Alacarte/DialogHandler.py:357 ../Alacarte/DialogHandler.py:388
 msgid "A name is required."
 msgstr "Requírese un nome."
 
-#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
+#: ../Alacarte/DialogHandler.py:162 ../Alacarte/DialogHandler.py:199
 msgid "A command is required."
 msgstr "Requírese un comando."
 
 #: ../alacarte.desktop.in.h:1
 msgid "Add, change, remove menu entries"
-msgstr "Engadir, trocar, eliminar entradas de menú"
+msgstr "Engadir, cambiar ou eliminar entradas de menú"
 
 #: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
 msgid "Menu Layout"
-msgstr "Distribución de menú"
+msgstr "Disposición do menú"
 
 #: ../alacarte.glade.h:1
 msgid "Alacarte Menu Editor"
@@ -51,7 +51,7 @@ msgstr "Editor de menú Alacarte"
 
 #: ../alacarte.glade.h:2
 msgid "Browse..."
-msgstr "Examinar..."
+msgstr "Buscar..."
 
 #: ../alacarte.glade.h:3
 msgid "Command:"
@@ -63,7 +63,7 @@ msgstr "Comentario:"
 
 #: ../alacarte.glade.h:5
 msgid "Copyright © 2006 Travis Watkins"
-msgstr "Copyright © 2006 Travis Watkins"
+msgstr "Dereitos de autor © 2006 Travis Watkins"
 
 #: ../alacarte.glade.h:6
 msgid "Icon:"
@@ -103,23 +103,23 @@ msgstr "_Separador novo"
 
 #: ../alacarte.glade.h:16
 msgid "Restore the default menu layout"
-msgstr "Restaurar a distribución de menú predeterminada"
+msgstr "Restaurar a disposición de menú predeterminada"
 
 #: ../alacarte.glade.h:17
 msgid "Revert Changes?"
-msgstr "Restaurar cambios?"
+msgstr "Restaurar os cambios?"
 
 #: ../alacarte.glade.h:18
 msgid "Revert all menus to original settings?"
-msgstr "Restaurar tódolos menús aos axustes orixinais?"
+msgstr "Restaurar todos os menús coa configuración orixinal?"
 
 #: ../alacarte.glade.h:19
 msgid "Run command in a terminal"
-msgstr "Executar comando nunha terminal"
+msgstr "Executar un comando nun terminal"
 
 #: ../alacarte.glade.h:20
 msgid "Simple fd.o compliant menu editor"
-msgstr "Editor de menú sinxelo"
+msgstr "Un editor de menú sinxelo e conforme co freedesktop.org"
 
 #: ../alacarte.glade.h:21
 msgid "_Menus:"
@@ -131,7 +131,7 @@ msgstr "Menú _novo"
 
 #: ../alacarte.glade.h:23
 msgid "_Revert to Original"
-msgstr "_Restaurar ao orixinal"
+msgstr "_Recuperar o orixinal"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../alacarte.glade.h:25
@@ -139,4 +139,3 @@ msgid "translator-credits"
 msgstr ""
 "Ignacio Casal Quinteiro <nacho.resa@gmail.com>\n"
 "Proxecto Trasno"
-

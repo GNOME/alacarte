@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catalan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-13 08:38+0100\n"
-"PO-Revision-Date: 2007-02-13 08:39+0100\n"
+"POT-Creation-Date: 2007-04-02 00:44+0200\n"
+"PO-Revision-Date: 2007-04-02 00:45+0200\n"
 "Last-Translator: Esteve Blanch Sanmartí <anakinjinn@gmail.com>\n"
 "Language-Team: catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
@@ -49,15 +49,15 @@ msgstr "Mou cap amunt"
 
 #: ../alacarte.glade.h:5
 msgid "Ne_w Item"
-msgstr "No_u l'element"
+msgstr "Element no_u"
 
 #: ../alacarte.glade.h:6
 msgid "New _Separator"
-msgstr "Nou _separador"
+msgstr "_Separador nou"
 
 #: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
-msgstr "Restaura el format per defecte del menú"
+msgstr "Restaura la disposició per defecte del menú"
 
 #: ../alacarte.glade.h:8
 msgid "Revert Changes?"
@@ -73,7 +73,7 @@ msgstr "_Menús:"
 
 #: ../alacarte.glade.h:11
 msgid "_New Menu"
-msgstr "Nou _menú"
+msgstr "_Menú nou"
 
 #: ../alacarte.glade.h:12
 msgid "_Revert to Original"

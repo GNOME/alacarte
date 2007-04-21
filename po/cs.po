@@ -1,144 +1,87 @@
+# translation of cs.po to Czech
 # Czech translation of PACKAGE.
 # Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
 # Copyright (C) 2006 Lukas Novotny <lukasnov@cvs.gnome.org>
 # This file is distributed under the same license as the PACKAGE package.
+#
+#
 # Lukas Novotny <lukasnov@cvs.gnome.org>, 2006.
-# 
-# 
+# Jakub Friedl <jfriedl@suse.cz>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: ALACARTE VERSION\n"
+"Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-01 06:13+0200\n"
-"PO-Revision-Date: 2006-07-01 11:49+0200\n"
-"Last-Translator: Lukas Novotny <lukasnov@cvs.gnome.org>\n"
-"Language-Team: Czech <cs@li.org>\n"
+"POT-Creation-Date: 2007-04-21 16:24+0200\n"
+"PO-Revision-Date: 2007-04-21 16:30+0200\n"
+"Last-Translator: Jakub Friedl <jfriedl@suse.cz>\n"
+"Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ../Alacarte/MainWindow.py:160
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Název"
 
-#: ../Alacarte/MainWindow.py:176
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "Zobrazit"
 
-#: ../Alacarte/MainWindow.py:184
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "Položka"
 
-#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
-msgid "A name is required."
-msgstr "Je potřeba zadat název."
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "Změnit aplikace zobrazené v hlavní nabídce"
 
-#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
-msgid "A command is required."
-msgstr "Je potřeba zadat příkaz."
-
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "Přidat, změnit, odstranit položky menu"
-
-#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
-#, fuzzy
-msgid "Menu Layout"
-msgstr "Rozmístění menu"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "Hlavní nabídka"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Editor menu Alacarte"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "Procházet..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "Příkaz:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "Komentář:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "Copyright © 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "Ikona:"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "P_oložky:"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "Vlastnosti položky menu"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "Vlastnosti menu"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
-msgstr "Přesunout nahoru"
+msgstr "Přesunout níž"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
-msgstr "Přesunout nahoru"
+msgstr "Přesunout výš"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "Název:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
-msgstr "No_vou položku"
+msgstr "No_vá položka"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "Nový _oddělovač"
 
-#: ../alacarte.glade.h:16
-#, fuzzy
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
-msgstr "Vrátit zpět výchozí rozmístění menu?"
+msgstr "Obnovit výchozí uspořádání nabídky"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
-msgstr "Vrátit zpět změny?"
+msgstr "Zrušit změny?"
 
-#: ../alacarte.glade.h:18
-#, fuzzy
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
-msgstr "Vrátit zpět všechny menu na originální nastavení?"
+msgstr "Vrátit původní nastavení všech nabídek?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "Příkaz spustit v terminálu"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "Jednoduchý fd.o menu editor"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
-msgstr "_Menu:"
+msgstr "_Nabídky:"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
-msgstr "_Nové menu"
+msgstr "_Nová nabídka"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
-msgstr "V_rátit zpět na původní"
-
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr "Lukáš Novotný <lukasnov@cvs.gnome.org>"
+msgstr "_Obnovit původní"
 

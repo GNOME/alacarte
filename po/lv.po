@@ -2,140 +2,82 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Raivis Dejus <orvils@gmail.com>, 2006.
+# Raivis Dejus <orvils@gmail.com>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-26 11:01+0300\n"
-"PO-Revision-Date: 2006-07-26 11:02+0300\n"
+"POT-Creation-Date: 2007-06-17 19:53+0300\n"
+"PO-Revision-Date: 2007-06-17 19:54+0300\n"
 "Last-Translator: Raivis Dejus <orvils@gmail.com>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.2\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
-#: ../Alacarte/MainWindow.py:161
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Nosaukums"
 
-#: ../Alacarte/MainWindow.py:177
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "Parādīt"
 
-#: ../Alacarte/MainWindow.py:185
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "Ieraksts"
 
-#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
-msgid "A name is required."
-msgstr "Nosaukums ir nepieciešams."
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "Izmainīt kuras programmas ir redzamas galvenajā izvēlnē"
 
-#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
-msgid "A command is required."
-msgstr "Komanda ir nepieciešama."
-
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "Pievienot, mainīt, dzēst izvēlnes ierakstus"
-
-#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "Izvēlnes izkārtojums"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "Galvenā izvēlne"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Alacarte izvēlnes redaktors"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "Pārlūkot..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "Komanda:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "Komentārs:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "Autortiesības © 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "Ikona:"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "I_eraksti:"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "Izvēlnes ierakstu rekvizīti"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "Izvēlnes rekvizīti"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
 msgstr "Pārvietot uz leju"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "Pārvietot uz augšu"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "Nosaukums:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "Jauns ieraks_ts"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "Jaun_s atdalītājs"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "Atjaunot noklusēto izvēlnes izkārtojumu"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "Atgriezt Izmaiņas?"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "Atjaunot oriģinālos uzstādijumus visās izvēlnēs?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "Izpildīt kommandu terminālī"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "Vienkāršs fd.o saderīgs izvēlnes redaktors"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_Izvēlnes:"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "Jau_na Izvēlne"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "Atjaunot kā o_riģinālu"
-
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr "Edgars Burmistris <stendec@inbox.lv>"
 

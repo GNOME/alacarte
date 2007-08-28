@@ -1,141 +1,81 @@
-# translation of alacarte.po to Georgian
+# translation of ka.po to Georgian
 # Davit Managadze  <dmanagadze@googlemail.com>, 2006.
+# Vladimer Sichinava ვლადიმერ სიჭინავა <vsichi@gnome.org>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: alacarte\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2006-08-17 14:32+0200\n"
-"Last-Translator: Vladimer Sichinava <vlsichinava@gmail.com>\n"
-"Language-Team: Georgian <vlsichinava@gmail.com>\n"
+"Project-Id-Version: ka\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-08-28 03:49+0200\n"
+"PO-Revision-Date: 2007-08-28 03:52+0200\n"
+"Last-Translator: Vladimer Sichinava ვლადიმერ სიჭინავა <vsichi@gnome.org>\n"
+"Language-Team: Georgian <http://mail.gnome.org/mailman/listinfo/gnome-ge-list>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-#: ../Alacarte/MainWindow.py:161
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "სახელი"
 
-#: ../Alacarte/MainWindow.py:177
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "ჩვენება"
 
-#: ../Alacarte/MainWindow.py:185
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "ელემენტი"
 
-#: ../Alacarte/DialogHandler.py:145
-#: ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337
-#: ../Alacarte/DialogHandler.py:368
-msgid "A name is required."
-msgstr "საჭიროა სახელი"
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "ძირითად მენიუში პროგრამების მართვა, შესაძლებელია მათი დამალვა ან ჩვენება"
 
-#: ../Alacarte/DialogHandler.py:148
-#: ../Alacarte/DialogHandler.py:185
-msgid "A command is required."
-msgstr "საჭიროა ბრძანება"
-
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "მენიუს ჩანაწერების დამატება, შეცვლა ან წაშლა"
-
-#: ../alacarte.desktop.in.h:2
-#: ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "მენიუს განლაგება"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "ძირითადი მენიუ"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Alacarte მენიუს რედაქტორი"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "ნუსხა..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "ბრძანება:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "კომენტარი:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "საავტორო უფლება © 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "ხატულა:"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "_ელემენტები:"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "მენიუს ელემენტის თვისებები"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "მენიუს თვისებები"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
 msgstr "ქვემოთ გადატანა"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "ზემოთ გადატანა"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "სახელი:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "_ახალი პუნქტი"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "ახალი _გამყოფი ხაზი"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "სტანდარტული მენიუს განლაგების აღდგენა"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "გავაუქმოთ ცვლილებები?"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "დავაბრუნოთ ყველა მენიუ საწყის მდგომარეობაში?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "გაუშვი ბრძანება ტერმინალში"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "მარტივი fd.o-თავსებადი მენიუს რედაქტორი"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_მენიუები:"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "ახალი _მენიუ"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_დააბრუნე ორიგინალი"
-
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr "დავით მანაგაძე <dmanagadze@googlemail.com>"
 

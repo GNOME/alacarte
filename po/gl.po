@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-25 22:32+0200\n"
+"POT-Creation-Date: 2007-09-03 13:11+0200\n"
 "PO-Revision-Date: 2007-03-25 22:33+0200\n"
 "Last-Translator: Ignacio Casal Quinteiro <icq@cvs.gnome.org>\n"
 "Language-Team: Galego <trasno@ceu.fi.udc.es>\n"
@@ -31,7 +31,7 @@ msgstr "Elemento"
 
 #: ../alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
-msgstr "Cambiar que aplicacións se amosarán no menú principal"
+msgstr "Cambiar as aplicacións que se mostran no menú principal"
 
 #: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
 msgid "Main Menu"
@@ -80,4 +80,3 @@ msgstr "Menú _novo"
 #: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_Recuperar o orixinal"
-

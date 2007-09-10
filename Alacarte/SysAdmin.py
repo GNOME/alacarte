@@ -22,9 +22,10 @@ class SysAdmin:
 	ab_max_newapps_prefix = '/desktop/gnome/applications/main-menu'
 	ab_max_newapps_key = ab_max_newapps_prefix + '/ab_new_apps_max_items'
 
-	#fixme - how do I get this programatically - maybe gconftool2 --get-source-default
-	DEFAULTS_SOURCE = 'xml::/etc/opt/gnome/gconf/gconf.xml.defaults'
-	#DEFAULTS_SOURCE = 'xml::/etc/opt/gnome/gconf/gconf.xml.schemas'
+	#Fixme - how do I get this programatically - maybe gconftool-2 --get-default-source
+	#sp1 -  DEFAULTS_SOURCE = 'xml::/etc/opt/gnome/gconf/gconf.xml.defaults'
+	#10.3 - DEFAULTS_SOURCE = 'xml::/etc/gconf/gconf.xml.schemas'
+	DEFAULTS_SOURCE = 'xml::/etc/gconf/gconf.xml.schemas'
 	
 	def __init__(self, system_view):
 		print "SysAdmin::system_view = " + str(system_view)

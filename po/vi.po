@@ -3,175 +3,144 @@
 # Clytie Siddall <clytie@riverland.net.au>, 2006-2007.
 # 
 msgid ""
-""
-msgstr "Project-Id-Version: alacarte HEAD\n"
+msgstr ""
+"Project-Id-Version: alacarte HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-02 03:52+0000\n"
-"PO-Revision-Date: 2007-01-05 14:52+1030\n"
-"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"POT-Creation-Date: 2007-02-19 08:44+0000\n"
+"PO-Revision-Date: 2007-02-19 14:04+0700\n"
+"Last-Translator: Phạm Thành Long <lngt@ngonngu.net>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: LocFactoryEditor 1.6fc1\n"
 
-#: ../Alacarte/MainWindow.py:165
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Tên"
 
-#: ../Alacarte/MainWindow.py:181
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "Hiện"
 
-#: ../Alacarte/MainWindow.py:189
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "Mục"
-
-#: ../Alacarte/MenuEditor.py:517
-msgid "New menu items need a name"
-msgstr "Mục trình đơn mới thì cần có tên"
-
-#: ../Alacarte/MenuEditor.py:550
-msgid "New menus need a name"
-msgstr "Trình đơn mới thì cần có tên"
-
-#: ../Alacarte/DialogHandler.py:64
-msgid "Choose a Program"
-msgstr "Chọn chương trình"
-
-#: ../Alacarte/DialogHandler.py:97
-msgid "Choose an Icon"
-msgstr "Chọn biểu tượng"
-
-#: ../Alacarte/DialogHandler.py:159
-#: ../Alacarte/DialogHandler.py:196
-#: ../Alacarte/DialogHandler.py:357
-#: ../Alacarte/DialogHandler.py:388
-msgid "A name is required."
-msgstr "Cần thiết nhập tên."
-
-#: ../Alacarte/DialogHandler.py:162
-#: ../Alacarte/DialogHandler.py:199
-msgid "A command is required."
-msgstr "Cần thiết nhập lệnh."
-
-#: ../Alacarte/DialogHandler.py:170
-#: ../Alacarte/DialogHandler.py:340
-#: ../Alacarte/DialogHandler.py:365
-#: ../Alacarte/DialogHandler.py:416
-#: ../Alacarte/DialogHandler.py:480
-msgid "No Icon"
-msgstr "Không có biểu tượng"
 
 #: ../alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
 msgstr "Thay đổi những ứng dụng hiển thị trong trình đơn chính"
 
-#: ../alacarte.desktop.in.in.h:2
-msgid "Main Menu Editor"
-msgstr "Bộ sửa trình đơn chính"
-
-#: ../alacarte.desktop.in.in.h:3
-msgid "Menu Editor"
-msgstr "Bộ sửa trình đơn"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "Trình đơn chính"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Bộ hiệu chỉnh trình đơn À la Carte"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "Duyệt..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "Lệnh:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "Ghi chú :"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "Tác quyền © năm 2006 của Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "Hình:"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "_Mục:"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "Tài sản mục trình đơn"
-
-#: ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "Bố trí trình đơn"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "Tài sản trình đơn"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
 msgstr "Đem xuống"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "Đem lên"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "Tên:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "Mục mớ_i"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "Thanh _ngăn cách mới"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
-msgstr "Phục hồi bố trí trình đơn mặc định"
+msgstr "Phục hồi bố cục trình đơn mặc định"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
-msgstr "Hủy các thay đổi không?"
+msgstr "Bỏ qua các thay đổi?"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
-msgstr "Hoàn nguyên thiết lập gốc của mọi trình đơn không?"
+msgstr "Hoàn nguyên thiết lập ban đầu của mọi trình đơn?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "Chạy lệnh trong cửa sổ dòng lệnh"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "Trình hiệu chỉnh trình đơn tùy theo fd.o đơn giản"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_Trình đơn:"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "Trình đơn mớ_i"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "H_oàn nguyên"
 
-#.TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr "Nhóm Việt hoá GNOME <gnomevi-list@lists.sourceforge.net>"
+#~ msgid "New menu items need a name"
+#~ msgstr "Mục trình đơn mới thì cần có tên"
+
+#~ msgid "New menus need a name"
+#~ msgstr "Trình đơn mới thì cần có tên"
+
+#~ msgid "Choose a Program"
+#~ msgstr "Chọn chương trình"
+
+#~ msgid "Choose an Icon"
+#~ msgstr "Chọn biểu tượng"
+
+#~ msgid "A name is required."
+#~ msgstr "Cần thiết nhập tên."
+
+#~ msgid "A command is required."
+#~ msgstr "Cần thiết nhập lệnh."
+
+#~ msgid "No Icon"
+#~ msgstr "Không có biểu tượng"
+
+#~ msgid "Menu Editor"
+#~ msgstr "Bộ sửa trình đơn"
+
+#~ msgid "Alacarte Menu Editor"
+#~ msgstr "Bộ hiệu chỉnh trình đơn À la Carte"
+
+#~ msgid "Browse..."
+#~ msgstr "Duyệt..."
+
+#~ msgid "Command:"
+#~ msgstr "Lệnh:"
+
+#~ msgid "Comment:"
+#~ msgstr "Ghi chú :"
+
+#~ msgid "Copyright © 2006 Travis Watkins"
+#~ msgstr "Tác quyền © năm 2006 của Travis Watkins"
+
+#~ msgid "Icon:"
+#~ msgstr "Hình:"
+
+#~ msgid "Menu Item Properties"
+#~ msgstr "Tài sản mục trình đơn"
+
+#~ msgid "Menu Layout"
+#~ msgstr "Bố trí trình đơn"
+
+#~ msgid "Menu Properties"
+#~ msgstr "Tài sản trình đơn"
+
+#~ msgid "Name:"
+#~ msgstr "Tên:"
+
+#~ msgid "Run command in a terminal"
+#~ msgstr "Chạy lệnh trong cửa sổ dòng lệnh"
+
+#~ msgid "Simple fd.o compliant menu editor"
+#~ msgstr "Trình hiệu chỉnh trình đơn tùy theo fd.o đơn giản"
+
+#~ msgid "translator-credits"
+#~ msgstr "Nhóm Việt hoá GNOME <gnomevi-list@lists.sourceforge.net>"
 
 #~ msgid "Add, change, remove menu entries"
 #~ msgstr "Thêm, thay đổi, gỡ bỏ mục trình đơn"

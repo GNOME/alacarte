@@ -1,3 +1,21 @@
+2007-02-12  Vincent Untz  <vuntz@gnome.org>
+
+	* configure.ac: pre-release bump to 0.11.4
+
+==================== 0.11.3 ====================
+
+2007-02-12  Vincent Untz  <vuntz@gnome.org>
+
+	* NEWS:
+	* README: version 0.11.3
+
+2007-02-11  Travis Watkins  <alleykat@gmail.com>
+
+	* Alacarte/MainWindow.py:
+	  Alacarte/MenuEditor.py: readd support for System menu
+	* alacarte.desktop.in.in:
+	  alacarte.glade: make name 'Main Menu' everywhere
+
 2007-01-11  Travis Watkins  <alleykat@gmail.com>
 
 	* alacarte.desktop.in.in: remove GenericName, add specific category

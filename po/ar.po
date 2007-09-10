@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte.HEAD.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-27 16:30+0000\n"
-"PO-Revision-Date: 2006-12-29 14:26+0200\n"
-"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
+"POT-Creation-Date: 2007-02-14 09:24-0800\n"
+"PO-Revision-Date: 2007-02-16 11:30-0000\n"
+"Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabic <support@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,163 +18,114 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : 3\n"
 
-#: ../Alacarte/MainWindow.py:165
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "اسم"
 
-#: ../Alacarte/MainWindow.py:181
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "أظهر"
 
-#: ../Alacarte/MainWindow.py:189
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "عنصر"
-
-#: ../Alacarte/MenuEditor.py:517
-msgid "New menu items need a name"
-msgstr "يحتاج عنصر القائمة الجديد لإسم"
-
-#: ../Alacarte/MenuEditor.py:550
-msgid "New menus need a name"
-msgstr "تحتاج القوائم الجديدة لإسم"
-
-#: ../Alacarte/DialogHandler.py:64
-msgid "Choose a Program"
-msgstr "اختر برنامج"
-
-#: ../Alacarte/DialogHandler.py:97
-msgid "Choose an Icon"
-msgstr "اختر أيقونة"
-
-#: ../Alacarte/DialogHandler.py:159
-#: ../Alacarte/DialogHandler.py:196
-#: ../Alacarte/DialogHandler.py:357
-#: ../Alacarte/DialogHandler.py:388
-msgid "A name is required."
-msgstr "بحاجة لإسم."
-
-#: ../Alacarte/DialogHandler.py:162
-#: ../Alacarte/DialogHandler.py:199
-msgid "A command is required."
-msgstr "بحاجة لأمر."
-
-#: ../Alacarte/DialogHandler.py:170
-#: ../Alacarte/DialogHandler.py:340
-#: ../Alacarte/DialogHandler.py:365
-#: ../Alacarte/DialogHandler.py:416
-#: ../Alacarte/DialogHandler.py:480
-msgid "No Icon"
-msgstr "لا أيقونة"
 
 #: ../alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
 msgstr "غيّر التطبيقات التي ستظهر في القائمة الرئيسيّة"
 
 #: ../alacarte.desktop.in.in.h:2
-msgid "Main Menu Editor"
-msgstr "محرر القائمة الرئيسية"
-
-#: ../alacarte.desktop.in.in.h:3
-msgid "Menu Editor"
-msgstr "محرر القوائم"
+#: ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "القائمة الرئيسية"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "محرر القائمة ألاكارت"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "استعرض..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "أمر:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "تعليق:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "حقوق النسخ © 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "أيقونة:"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "ع_ناصر:"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "خصائص عنصر القائمة"
-
-#: ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "مخطط القائمة"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "خصائص القائمة"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
 msgstr "تحرك لأسفل"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "تحرك لأعلى"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "اسم:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "عنصر _جديد"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "فا_صل جديد"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "استعِد المخطط الإفتراضي للقائمة"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "التراجع عن التغييرات؟"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "استرجاع كافة القوائم إلى الإعدادات الأصلية؟"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "شغّل الأمر في طرفيّة"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "محرر قائمة متوافق مع fd.o"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_قوائم:"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "قائمة _جديدة"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "ا_ستعِد الحالة الأصلية"
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr ""
-"فريق عربآيز للترجمة http://www.arabeyes.org :\n"
-"جهاد عفيفي\t<djihed@gmail.com>\n"
-"يوسف رفه\t<yousef@raffah.com>"
+#~ msgid "Menu Layout"
+#~ msgstr "مخطط القائمة"
+#~ msgid "New menu items need a name"
+#~ msgstr "يحتاج عنصر القائمة الجديد لإسم"
+#~ msgid "New menus need a name"
+#~ msgstr "تحتاج القوائم الجديدة لإسم"
+#~ msgid "Choose a Program"
+#~ msgstr "اختر برنامج"
+#~ msgid "Choose an Icon"
+#~ msgstr "اختر أيقونة"
+#~ msgid "A name is required."
+#~ msgstr "بحاجة لإسم."
+#~ msgid "A command is required."
+#~ msgstr "بحاجة لأمر."
+#~ msgid "No Icon"
+#~ msgstr "لا أيقونة"
+#~ msgid "Menu Editor"
+#~ msgstr "محرر القوائم"
+#~ msgid "Alacarte Menu Editor"
+#~ msgstr "محرر القائمة ألاكارت"
+#~ msgid "Browse..."
+#~ msgstr "استعرض..."
+#~ msgid "Command:"
+#~ msgstr "أمر:"
+#~ msgid "Comment:"
+#~ msgstr "تعليق:"
+#~ msgid "Copyright © 2006 Travis Watkins"
+#~ msgstr "حقوق النسخ © 2006 Travis Watkins"
+#~ msgid "Icon:"
+#~ msgstr "أيقونة:"
+#~ msgid "Menu Item Properties"
+#~ msgstr "خصائص عنصر القائمة"
+#~ msgid "Menu Properties"
+#~ msgstr "خصائص القائمة"
+#~ msgid "Name:"
+#~ msgstr "اسم:"
+#~ msgid "Run command in a terminal"
+#~ msgstr "شغّل الأمر في طرفيّة"
+#~ msgid "Simple fd.o compliant menu editor"
+#~ msgstr "محرر قائمة متوافق مع fd.o"
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "فريق عربآيز للترجمة http://www.arabeyes.org :\n"
+#~ "جهاد عفيفي\t<djihed@gmail.com>\n"
+#~ "يوسف رفه\t<yousef@raffah.com>"
 

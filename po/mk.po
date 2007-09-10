@@ -1,172 +1,83 @@
-# translation of alacarte.HEAD.mk.po to Macedonian
+# translation of mk.po to Macedonian
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Jovan Naumovski <jovan@lugola.net>, 2006.
+# Arangel Angov <ufo@linux.net.mk>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: alacarte.HEAD.mk\n"
+"Project-Id-Version: mk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-31 10:05+0100\n"
-"PO-Revision-Date: 2006-12-31 17:47+0100\n"
-"Last-Translator: Jovan Naumovski <jovan@lugola.net>\n"
+"POT-Creation-Date: 2007-02-12 04:30+0000\n"
+"PO-Revision-Date: 2007-03-01 22:59+0100\n"
+"Last-Translator: Arangel Angov <ufo@linux.net.mk>\n"
 "Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../Alacarte/MainWindow.py:165
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Име"
 
-#: ../Alacarte/MainWindow.py:181
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "Прикажи"
 
-#: ../Alacarte/MainWindow.py:189
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "Предмет"
-
-#: ../Alacarte/MenuEditor.py:517
-msgid "New menu items need a name"
-msgstr "На новите предмети од менито им треба име"
-
-#: ../Alacarte/MenuEditor.py:550
-msgid "New menus need a name"
-msgstr "На новите предмети им треба име"
-
-#: ../Alacarte/DialogHandler.py:64
-msgid "Choose a Program"
-msgstr "Одберете програм"
-
-#: ../Alacarte/DialogHandler.py:97
-msgid "Choose an Icon"
-msgstr "Одберете икона"
-
-#: ../Alacarte/DialogHandler.py:159 ../Alacarte/DialogHandler.py:196
-#: ../Alacarte/DialogHandler.py:357 ../Alacarte/DialogHandler.py:388
-msgid "A name is required."
-msgstr "Потребно е име."
-
-#: ../Alacarte/DialogHandler.py:162 ../Alacarte/DialogHandler.py:199
-msgid "A command is required."
-msgstr "Потребна е команда"
-
-#: ../Alacarte/DialogHandler.py:170 ../Alacarte/DialogHandler.py:340
-#: ../Alacarte/DialogHandler.py:365 ../Alacarte/DialogHandler.py:416
-#: ../Alacarte/DialogHandler.py:480
-msgid "No Icon"
-msgstr "Нема икона:"
 
 #: ../alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
 msgstr "Променете кои апликации се прикажани во главното мени"
 
-#: ../alacarte.desktop.in.in.h:2
-msgid "Main Menu Editor"
-msgstr "Уредувач на главното мени"
-
-#: ../alacarte.desktop.in.in.h:3
-msgid "Menu Editor"
-msgstr "Уредувач на мени"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "Главно мени"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Alacarte уредувач на мени"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "Разгледај..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "Команда:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "Коментар:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "Авторски права © 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "Икона:"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "Пр_едмети:"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "Својства на предметот од менито"
-
-#: ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "Изглед на менито"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "Својства на менито"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
 msgstr "Помести надолу"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "Помести нагоре"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "Име:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "Но_в предмет"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "Нов _разделувач"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "Врати го стандардниот изглед на менито"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "Да ги занемарам промените?"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "Да ги вратам сите менија на оригиналните поставувања?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "Изврши ја командата во терминал"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "Едноставен fd.o компилантен уредувач на менија"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_Менија:"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "_Ново мени"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_Врати на оригиналот"
-
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr ""
-"Александар Савиќ <aleksandar.savic@gmail.com> <http://www.slobodensoftver."
-"org.mk> 2006Jovan Naumovski <jovan@lugola.net>, 2006"
 

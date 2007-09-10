@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-09 03:28+0000\n"
+"POT-Creation-Date: 2007-02-12 04:30+0000\n"
 "PO-Revision-Date: 2006-08-26 19:59+0300\n"
 "Last-Translator: Zohar Snir <zoharsnir@gmail.com>\n"
 "Language-Team: he <he@bla.bla>\n"
@@ -15,45 +15,29 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:169
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "שם"
 
-#: ../Alacarte/MainWindow.py:185
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "הצג"
 
-#: ../Alacarte/MainWindow.py:193
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "פריט"
-
-#: ../Alacarte/MenuEditor.py:536
-msgid "New menu items need a name"
-msgstr "פריט תפריט חדש חייב שם"
-
-#: ../Alacarte/MenuEditor.py:569
-msgid "New menus need a name"
-msgstr "תפריטים חדשים חייבים שם"
 
 #: ../alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
 msgstr "שנה את היישומים המופיעים בתפריט הראשי"
 
-#: ../alacarte.desktop.in.in.h:2
-msgid "Main Menu Editor"
-msgstr "עורך התפריט הראשי"
-
-#: ../alacarte.desktop.in.in.h:3
-msgid "Menu Editor"
-msgstr "עורך תפריטים"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "תפריט ראשי"
 
 #: ../alacarte.glade.h:1
 msgid "It_ems:"
 msgstr "_פריטים:"
-
-#: ../alacarte.glade.h:2
-msgid "Menu Layout"
-msgstr "תסדיר תפריט"
 
 #: ../alacarte.glade.h:3
 msgid "Move Down"
@@ -94,6 +78,18 @@ msgstr "תפ_ריט חדש"
 #: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_שחזר להגדרות המקוריות"
+
+#~ msgid "New menu items need a name"
+#~ msgstr "פריט תפריט חדש חייב שם"
+
+#~ msgid "New menus need a name"
+#~ msgstr "תפריטים חדשים חייבים שם"
+
+#~ msgid "Menu Editor"
+#~ msgstr "עורך תפריטים"
+
+#~ msgid "Menu Layout"
+#~ msgstr "תסדיר תפריט"
 
 #~ msgid "A name is required."
 #~ msgstr "חובה לציין שם."

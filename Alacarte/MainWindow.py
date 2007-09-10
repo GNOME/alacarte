@@ -79,7 +79,8 @@ class MainWindow:
 				os.environ['XDG_DATA_DIRS'] = ':'.join(path_components[1:])
 			print 'XDG_CONFIG_DIRS after:' + os.environ['XDG_CONFIG_DIRS']
 			print 'XDG_DATA_DIRS after:' + os.environ['XDG_DATA_DIRS']
-				
+
+			#Fixme - how do I get this filename generically for different distros.
 			fd = open('/etc/profile.d/xdg-enviroment.sh', 'a+')
 			already_added = False
 			try:
@@ -147,16 +148,18 @@ class MainWindow:
 		#print "Enter checkRights with argv",
 		#print argv
 		gnomesu_option = "--Special_Internal_Only_Option_Indicating_gnomesu_Launch"
+		first_menu = "applications.menu"
+		second_menu = "preferences.menu"
 		
 		parser = OptionParser()
 		#parser.add_option("-s", "--SystemView", action="store_true", dest="systemview",
 		#	default=False, help="Run in system view mode")
 		parser.add_option("--system-view", dest="systemview", metavar="<system_dir>",
 			help="Run in system view mode and use <system_dir>")
-		parser.add_option("--menufile", dest="menu1", metavar="<menufile>",
-			help="Filename of menu to display")
-		#parser.add_option("--menu2", dest="menu2", metavar="<menufile2>",
-		#	help="Filename of menu2")
+		parser.add_option("--menufile1", dest="menu1", metavar="<menufile1>",
+			help="Filename of menu to display - defaults to " + first_menu)
+		parser.add_option("--menufile2", dest="menu2", metavar="<menufile2>",
+			help="Filename of additional menu to display - defaults to " + second_menu)
 		parser.add_option(gnomesu_option, action="store_true",
 			dest="gnomesu_launched", default=False)
 		
@@ -182,13 +185,14 @@ class MainWindow:
 
 		if(not self.options.menu1):
 			self.options.menu1 = 'applications.menu'
-		#if(not self.options.menu2):
-		self.options.menu2 = 'settings.menu'
+		if(not self.options.menu2):
+		    self.options.menu2 = 'preferences.menu'
 
 	def run(self):
 		print "Enter MainWindow:run"
 		self.loadMenus()
 		self.editor.applications.tree.add_monitor(self.menuChanged, None)
+		self.editor.settings.tree.add_monitor(self.menuChanged, None)
 		self.tree.get_widget('mainwindow').show_all()
 		gtk.main()
 		print "Leave MainWindow:run"

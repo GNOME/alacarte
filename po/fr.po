@@ -1,138 +1,86 @@
 # French translation of alacarte.
 # Copyright (C) 2006 Free Software Foundation, Inc.
 # This file is distributed under the same license as the alacarte package.
+#
 # Jonathan Ernst <jonathan@ernstfamily.ch>, 2006.
-# 
+# Robert-André Mauchin <zebob.m@gmail.com>, 2006.
+# Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte 0.9.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-17 00:21+0200\n"
-"PO-Revision-Date: 2006-06-27 11:42+0100\n"
-"Last-Translator: Jonathan Ernst <jonathan@ernstfamily.ch>\n"
-"Language-Team: French <gnomefr@traduc.org>\n"
+"POT-Creation-Date: 2007-02-13 22:26+0100\n"
+"PO-Revision-Date: 2007-02-13 22:27+0100\n"
+"Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
+"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:161
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Nom"
 
-#: ../Alacarte/MainWindow.py:177
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "Afficher"
 
-#: ../Alacarte/MainWindow.py:185
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "Élément"
 
-#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
-msgid "A name is required."
-msgstr "Un nom est requis."
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "Modifie les applications affichées dans le menu principal"
 
-#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
-msgid "A command is required."
-msgstr "Une commande est requise."
-
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "Ajouter, modifier, enlever des éléments de menu"
-
-#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "Agencement du menu"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "Menu principal"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Éditeur de menu Alacarte"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "Parcourir…"
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "Commande :"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "Commentaire :"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "Copyright © 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "Icône :"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "É_léments :"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "Propriétés de l'élément du menu"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "Propriétés du menu"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
 msgstr "Descendre"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "Monter"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "Nom :"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "Nouvel élé_ment"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "Nouveau _séparateur"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "Restaurer l'agencement de menu par défaut"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "Annuler les modifications ?"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
-msgstr "Remettre tous les menus dans leur configuration d'origine ?"
+msgstr "Revenir à la configuration d'origine de tous les menus ?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "Lancer le programme dans un terminal"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "Simple éditeur de menu respectant fd.o"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_Menus :"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "_Nouveau menu"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_Revenir à l'original"
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr "Jonathan Ernst <jonathan@ernstfamily.ch>"
+#~ msgid "Menu Layout"
+#~ msgstr "Agencement du menu"

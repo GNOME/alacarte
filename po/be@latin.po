@@ -1,83 +1,82 @@
-# translation of lt.po to Lithuanian
-# Copyright (C) 2006, 2007 Free Software Foundation, Inc.
+# Biełaruski pierakład Alacarte.
+# Copyright (C) 2007 Free Software Foundation.
 # This file is distributed under the same license as the Alacarte package.
+# Ihar Hračyška <ihar.hrachyshka@gmail.com>, 2007.
 #
-# Gintautas Miliauskas <gintas@akl.lt>, 2006, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: lt\n"
+"Project-Id-Version: Alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-04 17:23+0200\n"
-"PO-Revision-Date: 2007-03-04 17:22+0200\n"
-"Last-Translator: Gintautas Miliauskas <gintas@akl.lt>\n"
-"Language-Team: Lithuanian <gnome-lt@lists.akl.lt>\n"
+"POT-Creation-Date: 2007-03-10 02:26+0200\n"
+"PO-Revision-Date: 2007-03-09 18:58+0100\n"
+"Last-Translator: Alaksandar Navicki <zolak@lacinka.org>\n"
+"Language-Team: Belarusian Latin <i18n@mova.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%"
-"100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../Alacarte/MainWindow.py:167
 msgid "Name"
-msgstr "Vardas"
+msgstr "Nazva"
 
 #: ../Alacarte/MainWindow.py:183
 msgid "Show"
-msgstr "Rodyti"
+msgstr "Pakažy"
 
 #: ../Alacarte/MainWindow.py:191
 msgid "Item"
-msgstr "Įrašas"
+msgstr "Element"
 
 #: ../alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
-msgstr "Pakeisti programų, rodomų pagrindiniame meniu, sąrašą"
+msgstr "Źmiani śpis aplikacyj, pakazanych u hałoŭnym menu"
 
 #: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
 msgid "Main Menu"
-msgstr "Pagrindinis meniu"
+msgstr "Hałoŭnaje menu"
 
 #: ../alacarte.glade.h:1
 msgid "It_ems:"
-msgstr "Į_rašai"
+msgstr "_Elementy:"
 
 #: ../alacarte.glade.h:3
 msgid "Move Down"
-msgstr "Slinkti žemyn"
+msgstr "Pasuń nižej"
 
 #: ../alacarte.glade.h:4
 msgid "Move Up"
-msgstr "Slinkti aukštyn"
+msgstr "Pasuń vyšej"
 
 #: ../alacarte.glade.h:5
 msgid "Ne_w Item"
-msgstr "_Naujas įrašas"
+msgstr "_Novy element"
 
 #: ../alacarte.glade.h:6
 msgid "New _Separator"
-msgstr "Naujas _skirtukas"
+msgstr "Novy _separatar"
 
 #: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
-msgstr "Atkurti standartinį meniu išdėstymą"
+msgstr "Viarni zmoŭčany vyhlad menu"
 
 #: ../alacarte.glade.h:8
 msgid "Revert Changes?"
-msgstr "Atmesti pakeitimus?"
+msgstr "Anulavać źmieny?"
 
 #: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
-msgstr "Atkurti visus meniu į pradinius nustatymus?"
+msgstr "Viarnuć zmoŭčanyja nałady dla ŭsich menu?"
 
 #: ../alacarte.glade.h:10
 msgid "_Menus:"
-msgstr "_Meniu:"
+msgstr "_Menu:"
 
 #: ../alacarte.glade.h:11
 msgid "_New Menu"
-msgstr "_Naujas meniu"
+msgstr "_Novaje menu"
 
 #: ../alacarte.glade.h:12
 msgid "_Revert to Original"
-msgstr "_Atkurti originalų"
+msgstr "_Viarni zmoŭčanyja nałady"

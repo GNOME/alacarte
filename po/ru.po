@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-03 18:19+0200\n"
-"PO-Revision-Date: 2007-01-03 18:23+0200\n"
+"POT-Creation-Date: 2007-02-15 14:34+0200\n"
+"PO-Revision-Date: 2007-02-15 14:35+0200\n"
 "Last-Translator: Leonid Kanter <leon@asplinux.ru>\n"
 "Language-Team:  <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,155 +17,67 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../Alacarte/MainWindow.py:165
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Имя"
 
-#: ../Alacarte/MainWindow.py:181
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "Показать"
 
-#: ../Alacarte/MainWindow.py:189
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "Элемент"
-
-#: ../Alacarte/MenuEditor.py:517
-msgid "New menu items need a name"
-msgstr "Новые элементы меню должны иметь имя"
-
-#: ../Alacarte/MenuEditor.py:550
-msgid "New menus need a name"
-msgstr "Новые меню должны иметь имя"
-
-#: ../Alacarte/DialogHandler.py:64
-msgid "Choose a Program"
-msgstr "Выберите программу"
-
-#: ../Alacarte/DialogHandler.py:97
-msgid "Choose an Icon"
-msgstr "Выберите значок"
-
-#: ../Alacarte/DialogHandler.py:159 ../Alacarte/DialogHandler.py:196
-#: ../Alacarte/DialogHandler.py:357 ../Alacarte/DialogHandler.py:388
-msgid "A name is required."
-msgstr "Требуется имя."
-
-#: ../Alacarte/DialogHandler.py:162 ../Alacarte/DialogHandler.py:199
-msgid "A command is required."
-msgstr "Требуется команда."
-
-#: ../Alacarte/DialogHandler.py:170 ../Alacarte/DialogHandler.py:340
-#: ../Alacarte/DialogHandler.py:365 ../Alacarte/DialogHandler.py:416
-#: ../Alacarte/DialogHandler.py:480
-msgid "No Icon"
-msgstr "Нет значка"
 
 #: ../alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
 msgstr "Выбор приожений, отображаемых в главном меню"
 
-#: ../alacarte.desktop.in.in.h:2
-msgid "Main Menu Editor"
-msgstr "Редактор главного меню"
-
-#: ../alacarte.desktop.in.in.h:3
-msgid "Menu Editor"
-msgstr "Редактор меню"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "Главное меню"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Редактор меню Alacarte"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "Просмотреть..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "Команда:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "Комментарий:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "Copyright © 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "Значок:"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "_Элементы:"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "Свойства элемента меню"
-
-#: ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "Редактор меню"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "Свойства меню"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
 msgstr "Переместить вниз"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "Переместить вверх"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "Имя:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "_Новый элемент"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "Новый _разделитель"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "Восстановить первоначальный вид меню"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "Откатить изменения?"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "Вернуть все меню к первоначальному состоянию?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "Выполнять команду в терминале"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "Простой редактор меню, совместимый с fd.o"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_Меню:"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "Новое _меню"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_Вернуть исходное состояние"
-
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr "Leonid Kanter <leon@asplinux.ru>"
 

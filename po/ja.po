@@ -1,138 +1,81 @@
 # Japanese message catalog for Alacarte, a simple menu editor for GNOME.
-# Copyright (C) 2006 THE Alacarte'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the alacarte package.
+# Copyright (C) 2006,2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the 'alacarte' package.
 # Satoru SATOH <ss@gnome.gr.jp>, 2006.
+# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2006,2007.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: alacarte HEAD\n"
+"Project-Id-Version: alacarte trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-17 06:26+0200\n"
-"PO-Revision-Date: 2006-07-17 16:19+0900\n"
-"Last-Translator: Satoru SATOH <ss@gnome.gr.jp>\n"
+"POT-Creation-Date: 2007-02-18 22:03+0900\n"
+"PO-Revision-Date: 2007-02-18 22:02+0900\n"
+"Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:161
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "名前"
 
-#: ../Alacarte/MainWindow.py:177
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "表示"
 
-#: ../Alacarte/MainWindow.py:185
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "アイテム"
 
-#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
-msgid "A name is required."
-msgstr "名前を指定する必要があります"
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "メニュー・アイテムを編集します"
 
-#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
-msgid "A command is required."
-msgstr "コマンドを指定する必要があります"
-
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "メニューエントリの追加、変更、削除"
-
-#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "メニューの配置"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "メイン・メニュー"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Alacarte メニューエディタ"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "参照..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "コマンド:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "コメント:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "Copyright © 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "アイコン:"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "アイテム(_E):"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "メニューアイテムプロパティ"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "メニュープロパティ"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
-msgstr "下へ移動"
+msgstr "上へ"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
-msgstr "上へ移動"
+msgstr "下へ"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "名前:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "新しいアイテム(_W)"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
-msgstr "新しい区切り(_S)"
+msgstr "新しいセパレータ(_S)"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
-msgstr "デフォルトのメニュー配置に戻す"
+msgstr "デフォルトのメニュー構成に戻します"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
-msgstr "変更を元に戻しますか?"
+msgstr "変更点を元に戻しますか？"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
-msgstr "すべてのメニューの設定を元に戻しますか?"
+msgstr "全てのメニューを元の設定に戻しますか？"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "コマンドをターミナルで実行"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "簡素な fd.o 標準準拠のメニューエディタ"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "メニュー(_M):"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "新しいメニュー(_N)"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "元に戻す(_R)"
-
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr "Satoru SATOH <ss@gnome.gr.jp>"

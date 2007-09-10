@@ -3,7 +3,7 @@ Encoding=UTF-8
 _Name=Main Menu Editor
 _GenericName=System Menu Editor
 _Comment=Change which applications are shown on the main menu system wide
-Exec=alacarte --system-view=/etc/opt/gnome/alacarte_system
+Exec=alacarte --system-view=/etc/alacarte_system
 Terminal=false
 Type=Application
 StartupNotify=true

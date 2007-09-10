@@ -1,12 +1,12 @@
 [Desktop Entry]
 Encoding=UTF-8
-_Name=Main Menu Editor
+_Name=Main Menu
 _Comment=Change which applications are shown on the main menu system wide
 Exec=alacarte --system-view=/etc/alacarte_system
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=GNOME;Settings;
+Categories=GNOME;Settings;DesktopSettings;
 NotShowIn=KDE;
 Icon=alacarte
 X-GNOME-Bugzilla-Bugzilla=GNOME

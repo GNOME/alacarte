@@ -7,157 +7,126 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-24 05:52+0200\n"
-"PO-Revision-Date: 2006-06-21 22:44+0600\n"
-"Last-Translator: Khandakar Mujahidul Islam <suzan@bengalinux.org>\n"
+"POT-Creation-Date: 2007-02-12 04:30+0000\n"
+"PO-Revision-Date: 2007-09-12 23:57+0600\n"
+"Last-Translator: Khandakar Mujahidul Islam <suzan229@gmail.com>\n"
 "Language-Team: Bengali <gnome-translation@bengalinux.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:160
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "নাম"
 
-#: ../Alacarte/MainWindow.py:176
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "দেখাও"
 
-#: ../Alacarte/MainWindow.py:184
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "আইটেম"
 
-#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
-msgid "A name is required."
-msgstr "একটি নাম প্রয়োজন।"
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "প্রধান মেনুতে কোন অ্যাপ্লিকেশনগুলো থাকবে পরিবর্ত করুন"
 
-#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
-msgid "A command is required."
-msgstr "একটি কমান্ড প্রয়োজন।"
-
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "মেনু এন্ট্রিতে যোগ করো, পরিবর্তন করো, মোছো"
-
-#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "মেনু লেআউট"
+#: ../alacarte.desktop.in.in.h:2
+#: ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "প্রধান মেনু"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Alacarte মেনু সম্পাদক"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "ব্রাউজ করুন..."
+msgid "It_ems:"
+msgstr "আইটেম: (_e)"
 
 #: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "কমান্ড:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "মন্তব্য:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "কপিরাইট © ২০০৬ Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "আইকন:"
-
-#: ../alacarte.glade.h:7
-msgid "It_ems:"
-msgstr "আইটেম: (_ই)"
-
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "মেনু আইটেম বৈশিষ্ট্য"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "মেনু বৈশিষ্ট্য"
-
-#: ../alacarte.glade.h:11
 msgid "Move Down"
 msgstr "নিচে নামাও"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "উপরে উঠাও"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "নাম:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
-msgstr "নতুন আইটেম (_ট)"
+msgstr "নতুন আইটেম (_w)"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
-msgstr "নতুন বিচ্ছিন্নকারী (_স)"
+msgstr "নতুন বিচ্ছিন্নকারী (_S)"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "ডিফল্ট মেনু লেআউট ফিরিয়ে আনো"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "পরিবর্তন বাদ দিবে?"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "সকল মেনু আসল সেটিংসে ফিরিয়ে আনা হবে?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "টার্মিনালে কমান্ড চালাও"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "সাধারণ fd.o মেনু সম্পাদক"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
-msgstr "মেনু(_ম)"
+msgstr "মেনু: (_M)"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
-msgstr "নতুন মেনু (_ন)"
+msgstr "নতুন মেনু (_N)"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
-msgstr "আসল অবস্থায় ফিরে যাও (_র)"
+msgstr "আসল অবস্থায় ফিরে যাও (_R)"
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr ""
-"অঙ্কুর গ্রুপের পক্ষ থেকে খন্দকার মুজাহিদুল ইসলাম সুজন <suzan@bengalinux.org>, ২০০৬।"
-
+#~ msgid "A name is required."
+#~ msgstr "একটি নাম প্রয়োজন।"
+#~ msgid "A command is required."
+#~ msgstr "একটি কমান্ড প্রয়োজন।"
+#~ msgid "Add, change, remove menu entries"
+#~ msgstr "মেনু এন্ট্রিতে যোগ করো, পরিবর্তন করো, মোছো"
+#~ msgid "Menu Layout"
+#~ msgstr "মেনু লেআউট"
+#~ msgid "Alacarte Menu Editor"
+#~ msgstr "Alacarte মেনু সম্পাদক"
+#~ msgid "Browse..."
+#~ msgstr "ব্রাউজ করুন..."
+#~ msgid "Command:"
+#~ msgstr "কমান্ড:"
+#~ msgid "Comment:"
+#~ msgstr "মন্তব্য:"
+#~ msgid "Copyright © 2006 Travis Watkins"
+#~ msgstr "কপিরাইট © ২০০৬ Travis Watkins"
+#~ msgid "Icon:"
+#~ msgstr "আইকন:"
+#~ msgid "Menu Item Properties"
+#~ msgstr "মেনু আইটেম বৈশিষ্ট্য"
+#~ msgid "Menu Properties"
+#~ msgstr "মেনু বৈশিষ্ট্য"
+#~ msgid "Name:"
+#~ msgstr "নাম:"
+#~ msgid "Run command in a terminal"
+#~ msgstr "টার্মিনালে কমান্ড চালাও"
+#~ msgid "Simple fd.o compliant menu editor"
+#~ msgstr "সাধারণ fd.o মেনু সম্পাদক"
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "অঙ্কুর গ্রুপের পক্ষ থেকে খন্দকার মুজাহিদুল ইসলাম সুজন <suzan@bengalinux.org>, ২০০৬।"
 #~ msgid "A menu can't be named \"Other\"."
 #~ msgstr "একটি মেনু নাম \"অন্যান্য\" হতে পারে না।"
-
 #~ msgid "Loading..."
 #~ msgstr "লোড করা হচ্ছে..."
-
 #~ msgid "Visible"
 #~ msgstr "দৃশ্যমান"
-
 #~ msgid "Entry Editor"
 #~ msgstr "এন্ট্রি সম্পাদক"
-
 #~ msgid "Icon Selector"
 #~ msgstr "আইকন নির্বাচক"
-
 #~ msgid "Menu Editor"
 #~ msgstr "মেনু সম্পাদক"
-
 #~ msgid "New _Entry"
 #~ msgstr "নতুন এন্ট্রি(_E)"
-
 #~ msgid "_Delete"
 #~ msgstr "মুছে ফেলো (_D)"
+

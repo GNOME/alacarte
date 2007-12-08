@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: alacarte 0.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-05 13:50+0200\n"
-"PO-Revision-Date: 2007-02-14 19:16+0100\n"
+"PO-Revision-Date: 2007-12-08 12:25+0100\n"
 "Last-Translator:  Kjartan Maraas <kmaraas@gnome.org>>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -79,66 +79,3 @@ msgstr "_Ny meny"
 #: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_Angre alle endringer"
-
-#~ msgid "New menu items need a name"
-#~ msgstr "Nye menyoppføringer må ha et navn"
-
-#~ msgid "New menus need a name"
-#~ msgstr "Nye menyer må ha et navn"
-
-#~ msgid "Choose a Program"
-#~ msgstr "Velg et program"
-
-#~ msgid "Choose an Icon"
-#~ msgstr "Velg et ikon"
-
-#~ msgid "A name is required."
-#~ msgstr "Du må oppgi et navn"
-
-#~ msgid "A command is required."
-#~ msgstr "Du må oppgi en kommando"
-
-#~ msgid "No Icon"
-#~ msgstr "Uten ikon"
-
-#~ msgid "Menu Editor"
-#~ msgstr "Menyredigering"
-
-#~ msgid "Alacarte Menu Editor"
-#~ msgstr "Alacarte menyredigering"
-
-#~ msgid "Browse..."
-#~ msgstr "Bla gjennom..."
-
-#~ msgid "Command:"
-#~ msgstr "Kommando:"
-
-#~ msgid "Comment:"
-#~ msgstr "Kommentar:"
-
-#~ msgid "Copyright © 2006 Travis Watkins"
-#~ msgstr "Opphavsrett @ 2006 Travis Watkins"
-
-#~ msgid "Icon:"
-#~ msgstr "Ikon:"
-
-#~ msgid "Menu Item Properties"
-#~ msgstr "Egenskaper for menyoppføring"
-
-#~ msgid "Menu Layout"
-#~ msgstr "Menyutføring"
-
-#~ msgid "Menu Properties"
-#~ msgstr "Egenskaper for meny"
-
-#~ msgid "Name:"
-#~ msgstr "Navn:"
-
-#~ msgid "Run command in a terminal"
-#~ msgstr "Kjør kommando i en terminal"
-
-#~ msgid "Simple fd.o compliant menu editor"
-#~ msgstr "Enkel menyredigerer"
-
-#~ msgid "translator-credits"
-#~ msgstr "Kjartan Maraas <kmaraas@gnome.org>"

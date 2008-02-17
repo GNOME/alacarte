@@ -1,3 +1,23 @@
+2008-02-16  Travis Watkins  <amaranth@ubuntu.com>
+
+	* Alacarte/MainWindow.py:
+	  - disable New Separator button when an item is not selected
+	    thanks to Mike Pechkin
+	  - hopefully fix problem with editing properties on menus without
+	    .directory files
+	  - make sure DnD operations are allowed allowed for the inside
+	    the alacarte window and not between instances of alacarte
+	  - update view on item theme change, thanks Jared Moore
+	* Alacarte/Makefile.am:
+	  - install .py files to the correct location, thanks Todd Zullinger
+	* Alacarte/MenuEditor.py:
+	  - make sure you can't move a menu into itself
+	    thanks Benjamin Gramlich
+	  - hopefully fix bug 486937 (which doesn't make sense)
+	* alacarte.desktop.in.in:
+	  - disable StartupNotify as a poor man's fix for property windows
+	    going under the main application window
+
 2007-02-12  Vincent Untz  <vuntz@gnome.org>
 
 	* configure.ac: pre-release bump to 0.11.4

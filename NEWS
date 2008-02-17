@@ -1,4 +1,71 @@
 ==============
+Version 0.11.4
+=============
+
+Travis Watkins:
+
+	* Lots of bug fixing
+
+Translations
+
+	- Updated el: Simos Xenitellis
+	- Updated io: Michael Terry
+	- Updated pt: Duarte Loreto
+	- Updated vi: Nguyễn Thái Ngọc Duy
+	- Updated ca: Josep Puigdemont i Casamajó
+	- Updated it: Luca Ferretti
+	- Updated sv: Daniel Nylander
+	- Updated cs: Jakub Friedl
+	- Updated as: Amitakhya Phukan
+	- Updated ar: Djihed Afifi <djihed@gmail.com>
+	- Updated ga: Seán de Búrca
+	- Updated eu: Inaki Larranaga Murgoitio
+	- Updated et: Priit Laes
+	- Updated gl: Ignacio Casal Quinteiro
+	- Updated id: ahmad riza h nst
+	- Updated bn_IN: Runa Bhattacharjee
+	- Updated ru: Leonid Kanter
+	- Updated uz@cyrillic: Claude Paroz
+	- Updated sr.po, sr@Latn: Goran Rakić
+	- Updated nn: Kjartan Maraas
+	- Updated nb: Kjartan Maraas
+	- Updated tr: Baris Cicek
+	- Updated lv: Raivis Dejus
+	- Updated lt: Gintautas Miliauskas
+	- Updated gu: Ankit Patel
+	- Updated te: Sunil Mohan Adapa
+	- Updated pl: Artur Flinta
+	- Updated ta: I Felix
+	- Updated en_CA: Adam Weinberger
+	- Updated fr: Stéphane Raimbault
+	- Updated bg: Alexander Shopov
+	- Updated pt_BR: Leonardo Ferreira Fontenelle
+	- Updated bn: Khandakar Mujahidul Islam
+	- Updated zh_TW: Taiwan
+	- Updated ko: Changwoo Ryu
+	- Updated hu: Gabor Kelemen
+	- Updated dz: Pema Geyleg
+	- Updated fi: Ilkka Tuohela
+	- Updated da: Lasse Bang Mikkelsen
+	- Updated ja: Takeshi AIHANA
+	- Updated he: Yair Hershkovitz
+	- Updated mg: Thierry Randrianiriana
+	- Updated be@latin: Ihar Hrachyshka
+	- Updated zh_CN: Funda Wang
+	- Updated ml: Ani Peter
+	- Updated sq: Laurent Dhima
+	- Updated oc: Yannig Marchegay, Christophe Merlet, Kokoyaya
+	- Updated kn: Pramod Raghavendra
+	- Updated mk: Daniel Nylander
+	- Updated zh_HK: Hong Kong
+	- Updated de: Hendrik Richter
+	- Updated en_GB: British
+	- Updated uk: Maxim Dziumanenko
+	- Updated sl: Matej Urbančič, Matic Zgur
+	- Updated nl: Vincent van Adrighem, Wouter Bolsterlee
+
+
+==============
 Version 0.11.3
 ==============
 

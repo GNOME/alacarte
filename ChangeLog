@@ -1,5 +1,11 @@
 2008-02-16  Travis Watkins  <amaranth@ubuntu.com>
 
+        * configure.ac: pre-release bump to 0.11.5
+
+==================== 0.11.4 ====================
+
+2008-02-16  Travis Watkins  <amaranth@ubuntu.com>
+
 	* NEWS:
 	* README: version 0.11.4
 

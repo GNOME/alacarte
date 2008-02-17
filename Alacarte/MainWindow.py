@@ -517,6 +517,8 @@ class MainWindow:
 				self.editor.moveSeparator(item, item.get_parent(), before, after)
 			context.finish(True, True, etime)
 		elif selection.target == 'text/plain':
+			if selection.data == None:
+				return False
 			menus, iter = self.tree.get_widget('menu_tree').get_selection().get_selected()
 			parent = menus[iter][2]
 			drop_info = treeview.get_dest_row_at_pos(x, y)

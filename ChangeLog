@@ -1,5 +1,9 @@
 2008-02-16  Travis Watkins  <amaranth@ubuntu.com>
 
+	* Alacarte/MenuEditor.py: hopefully fix the most frequest crasher
+
+2008-02-16  Travis Watkins  <amaranth@ubuntu.com>
+
 	* Alacarte/MainWindow.py: _really_ fix that drag-and-drop problem
 	* po/POTFILES.in: make distcheck work
 

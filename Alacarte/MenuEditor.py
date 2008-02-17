@@ -409,6 +409,8 @@ class MenuEditor:
 				else:
 					continue
 			elif item.get_type() == gmenu.TYPE_DIRECTORY:
+				if item.get_desktop_file_path() == None:
+					continue
 				file_path = os.path.join(util.getUserDirectoryPath(), os.path.split(item.get_desktop_file_path())[1])
 				if not os.path.isfile(file_path):
 					file_path = item.get_desktop_file_path()

@@ -434,6 +434,8 @@ class MainWindow:
 
 	def on_item_tree_cursor_changed(self, treeview):
 		items, iter = treeview.get_selection().get_selected()
+		if iter is None:
+			return
 		item = items[iter][3]
 		self.tree.get_widget('edit_delete').set_sensitive(True)
 		self.tree.get_widget('new_separator_button').set_sensitive(True)

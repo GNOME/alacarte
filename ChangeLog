@@ -1,3 +1,7 @@
+2008-02-18  Travis Watkins  <amaranth@ubuntu.com>
+
+	* Alacarte/MainWindow.py: bail out if no item selected (bug 517380)
+
 2008-02-16  Travis Watkins  <amaranth@ubuntu.com>
 
         * configure.ac: pre-release bump to 0.11.5

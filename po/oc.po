@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-27 13:27+0100\n"
+"POT-Creation-Date: 2008-02-19 20:15+0100\n"
 "PO-Revision-Date: 2007-11-24 21:49+0100\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../Alacarte/MainWindow.py:167
+#: ../Alacarte/MainWindow.py:168
 msgid "Name"
 msgstr "Nom"
 
-#: ../Alacarte/MainWindow.py:183
+#: ../Alacarte/MainWindow.py:184
 msgid "Show"
 msgstr "Visualizar"
 
-#: ../Alacarte/MainWindow.py:191
+#: ../Alacarte/MainWindow.py:192
 msgid "Item"
 msgstr "Element"
 

@@ -1,7 +1,7 @@
 dnl -*- Mode: autoconf -*-
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.53)
-AC_INIT(alacarte, 0.11.5, http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte)
+AC_INIT(alacarte, 0.11.6, http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte)
 AC_CONFIG_SRCDIR(alacarte.in)
 AM_INIT_AUTOMAKE([1.7])
 AM_MAINTAINER_MODE

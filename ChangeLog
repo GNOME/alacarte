@@ -1,5 +1,11 @@
 2008-03-10  Travis Watkins  <amaranth@ubuntu.com>
 
+	* configure.ac: post-release bump to 0.11.6
+
+==================== 0.11.5 ====================
+
+2008-03-10  Travis Watkins  <amaranth@ubuntu.com>
+
 	* NEWS:
 	  README: version 0.11.5
 

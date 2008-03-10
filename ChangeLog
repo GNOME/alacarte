@@ -1,3 +1,8 @@
+2008-03-10  Travis Watkins  <amaranth@ubuntu.com>
+
+	* NEWS:
+	  README: version 0.11.5
+
 2008-02-18  Travis Watkins  <amaranth@ubuntu.com>
 
 	* Alacarte/MainWindow.py: bail out if no item selected (bug 517380)

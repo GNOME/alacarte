@@ -1,4 +1,19 @@
 ==============
+Version 0.11.5
+==============
+
+	* fix exception on first open of context menu
+
+Translations
+
+	- Updated nb: Kjartan Maraas
+	- Updated es: Jorge Gonzalez
+	- Updated ja: Takeshi AIHANA
+	- Updated mr: Sandeep Shedmake
+	- Updated fr: Stéphane Raimbault
+
+
+==============
 Version 0.11.4
 =============
 

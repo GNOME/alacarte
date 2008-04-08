@@ -24,7 +24,7 @@ msgstr "Név"
 
 #: ../Alacarte/MainWindow.py:183
 msgid "Show"
-msgstr "Megjelenítés"
+msgstr "Látható"
 
 #: ../Alacarte/MainWindow.py:191
 msgid "Item"

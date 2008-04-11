@@ -1,143 +1,84 @@
-# translation of mr.po to Marathi
+# translation of alacarte.HEAD.mr.po to marathi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Rahul Bhalerao <b.rahul.pm@gmail.com>, 2006.
 #
+# Rahul Bhalerao <b.rahul.pm@gmail.com>, 2006.
+# Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: mr\n"
+"Project-Id-Version: alacarte.HEAD.mr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-11 07:41+0200\n"
-"PO-Revision-Date: 2006-08-12 15:52+0530\n"
-"Last-Translator: Rahul Bhalerao <b.rahul.pm@gmail.com>\n"
-"Language-Team: Marathi\n"
+"POT-Creation-Date: 2007-02-12 04:30+0000\n"
+"PO-Revision-Date: 2008-02-29 21:42+0530\n"
+"Last-Translator: Sandeep Shedmake <sandeep.shedmake@gmail.com>\n"
+"Language-Team: marathi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 
-#: ../Alacarte/MainWindow.py:161
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "नाव"
 
-#: ../Alacarte/MainWindow.py:177
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "दाखवा"
 
-#: ../Alacarte/MainWindow.py:185
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "बाब"
 
-#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
-msgid "A name is required."
-msgstr "नावाची आवश्यकता आहे."
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "मुख्य मेन्यु मध्ये कुठले अनुप्रयोग दर्शविले जाते ते बदलवा"
 
-#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
-msgid "A command is required."
-msgstr "आदेश आवश्यक आहे."
-
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "जोडा, बदला, काढून टाका मेनू प्रविष्टे"
-
-#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "मेनू लेआउट"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "मुख्य मेन्यु"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Alacarte मेनू संपादक"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "संचार करा..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "आदेश:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "टीप्पणी:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "कॉपीराइट  © 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "चिन्ह:"
-
-#: ../alacarte.glade.h:7
 msgid "It_ems:"
 msgstr "बाबी(_e):"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "मेनू बाब गुणधर्म"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "मेनू गुणधर्म"
-
-#: ../alacarte.glade.h:11
+#: ../alacarte.glade.h:3
 msgid "Move Down"
 msgstr "खाली हलवा"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "वर हलवा"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "नाव:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "नविन बाब(_w)"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "नविन विभाजक(_S)"
 
-#: ../alacarte.glade.h:16
-#, fuzzy
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
-msgstr "मुलभूत"
+msgstr "मुलभूत मेन्यू मांडणी पुन्हासंचयीत करा"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "बदल उलटवावेत?"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
-msgstr ""
+msgstr "सर्व मेन्यु मूळ संयोजना करीता निश्चित करा?"
 
-#: ../alacarte.glade.h:19
-#, fuzzy
-msgid "Run command in a terminal"
-msgstr "a"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr ""
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "मेनु (_M):"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "नविन मेनू(_N)"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "मूळावर उलटवा(_R)"
-
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr "राहुल भालेराव <b.rahul.pm@gmail.com>"
 

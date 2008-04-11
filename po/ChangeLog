@@ -1,3 +1,104 @@
+2008-03-05  Stéphane Raimbault  <stephane.raimbault@gmail.com>
+
+	* fr.po: Updated French translation.
+
+2008-03-03  Rahul Bhalerao <b.rahul.pm@gmail.com>
+	
+	* mr.po: Updated Marathi translations from Sandeep Shedmake.
+
+2008-03-03  Takeshi AIHANA <takeshi.aihana@gmail.com>
+
+	* ja.po: Fixed wrong translations.
+
+2008-02-29  Jorge Gonzalez  <jorgegonz@svn.gnome.org>  
+
+	* es.po: Updated Spanish translation                   
+
+2008-02-17  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* POTFILES.in: Remove generated file.
+	* POTFILES.skip: Add it here.
+	* nb.po: Update.
+
+2008-01-31  Djihed Afifi <djihed@gmail.com> 
+
+	* ar.po: Updated Arabic Translation by Khaled Hosny.
+
+2008-01-14  Amitakhya Phukan <amitakhya@svn.gnome.org>
+
+	* as.po: Updated assamese translations.
+
+2008-01-12  Djihed Afifi <djihed@gmail.com> 
+
+	* ar.po: Updated Arabic Translation by Khaled Hosny.
+
+2007-12-31  Yannig Marchegay <yannig@marchegay.org>
+
+	* oc.po: Updated Occitan translation.
+
+2007-12-28  Inaki Larranaga Murgoitio  <dooteo@euskalgnu.org>
+
+        * eu.po: Updated Basque translation.
+
+2007-12-16  Pramod Raghavendra <pramodleo@yahoo.co.uk>
+
+	* kn.po: Added Kannada translation from
+	  Ragavendra BN <ragavendra.bn@gmail.com> and 
+	  Shankar Prasad <svenkate@redhat.com>
+
+
+2007-12-08  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* nb.po: Updated Norwegian bokmål translation
+	* nn.po: Added Norwegian nynorsk translation from
+	Eskild Hustvedt <eskild at zerodogg org>
+
+2007-11-30  Seán de Búrca  <sdeburca@svn.gnome.org>
+
+	* ga.po: Added Irish translation.
+	* LINGUAS: Added Irish.
+
+2007-11-16  ahmad riza h nst  <rizahnst@gnome.org>
+
+	* id.po: Added Indonesian translation.
+	* LINGUAS: Added id.
+
+2007-11-13  Matej Urbančič <mateju@svn.gnome.org>
+
+	* sl.po: Updated Slovenian Translation.
+
+2007-10-23  Djihed Afifi <djihed@gmail.com> 
+
+	* ar.po: Updated Arabic Translation by Djihed Afifi.
+
+2007-10-21  Djihed Afifi <djihed@gmail.com> 
+
+	* ar.po: Updated Arabic Translation by Djihed Afifi.
+
+2007-10-21  Djihed Afifi <djihed@gmail.com> 
+
+	* ar.po: Updated Arabic Translation by Djihed Afifi.
+
+2007-10-02  Michael Terry  <mike@mterry.name>
+
+	* LINGUAS, io.po: Add Ido translation.
+
+2007-09-16  Amitakhya Phukan <amitakhya@svn.gnome.org>
+
+	* as.po: Updated Assamese Translations.
+
+2007-09-14  Khandakar Mujahidul Islam  <suzan@bengalinux.org>
+
+	* bn.po: Updated Bengali Translation.
+
+2007-09-13  Djihed Afifi <djihed@gmail.com> 
+
+	* ar.po: Updated Arabic Translation by Djihed Afifi.
+
+2007-09-13  Djihed Afifi <djihed@gmail.com> 
+
+	* ar.po: Updated Arabic Translation by Djihed Afifi.
+
 2007-09-05  Claude Paroz  <claude@2xlibre.net>
 
 	* LINGUAS: Added uz@cyrillic.

@@ -131,6 +131,7 @@ class MainWindow:
 		self.tree.get_widget('edit_properties').set_sensitive(False)
 		self.tree.get_widget('move_up_button').set_sensitive(False)
 		self.tree.get_widget('move_down_button').set_sensitive(False)
+		self.tree.get_widget('new_separator_button').set_sensitive(False)
 		self.sysadmin.setup_ab(self.tree)
 		self.sysadmin.setup_viewmode(self.tree, self.options.systemview)
 		accelgroup = gtk.AccelGroup()
@@ -510,7 +511,15 @@ class MainWindow:
 			file_path = os.path.join(util.getUserItemPath(), item.get_desktop_file_id())
 			file_type = 'Item'
 		elif item.get_type() == gmenu.TYPE_DIRECTORY:
-			file_path = os.path.join(util.getUserDirectoryPath(), os.path.split(item.get_desktop_file_path())[1])
+			if item.get_desktop_file_path() == None:
+				file_path = util.getUniqueFileId('alacarte-made', '.directory')
+				parser = util.DesktopParser(file_path, 'Directory')
+				parser.set('Name', item.get_name())
+				parser.set('Comment', item.get_comment())
+				parser.set('Icon', item.get_icon())
+				parser.write(open(file_path))
+			else:
+				file_path = os.path.join(util.getUserDirectoryPath(), os.path.split(item.get_desktop_file_path())[1])
 			file_type = 'Menu'
 
 		if not os.path.isfile(file_path):
@@ -547,6 +556,7 @@ class MainWindow:
 		self.tree.get_widget('edit_properties').set_sensitive(False)
 		self.tree.get_widget('move_up_button').set_sensitive(False)
 		self.tree.get_widget('move_down_button').set_sensitive(False)
+		self.tree.get_widget('new_separator_button').set_sensitive(False)
 
 	def on_menu_tree_drag_data_get(self, treeview, context, selection, target_id, etime):
 		menus, iter = treeview.get_selection().get_selected()
@@ -562,6 +572,8 @@ class MainWindow:
 				context.finish(False, False, etime)
 				return False
 			if selection.target in ('ALACARTE_ITEM_ROW', 'ALACARTE_MENU_ROW'):
+				if self.drag_data == None:
+					return False
 				item = self.drag_data
 				new_parent = menus[path][2]
 				treeview.get_selection().select_path(path)
@@ -573,6 +585,7 @@ class MainWindow:
 				else:
 					context.finish(False, False, etime) 
 				context.finish(True, True, etime)
+		self.drag_data = None
 
 	def on_item_tree_show_toggled(self, cell, path):
 		item = self.item_store[path][3]
@@ -586,8 +599,11 @@ class MainWindow:
 
 	def on_item_tree_cursor_changed(self, treeview):
 		items, iter = treeview.get_selection().get_selected()
+		if iter is None:
+			return
 		item = items[iter][3]
 		self.tree.get_widget('edit_delete').set_sensitive(True)
+		self.tree.get_widget('new_separator_button').set_sensitive(True)
 		if self.editor.canRevert(item):
 			self.tree.get_widget('edit_revert_to_original').set_sensitive(True)
 		else:
@@ -647,6 +663,8 @@ class MainWindow:
 			drop_info = treeview.get_dest_row_at_pos(x, y)
 			before = None
 			after = None
+			if self.drag_data == None:
+				return False
 			item = self.drag_data
 			if drop_info:
 				path, position = drop_info
@@ -666,6 +684,8 @@ class MainWindow:
 				self.editor.moveSeparator(item, item.get_parent(), before, after)
 			context.finish(True, True, etime)
 		elif selection.target == 'text/plain':
+			if selection.data == None:
+				return False
 			menus, iter = self.tree.get_widget('menu_tree').get_selection().get_selected()
 			parent = menus[iter][2]
 			drop_info = treeview.get_dest_row_at_pos(x, y)
@@ -696,6 +716,7 @@ class MainWindow:
 				self.editor.createItem(parent, parser.get('Icon'), parser.get('Name', self.editor.locale), parser.get('Comment', self.editor.locale), parser.get('Exec'), parser.get('Terminal'), before, after)
 			elif file_info.mime_type in ('application/x-shellscript', 'application/x-executable'):
 				self.editor.createItem(parent, None, os.path.split(file_path)[1].strip(), None, file_path.replace('file://', '').strip(), False, before, after)
+		self.drag_data = None
 
 	def on_item_tree_key_press_event(self, item_tree, event):
 		if event.keyval == gtk.keysyms.Delete:
@@ -760,6 +781,9 @@ class MainWindow:
 		except:
 			pass
 		gobject.timeout_add(10, self.quit)
+
+	def on_style_set(self, *args):
+		self.loadUpdates()
 
 	def quit(self):
 		self.editor.quit()

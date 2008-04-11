@@ -357,6 +357,11 @@ class MenuEditor:
 			parent = parent.get_parent()
 			if parent == menu:
 				return False
+
+		#don't move a menu into itself
+		if new_parent == menu:
+			return False
+
 		#can't move between top-level menus
 		if self.__getMenu(menu) != self.__getMenu(new_parent):
 			return False
@@ -416,6 +421,9 @@ class MenuEditor:
 	def revertMenu(self, menu):
 		if not self.canRevert(menu):
 			return
+		#wtf happened here? oh well, just bail
+		if not menu.get_desktop_file_path():
+			return
 		self.__addUndo([menu,])
 		file_id = os.path.split(menu.get_desktop_file_path())[1]
 		path = os.path.join(util.getUserDirectoryPath(), file_id)
@@ -443,6 +451,8 @@ class MenuEditor:
 				else:
 					continue
 			elif item.get_type() == gmenu.TYPE_DIRECTORY:
+				if item.get_desktop_file_path() == None:
+					continue
 				file_path = os.path.join(util.getUserDirectoryPath(), os.path.split(item.get_desktop_file_path())[1])
 				if not os.path.isfile(file_path):
 					file_path = item.get_desktop_file_path()

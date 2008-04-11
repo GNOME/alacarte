@@ -1,138 +1,86 @@
+# translation of as.po to Assamese
 # Translation of alacarte.head.po to Assamese
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Amitakhya Phukan <amitakhya.phukan@gmail.com>, 2006.
 #
+# Amitakhya Phukan <amitakhya.phukan@gmail.com>, 2006.
+# Amitakhya Phukan <aphukan@redhat.com>, 2007, 2008.
+# Amitakhya Phukan <amitakhya@svn.gnome.org>, 2007, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: alacarte.HEAD.as\n"
+"Project-Id-Version: as\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-29 07:24+0200\n"
-"PO-Revision-Date: 2006-08-30 15:49+0530\n"
-"Last-Translator: Amitakhya Phukan <amitakhya.phukan@gmail.com>\n"
-"Language-Team: Assamese \n"
+"POT-Creation-Date: 2007-09-16 08:14+0100\n"
+"PO-Revision-Date: 2008-01-14 16:36+0530\n"
+"Last-Translator: Amitakhya Phukan <amitakhya@svn.gnome.org>\n"
+"Language-Team: Assamese\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1)\n"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "নাম"
 
-#: ../Alacarte/MainWindow.py:180
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
 msgstr "দেখুৱা"
 
-#: ../Alacarte/MainWindow.py:188
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "বস্তু"
 
-#: ../Alacarte/DialogHandler.py:141 ../Alacarte/DialogHandler.py:178
-#: ../Alacarte/DialogHandler.py:333 ../Alacarte/DialogHandler.py:364
-msgid "A name is required."
-msgstr "নাম এটা অাৱশ্যক ।"
+#: ../alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "মূখ্য তালিকাত কোনবোৰ অনুপ্ৰয়োগ দেখুওৱা হ'ব সেইটো সলনি কৰক"
 
-#: ../Alacarte/DialogHandler.py:144 ../Alacarte/DialogHandler.py:181
-msgid "A command is required."
-msgstr "অাদেশ এটা অাৱশ্যক ।"
-
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "তালিকাৰ প্ৰৱিষ্টি যোগ,পৰিৱত্ত্ৰণ, নিলগ কৰক"
-
-#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "তালিকাৰ বিন্যাস"
+#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "মূখ্য তালিকা"
 
 #: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Alacarteৰ তালিকা সম্পাদক"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "চকু ফুৰাওক"
+msgid "It_ems:"
+msgstr "বস্তু (_e):"
 
 #: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "অাদেশ:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "মন্তব্য:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "প্ৰতিলিপি স্বত্ব © ২০০৬ Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "অাইকন:"
-
-#: ../alacarte.glade.h:7
-msgid "It_ems:"
-msgstr "_বস্তু"
-
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "তালিকা বস্তুৰ প্ৰকৃতি"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "তালিকাৰ প্ৰকৃতি"
-
-#: ../alacarte.glade.h:11
 msgid "Move Down"
 msgstr "তললৈ গমন কৰক"
 
-#: ../alacarte.glade.h:12
+#: ../alacarte.glade.h:4
 msgid "Move Up"
 msgstr "ওপৰলৈ গমন কৰক"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "নাম:"
-
-#: ../alacarte.glade.h:14
+#: ../alacarte.glade.h:5
 msgid "Ne_w Item"
-msgstr "_নতুন বস্তু"
+msgstr "নতুন বস্তু (_w)"
 
-#: ../alacarte.glade.h:15
+#: ../alacarte.glade.h:6
 msgid "New _Separator"
-msgstr "নতুন _বিভেদক"
+msgstr "নতুন বিভেদক (_S)"
 
-#: ../alacarte.glade.h:16
+#: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
-msgstr "ডিফল্ট তালিকা বিন্যাস পুন‌‌‍:প্ৰতিষ্ঠিত কৰক"
+msgstr "অবিকল্পিত তালিকা বিন্যাস পুনঃ প্ৰতিষ্ঠিষ্ঠিত কৰক"
 
-#: ../alacarte.glade.h:17
+#: ../alacarte.glade.h:8
 msgid "Revert Changes?"
-msgstr "পৰিৱ্ৰত্তন প্ৰত্যাবৰ্ত্তন কৰোঁ?"
+msgstr "পৰিৱৰ্ত্তন প্ৰত্যাবৰ্ত্তন কৰোঁ?"
 
-#: ../alacarte.glade.h:18
+#: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "সকলো তালিকা প্ৰাথমিক অৱস্থাৰ পৰিবেশলৈ প্ৰত্যাবৰ্ত্তন কৰোঁ?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "অাদেশ টা্ৰমিনেলত চলাওক ।"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "সামান্য fd.o অাগ্যাধীন তালিকা সম্পাদক"
-
-#: ../alacarte.glade.h:21
+#: ../alacarte.glade.h:10
 msgid "_Menus:"
-msgstr "_তালিকাসমূহ:"
+msgstr "তালিকাসমূহ (_M):"
 
-#: ../alacarte.glade.h:22
+#: ../alacarte.glade.h:11
 msgid "_New Menu"
-msgstr "নতুন তা_লিকা"
+msgstr "নতুন তালিকা (_N)"
 
-#: ../alacarte.glade.h:23
+#: ../alacarte.glade.h:12
 msgid "_Revert to Original"
-msgstr "প্ৰা_থমিক অৱস্থলৈ প্ৰত্যাবৰ্ত্তন "
+msgstr "প্ৰাথমিক অৱস্থলৈ প্ৰত্যাবৰ্ত্তন (_R)"
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr "অমিতাক্ষ ফুকন <amitakhya.phukan@gmail.com>"

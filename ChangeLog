@@ -1,3 +1,52 @@
+2008-03-10  Travis Watkins  <amaranth@ubuntu.com>
+
+	* NEWS:
+	  README: version 0.11.5
+
+2008-02-18  Travis Watkins  <amaranth@ubuntu.com>
+
+	* Alacarte/MainWindow.py: bail out if no item selected (bug 517380)
+
+2008-02-16  Travis Watkins  <amaranth@ubuntu.com>
+
+        * configure.ac: pre-release bump to 0.11.5
+
+==================== 0.11.4 ====================
+
+2008-02-16  Travis Watkins  <amaranth@ubuntu.com>
+
+	* NEWS:
+	* README: version 0.11.4
+
+2008-02-16  Travis Watkins  <amaranth@ubuntu.com>
+
+	* Alacarte/MenuEditor.py: hopefully fix the most frequest crasher
+
+2008-02-16  Travis Watkins  <amaranth@ubuntu.com>
+
+	* Alacarte/MainWindow.py: _really_ fix that drag-and-drop problem
+	* po/POTFILES.in: make distcheck work
+
+2008-02-16  Travis Watkins  <amaranth@ubuntu.com>
+
+	* Alacarte/MainWindow.py:
+	  - disable New Separator button when an item is not selected
+	    thanks to Mike Pechkin
+	  - hopefully fix problem with editing properties on menus without
+	    .directory files
+	  - make sure DnD operations are only allowed for the inside
+	    the alacarte window and not between instances of alacarte
+	  - update view on item theme change, thanks Jared Moore
+	* Alacarte/Makefile.am:
+	  - install .py files to the correct location, thanks Todd Zullinger
+	* Alacarte/MenuEditor.py:
+	  - make sure you can't move a menu into itself
+	    thanks Benjamin Gramlich
+	  - hopefully fix bug 486937 (which doesn't make sense)
+	* alacarte.desktop.in.in:
+	  - disable StartupNotify as a poor man's fix for property windows
+	    going under the main application window
+
 2007-02-12  Vincent Untz  <vuntz@gnome.org>
 
 	* configure.ac: pre-release bump to 0.11.4

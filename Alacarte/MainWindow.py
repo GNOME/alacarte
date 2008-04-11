@@ -81,7 +81,7 @@ class MainWindow:
 			print 'XDG_DATA_DIRS after:' + os.environ['XDG_DATA_DIRS']
 
 			#Fixme - how do I get this filename generically for different distros.
-			fd = open('/etc/profile.d/xdg-enviroment.sh', 'a+')
+			fd = open('/etc/profile.d/xdg-environment.sh', 'a+')
 			already_added = False
 			try:
 				for line in fd:
@@ -185,9 +185,9 @@ class MainWindow:
 			print "SHOULD NEVER NEVER NEVER GET HERE"
 
 		if(not self.options.menu1):
-			self.options.menu1 = 'applications.menu'
+			self.options.menu1 = first_menu
 		if(not self.options.menu2):
-		    self.options.menu2 = 'preferences.menu'
+			self.options.menu2 = second_menu
 
 	def run(self):
 		print "Enter MainWindow:run"
@@ -406,7 +406,7 @@ class MainWindow:
 		if process.poll() != None:
 			if os.path.isfile(file_path):
 				#hack for broken gnome-desktop-item-edit - makes the file '700'
-				subprocess.Popen(['chmod', '644', file_path])
+				# update - should not need this on 11.0 subprocess.Popen(['chmod', '644', file_path])
 				self.editor.insertExternalItem(os.path.split(file_path)[1], parent_id)
 			return False
 		return True
@@ -419,7 +419,7 @@ class MainWindow:
 				os.rename(broken_path, file_path)
 			if os.path.isfile(file_path):
 				#hack for broken gnome-desktop-item-edit - makes the file '700'
-				subprocess.Popen(['chmod', '644', file_path])
+				#update - should not need this on 11.0 subprocess.Popen(['chmod', '644', file_path])
 				self.editor.insertExternalMenu(os.path.split(file_path)[1], parent_id)
 			return False
 		return True
@@ -534,7 +534,8 @@ class MainWindow:
 			#nasty hack for broken gnome-desktop-item-edit in gnome 2.12
 			#when editing a *.directory file it reads/writes
 			#to a hardcoded ".directory" file in the filepath dir and ignores the filename
-			if file_type == 'Menu':
+			#update - should not need this on 11.0. will test and if confirmed will remove this
+			if file_type == 'Menu' and False:
 				broken_path = os.path.join(os.path.split(file_path)[0], '.directory')
 				data = open(file_path).read()
 				open(broken_path, 'w').write(data)

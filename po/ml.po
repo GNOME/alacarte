@@ -1,10 +1,10 @@
 # translation of alacarte.HEAD.ml.po to Malayalam
+# Copyright (C) 2007 alacarte'S COPYRIGHT HOLDER.
+# This file is distributed under the same license as the alacarte package.
 # Ani Peter <peter.ani@gmail.com>, 2006.
 # NIKHIL VISHNU P V <nikhilvishnupv@gmail.com>, 2007.
 # Ani Peter <apeter@redhat.com>, 2007.
-# This file is distributed under the same license as the alacarte package.
-# Copyright (C) 2007 alacarte'S COPYRIGHT HOLDER.
-# Reviewed by Praveen|പ്രവീണ്‍ A|എ <pravi.a@gmail.com>
+# Reviewed by Praveen|പ്രവീണ്‍ A|എ <pravi.a@gmail.com>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte.HEAD.ml\n"
@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2007-02-12 04:30+0000\n"
 "PO-Revision-Date: 2007-06-25 16:30+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
-"Language-Team: Malayalam <en@li.org>\n"
+"Language-Team: Swathanthra Malayalam Computing|സ്വതന്ത്ര മലയാളം കമ്പ്യൂട്ടിങ്ങ് <smc-discuss@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../Alacarte/MainWindow.py:167
 msgid "Name"
-msgstr "പേര്"
+msgstr "പേരു്"
 
 #: ../Alacarte/MainWindow.py:183
 msgid "Show"
@@ -42,27 +42,27 @@ msgstr "പ്രധാന മെനു"
 
 #: ../alacarte.glade.h:1
 msgid "It_ems:"
-msgstr "ഇനങ്ങള്‍: (_e)"
+msgstr "ഇ_നങ്ങള്‍:"
 
 #: ../alacarte.glade.h:3
 msgid "Move Down"
-msgstr "താഴേക്ക് നീക്കുക"
+msgstr "താഴേയ്ക്കു് നീക്കുക"
 
 #: ../alacarte.glade.h:4
 msgid "Move Up"
-msgstr "മുകളിലേക്ക് നീക്കുക"
+msgstr "മുകളിലേയ്ക്കു് നീക്കുക"
 
 #: ../alacarte.glade.h:5
 msgid "Ne_w Item"
-msgstr "പുതിയ ഇനം (_w)"
+msgstr "പു_തിയ ഇനം"
 
 #: ../alacarte.glade.h:6
 msgid "New _Separator"
-msgstr "പുതിയ വിടവടയാളം (_S) "
+msgstr "പുതിയ _വിടവടയാളം"
 
 #: ../alacarte.glade.h:7
 msgid "Restore the default menu layout"
-msgstr "മെനുവിന്‍റെ സഹജമായ വിന്യാസം തിരികെ കൊണ്ടുവരിക "
+msgstr "മെനുവിന്റെ സഹജമായ വിന്യാസം തിരികെ കൊണ്ടുവരിക"
 
 #: ../alacarte.glade.h:8
 msgid "Revert Changes?"
@@ -70,17 +70,16 @@ msgstr "വരുത്തിയ മാറ്റങ്ങള്‍ ഒഴിവ�
 
 #: ../alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
-msgstr "എല്ലാ മെനുകളും നേരത്തെയുണ്ടായിരുന്ന സജ്ജീകരണങ്ങളിലേയ്ക്ക് തിരികെ കൊണ്ടുവരണമോ?"
+msgstr "എല്ലാ മെനുകളും നേരത്തെയുണ്ടായിരുന്ന സജ്ജീകരണങ്ങളിലേയ്ക്കു് തിരികെ കൊണ്ടുവരണമോ?"
 
 #: ../alacarte.glade.h:10
 msgid "_Menus:"
-msgstr "മെനുകള്‍ (_M):"
+msgstr "_മെനുകള്‍:"
 
 #: ../alacarte.glade.h:11
 msgid "_New Menu"
-msgstr "പുതിയ മെനു (_N)"
+msgstr "_പുതിയ മെനു"
 
 #: ../alacarte.glade.h:12
 msgid "_Revert to Original"
-msgstr "നേരത്തെയുണ്ടായിരുന്ന സജ്ജീകരണത്തിലേയ്ക്ക് തിരികെ പോകുക (_R) "
-
+msgstr "നേരത്തെയുണ്ടായിരുന്ന സജ്ജീകരണത്തിലേയ്ക്കു് _തിരികെ പോകുക"

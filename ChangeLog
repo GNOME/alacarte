@@ -1,5 +1,20 @@
 2008-09-11  Vincent Untz  <vuntz@gnome.org>
 
+	* Makefile.am:
+	* alacarte.desktop.in.in:
+	* alacarte.glade:
+	* configure.ac:
+	* data/Makefile.am:
+	* data/icons/Makefile.am:
+	* po/POTFILES.in:
+	* po/POTFILES.skip:
+	Create a data directory, and put data in there.
+	Add all sizes for icons.
+	Fix bug #549994
+	Based on work by Michael Monreal <michael.monreal@gmx.net>
+
+2008-09-11  Vincent Untz  <vuntz@gnome.org>
+
 	* Makefile.am: fix uninstallation of icons
 	Fix bug #538679
 	Patch by Fabricio Silva <silva@crans.org>

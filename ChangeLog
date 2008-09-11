@@ -1,3 +1,9 @@
+2008-09-11  Vincent Untz  <vuntz@gnome.org>
+
+	* Makefile.am: fix uninstallation of icons
+	Fix bug #538679
+	Patch by Fabricio Silva <silva@crans.org>
+
 2008-03-10  Travis Watkins  <amaranth@ubuntu.com>
 
 	* configure.ac: post-release bump to 0.11.6

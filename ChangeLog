@@ -1,5 +1,10 @@
 2008-09-22  Vincent Untz  <vuntz@gnome.org>
 
+	* NEWS:
+	* README: version 0.11.6
+
+2008-09-22  Vincent Untz  <vuntz@gnome.org>
+
 	* configure.ac: check for python 2.6. Fix bug #551751.
 
 2008-09-11  Vincent Untz  <vuntz@gnome.org>

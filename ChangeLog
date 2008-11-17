@@ -1,3 +1,8 @@
+2008-11-17  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	* configure.ac: better message for python libraries check.
+	Part of bug #552186.
+
 2008-09-22  Vincent Untz  <vuntz@gnome.org>
 
 	* configure.ac: post-release bump to 0.11.7

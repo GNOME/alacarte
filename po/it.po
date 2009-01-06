@@ -2,81 +2,81 @@
 # Copyright (c) 2006 Free Software Foundation, Inc.
 # This file is distributed under the same license as the alacarte package.
 # Alessio Frusciante <algol@firenze.linux.it>, 2006.
-# Milo Casagrande <milo_casagrande@yahoo.it>, 2006, 2007
+# Milo Casagrande <milo@ubuntu.com>, 2006-2008
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-04 21:31+0100\n"
-"PO-Revision-Date: 2007-03-04 19:34+0100\n"
-"Last-Translator: Milo Casagrande <milo_casagrande@yahoo.it>\n"
+"POT-Creation-Date: 2009-01-06 14:34+0100\n"
+"PO-Revision-Date: 2009-01-06 14:34+0100\n"
+"Last-Translator: Milo Casagrande <milo@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:167
+#: ../Alacarte/MainWindow.py:168
 msgid "Name"
 msgstr "Nome"
 
-#: ../Alacarte/MainWindow.py:183
+#: ../Alacarte/MainWindow.py:184
 msgid "Show"
 msgstr "Mostra"
 
-#: ../Alacarte/MainWindow.py:191
+#: ../Alacarte/MainWindow.py:192
 msgid "Item"
 msgstr "Voce di menù"
 
-#: ../alacarte.desktop.in.in.h:1
+#: ../data/alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
 msgstr "Sceglie le applicazioni da mostrate nel menù"
 
-#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.glade.h:2
 msgid "Main Menu"
 msgstr "Menù principale"
 
-#: ../alacarte.glade.h:1
+#: ../data/alacarte.glade.h:1
 msgid "It_ems:"
 msgstr "Voc_i:"
 
-#: ../alacarte.glade.h:3
+#: ../data/alacarte.glade.h:3
 msgid "Move Down"
 msgstr "Sposta in basso"
 
-#: ../alacarte.glade.h:4
+#: ../data/alacarte.glade.h:4
 msgid "Move Up"
 msgstr "Sposta in alto"
 
-#: ../alacarte.glade.h:5
+#: ../data/alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "Nuova _voce"
 
-#: ../alacarte.glade.h:6
+#: ../data/alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "Nuovo _separatore"
 
-#: ../alacarte.glade.h:7
+#: ../data/alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "Ripristina la struttura predefinita del menù"
 
-#: ../alacarte.glade.h:8
+#: ../data/alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "Annullare i cambiamenti?"
 
-#: ../alacarte.glade.h:9
+#: ../data/alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "Ripristinare le impostazioni predefinite di tutti i menù?"
 
-#: ../alacarte.glade.h:10
+#: ../data/alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_Menù:"
 
-#: ../alacarte.glade.h:11
+#: ../data/alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "_Nuovo menù"
 
-#: ../alacarte.glade.h:12
+#: ../data/alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_Ripristina originale"
 

@@ -1,3 +1,39 @@
+2008-09-22  Vincent Untz  <vuntz@gnome.org>
+
+	* NEWS:
+	* README: version 0.11.6
+
+2008-09-22  Vincent Untz  <vuntz@gnome.org>
+
+	* configure.ac: check for python 2.6. Fix bug #551751.
+
+2008-09-11  Vincent Untz  <vuntz@gnome.org>
+
+	* Makefile.am:
+	* alacarte.desktop.in.in:
+	* alacarte.glade:
+	* configure.ac:
+	* data/Makefile.am:
+	* data/icons/Makefile.am:
+	* po/POTFILES.in:
+	* po/POTFILES.skip:
+	Create a data directory, and put data in there.
+	Add all sizes for icons.
+	Fix bug #549994
+	Based on work by Michael Monreal <michael.monreal@gmx.net>
+
+2008-09-11  Vincent Untz  <vuntz@gnome.org>
+
+	* Makefile.am: fix uninstallation of icons
+	Fix bug #538679
+	Patch by Fabricio Silva <silva@crans.org>
+
+2008-03-10  Travis Watkins  <amaranth@ubuntu.com>
+
+	* configure.ac: post-release bump to 0.11.6
+
+==================== 0.11.5 ====================
+
 2008-03-10  Travis Watkins  <amaranth@ubuntu.com>
 
 	* NEWS:

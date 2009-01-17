@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-12 04:30+0000\n"
+"POT-Creation-Date: 2008-08-08 11:47+0100\n"
 "PO-Revision-Date: 2007-03-07 21:50+0800\n"
 "Last-Translator: Simos Xenitellis <simos@gnome.org>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
@@ -15,15 +15,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:167
+#: ../Alacarte/MainWindow.py:168
 msgid "Name"
 msgstr "Όνομα"
 
-#: ../Alacarte/MainWindow.py:183
+#: ../Alacarte/MainWindow.py:184
 msgid "Show"
 msgstr "Προβολή"
 
-#: ../Alacarte/MainWindow.py:191
+#: ../Alacarte/MainWindow.py:192
 msgid "Item"
 msgstr "Αντικείμενο"
 
@@ -41,15 +41,15 @@ msgstr "Αντι_κείμενα:"
 
 #: ../alacarte.glade.h:3
 msgid "Move Down"
-msgstr "Μετακίνηση πάνω "
+msgstr "Μετακίνηση κάτω"
 
 #: ../alacarte.glade.h:4
 msgid "Move Up"
-msgstr "Μετακίνηση κάτω "
+msgstr "Μετακίνηση πάνω"
 
 #: ../alacarte.glade.h:5
 msgid "Ne_w Item"
-msgstr "Νέ_ο αντικείμενο "
+msgstr "Νέ_ο αντικείμενο"
 
 #: ../alacarte.glade.h:6
 msgid "New _Separator"
@@ -77,7 +77,7 @@ msgstr "Νέο _μενού"
 
 #: ../alacarte.glade.h:12
 msgid "_Revert to Original"
-msgstr "Επανα_φορά σε αρχικό"
+msgstr "Επανα_φορά στο αρχικό"
 
 #~ msgid "A name is required."
 #~ msgstr "Απαιτείται ένα όνομα"

@@ -1,4 +1,30 @@
 ==============
+Version 0.11.6
+==============
+
+Misc
+
+	* install/uninstall more theme icons more correctly (Fabricio Silva,
+	  Michael Monreal, Vincent Untz)
+	* Check for python 2.6
+
+Translations
+
+	- Updated ar: Khaled Hosny
+	- Updated el: Simos Xenitellis
+	- Updated fur: Massimo Furlani
+	- Updated hr: Ante Karamatić
+	- Updated hu: Gabor Kelemen
+	- Updated ml: Ani Peter
+	- Updated oc: Yannig Marchegay (Kokoyaya)
+	- Updated or: Manoj Kumar Giri
+	- Updated pl: Tomasz Dominikowski
+	- Updated ps: Zabeeh Khan
+	- Updated pt_BR: Vladimir Melo
+	- Updated ru: Nickolay V. Shmyrev
+	- Updated sk: Marcel Telka
+
+==============
 Version 0.11.5
 ==============
 

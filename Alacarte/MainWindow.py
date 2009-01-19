@@ -16,10 +16,11 @@
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import gtk, gtk.glade, gmenu, gobject, gnomevfs, gnome.ui
+import gtk, gtk.glade, gmenu, gobject, gio, gnome.ui
 import cgi, os
 import gettext
 import subprocess
+import urllib
 try:
 	from Alacarte import config
 	gettext.bindtextdomain('alacarte',config.localedir)
@@ -535,21 +536,18 @@ class MainWindow:
 			else:
 				path = (len(items) - 1,)
 				after = items[path][3]
-			file_path = gnomevfs.unescape_string(selection.data, '').strip()
+			file_path = urllib.unquote(selection.data).strip()
 			if not file_path.startswith('file:'):
 				return
-			file_info = gnomevfs.get_file_info(
-				file_path, gnomevfs.FILE_INFO_GET_MIME_TYPE|
-				gnomevfs.FILE_INFO_FORCE_SLOW_MIME_TYPE|
-				gnomevfs.FILE_INFO_FOLLOW_LINKS|gnomevfs.FILE_INFO_DEFAULT
-				)
-			if file_info.mime_type == 'application/x-desktop':
-				handle = gnomevfs.open(file_path)
-				data = handle.read(file_info.size)
-				open('/tmp/alacarte-dnd.desktop', 'w').write(data)
+			myfile = gio.File(uri=file_path)
+			file_info = myfile.query_info(gio.FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE)
+			content_type = file_info.get_content_type()
+			if content_type == 'application/x-desktop':
+				input_stream = myfile.read()
+				open('/tmp/alacarte-dnd.desktop', 'w').write(input_stream.read())
 				parser = util.DesktopParser('/tmp/alacarte-dnd.desktop')
 				self.editor.createItem(parent, parser.get('Icon'), parser.get('Name', self.editor.locale), parser.get('Comment', self.editor.locale), parser.get('Exec'), parser.get('Terminal'), before, after)
-			elif file_info.mime_type in ('application/x-shellscript', 'application/x-executable'):
+			elif content_type in ('application/x-shellscript', 'application/x-executable'):
 				self.editor.createItem(parent, None, os.path.split(file_path)[1].strip(), None, file_path.replace('file://', '').strip(), False, before, after)
 		self.drag_data = None
 

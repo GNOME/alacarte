@@ -1,5 +1,11 @@
 2009-01-19  Cosimo Cecchi  <cosimoc@gnome.org>
 
+	* Alacarte/MainWindow.py:
+	* configure.ac: port to GIO. Based on a patch from Gian Mario
+	Tagliaretti (#514574).
+
+2009-01-19  Cosimo Cecchi  <cosimoc@gnome.org>
+
 	* INSTALL:
 	* Makefile.am:
 	* configure.ac: use intltool 0.4.0.

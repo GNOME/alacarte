@@ -1,3 +1,7 @@
+2009-01-19  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	* configure.ac: post-release bump to 0.11.8
+
 ==================== 0.11.7 ====================
 
 2009-01-19  Cosimo Cecchi  <cosimoc@gnome.org>

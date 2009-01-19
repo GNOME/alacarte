@@ -1,3 +1,10 @@
+==================== 0.11.7 ====================
+
+2009-01-19  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	* NEWS:
+	* README: version 0.11.7
+
 2009-01-19  Cosimo Cecchi  <cosimoc@gnome.org>
 
 	* Alacarte/MainWindow.py:

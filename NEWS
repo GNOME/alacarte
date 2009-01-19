@@ -1,4 +1,20 @@
 ==============
+Version 0.11.7
+==============
+
+Misc
+	* Port to GIO (Cosimo Cecchi, Gian Mario Tagliaretti)
+	* Require intltool 0.4.0
+	* Print better messages when checking for Python libraries
+
+Translations
+
+	- Updated ar: Khaled Hosny
+	- Updated el: Djihed Afifi <djihed@gmail.com>, nikosCharonitakis
+	- Updated it: Milo Casagrande
+	- Updated kk: Claude Paroz, Margulan Moldabekov
+
+==============
 Version 0.11.6
 ==============
 

@@ -1,3 +1,9 @@
+2009-01-19  Vincent Untz  <vuntz@gnome.org>
+
+	* Alacarte/MenuEditor.py: show all separators
+	* configure.ac: require gnome-menus 2.22.2
+	Fix bug #527635
+
 2009-01-19  Cosimo Cecchi  <cosimoc@gnome.org>
 
 	* configure.ac: post-release bump to 0.11.8

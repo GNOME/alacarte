@@ -37,7 +37,7 @@ class MenuEditor:
 
 	def __loadMenus(self):
 		self.applications = Menu()
-		self.applications.tree = gmenu.lookup_tree('applications.menu', gmenu.FLAGS_SHOW_EMPTY|gmenu.FLAGS_INCLUDE_EXCLUDED|gmenu.FLAGS_INCLUDE_NODISPLAY)
+		self.applications.tree = gmenu.lookup_tree('applications.menu', gmenu.FLAGS_SHOW_EMPTY|gmenu.FLAGS_INCLUDE_EXCLUDED|gmenu.FLAGS_INCLUDE_NODISPLAY|gmenu.FLAGS_SHOW_ALL_SEPARATORS)
 		self.applications.visible_tree = gmenu.lookup_tree('applications.menu')
 		self.applications.path = os.path.join(util.getUserMenuPath(), self.applications.tree.get_menu_file())
 		if not os.path.isfile(self.applications.path):
@@ -47,7 +47,7 @@ class MenuEditor:
 		self.__remove_whilespace_nodes(self.applications.dom)
 
 		self.settings = Menu() 	 
-		self.settings.tree = gmenu.lookup_tree('settings.menu', gmenu.FLAGS_SHOW_EMPTY|gmenu.FLAGS_INCLUDE_EXCLUDED|gmenu.FLAGS_INCLUDE_NODISPLAY) 	 
+		self.settings.tree = gmenu.lookup_tree('settings.menu', gmenu.FLAGS_SHOW_EMPTY|gmenu.FLAGS_INCLUDE_EXCLUDED|gmenu.FLAGS_INCLUDE_NODISPLAY|gmenu.FLAGS_SHOW_ALL_SEPARATORS)
 		self.settings.visible_tree = gmenu.lookup_tree('settings.menu') 	 
 		self.settings.path = os.path.join(util.getUserMenuPath(), self.settings.tree.get_menu_file()) 	 
 		if not os.path.isfile(self.settings.path): 	 

@@ -26,6 +26,7 @@ PKG_CHECK_MODULES(ALACARTE, libgnome-menu >= 2.22.2)
 dnl Check for correctly installed pygobject
 AC_MSG_CHECKING(for pygobject required_pygobject_version installed for python required_python_abi)
 prog="
+import pygtk; pygtk.require('2.0')
 import gobject
 assert gobject.pygobject_version >= tuple(map(int, 'required_pygobject_version'.split('.')))
 "

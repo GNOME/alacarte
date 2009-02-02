@@ -1,4 +1,18 @@
 ==============
+Version 0.11.8
+==============
+
+Misc
+	* Work properly when pygobject is not installed
+	  in a default directory (Frederic Peters)
+
+Translations
+
+	- Updated sv: Daniel Nylander
+	- Updated zh_HK: Chao-Hsiung Liao
+	- Updated zh_TW: Chao-Hsiung Liao, Woodman Tuen
+
+==============
 Version 0.11.7
 ==============
 

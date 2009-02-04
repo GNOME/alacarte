@@ -71,7 +71,6 @@ class MainWindow:
 		keyval, modifier = gtk.accelerator_parse('F1')
 		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_help_button_clicked)
 		self.tree.get_widget('mainwindow').add_accel_group(accelgroup)
-		gnome.ui.authentication_manager_init()
 
 	def run(self):
 		self.loadMenus()

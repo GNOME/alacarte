@@ -7,7 +7,7 @@ AM_INIT_AUTOMAKE([1.7])
 AM_MAINTAINER_MODE
 
 m4_define(required_pygobject_version, 2.15.1)
-m4_define(required_pygtk_version, 2.8.0)
+m4_define(required_pygtk_version, 2.13.0)
 
 dnl put the ACLOCAL flags in the makefile
 ACLOCAL="$ACLOCAL $ACLOCAL_FLAGS"

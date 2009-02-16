@@ -1,3 +1,10 @@
+2009-02-16  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	* Alacarte/MainWindow.py: drop libgnomeui dependency.
+	* configure.ac: bump required PyGTK version to 2.13.0,
+	due to gtk.show_uri().
+	Patch by Andreas Proschofsky, fixes bug #570493.
+
 2009-02-04  Cosimo Cecchi  <cosimoc@gnome.org>
 
 	* Alacarte/MainWindow.py: removed a call to

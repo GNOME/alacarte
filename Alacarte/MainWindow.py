@@ -16,7 +16,7 @@
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import gtk, gtk.glade, gmenu, gobject, gio, gnome.ui
+import gtk, gtk.glade, gmenu, gobject, gio
 import cgi, os
 import gettext
 import subprocess
@@ -48,7 +48,6 @@ class MainWindow:
 		self.file_path = datadir
 		self.version = version
 		self.editor = MenuEditor()
-		self.gnome_program = gnome.init('alacarte', version)
 		gtk.window_set_default_icon_name('alacarte')
 		self.tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'))
 		signals = {}
@@ -597,7 +596,7 @@ class MainWindow:
 		self.editor.redo()
 
 	def on_help_button_clicked(self, *args):
-		gnome.help_display_desktop(self.gnome_program, 'user-guide', 'user-guide.xml', 'menu-editor')
+		gtk.show_uri(gtk.gdk.screen_get_default(), "ghelp:user-guide#menu-editor", gtk.get_current_event_time())
 
 	def on_revert_button_clicked(self, button):
 		dialog = self.tree.get_widget('revertdialog')

@@ -1,3 +1,7 @@
+2009-02-16  Cosimo Cecchi  <cosimoc@gnome.org>
+
+	* configure.ac: post-release bump to 0.11.10
+
 ==================== 0.11.9 ====================
 
 2009-02-16  Cosimo Cecchi  <cosimoc@gnome.org>

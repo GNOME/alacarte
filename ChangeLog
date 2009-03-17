@@ -1,3 +1,8 @@
+2009-03-17  Vincent Untz  <vuntz@gnome.org>
+
+	* NEWS:
+	* README: version 0.11.10
+
 2009-02-16  Cosimo Cecchi  <cosimoc@gnome.org>
 
 	* configure.ac: post-release bump to 0.11.10

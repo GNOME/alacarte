@@ -7,8 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte.HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-12 01:06+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=alacarte&component=general\n"
+"POT-Creation-Date: 2009-03-17 14:20+0000\n"
 "PO-Revision-Date: 2008-05-26 01:20+0300\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -16,7 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: ../Alacarte/MainWindow.py:167
 msgid "Name"
@@ -30,55 +32,54 @@ msgstr "أظهر"
 msgid "Item"
 msgstr "عنصر"
 
-#: ../alacarte.desktop.in.in.h:1
+#: ../data/alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
 msgstr "غيّر التطبيقات التي ستظهر في القائمة الرئيسيّة"
 
-#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.glade.h:2
 msgid "Main Menu"
 msgstr "القائمة الرئيسية"
 
-#: ../alacarte.glade.h:1
+#: ../data/alacarte.glade.h:1
 msgid "It_ems:"
 msgstr "ع_ناصر:"
 
-#: ../alacarte.glade.h:3
+#: ../data/alacarte.glade.h:3
 msgid "Move Down"
 msgstr "انقل لأسفل"
 
-#: ../alacarte.glade.h:4
+#: ../data/alacarte.glade.h:4
 msgid "Move Up"
 msgstr "انقل لأعلى"
 
-#: ../alacarte.glade.h:5
+#: ../data/alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "عنصر _جديد"
 
-#: ../alacarte.glade.h:6
+#: ../data/alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "فا_صل جديد"
 
-#: ../alacarte.glade.h:7
+#: ../data/alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "استعِد مخطط القائمة المبدئي"
 
-#: ../alacarte.glade.h:8
+#: ../data/alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "أأتراجع عن التغييرات؟"
 
-#: ../alacarte.glade.h:9
+#: ../data/alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "أأسترجع كافة القوائم إلى الإعدادات الأصلية؟"
 
-#: ../alacarte.glade.h:10
+#: ../data/alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_قوائم:"
 
-#: ../alacarte.glade.h:11
+#: ../data/alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "قائمة _جديدة"
 
-#: ../alacarte.glade.h:12
+#: ../data/alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "ا_ستعِد الحالة الأصلية"
-

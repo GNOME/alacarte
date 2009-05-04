@@ -16,7 +16,7 @@
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import gtk, gtk.glade, gmenu, gobject, gio
+import gtk, gmenu, gobject, gio
 import cgi, os
 import gettext
 import subprocess
@@ -25,10 +25,8 @@ try:
 	from Alacarte import config
 	gettext.bindtextdomain('alacarte',config.localedir)
 	gettext.textdomain('alacarte')
-	gtk.glade.bindtextdomain('alacarte',config.localedir)
 except:
 	pass
-gtk.glade.textdomain('alacarte')
 _ = gettext.gettext
 from Alacarte.MenuEditor import MenuEditor
 from Alacarte import util
@@ -49,19 +47,17 @@ class MainWindow:
 		self.version = version
 		self.editor = MenuEditor()
 		gtk.window_set_default_icon_name('alacarte')
-		self.tree = gtk.glade.XML(os.path.join(self.file_path, 'alacarte.glade'))
-		signals = {}
-		for attr in dir(self):
-			signals[attr] = getattr(self, attr)
-		self.tree.signal_autoconnect(signals)
+		self.tree = gtk.Builder()
+                self.tree.add_from_file(os.path.join(self.file_path, 'alacarte.ui'))
+		self.tree.connect_signals(self)
 		self.setupMenuTree()
 		self.setupItemTree()
-		self.tree.get_widget('edit_delete').set_sensitive(False)
-		self.tree.get_widget('edit_revert_to_original').set_sensitive(False)
-		self.tree.get_widget('edit_properties').set_sensitive(False)
-		self.tree.get_widget('move_up_button').set_sensitive(False)
-		self.tree.get_widget('move_down_button').set_sensitive(False)
-		self.tree.get_widget('new_separator_button').set_sensitive(False)
+		self.tree.get_object('edit_delete').set_sensitive(False)
+		self.tree.get_object('edit_revert_to_original').set_sensitive(False)
+		self.tree.get_object('edit_properties').set_sensitive(False)
+		self.tree.get_object('move_up_button').set_sensitive(False)
+		self.tree.get_object('move_down_button').set_sensitive(False)
+		self.tree.get_object('new_separator_button').set_sensitive(False)
 		accelgroup = gtk.AccelGroup()
 		keyval, modifier = gtk.accelerator_parse('<Ctrl>Z')
 		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_mainwindow_undo)
@@ -69,13 +65,13 @@ class MainWindow:
 		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_mainwindow_redo)
 		keyval, modifier = gtk.accelerator_parse('F1')
 		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_help_button_clicked)
-		self.tree.get_widget('mainwindow').add_accel_group(accelgroup)
+		self.tree.get_object('mainwindow').add_accel_group(accelgroup)
 
 	def run(self):
 		self.loadMenus()
 		self.editor.applications.tree.add_monitor(self.menuChanged, None)
 		self.editor.settings.tree.add_monitor(self.menuChanged, None)
-		self.tree.get_widget('mainwindow').show_all()
+		self.tree.get_object('mainwindow').show_all()
 		gtk.main()
 
 	def menuChanged(self, *a):
@@ -87,8 +83,8 @@ class MainWindow:
 	def loadUpdates(self):
 		if not self.allow_update:
 			return False
-		menu_tree = self.tree.get_widget('menu_tree')
-		item_tree = self.tree.get_widget('item_tree')
+		menu_tree = self.tree.get_object('menu_tree')
+		item_tree = self.tree.get_object('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
 		update_items = False
 		item_id, separator_path = None, None
@@ -150,20 +146,20 @@ class MainWindow:
 	def findMenu(self, menus, path, iter, menu_id):
 		if not menus[path][2].get_desktop_file_path():
 			if menu_id == menus[path][2].get_menu_id():
-				menu_tree = self.tree.get_widget('menu_tree')
+				menu_tree = self.tree.get_object('menu_tree')
 				menu_tree.expand_to_path(path)
 				menu_tree.get_selection().select_path(path)
 				return True
 			return False
 		if os.path.split(menus[path][2].get_desktop_file_path())[1] == menu_id:
-			menu_tree = self.tree.get_widget('menu_tree')
+			menu_tree = self.tree.get_object('menu_tree')
 			menu_tree.expand_to_path(path)
 			menu_tree.get_selection().select_path(path)
 			return True
 
 	def setupMenuTree(self):
 		self.menu_store = gtk.TreeStore(gtk.gdk.Pixbuf, str, object)
-		menus = self.tree.get_widget('menu_tree')
+		menus = self.tree.get_object('menu_tree')
 		column = gtk.TreeViewColumn(_('Name'))
 		column.set_spacing(4)
 		cell = gtk.CellRendererPixbuf()
@@ -179,7 +175,7 @@ class MainWindow:
 		menus.enable_model_drag_dest(self.dnd_both, gtk.gdk.ACTION_PRIVATE)
 
 	def setupItemTree(self):
-		items = self.tree.get_widget('item_tree')
+		items = self.tree.get_object('item_tree')
 		column = gtk.TreeViewColumn(_('Show'))
 		cell = gtk.CellRendererToggle()
 		cell.connect('toggled', self.on_item_tree_show_toggled)
@@ -214,7 +210,7 @@ class MainWindow:
 		for menu in self.editor.getMenus():
 			iters = [None]*20
 			self.loadMenu(iters, menu)
-		menu_tree = self.tree.get_widget('menu_tree')
+		menu_tree = self.tree.get_object('menu_tree')
 		menu_tree.set_model(self.menu_store)
 		for menu in self.menu_store:
 			#this might not work for some reason
@@ -283,7 +279,7 @@ class MainWindow:
 		return True
 
 	def on_new_menu_button_clicked(self, button):
-		menu_tree = self.tree.get_widget('menu_tree')
+		menu_tree = self.tree.get_object('menu_tree')
 		menus, iter = menu_tree.get_selection().get_selected()
 		if not iter:
 			parent = menus[(0,)][2]
@@ -296,7 +292,7 @@ class MainWindow:
 		gobject.timeout_add(100, self.waitForNewMenuProcess, process, parent.menu_id, file_path)
 
 	def on_new_item_button_clicked(self, button):
-		menu_tree = self.tree.get_widget('menu_tree')
+		menu_tree = self.tree.get_object('menu_tree')
 		menus, iter = menu_tree.get_selection().get_selected()
 		if not iter:
 			parent = menus[(0,)][2]
@@ -309,19 +305,19 @@ class MainWindow:
 		gobject.timeout_add(100, self.waitForNewItemProcess, process, parent.menu_id, file_path)
 
 	def on_new_separator_button_clicked(self, button):
-		item_tree = self.tree.get_widget('item_tree')
+		item_tree = self.tree.get_object('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
 		if not iter:
 			return
 		else:
 			after = items[iter][3]
-			menu_tree = self.tree.get_widget('menu_tree')
+			menu_tree = self.tree.get_object('menu_tree')
 			menus, iter = menu_tree.get_selection().get_selected()
 			parent = menus[iter][2]
 			self.editor.createSeparator(parent, after=after)
 
 	def on_edit_delete_activate(self, menu):
-		item_tree = self.tree.get_widget('item_tree')
+		item_tree = self.tree.get_object('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
 		if not iter:
 			return
@@ -334,7 +330,7 @@ class MainWindow:
 			self.editor.deleteSeparator(item)
 
 	def on_edit_revert_to_original_activate(self, menu):
-		item_tree = self.tree.get_widget('item_tree')
+		item_tree = self.tree.get_object('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
 		if not iter:
 			return
@@ -345,7 +341,7 @@ class MainWindow:
 			self.editor.revertMenu(item)
 
 	def on_edit_properties_activate(self, menu):
-		item_tree = self.tree.get_widget('item_tree')
+		item_tree = self.tree.get_object('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
 		if not iter:
 			return
@@ -382,15 +378,15 @@ class MainWindow:
 	def on_menu_tree_cursor_changed(self, treeview):
 		menus, iter = treeview.get_selection().get_selected()
 		menu_path = menus.get_path(iter)
-		item_tree = self.tree.get_widget('item_tree')
+		item_tree = self.tree.get_object('item_tree')
 		item_tree.get_selection().unselect_all()
 		self.loadItems(self.menu_store[menu_path][2], menu_path)
-		self.tree.get_widget('edit_delete').set_sensitive(False)
-		self.tree.get_widget('edit_revert_to_original').set_sensitive(False)
-		self.tree.get_widget('edit_properties').set_sensitive(False)
-		self.tree.get_widget('move_up_button').set_sensitive(False)
-		self.tree.get_widget('move_down_button').set_sensitive(False)
-		self.tree.get_widget('new_separator_button').set_sensitive(False)
+		self.tree.get_object('edit_delete').set_sensitive(False)
+		self.tree.get_object('edit_revert_to_original').set_sensitive(False)
+		self.tree.get_object('edit_properties').set_sensitive(False)
+		self.tree.get_object('move_up_button').set_sensitive(False)
+		self.tree.get_object('move_down_button').set_sensitive(False)
+		self.tree.get_object('new_separator_button').set_sensitive(False)
 
 	def on_menu_tree_drag_data_get(self, treeview, context, selection, target_id, etime):
 		menus, iter = treeview.get_selection().get_selected()
@@ -436,28 +432,28 @@ class MainWindow:
 		if iter is None:
 			return
 		item = items[iter][3]
-		self.tree.get_widget('edit_delete').set_sensitive(True)
-		self.tree.get_widget('new_separator_button').set_sensitive(True)
+		self.tree.get_object('edit_delete').set_sensitive(True)
+		self.tree.get_object('new_separator_button').set_sensitive(True)
 		if self.editor.canRevert(item):
-			self.tree.get_widget('edit_revert_to_original').set_sensitive(True)
+			self.tree.get_object('edit_revert_to_original').set_sensitive(True)
 		else:
-			self.tree.get_widget('edit_revert_to_original').set_sensitive(False)
+			self.tree.get_object('edit_revert_to_original').set_sensitive(False)
 		if not item.get_type() == gmenu.TYPE_SEPARATOR:
-			self.tree.get_widget('edit_properties').set_sensitive(True)
+			self.tree.get_object('edit_properties').set_sensitive(True)
 		else:
-			self.tree.get_widget('edit_properties').set_sensitive(False)
+			self.tree.get_object('edit_properties').set_sensitive(False)
 
 		# If first item...
 		if items.get_path(iter)[0] == 0:
-			self.tree.get_widget('move_up_button').set_sensitive(False)
+			self.tree.get_object('move_up_button').set_sensitive(False)
 		else:
-			self.tree.get_widget('move_up_button').set_sensitive(True)
+			self.tree.get_object('move_up_button').set_sensitive(True)
 
 		# If last item...
 		if items.get_path(iter)[0] == (len(items)-1):
-			self.tree.get_widget('move_down_button').set_sensitive(False)
+			self.tree.get_object('move_down_button').set_sensitive(False)
 		else:
-			self.tree.get_widget('move_down_button').set_sensitive(True)
+			self.tree.get_object('move_down_button').set_sensitive(True)
 
 	def on_item_tree_row_activated(self, treeview, path, column):
 		self.on_edit_properties_activate(None)
@@ -481,7 +477,7 @@ class MainWindow:
 			event_time = 0
 			item_tree.grab_focus()
 			item_tree.set_cursor(path, item_tree.get_columns()[0], 0)
-		popup = self.tree.get_widget('edit_menu')
+		popup = self.tree.get_object('edit_menu')
 		popup.popup(None, None, None, button, event_time)
 		#without this shift-f10 won't work
 		return True
@@ -520,7 +516,7 @@ class MainWindow:
 		elif selection.target == 'text/plain':
 			if selection.data == None:
 				return False
-			menus, iter = self.tree.get_widget('menu_tree').get_selection().get_selected()
+			menus, iter = self.tree.get_object('menu_tree').get_selection().get_selected()
 			parent = menus[iter][2]
 			drop_info = treeview.get_dest_row_at_pos(x, y)
 			before = None
@@ -554,7 +550,7 @@ class MainWindow:
 			self.on_edit_delete_activate(item_tree)
 
 	def on_move_up_button_clicked(self, button):
-		item_tree = self.tree.get_widget('item_tree')
+		item_tree = self.tree.get_object('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
 		if not iter:
 			return
@@ -572,7 +568,7 @@ class MainWindow:
 			self.editor.moveSeparator(item, item.get_parent(), before=before)
 
 	def on_move_down_button_clicked(self, button):
-		item_tree = self.tree.get_widget('item_tree')
+		item_tree = self.tree.get_object('item_tree')
 		items, iter = item_tree.get_selection().get_selected()
 		if not iter:
 			return
@@ -599,8 +595,8 @@ class MainWindow:
 		gtk.show_uri(gtk.gdk.screen_get_default(), "ghelp:user-guide#menu-editor", gtk.get_current_event_time())
 
 	def on_revert_button_clicked(self, button):
-		dialog = self.tree.get_widget('revertdialog')
-		dialog.set_transient_for(self.tree.get_widget('mainwindow'))
+		dialog = self.tree.get_object('revertdialog')
+		dialog.set_transient_for(self.tree.get_object('mainwindow'))
 		dialog.show_all()
 		if dialog.run() == gtk.RESPONSE_YES:
 			self.editor.revert()
@@ -608,7 +604,7 @@ class MainWindow:
 
 	def on_close_button_clicked(self, button):
 		try:
-			self.tree.get_widget('mainwindow').hide()
+			self.tree.get_object('mainwindow').hide()
 		except:
 			pass
 		gobject.timeout_add(10, self.quit)

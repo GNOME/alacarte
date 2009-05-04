@@ -2,4 +2,4 @@
 Alacarte/MainWindow.py
 Alacarte/MenuEditor.py
 data/alacarte.desktop.in.in
-data/alacarte.glade
+[type: gettext/glade]data/alacarte.ui

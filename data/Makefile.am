@@ -6,7 +6,7 @@ desktopdir = $(datadir)/applications
 desktop_in_files = alacarte.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
-pkgdata_DATA = alacarte.glade
+pkgdata_DATA = alacarte.ui
 
 CLEANFILES = $(desktop_DATA)
 

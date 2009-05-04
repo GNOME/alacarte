@@ -7,6 +7,8 @@ CLEANFILES=
 bin_SCRIPTS = alacarte
 CLEANFILES += alacarte
 
+DISTCLEANFILES = ChangeLog
+
 alacarte: alacarte.in
 	sed -e s!\@PYTHON\@!@PYTHON@!		\
 	    -e s!\@PYOPTIONS\@!-OOt!		\

@@ -14,6 +14,7 @@ CLEANFILES=
 alacartedocdir = ${prefix}/doc/alacarte
 alacartedoc_DATA = \
 	ChangeLog.pre-git \
+	ChangeLog \
 	README \
 	COPYING \
 	AUTHORS \

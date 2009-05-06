@@ -48,7 +48,9 @@ MAINTAINERCLEANFILES = \
 	$(alacarte_VALASOURCES:.vala=.c) \
 	$(NULL)
 
-CLEANFILES = config.vala
+CLEANFILES = \
+	config.vala \
+	$(NULL)
 
 all-local: config.vala
 

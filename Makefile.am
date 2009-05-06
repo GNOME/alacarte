@@ -6,6 +6,7 @@ SUBDIRS = \
 	data \
 	src \
 	po \
+	vapi \
 	$(NULL)
 
 CLEANFILES=

@@ -14,12 +14,12 @@ alacarte_VALASOURCES = \
 	$(NULL)
 
 alacarte_SOURCES = \
+	alacarte.vala.stamp \
 	$(alacarte_VALASOURCES:.vala=.c) \
-	$(alacarte_VALASOURCES:.vala=.h) \
 	$(NULL)
 
 alacarte.vala.stamp: $(alacarte_VALASOURCES)
-	$(VALAC) -C --pkg gtk+-2.0 --pkg glib-2.0 --pkg gmodule-2.0 --vapidir=$(top_srcdir)/vapi --pkg libxfce4menu-0.1 --basedir $(top_srcdir)/src $^
+	$(VALAC) -C --pkg gtk+-2.0 --pkg glib-2.0 --pkg gmodule-2.0 --vapidir=$(srcdir)/../vapi --pkg libxfce4menu-0.1 $^
 	touch $@
 
 alacarte_LDADD = \
@@ -42,6 +42,10 @@ EXTRA_DIST = \
 	$(alacarte_VALASOURCES) \
 	alacarte.vala.stamp \
 	config.vala.in \
+	$(NULL)
+
+MAINTAINERCLEANFILES = \
+	$(alacarte_VALASOURCES:.vala=.c) \
 	$(NULL)
 
 CLEANFILES = config.vala

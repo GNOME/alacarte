@@ -37,6 +37,7 @@ AC_CONFIG_FILES([Makefile
 	data/alacarte.desktop.in
 	data/icons/Makefile
 	src/Makefile
+	vapi/Makefile
 	po/Makefile.in])
 
 AC_OUTPUT

@@ -1,24 +1,40 @@
-## Process this file with automake to produce Makefile.in
+NULL = 
 
-SUBDIRS = data po Alacarte
+#Build in these directories:
+
+SUBDIRS = \
+	data \
+	src \
+	po \
+	$(NULL)
 
 CLEANFILES=
 
-bin_SCRIPTS = alacarte
-CLEANFILES += alacarte
-
-DISTCLEANFILES = ChangeLog
-
-alacarte: alacarte.in
-	sed -e s!\@PYTHON\@!@PYTHON@!		\
-	    -e s!\@PYOPTIONS\@!-OOt!		\
-	    < $< > $@
-alacarte: Makefile
+alacartedocdir = ${prefix}/doc/alacarte
+alacartedoc_DATA = \
+	ChangeLog.pre-git \
+	README \
+	COPYING \
+	AUTHORS \
+	INSTALL \
+	NEWS \
+	$(NULL)
 
 EXTRA_DIST = \
-	alacarte.in \
+	$(alacartedoc_DATA) \
+	intltool-extract.in \
+	intltool-merge.in \
+	intltool-update.in \
 	MAINTAINERS \
-	ChangeLog.pre-git
+	$(NULL)
+
+DISTCLEANFILES = \
+	intltool-extract \
+	intltool-merge \
+	intltool-update
+	po/.intltool-merge-cache \
+	ChangeLog \
+	$(NULL)
 
 ChangeLog:
 	@echo Creating $@
@@ -35,4 +51,4 @@ ChangeLog:
 	fi
 
 .PHONY: ChangeLog
-	
+

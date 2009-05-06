@@ -1,0 +1,12 @@
+namespace Config
+{
+	public static const string prefix = "@prefix@";
+	public static const string datadir = "@datadir@";
+	public static const string localedir = datadir + "/locale";
+	public static const string pkgdatadir = "@pkgdatadir@";
+	public static const string libdir = "@libdir@";
+	public static const string libexecdir = "@libexecdir@";
+	public static const string PACKAGE = "@PACKAGE@";
+	public static const string VERSION = "@VERSION@";
+}
+

@@ -6,4 +6,7 @@ test -z "$srcdir" && srcdir=.
 
 PKG_NAME="alacarte"
 
+#automake requires ChangeLog to exist
+touch ChangeLog
+
 . gnome-autogen.sh

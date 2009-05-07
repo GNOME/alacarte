@@ -4,9 +4,11 @@ AM_CPPFLAGS = \
 	$(ALACARTE_CFLAGS) \
 	$(NULL)
 
-BUILT_SOURCES = alacarte.vala.stamp
+bin_PROGRAMS = \
+	alacarte \
+	$(NULL)
 
-bin_PROGRAMS = alacarte
+BUILT_SOURCES = alacarte.vala.stamp
 
 alacarte_VALASOURCES = \
 	mainwindow.vala \
@@ -26,18 +28,6 @@ alacarte_LDADD = \
 	$(ALACARTE_LIBS) \
 	$(NULL)
 
-config.vala: config.vala.in
-	sed						\
-		-e s!\@prefix\@!$(prefix)!		\
-		-e s!\@datadir\@!$(datadir)!		\
-		-e s!\@pkgdatadir\@!$(pkgdatadir)!	\
-		-e s!\@libexecdir\@!$(libexecdir)!	\
-		-e s!\@libdir\@!$(libdir)!		\
-		-e s!\@PACKAGE\@!$(PACKAGE)!		\
-		-e s!\@VERSION\@!$(VERSION)!		\
-		< $< > $@
-config.vala: Makefile
-
 EXTRA_DIST = \
 	$(alacarte_VALASOURCES) \
 	alacarte.vala.stamp \
@@ -48,12 +38,18 @@ MAINTAINERCLEANFILES = \
 	$(alacarte_VALASOURCES:.vala=.c) \
 	$(NULL)
 
+config.vala: config.vala.in
+	sed						\
+		-e s!\@prefix\@!$(prefix)!		\
+		-e s!\@datadir\@!$(datadir)!		\
+		-e s!\@pkgdatadir\@!$(pkgdatadir)!	\
+		-e s!\@libexecdir\@!$(libexecdir)!	\
+		-e s!\@libdir\@!$(libdir)!		\
+		-e s!\@PACKAGE\@!$(PACKAGE)!		\
+		-e s!\@VERSION\@!$(VERSION)!		\
+		< $< > $@
+
 CLEANFILES = \
 	config.vala \
-	$(NULL)
-
-all-local: config.vala
-
-DISTCLEANFILES = \
 	$(NULL)
 

@@ -1,5 +1,7 @@
 NULL = 
 
+QUIET_GEN = $(Q:@=@echo ' GEN '$@;)
+
 AM_CPPFLAGS = \
 	$(ALACARTE_CFLAGS) \
 	$(NULL)
@@ -39,7 +41,7 @@ MAINTAINERCLEANFILES = \
 	$(NULL)
 
 config.vala: config.vala.in
-	sed						\
+	$(QUIET_GEN)sed						\
 		-e s!\@prefix\@!$(prefix)!		\
 		-e s!\@datadir\@!$(datadir)!		\
 		-e s!\@pkgdatadir\@!$(pkgdatadir)!	\

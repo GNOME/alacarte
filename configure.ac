@@ -3,6 +3,7 @@ AC_PREREQ(2.59)
 AC_INIT(alacarte, 0.12.2, http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte)
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_HEADERS(config.h)
+AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 no-dist-gzip])
 AM_MAINTAINER_MODE
 
@@ -32,7 +33,11 @@ PKG_CHECK_MODULES(ALACARTE, glib-2.0 >= $GLIB_REQUIRED gobject-2.0 >= $GLIB_REQU
 AC_SUBST(ALACARTE_CFLAGS)
 AC_SUBST(ALACARTE_LIBS)
 
+SHAVE_INIT([.], [enable])
+
 AC_CONFIG_FILES([Makefile
+	shave
+	shave-libtool
 	data/Makefile
 	data/alacarte.desktop.in
 	data/icons/Makefile

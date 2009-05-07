@@ -34,7 +34,7 @@ DISTCLEANFILES = \
 
 dist-hook: gen-ChangeLog
 
-gen_start_date = 2009-02-25
+gen_start_date = 2009-05-04
 .PHONY: gen-ChangeLog
 gen-ChangeLog:
 	if test -d .git; then						\

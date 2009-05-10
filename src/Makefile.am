@@ -23,7 +23,7 @@ alacarte_SOURCES = \
 	$(NULL)
 
 alacarte.vala.stamp: $(alacarte_VALASOURCES)
-	$(VALAC) -C --pkg gtk+-2.0 --pkg glib-2.0 --pkg gmodule-2.0 --vapidir=$(srcdir)/../vapi --pkg libxfce4menu-0.1 $^
+	$(VALAC) -C --pkg gtk+-2.0 --pkg glib-2.0 --pkg gmodule-2.0 --vapidir=$(srcdir)/../vapi --pkg garcon-1 $^
 	touch $@
 
 alacarte_LDADD = \

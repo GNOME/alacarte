@@ -22,16 +22,16 @@
 using GLib;
 using Gtk;
 using Gdk;
-using Xfce;
+using Garcon;
 using Config;
 
 
 public class MainWindow
 {
 	private Builder builder;
-	private Xfce.Menu applications;
+	private Garcon.Menu applications;
 
-	private Gdk.Pixbuf? get_icon (Xfce.MenuElement item)
+	private Gdk.Pixbuf? get_icon (Garcon.MenuElement item)
 	{
 		Gdk.Pixbuf pixbuf = null;
 
@@ -39,9 +39,9 @@ public class MainWindow
 
 		if (icon_name == null)
 		{
-			if (item is Xfce.Menu)
+			if (item is Garcon.Menu)
 				icon_name = "gnome-fs-directory";
-			else if (item is Xfce.MenuItem)
+			else if (item is Garcon.MenuItem)
 				icon_name = "application-default-icon";
 		}
 
@@ -78,7 +78,7 @@ public class MainWindow
 	private void update_icons (Gtk.TreeIter iter)
 	{
 		Gtk.TreeIter child_iter;
-		unowned Xfce.Menu menu;
+		unowned Garcon.Menu menu;
 
 		var tree_store = builder.get_object ("menu_tree_store") as Gtk.TreeStore;
 		tree_store.get (iter, 2, out menu, -1);
@@ -94,19 +94,19 @@ public class MainWindow
 		}
 	}
 
-	private void show_menus (Gtk.TreeIter? parent, List<Xfce.MenuElement>? items)
+	private void show_menus (Gtk.TreeIter? parent, List<Garcon.MenuElement>? items)
 	{
 		Gtk.TreeIter iter;
 		var tree_store = builder.get_object ("menu_tree_store") as Gtk.TreeStore;
 
-		foreach (Xfce.MenuElement item in items)
+		foreach (Garcon.MenuElement item in items)
 		{
 			if (!item.get_show_in_environment ())
 				continue;
 			if (item.get_no_display ())
 				continue;
 
-			if (item is Xfce.Menu)
+			if (item is Garcon.Menu)
 			{
 				var name = GLib.Markup.escape_text (item.get_name ());
 				if (!item.get_visible ())
@@ -117,19 +117,19 @@ public class MainWindow
 				tree_store.set (iter, 1, name, -1);
 				tree_store.set (iter, 2, item);
 
-				show_menus (iter, (item as Xfce.Menu).get_elements ());
+				show_menus (iter, (item as Garcon.Menu).get_elements ());
 			}
 		}
 	}
 
-	private void show_items (Xfce.Menu parent)
+	private void show_items (Garcon.Menu parent)
 	{
 		Gtk.TreeIter iter;
 		var list_store = builder.get_object ("item_tree_store") as Gtk.ListStore;
 		list_store.clear ();
 
-		unowned List<Xfce.MenuElement> items = parent.get_elements ();
-		foreach (Xfce.MenuElement item in items)
+		unowned List<Garcon.MenuElement> items = parent.get_elements ();
+		foreach (Garcon.MenuElement item in items)
 		{
 			if (!item.get_show_in_environment ())
 				continue;
@@ -191,9 +191,9 @@ public class MainWindow
 
 
 		//start adding the menus here
-		applications = new Xfce.Menu.applications ();
+		applications = new Garcon.Menu.applications ();
 		applications.load (null);
-		unowned List<Xfce.MenuElement> items = applications.get_elements ();
+		unowned List<Garcon.MenuElement> items = applications.get_elements ();
 
 		Gtk.TreeIter iter;
 		var tree_store = builder.get_object ("menu_tree_store") as Gtk.TreeStore;
@@ -240,11 +240,6 @@ public class MainWindow
 		{
 			builder = new Builder ();
 			builder.add_from_file (Config.pkgdatadir + "/alacarte.ui");
-			builder.connect_signals_full (connect_signals);
-			var window = builder.get_object ("main_window") as Gtk.Window;
-			window.show_all ();
-			fill_trees ();
-			Gtk.main ();
 		}
 		catch (Error e)
 		{
@@ -253,6 +248,12 @@ public class MainWindow
 										 "Failed to load UI\n%s", e.message);
 			msg.run ();
 		}
+
+		builder.connect_signals_full (connect_signals);
+		var window = builder.get_object ("main_window") as Gtk.Window;
+		window.show_all ();
+		fill_trees ();
+		Gtk.main ();
 	}
 
 	private void toggle_cell_data_toggle_func (Gtk.CellLayout cell_layout,
@@ -260,9 +261,9 @@ public class MainWindow
 												Gtk.TreeModel tree_model,
 												Gtk.TreeIter iter)
 	{
-		unowned Xfce.MenuElement item;
+		unowned Garcon.MenuElement item;
 		tree_model.get (iter, 3, out item, -1);
-		if (item is Xfce.MenuSeparator)
+		if (item is Garcon.MenuSeparator)
 			cell.visible = false;
 		else
 			cell.visible = true;
@@ -333,7 +334,7 @@ public class MainWindow
 	{
 		Gtk.TreeIter iter;
 		weak Gtk.TreeModel model;
-		unowned Xfce.Menu menu;
+		unowned Garcon.Menu menu;
 
 		var selection = tree_view.get_selection ();
 		selection.get_selected (out model, out iter);
@@ -387,12 +388,12 @@ public class MainWindow
 
 static int main (string[] args)
 {
-	libxfce4menu_init ("GNOME");
+	Garcon.init ("GNOME");
 	Gtk.init (ref args);
 
 	var main_window = new MainWindow ();
 	main_window.run ();
-	libxfce4menu_shutdown ();
+	Garcon.shutdown ();
 
 	return 0;
 }

@@ -47,16 +47,6 @@ public class MainWindow
 
 		if (icon_name != null)
 		{
-			// Strip extension if it is not an absolute path
-			if (!GLib.Path.is_absolute (icon_name))
-			{
-				var basename = GLib.Path.get_basename (icon_name);
-				var extension = basename.rchr (-1, '.');
-
-				if (extension != null)
-					icon_name = basename.substring (0, basename.size () - extension.size ());
-			}
-
 			var icon_theme = Gtk.IconTheme.get_default ();
 			try
 			{

@@ -18,6 +18,7 @@ msgstr ""
 "X-Generator: KBabel 1.9.1\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
+"\n"
 
 #: ../Alacarte/MainWindow.py:167
 msgid "Name"

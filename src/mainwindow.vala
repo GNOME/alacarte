@@ -112,8 +112,6 @@ public class MainWindow
 		{
 			if (!item.get_show_in_environment ())
 				continue;
-			if (item.get_no_display ())
-				continue;
 
 			if (item is Garcon.Menu)
 			{
@@ -142,7 +140,7 @@ public class MainWindow
 		{
 			if (!item.get_show_in_environment ())
 				continue;
-			if (item.get_no_display ())
+			if (parent.get_name () == "Other" && item.get_no_display ())
 				continue;
 
 			list_store.append (out iter);

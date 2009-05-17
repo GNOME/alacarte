@@ -33,21 +33,28 @@ public class MainWindow
 
 	private Gdk.Pixbuf? get_icon (Garcon.MenuElement item)
 	{
+		var icon_theme = Gtk.IconTheme.get_default ();
 		Gdk.Pixbuf pixbuf = null;
 
 		var icon_name = item.get_icon_name ();
-
-		if (icon_name == null)
-		{
-			if (item is Garcon.Menu)
-				icon_name = "gnome-fs-directory";
-			else if (item is Garcon.MenuItem)
-				icon_name = "application-default-icon";
-		}
-
 		if (icon_name != null)
 		{
-			var icon_theme = Gtk.IconTheme.get_default ();
+			// Strip extension if it is a common icon extension
+			if (!GLib.Path.is_absolute (icon_name))
+			{
+				if (icon_name.has_suffix (".xpm") ||
+					icon_name.has_suffix (".png") ||
+					icon_name.has_suffix (".jpg") ||
+					icon_name.has_suffix (".gif"))
+				{
+					var basename = GLib.Path.get_basename (icon_name);
+					var extension = basename.rchr (-1, '.');
+
+					if (extension != null)
+						icon_name = basename.substring (0, basename.size () - extension.size ());
+				}
+			}
+
 			try
 			{
 				pixbuf = icon_theme.load_icon (icon_name, 24, Gtk.IconLookupFlags.USE_BUILTIN);
@@ -57,6 +64,18 @@ public class MainWindow
 				if (GLib.Path.is_absolute (icon_name) && GLib.FileUtils.test (icon_name, GLib.FileTest.EXISTS))
 					pixbuf = new Gdk.Pixbuf.from_file_at_scale (icon_name, 24, 24, true);
 			}
+		}
+
+		if (pixbuf == null)
+		{
+			if (item is Garcon.Menu)
+				icon_name = "gnome-fs-directory";
+			else if (item is Garcon.MenuItem)
+				icon_name = "application-default-icon";
+			else
+				return null;
+
+			pixbuf = icon_theme.load_icon (icon_name, 24, Gtk.IconLookupFlags.USE_BUILTIN);
 		}
 
 		if (pixbuf != null)

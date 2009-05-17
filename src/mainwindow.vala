@@ -264,9 +264,9 @@ public class MainWindow
 	}
 
 	private void toggle_cell_data_toggle_func (Gtk.CellLayout cell_layout,
-												Gtk.CellRenderer cell,
-												Gtk.TreeModel tree_model,
-												Gtk.TreeIter iter)
+											   Gtk.CellRenderer cell,
+											   Gtk.TreeModel tree_model,
+											   Gtk.TreeIter iter)
 	{
 		unowned Garcon.MenuElement item;
 		tree_model.get (iter, 3, out item, -1);
@@ -274,6 +274,18 @@ public class MainWindow
 			cell.visible = false;
 		else
 			cell.visible = true;
+
+		if (item is Garcon.Menu)
+		{
+			cell.visible = false;
+			var menu = item as Garcon.Menu;
+			unowned List<Garcon.MenuElement> items = menu.get_elements ();
+			foreach (Garcon.MenuElement child in items)
+			{
+				if (child.get_visible ())
+					cell.visible = true;
+			}
+		}
 	}
 
 	[CCode (instance_pos = -1)]

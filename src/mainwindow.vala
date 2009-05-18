@@ -21,7 +21,6 @@
 
 using GLib;
 using Gtk;
-using Gdk;
 using Garcon;
 using Config;
 
@@ -31,59 +30,6 @@ public class MainWindow
 	private Builder builder;
 	private Garcon.Menu applications;
 
-	private Gdk.Pixbuf? get_icon (Garcon.MenuElement item)
-	{
-		var icon_theme = Gtk.IconTheme.get_default ();
-		Gdk.Pixbuf pixbuf = null;
-
-		var icon_name = item.get_icon_name ();
-		if (icon_name != null)
-		{
-			// Strip extension if it is a common icon extension
-			if (!GLib.Path.is_absolute (icon_name))
-			{
-				if (icon_name.has_suffix (".xpm") ||
-					icon_name.has_suffix (".png") ||
-					icon_name.has_suffix (".jpg") ||
-					icon_name.has_suffix (".gif"))
-				{
-					var basename = GLib.Path.get_basename (icon_name);
-					var extension = basename.rchr (-1, '.');
-
-					if (extension != null)
-						icon_name = basename.substring (0, basename.size () - extension.size ());
-				}
-			}
-
-			try
-			{
-				pixbuf = icon_theme.load_icon (icon_name, 24, Gtk.IconLookupFlags.USE_BUILTIN);
-			}
-			catch (Error e)
-			{
-				if (GLib.Path.is_absolute (icon_name) && GLib.FileUtils.test (icon_name, GLib.FileTest.EXISTS))
-					pixbuf = new Gdk.Pixbuf.from_file_at_scale (icon_name, 24, 24, true);
-			}
-		}
-
-		if (pixbuf == null)
-		{
-			if (item is Garcon.Menu)
-				icon_name = "gnome-fs-directory";
-			else if (item is Garcon.MenuItem)
-				icon_name = "application-default-icon";
-			else
-				return null;
-
-			pixbuf = icon_theme.load_icon (icon_name, 24, Gtk.IconLookupFlags.USE_BUILTIN);
-		}
-
-		if (pixbuf != null)
-			pixbuf = pixbuf.scale_simple (24, 24, Gdk.InterpType.BILINEAR);
-
-		return pixbuf;
-	}
-
 	private void update_icons (Gtk.TreeIter iter)
 	{
 		Gtk.TreeIter child_iter;
@@ -91,7 +37,7 @@ public class MainWindow
 
 		var tree_store = builder.get_object ("menu_tree_store") as Gtk.TreeStore;
 		tree_store.get (iter, 2, out menu, -1);
-		tree_store.set (iter, 0, get_icon (menu), -1);
+		tree_store.set (iter, 0, Util.get_icon (menu), -1);
 
 		if (tree_store.iter_has_child (iter))
 		{
@@ -120,7 +66,7 @@ public class MainWindow
 					name = "<small><i>" + name + "</i></small>";
 
 				tree_store.append (out iter, parent);
-				tree_store.set (iter, 0, get_icon (item), -1);
+				tree_store.set (iter, 0, Util.get_icon (item), -1);
 				tree_store.set (iter, 1, name, -1);
 				tree_store.set (iter, 2, item);
 
@@ -154,7 +100,7 @@ public class MainWindow
 				name = "<small><i>" + name + "</i></small>";
 
 			list_store.set (iter, 0, item.get_visible (), -1);
-			list_store.set (iter, 1, get_icon (item), -1);
+			list_store.set (iter, 1, Util.get_icon (item), -1);
 			list_store.set (iter, 2, name, -1);
 			list_store.set (iter, 3, item);
 		}
@@ -205,7 +151,7 @@ public class MainWindow
 		Gtk.TreeIter iter;
 		var tree_store = builder.get_object ("menu_tree_store") as Gtk.TreeStore;
 		tree_store.append (out iter, null);
-		tree_store.set (iter, 0, get_icon (applications), -1);
+		tree_store.set (iter, 0, Util.get_icon (applications), -1);
 		tree_store.set (iter, 1, GLib.Markup.escape_text (applications.get_name ()), -1);
 		tree_store.set (iter, 2, applications);
 
@@ -364,7 +310,7 @@ public class MainWindow
 
 
 	//start of item tree signal handlers
-	public bool do_popup_menu (Gtk.Widget widget, Gdk.EventButton? event)
+	private bool do_popup_menu (Gtk.Widget widget, Gdk.EventButton? event)
 	{
 		uint button;
 		uint event_time;
@@ -402,6 +348,23 @@ public class MainWindow
 	public bool on_item_tree_button_press_event (Gtk.Widget widget, Gdk.EventButton event)
 	{
 		return do_popup_menu (widget, event);
+	}
+
+	[CCode (instance_pos = -1)]
+	public void on_item_tree_row_activated (Gtk.TreeView tree_view,
+											Gtk.TreePath path,
+											Gtk.TreeViewColumn column)
+	{
+		Gtk.TreeIter iter;
+		weak Gtk.TreeModel model;
+		unowned Garcon.MenuElement element;
+
+		var selection = tree_view.get_selection ();
+		selection.get_selected (out model, out iter);
+
+		model.get (iter, 3, out element, -1);
+		var item_editor = new ElementEditor (element);
+		item_editor.run ();
 	}
 }
 

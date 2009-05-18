@@ -117,8 +117,12 @@ src/alacarte.vala.stamp
 src/config.c
 src/config.o
 src/config.vala
+src/elementeditor.c
+src/elementeditor.o
 src/mainwindow.c
 src/mainwindow.o
+src/util.c
+src/util.o
 stamp-h1
 ChangeLog
 m4/intltool.m4

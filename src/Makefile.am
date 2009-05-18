@@ -14,6 +14,8 @@ BUILT_SOURCES = alacarte.vala.stamp
 
 alacarte_VALASOURCES = \
 	mainwindow.vala \
+	elementeditor.vala \
+	util.vala \
 	config.vala \
 	$(NULL)
 

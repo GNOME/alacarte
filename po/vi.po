@@ -1,7 +1,7 @@
 # Vietnamese translation for À la Carte.
 # Copyright © 2007 Gnome i18n Project for Vietnamese.
 # Clytie Siddall <clytie@riverland.net.au>, 2006-2007.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte HEAD\n"
@@ -28,55 +28,55 @@ msgstr "Hiện"
 msgid "Item"
 msgstr "Mục"
 
-#: ../alacarte.desktop.in.in.h:1
+#: ../data/alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
 msgstr "Thay đổi những ứng dụng hiển thị trong trình đơn chính"
 
-#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.glade.h:2
 msgid "Main Menu"
 msgstr "Trình đơn chính"
 
-#: ../alacarte.glade.h:1
+#: ../data/alacarte.glade.h:1
 msgid "It_ems:"
 msgstr "_Mục:"
 
-#: ../alacarte.glade.h:3
+#: ../data/alacarte.glade.h:3
 msgid "Move Down"
 msgstr "Đem xuống"
 
-#: ../alacarte.glade.h:4
+#: ../data/alacarte.glade.h:4
 msgid "Move Up"
 msgstr "Đem lên"
 
-#: ../alacarte.glade.h:5
+#: ../data/alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "Mục mớ_i"
 
-#: ../alacarte.glade.h:6
+#: ../data/alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "Thanh _ngăn cách mới"
 
-#: ../alacarte.glade.h:7
+#: ../data/alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "Phục hồi bố cục trình đơn mặc định"
 
-#: ../alacarte.glade.h:8
+#: ../data/alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "Bỏ qua các thay đổi?"
 
-#: ../alacarte.glade.h:9
+#: ../data/alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "Hoàn nguyên thiết lập ban đầu của mọi trình đơn?"
 
-#: ../alacarte.glade.h:10
+#: ../data/alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_Trình đơn:"
 
-#: ../alacarte.glade.h:11
+#: ../data/alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "Trình đơn mớ_i"
 
-#: ../alacarte.glade.h:12
+#: ../data/alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "H_oàn nguyên"
 

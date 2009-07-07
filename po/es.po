@@ -5,13 +5,14 @@
 #
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2006.
 # Jorge González <jorge.gonzalez.gonzalez@hispalinux.es>, 2007.
-# Jorge González <jorgegonz@svn.gnome.org>, 2008.
+# Jorge González <jorgegonz@svn.gnome.org>, 200, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte.HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-20 10:24+0000\n"
-"PO-Revision-Date: 2008-02-29 15:50+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=alacarte&component=general\n"
+"POT-Creation-Date: 2009-05-04 13:54+0000\n"
+"PO-Revision-Date: 2009-07-07 20:34+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,55 +33,54 @@ msgstr "Mostrar"
 msgid "Item"
 msgstr "Elemento"
 
-#: ../alacarte.desktop.in.in.h:1
+#: ../data/alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
 msgstr "Cambie las aplicaciones que se muestran en el menú principal"
 
-#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.glade.h:2
 msgid "Main Menu"
 msgstr "Menú principal"
 
-#: ../alacarte.glade.h:1
+#: ../data/alacarte.glade.h:1
 msgid "It_ems:"
 msgstr "_Elementos:"
 
-#: ../alacarte.glade.h:3
+#: ../data/alacarte.glade.h:3
 msgid "Move Down"
 msgstr "Bajar"
 
-#: ../alacarte.glade.h:4
+#: ../data/alacarte.glade.h:4
 msgid "Move Up"
 msgstr "Subir"
 
-#: ../alacarte.glade.h:5
+#: ../data/alacarte.glade.h:5
 msgid "Ne_w Item"
-msgstr "Elemento _nuevo"
+msgstr "Ele_mento nuevo"
 
-#: ../alacarte.glade.h:6
+#: ../data/alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "_Separador nuevo"
 
-#: ../alacarte.glade.h:7
+#: ../data/alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "Restaurar la distribución de menú predeterminada"
 
-#: ../alacarte.glade.h:8
+#: ../data/alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "¿Revertir los cambios?"
 
-#: ../alacarte.glade.h:9
+#: ../data/alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "¿Revertir todos los menús a la configuración original?"
 
-#: ../alacarte.glade.h:10
+#: ../data/alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_Menús:"
 
-#: ../alacarte.glade.h:11
+#: ../data/alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "Menú _nuevo"
 
-#: ../alacarte.glade.h:12
+#: ../data/alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "_Revertir al original"
-

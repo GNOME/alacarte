@@ -39,6 +39,8 @@ class MenuEditor:
 		self.applications = Menu()
 		self.applications.tree = gmenu.lookup_tree('applications.menu', gmenu.FLAGS_SHOW_EMPTY|gmenu.FLAGS_INCLUDE_EXCLUDED|gmenu.FLAGS_INCLUDE_NODISPLAY|gmenu.FLAGS_SHOW_ALL_SEPARATORS)
 		self.applications.visible_tree = gmenu.lookup_tree('applications.menu')
+		self.applications.tree.sort_key = gmenu.SORT_DISPLAY_NAME
+		self.applications.visible_tree.sort_key = gmenu.SORT_DISPLAY_NAME
 		self.applications.path = os.path.join(util.getUserMenuPath(), self.applications.tree.get_menu_file())
 		if not os.path.isfile(self.applications.path):
 			self.applications.dom = xml.dom.minidom.parseString(util.getUserMenuXml(self.applications.tree))
@@ -49,6 +51,8 @@ class MenuEditor:
 		self.settings = Menu() 	 
 		self.settings.tree = gmenu.lookup_tree('settings.menu', gmenu.FLAGS_SHOW_EMPTY|gmenu.FLAGS_INCLUDE_EXCLUDED|gmenu.FLAGS_INCLUDE_NODISPLAY|gmenu.FLAGS_SHOW_ALL_SEPARATORS)
 		self.settings.visible_tree = gmenu.lookup_tree('settings.menu') 	 
+		self.settings.tree.sort_key = gmenu.SORT_DISPLAY_NAME
+		self.settings.visible_tree.sort_key = gmenu.SORT_DISPLAY_NAME
 		self.settings.path = os.path.join(util.getUserMenuPath(), self.settings.tree.get_menu_file()) 	 
 		if not os.path.isfile(self.settings.path): 	 
 			self.settings.dom = xml.dom.minidom.parseString(util.getUserMenuXml(self.settings.tree)) 	 
@@ -250,7 +254,7 @@ class MenuEditor:
 
 	def editItem(self, item, icon, name, comment, command, use_term, parent=None, final=True):
 		#if nothing changed don't make a user copy
-		if icon == item.get_icon() and name == item.get_name() and comment == item.get_comment() and command == item.get_exec() and use_term == item.get_launch_in_terminal():
+		if icon == item.get_icon() and name == item.get_display_name() and comment == item.get_comment() and command == item.get_exec() and use_term == item.get_launch_in_terminal():
 			return
 		#hack, item.get_parent() seems to fail a lot
 		if not parent:

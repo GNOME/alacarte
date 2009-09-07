@@ -243,6 +243,12 @@ class MainWindow:
 			if item.get_type() == gmenu.TYPE_SEPARATOR:
 				name = '---'
 				icon = None
+			elif item.get_type() == gmenu.TYPE_ENTRY:
+				if show:
+					name = cgi.escape(item.get_display_name())
+				else:
+					name = '<small><i>' + cgi.escape(item.get_display_name()) + '</i></small>'
+				icon = util.getIcon(item)
 			else:
 				if show:
 					name = cgi.escape(item.get_name())

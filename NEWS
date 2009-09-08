@@ -1,4 +1,11 @@
 ==============
+Version 0.12.3
+==============
+
+Misc
+	* Set the translation domain to GtkBuilder
+
+==============
 Version 0.12.2
 ==============
 

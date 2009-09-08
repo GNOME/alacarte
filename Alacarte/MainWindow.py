@@ -23,8 +23,8 @@ import subprocess
 import urllib
 try:
 	from Alacarte import config
-	gettext.bindtextdomain('alacarte',config.localedir)
-	gettext.textdomain('alacarte')
+	gettext.bindtextdomain(GETTEXT_PACKAGE,config.localedir)
+	gettext.textdomain(GETTEXT_PACKAGE)
 except:
 	pass
 _ = gettext.gettext
@@ -48,7 +48,8 @@ class MainWindow:
 		self.editor = MenuEditor()
 		gtk.window_set_default_icon_name('alacarte')
 		self.tree = gtk.Builder()
-                self.tree.add_from_file(os.path.join(self.file_path, 'alacarte.ui'))
+		self.tree.set_translation_domain(config.GETTEXT_PACKAGE)
+		self.tree.add_from_file(os.path.join(self.file_path, 'alacarte.ui'))
 		self.tree.connect_signals(self)
 		self.setupMenuTree()
 		self.setupItemTree()

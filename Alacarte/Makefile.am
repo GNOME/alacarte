@@ -13,6 +13,7 @@ config.py: config.py.in
 		-e s!\@libdir\@!$(libdir)!		\
 		-e s!\@PACKAGE\@!$(PACKAGE)!		\
 		-e s!\@VERSION\@!$(VERSION)!		\
+		-e s!\@GETTEXT_PACKAGE\@!$(GETTEXT_PACKAGE)!	\
 		< $< > $@
 config.py: Makefile
 

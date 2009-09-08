@@ -1,4 +1,23 @@
 ==============
+Version 0.12.2
+==============
+
+Misc
+	* Use the display name from X-GNOME-FullName when
+	  possible (Vincent Untz)
+
+Translations
+
+	- Updated bn Translation (Jamil Ahmed)
+	- Updated br Translation (Denis Arnaud)
+	- Updated ca@valencia Translation (Carles Ferrando)
+	- Updated cy Translation (Iestyn Pryce)
+	- Updated es Translation (Jorge González)
+	- Updated nds Translation (Andre Klapper)
+	- Updated sv Translation (Daniel Nylander)
+	- Updated vi Translation (Bùi Xuân Dương)
+
+==============
 Version 0.12.1
 ==============
 

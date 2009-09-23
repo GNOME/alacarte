@@ -23,8 +23,8 @@ import subprocess
 import urllib
 try:
 	from Alacarte import config
-	gettext.bindtextdomain(GETTEXT_PACKAGE,config.localedir)
-	gettext.textdomain(GETTEXT_PACKAGE)
+	gettext.bindtextdomain(config.GETTEXT_PACKAGE,config.localedir)
+	gettext.textdomain(config.GETTEXT_PACKAGE)
 except:
 	pass
 _ = gettext.gettext

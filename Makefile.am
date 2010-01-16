@@ -10,8 +10,8 @@ CLEANFILES += alacarte
 DISTCLEANFILES = ChangeLog
 
 alacarte: alacarte.in
-	sed -e s!\@PYTHON\@!@PYTHON@!		\
-	    -e s!\@PYOPTIONS\@!-OOt!		\
+	$(AM_V_GEN)sed -e s!\@PYTHON\@!@PYTHON@!	\
+	    -e s!\@PYOPTIONS\@!-OOt!			\
 	    < $< > $@
 alacarte: Makefile
 

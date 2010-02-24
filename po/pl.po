@@ -4,137 +4,82 @@
 # pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
 # gnomepl@aviary.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# translation of alacarte to Polish
-# Copyright (C) 2008 Aviary.pl
-# This file is distributed under the same license as the alacarte package.
-#
-# Artur Flinta <aflinta@at.kernel.pl>, 2006.
-# Tomasz Dominikowski <tdominikowski@aviary.pl>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-25 18:34+0200\n"
-"PO-Revision-Date: 2008-08-25 18:31+0100\n"
-"Last-Translator: Tomasz Dominikowski <dominikowski@gmail.com>\n"
-"Language-Team: Aviary.pl <gnomepl@aviary.pl>\n"
+"POT-Creation-Date: 2010-02-24 23:19+0100\n"
+"PO-Revision-Date: 2010-02-24 22:36+0100\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
+"Language-Team: Polish <gnomepl@aviary.pl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: Poland\n"
 
-#: ../Alacarte/MainWindow.py:168
+#: ../Alacarte/MainWindow.py:164
 msgid "Name"
 msgstr "Nazwa"
 
-#: ../Alacarte/MainWindow.py:184
+#: ../Alacarte/MainWindow.py:180
 msgid "Show"
 msgstr "Wyświetlanie"
 
-#: ../Alacarte/MainWindow.py:192
+#: ../Alacarte/MainWindow.py:188
 msgid "Item"
 msgstr "Element"
 
-#: ../alacarte.desktop.in.in.h:1
+#: ../data/alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
-msgstr "Zmienia widoczność programów w menu głównym"
+msgstr "Zmiana widoczności programów w menu głównym"
 
-#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.ui.h:2
 msgid "Main Menu"
 msgstr "Menu główne"
 
-#: ../alacarte.glade.h:1
+#: ../data/alacarte.ui.h:1
 msgid "It_ems:"
 msgstr "_Elementy:"
 
-#: ../alacarte.glade.h:3
+#: ../data/alacarte.ui.h:3
 msgid "Move Down"
 msgstr "Przenieś w dół"
 
-#: ../alacarte.glade.h:4
+#: ../data/alacarte.ui.h:4
 msgid "Move Up"
 msgstr "Przenieś w górę"
 
-#: ../alacarte.glade.h:5
+#: ../data/alacarte.ui.h:5
 msgid "Ne_w Item"
 msgstr "No_wy element"
 
-#: ../alacarte.glade.h:6
+#: ../data/alacarte.ui.h:6
 msgid "New _Separator"
 msgstr "Nowy _separator"
 
-#: ../alacarte.glade.h:7
+#: ../data/alacarte.ui.h:7
 msgid "Restore the default menu layout"
 msgstr "Przywraca domyślny układ menu"
 
-#: ../alacarte.glade.h:8
+#: ../data/alacarte.ui.h:8
 msgid "Revert Changes?"
 msgstr "Cofnąć zmiany?"
 
-#: ../alacarte.glade.h:9
+#: ../data/alacarte.ui.h:9
 msgid "Revert all menus to original settings?"
 msgstr "Cofnąć zmiany wszystkich menu do oryginalnych ustawień?"
 
-#: ../alacarte.glade.h:10
+#: ../data/alacarte.ui.h:10
 msgid "_Menus:"
 msgstr "Men_u:"
 
-#: ../alacarte.glade.h:11
+#: ../data/alacarte.ui.h:11
 msgid "_New Menu"
 msgstr "_Nowe menu"
 
-#: ../alacarte.glade.h:12
+#: ../data/alacarte.ui.h:12
 msgid "_Revert to Original"
 msgstr "_Przywróć oryginalne"
-
-#~ msgid "A name is required."
-#~ msgstr "Nazwa jest wymagana."
-
-#~ msgid "A command is required."
-#~ msgstr "Polecenie jest wymagane."
-
-#~ msgid "Add, change, remove menu entries"
-#~ msgstr "Dodaje, zmienia, usuwa elementy menu"
-
-#~ msgid "Menu Layout"
-#~ msgstr "Układ menu"
-
-#~ msgid "Alacarte Menu Editor"
-#~ msgstr "Alacarte - edytor menu"
-
-#~ msgid "Browse..."
-#~ msgstr "Przeglądaj..."
-
-#~ msgid "Command:"
-#~ msgstr "Polecenie:"
-
-#~ msgid "Comment:"
-#~ msgstr "Komentarz:"
-
-#~ msgid "Copyright © 2006 Travis Watkins"
-#~ msgstr "Copyright © 2006 Travis Watkins"
-
-#~ msgid "Icon:"
-#~ msgstr "Ikona:"
-
-#~ msgid "Menu Item Properties"
-#~ msgstr "Właściwości elementu menu"
-
-#~ msgid "Menu Properties"
-#~ msgstr "Właściwości menu"
-
-#~ msgid "Name:"
-#~ msgstr "Nazwa:"
-
-#~ msgid "Run command in a terminal"
-#~ msgstr "Uruchomienie polecenia w terminalu"
-
-#~ msgid "Simple fd.o compliant menu editor"
-#~ msgstr "Prosty edytor menu zgodny z fd.o"
-
-#~ msgid "translator-credits"
-#~ msgstr "GNOME PL Team <translators@gnomepl.org>"

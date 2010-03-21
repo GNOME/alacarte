@@ -6,137 +6,129 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mn\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-14 23:00+0200\n"
-"PO-Revision-Date: 2006-08-14 23:08+0200\n"
-"Last-Translator: Badral <badral@openmn.org>\n"
+"Report-Msgid-Bugs-To: "
+"http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte&component=general\n"
+"POT-Creation-Date: 2009-04-22 22:36+0000\n"
+"PO-Revision-Date: 2010-03-21 10:57+0200\n"
+"Last-Translator: ntsetsbold <ntsetsbold@gmail.com>\n"
 "Language-Team: Mongolian <openmn-translation@lists.sourceforge.net>\n"
+"Language: mn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.3\n"
 
-#: ../Alacarte/MainWindow.py:161
+#: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Нэр"
 
-#: ../Alacarte/MainWindow.py:177
+#: ../Alacarte/MainWindow.py:183
 msgid "Show"
-msgstr "Харуул"
+msgstr "Харуулах"
 
-#: ../Alacarte/MainWindow.py:185
+#: ../Alacarte/MainWindow.py:191
 msgid "Item"
 msgstr "Элемент"
 
-#: ../Alacarte/DialogHandler.py:145 ../Alacarte/DialogHandler.py:182
-#: ../Alacarte/DialogHandler.py:337 ../Alacarte/DialogHandler.py:368
-msgid "A name is required."
-msgstr "Нэр шаардлагатай."
+#: ../data/alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "Үндсэн цэсэнд ямар програмууд харагдахыг өөрчлөх"
 
-#: ../Alacarte/DialogHandler.py:148 ../Alacarte/DialogHandler.py:185
-msgid "A command is required."
-msgstr "Тушаал шаардлагатай."
+#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.glade.h:2
+msgid "Main Menu"
+msgstr "Үндсэн цэс"
 
-#: ../alacarte.desktop.in.h:1
-msgid "Add, change, remove menu entries"
-msgstr "Цэсийн элемент нэмэх устгах өөрчилөх"
-
-#: ../alacarte.desktop.in.h:2 ../alacarte.glade.h:9
-msgid "Menu Layout"
-msgstr "Цэсийн загвар"
-
-#: ../alacarte.glade.h:1
-msgid "Alacarte Menu Editor"
-msgstr "Alacarte цэс боловсруулагч"
-
-#: ../alacarte.glade.h:2
-msgid "Browse..."
-msgstr "Нэгжих..."
-
-#: ../alacarte.glade.h:3
-msgid "Command:"
-msgstr "Тушаал:"
-
-#: ../alacarte.glade.h:4
-msgid "Comment:"
-msgstr "Сэтгэгдэл:"
-
-#: ../alacarte.glade.h:5
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "Зохиогчийн эрх © 2006 Travis Watkins"
-
-#: ../alacarte.glade.h:6
-msgid "Icon:"
-msgstr "Эмблем:"
-
-#: ../alacarte.glade.h:7
+#: ../data/alacarte.glade.h:1
 msgid "It_ems:"
-msgstr "_Элементүүд:"
+msgstr "Элементүүд:"
 
-#: ../alacarte.glade.h:8
-msgid "Menu Item Properties"
-msgstr "Цэсийн элементийн тодруулга"
-
-#: ../alacarte.glade.h:10
-msgid "Menu Properties"
-msgstr "Цэсийн тодруулга"
-
-#: ../alacarte.glade.h:11
+#: ../data/alacarte.glade.h:3
 msgid "Move Down"
 msgstr "Доош"
 
-#: ../alacarte.glade.h:12
+#: ../data/alacarte.glade.h:4
 msgid "Move Up"
 msgstr "Дээш"
 
-#: ../alacarte.glade.h:13
-msgid "Name:"
-msgstr "Нэр:"
-
-#: ../alacarte.glade.h:14
+#: ../data/alacarte.glade.h:5
 msgid "Ne_w Item"
 msgstr "_Шинэ элемент"
 
-#: ../alacarte.glade.h:15
+#: ../data/alacarte.glade.h:6
 msgid "New _Separator"
 msgstr "Шинэ _тусгаарлагч"
 
-#: ../alacarte.glade.h:16
+#: ../data/alacarte.glade.h:7
 msgid "Restore the default menu layout"
 msgstr "Цэсийн стандарт загварыг сэргээх"
 
-#: ../alacarte.glade.h:17
+#: ../data/alacarte.glade.h:8
 msgid "Revert Changes?"
 msgstr "Өөрчилөлтүүдийг буцаах уу?"
 
-#: ../alacarte.glade.h:18
+#: ../data/alacarte.glade.h:9
 msgid "Revert all menus to original settings?"
 msgstr "Бүх цэсийн оргинал тохиргоо руу нь буцаах уу?"
 
-#: ../alacarte.glade.h:19
-msgid "Run command in a terminal"
-msgstr "Тушаалыг терминалд ажиллуулах"
-
-#: ../alacarte.glade.h:20
-msgid "Simple fd.o compliant menu editor"
-msgstr "Энгийн fd.o тохирох цэсийн боловсруулагч"
-
-#: ../alacarte.glade.h:21
+#: ../data/alacarte.glade.h:10
 msgid "_Menus:"
 msgstr "_Цэсүүд:"
 
-#: ../alacarte.glade.h:22
+#: ../data/alacarte.glade.h:11
 msgid "_New Menu"
 msgstr "_Шинэ цэс"
 
-#: ../alacarte.glade.h:23
+#: ../data/alacarte.glade.h:12
 msgid "_Revert to Original"
 msgstr "Оргинал руу нь _буцаах"
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../alacarte.glade.h:25
-msgid "translator-credits"
-msgstr ""
-"Санлигийн Бадрал <badral@openmn.org>\n"
-"Орчуулга хийх хүсэлтэй хүмүүс дээрх хаягаар имэйл бичээрэй."
+#~ msgid "A name is required."
+#~ msgstr "Нэр шаардлагатай."
 
+#~ msgid "A command is required."
+#~ msgstr "Тушаал шаардлагатай."
+
+#~ msgid "Add, change, remove menu entries"
+#~ msgstr "Цэсийн элемент нэмэх устгах өөрчилөх"
+
+#~ msgid "Menu Layout"
+#~ msgstr "Цэсийн загвар"
+
+#~ msgid "Alacarte Menu Editor"
+#~ msgstr "Alacarte цэс боловсруулагч"
+
+#~ msgid "Browse..."
+#~ msgstr "Нэгжих..."
+
+#~ msgid "Command:"
+#~ msgstr "Тушаал:"
+
+#~ msgid "Comment:"
+#~ msgstr "Сэтгэгдэл:"
+
+#~ msgid "Copyright © 2006 Travis Watkins"
+#~ msgstr "Зохиогчийн эрх © 2006 Travis Watkins"
+
+#~ msgid "Icon:"
+#~ msgstr "Эмблем:"
+
+#~ msgid "Menu Item Properties"
+#~ msgstr "Цэсийн элементийн тодруулга"
+
+#~ msgid "Menu Properties"
+#~ msgstr "Цэсийн тодруулга"
+
+#~ msgid "Name:"
+#~ msgstr "Нэр:"
+
+#~ msgid "Run command in a terminal"
+#~ msgstr "Тушаалыг терминалд ажиллуулах"
+
+#~ msgid "Simple fd.o compliant menu editor"
+#~ msgstr "Энгийн fd.o тохирох цэсийн боловсруулагч"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Санлигийн Бадрал <badral@openmn.org>\n"
+#~ "Орчуулга хийх хүсэлтэй хүмүүс дээрх хаягаар имэйл бичээрэй."

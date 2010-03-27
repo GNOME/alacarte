@@ -3,29 +3,30 @@
 # This file is distributed under the same license as the alacarte package.
 # Khandakar Mujahidul Islam <suzan@bengalinux.org>, 2006.
 # Maruf Ovee <maruf@ankur.org.bd>, 2009.
+# Sadia Afroz <sadia@ankur.org.bd>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: alacarte\n"
+"Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=alacarte&component=general\n"
-"POT-Creation-Date: 2009-07-07 18:47+0000\n"
-"PO-Revision-Date: 2009-07-22 20:02+0700\n"
-"Last-Translator: Maruf Ovee <maruf@ankur.org.bd>\n"
+"POT-Creation-Date: 2009-12-14 15:28+0000\n"
+"PO-Revision-Date: 2010-03-09 12:15+0600\n"
+"Last-Translator: Sadia Afroz <sadia@ankur.org.bd>\n"
 "Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:163
+#: ../Alacarte/MainWindow.py:164
 msgid "Name"
 msgstr "নাম"
 
-#: ../Alacarte/MainWindow.py:179
+#: ../Alacarte/MainWindow.py:180
 msgid "Show"
-msgstr "দেখান"
+msgstr "প্রদর্শন"
 
-#: ../Alacarte/MainWindow.py:187
+#: ../Alacarte/MainWindow.py:188
 msgid "Item"
 msgstr "আইটেম"
 
@@ -59,7 +60,7 @@ msgstr "নতুন বিভাজক (_S)"
 
 #: ../data/alacarte.ui.h:7
 msgid "Restore the default menu layout"
-msgstr "ডিফল্ট মেনু বহির্বিন্যাস ফিরিয়ে আনুন"
+msgstr "পূর্বনির্ধারিত মেনু বহির্বিন্যাস পুনরুদ্ধার করুন"
 
 #: ../data/alacarte.ui.h:8
 msgid "Revert Changes?"
@@ -67,7 +68,7 @@ msgstr "পরিবর্তনগুলো কি বাদ দিতে চ�
 
 #: ../data/alacarte.ui.h:9
 msgid "Revert all menus to original settings?"
-msgstr "সকল মেনু কি আসল সেটিংসে ফিরিয়ে আনা হবে?"
+msgstr "সকল মেনু কি আদি সেটিংসে ফিরিয়ে আনা হবে?"
 
 #: ../data/alacarte.ui.h:10
 msgid "_Menus:"
@@ -79,7 +80,7 @@ msgstr "নতুন মেনু (_N)"
 
 #: ../data/alacarte.ui.h:12
 msgid "_Revert to Original"
-msgstr "আসল অবস্থায় ফিরে যান (_R)"
+msgstr "আদি অবস্থায় ফিরে যান (_R)"
 
 #~ msgid "A name is required."
 #~ msgstr "একটি নাম প্রয়োজন।"

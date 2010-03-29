@@ -1,4 +1,21 @@
 ==============
+Version 0.13.1
+==============
+Bugs fixed:
+	- Fixed #596098, i18n initialization problem (Gabor Kelemen)
+
+Translations:
+	- Updated bn Translation (Jamil Ahmed)
+	- Updated en@shaw Translation (Thomas Thurman)
+	- Updated gl Translation (Fran Diéguez)
+	- Updated ko Translation (Changwoo Ryu)
+	- Updated mn Translation (Badral Sanligiin)
+	- Updated ms Translation (Umarzuki bin Mochlis Moktar)
+	- Updated pl Translation (Piotr Drąg)
+	- Updated ro Translation (Adi Roiban)
+	- Updated ug Translation (Gheyret Kenji)
+
+==============
 Version 0.12.4
 ==============
 

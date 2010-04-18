@@ -14,7 +14,7 @@
   <maintainer>
     <foaf:Person>
       <foaf:name>Travis Watkins</foaf:name>
-      <foaf:mbox rdf:resource="amaranth@ubuntu.com" />
+      <foaf:mbox rdf:resource="mailto:amaranth@ubuntu.com" />
       <gnome:userid>twatkins</gnome:userid>
     </foaf:Person>
   </maintainer>

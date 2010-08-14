@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-12 23:00+0200\n"
+"POT-Creation-Date: 2010-08-15 02:17+0400\n"
 "PO-Revision-Date: 2007-03-11 13:52+0200\n"
 "Last-Translator: Volkan Güney <guneyvolkan@gmail.com>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
@@ -20,66 +20,66 @@ msgstr ""
 "Plural-Forms:  nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../Alacarte/MainWindow.py:167
+#: ../Alacarte/MainWindow.py:164
 msgid "Name"
-msgstr "İsim"
+msgstr "Ad"
 
-#: ../Alacarte/MainWindow.py:183
+#: ../Alacarte/MainWindow.py:180
 msgid "Show"
 msgstr "Göster"
 
-#: ../Alacarte/MainWindow.py:191
+#: ../Alacarte/MainWindow.py:188
 msgid "Item"
 msgstr "Öğe"
 
-#: ../alacarte.desktop.in.in.h:1
+#: ../data/alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
 msgstr "Ana menüde gösterilecek uygulamaları değiştir"
 
-#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.ui.h:2
 msgid "Main Menu"
 msgstr "Ana Menü"
 
-#: ../alacarte.glade.h:1
+#: ../data/alacarte.ui.h:1
 msgid "It_ems:"
 msgstr "Öğ_eler:"
 
-#: ../alacarte.glade.h:3
+#: ../data/alacarte.ui.h:3
 msgid "Move Down"
 msgstr "Aşağı Taşı"
 
-#: ../alacarte.glade.h:4
+#: ../data/alacarte.ui.h:4
 msgid "Move Up"
 msgstr "Yukarı Taşı"
 
-#: ../alacarte.glade.h:5
+#: ../data/alacarte.ui.h:5
 msgid "Ne_w Item"
 msgstr "_Yeni Öğe"
 
-#: ../alacarte.glade.h:6
+#: ../data/alacarte.ui.h:6
 msgid "New _Separator"
 msgstr "_Yeni Ayıraç"
 
-#: ../alacarte.glade.h:7
+#: ../data/alacarte.ui.h:7
 msgid "Restore the default menu layout"
 msgstr "Öntanımlı menü düzenini geri yükle"
 
-#: ../alacarte.glade.h:8
+#: ../data/alacarte.ui.h:8
 msgid "Revert Changes?"
 msgstr "Değişiklikler Geri Alınsın mı?"
 
-#: ../alacarte.glade.h:9
+#: ../data/alacarte.ui.h:9
 msgid "Revert all menus to original settings?"
 msgstr "Bütün menüler ilk ayarlara döndürsün mü?"
 
-#: ../alacarte.glade.h:10
+#: ../data/alacarte.ui.h:10
 msgid "_Menus:"
 msgstr "_Menüler:"
 
-#: ../alacarte.glade.h:11
+#: ../data/alacarte.ui.h:11
 msgid "_New Menu"
 msgstr "_Yeni Menü"
 
-#: ../alacarte.glade.h:12
+#: ../data/alacarte.ui.h:12
 msgid "_Revert to Original"
-msgstr "Ö_zgün Haline Geri Dön"
+msgstr "Özgün Haline _Döndür"

@@ -1,4 +1,24 @@
 ==============
+Version 0.13.2
+==============
+Bugs fixed:
+	- Build against python 2.7 (Kjartan Maraas)
+
+Translations:
+	- Updated an Translation (Daniel Martinez Cucalon)
+	- Updated br Translation (Denis ARNAUD)
+	- Updated en@shaw Translation (Thomas Thurman)
+	- Updated eo Translation (Kristjan Schmidt)
+	- Updated fy Translation (Sense Hofstede)
+	- Updated gl Translation (Fran Diéguez)
+	- Updated hy Translation (noch)
+	- Updated id Translation (Dirgita)
+	- Updated kk Translation (Baurzhan Muftakhidinov)
+	- Updated sl Translation (Matej Urbančič)
+	- Updated tr Translation (Baris Cicek)
+	- Updated ug Translation (Gheyret Kenji)
+
+==============
 Version 0.13.1
 ==============
 Bugs fixed:

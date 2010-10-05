@@ -1,0 +1,142 @@
+# translation of alacarte.po to Kikongo
+# Kibavuidi Nsiangani <lundombe01@zaya-dio.com>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-14 15:32+0100\n"
+"PO-Revision-Date: 2010-09-30 14:21+0100\n"
+"Last-Translator: Kibavuidi Nsiangani <lundombe01@zaya-dio.com>\n"
+"Language-Team: Kikongo <lundombe01@zaya-dio.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#: ../Alacarte/MainWindow.py:164
+msgid "Name"
+msgstr "mbiekolo"
+
+#: ../Alacarte/MainWindow.py:180
+msgid "Show"
+msgstr "senzoka"
+
+#: ../Alacarte/MainWindow.py:188
+msgid "Item"
+msgstr "nama"
+
+#: ../Alacarte/DialogHandler.py:159
+#: ../Alacarte/DialogHandler.py:196
+#: ../Alacarte/DialogHandler.py:357
+#: ../Alacarte/DialogHandler.py:388
+msgid "A name is required."
+msgstr "fuiti sola/vana mbiekolo umosi"
+
+#: ../Alacarte/DialogHandler.py:162
+#: ../Alacarte/DialogHandler.py:199
+msgid "A command is required."
+msgstr "fuiti tuma munyeki"
+
+#: ../alacarte.desktop.in.h:1
+msgid "Add, change, remove menu entries"
+msgstr "yika, soba, katudila bisolo-solo"
+
+#: ../alacarte.desktop.in.h:2
+#: ../alacarte.glade.h:9
+msgid "Menu Layout"
+msgstr "nkubam'a sola-sola"
+
+#: ../alacarte.glade.h:1
+msgid "Alacarte Menu Editor"
+msgstr "nsobi sola-sola, Alakalete"
+
+#: ../alacarte.glade.h:2
+msgid "Browse..."
+msgstr "zoka..."
+
+#: ../alacarte.glade.h:3
+msgid "Command:"
+msgstr "munyeki"
+
+#: ../alacarte.glade.h:4
+msgid "Comment:"
+msgstr "nduengoso:"
+
+#: ../alacarte.glade.h:5
+msgid "Copyright © 2006 Travis Watkins"
+msgstr "luve © 2006 Kibavuidi Nsiangani"
+
+#: ../alacarte.glade.h:6
+msgid "Icon:"
+msgstr "ludimbu:"
+
+#: ../alacarte.glade.h:7
+msgid "It_ems:"
+msgstr "_nama"
+
+#: ../alacarte.glade.h:8
+msgid "Menu Item Properties"
+msgstr "nsamu za bima"
+
+#: ../alacarte.glade.h:10
+msgid "Menu Properties"
+msgstr "nkadilu a sola-sola"
+
+#: ../alacarte.glade.h:11
+msgid "Move Down"
+msgstr "kulumuna"
+
+#: ../alacarte.glade.h:12
+msgid "Move Up"
+msgstr "tombola"
+
+#: ../alacarte.glade.h:13
+msgid "Name:"
+msgstr "mbiekolo:"
+
+#: ../alacarte.glade.h:14
+msgid "Ne_w Item"
+msgstr "nam'a m_pa"
+
+#: ../alacarte.glade.h:15
+msgid "New _Separator"
+msgstr "sinsu wam_ona"
+
+#: ../alacarte.glade.h:16
+msgid "Restore the default menu layout"
+msgstr "vutuka kua nkadilu a nkulu"
+
+#: ../alacarte.glade.h:17
+msgid "Revert Changes?"
+msgstr "yambula nsobolo zazo?"
+
+#: ../alacarte.glade.h:18
+msgid "Revert all menus to original settings?"
+msgstr "vutuka kua nsingika zankulu?"
+
+#: ../alacarte.glade.h:19
+msgid "Run command in a terminal"
+msgstr "tuma munyeki vana nyekilu"
+
+#: ../alacarte.glade.h:20
+msgid "Simple fd.o compliant menu editor"
+msgstr "lusobi a sola-sola, yifuanane ye nkubama kia fd.o"
+
+#: ../alacarte.glade.h:21
+msgid "_Menus:"
+msgstr "_nsola-sola"
+
+#: ../alacarte.glade.h:22
+msgid "_New Menu"
+msgstr "nsola-sola m_pa"
+
+#: ../alacarte.glade.h:23
+msgid "_Revert to Original"
+msgstr "yambula nsobolo _zazo"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../alacarte.glade.h:25
+msgid "translator-credits"
+msgstr "sekoki <kibavuidi.nsiangani@free.fr>"
+

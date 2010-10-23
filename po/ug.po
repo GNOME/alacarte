@@ -8,11 +8,10 @@ msgstr ""
 "Project-Id-Version: Alacarte master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=alacarte&component=general\n"
-"POT-Creation-Date: 2010-04-18 09:18+0000\n"
+"POT-Creation-Date: 2010-10-05 20:00+0000\n"
 "PO-Revision-Date: 2010-04-18 09:18+0000\n"
 "Last-Translator: Gheyret Kenji <gheyret@yahoo.com>\n"
-"Language-Team: GNOME Uighur Translation Project <gnome-uighur@yahoogroups."
-"com>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,19 +26,19 @@ msgstr "كۆرسەت"
 
 #: ../Alacarte/MainWindow.py:188
 msgid "Item"
-msgstr "تۇر"
+msgstr "تۈر"
 
 #: ../data/alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
-msgstr "باش menu  دا قايسى پروگراممىنى كۆرسىتىدىغانلىقىنى ئۆزگەرتىدۇ"
+msgstr "ئاساسىي تىزىملىتە كۆرسىتىلىدىغان پروگراممىنى ئۆزگەرتىدۇ"
 
 #: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.ui.h:2
 msgid "Main Menu"
-msgstr "باش menu"
+msgstr "ئاساسىي تىزىملىك"
 
 #: ../data/alacarte.ui.h:1
 msgid "It_ems:"
-msgstr "تۈرلەر(_E):"
+msgstr "تۈرلەر(_E)"
 
 #: ../data/alacarte.ui.h:3
 msgid "Move Down"
@@ -51,7 +50,7 @@ msgstr "ئۈستىگە"
 
 #: ../data/alacarte.ui.h:5
 msgid "Ne_w Item"
-msgstr " يېڭى تۇر(_W)"
+msgstr "يېڭى تۈر(_W)"
 
 #: ../data/alacarte.ui.h:6
 msgid "New _Separator"
@@ -59,24 +58,24 @@ msgstr "يېڭى ئايرىغۇچ(_S)"
 
 #: ../data/alacarte.ui.h:7
 msgid "Restore the default menu layout"
-msgstr "كۆڭۈلدىكى menu ئورۇنلاشتۇرمىسىنى ئەسلىگە كەلتۈر"
+msgstr "كۆڭۈلدىكى ئورۇنلاشتۇرۇش ھالىتىگە قايتۇرىدۇ"
 
 #: ../data/alacarte.ui.h:8
 msgid "Revert Changes?"
-msgstr "ئۆزگىرىشلەرنى ئەسلىگە كەلتۈرەمسىز؟"
+msgstr "ئۆزگىرىشلەرنى ئەسلى ھالىتىگە قايتۇرسۇنمۇ؟"
 
 #: ../data/alacarte.ui.h:9
 msgid "Revert all menus to original settings?"
-msgstr "بارلىق menu لارنى ئەسلىدىكى تەڭشەككە قايتۇرامسىز؟"
+msgstr "بارلىق تىزىملىكلەرنى ئەسلى ھالىتىگە قايتۇرسۇنمۇ؟"
 
 #: ../data/alacarte.ui.h:10
 msgid "_Menus:"
-msgstr "Menus(_M):"
+msgstr "تىزىملىكلەر(_M):"
 
 #: ../data/alacarte.ui.h:11
 msgid "_New Menu"
-msgstr "يېڭى Menu(_N)"
+msgstr "يېڭى تىزىملىك(_N)"
 
 #: ../data/alacarte.ui.h:12
 msgid "_Revert to Original"
-msgstr "ئەسلىگە قايتۇرۇش(_R)"
+msgstr "ئەسلىدىكى ھالەتكە قايتۇر(_R)"

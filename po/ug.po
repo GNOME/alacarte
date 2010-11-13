@@ -6,9 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Alacarte master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=alacarte&component=general\n"
-"POT-Creation-Date: 2010-10-05 20:00+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte&component=general\n"
+"POT-Creation-Date: 2010-10-23 09:12+0000\n"
 "PO-Revision-Date: 2010-04-18 09:18+0000\n"
 "Last-Translator: Gheyret Kenji <gheyret@yahoo.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -30,7 +29,7 @@ msgstr "تۈر"
 
 #: ../data/alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
-msgstr "ئاساسىي تىزىملىتە كۆرسىتىلىدىغان پروگراممىنى ئۆزگەرتىدۇ"
+msgstr "باش menu  دا قايسى پروگراممىنى كۆرسىتىدىغانلىقىنى ئۆزگەرتىدۇ"
 
 #: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.ui.h:2
 msgid "Main Menu"
@@ -38,7 +37,7 @@ msgstr "ئاساسىي تىزىملىك"
 
 #: ../data/alacarte.ui.h:1
 msgid "It_ems:"
-msgstr "تۈرلەر(_E)"
+msgstr "تۈرلەر(_E):"
 
 #: ../data/alacarte.ui.h:3
 msgid "Move Down"
@@ -50,7 +49,7 @@ msgstr "ئۈستىگە"
 
 #: ../data/alacarte.ui.h:5
 msgid "Ne_w Item"
-msgstr "يېڭى تۈر(_W)"
+msgstr "يېڭى تۇر(_W)"
 
 #: ../data/alacarte.ui.h:6
 msgid "New _Separator"
@@ -58,15 +57,15 @@ msgstr "يېڭى ئايرىغۇچ(_S)"
 
 #: ../data/alacarte.ui.h:7
 msgid "Restore the default menu layout"
-msgstr "كۆڭۈلدىكى ئورۇنلاشتۇرۇش ھالىتىگە قايتۇرىدۇ"
+msgstr "كۆڭۈلدىكى menu ئورۇنلاشتۇرمىسىنى ئەسلىگە كەلتۈر"
 
 #: ../data/alacarte.ui.h:8
 msgid "Revert Changes?"
-msgstr "ئۆزگىرىشلەرنى ئەسلى ھالىتىگە قايتۇرسۇنمۇ؟"
+msgstr "ئۆزگىرىشلەرنى ئەسلىگە كەلتۈرەمسىز؟"
 
 #: ../data/alacarte.ui.h:9
 msgid "Revert all menus to original settings?"
-msgstr "بارلىق تىزىملىكلەرنى ئەسلى ھالىتىگە قايتۇرسۇنمۇ؟"
+msgstr "بارلىق menu لارنى ئەسلىدىكى تەڭشەككە قايتۇرامسىز؟"
 
 #: ../data/alacarte.ui.h:10
 msgid "_Menus:"
@@ -74,8 +73,8 @@ msgstr "تىزىملىكلەر(_M):"
 
 #: ../data/alacarte.ui.h:11
 msgid "_New Menu"
-msgstr "يېڭى تىزىملىك(_N)"
+msgstr "يېڭى Menu(_N)"
 
 #: ../data/alacarte.ui.h:12
 msgid "_Revert to Original"
-msgstr "ئەسلىدىكى ھالەتكە قايتۇر(_R)"
+msgstr "ئەسلىگە قايتۇرۇش(_R)"

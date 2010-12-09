@@ -1,29 +1,30 @@
 # Chinese (Hong Kong) translation of alacarte.
 # Copyright (C) 2006, 07 Free Software Foundation, Inc.
 # Woodman Tuen <wmtuen@gmail.com>, 2006-2007.
-#
+# Wei-Lun Chao <chaoweilun@gmail.com>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: alacarte 0.11.8\n"
+"Project-Id-Version: alacarte 0.13.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-30 22:47+0800\n"
-"PO-Revision-Date: 2009-01-31 14:05+0800\n"
-"Last-Translator: Woodman Tuen <wmtuen@gmail.com>\n"
+"POT-Creation-Date: 2010-12-09 19:35+0800\n"
+"PO-Revision-Date: 2010-12-09 19:36+0800\n"
+"Last-Translator: Wei-Lun Chao <chaoweilun@gmail.com>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:169
+#: ../Alacarte/MainWindow.py:164
 msgid "Name"
 msgstr "名稱"
 
-#: ../Alacarte/MainWindow.py:185
+#: ../Alacarte/MainWindow.py:180
 msgid "Show"
 msgstr "顯示"
 
-#: ../Alacarte/MainWindow.py:193
+#: ../Alacarte/MainWindow.py:188
 msgid "Item"
 msgstr "項目"
 
@@ -31,51 +32,51 @@ msgstr "項目"
 msgid "Change which applications are shown on the main menu"
 msgstr "選擇那一個應用程式顯示在主選單上"
 
-#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.glade.h:2
+#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.ui.h:2
 msgid "Main Menu"
 msgstr "主選單"
 
-#: ../data/alacarte.glade.h:1
+#: ../data/alacarte.ui.h:1
 msgid "It_ems:"
 msgstr "項目(_E):"
 
-#: ../data/alacarte.glade.h:3
+#: ../data/alacarte.ui.h:3
 msgid "Move Down"
 msgstr "下移"
 
-#: ../data/alacarte.glade.h:4
+#: ../data/alacarte.ui.h:4
 msgid "Move Up"
 msgstr "上移"
 
-#: ../data/alacarte.glade.h:5
+#: ../data/alacarte.ui.h:5
 msgid "Ne_w Item"
 msgstr "新增項目(_W)"
 
-#: ../data/alacarte.glade.h:6
+#: ../data/alacarte.ui.h:6
 msgid "New _Separator"
 msgstr "新增分隔線(_S)"
 
-#: ../data/alacarte.glade.h:7
+#: ../data/alacarte.ui.h:7
 msgid "Restore the default menu layout"
 msgstr "回復預設的選單配置"
 
-#: ../data/alacarte.glade.h:8
+#: ../data/alacarte.ui.h:8
 msgid "Revert Changes?"
 msgstr "還原更改？"
 
-#: ../data/alacarte.glade.h:9
+#: ../data/alacarte.ui.h:9
 msgid "Revert all menus to original settings?"
 msgstr "將所有選單還原為原本的設定？"
 
-#: ../data/alacarte.glade.h:10
+#: ../data/alacarte.ui.h:10
 msgid "_Menus:"
 msgstr "選單(_M):"
 
-#: ../data/alacarte.glade.h:11
+#: ../data/alacarte.ui.h:11
 msgid "_New Menu"
 msgstr "新增選單(_N)"
 
-#: ../data/alacarte.glade.h:12
+#: ../data/alacarte.ui.h:12
 msgid "_Revert to Original"
 msgstr "還原為原本的設定(_R)"
 
@@ -110,7 +111,7 @@ msgstr "還原為原本的設定(_R)"
 #~ msgstr "Alacarte 選單編輯器"
 
 #~ msgid "Browse..."
-#~ msgstr "瀏覽..."
+#~ msgstr "瀏覽…"
 
 #~ msgid "Command:"
 #~ msgstr "指令："

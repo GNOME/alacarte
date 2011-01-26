@@ -10,8 +10,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-18 15:51+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=alacarte&component=general\n"
+"POT-Creation-Date: 2010-12-09 11:36+0000\n"
 "PO-Revision-Date: 2010-07-18 15:52+0200\n"
 "Last-Translator: Fran Diéguez <frandieguez@ubuntu.com>\n"
 "Language-Team: Galician <gnome-gl-list@gnome.org>\n"
@@ -63,7 +64,7 @@ msgstr "_Separador novo"
 
 #: ../data/alacarte.ui.h:7
 msgid "Restore the default menu layout"
-msgstr "Restaurar a disposición de menú predefinida"
+msgstr "Restaurar a disposición do menú por omisión"
 
 #: ../data/alacarte.ui.h:8
 msgid "Revert Changes?"

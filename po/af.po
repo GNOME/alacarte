@@ -1,0 +1,82 @@
+# Afrikaans translation for alacarte.
+# This file is distributed under the same license as the alacarte package.
+# F Wolff <friedel@translate.org.za>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte master\n"
+"Report-Msgid-Bugs-To: "
+"http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte&component=general\n"
+"POT-Creation-Date: 2011-01-26 22:44+0000\n"
+"PO-Revision-Date: 2011-01-30 00:50+0200\n"
+"Last-Translator: F Wolff <friedel@translate.org.za>\n"
+"Language-Team: translate-discuss-af@lists.sourceforge.net\n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.0-beta4\n"
+
+#: ../Alacarte/MainWindow.py:164
+msgid "Name"
+msgstr "Naam"
+
+#: ../Alacarte/MainWindow.py:180
+msgid "Show"
+msgstr "Wys"
+
+#: ../Alacarte/MainWindow.py:188
+msgid "Item"
+msgstr "Item"
+
+#: ../data/alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "Verander watter toepassings wys op die hoofkieslys"
+
+#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.ui.h:2
+msgid "Main Menu"
+msgstr "Hoofkieslys"
+
+#: ../data/alacarte.ui.h:1
+msgid "It_ems:"
+msgstr "It_ems:"
+
+#: ../data/alacarte.ui.h:3
+msgid "Move Down"
+msgstr "Skuif af"
+
+#: ../data/alacarte.ui.h:4
+msgid "Move Up"
+msgstr "Skuif op"
+
+#: ../data/alacarte.ui.h:5
+msgid "Ne_w Item"
+msgstr "Nu_we item"
+
+#: ../data/alacarte.ui.h:6
+msgid "New _Separator"
+msgstr "Nuwe _skeier"
+
+#: ../data/alacarte.ui.h:7
+msgid "Restore the default menu layout"
+msgstr "Stel terug na verstek kieslysuitleg"
+
+#: ../data/alacarte.ui.h:8
+msgid "Revert Changes?"
+msgstr "Stel terug?"
+
+#: ../data/alacarte.ui.h:9
+msgid "Revert all menus to original settings?"
+msgstr "Stel alle kieslyste terug na die oorspronklike instellings?"
+
+#: ../data/alacarte.ui.h:10
+msgid "_Menus:"
+msgstr "_Kieslyste:"
+
+#: ../data/alacarte.ui.h:11
+msgid "_New Menu"
+msgstr "_Nuwe kieslys"
+
+#: ../data/alacarte.ui.h:12
+msgid "_Revert to Original"
+msgstr "Stel te_rug na oorspro"

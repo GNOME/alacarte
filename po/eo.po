@@ -1,42 +1,43 @@
 # Esperanto translation for alacarte
-# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# Copyright (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
 # This file is distributed under the same license as the alacarte package.
 # Dominique PELLÉ <dominique.pelle@free.fr>, 2006.
-# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2010.
+# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-05 12:07+0000\n"
-"PO-Revision-Date: 2010-06-05 12:04+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-03-27 17:08+0000\n"
+"PO-Revision-Date: 2011-04-03 02:30+0200\n"
 "Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
 "Language-Team: Esperanto <ubuntu-l10n-eo@lists.launchpad.net>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-06-05 10:00+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-04-03 00:24+0000\n"
+"X-Generator: Launchpad (build 12710)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: ../Alacarte/MainWindow.py:165
+#: ../Alacarte/MainWindow.py:164
 msgid "Name"
 msgstr "Nomo"
 
-#: ../Alacarte/MainWindow.py:181
+#: ../Alacarte/MainWindow.py:180
 msgid "Show"
 msgstr "Montri"
 
-#: ../Alacarte/MainWindow.py:189
+#: ../Alacarte/MainWindow.py:188
 msgid "Item"
 msgstr "Menuero"
 
 #: ../data/alacarte.desktop.in.in.h:1
 msgid "Change which applications are shown on the main menu"
-msgstr "Ŝanĝi kiujn aplikaĵojn estas montritaj en la ĉefa menuo"
+msgstr "Ŝanĝi kiujn aplikaĵojn estas montrataj en la ĉefa menuo"
 
-#: ../data/alacarte.desktop.in.in.h:2
-#: ../data/alacarte.ui.h:2
+#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.ui.h:2
 msgid "Main Menu"
 msgstr "Ĉefa menuo"
 
@@ -83,4 +84,3 @@ msgstr "_Nova menuo"
 #: ../data/alacarte.ui.h:12
 msgid "_Revert to Original"
 msgstr "_Reagordi al la originala"
-

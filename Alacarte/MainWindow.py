@@ -16,7 +16,10 @@
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import gtk, gmenu, gobject, gio
+## see line 180 and 217 - dnd wont work
+##
+from gi.repository import Gtk, GObject, Gio, GdkPixbuf, Gdk
+import gmenu
 import cgi, os
 import gettext
 import subprocess
@@ -36,8 +39,8 @@ class MainWindow:
 	#hack to make editing menu properties work
 	allow_update = True
 	#drag-and-drop stuff
-	dnd_items = [('ALACARTE_ITEM_ROW', gtk.TARGET_SAME_APP, 0), ('text/plain', 0, 1)]
-	dnd_menus = [('ALACARTE_MENU_ROW', gtk.TARGET_SAME_APP, 0)]
+	dnd_items = [('ALACARTE_ITEM_ROW', Gtk.TargetFlags.SAME_APP, 0), ('text/plain', 0, 1)]
+	dnd_menus = [('ALACARTE_MENU_ROW', Gtk.TargetFlags.SAME_APP, 0)]
 	dnd_both = [dnd_items[0],] + dnd_menus
 	drag_data = None
 	edit_pool = []
@@ -46,8 +49,8 @@ class MainWindow:
 		self.file_path = datadir
 		self.version = version
 		self.editor = MenuEditor()
-		gtk.window_set_default_icon_name('alacarte')
-		self.tree = gtk.Builder()
+		Gtk.Window.set_default_icon_name('alacarte')
+		self.tree = Gtk.Builder()
 		self.tree.set_translation_domain(config.GETTEXT_PACKAGE)
 		self.tree.add_from_file(os.path.join(self.file_path, 'alacarte.ui'))
 		self.tree.connect_signals(self)
@@ -59,13 +62,13 @@ class MainWindow:
 		self.tree.get_object('move_up_button').set_sensitive(False)
 		self.tree.get_object('move_down_button').set_sensitive(False)
 		self.tree.get_object('new_separator_button').set_sensitive(False)
-		accelgroup = gtk.AccelGroup()
-		keyval, modifier = gtk.accelerator_parse('<Ctrl>Z')
-		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_mainwindow_undo)
-		keyval, modifier = gtk.accelerator_parse('<Ctrl><Shift>Z')
-		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_mainwindow_redo)
-		keyval, modifier = gtk.accelerator_parse('F1')
-		accelgroup.connect_group(keyval, modifier, gtk.ACCEL_VISIBLE, self.on_help_button_clicked)
+		accelgroup = Gtk.AccelGroup()
+		keyval, modifier = Gtk.accelerator_parse('<Ctrl>Z')
+		accelgroup.connect(keyval, modifier, Gtk.AccelFlags.VISIBLE, self.on_mainwindow_undo)
+		keyval, modifier = Gtk.accelerator_parse('<Ctrl><Shift>Z')
+		accelgroup.connect(keyval, modifier, Gtk.AccelFlags.VISIBLE, self.on_mainwindow_redo)
+		keyval, modifier = Gtk.accelerator_parse('F1')
+		accelgroup.connect(keyval, modifier, Gtk.AccelFlags.VISIBLE, self.on_help_button_clicked)
 		self.tree.get_object('mainwindow').add_accel_group(accelgroup)
 
 	def run(self):
@@ -73,13 +76,13 @@ class MainWindow:
 		self.editor.applications.tree.add_monitor(self.menuChanged, None)
 		self.editor.settings.tree.add_monitor(self.menuChanged, None)
 		self.tree.get_object('mainwindow').show_all()
-		gtk.main()
+		Gtk.main()
 
 	def menuChanged(self, *a):
 		if self.timer:
-			gobject.source_remove(self.timer)
+			GObject.source_remove(self.timer)
 			self.timer = None
-		self.timer = gobject.timeout_add(3, self.loadUpdates)
+		self.timer = GObject.timeout_add(3, self.loadUpdates)
 
 	def loadUpdates(self):
 		if not self.allow_update:
@@ -159,48 +162,62 @@ class MainWindow:
 			return True
 
 	def setupMenuTree(self):
-		self.menu_store = gtk.TreeStore(gtk.gdk.Pixbuf, str, object)
+		self.menu_store = Gtk.TreeStore(GdkPixbuf.Pixbuf, str, object)
 		menus = self.tree.get_object('menu_tree')
-		column = gtk.TreeViewColumn(_('Name'))
+		column = Gtk.TreeViewColumn(_('Name'))
 		column.set_spacing(4)
-		cell = gtk.CellRendererPixbuf()
+		cell = Gtk.CellRendererPixbuf()
 		column.pack_start(cell, False)
-		column.set_attributes(cell, pixbuf=0)
-		cell = gtk.CellRendererText()
+		column.clear_attributes(cell)
+		column.add_attribute(cell, 'pixbuf', 0)
+		##column.set_attributes(cell, pixbuf=0)
+		cell = Gtk.CellRendererText()
 		cell.set_fixed_size(-1, 25)
 		column.pack_start(cell, True)
-		column.set_attributes(cell, markup=1)
-		column.set_sizing(gtk.TREE_VIEW_COLUMN_FIXED)
+		##column.set_attributes(cell, markup=1)
+		# do i need this?
+		#column.clear_attributes(cell)
+		column.add_attribute(cell, 'markup', 1)
+		column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
 		menus.append_column(column)
-		menus.enable_model_drag_source(gtk.gdk.BUTTON1_MASK, self.dnd_menus, gtk.gdk.ACTION_COPY)
-		menus.enable_model_drag_dest(self.dnd_both, gtk.gdk.ACTION_PRIVATE)
+		#menus.enable_model_drag_source(Gdk.EventMask.BUTTON1_MOTION_MASK, self.dnd_menus, len(self.dnd_menus), Gdk.DragAction.COPY)
+		menus.enable_model_drag_dest(self.dnd_both, Gdk.DragAction.PRIVATE)
 
 	def setupItemTree(self):
 		items = self.tree.get_object('item_tree')
-		column = gtk.TreeViewColumn(_('Show'))
-		cell = gtk.CellRendererToggle()
+		column = Gtk.TreeViewColumn(_('Show'))
+		cell = Gtk.CellRendererToggle()
 		cell.connect('toggled', self.on_item_tree_show_toggled)
 		column.pack_start(cell, True)
-		column.set_attributes(cell, active=0)
+		# do i need this?
+		column.clear_attributes(cell)
+		column.add_attribute(cell, 'active', 0)
+		#column.set_attributes(cell, active=0)
 		#hide toggle for separators
 		column.set_cell_data_func(cell, self._cell_data_toggle_func)
 		items.append_column(column)
-		column = gtk.TreeViewColumn(_('Item'))
+		column = Gtk.TreeViewColumn(_('Item'))
 		column.set_spacing(4)
-		cell = gtk.CellRendererPixbuf()
+		cell = Gtk.CellRendererPixbuf()
 		column.pack_start(cell, False)
-		column.set_attributes(cell, pixbuf=1)
-		cell = gtk.CellRendererText()
+		#column.set_attributes(cell, pixbuf=1)
+		# do i need this?
+		#column.clear_attributes(cell)
+		column.add_attribute(cell, 'pixbuf', 1)
+		cell = Gtk.CellRendererText()
 		cell.set_fixed_size(-1, 25)
 		column.pack_start(cell, True)
-		column.set_attributes(cell, markup=2)
+		#column.set_attributes(cell, markup=2)
+		# do i need this?
+		#column.clear_attributes(cell)
+		column.add_attribute(cell, 'markup', 2)
 		items.append_column(column)
-		self.item_store = gtk.ListStore(bool, gtk.gdk.Pixbuf, str, object)
+		self.item_store = Gtk.ListStore(bool, GdkPixbuf.Pixbuf, str, object)
 		items.set_model(self.item_store)
-		items.enable_model_drag_source(gtk.gdk.BUTTON1_MASK, self.dnd_items, gtk.gdk.ACTION_COPY)
-		items.enable_model_drag_dest(self.dnd_items, gtk.gdk.ACTION_PRIVATE)
+		#items.enable_model_drag_source(Gdk.EventMask.BUTTON1_MOTION_MASK, self.dnd_items, len(self.dnd_items), Gdk.DragAction.COPY)
+		items.enable_model_drag_dest(self.dnd_items, Gdk.DragAction.PRIVATE)
 
-	def _cell_data_toggle_func(self, tree_column, renderer, model, treeiter):
+	def _cell_data_toggle_func(self, tree_column, renderer, model, treeiter, data=None):
 		if model[treeiter][3].get_type() == gmenu.TYPE_SEPARATOR:
 			renderer.set_property('visible', False)
 		else:
@@ -296,7 +313,7 @@ class MainWindow:
 			parent = menus[iter][2]
 		file_path = os.path.join(util.getUserDirectoryPath(), util.getUniqueFileId('alacarte-made', '.directory'))
 		process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
-		gobject.timeout_add(100, self.waitForNewMenuProcess, process, parent.menu_id, file_path)
+		GObject.timeout_add(100, self.waitForNewMenuProcess, process, parent.menu_id, file_path)
 
 	def on_new_item_button_clicked(self, button):
 		menu_tree = self.tree.get_object('menu_tree')
@@ -309,7 +326,7 @@ class MainWindow:
 			parent = menus[iter][2]
 		file_path = os.path.join(util.getUserItemPath(), util.getUniqueFileId('alacarte-made', '.desktop'))
 		process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
-		gobject.timeout_add(100, self.waitForNewItemProcess, process, parent.menu_id, file_path)
+		GObject.timeout_add(100, self.waitForNewItemProcess, process, parent.menu_id, file_path)
 
 	def on_new_separator_button_clicked(self, button):
 		item_tree = self.tree.get_object('item_tree')
@@ -380,7 +397,7 @@ class MainWindow:
 		if file_path not in self.edit_pool:
 			self.edit_pool.append(file_path)
 			process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
-			gobject.timeout_add(100, self.waitForEditProcess, process, file_path)
+			GObject.timeout_add(100, self.waitForEditProcess, process, file_path)
 
 	def on_menu_tree_cursor_changed(self, treeview):
 		menus, iter = treeview.get_selection().get_selected()
@@ -404,7 +421,7 @@ class MainWindow:
 		drop_info = treeview.get_dest_row_at_pos(x, y)
 		if drop_info:
 			path, position = drop_info
-			types = (gtk.TREE_VIEW_DROP_INTO_OR_BEFORE, gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
+			types = (Gtk.TREE_VIEW_DROP_INTO_OR_BEFORE, Gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
 			if position not in types:
 				context.finish(False, False, etime)
 				return False
@@ -451,13 +468,13 @@ class MainWindow:
 			self.tree.get_object('edit_properties').set_sensitive(False)
 
 		# If first item...
-		if items.get_path(iter)[0] == 0:
+		if items.get_path(iter).get_indices()[0] == 0:
 			self.tree.get_object('move_up_button').set_sensitive(False)
 		else:
 			self.tree.get_object('move_up_button').set_sensitive(True)
 
 		# If last item...
-		if items.get_path(iter)[0] == (len(items)-1):
+		if items.get_path(iter).get_indices()[0] == (len(items)-1):
 			self.tree.get_object('move_down_button').set_sensitive(False)
 		else:
 			self.tree.get_object('move_down_button').set_sensitive(True)
@@ -495,7 +512,7 @@ class MainWindow:
 
 	def on_item_tree_drag_data_received(self, treeview, context, x, y, selection, info, etime):
 		items = treeview.get_model()
-		types = (gtk.TREE_VIEW_DROP_BEFORE,	gtk.TREE_VIEW_DROP_INTO_OR_BEFORE)
+		types = (Gtk.TREE_VIEW_DROP_BEFORE,	Gtk.TREE_VIEW_DROP_INTO_OR_BEFORE)
 		if selection.target == 'ALACARTE_ITEM_ROW':
 			drop_info = treeview.get_dest_row_at_pos(x, y)
 			before = None
@@ -540,8 +557,8 @@ class MainWindow:
 			file_path = urllib.unquote(selection.data).strip()
 			if not file_path.startswith('file:'):
 				return
-			myfile = gio.File(uri=file_path)
-			file_info = myfile.query_info(gio.FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE)
+			myfile = Gio.File(uri=file_path)
+			file_info = myfile.query_info(Gio.FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE)
 			content_type = file_info.get_content_type()
 			if content_type == 'application/x-desktop':
 				input_stream = myfile.read()
@@ -557,7 +574,7 @@ class MainWindow:
 		self.drag_data = None
 
 	def on_item_tree_key_press_event(self, item_tree, event):
-		if event.keyval == gtk.keysyms.Delete:
+		if event.keyval == Gdk.KEY_Delete:
 			self.on_edit_delete_activate(item_tree)
 
 	def on_move_up_button_clicked(self, button):
@@ -603,13 +620,13 @@ class MainWindow:
 		self.editor.redo()
 
 	def on_help_button_clicked(self, *args):
-		gtk.show_uri(gtk.gdk.screen_get_default(), "ghelp:user-guide#menu-editor", gtk.get_current_event_time())
+		Gtk.show_uri(Gdk.Screen.get_default(), "ghelp:user-guide#menu-editor", Gtk.get_current_event_time())
 
 	def on_revert_button_clicked(self, button):
 		dialog = self.tree.get_object('revertdialog')
 		dialog.set_transient_for(self.tree.get_object('mainwindow'))
 		dialog.show_all()
-		if dialog.run() == gtk.RESPONSE_YES:
+		if dialog.run() == Gtk.ResponseType.YES:
 			self.editor.revert()
 		dialog.hide()
 
@@ -618,11 +635,11 @@ class MainWindow:
 			self.tree.get_object('mainwindow').hide()
 		except:
 			pass
-		gobject.timeout_add(10, self.quit)
+		GObject.timeout_add(10, self.quit)
 
 	def on_style_set(self, *args):
 		self.loadUpdates()
 
 	def quit(self):
 		self.editor.quit()
-		gtk.main_quit()		
+		Gtk.main_quit()		

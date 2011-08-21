@@ -180,7 +180,7 @@ class MainWindow:
 		column.add_attribute(cell, 'markup', 1)
 		column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
 		menus.append_column(column)
-		#menus.enable_model_drag_source(Gdk.EventMask.BUTTON1_MOTION_MASK, self.dnd_menus, len(self.dnd_menus), Gdk.DragAction.COPY)
+		menus.enable_model_drag_source(Gdk.ModifierType.BUTTON1_MASK, self.dnd_menus, Gdk.DragAction.COPY)
 		menus.enable_model_drag_dest(self.dnd_both, Gdk.DragAction.PRIVATE)
 
 	def setupItemTree(self):
@@ -214,7 +214,7 @@ class MainWindow:
 		items.append_column(column)
 		self.item_store = Gtk.ListStore(bool, GdkPixbuf.Pixbuf, str, object)
 		items.set_model(self.item_store)
-		#items.enable_model_drag_source(Gdk.EventMask.BUTTON1_MOTION_MASK, self.dnd_items, len(self.dnd_items), Gdk.DragAction.COPY)
+		items.enable_model_drag_source(Gdk.ModifierType.BUTTON1_MASK, self.dnd_items, Gdk.DragAction.COPY)
 		items.enable_model_drag_dest(self.dnd_items, Gdk.DragAction.PRIVATE)
 
 	def _cell_data_toggle_func(self, tree_column, renderer, model, treeiter, data=None):
@@ -642,4 +642,4 @@ class MainWindow:
 
 	def quit(self):
 		self.editor.quit()
-		Gtk.main_quit()		
+		Gtk.main_quit()

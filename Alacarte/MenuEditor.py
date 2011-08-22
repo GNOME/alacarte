@@ -330,8 +330,15 @@ class MenuEditor:
 		self.save()
 
 	def moveSeparator(self, separator, new_parent, before=None, after=None):
+		undo = []
+		# remove the original separator if its parent is not the new destination
+		if separator.get_parent() != new_parent:
+			self.deleteSeparator(separator)
+			undo.append(separator)
+		# this adds the new separator to the specified position
 		self.__positionItem(new_parent, separator, before, after)
-		self.__addUndo([self.__getMenu(new_parent),])
+		undo.append(self.__getMenu(new_parent))
+		self.__addUndo(undo)
 		self.save()
 
 	def deleteItem(self, item):
@@ -657,18 +664,21 @@ class MenuEditor:
 		self.__addXmlFilename(xml_parent, dom, file_id, 'Exclude')
 
 	def __positionItem(self, parent, item, before=None, after=None):
-		if not before and not after:
-			return
 		if after:
 			index = parent.contents.index(after) + 1
 		elif before:
 			index = parent.contents.index(before)
+		else:
+			# append the item to the list
+			index = len(parent.contents)
 		contents = parent.contents
 		#if this is a move to a new parent you can't remove the item
-		try:
+		if item in contents:
+			# decrease the destination index, if we shorten the list
+			if (before and (contents.index(item) < index)) \
+					or (after and (contents.index(item) < index - 1)):
+				index -= 1
 			contents.remove(item)
-		except:
-			pass
 		contents.insert(index, item)
 		layout = self.__createLayout(contents)
 		dom = self.__getMenu(parent).dom

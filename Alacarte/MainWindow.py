@@ -422,7 +422,9 @@ class MainWindow:
 		drop_info = treeview.get_dest_row_at_pos(x, y)
 		if drop_info:
 			path, position = drop_info
-			types = (Gtk.TREE_VIEW_DROP_INTO_OR_BEFORE, Gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
+			types_before = (Gtk.TREE_VIEW_DROP_INTO_OR_BEFORE, Gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
+			types_into = (Gtk.TREE_VIEW_DROP_INTO_OR_BEFORE, Gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
+			types_after = (Gtk.TREE_VIEW_DROP_AFTER, Gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
 			if position not in types:
 				context.finish(False, False, etime)
 				return False
@@ -437,6 +439,8 @@ class MainWindow:
 				elif item.get_type() == gmenu.TYPE_DIRECTORY:
 					if self.editor.moveMenu(item, new_parent) == False:
 						self.loadUpdates()
+				elif item.get_type() == gmenu.TYPE_SEPARATOR:
+					self.editor.moveSeparator(item, new_parent)
 				else:
 					context.finish(False, False, etime) 
 				context.finish(True, True, etime)
@@ -521,22 +525,32 @@ class MainWindow:
 			if self.drag_data == None:
 				return False
 			item = self.drag_data
+			# by default we assume, that the items stays in the same menu
+			destination = item.get_parent()
 			if drop_info:
 				path, position = drop_info
-				if position in types:
-					before = items[path][3]
+				target = items[path][3]
+				# move the item to the directory, if the item was dropped into it
+				if (target.get_type() == gmenu.TYPE_DIRECTORY) and (position in types_into):
+					# append the selected item to the choosen menu
+					destination = target
+				elif position in types_before:
+					before = target
+				elif position in types_after:
+					after = target
 				else:
-					after = items[path][3]
+					# this does not happen
+					pass
 			else:
 				path = (len(items) - 1,)
 				after = items[path][3]
 			if item.get_type() == gmenu.TYPE_ENTRY:
-				self.editor.moveItem(item, item.get_parent(), before, after)
+				self.editor.moveItem(item, destination, before, after)
 			elif item.get_type() == gmenu.TYPE_DIRECTORY:
-				if self.editor.moveMenu(item, item.get_parent(), before, after) == False:
+				if self.editor.moveMenu(item, destination, before, after) == False:
 					self.loadUpdates()
 			elif item.get_type() == gmenu.TYPE_SEPARATOR:
-				self.editor.moveSeparator(item, item.get_parent(), before, after)
+				self.editor.moveSeparator(item, destination, before, after)
 			context.finish(True, True, etime)
 		elif selection.target == 'text/plain':
 			if selection.data == None:

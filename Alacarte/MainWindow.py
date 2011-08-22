@@ -130,6 +130,8 @@ class MainWindow:
 						found = True
 				if item[3].get_type() == gmenu.TYPE_SEPARATOR:
 					if not isinstance(item_id, tuple):
+						#we may not skip the increment via "continue"
+						i += 1
 						continue
 					#separators have no id, have to find them manually
 					#probably won't work with two separators together

@@ -276,7 +276,7 @@ class MenuEditor:
 		#erase Categories in new file
 		keyfile.set('Categories', ('',))
 		keyfile.set('Hidden', False)
-		file_id = util.getUniqueFileId(item.get_name(), '.desktop')
+		file_id = util.getUniqueFileId(item.get_name().replace(os.sep, '-'), '.desktop')
 		out_path = os.path.join(util.getUserItemPath(), file_id)
 		keyfile.write(open(out_path, 'w'))
 		self.__addItem(new_parent, file_id, dom)

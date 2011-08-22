@@ -74,7 +74,6 @@ class MainWindow:
 	def run(self):
 		self.loadMenus()
 		self.editor.applications.tree.add_monitor(self.menuChanged, None)
-		self.editor.settings.tree.add_monitor(self.menuChanged, None)
 		self.tree.get_object('mainwindow').show_all()
 		Gtk.main()
 

@@ -348,8 +348,8 @@ class MenuEditor:
 		self.save()
 
 	def deleteItem(self, item):
-		self.__writeItem(item, hidden=True)
 		self.__addUndo([item,])
+		self.__writeItem(item, hidden=True)
 		self.save()
 
 	def deleteMenu(self, menu):

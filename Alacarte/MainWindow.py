@@ -183,6 +183,7 @@ class MainWindow:
 		menus.append_column(column)
 		menus.enable_model_drag_source(Gdk.ModifierType.BUTTON1_MASK, self.dnd_menus, Gdk.DragAction.COPY)
 		menus.enable_model_drag_dest(self.dnd_both, Gdk.DragAction.PRIVATE)
+		menus.get_selection().set_mode(Gtk.SelectionMode.BROWSE)
 
 	def setupItemTree(self):
 		items = self.tree.get_object('item_tree')

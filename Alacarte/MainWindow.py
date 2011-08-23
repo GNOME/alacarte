@@ -173,13 +173,11 @@ class MainWindow:
 		column.add_attribute(cell, 'pixbuf', 0)
 		##column.set_attributes(cell, pixbuf=0)
 		cell = Gtk.CellRendererText()
-		cell.set_fixed_size(-1, 25)
 		column.pack_start(cell, True)
 		##column.set_attributes(cell, markup=1)
 		# do i need this?
 		#column.clear_attributes(cell)
 		column.add_attribute(cell, 'markup', 1)
-		column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
 		menus.append_column(column)
 		menus.enable_model_drag_source(Gdk.ModifierType.BUTTON1_MASK, self.dnd_menus, Gdk.DragAction.COPY)
 		menus.enable_model_drag_dest(self.dnd_both, Gdk.DragAction.PRIVATE)
@@ -207,7 +205,6 @@ class MainWindow:
 		#column.clear_attributes(cell)
 		column.add_attribute(cell, 'pixbuf', 1)
 		cell = Gtk.CellRendererText()
-		cell.set_fixed_size(-1, 25)
 		column.pack_start(cell, True)
 		#column.set_attributes(cell, markup=2)
 		# do i need this?

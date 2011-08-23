@@ -412,6 +412,8 @@ class MainWindow:
 		self.tree.get_object('move_up_button').set_sensitive(False)
 		self.tree.get_object('move_down_button').set_sensitive(False)
 		self.tree.get_object('new_separator_button').set_sensitive(False)
+		self.tree.get_object('properties_button').set_sensitive(False)
+		self.tree.get_object('delete_button').set_sensitive(False)
 
 	def on_menu_tree_drag_data_get(self, treeview, context, selection, target_id, etime):
 		menus, iter = treeview.get_selection().get_selected()
@@ -463,14 +465,17 @@ class MainWindow:
 		item = items[iter][3]
 		self.tree.get_object('edit_delete').set_sensitive(True)
 		self.tree.get_object('new_separator_button').set_sensitive(True)
+		self.tree.get_object('delete_button').set_sensitive(True)
 		if self.editor.canRevert(item):
 			self.tree.get_object('edit_revert_to_original').set_sensitive(True)
 		else:
 			self.tree.get_object('edit_revert_to_original').set_sensitive(False)
 		if not item.get_type() == gmenu.TYPE_SEPARATOR:
 			self.tree.get_object('edit_properties').set_sensitive(True)
+			self.tree.get_object('properties_button').set_sensitive(True)
 		else:
 			self.tree.get_object('edit_properties').set_sensitive(False)
+			self.tree.get_object('properties_button').set_sensitive(False)
 
 		# If first item...
 		if items.get_path(iter).get_indices()[0] == 0:
@@ -651,6 +656,11 @@ class MainWindow:
 		except:
 			pass
 		GObject.timeout_add(10, self.quit)
+
+	def on_properties_button_clicked(self, button):
+		self.on_edit_properties_activate(None)
+	def on_delete_button_clicked(self, button):
+		self.on_edit_delete_activate(None)
 
 	def on_style_set(self, *args):
 		self.loadUpdates()

@@ -380,6 +380,36 @@
                                             <signal handler="on_move_down_button_clicked" last_modification_time="Wed, 26 Apr 2006 22:09:15 GMT" name="clicked"/>
                                           </object>
                                         </child>
+                                        <child>
+                                          <object class="GtkButton" id="delete_button">
+                                            <property name="label" translatable="no">gtk-delete</property>
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="receives_default">True</property>
+                                            <property name="use_stock">True</property>
+					    <signal handler="on_delete_button_clicked" name="clicked"/>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">False</property>
+                                            <property name="position">2</property>
+                                          </packing>
+					</child>
+                                        <child>
+                                          <object class="GtkButton" id="properties_button">
+                                            <property name="label" translatable="no">gtk-properties</property>
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="receives_default">True</property>
+                                            <property name="use_stock">True</property>
+					    <signal handler="on_properties_button_clicked" name="clicked"/>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">False</property>
+                                            <property name="position">3</property>
+                                          </packing>
+                                        </child>
                                       </object>
                                     </child>
                                   </object>

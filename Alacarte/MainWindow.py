@@ -425,9 +425,9 @@ class MainWindow:
 		drop_info = treeview.get_dest_row_at_pos(x, y)
 		if drop_info:
 			path, position = drop_info
-			types_before = (Gtk.TREE_VIEW_DROP_INTO_OR_BEFORE, Gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
-			types_into = (Gtk.TREE_VIEW_DROP_INTO_OR_BEFORE, Gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
-			types_after = (Gtk.TREE_VIEW_DROP_AFTER, Gtk.TREE_VIEW_DROP_INTO_OR_AFTER)
+			types_before = (Gtk.TreeViewDropPosition.INTO_OR_BEFORE, Gtk.TreeViewDropPosition.INTO_OR_AFTER)
+			types_into = (Gtk.TreeViewDropPosition.INTO_OR_BEFORE, Gtk.TreeViewDropPosition.INTO_OR_AFTER)
+			types_after = (Gtk.TreeViewDropPosition.AFTER, Gtk.TreeViewDropPosition.INTO_OR_AFTER)
 			if position not in types:
 				context.finish(False, False, etime)
 				return False
@@ -523,7 +523,7 @@ class MainWindow:
 
 	def on_item_tree_drag_data_received(self, treeview, context, x, y, selection, info, etime):
 		items = treeview.get_model()
-		types = (Gtk.TREE_VIEW_DROP_BEFORE,	Gtk.TREE_VIEW_DROP_INTO_OR_BEFORE)
+		types = (Gtk.TreeViewDropPosition.BEFORE, Gtk.TreeViewDropPosition.INTO_OR_BEFORE)
 		if selection.target == 'ALACARTE_ITEM_ROW':
 			drop_info = treeview.get_dest_row_at_pos(x, y)
 			before = None

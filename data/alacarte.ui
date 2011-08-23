@@ -49,8 +49,8 @@
 </object>
   <object class="GtkDialog" id="mainwindow">
     <property name="border_width">5</property>
-    <property name="width_request">675</property>
-    <property name="height_request">530</property>
+    <property name="default_width">675</property>
+    <property name="default_height">530</property>
     <property name="visible">True</property>
     <property name="title" translatable="yes">Main Menu</property>
     <property name="type">GTK_WINDOW_TOPLEVEL</property>

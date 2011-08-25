@@ -168,14 +168,9 @@ class MainWindow:
 		column.set_spacing(4)
 		cell = Gtk.CellRendererPixbuf()
 		column.pack_start(cell, False)
-		column.clear_attributes(cell)
 		column.add_attribute(cell, 'pixbuf', 0)
-		##column.set_attributes(cell, pixbuf=0)
 		cell = Gtk.CellRendererText()
 		column.pack_start(cell, True)
-		##column.set_attributes(cell, markup=1)
-		# do i need this?
-		#column.clear_attributes(cell)
 		column.add_attribute(cell, 'markup', 1)
 		menus.append_column(column)
 		menus.enable_model_drag_source(Gdk.ModifierType.BUTTON1_MASK, self.dnd_menus, Gdk.DragAction.COPY)
@@ -188,10 +183,7 @@ class MainWindow:
 		cell = Gtk.CellRendererToggle()
 		cell.connect('toggled', self.on_item_tree_show_toggled)
 		column.pack_start(cell, True)
-		# do i need this?
-		column.clear_attributes(cell)
 		column.add_attribute(cell, 'active', 0)
-		#column.set_attributes(cell, active=0)
 		#hide toggle for separators
 		column.set_cell_data_func(cell, self._cell_data_toggle_func)
 		items.append_column(column)
@@ -199,15 +191,9 @@ class MainWindow:
 		column.set_spacing(4)
 		cell = Gtk.CellRendererPixbuf()
 		column.pack_start(cell, False)
-		#column.set_attributes(cell, pixbuf=1)
-		# do i need this?
-		#column.clear_attributes(cell)
 		column.add_attribute(cell, 'pixbuf', 1)
 		cell = Gtk.CellRendererText()
 		column.pack_start(cell, True)
-		#column.set_attributes(cell, markup=2)
-		# do i need this?
-		#column.clear_attributes(cell)
 		column.add_attribute(cell, 'markup', 2)
 		items.append_column(column)
 		self.item_store = Gtk.ListStore(bool, GdkPixbuf.Pixbuf, str, object)

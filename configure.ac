@@ -23,7 +23,7 @@ IT_PROG_INTLTOOL([0.40.0])
 
 AM_PATH_PYTHON_VERSION(2.7, 2.7.0, 2.6, 2.6.0, 2.5, 2.5.0, 2.4, 2.4.0)
 
-PKG_CHECK_MODULES(ALACARTE, libgnome-menu >= 2.27.92)
+PKG_CHECK_MODULES(ALACARTE, libgnome-menu-3.0 >= 3.2.0.1)
 
 dnl Check for correctly installed pygobject
 AC_MSG_CHECKING(for pygobject required_pygobject_version installed for python required_python_abi)

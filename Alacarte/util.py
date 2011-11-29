@@ -17,8 +17,7 @@
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 import os
-from gi.repository import Gtk, GdkPixbuf
-import gmenu
+from gi.repository import Gtk, GdkPixbuf, GMenu
 from ConfigParser import ConfigParser
 
 class DesktopParser(ConfigParser):
@@ -194,8 +193,8 @@ def getSystemMenuPath(file_name):
 	return False
 
 def getUserMenuXml(tree):
-	system_file = getSystemMenuPath(tree.get_menu_file())
-	name = tree.root.get_menu_id()
+	system_file = getSystemMenuPath(os.path.basename(tree.get_canonical_menu_path()))
+	name = tree.get_root_directory().get_menu_id()
 	menu_xml = "<!DOCTYPE Menu PUBLIC '-//freedesktop//DTD Menu 1.0//EN' 'http://standards.freedesktop.org/menu-spec/menu-1.0.dtd'>\n"
 	menu_xml += "<Menu>\n  <Name>" + name + "</Name>\n  "
 	menu_xml += "<MergeFile type=\"parent\">" + system_file +	"</MergeFile>\n</Menu>\n"
@@ -207,29 +206,25 @@ def getIcon(item, for_properties=False):
 		if for_properties:
 			return None, None
 		return None
-	if isinstance(item, str):
-		iconName = item
+
+	if isinstance(item, GMenu.TreeDirectory):
+		gicon = item.get_icon()
 	else:
-		iconName = item.get_icon()
-	if iconName and not '/' in iconName and iconName[-3:] in ('png', 'svg', 'xpm'):
-		iconName = iconName[:-4]
+		app_info = item.get_app_info()
+		gicon = app_info.get_icon()
+
 	icon_theme = Gtk.IconTheme.get_default()
 	try:
-		pixbuf = icon_theme.load_icon(iconName, 24, 0)
-		path = icon_theme.lookup_icon(iconName, 24, 0).get_filename()
+		info = icon_theme.lookup_by_gicon(icon_theme, gicon, 24, 0)
+		pixbuf = icon.load_icon()
+		path = info.get_filename()
 	except:
-		if iconName and '/' in iconName:
-			try:
-				pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(iconName, 24, 24)
-				path = iconName
-			except:
-				pass
-		if pixbuf == None:
+		if pixbuf is None:
 			if for_properties:
 				return None, None
-			if item.get_type() == gmenu.TYPE_DIRECTORY:
+			if isinstance(item, GMenu.TreeDirectory):
 				iconName = 'gnome-fs-directory'
-			elif item.get_type() == gmenu.TYPE_ENTRY:
+			else:
 				iconName = 'application-default-icon'
 			try:
 				pixbuf = icon_theme.load_icon(iconName, 24, 0)

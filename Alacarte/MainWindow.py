@@ -17,8 +17,7 @@
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-from gi.repository import Gtk, GObject, Gio, GdkPixbuf, Gdk
-import gmenu
+from gi.repository import Gtk, GObject, Gio, GdkPixbuf, Gdk, GMenu
 import cgi, os
 import gettext
 import subprocess
@@ -32,6 +31,8 @@ except:
 _ = gettext.gettext
 from Alacarte.MenuEditor import MenuEditor
 from Alacarte import util
+import sys
+from traceback import print_stack
 
 class MainWindow:
 	timer = None
@@ -72,17 +73,22 @@ class MainWindow:
 
 	def run(self):
 		self.loadMenus()
-		self.editor.applications.tree.add_monitor(self.menuChanged, None)
+		self.editor.applications.tree.connect("changed", self.menuChanged)
 		self.tree.get_object('mainwindow').show_all()
 		Gtk.main()
 
 	def menuChanged(self, *a):
+		print >> sys.stderr, "changed!\n"
 		if self.timer:
 			GObject.source_remove(self.timer)
 			self.timer = None
 		self.timer = GObject.timeout_add(3, self.loadUpdates)
 
 	def loadUpdates(self):
+		print >> sys.stderr, "%d\n" % self.editor.applications.tree.disconnect_by_func(self.menuChanged)
+		self.editor.reloadMenus()
+		self.editor.applications.tree.connect("changed", self.menuChanged)
+
 		if not self.allow_update:
 			return False
 		menu_tree = self.tree.get_object('menu_tree')
@@ -93,13 +99,15 @@ class MainWindow:
 		item_id, separator_path = None, None
 		if iter:
 			update_items = True
-			update_type = items[iter][3].get_type()
-			if items[iter][3].get_type() == gmenu.TYPE_ENTRY:
+			if isinstance(items[iter][3], GMenu.TreeEntry):
 				item_id = items[iter][3].get_desktop_file_id()
-			if items[iter][3].get_type() == gmenu.TYPE_DIRECTORY:
+				update_type = GMenu.TreeItemType.ENTRY
+			elif isinstance(items[iter][3], GMenu.TreeDirectory):
 				item_id = os.path.split(items[iter][3].get_desktop_file_path())[1]
-			elif items[iter][3].get_type() == gmenu.TYPE_SEPARATOR:
+				update_type = GMenu.TreeItemType.DIRECTORY
+			elif isinstance(items[iter][3], GMenu.Tree.Separator):
 				item_id = items.get_path(iter)
+				update_type = GMenu.TreeItemType.SEPARATOR
 		menus, iter = menu_tree.get_selection().get_selected()
 		update_menus = False
 		menu_id = None
@@ -121,13 +129,13 @@ class MainWindow:
 			i = 0
 			for item in item_tree.get_model():
 				found = False
-				if update_type != gmenu.TYPE_SEPARATOR:
-					if item[3].get_type() == gmenu.TYPE_ENTRY and item[3].get_desktop_file_id() == item_id:
+				if update_type != GMenu.TreeItemType.SEPARATOR:
+					if isinstance (item[3], GMenu.TreeEntry) and item[3].get_desktop_file_id() == item_id:
 						found = True
-					if item[3].get_type() == gmenu.TYPE_DIRECTORY and item[3].get_desktop_file_path() and update_type == gmenu.TYPE_DIRECTORY:
+					if isinstance (item[3], GMenu.TreeDirectory) and item[3].get_desktop_file_path() and update_type == GMenu.TreeItemType.DIRECTORY:
 						if os.path.split(item[3].get_desktop_file_path())[1] == item_id:
 							found = True
-				if item[3].get_type() == gmenu.TYPE_SEPARATOR:
+				if isinstance(item[3], GMenu.TreeSeparator):
 					if not isinstance(item_id, tuple):
 						#we may not skip the increment via "continue"
 						i += 1
@@ -202,7 +210,7 @@ class MainWindow:
 		items.enable_model_drag_dest(self.dnd_items, Gdk.DragAction.PRIVATE)
 
 	def _cell_data_toggle_func(self, tree_column, renderer, model, treeiter, data=None):
-		if model[treeiter][3].get_type() == gmenu.TYPE_SEPARATOR:
+		if isinstance(model[treeiter][3], GMenu.TreeSeparator):
 			renderer.set_property('visible', False)
 		else:
 			renderer.set_property('visible', True)
@@ -242,14 +250,15 @@ class MainWindow:
 		self.item_store.clear()
 		for item, show in self.editor.getItems(menu):
 			menu_icon = None
-			if item.get_type() == gmenu.TYPE_SEPARATOR:
+			if isinstance(item, GMenu.TreeSeparator):
 				name = '---'
 				icon = None
-			elif item.get_type() == gmenu.TYPE_ENTRY:
+			elif isinstance(item, GMenu.TreeEntry):
+				app_info = item.get_app_info()
 				if show:
-					name = cgi.escape(item.get_display_name())
+					name = cgi.escape(app_info.get_display_name())
 				else:
-					name = '<small><i>' + cgi.escape(item.get_display_name()) + '</i></small>'
+					name = '<small><i>' + cgi.escape(app_info.get_display_name()) + '</i></small>'
 				icon = util.getIcon(item)
 			else:
 				if show:
@@ -297,7 +306,7 @@ class MainWindow:
 			parent = menus[iter][2]
 		file_path = os.path.join(util.getUserDirectoryPath(), util.getUniqueFileId('alacarte-made', '.directory'))
 		process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
-		GObject.timeout_add(100, self.waitForNewMenuProcess, process, parent.menu_id, file_path)
+		GObject.timeout_add(100, self.waitForNewMenuProcess, process, parent.get_menu_id(), file_path)
 
 	def on_new_item_button_clicked(self, button):
 		menu_tree = self.tree.get_object('menu_tree')
@@ -310,7 +319,7 @@ class MainWindow:
 			parent = menus[iter][2]
 		file_path = os.path.join(util.getUserItemPath(), util.getUniqueFileId('alacarte-made', '.desktop'))
 		process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
-		GObject.timeout_add(100, self.waitForNewItemProcess, process, parent.menu_id, file_path)
+		GObject.timeout_add(100, self.waitForNewItemProcess, process, parent.get_menu_id(), file_path)
 
 	def on_new_separator_button_clicked(self, button):
 		item_tree = self.tree.get_object('item_tree')
@@ -330,11 +339,11 @@ class MainWindow:
 		if not iter:
 			return
 		item = items[iter][3]
-		if item.get_type() == gmenu.TYPE_ENTRY:
+		if isinstance(item, GMenu.TreeEntry):
 			self.editor.deleteItem(item)
-		elif item.get_type() == gmenu.TYPE_DIRECTORY:
+		elif isinstance(item, GMenu.TreeDirectory):
 			self.editor.deleteMenu(item)
-		elif item.get_type() == gmenu.TYPE_SEPARATOR:
+		elif isinstance(item, GMenu.TreeSeparator):
 			self.editor.deleteSeparator(item)
 
 	def on_edit_revert_to_original_activate(self, menu):
@@ -343,9 +352,9 @@ class MainWindow:
 		if not iter:
 			return
 		item = items[iter][3]
-		if item.get_type() == gmenu.TYPE_ENTRY:
+		if isinstance(item, GMenu.TreeEntry):
 			self.editor.revertItem(item)
-		elif item.get_type() == gmenu.TYPE_DIRECTORY:
+		elif isinstance(item, GMenu.TreeDirectory):
 			self.editor.revertMenu(item)
 
 	def on_edit_properties_activate(self, menu):
@@ -354,13 +363,13 @@ class MainWindow:
 		if not iter:
 			return
 		item = items[iter][3]
-		if item.get_type() not in (gmenu.TYPE_ENTRY, gmenu.TYPE_DIRECTORY):
+		if not isinstance(item, GMenu.TreeEntry) and not isinstance(item, GMenu.TreeDirectory):
 			return
 
-		if item.get_type() == gmenu.TYPE_ENTRY:
+		if isinstance(item, GMenu.TreeEntry):
 			file_path = os.path.join(util.getUserItemPath(), item.get_desktop_file_id())
 			file_type = 'Item'
-		elif item.get_type() == gmenu.TYPE_DIRECTORY:
+		elif isinstance(item, GMenu.TreeDirectory):
 			if item.get_desktop_file_path() == None:
 				file_path = util.getUniqueFileId('alacarte-made', '.directory')
 				parser = util.DesktopParser(file_path, 'Directory')
@@ -419,12 +428,12 @@ class MainWindow:
 				item = self.drag_data
 				new_parent = menus[path][2]
 				treeview.get_selection().select_path(path)
-				if item.get_type() == gmenu.TYPE_ENTRY:
+				if isinstance(item, GMenu.TreeEntry):
 					self.editor.copyItem(item, new_parent)
-				elif item.get_type() == gmenu.TYPE_DIRECTORY:
+				elif isinstance(item, GMenu.TreeDirectory):
 					if self.editor.moveMenu(item, new_parent) == False:
 						self.loadUpdates()
-				elif item.get_type() == gmenu.TYPE_SEPARATOR:
+				elif isinstance(item, GMenu.TreeSeparator):
 					self.editor.moveSeparator(item, new_parent)
 				else:
 					context.finish(False, False, etime) 
@@ -433,7 +442,7 @@ class MainWindow:
 
 	def on_item_tree_show_toggled(self, cell, path):
 		item = self.item_store[path][3]
-		if item.get_type() == gmenu.TYPE_SEPARATOR:
+		if isinstance(item, GMenu.TreeSeparator):
 			return
 		if self.item_store[path][0]:
 			self.editor.setVisible(item, False)
@@ -453,7 +462,7 @@ class MainWindow:
 			self.tree.get_object('edit_revert_to_original').set_sensitive(True)
 		else:
 			self.tree.get_object('edit_revert_to_original').set_sensitive(False)
-		if not item.get_type() == gmenu.TYPE_SEPARATOR:
+		if not isinstance(item, GMenu.TreeSeparator):
 			self.tree.get_object('edit_properties').set_sensitive(True)
 			self.tree.get_object('properties_button').set_sensitive(True)
 		else:
@@ -519,7 +528,7 @@ class MainWindow:
 				path, position = drop_info
 				target = items[path][3]
 				# move the item to the directory, if the item was dropped into it
-				if (target.get_type() == gmenu.TYPE_DIRECTORY) and (position in types_into):
+				if isinstance(target, GMenu.TreeDirectory) and (position in types_into):
 					# append the selected item to the choosen menu
 					destination = target
 				elif position in types_before:
@@ -532,12 +541,12 @@ class MainWindow:
 			else:
 				path = (len(items) - 1,)
 				after = items[path][3]
-			if item.get_type() == gmenu.TYPE_ENTRY:
+			if isinstance(item, GMenu.TreeEntry):
 				self.editor.moveItem(item, destination, before, after)
-			elif item.get_type() == gmenu.TYPE_DIRECTORY:
+			elif isinstance(item, GMenu.TreeDirectory):
 				if self.editor.moveMenu(item, destination, before, after) == False:
 					self.loadUpdates()
-			elif item.get_type() == gmenu.TYPE_SEPARATOR:
+			elif isinstance(item, GMenu.TreeSeparator):
 				self.editor.moveSeparator(item, destination, before, after)
 			context.finish(True, True, etime)
 		elif selection.target == 'text/plain':
@@ -591,11 +600,11 @@ class MainWindow:
 			return
 		item = items[path][3]
 		before = items[(path.get_indices()[0] - 1,)][3]
-		if item.get_type() == gmenu.TYPE_ENTRY:
+		if isinstance(item, GMenu.TreeEntry):
 			self.editor.moveItem(item, item.get_parent(), before=before)
-		elif item.get_type() == gmenu.TYPE_DIRECTORY:
+		elif isinstance(item, GMenu.TreeDirectory):
 			self.editor.moveMenu(item, item.get_parent(), before=before)
-		elif item.get_type() == gmenu.TYPE_SEPARATOR:
+		elif isinstance(item, GMenu.TreeSeparator):
 			self.editor.moveSeparator(item, item.get_parent(), before=before)
 
 	def on_move_down_button_clicked(self, button):
@@ -609,11 +618,11 @@ class MainWindow:
 			return
 		item = items[path][3]
 		after = items[path][3]
-		if item.get_type() == gmenu.TYPE_ENTRY:
+		if isinstance(item, GMenu.TreeEntry):
 			self.editor.moveItem(item, item.get_parent(), after=after)
-		elif item.get_type() == gmenu.TYPE_DIRECTORY:
+		elif isinstance(item, GMenu.TreeDirectory):
 			self.editor.moveMenu(item, item.get_parent(), after=after)
-		elif item.get_type() == gmenu.TYPE_SEPARATOR:
+		elif isinstance(item, GMenu.TreeSeparator):
 			self.editor.moveSeparator(item, item.get_parent(), after=after)
 
 	def on_mainwindow_undo(self, accelgroup, window, keyval, modifier):

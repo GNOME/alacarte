@@ -1,0 +1,83 @@
+# translation of alacarte.master.po to Khmer
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2012.
+# Sok Sophea <sophea@khmeros.info>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte.master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-09-22 09:28+0000\n"
+"PO-Revision-Date: 2012-01-17 09:18+0700\n"
+"Last-Translator: Sok Sophea <sophea@khmeros.info>\n"
+"Language-Team: Khmer <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: WordForge 0.8 RC1\n"
+"X-Language: km-KH\n"
+
+#: ../Alacarte/MainWindow.py:167
+msgid "Name"
+msgstr "ឈ្មោះ"
+
+#: ../Alacarte/MainWindow.py:182
+msgid "Show"
+msgstr "បង្ហាញ"
+
+#: ../Alacarte/MainWindow.py:190
+msgid "Item"
+msgstr "ធាតុ"
+
+#: ../data/alacarte.desktop.in.in.h:1
+msgid "Change which applications are shown on the main menu"
+msgstr "ផ្លាស់ប្ដូរ​កម្មវិធី​ដែល​ត្រូវ​​បង្ហាញ​លើ​ម៉ឺនុយ​មេ"
+
+#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.ui.h:2
+msgid "Main Menu"
+msgstr "ម៉ឺនុយ​មេ"
+
+#: ../data/alacarte.ui.h:1
+msgid "It_ems:"
+msgstr "ធាតុ ៖"
+
+#: ../data/alacarte.ui.h:3
+msgid "Move Down"
+msgstr "ផ្លាស់ទី​ចុះក្រោម"
+
+#: ../data/alacarte.ui.h:4
+msgid "Move Up"
+msgstr "ផ្លាស់ទី​ឡើងលើ"
+
+#: ../data/alacarte.ui.h:5
+msgid "Ne_w Item"
+msgstr "ធាតុ​ថ្មី"
+
+#: ../data/alacarte.ui.h:6
+msgid "New _Separator"
+msgstr "កម្មវិធី​បំបែក​ថ្មី"
+
+#: ../data/alacarte.ui.h:7
+msgid "Restore the default menu layout"
+msgstr "ស្ដារ​ប្លង់​ម៉ឺនុយ​លំនាំដើម"
+
+#: ../data/alacarte.ui.h:8
+msgid "Revert Changes?"
+msgstr "ប្ដូរ​ត្រឡប់​ទៅ​ដើម ឬ ?"
+
+#: ../data/alacarte.ui.h:9
+msgid "Revert all menus to original settings?"
+msgstr "ត្រឡប់​ម៉ឺនុយ​ទាំងអស់​ទៅកាន់​ការ​កំណត់​ដើម ឬ ?"
+
+#: ../data/alacarte.ui.h:10
+msgid "_Menus:"
+msgstr "ម៉ឺនុយ ៖"
+
+#: ../data/alacarte.ui.h:11
+msgid "_New Menu"
+msgstr "ម៉ឺនុយ​ថ្មី"
+
+#: ../data/alacarte.ui.h:12
+msgid "_Revert to Original"
+msgstr "ត្រឡប់​ទៅ​ដើម"

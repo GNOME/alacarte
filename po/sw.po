@@ -1,0 +1,82 @@
+# Swahili translation of alacarte.
+# Copyright (C) 2012 Listed translators
+# This file is distributed under the same license as the alacarte package.
+# Arthur Buliva <arthur@kamusi.org>, 2012
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-02-13 13:52+0000\n"
+"PO-Revision-Date: 2012-02-15 19:15+0100\n"
+"Last-Translator: Arthur Buliva <arthur@kamusi.org>\n"
+"Language-Team: Swahili <sw@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.9.0\n"
+
+#: ../Alacarte/MainWindow.py:167
+msgid "Name"
+msgstr "Jina"
+
+#: ../Alacarte/MainWindow.py:182
+msgid "Show"
+msgstr "Onyesha"
+
+#: ../Alacarte/MainWindow.py:190
+msgid "Item"
+msgstr "Kipengee"
+
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:2
+msgid "Main Menu"
+msgstr "Menyu kuu"
+
+#: ../data/alacarte.desktop.in.in.h:2
+msgid "Change which applications are shown on the main menu"
+msgstr "Badilisha programu-tumizi zinazoonyeshwa kwemye menyu kuu"
+
+#: ../data/alacarte.ui.h:1
+msgid "_Revert to Original"
+msgstr "_Rejesha iwe kama asili"
+
+#: ../data/alacarte.ui.h:3
+msgid "Restore the default menu layout"
+msgstr "Rudisha mpangilio hadi chaguo-msingi"
+
+#: ../data/alacarte.ui.h:4
+msgid "_Menus:"
+msgstr "_Menyu:"
+
+#: ../data/alacarte.ui.h:5
+msgid "It_ems:"
+msgstr "Vip_engee:"
+
+#: ../data/alacarte.ui.h:6
+msgid "_New Menu"
+msgstr "Me_nyu Mpya"
+
+#: ../data/alacarte.ui.h:7
+msgid "Ne_w Item"
+msgstr "Kipengee kip_ya"
+
+#: ../data/alacarte.ui.h:8
+msgid "New _Separator"
+msgstr "Kitengani_shi kipya"
+
+#: ../data/alacarte.ui.h:9
+msgid "Move Up"
+msgstr "Hamisha juu"
+
+#: ../data/alacarte.ui.h:10
+msgid "Move Down"
+msgstr "Hamisha chini"
+
+#: ../data/alacarte.ui.h:11
+msgid "Revert Changes?"
+msgstr "Rejesha mabadiliko?"
+
+#: ../data/alacarte.ui.h:12
+msgid "Revert all menus to original settings?"
+msgstr "Rejesha menyu zote ziwe katika mpangilio wa asili"

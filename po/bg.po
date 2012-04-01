@@ -3,83 +3,84 @@
 # Copyright (C) 2006, 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Alacarte package.
 # Stanimir Djevelekov <kori.mendocino@gmail.com>, 2005.
-# Alexander Shopov <ash@contact.bg>, 2006, 2007.
-# Vladimir "Kaladan" Petkov <vpetkov@i-space.org>, 2006, 2007.
+# Alexander Shopov <ash@kambanaria.org>, 2006, 2007.
+# Vladimir "Kaladan" Petkov <kaladan@gmail.com>, 2006, 2007.
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-21 23:48+0200\n"
-"PO-Revision-Date: 2007-02-21 23:47+0200\n"
-"Last-Translator: Vladimir Petkov <vpetkov@i-space.org>\n"
+"POT-Creation-Date: 2012-04-01 17:57+0300\n"
+"PO-Revision-Date: 2012-04-01 17:59+0300\n"
+"Last-Translator: Vladimir Petkov <kaladan@gmail.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../Alacarte/MainWindow.py:167
 msgid "Name"
 msgstr "Име"
 
-#: ../Alacarte/MainWindow.py:183
+#: ../Alacarte/MainWindow.py:182
 msgid "Show"
 msgstr "Показване"
 
-#: ../Alacarte/MainWindow.py:191
+#: ../Alacarte/MainWindow.py:190
 msgid "Item"
 msgstr "Стартер"
 
-#: ../alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "Промяна на програмите в основното меню"
-
-#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:2
 msgid "Main Menu"
 msgstr "Основно меню"
 
-#: ../alacarte.glade.h:1
-msgid "It_ems:"
-msgstr "С_тартери:"
+#: ../data/alacarte.desktop.in.in.h:2
+msgid "Change which applications are shown on the main menu"
+msgstr "Промяна на програмите в основното меню"
 
-#: ../alacarte.glade.h:3
-msgid "Move Down"
-msgstr "Надолу"
+#: ../data/alacarte.ui.h:1
+msgid "_Revert to Original"
+msgstr "_Връщане към началните стойности"
 
-#: ../alacarte.glade.h:4
-msgid "Move Up"
-msgstr "Нагоре"
-
-#: ../alacarte.glade.h:5
-msgid "Ne_w Item"
-msgstr "Нов _стартер"
-
-#: ../alacarte.glade.h:6
-msgid "New _Separator"
-msgstr "Нов _разделител"
-
-#: ../alacarte.glade.h:7
+#: ../data/alacarte.ui.h:3
 msgid "Restore the default menu layout"
 msgstr "Възстановяване на първоначалната подредба на менюто"
 
-#: ../alacarte.glade.h:8
-msgid "Revert Changes?"
-msgstr "Връщане на промените?"
-
-#: ../alacarte.glade.h:9
-msgid "Revert all menus to original settings?"
-msgstr "Връщане на всички менюта към първоначалните им стойности?"
-
-#: ../alacarte.glade.h:10
+#: ../data/alacarte.ui.h:4
 msgid "_Menus:"
 msgstr "М_енюта:"
 
-#: ../alacarte.glade.h:11
+#: ../data/alacarte.ui.h:5
+msgid "It_ems:"
+msgstr "С_тартери:"
+
+#: ../data/alacarte.ui.h:6
 msgid "_New Menu"
 msgstr "Ново _меню"
 
-#: ../alacarte.glade.h:12
-msgid "_Revert to Original"
-msgstr "_Връщане към началните стойности"
+#: ../data/alacarte.ui.h:7
+msgid "Ne_w Item"
+msgstr "Нов _стартер"
+
+#: ../data/alacarte.ui.h:8
+msgid "New _Separator"
+msgstr "Нов _разделител"
+
+#: ../data/alacarte.ui.h:9
+msgid "Move Up"
+msgstr "Нагоре"
+
+#: ../data/alacarte.ui.h:10
+msgid "Move Down"
+msgstr "Надолу"
+
+#: ../data/alacarte.ui.h:11
+msgid "Revert Changes?"
+msgstr "Връщане на промените?"
+
+#: ../data/alacarte.ui.h:12
+msgid "Revert all menus to original settings?"
+msgstr "Връщане на всички менюта към първоначалните им стойности?"

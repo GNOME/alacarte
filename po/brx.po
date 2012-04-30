@@ -1,0 +1,82 @@
+# translation of alacarte into Bodo.
+# Copyright (C) 2012 Listed translators
+# This file is distributed under the same license as the alacarte package.
+# Sanjib Narzary <alayaran@gmail.com>, 2012
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte brx master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-04-01 14:59+0000\n"
+"PO-Revision-Date: 2012-04-29 15:33+0530\n"
+"Last-Translator: Sanjib Narzary <alayaran@gmail.com>\n"
+"Language-Team: Bodo <brx@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../Alacarte/MainWindow.py:167
+msgid "Name"
+msgstr "मुं"
+
+#: ../Alacarte/MainWindow.py:182
+msgid "Show"
+msgstr "दिनथि"
+
+#: ../Alacarte/MainWindow.py:190
+msgid "Item"
+msgstr "आइटेम"
+
+#: ../data/alacarte.desktop.in.in.h:1
+#: ../data/alacarte.ui.h:2
+msgid "Main Menu"
+msgstr "गुदि मिनु"
+
+#: ../data/alacarte.desktop.in.in.h:2
+msgid "Change which applications are shown on the main menu"
+msgstr "बबे एपलिकेसना गुदि मिनुयाव नुजानांगैौ बेखौ सोलाइ"
+
+#: ../data/alacarte.ui.h:1
+msgid "_Revert to Original"
+msgstr "असेयाव _सोलाइफिन"
+
+#: ../data/alacarte.ui.h:3
+msgid "Restore the default menu layout"
+msgstr "डिफलट मिनु लआवटाव रिचटर खालामफिन"
+
+#: ../data/alacarte.ui.h:4
+msgid "_Menus:"
+msgstr "_मिनुफोर:"
+
+#: ../data/alacarte.ui.h:5
+msgid "It_ems:"
+msgstr "आइ_टेमच:"
+
+#: ../data/alacarte.ui.h:6
+msgid "_New Menu"
+msgstr "_New मिनु"
+
+#: ../data/alacarte.ui.h:7
+msgid "Ne_w Item"
+msgstr "Ne_w आइटेम"
+
+#: ../data/alacarte.ui.h:8
+msgid "New _Separator"
+msgstr "गोदान _Separator"
+
+#: ../data/alacarte.ui.h:9
+msgid "Move Up"
+msgstr "गाखो"
+
+#: ../data/alacarte.ui.h:10
+msgid "Move Down"
+msgstr "गाखोखलाइ"
+
+#: ../data/alacarte.ui.h:11
+msgid "Revert Changes?"
+msgstr "सोलाइनायखौ उलथायफिन?"
+
+#: ../data/alacarte.ui.h:12
+msgid "Revert all menus to original settings?"
+msgstr "गासिबो मिनुफोरखौ असे सेटिंचआव लाबोफिन?"
+

@@ -200,11 +200,9 @@ def getUserMenuXml(tree):
 	menu_xml += "<MergeFile type=\"parent\">" + system_file +	"</MergeFile>\n</Menu>\n"
 	return menu_xml
 
-def getIcon(item, for_properties=False):
+def getIcon(item):
 	pixbuf, path = None, None
 	if item == None:
-		if for_properties:
-			return None, None
 		return None
 
 	if isinstance(item, GMenu.TreeDirectory):
@@ -220,8 +218,6 @@ def getIcon(item, for_properties=False):
 		path = info.get_filename()
 	except:
 		if pixbuf is None:
-			if for_properties:
-				return None, None
 			if isinstance(item, GMenu.TreeDirectory):
 				iconName = 'gnome-fs-directory'
 			else:
@@ -235,6 +231,4 @@ def getIcon(item, for_properties=False):
 		return None
 	if pixbuf.get_width() != 24 or pixbuf.get_height() != 24:
 		pixbuf = pixbuf.scale_simple(24, 24, GdkPixbuf.InterpType.HYPER)
-	if for_properties:
-		return pixbuf, path
 	return pixbuf

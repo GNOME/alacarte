@@ -219,11 +219,7 @@ class MainWindow:
         menu_tree = self.tree.get_object('menu_tree')
         menu_tree.set_model(self.menu_store)
         for menu in self.menu_store:
-            #this might not work for some reason
-            try:
-                menu_tree.expand_to_path(menu.path)
-            except:
-                pass
+            menu_tree.expand_to_path(menu.path)
         menu_tree.get_selection().select_path((0,))
         self.on_menu_tree_cursor_changed(menu_tree)
 
@@ -639,11 +635,7 @@ class MainWindow:
         dialog.hide()
 
     def on_close_button_clicked(self, button):
-        try:
-            self.tree.get_object('mainwindow').hide()
-        except:
-            pass
-        GObject.timeout_add(10, self.quit)
+        self.quit()
 
     def on_properties_button_clicked(self, button):
         self.on_edit_properties_activate(None)

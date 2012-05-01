@@ -62,10 +62,9 @@ class MenuEditor(object):
         self.applications.visible_tree.connect("changed", self.__menuChanged)
 
     def save(self, from_loading=False):
-        for menu in ('applications',):
-            fd = open(getattr(self, menu).path, 'w')
-            fd.write(re.sub("\n[\s]*([^\n<]*)\n[\s]*</", "\\1</", getattr(self, menu).dom.toprettyxml().replace('<?xml version="1.0" ?>\n', '')))
-            fd.close()
+        fd = open(self.applications.path, 'w')
+        fd.write(self.applications.dom.toprettyxml())
+        fd.close()
         if not from_loading:
             self.__loadMenus()
 
@@ -84,19 +83,18 @@ class MenuEditor(object):
                 os.unlink(file_path)
 
     def revert(self):
-        for name in ('applications',):
-            menu = getattr(self, name)
-            self.revertTree(menu.tree.get_root_directory())
-            path = os.path.join(util.getUserMenuPath(), os.path.basename(menu.tree.get_canonical_menu_path()))
-            try:
-                os.unlink(path)
-            except OSError:
-                pass
+        menu = self.applications
+        self.revertTree(menu.tree.get_root_directory())
+        path = os.path.join(util.getUserMenuPath(), os.path.basename(menu.tree.get_canonical_menu_path()))
+        try:
+            os.unlink(path)
+        except OSError:
+            pass
             #reload DOM for each menu
-            if not os.path.isfile(menu.path):
-                menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
-            else:
-                menu.dom = xml.dom.minidom.parse(menu.path)
+        if not os.path.isfile(menu.path):
+            menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
+        else:
+            menu.dom = xml.dom.minidom.parse(menu.path)
             self.__remove_whilespace_nodes(menu.dom)
         #reset undo/redo, no way to recover from this
         self.__undo, self.__redo = [], []
@@ -130,13 +128,12 @@ class MenuEditor(object):
             os.unlink(file_path)
             redo.append(redo_path)
         #reload DOM to make changes stick
-        for name in ('applications',):
-            menu = getattr(self, name)
-            if not os.path.isfile(menu.path):
-                menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
-            else:
-                menu.dom = xml.dom.minidom.parse(menu.path)
-            self.__remove_whilespace_nodes(menu.dom)
+        menu = self.applications
+        if not os.path.isfile(menu.path):
+            menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
+        else:
+            menu.dom = xml.dom.minidom.parse(menu.path)
+        self.__remove_whilespace_nodes(menu.dom)
         self.__redo.append(redo)
 
     def redo(self):

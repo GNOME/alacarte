@@ -80,75 +80,44 @@ def getUniqueUndoFile(filepath):
             append += 1
     return new_filepath
 
-def getUserMenuPath():
-    menu_dir = None
-    if os.environ.has_key('XDG_CONFIG_HOME'):
-        menu_dir = os.path.join(os.environ['XDG_CONFIG_HOME'], 'menus')
-    else:
-        menu_dir = os.path.join(os.environ['HOME'], '.config', 'menus')
-    #move .config out of the way if it's not a dir, it shouldn't be there
-    if os.path.isfile(os.path.split(menu_dir)[0]):
-        os.rename(os.path.split(menu_dir)[0], os.path.split(menu_dir)[0] + '.old')
-    if not os.path.isdir(menu_dir):
-        os.makedirs(menu_dir)
-    return menu_dir
-
 def getItemPath(file_id):
-    if os.environ.has_key('XDG_DATA_DIRS'):
-        for system_path in os.environ['XDG_DATA_DIRS'].split(':'):
-            file_path = os.path.join(system_path, 'applications', file_id)
-            if os.path.isfile(file_path):
-                return file_path
-    file_path = os.path.join('/', 'usr', 'share', 'applications', file_id)
-    if os.path.isfile(file_path):
-        return file_path
-    return False
+    for path in GLib.get_system_data_dirs():
+        file_path = os.path.join(path, 'applications', file_id)
+        if os.path.isfile(file_path):
+            return file_path
+    return None
 
 def getUserItemPath():
-    item_dir = None
-    if os.environ.has_key('XDG_DATA_HOME'):
-        item_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'applications')
-    else:
-        item_dir = os.path.join(os.environ['HOME'], '.local', 'share', 'applications')
+    item_dir = os.path.join(GLib.get_user_data_dir(), 'applications')
     if not os.path.isdir(item_dir):
         os.makedirs(item_dir)
     return item_dir
 
 def getDirectoryPath(file_id):
-    home = getUserDirectoryPath()
-    file_path = os.path.join(home, file_id)
-    if os.path.isfile(file_path):
-        return file_path
-    if os.environ.has_key('XDG_DATA_DIRS'):
-        for system_path in os.environ['XDG_DATA_DIRS'].split(':'):
-            file_path = os.path.join(system_path, 'desktop-directories', file_id)
-            if os.path.isfile(file_path):
-                return file_path
-    file_path = os.path.join('/', 'usr', 'share', 'desktop-directories', file_id)
-    if os.path.isfile(file_path):
-        return file_path
-    return False
+    for path in GLib.get_system_data_dirs():
+        file_path = os.path.join(path, 'desktop-directories', file_id)
+        if os.path.isfile(file_path):
+            return file_path
+    return None
 
 def getUserDirectoryPath():
-    menu_dir = None
-    if os.environ.has_key('XDG_DATA_HOME'):
-        menu_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'desktop-directories')
-    else:
-        menu_dir = os.path.join(os.environ['HOME'], '.local', 'share', 'desktop-directories')
+    menu_dir = os.path.join(GLib.get_user_data_dir(), 'desktop-directories')
     if not os.path.isdir(menu_dir):
         os.makedirs(menu_dir)
     return menu_dir
 
-def getSystemMenuPath(file_name):
-    if os.environ.has_key('XDG_CONFIG_DIRS'):
-        for system_path in os.environ['XDG_CONFIG_DIRS'].split(':'):
-            file_path = os.path.join(system_path, 'menus', file_name)
-            if os.path.isfile(file_path):
-                return file_path
-    file_path = os.path.join('/', 'etc', 'xdg', 'menus', file_name)
-    if os.path.isfile(file_path):
-        return file_path
-    return False
+def getUserMenuPath():
+    menu_dir = os.path.join(GLib.get_user_config_dir(), 'menus')
+    if not os.path.isdir(menu_dir):
+        os.makedirs(menu_dir)
+    return menu_dir
+
+def getSystemMenuPath(file_id):
+    for path in GLib.get_system_config_dirs():
+        file_path = os.path.join(path, 'menus', file_id)
+        if os.path.isfile(file_path):
+            return file_path
+    return None
 
 def getUserMenuXml(tree):
     system_file = getSystemMenuPath(os.path.basename(tree.get_canonical_menu_path()))

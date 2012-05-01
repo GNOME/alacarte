@@ -217,7 +217,7 @@ class MenuEditor(object):
 
     def canRevert(self, item):
         if isinstance(item, GMenu.TreeEntry):
-            if util.getItemPath(item.get_desktop_file_id()):
+            if util.getItemPath(item.get_desktop_file_id()) is not None:
                 path = util.getUserItemPath()
                 if os.path.isfile(os.path.join(path, item.get_desktop_file_id())):
                     return True
@@ -226,7 +226,7 @@ class MenuEditor(object):
                 file_id = os.path.split(item.get_desktop_file_path())[1]
             else:
                 file_id = item.get_menu_id() + '.directory'
-            if util.getDirectoryPath(file_id):
+            if util.getDirectoryPath(file_id) is not None:
                 path = util.getUserDirectoryPath()
                 if os.path.isfile(os.path.join(path, file_id)):
                     return True

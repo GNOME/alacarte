@@ -23,12 +23,11 @@ import gettext
 import subprocess
 import urllib
 import tempfile
-try:
-    from Alacarte import config
-    gettext.bindtextdomain(config.GETTEXT_PACKAGE,config.localedir)
-    gettext.textdomain(config.GETTEXT_PACKAGE)
-except:
-    pass
+
+from Alacarte import config
+gettext.bindtextdomain(config.GETTEXT_PACKAGE, config.localedir)
+gettext.textdomain(config.GETTEXT_PACKAGE)
+
 _ = gettext.gettext
 from Alacarte.MenuEditor import MenuEditor
 from Alacarte import util

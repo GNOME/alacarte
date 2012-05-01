@@ -22,6 +22,7 @@ import cgi, os
 import gettext
 import subprocess
 import urllib
+import tempfile
 try:
     from Alacarte import config
     gettext.bindtextdomain(config.GETTEXT_PACKAGE,config.localedir)
@@ -32,7 +33,6 @@ _ = gettext.gettext
 from Alacarte.MenuEditor import MenuEditor
 from Alacarte import util
 import sys
-from traceback import print_stack
 
 class MainWindow:
     timer = None

@@ -21,214 +21,214 @@ from gi.repository import Gtk, GdkPixbuf, GMenu
 from ConfigParser import ConfigParser
 
 class DesktopParser(ConfigParser):
-	def __init__(self, filename=None, file_type='Application'):
-		ConfigParser.__init__(self)
-		self.filename = filename
-		self.file_type = file_type
-		if filename:
-			if len(self.read(filename)) == 0:
-				#file doesn't exist
-				self.add_section('Desktop Entry')
-		else:
-			self.add_section('Desktop Entry')
-		self._list_separator = ';'
+    def __init__(self, filename=None, file_type='Application'):
+        ConfigParser.__init__(self)
+        self.filename = filename
+        self.file_type = file_type
+        if filename:
+            if len(self.read(filename)) == 0:
+                #file doesn't exist
+                self.add_section('Desktop Entry')
+        else:
+            self.add_section('Desktop Entry')
+        self._list_separator = ';'
 
-	def optionxform(self, option):
-		#makes keys not be lowercase
-		return option
+    def optionxform(self, option):
+        #makes keys not be lowercase
+        return option
 
-	def get(self, option, locale=None):
-		locale_option = option + '[%s]' % locale
-		try:
-			value = ConfigParser.get(self, 'Desktop Entry', locale_option)
-		except:
-			try:
-				value = ConfigParser.get(self, 'Desktop Entry', option)
-			except:
-				return None
-		if self._list_separator in value:
-			value = value.split(self._list_separator)
-		if value == 'true':
-			value = True
-		if value == 'false':
-			value = False
-		return value
+    def get(self, option, locale=None):
+        locale_option = option + '[%s]' % locale
+        try:
+            value = ConfigParser.get(self, 'Desktop Entry', locale_option)
+        except:
+            try:
+                value = ConfigParser.get(self, 'Desktop Entry', option)
+            except:
+                return None
+        if self._list_separator in value:
+            value = value.split(self._list_separator)
+        if value == 'true':
+            value = True
+        if value == 'false':
+            value = False
+        return value
 
-	def set(self, option, value, locale=None):
-		if locale:
-			option = option + '[%s]' % locale
-		if value == True:
-			value = 'true'
-		if value == False:
-			value = 'false'
-		if isinstance(value, tuple) or isinstance(value, list):
-			value = self._list_separator.join(value) + ';'
-		ConfigParser.set(self, 'Desktop Entry', option, value)
+    def set(self, option, value, locale=None):
+        if locale:
+            option = option + '[%s]' % locale
+        if value == True:
+            value = 'true'
+        if value == False:
+            value = 'false'
+        if isinstance(value, tuple) or isinstance(value, list):
+            value = self._list_separator.join(value) + ';'
+        ConfigParser.set(self, 'Desktop Entry', option, value)
 
-	def write(self, file_object):
-		file_object.write('[Desktop Entry]\n')
-		items = []
-		if not self.filename:
-			file_object.write('Encoding=UTF-8\n')
-			file_object.write('Type=' + str(self.file_type) + '\n')
-		for item in self.items('Desktop Entry'):
-			items.append(item)
-		items.sort()
-		for item in items:
-			file_object.write(item[0] + '=' + item[1] + '\n')
+    def write(self, file_object):
+        file_object.write('[Desktop Entry]\n')
+        items = []
+        if not self.filename:
+            file_object.write('Encoding=UTF-8\n')
+            file_object.write('Type=' + str(self.file_type) + '\n')
+        for item in self.items('Desktop Entry'):
+            items.append(item)
+        items.sort()
+        for item in items:
+            file_object.write(item[0] + '=' + item[1] + '\n')
 
 def getUniqueFileId(name, extension):
-	append = 0
-	while 1:
-		if append == 0:
-			filename = name + extension
-		else:
-			filename = name + '-' + str(append) + extension
-		if extension == '.desktop':
-			path = getUserItemPath()
-			if not os.path.isfile(os.path.join(path, filename)) and not getItemPath(filename):
-				break
-		elif extension == '.directory':
-			path = getUserDirectoryPath()
-			if not os.path.isfile(os.path.join(path, filename)) and not getDirectoryPath(filename):
-				break
-		append += 1
-	return filename
+    append = 0
+    while 1:
+        if append == 0:
+            filename = name + extension
+        else:
+            filename = name + '-' + str(append) + extension
+        if extension == '.desktop':
+            path = getUserItemPath()
+            if not os.path.isfile(os.path.join(path, filename)) and not getItemPath(filename):
+                break
+        elif extension == '.directory':
+            path = getUserDirectoryPath()
+            if not os.path.isfile(os.path.join(path, filename)) and not getDirectoryPath(filename):
+                break
+        append += 1
+    return filename
 
 def getUniqueRedoFile(filepath):
-	append = 0
-	while 1:
-		new_filepath = filepath + '.redo-' + str(append)
-		if not os.path.isfile(new_filepath):
-			break
-		else:
-			append += 1
-	return new_filepath
+    append = 0
+    while 1:
+        new_filepath = filepath + '.redo-' + str(append)
+        if not os.path.isfile(new_filepath):
+            break
+        else:
+            append += 1
+    return new_filepath
 
 def getUniqueUndoFile(filepath):
-	filename, extension = os.path.split(filepath)[1].rsplit('.', 1)
-	append = 0
-	while 1:
-		if extension == 'desktop':
-			path = getUserItemPath()
-		elif extension == 'directory':
-			path = getUserDirectoryPath()
-		elif extension == 'menu':
-			path = getUserMenuPath()
-		new_filepath = os.path.join(path, filename + '.' + extension + '.undo-' + str(append))
-		if not os.path.isfile(new_filepath):
-			break
-		else:
-			append += 1
-	return new_filepath
+    filename, extension = os.path.split(filepath)[1].rsplit('.', 1)
+    append = 0
+    while 1:
+        if extension == 'desktop':
+            path = getUserItemPath()
+        elif extension == 'directory':
+            path = getUserDirectoryPath()
+        elif extension == 'menu':
+            path = getUserMenuPath()
+        new_filepath = os.path.join(path, filename + '.' + extension + '.undo-' + str(append))
+        if not os.path.isfile(new_filepath):
+            break
+        else:
+            append += 1
+    return new_filepath
 
 def getUserMenuPath():
-	menu_dir = None
-	if os.environ.has_key('XDG_CONFIG_HOME'):
-		menu_dir = os.path.join(os.environ['XDG_CONFIG_HOME'], 'menus')
-	else:
-		menu_dir = os.path.join(os.environ['HOME'], '.config', 'menus')
-	#move .config out of the way if it's not a dir, it shouldn't be there
-	if os.path.isfile(os.path.split(menu_dir)[0]):
-		os.rename(os.path.split(menu_dir)[0], os.path.split(menu_dir)[0] + '.old')
-	if not os.path.isdir(menu_dir):
-		os.makedirs(menu_dir)
-	return menu_dir
+    menu_dir = None
+    if os.environ.has_key('XDG_CONFIG_HOME'):
+        menu_dir = os.path.join(os.environ['XDG_CONFIG_HOME'], 'menus')
+    else:
+        menu_dir = os.path.join(os.environ['HOME'], '.config', 'menus')
+    #move .config out of the way if it's not a dir, it shouldn't be there
+    if os.path.isfile(os.path.split(menu_dir)[0]):
+        os.rename(os.path.split(menu_dir)[0], os.path.split(menu_dir)[0] + '.old')
+    if not os.path.isdir(menu_dir):
+        os.makedirs(menu_dir)
+    return menu_dir
 
 def getItemPath(file_id):
-	if os.environ.has_key('XDG_DATA_DIRS'):
-		for system_path in os.environ['XDG_DATA_DIRS'].split(':'):
-			file_path = os.path.join(system_path, 'applications', file_id)
-			if os.path.isfile(file_path):
-				return file_path
-	file_path = os.path.join('/', 'usr', 'share', 'applications', file_id)
-	if os.path.isfile(file_path):
-		return file_path
-	return False
+    if os.environ.has_key('XDG_DATA_DIRS'):
+        for system_path in os.environ['XDG_DATA_DIRS'].split(':'):
+            file_path = os.path.join(system_path, 'applications', file_id)
+            if os.path.isfile(file_path):
+                return file_path
+    file_path = os.path.join('/', 'usr', 'share', 'applications', file_id)
+    if os.path.isfile(file_path):
+        return file_path
+    return False
 
 def getUserItemPath():
-	item_dir = None
-	if os.environ.has_key('XDG_DATA_HOME'):
-		item_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'applications')
-	else:
-		item_dir = os.path.join(os.environ['HOME'], '.local', 'share', 'applications')
-	if not os.path.isdir(item_dir):
-		os.makedirs(item_dir)
-	return item_dir
+    item_dir = None
+    if os.environ.has_key('XDG_DATA_HOME'):
+        item_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'applications')
+    else:
+        item_dir = os.path.join(os.environ['HOME'], '.local', 'share', 'applications')
+    if not os.path.isdir(item_dir):
+        os.makedirs(item_dir)
+    return item_dir
 
 def getDirectoryPath(file_id):
-	home = getUserDirectoryPath()
-	file_path = os.path.join(home, file_id)
-	if os.path.isfile(file_path):
-		return file_path
-	if os.environ.has_key('XDG_DATA_DIRS'):
-		for system_path in os.environ['XDG_DATA_DIRS'].split(':'):
-			file_path = os.path.join(system_path, 'desktop-directories', file_id)
-			if os.path.isfile(file_path):
-				return file_path
-	file_path = os.path.join('/', 'usr', 'share', 'desktop-directories', file_id)
-	if os.path.isfile(file_path):
-		return file_path
-	return False
+    home = getUserDirectoryPath()
+    file_path = os.path.join(home, file_id)
+    if os.path.isfile(file_path):
+        return file_path
+    if os.environ.has_key('XDG_DATA_DIRS'):
+        for system_path in os.environ['XDG_DATA_DIRS'].split(':'):
+            file_path = os.path.join(system_path, 'desktop-directories', file_id)
+            if os.path.isfile(file_path):
+                return file_path
+    file_path = os.path.join('/', 'usr', 'share', 'desktop-directories', file_id)
+    if os.path.isfile(file_path):
+        return file_path
+    return False
 
 def getUserDirectoryPath():
-	menu_dir = None
-	if os.environ.has_key('XDG_DATA_HOME'):
-		menu_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'desktop-directories')
-	else:
-		menu_dir = os.path.join(os.environ['HOME'], '.local', 'share', 'desktop-directories')
-	if not os.path.isdir(menu_dir):
-		os.makedirs(menu_dir)
-	return menu_dir
+    menu_dir = None
+    if os.environ.has_key('XDG_DATA_HOME'):
+        menu_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'desktop-directories')
+    else:
+        menu_dir = os.path.join(os.environ['HOME'], '.local', 'share', 'desktop-directories')
+    if not os.path.isdir(menu_dir):
+        os.makedirs(menu_dir)
+    return menu_dir
 
 def getSystemMenuPath(file_name):
-	if os.environ.has_key('XDG_CONFIG_DIRS'):
-		for system_path in os.environ['XDG_CONFIG_DIRS'].split(':'):
-			file_path = os.path.join(system_path, 'menus', file_name)
-			if os.path.isfile(file_path):
-				return file_path
-	file_path = os.path.join('/', 'etc', 'xdg', 'menus', file_name)
-	if os.path.isfile(file_path):
-		return file_path
-	return False
+    if os.environ.has_key('XDG_CONFIG_DIRS'):
+        for system_path in os.environ['XDG_CONFIG_DIRS'].split(':'):
+            file_path = os.path.join(system_path, 'menus', file_name)
+            if os.path.isfile(file_path):
+                return file_path
+    file_path = os.path.join('/', 'etc', 'xdg', 'menus', file_name)
+    if os.path.isfile(file_path):
+        return file_path
+    return False
 
 def getUserMenuXml(tree):
-	system_file = getSystemMenuPath(os.path.basename(tree.get_canonical_menu_path()))
-	name = tree.get_root_directory().get_menu_id()
-	menu_xml = "<!DOCTYPE Menu PUBLIC '-//freedesktop//DTD Menu 1.0//EN' 'http://standards.freedesktop.org/menu-spec/menu-1.0.dtd'>\n"
-	menu_xml += "<Menu>\n  <Name>" + name + "</Name>\n  "
-	menu_xml += "<MergeFile type=\"parent\">" + system_file +	"</MergeFile>\n</Menu>\n"
-	return menu_xml
+    system_file = getSystemMenuPath(os.path.basename(tree.get_canonical_menu_path()))
+    name = tree.get_root_directory().get_menu_id()
+    menu_xml = "<!DOCTYPE Menu PUBLIC '-//freedesktop//DTD Menu 1.0//EN' 'http://standards.freedesktop.org/menu-spec/menu-1.0.dtd'>\n"
+    menu_xml += "<Menu>\n  <Name>" + name + "</Name>\n  "
+    menu_xml += "<MergeFile type=\"parent\">" + system_file +    "</MergeFile>\n</Menu>\n"
+    return menu_xml
 
 def getIcon(item):
-	pixbuf, path = None, None
-	if item == None:
-		return None
+    pixbuf, path = None, None
+    if item == None:
+        return None
 
-	if isinstance(item, GMenu.TreeDirectory):
-		gicon = item.get_icon()
-	else:
-		app_info = item.get_app_info()
-		gicon = app_info.get_icon()
+    if isinstance(item, GMenu.TreeDirectory):
+        gicon = item.get_icon()
+    else:
+        app_info = item.get_app_info()
+        gicon = app_info.get_icon()
 
-	icon_theme = Gtk.IconTheme.get_default()
-	try:
-		info = icon_theme.lookup_by_gicon(icon_theme, gicon, 24, 0)
-		pixbuf = icon.load_icon()
-		path = info.get_filename()
-	except:
-		if pixbuf is None:
-			if isinstance(item, GMenu.TreeDirectory):
-				iconName = 'gnome-fs-directory'
-			else:
-				iconName = 'application-default-icon'
-			try:
-				pixbuf = icon_theme.load_icon(iconName, 24, 0)
-				path = icon_theme.lookup_icon(iconName, 24, 0).get_filename()
-			except:
-				return None
-	if pixbuf == None:
-		return None
-	if pixbuf.get_width() != 24 or pixbuf.get_height() != 24:
-		pixbuf = pixbuf.scale_simple(24, 24, GdkPixbuf.InterpType.HYPER)
-	return pixbuf
+    icon_theme = Gtk.IconTheme.get_default()
+    try:
+        info = icon_theme.lookup_by_gicon(icon_theme, gicon, 24, 0)
+        pixbuf = icon.load_icon()
+        path = info.get_filename()
+    except:
+        if pixbuf is None:
+            if isinstance(item, GMenu.TreeDirectory):
+                iconName = 'gnome-fs-directory'
+            else:
+                iconName = 'application-default-icon'
+            try:
+                pixbuf = icon_theme.load_icon(iconName, 24, 0)
+                path = icon_theme.lookup_icon(iconName, 24, 0).get_filename()
+            except:
+                return None
+    if pixbuf == None:
+        return None
+    if pixbuf.get_width() != 24 or pixbuf.get_height() != 24:
+        pixbuf = pixbuf.scale_simple(24, 24, GdkPixbuf.InterpType.HYPER)
+    return pixbuf

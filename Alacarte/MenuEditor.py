@@ -53,7 +53,6 @@ class MenuEditor(object):
         self.__remove_whilespace_nodes(self.applications.dom)
 
     def __menuChanged(self, *a):
-        print >> sys.stderr, "changed!\n"
         self.applications.visible_tree.load_sync()
 
     def __loadMenus(self):
@@ -517,12 +516,11 @@ class MenuEditor(object):
 
     def __getPath(self, menu, path=None):
         if not path:
-                        path = menu.get_menu_id()
+            path = menu.get_menu_id()
         if menu.get_parent():
             path = self.__getPath(menu.get_parent(), path)
             path += '/'
             path += menu.get_menu_id()
-        print "%s\n" % path
         return path
 
     def __getXmlMenu(self, path, element, dom):

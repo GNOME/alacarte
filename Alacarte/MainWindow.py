@@ -374,6 +374,8 @@ class MainWindow(object):
 
     def on_menu_tree_cursor_changed(self, treeview):
         menus, iter = treeview.get_selection().get_selected()
+        if iter is None:
+            return
         menu_path = menus.get_path(iter)
         item_tree = self.tree.get_object('item_tree')
         item_tree.get_selection().unselect_all()

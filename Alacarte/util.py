@@ -159,8 +159,8 @@ def getUserMenuXml(tree):
     return menu_xml
 
 def getIcon(item):
-    pixbuf, path = None, None
-    if item == None:
+    pixbuf = None
+    if item is None:
         return None
 
     if isinstance(item, GMenu.TreeDirectory):
@@ -170,22 +170,11 @@ def getIcon(item):
         gicon = app_info.get_icon()
 
     icon_theme = Gtk.IconTheme.get_default()
-    try:
-        info = icon_theme.lookup_by_gicon(icon_theme, gicon, 24, 0)
-        pixbuf = icon.load_icon()
-        path = info.get_filename()
-    except:
-        if pixbuf is None:
-            if isinstance(item, GMenu.TreeDirectory):
-                iconName = 'gnome-fs-directory'
-            else:
-                iconName = 'application-default-icon'
-            try:
-                pixbuf = icon_theme.load_icon(iconName, 24, 0)
-                path = icon_theme.lookup_icon(iconName, 24, 0).get_filename()
-            except:
-                return None
-    if pixbuf == None:
+    info = icon_theme.lookup_by_gicon(gicon, 24, 0)
+    if info is None:
+        return None
+    pixbuf = info.load_icon()
+    if pixbuf is None:
         return None
     if pixbuf.get_width() != 24 or pixbuf.get_height() != 24:
         pixbuf = pixbuf.scale_simple(24, 24, GdkPixbuf.InterpType.HYPER)

@@ -22,7 +22,6 @@ import cgi, os
 import gettext
 import subprocess
 import urllib
-import tempfile
 
 from Alacarte import config
 gettext.bindtextdomain(config.GETTEXT_PACKAGE, config.localedir)
@@ -31,9 +30,8 @@ gettext.textdomain(config.GETTEXT_PACKAGE)
 _ = gettext.gettext
 from Alacarte.MenuEditor import MenuEditor
 from Alacarte import util
-import sys
 
-class MainWindow:
+class MainWindow(object):
     timer = None
     #hack to make editing menu properties work
     allow_update = True
@@ -44,7 +42,7 @@ class MainWindow:
     drag_data = None
     edit_pool = []
 
-    def __init__(self, datadir, version, argv):
+    def __init__(self, datadir, version):
         self.file_path = datadir
         self.version = version
         self.editor = MenuEditor()

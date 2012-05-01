@@ -20,13 +20,13 @@ import os, sys, re, xml.dom.minidom, locale
 from gi.repository import GMenu, GLib
 from Alacarte import util
 
-class Menu:
+class Menu(object):
     tree = None
     visible_tree = None
     path = None
     dom = None
 
-class MenuEditor:
+class MenuEditor(object):
     #lists for undo/redo functionality
     __undo = []
     __redo = []
@@ -57,7 +57,7 @@ class MenuEditor:
         self.applications.visible_tree.load_sync()
 
     def __loadMenus(self):
-        self.reloadMenus();
+        self.reloadMenus()
         self.save(True)
         self.applications.visible_tree.connect("changed", self.__menuChanged)
 
@@ -796,8 +796,8 @@ class MenuEditor:
             node.appendChild(self.__addXmlTextElement(node, 'New', new, dom))
             return element.appendChild(node)
 
-class Layout:
-    def __init__(self, node=None):
+class Layout(object):
+    def __init__(self):
         self.order = []
 
     def parseMenuname(self, value):

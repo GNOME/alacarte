@@ -29,7 +29,7 @@ def main():
 	except:
 		datadir = '.'
 		version = '0.9'
-	app = MainWindow(datadir, version, sys.argv)
+	app = MainWindow(datadir, version)
 	app.run()
 
 if __name__ == '__main__':

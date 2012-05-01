@@ -78,10 +78,7 @@ class MainWindow:
 
     def menuChanged(self, *a):
         print >> sys.stderr, "changed!\n"
-        if self.timer:
-            GObject.source_remove(self.timer)
-            self.timer = None
-        self.timer = GObject.timeout_add(3, self.loadUpdates)
+        self.loadUpdates()
 
     def loadUpdates(self):
         print >> sys.stderr, "%d\n" % self.editor.applications.tree.disconnect_by_func(self.menuChanged)

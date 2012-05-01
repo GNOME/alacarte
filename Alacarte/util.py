@@ -17,65 +17,23 @@
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 import os
-from gi.repository import Gtk, GdkPixbuf, GMenu
-from ConfigParser import ConfigParser
+from collections import Sequence
+from gi.repository import Gtk, GdkPixbuf, GMenu, GLib
 
-class DesktopParser(ConfigParser):
-    def __init__(self, filename=None, file_type='Application'):
-        ConfigParser.__init__(self)
-        self.filename = filename
-        self.file_type = file_type
-        if filename:
-            if len(self.read(filename)) == 0:
-                #file doesn't exist
-                self.add_section('Desktop Entry')
-        else:
-            self.add_section('Desktop Entry')
-        self._list_separator = ';'
+DESKTOP_GROUP = GLib.KEY_FILE_DESKTOP_GROUP
+KEY_FILE_FLAGS = GLib.KeyFileFlags.KEEP_COMMENTS | GLib.KeyFileFlags.KEEP_TRANSLATIONS
 
-    def optionxform(self, option):
-        #makes keys not be lowercase
-        return option
+def fillKeyFile(keyfile, items):
+    for key, item in items.iteritems():
+        if item is None:
+            continue
 
-    def get(self, option, locale=None):
-        locale_option = option + '[%s]' % locale
-        try:
-            value = ConfigParser.get(self, 'Desktop Entry', locale_option)
-        except:
-            try:
-                value = ConfigParser.get(self, 'Desktop Entry', option)
-            except:
-                return None
-        if self._list_separator in value:
-            value = value.split(self._list_separator)
-        if value == 'true':
-            value = True
-        if value == 'false':
-            value = False
-        return value
-
-    def set(self, option, value, locale=None):
-        if locale:
-            option = option + '[%s]' % locale
-        if value == True:
-            value = 'true'
-        if value == False:
-            value = 'false'
-        if isinstance(value, tuple) or isinstance(value, list):
-            value = self._list_separator.join(value) + ';'
-        ConfigParser.set(self, 'Desktop Entry', option, value)
-
-    def write(self, file_object):
-        file_object.write('[Desktop Entry]\n')
-        items = []
-        if not self.filename:
-            file_object.write('Encoding=UTF-8\n')
-            file_object.write('Type=' + str(self.file_type) + '\n')
-        for item in self.items('Desktop Entry'):
-            items.append(item)
-        items.sort()
-        for item in items:
-            file_object.write(item[0] + '=' + item[1] + '\n')
+        if isinstance(item, bool):
+            keyfile.set_boolean(DESKTOP_GROUP, key, item)
+        elif isinstance(item, Sequence):
+            keyfile.set_string_list(DESKTOP_GROUP, key, item)
+        elif isinstance(item, basestring):
+            keyfile.set_string(DESKTOP_GROUP, key, item)
 
 def getUniqueFileId(name, extension):
     append = 0

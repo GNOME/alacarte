@@ -17,7 +17,7 @@
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-from gi.repository import Gtk, GObject, Gio, GdkPixbuf, Gdk, GMenu
+from gi.repository import Gtk, GObject, Gio, GdkPixbuf, Gdk, GMenu, GLib
 import cgi, os
 import gettext
 import subprocess
@@ -362,15 +362,7 @@ class MainWindow:
             file_path = os.path.join(util.getUserItemPath(), item.get_desktop_file_id())
             file_type = 'Item'
         elif isinstance(item, GMenu.TreeDirectory):
-            if item.get_desktop_file_path() == None:
-                file_path = util.getUniqueFileId('alacarte-made', '.directory')
-                parser = util.DesktopParser(file_path, 'Directory')
-                parser.set('Name', item.get_name())
-                parser.set('Comment', item.get_comment())
-                parser.set('Icon', item.get_icon())
-                parser.write(open(file_path))
-            else:
-                file_path = os.path.join(util.getUserDirectoryPath(), os.path.split(item.get_desktop_file_path())[1])
+            file_path = os.path.join(util.getUserDirectoryPath(), os.path.split(item.get_desktop_file_path())[1])
             file_type = 'Menu'
 
         if not os.path.isfile(file_path):
@@ -566,15 +558,14 @@ class MainWindow:
             content_type = file_info.get_content_type()
             if content_type == 'application/x-desktop':
                 input_stream = myfile.read()
-                (fd, tmppath) = tempfile.mkstemp(prefix='alacarte-dnd', suffix='.desktop')
-                os.close(fd)
-                f = os.open(tmppath, 'w')
-                f.write(input_stream.read())
-                f.close()
-                parser = util.DesktopParser(tmppath)
-                self.editor.createItem(parent, parser.get('Icon'), parser.get('Name', self.editor.locale), parser.get('Comment', self.editor.locale), parser.get('Exec'), parser.get('Terminal'), before, after)
+                keyfile = GLib.KeyFile()
+                keyfile.load_from_data(input_stream.read())
+                self.editor.createItem(parent, before, after, KeyFile=keyfile)
             elif content_type in ('application/x-shellscript', 'application/x-executable'):
-                self.editor.createItem(parent, None, os.path.split(file_path)[1].strip(), None, file_path.replace('file://', '').strip(), False, before, after)
+                self.editor.createItem(parent, before, after,
+                                       Name=os.path.split(file_path)[1].strip(),
+                                       Exec=file_path.replace('file://', '').strip(),
+                                       Terminal=False)
         self.drag_data = None
 
     def on_item_tree_key_press_event(self, item_tree, event):

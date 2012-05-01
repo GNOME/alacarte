@@ -77,11 +77,9 @@ class MainWindow:
         Gtk.main()
 
     def menuChanged(self, *a):
-        print >> sys.stderr, "changed!\n"
         self.loadUpdates()
 
     def loadUpdates(self):
-        print >> sys.stderr, "%d\n" % self.editor.applications.tree.disconnect_by_func(self.menuChanged)
         self.editor.reloadMenus()
         self.editor.applications.tree.connect("changed", self.menuChanged)
 

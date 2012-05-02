@@ -26,7 +26,7 @@ def main():
 		from Alacarte import config
 		datadir = config.pkgdatadir
 		version = config.VERSION
-	except:
+	except ImportError:
 		datadir = '.'
 		version = '0.9'
 	app = MainWindow(datadir, version)

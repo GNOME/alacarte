@@ -232,7 +232,7 @@ class MenuEditor(object):
         dom = self.__getMenu(item).dom
         if isinstance(item, GMenu.TreeEntry):
             self.__addUndo([self.__getMenu(item), item])
-            menu_xml = self.__getXmlMenu(self.__getPath(item.get_parent()), dom, dom)
+            menu_xml = self.__getXmlMenu(self.__getPath(item.get_parent()), dom.documentElement, dom)
             if visible:
                 self.__addXmlFilename(menu_xml, dom, item.get_desktop_file_id(), 'Include')
                 self.__writeItem(item, NoDisplay=False)
@@ -246,7 +246,7 @@ class MenuEditor(object):
             #don't mess with it if it's empty
             if first_child_type == GMenu.TreeItemType.INVALID:
                 return
-            menu_xml = self.__getXmlMenu(self.__getPath(item), dom, dom)
+            menu_xml = self.__getXmlMenu(self.__getPath(item), dom.documentElement, dom)
             for node in self.__getXmlNodesByName(['Deleted', 'NotDeleted'], menu_xml):
                 node.parentNode.removeChild(node)
             self.__writeMenu(item, NoDisplay=visible)

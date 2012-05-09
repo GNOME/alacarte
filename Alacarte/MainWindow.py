@@ -267,10 +267,6 @@ class MainWindow(object):
 
     def waitForNewMenuProcess(self, process, parent_id, file_path):
         if process.poll() != None:
-            #hack for broken gnome-desktop-item-edit
-            broken_path = os.path.join(os.path.split(file_path)[0], '.directory')
-            if os.path.isfile(broken_path):
-                os.rename(broken_path, file_path)
             if os.path.isfile(file_path):
                 self.editor.insertExternalMenu(os.path.split(file_path)[1], parent_id)
             return False

@@ -239,7 +239,7 @@ class MenuEditor(object):
             menu_xml = self.__getXmlMenu(self.__getPath(item), dom.documentElement, dom)
             for node in self.__getXmlNodesByName(['Deleted', 'NotDeleted'], menu_xml):
                 node.parentNode.removeChild(node)
-            self.__writeMenu(item, NoDisplay=visible)
+            self.__writeMenu(item, NoDisplay=not visible)
             self.__addXmlTextElement(menu_xml, 'DirectoryDir', util.getUserDirectoryPath(), dom)
         self.save()
 

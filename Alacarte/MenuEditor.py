@@ -269,8 +269,8 @@ class MenuEditor(object):
         menu_id = file_id.rsplit('.', 1)[0]
         parent = self.__findMenu(parent_id)
         dom = self.__getMenu(parent).dom
-        self.__addXmlDefaultLayout(self.__getXmlMenu(self.__getPath(parent), dom, dom) , dom)
-        menu_xml = self.__getXmlMenu(self.__getPath(parent) + '/' + menu_id, dom, dom)
+        self.__addXmlDefaultLayout(self.__getXmlMenu(self.__getPath(parent), dom.documentElement, dom) , dom)
+        menu_xml = self.__getXmlMenu(self.__getPath(parent) + [menu_id], dom.documentElement, dom)
         self.__addXmlTextElement(menu_xml, 'Directory', file_id, dom)
         self.__positionItem(parent, ('Menu', menu_id), before, after)
         self.__addUndo([self.__getMenu(parent), ('Menu', file_id)])
@@ -294,7 +294,7 @@ class MenuEditor(object):
         self.__writeItem(item, Icon=icon, Name=name, Comment=comment, Exec=command, Terminal=use_term)
         if final:
             dom = self.__getMenu(parent).dom
-            menu_xml = self.__getXmlMenu(self.__getPath(parent), dom, dom)
+            menu_xml = self.__getXmlMenu(self.__getPath(parent), dom.documentElement, dom)
             self.__addXmlTextElement(menu_xml, 'AppDir', util.getUserItemPath(), dom)
         self.save()
 
@@ -305,7 +305,7 @@ class MenuEditor(object):
         #we don't use this, we just need to make sure the <Menu> exists
         #otherwise changes won't show up
         dom = self.__getMenu(menu).dom
-        menu_xml = self.__getXmlMenu(self.__getPath(menu), dom, dom)
+        menu_xml = self.__getXmlMenu(self.__getPath(menu), dom.documentElement, dom)
         self.__writeMenu(menu, Icon=icon, Name=name, Comment=comment)
         if final:
             self.__addXmlTextElement(menu_xml, 'DirectoryDir', util.getUserDirectoryPath(), dom)
@@ -367,15 +367,12 @@ class MenuEditor(object):
             return False
         if menu.get_parent() != new_parent:
             dom = self.__getMenu(menu).dom
-            root_path = self.__getPath(menu).split('/', 1)[0]
-            xml_root = self.__getXmlMenu(root_path, dom, dom)
-            old_path = self.__getPath(menu).split('/', 1)[1]
-            #root menu's path has no /
-            if '/' in self.__getPath(new_parent):
-                new_path = self.__getPath(new_parent).split('/', 1)[1] + '/' + menu.get_menu_id()
-            else:
-                new_path = menu.get_menu_id()
-            self.__addXmlMove(xml_root, old_path, new_path, dom)
+            path = self.__getPath(menu)
+            root_path = path[0]
+            xml_root = self.__getXmlMenu(root_path, dom.documentElement, dom)
+            old_path = path[1:]
+            new_path = self.__getPath(new_parent)[1:] + [menu.get_menu_id()]
+            self.__addXmlMove(xml_root, '/'.join(old_path), '/'.join(new_path), dom)
         self.__positionItem(new_parent, menu, before, after)
         self.__addUndo([self.__getMenu(new_parent),])
         self.save()
@@ -399,7 +396,7 @@ class MenuEditor(object):
 
     def deleteMenu(self, menu):
         dom = self.__getMenu(menu).dom
-        menu_xml = self.__getXmlMenu(self.__getPath(menu), dom, dom)
+        menu_xml = self.__getXmlMenu(self.__getPath(menu), dom.documentElement, dom)
         self.__addDeleted(menu_xml, dom)
         self.__addUndo([self.__getMenu(menu),])
         self.save()
@@ -410,7 +407,7 @@ class MenuEditor(object):
         contents.remove(item)
         layout = self.__createLayout(contents)
         dom = self.__getMenu(parent).dom
-        menu_xml = self.__getXmlMenu(self.__getPath(parent), dom, dom)
+        menu_xml = self.__getXmlMenu(self.__getPath(parent), dom.documentElement, dom)
         self.__addXmlLayout(menu_xml, layout, dom)
         self.__addUndo([self.__getMenu(item.get_parent()),])
         self.save()
@@ -507,41 +504,33 @@ class MenuEditor(object):
                 return False
         return True
 
-    def __getPath(self, menu, path=None):
-        if not path:
-            path = menu.get_menu_id()
-        if menu.get_parent():
-            path = self.__getPath(menu.get_parent(), path)
-            path += '/'
-            path += menu.get_menu_id()
-        return path
+    def __getPath(self, menu):
+        names = []
+        current = menu
+        while current is not None:
+            names.append(current.get_menu_id())
+            current = current.get_parent()
 
-    def __getXmlMenu(self, path, element, dom):
-        if '/' in path:
-            (name, path) = path.split('/', 1)
-        else:
-            name = path
-            path = ''
+        # XXX - don't append root menu name, alacarte doesn't
+        # expect it. look into this more.
+        names.pop(-1)
+        return names[::-1]
 
-        found = None
+    def __getXmlMenuPart(self, element, name):
         for node in self.__getXmlNodesByName('Menu', element):
             for child in self.__getXmlNodesByName('Name', node):
                 if child.childNodes[0].nodeValue == name:
-                    if path:
-                        found = self.__getXmlMenu(path, node, dom)
-                    else:
-                        found = node
-                    break
-            if found:
-                break
-        if not found:
-            node = self.__addXmlMenuElement(element, name, dom)
-            if path:
-                found = self.__getXmlMenu(path, node, dom)
-            else:
-                found = node
+                    return node
+        return None
 
-        return found
+    def __getXmlMenu(self, path, element, dom):
+        for name in path:
+            found = self.__getXmlMenuPart(element, name)
+            if found is not None:
+                element = found
+            else:
+                element = self.__addXmlMenuElement(element, name, dom)
+        return element
 
     def __addXmlMenuElement(self, element, name, dom):
         node = dom.createElement('Menu')
@@ -709,7 +698,7 @@ class MenuEditor(object):
         return layout
 
     def __addItem(self, parent, file_id, dom):
-        xml_parent = self.__getXmlMenu(self.__getPath(parent), dom, dom)
+        xml_parent = self.__getXmlMenu(self.__getPath(parent), dom.documentElement, dom)
         self.__addXmlFilename(xml_parent, dom, file_id, 'Include')
 
     def __positionItem(self, parent, item, before=None, after=None):
@@ -731,7 +720,7 @@ class MenuEditor(object):
         contents.insert(index, item)
         layout = self.__createLayout(contents)
         dom = self.__getMenu(parent).dom
-        menu_xml = self.__getXmlMenu(self.__getPath(parent), dom, dom)
+        menu_xml = self.__getXmlMenu(self.__getPath(parent), dom.documentElement, dom)
         self.__addXmlLayout(menu_xml, layout, dom)
 
     def __undoMoves(self, element, old, new, dom):
@@ -766,7 +755,7 @@ class MenuEditor(object):
                         if name == os.path.split(new)[1]:
                             #copy app and dir directory info from old <Menu>
                             root_path = dom.getElementsByTagName('Menu')[0].getElementsByTagName('Name')[0].childNodes[0].nodeValue
-                            xml_menu = self.__getXmlMenu(root_path + '/' + new, dom, dom)
+                            xml_menu = self.__getXmlMenu(root_path + '/' + new, dom.documentElement, dom)
                             for app_dir in node.getElementsByTagName('AppDir'):
                                 xml_menu.appendChild(app_dir)
                             for dir_dir in node.getElementsByTagName('DirectoryDir'):

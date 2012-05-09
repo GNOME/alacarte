@@ -27,12 +27,10 @@ class Menu(object):
     dom = None
 
 class MenuEditor(object):
-    #lists for undo/redo functionality
-    __undo = []
-    __redo = []
-
     def __init__(self):
         self.__loadMenus()
+        self.__undo = []
+        self.__redo = []
 
     def reloadMenus(self):
         self.applications = Menu()

@@ -46,6 +46,7 @@ class MainWindow(object):
         self.file_path = datadir
         self.version = version
         self.editor = MenuEditor()
+        self.editor.applications.tree.connect("changed", self.menuChanged)
         Gtk.Window.set_default_icon_name('alacarte')
         self.tree = Gtk.Builder()
         self.tree.set_translation_domain(config.GETTEXT_PACKAGE)
@@ -70,7 +71,6 @@ class MainWindow(object):
 
     def run(self):
         self.loadMenus()
-        self.editor.applications.tree.connect("changed", self.menuChanged)
         self.tree.get_object('mainwindow').show_all()
         Gtk.main()
 
@@ -78,9 +78,6 @@ class MainWindow(object):
         self.loadUpdates()
 
     def loadUpdates(self):
-        self.editor.reloadMenus()
-        self.editor.applications.tree.connect("changed", self.menuChanged)
-
         if not self.allow_update:
             return False
         menu_tree = self.tree.get_object('menu_tree')

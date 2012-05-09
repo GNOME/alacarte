@@ -21,40 +21,36 @@ from gi.repository import GMenu, GLib
 from Alacarte import util
 
 class Menu(object):
-    tree = None
-    visible_tree = None
-    path = None
-    dom = None
+    def __init__(self, name):
+        self.name = name
+
+        self.tree = GMenu.Tree.new(name, GMenu.TreeFlags.SHOW_EMPTY|GMenu.TreeFlags.INCLUDE_EXCLUDED|GMenu.TreeFlags.INCLUDE_NODISPLAY|GMenu.TreeFlags.SHOW_ALL_SEPARATORS|GMenu.TreeFlags.SORT_DISPLAY_NAME)
+        self.visible_tree = GMenu.Tree.new(name, GMenu.TreeFlags.SORT_DISPLAY_NAME)
+        self.load()
+
+        self.path = os.path.join(util.getUserMenuPath(), self.tree.props.menu_basename)
+        if not os.path.isfile(self.path):
+            self.dom = xml.dom.minidom.parseString(util.getUserMenuXml(self.tree))
+        else:
+            self.dom = xml.dom.minidom.parse(self.path)
+        util.removeWhitespaceNodes(self.dom)
+
+    def load(self):
+        if not self.tree.load_sync():
+            raise ValueError("can not load menu tree %r" % (self.name,))
+        if not self.visible_tree.load_sync():
+            raise ValueError("can not load menu tree %r" % (self.name,))
 
 class MenuEditor(object):
     def __init__(self):
-        self.__loadMenus()
+        self.applications = Menu('applications.menu')
+        self.applications.tree.connect('changed', self.__menuChanged)
+
         self.__undo = []
         self.__redo = []
 
-    def reloadMenus(self):
-        self.applications = Menu()
-        self.applications.tree = GMenu.Tree.new('applications.menu', GMenu.TreeFlags.SHOW_EMPTY|GMenu.TreeFlags.INCLUDE_EXCLUDED|GMenu.TreeFlags.INCLUDE_NODISPLAY|GMenu.TreeFlags.SHOW_ALL_SEPARATORS|GMenu.TreeFlags.SORT_DISPLAY_NAME)
-        if not self.applications.tree.load_sync():
-            self.applications = None
-            return
-        self.applications.visible_tree = GMenu.Tree.new('applications.menu', GMenu.TreeFlags.SORT_DISPLAY_NAME)
-        if not self.applications.visible_tree.load_sync():
-            self.applications = None
-            return
-        self.applications.path = os.path.join(util.getUserMenuPath(), self.applications.tree.props.menu_basename)
-        if not os.path.isfile(self.applications.path):
-            self.applications.dom = xml.dom.minidom.parseString(util.getUserMenuXml(self.applications.tree))
-        else:
-            self.applications.dom = xml.dom.minidom.parse(self.applications.path)
-        util.removeWhitespaceNodes(self.applications.dom)
-
     def __menuChanged(self, *a):
-        self.applications.visible_tree.load_sync()
-
-    def __loadMenus(self):
-        self.reloadMenus()
-        self.applications.visible_tree.connect("changed", self.__menuChanged)
+        self.applications.load()
 
     def save(self):
         fd = open(self.applications.path, 'w')

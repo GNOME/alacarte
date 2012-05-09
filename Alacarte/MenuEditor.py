@@ -258,19 +258,12 @@ class MenuEditor(object):
         self.insertExternalItem(file_id, parent.get_menu_id(), before, after)
 
     def insertExternalItem(self, file_id, parent_id, before=None, after=None):
-        self.applications.tree.get_root_directory()
         parent = self.__findMenu(parent_id)
-        self.applications.tree.get_root_directory()
         dom = self.__getMenu(parent).dom
-        self.applications.tree.get_root_directory()
         self.__addItem(parent, file_id, dom)
-        self.applications.tree.get_root_directory()
         self.__positionItem(parent, ('Item', file_id), before, after)
-        self.applications.tree.get_root_directory()
         self.__addUndo([self.__getMenu(parent), ('Item', file_id)])
-        self.applications.tree.get_root_directory()
         self.save()
-        self.applications.tree.get_root_directory()
 
     def insertExternalMenu(self, file_id, parent_id, before=None, after=None):
         menu_id = file_id.rsplit('.', 1)[0]

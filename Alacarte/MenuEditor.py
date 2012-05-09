@@ -56,15 +56,12 @@ class MenuEditor(object):
 
     def __loadMenus(self):
         self.reloadMenus()
-        self.save(True)
         self.applications.visible_tree.connect("changed", self.__menuChanged)
 
-    def save(self, from_loading=False):
+    def save(self):
         fd = open(self.applications.path, 'w')
         fd.write(self.applications.dom.toprettyxml())
         fd.close()
-        if not from_loading:
-            self.__loadMenus()
 
     def quit(self):
         for file_name in os.listdir(util.getUserItemPath()):

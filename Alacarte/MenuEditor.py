@@ -16,7 +16,7 @@
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import os, xml.dom.minidom, locale
+import os, xml.dom.minidom
 from gi.repository import GMenu, GLib
 from Alacarte import util
 
@@ -32,7 +32,6 @@ class MenuEditor(object):
     __redo = []
 
     def __init__(self):
-        self.locale = locale.getdefaultlocale()[0]
         self.__loadMenus()
 
     def reloadMenus(self):
@@ -50,7 +49,7 @@ class MenuEditor(object):
             self.applications.dom = xml.dom.minidom.parseString(util.getUserMenuXml(self.applications.tree))
         else:
             self.applications.dom = xml.dom.minidom.parse(self.applications.path)
-        self.__remove_whilespace_nodes(self.applications.dom)
+        util.removeWhitespaceNodes(self.applications.dom)
 
     def __menuChanged(self, *a):
         self.applications.visible_tree.load_sync()
@@ -94,7 +93,7 @@ class MenuEditor(object):
             menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
         else:
             menu.dom = xml.dom.minidom.parse(menu.path)
-            self.__remove_whilespace_nodes(menu.dom)
+            util.removeWhitespaceNodes(menu.dom)
         #reset undo/redo, no way to recover from this
         self.__undo, self.__redo = [], []
         self.save()
@@ -132,7 +131,7 @@ class MenuEditor(object):
             menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
         else:
             menu.dom = xml.dom.minidom.parse(menu.path)
-        self.__remove_whilespace_nodes(menu.dom)
+        util.removeWhitespaceNodes(menu.dom)
         self.__redo.append(redo)
 
     def redo(self):
@@ -156,7 +155,7 @@ class MenuEditor(object):
                 menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
             else:
                 menu.dom = xml.dom.minidom.parse(menu.path)
-            self.__remove_whilespace_nodes(menu.dom)
+            util.removeWhitespaceNodes(menu.dom)
         self.__undo.append(undo)
 
     def getMenus(self, parent=None):
@@ -623,18 +622,6 @@ class MenuEditor(object):
                 elif isinstance(name, list) or isinstance(name, tuple):
                     if child.nodeName in name:
                         yield child
-
-    def __remove_whilespace_nodes(self, node):
-        remove_list = []
-        for child in node.childNodes:
-            if child.nodeType == xml.dom.minidom.Node.TEXT_NODE:
-                child.data = child.data.strip()
-                if not child.data.strip():
-                    remove_list.append(child)
-            elif child.hasChildNodes():
-                self.__remove_whilespace_nodes(child)
-        for node in remove_list:
-            node.parentNode.removeChild(node)
 
     def __addXmlMove(self, element, old, new, dom):
         if not self.__undoMoves(element, old, new, dom):

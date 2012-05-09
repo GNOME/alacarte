@@ -17,6 +17,7 @@
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 import os
+import xml.dom.minidom
 from collections import Sequence
 from gi.repository import Gtk, GdkPixbuf, GMenu, GLib
 
@@ -148,3 +149,15 @@ def getIcon(item):
     if pixbuf.get_width() != 24 or pixbuf.get_height() != 24:
         pixbuf = pixbuf.scale_simple(24, 24, GdkPixbuf.InterpType.HYPER)
     return pixbuf
+
+def removeWhitespaceNodes(node):
+    remove_list = []
+    for child in node.childNodes:
+        if child.nodeType == xml.dom.minidom.Node.TEXT_NODE:
+            child.data = child.data.strip()
+            if not child.data.strip():
+                remove_list.append(child)
+        elif child.hasChildNodes():
+            removeWhitespaceNodes(child)
+    for node in remove_list:
+        node.parentNode.removeChild(node)

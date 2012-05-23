@@ -1,4 +1,10 @@
 ==============
+Version 0.13.3
+==============
+Bugs fixed:
+	- Port to GI introspection
+
+==============
 Version 0.13.2
 ==============
 Bugs fixed:

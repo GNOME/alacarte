@@ -13,9 +13,9 @@
 
   <maintainer>
     <foaf:Person>
-      <foaf:name>Travis Watkins</foaf:name>
-      <foaf:mbox rdf:resource="mailto:amaranth@ubuntu.com" />
-      <gnome:userid>twatkins</gnome:userid>
+      <foaf:name>Jasper St. Pierre</foaf:name>
+      <foaf:mbox rdf:resource="mailto:jstpierre@mecheye.net" />
+      <gnome:userid>jstpierre</gnome:userid>
     </foaf:Person>
   </maintainer>
 </Project>

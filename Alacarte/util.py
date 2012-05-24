@@ -139,6 +139,9 @@ def getIcon(item):
         app_info = item.get_app_info()
         gicon = app_info.get_icon()
 
+    if gicon is None:
+        return None
+
     icon_theme = Gtk.IconTheme.get_default()
     info = icon_theme.lookup_by_gicon(gicon, 24, 0)
     if info is None:

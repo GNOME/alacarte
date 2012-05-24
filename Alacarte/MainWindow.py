@@ -366,7 +366,10 @@ class MainWindow(object):
             GObject.timeout_add(100, self.waitForEditProcess, process, file_path)
 
     def on_menu_tree_cursor_changed(self, treeview):
-        menus, iter = treeview.get_selection().get_selected()
+        selection = treeview.get_selection()
+        if selection is None:
+            return
+        menus, iter = selection.get_selected()
         if iter is None:
             return
         menu_path = menus.get_path(iter)
@@ -424,7 +427,10 @@ class MainWindow(object):
         self.item_store[path][0] = not self.item_store[path][0]
 
     def on_item_tree_cursor_changed(self, treeview):
-        items, iter = treeview.get_selection().get_selected()
+        selection = treeview.get_selection()
+        if selection is None:
+            return
+        items, iter = selection.get_selected()
         if iter is None:
             return
         item = items[iter][3]

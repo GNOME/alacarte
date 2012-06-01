@@ -35,11 +35,6 @@ class MainWindow(object):
     timer = None
     #hack to make editing menu properties work
     allow_update = True
-    #drag-and-drop stuff
-    dnd_items = [('ALACARTE_ITEM_ROW', Gtk.TargetFlags.SAME_APP, 0), ('text/plain', 0, 1)]
-    dnd_menus = [('ALACARTE_MENU_ROW', Gtk.TargetFlags.SAME_APP, 0)]
-    dnd_both = [dnd_items[0],] + dnd_menus
-    drag_data = None
     edit_pool = []
 
     def __init__(self, datadir, version):
@@ -166,8 +161,6 @@ class MainWindow(object):
         column.pack_start(cell, True)
         column.add_attribute(cell, 'markup', 1)
         menus.append_column(column)
-        menus.enable_model_drag_source(Gdk.ModifierType.BUTTON1_MASK, self.dnd_menus, Gdk.DragAction.COPY)
-        menus.enable_model_drag_dest(self.dnd_both, Gdk.DragAction.PRIVATE)
         menus.get_selection().set_mode(Gtk.SelectionMode.BROWSE)
 
     def setupItemTree(self):
@@ -191,8 +184,6 @@ class MainWindow(object):
         items.append_column(column)
         self.item_store = Gtk.ListStore(bool, GdkPixbuf.Pixbuf, str, object)
         items.set_model(self.item_store)
-        items.enable_model_drag_source(Gdk.ModifierType.BUTTON1_MASK, self.dnd_items, Gdk.DragAction.COPY)
-        items.enable_model_drag_dest(self.dnd_items, Gdk.DragAction.PRIVATE)
 
     def _cell_data_toggle_func(self, tree_column, renderer, model, treeiter, data=None):
         if isinstance(model[treeiter][3], GMenu.TreeSeparator):
@@ -370,36 +361,6 @@ class MainWindow(object):
         self.tree.get_object('properties_button').set_sensitive(False)
         self.tree.get_object('delete_button').set_sensitive(False)
 
-    def on_menu_tree_drag_data_get(self, treeview, context, selection, target_id, etime):
-        menus, iter = treeview.get_selection().get_selected()
-        self.drag_data = menus[iter][2]
-
-    def on_menu_tree_drag_data_received(self, treeview, context, x, y, selection, info, etime):
-        menus = treeview.get_model()
-        drop_info = treeview.get_dest_row_at_pos(x, y)
-        types = (Gtk.TreeViewDropPosition.BEFORE, Gtk.TreeViewDropPosition.INTO_OR_BEFORE)
-        if drop_info:
-            path, position = drop_info
-            if position not in types:
-                context.finish(False, False, etime)
-                return False
-            if selection.target in ('ALACARTE_ITEM_ROW', 'ALACARTE_MENU_ROW'):
-                if self.drag_data is None:
-                    return False
-                item = self.drag_data
-                new_parent = menus[path][2]
-                if isinstance(item, GMenu.TreeEntry):
-                    self.editor.copyItem(item, new_parent)
-                elif isinstance(item, GMenu.TreeDirectory):
-                    if not self.editor.moveMenu(item, new_parent):
-                        self.loadUpdates()
-                elif isinstance(item, GMenu.TreeSeparator):
-                    self.editor.moveSeparator(item, new_parent)
-                else:
-                    context.finish(False, False, etime) 
-                context.finish(True, True, etime)
-        self.drag_data = None
-
     def on_item_tree_show_toggled(self, cell, path):
         item = self.item_store[path][3]
         if isinstance(item, GMenu.TreeSeparator):
@@ -462,84 +423,6 @@ class MainWindow(object):
         popup.popup(None, None, None, None, button, event_time)
         #without this shift-f10 won't work
         return True
-
-    def on_item_tree_drag_data_get(self, treeview, context, selection, target_id, etime):
-        items, iter = treeview.get_selection().get_selected()
-        self.drag_data = items[iter][3]
-
-    def on_item_tree_drag_data_received(self, treeview, context, x, y, selection, info, etime):
-        items = treeview.get_model()
-        types_into = (Gtk.TreeViewDropPosition.INTO_OR_BEFORE, Gtk.TreeViewDropPosition.INTO_OR_AFTER)
-        types_before = (Gtk.TreeViewDropPosition.BEFORE, Gtk.TreeViewDropPosition.INTO_OR_BEFORE)
-        types_after = (Gtk.TreeViewDropPosition.AFTER, Gtk.TreeViewDropPosition.INTO_OR_AFTER)
-        if selection.target == 'ALACARTE_ITEM_ROW':
-            drop_info = treeview.get_dest_row_at_pos(x, y)
-            before = None
-            after = None
-            if self.drag_data is None:
-                return False
-            item = self.drag_data
-            # by default we assume, that the items stays in the same menu
-            destination = item.get_parent()
-            if drop_info:
-                path, position = drop_info
-                target = items[path][3]
-                # move the item to the directory, if the item was dropped into it
-                if isinstance(target, GMenu.TreeDirectory) and (position in types_into):
-                    # append the selected item to the choosen menu
-                    destination = target
-                elif position in types_before:
-                    before = target
-                elif position in types_after:
-                    after = target
-                else:
-                    # this does not happen
-                    pass
-            else:
-                path = (len(items) - 1,)
-                after = items[path][3]
-            if isinstance(item, GMenu.TreeEntry):
-                self.editor.moveItem(item, destination, before, after)
-            elif isinstance(item, GMenu.TreeDirectory):
-                if not self.editor.moveMenu(item, destination, before, after):
-                    self.loadUpdates()
-            elif isinstance(item, GMenu.TreeSeparator):
-                self.editor.moveSeparator(item, destination, before, after)
-            context.finish(True, True, etime)
-        elif selection.target == 'text/plain':
-            if selection.data is None:
-                return False
-            menus, iter = self.tree.get_object('menu_tree').get_selection().get_selected()
-            parent = menus[iter][2]
-            drop_info = treeview.get_dest_row_at_pos(x, y)
-            before = None
-            after = None
-            if drop_info:
-                path, position = drop_info
-                if position in types_before:
-                    before = items[path][3]
-                else:
-                    after = items[path][3]
-            else:
-                path = (len(items) - 1,)
-                after = items[path][3]
-            file_path = urllib.unquote(selection.data).strip()
-            if not file_path.startswith('file:'):
-                return
-            myfile = Gio.File(uri=file_path)
-            file_info = myfile.query_info(Gio.FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE)
-            content_type = file_info.get_content_type()
-            if content_type == 'application/x-desktop':
-                input_stream = myfile.read()
-                keyfile = GLib.KeyFile()
-                keyfile.load_from_data(input_stream.read())
-                self.editor.createItem(parent, before, after, KeyFile=keyfile)
-            elif content_type in ('application/x-shellscript', 'application/x-executable'):
-                self.editor.createItem(parent, before, after,
-                                       Name=os.path.split(file_path)[1].strip(),
-                                       Exec=file_path.replace('file://', '').strip(),
-                                       Terminal=False)
-        self.drag_data = None
 
     def on_item_tree_key_press_event(self, item_tree, event):
         if event.keyval == Gdk.KEY_Delete:

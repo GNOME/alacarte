@@ -147,8 +147,6 @@ class MenuEditor(object):
             else:
                 if item_type == GMenu.TreeItemType.ENTRY:
                     item = item_iter.get_entry()
-                    if item.get_desktop_file_id()[-19:] == '-usercustom.desktop':
-                        continue
                 elif item_type == GMenu.TreeItemType.DIRECTORY:
                     item = item_iter.get_directory()
                 elif item_type == GMenu.TreeItemType.HEADER:

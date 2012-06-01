@@ -42,10 +42,16 @@ po/Rules-quot
 po/stamp-it
 stamp-h1
 *~
+\#*\#
 
+.ropeproject
 *.pyc
 *.pyo
 *.pyd
+
+*.tar.gz
+*.tar.bz2
+*.tar.xz
 
 Alacarte/config.py
 alacarte

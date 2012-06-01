@@ -417,32 +417,24 @@ class MainWindow(object):
         items, iter = selection.get_selected()
         if iter is None:
             return
+
         item = items[iter][3]
         self.tree.get_object('edit_delete').set_sensitive(True)
         self.tree.get_object('new_separator_button').set_sensitive(True)
         self.tree.get_object('delete_button').set_sensitive(True)
-        if self.editor.canRevert(item):
-            self.tree.get_object('edit_revert_to_original').set_sensitive(True)
-        else:
-            self.tree.get_object('edit_revert_to_original').set_sensitive(False)
-        if not isinstance(item, GMenu.TreeSeparator):
-            self.tree.get_object('edit_properties').set_sensitive(True)
-            self.tree.get_object('properties_button').set_sensitive(True)
-        else:
-            self.tree.get_object('edit_properties').set_sensitive(False)
-            self.tree.get_object('properties_button').set_sensitive(False)
 
-        # If first item...
-        if items.get_path(iter).get_indices()[0] == 0:
-            self.tree.get_object('move_up_button').set_sensitive(False)
-        else:
-            self.tree.get_object('move_up_button').set_sensitive(True)
+        can_revert = self.editor.canRevert(item)
+        self.tree.get_object('edit_revert_to_original').set_sensitive(can_revert)
 
-        # If last item...
-        if items.get_path(iter).get_indices()[0] == (len(items)-1):
-            self.tree.get_object('move_down_button').set_sensitive(False)
-        else:
-            self.tree.get_object('move_down_button').set_sensitive(True)
+        can_edit = not isinstance(item, GMenu.TreeSeparator)
+        self.tree.get_object('edit_properties').set_sensitive(can_edit)
+        self.tree.get_object('properties_button').set_sensitive(can_edit)
+
+        index = items.get_path(iter).get_indices()[0]
+        can_go_up = index > 0
+        can_go_down = index < len(items) - 1
+        self.tree.get_object('move_up_button').set_sensitive(can_go_up)
+        self.tree.get_object('move_down_button').set_sensitive(can_go_down)
 
     def on_item_tree_row_activated(self, treeview, path, column):
         self.on_edit_properties_activate(None)

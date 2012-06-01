@@ -44,12 +44,12 @@ class Menu(object):
 class MenuEditor(object):
     def __init__(self):
         self.applications = Menu('applications.menu')
-        self.applications.tree.connect('changed', self.__menuChanged)
+        self.applications.tree.connect('changed', self.menuChanged)
 
-        self.__undo = []
-        self.__redo = []
+        self._undoItems = []
+        self._redoItems = []
 
-    def __menuChanged(self, *a):
+    def menuChanged(self, *a):
         self.applications.load()
 
     def save(self):
@@ -86,7 +86,7 @@ class MenuEditor(object):
             menu.dom = xml.dom.minidom.parse(menu.path)
             util.removeWhitespaceNodes(menu.dom)
         #reset undo/redo, no way to recover from this
-        self.__undo, self.__redo = [], []
+        self._undoItems, self._redoItems = [], []
         self.save()
 
     def revertTree(self, menu):
@@ -103,9 +103,9 @@ class MenuEditor(object):
         self.revertMenu(menu)
 
     def undo(self):
-        if len(self.__undo) == 0:
+        if len(self._undoItems) == 0:
             return
-        files = self.__undo.pop()
+        files = self._undoItems.pop()
         redo = []
         for file_path in files:
             new_path = file_path.rsplit('.', 1)[0]
@@ -123,12 +123,12 @@ class MenuEditor(object):
         else:
             menu.dom = xml.dom.minidom.parse(menu.path)
         util.removeWhitespaceNodes(menu.dom)
-        self.__redo.append(redo)
+        self._redoItems.append(redo)
 
     def redo(self):
-        if len(self.__redo) == 0:
+        if len(self._redoItems) == 0:
             return
-        files = self.__redo.pop()
+        files = self._redoItems.pop()
         undo = []
         for file_path in files:
             new_path = file_path.rsplit('.', 1)[0]
@@ -147,7 +147,7 @@ class MenuEditor(object):
             else:
                 menu.dom = xml.dom.minidom.parse(menu.path)
             util.removeWhitespaceNodes(menu.dom)
-        self.__undo.append(undo)
+        self._undoItems.append(undo)
 
     def getMenus(self, parent=None):
         if parent == None:
@@ -158,7 +158,7 @@ class MenuEditor(object):
             while item_type != GMenu.TreeItemType.INVALID:
                 if item_type == GMenu.TreeItemType.DIRECTORY:
                     item = item_iter.get_directory()
-                    yield (item, self.__isVisible(item))
+                    yield (item, self.isVisible(item))
                 item_type = item_iter.next()
 
     def getContents(self, item):
@@ -198,7 +198,7 @@ class MenuEditor(object):
                     item = item_iter.get_header()
                 elif item_type == GMenu.TreeItemType.ALIAS:
                     item = item_iter.get_alias()
-                yield (item, self.__isVisible(item))
+                yield (item, self.isVisible(item))
             item_type = item_iter.next()
 
     def canRevert(self, item):
@@ -219,56 +219,56 @@ class MenuEditor(object):
         return False
 
     def setVisible(self, item, visible):
-        dom = self.__getMenu(item).dom
+        dom = self.getMenu(item).dom
         if isinstance(item, GMenu.TreeEntry):
-            self.__addUndo([self.__getMenu(item), item])
-            menu_xml = self.__getXmlMenu(self.__getPath(item.get_parent()), dom.documentElement, dom)
+            self.addUndo([self.getMenu(item), item])
+            menu_xml = self.getXmlMenu(self.getPath(item.get_parent()), dom.documentElement, dom)
             if visible:
-                self.__addXmlFilename(menu_xml, dom, item.get_desktop_file_id(), 'Include')
-                self.__writeItem(item, NoDisplay=False)
+                self.addXmlFilename(menu_xml, dom, item.get_desktop_file_id(), 'Include')
+                self.writeItem(item, NoDisplay=False)
             else:
-                self.__addXmlFilename(menu_xml, dom, item.get_desktop_file_id(), 'Exclude')
-            self.__addXmlTextElement(menu_xml, 'AppDir', util.getUserItemPath(), dom)
+                self.addXmlFilename(menu_xml, dom, item.get_desktop_file_id(), 'Exclude')
+            self.addXmlTextElement(menu_xml, 'AppDir', util.getUserItemPath(), dom)
         elif isinstance(item, GMenu.TreeDirectory):
-            self.__addUndo([self.__getMenu(item), item])
+            self.addUndo([self.getMenu(item), item])
             item_iter = item.iter()
             first_child_type = item_iter.next()
             #don't mess with it if it's empty
             if first_child_type == GMenu.TreeItemType.INVALID:
                 return
-            menu_xml = self.__getXmlMenu(self.__getPath(item), dom.documentElement, dom)
-            for node in self.__getXmlNodesByName(['Deleted', 'NotDeleted'], menu_xml):
+            menu_xml = self.getXmlMenu(self.getPath(item), dom.documentElement, dom)
+            for node in self.getXmlNodesByName(['Deleted', 'NotDeleted'], menu_xml):
                 node.parentNode.removeChild(node)
-            self.__writeMenu(item, NoDisplay=not visible)
-            self.__addXmlTextElement(menu_xml, 'DirectoryDir', util.getUserDirectoryPath(), dom)
+            self.writeMenu(item, NoDisplay=not visible)
+            self.addXmlTextElement(menu_xml, 'DirectoryDir', util.getUserDirectoryPath(), dom)
         self.save()
 
     def createItem(self, parent, before, after, **kwargs):
-        file_id = self.__writeItem(None, **kwargs)
+        file_id = self.writeItem(None, **kwargs)
         self.insertExternalItem(file_id, parent.get_menu_id(), before, after)
 
     def insertExternalItem(self, file_id, parent_id, before=None, after=None):
-        parent = self.__findMenu(parent_id)
-        dom = self.__getMenu(parent).dom
-        self.__addItem(parent, file_id, dom)
-        self.__positionItem(parent, ('Item', file_id), before, after)
-        self.__addUndo([self.__getMenu(parent), ('Item', file_id)])
+        parent = self.findMenu(parent_id)
+        dom = self.getMenu(parent).dom
+        self.addItem(parent, file_id, dom)
+        self.positionItem(parent, ('Item', file_id), before, after)
+        self.addUndo([self.getMenu(parent), ('Item', file_id)])
         self.save()
 
     def insertExternalMenu(self, file_id, parent_id, before=None, after=None):
         menu_id = file_id.rsplit('.', 1)[0]
-        parent = self.__findMenu(parent_id)
-        dom = self.__getMenu(parent).dom
-        self.__addXmlDefaultLayout(self.__getXmlMenu(self.__getPath(parent), dom.documentElement, dom) , dom)
-        menu_xml = self.__getXmlMenu(self.__getPath(parent) + [menu_id], dom.documentElement, dom)
-        self.__addXmlTextElement(menu_xml, 'Directory', file_id, dom)
-        self.__positionItem(parent, ('Menu', menu_id), before, after)
-        self.__addUndo([self.__getMenu(parent), ('Menu', file_id)])
+        parent = self.findMenu(parent_id)
+        dom = self.getMenu(parent).dom
+        self.addXmlDefaultLayout(self.getXmlMenu(self.getPath(parent), dom.documentElement, dom) , dom)
+        menu_xml = self.getXmlMenu(self.getPath(parent) + [menu_id], dom.documentElement, dom)
+        self.addXmlTextElement(menu_xml, 'Directory', file_id, dom)
+        self.positionItem(parent, ('Menu', menu_id), before, after)
+        self.addUndo([self.getMenu(parent), ('Menu', file_id)])
         self.save()
 
     def createSeparator(self, parent, before=None, after=None):
-        self.__positionItem(parent, ('Separator',), before, after)
-        self.__addUndo([self.__getMenu(parent), ('Separator',)])
+        self.positionItem(parent, ('Separator',), before, after)
+        self.addUndo([self.getMenu(parent), ('Separator',)])
         self.save()
 
     def editItem(self, item, icon, name, comment, command, use_term, parent=None, final=True):
@@ -280,12 +280,12 @@ class MenuEditor(object):
         if not parent:
             parent = item.get_parent()
         if final:
-            self.__addUndo([self.__getMenu(parent), item])
-        self.__writeItem(item, Icon=icon, Name=name, Comment=comment, Exec=command, Terminal=use_term)
+            self.addUndo([self.getMenu(parent), item])
+        self.writeItem(item, Icon=icon, Name=name, Comment=comment, Exec=command, Terminal=use_term)
         if final:
-            dom = self.__getMenu(parent).dom
-            menu_xml = self.__getXmlMenu(self.__getPath(parent), dom.documentElement, dom)
-            self.__addXmlTextElement(menu_xml, 'AppDir', util.getUserItemPath(), dom)
+            dom = self.getMenu(parent).dom
+            menu_xml = self.getXmlMenu(self.getPath(parent), dom.documentElement, dom)
+            self.addXmlTextElement(menu_xml, 'AppDir', util.getUserItemPath(), dom)
         self.save()
 
     def editMenu(self, menu, icon, name, comment, final=True):
@@ -294,16 +294,16 @@ class MenuEditor(object):
             return
         #we don't use this, we just need to make sure the <Menu> exists
         #otherwise changes won't show up
-        dom = self.__getMenu(menu).dom
-        menu_xml = self.__getXmlMenu(self.__getPath(menu), dom.documentElement, dom)
-        self.__writeMenu(menu, Icon=icon, Name=name, Comment=comment)
+        dom = self.getMenu(menu).dom
+        menu_xml = self.getXmlMenu(self.getPath(menu), dom.documentElement, dom)
+        self.writeMenu(menu, Icon=icon, Name=name, Comment=comment)
         if final:
-            self.__addXmlTextElement(menu_xml, 'DirectoryDir', util.getUserDirectoryPath(), dom)
-            self.__addUndo([self.__getMenu(menu), menu])
+            self.addXmlTextElement(menu_xml, 'DirectoryDir', util.getUserDirectoryPath(), dom)
+            self.addUndo([self.getMenu(menu), menu])
         self.save()
 
     def copyItem(self, item, new_parent, before=None, after=None):
-        dom = self.__getMenu(new_parent).dom
+        dom = self.getMenu(new_parent).dom
         file_path = item.get_desktop_file_path()
         keyfile = GLib.KeyFile()
         keyfile.load_from_file(file_path, util.KEY_FILE_FLAGS)
@@ -320,9 +320,9 @@ class MenuEditor(object):
         f.write(contents)
         f.close()
 
-        self.__addItem(new_parent, file_id, dom)
-        self.__positionItem(new_parent, ('Item', file_id), before, after)
-        self.__addUndo([self.__getMenu(new_parent), ('Item', file_id)])
+        self.addItem(new_parent, file_id, dom)
+        self.positionItem(new_parent, ('Item', file_id), before, after)
+        self.addUndo([self.getMenu(new_parent), ('Item', file_id)])
         self.save()
         return file_id
 
@@ -335,9 +335,9 @@ class MenuEditor(object):
             file_id = self.copyItem(item, new_parent)
             item = ('Item', file_id)
             undo.append(item)
-        self.__positionItem(new_parent, item, before, after)
-        undo.append(self.__getMenu(new_parent))
-        self.__addUndo(undo)
+        self.positionItem(new_parent, item, before, after)
+        undo.append(self.getMenu(new_parent))
+        self.addUndo(undo)
         self.save()
 
     def moveMenu(self, menu, new_parent, before=None, after=None):
@@ -353,18 +353,18 @@ class MenuEditor(object):
             return False
 
         #can't move between top-level menus
-        if self.__getMenu(menu) != self.__getMenu(new_parent):
+        if self.getMenu(menu) != self.getMenu(new_parent):
             return False
         if menu.get_parent() != new_parent:
-            dom = self.__getMenu(menu).dom
-            path = self.__getPath(menu)
+            dom = self.getMenu(menu).dom
+            path = self.getPath(menu)
             root_path = path[0]
-            xml_root = self.__getXmlMenu(root_path, dom.documentElement, dom)
+            xml_root = self.getXmlMenu(root_path, dom.documentElement, dom)
             old_path = path[1:]
-            new_path = self.__getPath(new_parent)[1:] + [menu.get_menu_id()]
-            self.__addXmlMove(xml_root, '/'.join(old_path), '/'.join(new_path), dom)
-        self.__positionItem(new_parent, menu, before, after)
-        self.__addUndo([self.__getMenu(new_parent),])
+            new_path = self.getPath(new_parent)[1:] + [menu.get_menu_id()]
+            self.addXmlMove(xml_root, '/'.join(old_path), '/'.join(new_path), dom)
+        self.positionItem(new_parent, menu, before, after)
+        self.addUndo([self.getMenu(new_parent),])
         self.save()
 
     def moveSeparator(self, separator, new_parent, before=None, after=None):
@@ -374,38 +374,38 @@ class MenuEditor(object):
             self.deleteSeparator(separator)
             undo.append(separator)
         # this adds the new separator to the specified position
-        self.__positionItem(new_parent, separator, before, after)
-        undo.append(self.__getMenu(new_parent))
-        self.__addUndo(undo)
+        self.positionItem(new_parent, separator, before, after)
+        undo.append(self.getMenu(new_parent))
+        self.addUndo(undo)
         self.save()
 
     def deleteItem(self, item):
-        self.__addUndo([item,])
-        self.__writeItem(item, Hidden=True)
+        self.addUndo([item,])
+        self.writeItem(item, Hidden=True)
         self.save()
 
     def deleteMenu(self, menu):
-        dom = self.__getMenu(menu).dom
-        menu_xml = self.__getXmlMenu(self.__getPath(menu), dom.documentElement, dom)
-        self.__addDeleted(menu_xml, dom)
-        self.__addUndo([self.__getMenu(menu),])
+        dom = self.getMenu(menu).dom
+        menu_xml = self.getXmlMenu(self.getPath(menu), dom.documentElement, dom)
+        self.addDeleted(menu_xml, dom)
+        self.addUndo([self.getMenu(menu),])
         self.save()
 
     def deleteSeparator(self, item):
         parent = item.get_parent()
         contents = self.getContents(parent)
         contents.remove(item)
-        layout = self.__createLayout(contents)
-        dom = self.__getMenu(parent).dom
-        menu_xml = self.__getXmlMenu(self.__getPath(parent), dom.documentElement, dom)
-        self.__addXmlLayout(menu_xml, layout, dom)
-        self.__addUndo([self.__getMenu(item.get_parent()),])
+        layout = self.createLayout(contents)
+        dom = self.getMenu(parent).dom
+        menu_xml = self.getXmlMenu(self.getPath(parent), dom.documentElement, dom)
+        self.addXmlLayout(menu_xml, layout, dom)
+        self.addUndo([self.getMenu(item.get_parent()),])
         self.save()
 
     def revertItem(self, item):
         if not self.canRevert(item):
             return
-        self.__addUndo([item,])
+        self.addUndo([item,])
         try:
             os.remove(item.get_desktop_file_path())
         except OSError:
@@ -418,7 +418,7 @@ class MenuEditor(object):
         #wtf happened here? oh well, just bail
         if not menu.get_desktop_file_path():
             return
-        self.__addUndo([menu,])
+        self.addUndo([menu,])
         file_id = os.path.split(menu.get_desktop_file_path())[1]
         path = os.path.join(util.getUserDirectoryPath(), file_id)
         try:
@@ -428,8 +428,8 @@ class MenuEditor(object):
         self.save()
 
     #private stuff
-    def __addUndo(self, items):
-        self.__undo.append([])
+    def addUndo(self, items):
+        self._undoItems.append([])
         for item in items:
             if isinstance(item, Menu):
                 file_path = item.path
@@ -459,15 +459,15 @@ class MenuEditor(object):
             data = open(file_path).read()
             undo_path = util.getUniqueUndoFile(file_path)
             open(undo_path, 'w').write(data)
-            self.__undo[-1].append(undo_path)
+            self._undoItems[-1].append(undo_path)
 
-    def __getMenu(self, item):
+    def getMenu(self, item):
         return self.applications
 
-    def __findMenu(self, menu_id, parent=None):
+    def findMenu(self, menu_id, parent=None):
         root_directory = self.applications.tree.get_root_directory()
         if parent == None and root_directory != None:
-            return self.__findMenu(menu_id, root_directory)
+            return self.findMenu(menu_id, root_directory)
         if menu_id == root_directory.get_menu_id():
             return root_directory
         item_iter = parent.iter()
@@ -477,24 +477,24 @@ class MenuEditor(object):
                 item = item_iter.get_directory()
                 if item.get_menu_id() == menu_id:
                     return item
-                menu = self.__findMenu(menu_id, item)
+                menu = self.findMenu(menu_id, item)
                 if menu != None:
                     return menu
             item_type = item_iter.next()
 
-    def __isVisible(self, item):
+    def isVisible(self, item):
         if isinstance(item, GMenu.TreeEntry):
             app_info = item.get_app_info()
             return not (item.get_is_excluded() or app_info.get_nodisplay())
-        menu = self.__getMenu(item)
+        menu = self.getMenu(item)
         if menu == self.applications:
             root = self.applications.visible_tree.get_root_directory()
         if isinstance(item, GMenu.TreeDirectory):
-            if self.__findMenu(item.get_menu_id(), root) == None:
+            if self.findMenu(item.get_menu_id(), root) == None:
                 return False
         return True
 
-    def __getPath(self, menu):
+    def getPath(self, menu):
         names = []
         current = menu
         while current is not None:
@@ -506,28 +506,28 @@ class MenuEditor(object):
         names.pop(-1)
         return names[::-1]
 
-    def __getXmlMenuPart(self, element, name):
-        for node in self.__getXmlNodesByName('Menu', element):
-            for child in self.__getXmlNodesByName('Name', node):
+    def getXmlMenuPart(self, element, name):
+        for node in self.getXmlNodesByName('Menu', element):
+            for child in self.getXmlNodesByName('Name', node):
                 if child.childNodes[0].nodeValue == name:
                     return node
         return None
 
-    def __getXmlMenu(self, path, element, dom):
+    def getXmlMenu(self, path, element, dom):
         for name in path:
-            found = self.__getXmlMenuPart(element, name)
+            found = self.getXmlMenuPart(element, name)
             if found is not None:
                 element = found
             else:
-                element = self.__addXmlMenuElement(element, name, dom)
+                element = self.addXmlMenuElement(element, name, dom)
         return element
 
-    def __addXmlMenuElement(self, element, name, dom):
+    def addXmlMenuElement(self, element, name, dom):
         node = dom.createElement('Menu')
-        self.__addXmlTextElement(node, 'Name', name, dom)
+        self.addXmlTextElement(node, 'Name', name, dom)
         return element.appendChild(node)
 
-    def __addXmlTextElement(self, element, name, text, dom):
+    def addXmlTextElement(self, element, name, text, dom):
         for temp in element.childNodes:
             if temp.nodeName == name:
                 if temp.childNodes[0].nodeValue == text:
@@ -537,22 +537,22 @@ class MenuEditor(object):
         node.appendChild(text)
         return element.appendChild(node)
 
-    def __addXmlFilename(self, element, dom, filename, type = 'Include'):
+    def addXmlFilename(self, element, dom, filename, type = 'Include'):
         # remove old filenames
-        for node in self.__getXmlNodesByName(['Include', 'Exclude'], element):
+        for node in self.getXmlNodesByName(['Include', 'Exclude'], element):
             if node.childNodes[0].nodeName == 'Filename' and node.childNodes[0].childNodes[0].nodeValue == filename:
                 element.removeChild(node)
 
         # add new filename
         node = dom.createElement(type)
-        node.appendChild(self.__addXmlTextElement(node, 'Filename', filename, dom))
+        node.appendChild(self.addXmlTextElement(node, 'Filename', filename, dom))
         return element.appendChild(node)
 
-    def __addDeleted(self, element, dom):
+    def addDeleted(self, element, dom):
         node = dom.createElement('Deleted')
         return element.appendChild(node)
 
-    def __makeKeyFile(self, file_path, kwargs):
+    def makeKeyFile(self, file_path, kwargs):
         if 'KeyFile' in kwargs:
             return kwargs['KeyFile']
 
@@ -564,13 +564,13 @@ class MenuEditor(object):
         util.fillKeyFile(keyfile, kwargs)
         return keyfile
 
-    def __writeItem(self, item, **kwargs):
+    def writeItem(self, item, **kwargs):
         if item is not None:
             file_path = item.get_desktop_file_path()
         else:
             file_path = None
 
-        keyfile = self.__makeKeyFile(file_path, kwargs)
+        keyfile = self.makeKeyFile(file_path, kwargs)
 
         if item is not None:
             file_id = item.get_desktop_file_id()
@@ -584,7 +584,7 @@ class MenuEditor(object):
         f.close()
         return file_id
 
-    def __writeMenu(self, menu, **kwargs):
+    def writeMenu(self, menu, **kwargs):
         if menu is not None:
             file_id = os.path.split(menu.get_desktop_file_path())[1]
             file_path = menu.get_desktop_file_path()
@@ -605,7 +605,7 @@ class MenuEditor(object):
         f.close()
         return file_id
 
-    def __getXmlNodesByName(self, name, element):
+    def getXmlNodesByName(self, name, element):
         for child in element.childNodes:
             if child.nodeType == xml.dom.Node.ELEMENT_NODE:
                 if isinstance(name, str) and child.nodeName == name:
@@ -614,17 +614,17 @@ class MenuEditor(object):
                     if child.nodeName in name:
                         yield child
 
-    def __addXmlMove(self, element, old, new, dom):
-        if not self.__undoMoves(element, old, new, dom):
+    def addXmlMove(self, element, old, new, dom):
+        if not self.undoMoves(element, old, new, dom):
             node = dom.createElement('Move')
-            node.appendChild(self.__addXmlTextElement(node, 'Old', old, dom))
-            node.appendChild(self.__addXmlTextElement(node, 'New', new, dom))
+            node.appendChild(self.addXmlTextElement(node, 'Old', old, dom))
+            node.appendChild(self.addXmlTextElement(node, 'New', new, dom))
             #are parsed in reverse order, need to put at the beginning
             return element.insertBefore(node, element.firstChild)
 
-    def __addXmlLayout(self, element, layout, dom):
+    def addXmlLayout(self, element, layout, dom):
         # remove old layout
-        for node in self.__getXmlNodesByName('Layout', element):
+        for node in self.getXmlNodesByName('Layout', element):
             element.removeChild(node)
 
         # add new layout
@@ -634,18 +634,18 @@ class MenuEditor(object):
                 child = dom.createElement('Separator')
                 node.appendChild(child)
             elif order[0] == 'Filename':
-                child = self.__addXmlTextElement(node, 'Filename', order[1], dom)
+                child = self.addXmlTextElement(node, 'Filename', order[1], dom)
             elif order[0] == 'Menuname':
-                child = self.__addXmlTextElement(node, 'Menuname', order[1], dom)
+                child = self.addXmlTextElement(node, 'Menuname', order[1], dom)
             elif order[0] == 'Merge':
                 child = dom.createElement('Merge')
                 child.setAttribute('type', order[1])
                 node.appendChild(child)
         return element.appendChild(node)
 
-    def __addXmlDefaultLayout(self, element, dom):
+    def addXmlDefaultLayout(self, element, dom):
         # remove old default layout
-        for node in self.__getXmlNodesByName('DefaultLayout', element):
+        for node in self.getXmlNodesByName('DefaultLayout', element):
             element.removeChild(node)
 
         # add new layout
@@ -653,7 +653,7 @@ class MenuEditor(object):
         node.setAttribute('inline', 'false')
         return element.appendChild(node)
 
-    def __createLayout(self, items):
+    def createLayout(self, items):
         layout = Layout()
         layout.order = []
 
@@ -675,11 +675,11 @@ class MenuEditor(object):
         layout.order.append(['Merge', 'files'])
         return layout
 
-    def __addItem(self, parent, file_id, dom):
-        xml_parent = self.__getXmlMenu(self.__getPath(parent), dom.documentElement, dom)
-        self.__addXmlFilename(xml_parent, dom, file_id, 'Include')
+    def addItem(self, parent, file_id, dom):
+        xml_parent = self.getXmlMenu(self.getPath(parent), dom.documentElement, dom)
+        self.addXmlFilename(xml_parent, dom, file_id, 'Include')
 
-    def __positionItem(self, parent, item, before=None, after=None):
+    def positionItem(self, parent, item, before=None, after=None):
         contents = self.getContents(parent)
         if after:
             index = contents.index(after) + 1
@@ -696,18 +696,18 @@ class MenuEditor(object):
                 index -= 1
             contents.remove(item)
         contents.insert(index, item)
-        layout = self.__createLayout(contents)
-        dom = self.__getMenu(parent).dom
-        menu_xml = self.__getXmlMenu(self.__getPath(parent), dom.documentElement, dom)
-        self.__addXmlLayout(menu_xml, layout, dom)
+        layout = self.createLayout(contents)
+        dom = self.getMenu(parent).dom
+        menu_xml = self.getXmlMenu(self.getPath(parent), dom.documentElement, dom)
+        self.addXmlLayout(menu_xml, layout, dom)
 
-    def __undoMoves(self, element, old, new, dom):
+    def undoMoves(self, element, old, new, dom):
         nodes = []
         matches = []
         original_old = old
         final_old = old
         #get all <Move> elements
-        for node in self.__getXmlNodesByName(['Move'], element):
+        for node in self.getXmlNodesByName(['Move'], element):
             nodes.insert(0, node)
         #if the <New> matches our old parent we've found a stage to undo
         for node in nodes:
@@ -733,7 +733,7 @@ class MenuEditor(object):
                         if name == os.path.split(new)[1]:
                             #copy app and dir directory info from old <Menu>
                             root_path = dom.getElementsByTagName('Menu')[0].getElementsByTagName('Name')[0].childNodes[0].nodeValue
-                            xml_menu = self.__getXmlMenu(root_path + '/' + new, dom.documentElement, dom)
+                            xml_menu = self.getXmlMenu(root_path + '/' + new, dom.documentElement, dom)
                             for app_dir in node.getElementsByTagName('AppDir'):
                                 xml_menu.appendChild(app_dir)
                             for dir_dir in node.getElementsByTagName('DirectoryDir'):
@@ -741,14 +741,14 @@ class MenuEditor(object):
                             parent = node.parentNode
                             parent.removeChild(node)
                     node = dom.createElement('Move')
-                    node.appendChild(self.__addXmlTextElement(node, 'Old', xml_old.childNodes[0].nodeValue, dom))
-                    node.appendChild(self.__addXmlTextElement(node, 'New', os.path.join(new, path[1]), dom))
+                    node.appendChild(self.addXmlTextElement(node, 'Old', xml_old.childNodes[0].nodeValue, dom))
+                    node.appendChild(self.addXmlTextElement(node, 'New', os.path.join(new, path[1]), dom))
                     element.appendChild(node)
             if final_old == new:
                 return True
             node = dom.createElement('Move')
-            node.appendChild(self.__addXmlTextElement(node, 'Old', final_old, dom))
-            node.appendChild(self.__addXmlTextElement(node, 'New', new, dom))
+            node.appendChild(self.addXmlTextElement(node, 'Old', final_old, dom))
+            node.appendChild(self.addXmlTextElement(node, 'New', new, dom))
             return element.appendChild(node)
 
 class Layout(object):

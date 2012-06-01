@@ -357,9 +357,9 @@ class MainWindow(object):
         if not os.path.isfile(file_path):
             data = open(item.get_desktop_file_path()).read()
             open(file_path, 'w').write(data)
-            self.editor._MenuEditor__addUndo([(file_type, os.path.split(file_path)[1]),])
+            self.editor.addUndo([(file_type, os.path.split(file_path)[1]),])
         else:
-            self.editor._MenuEditor__addUndo([item,])
+            self.editor.addUndo([item])
         if file_path not in self.edit_pool:
             self.edit_pool.append(file_path)
             process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)

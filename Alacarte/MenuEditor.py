@@ -332,7 +332,10 @@ class MenuEditor(object):
         self.addXmlLayout(menu_xml, layout, dom)
         self.save()
 
-    def findMenu(self, menu_id, parent):
+    def findMenu(self, menu_id, parent=None):
+        if parent is None:
+            parent = self.applications.tree.get_root_directory()
+
         if menu_id == parent.get_menu_id():
             return parent
 

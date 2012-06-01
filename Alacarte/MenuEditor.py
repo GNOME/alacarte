@@ -49,9 +49,6 @@ class MenuEditor(object):
         self.applications = Menu('applications.menu')
         self.applications.tree.connect('changed', self.menuChanged)
 
-        self._undoItems = []
-        self._redoItems = []
-
     def menuChanged(self, *a):
         self.applications.load()
 
@@ -59,20 +56,6 @@ class MenuEditor(object):
         fd = open(self.applications.path, 'w')
         fd.write(self.applications.dom.toprettyxml())
         fd.close()
-
-    def quit(self):
-        for file_name in os.listdir(util.getUserItemPath()):
-            if file_name[-6:-2] in ('redo', 'undo'):
-                file_path = os.path.join(util.getUserItemPath(), file_name)
-                os.unlink(file_path)
-        for file_name in os.listdir(util.getUserDirectoryPath()):
-            if file_name[-6:-2] in ('redo', 'undo'):
-                file_path = os.path.join(util.getUserDirectoryPath(), file_name)
-                os.unlink(file_path)
-        for file_name in os.listdir(util.getUserMenuPath()):
-            if file_name[-6:-2] in ('redo', 'undo'):
-                file_path = os.path.join(util.getUserMenuPath(), file_name)
-                os.unlink(file_path)
 
     def revert(self):
         self.revertTree(self.applications.tree.get_root_directory())
@@ -83,9 +66,6 @@ class MenuEditor(object):
             pass
 
         self.applications.loadDOM()
-
-        #reset undo/redo, no way to recover from this
-        self._undoItems, self._redoItems = [], []
         self.save()
 
     def revertTree(self, menu):
@@ -100,42 +80,6 @@ class MenuEditor(object):
                 self.revertItem(item)
             item_type = item_iter.next()
         self.revertMenu(menu)
-
-    def undo(self):
-        if len(self._undoItems) == 0:
-            return
-        files = self._undoItems.pop()
-        redo = []
-        for file_path in files:
-            new_path = file_path.rsplit('.', 1)[0]
-            redo_path = util.getUniqueRedoFile(new_path)
-            data = open(new_path).read()
-            open(redo_path, 'w').write(data)
-            data = open(file_path).read()
-            open(new_path, 'w').write(data)
-            os.unlink(file_path)
-            redo.append(redo_path)
-
-        self.applications.loadDOM()
-        self._redoItems.append(redo)
-
-    def redo(self):
-        if len(self._redoItems) == 0:
-            return
-        files = self._redoItems.pop()
-        undo = []
-        for file_path in files:
-            new_path = file_path.rsplit('.', 1)[0]
-            undo_path = util.getUniqueUndoFile(new_path)
-            data = open(new_path).read()
-            open(undo_path, 'w').write(data)
-            data = open(file_path).read()
-            open(new_path, 'w').write(data)
-            os.unlink(file_path)
-            undo.append(undo_path)
-
-        self.applications.loadDOM()
-        self._undoItems.append(undo)
 
     def getMenus(self, parent=None):
         if parent == None:
@@ -209,7 +153,6 @@ class MenuEditor(object):
     def setVisible(self, item, visible):
         dom = self.getMenu(item).dom
         if isinstance(item, GMenu.TreeEntry):
-            self.addUndo([self.getMenu(item), item])
             menu_xml = self.getXmlMenu(self.getPath(item.get_parent()), dom.documentElement, dom)
             if visible:
                 self.addXmlFilename(menu_xml, dom, item.get_desktop_file_id(), 'Include')
@@ -218,7 +161,6 @@ class MenuEditor(object):
                 self.addXmlFilename(menu_xml, dom, item.get_desktop_file_id(), 'Exclude')
             self.addXmlTextElement(menu_xml, 'AppDir', util.getUserItemPath(), dom)
         elif isinstance(item, GMenu.TreeDirectory):
-            self.addUndo([self.getMenu(item), item])
             item_iter = item.iter()
             first_child_type = item_iter.next()
             #don't mess with it if it's empty
@@ -240,7 +182,6 @@ class MenuEditor(object):
         dom = self.getMenu(parent).dom
         self.addItem(parent, file_id, dom)
         self.positionItem(parent, ('Item', file_id), before, after)
-        self.addUndo([self.getMenu(parent), ('Item', file_id)])
         self.save()
 
     def insertExternalMenu(self, file_id, parent_id, before=None, after=None):
@@ -251,12 +192,10 @@ class MenuEditor(object):
         menu_xml = self.getXmlMenu(self.getPath(parent) + [menu_id], dom.documentElement, dom)
         self.addXmlTextElement(menu_xml, 'Directory', file_id, dom)
         self.positionItem(parent, ('Menu', menu_id), before, after)
-        self.addUndo([self.getMenu(parent), ('Menu', file_id)])
         self.save()
 
     def createSeparator(self, parent, before=None, after=None):
         self.positionItem(parent, ('Separator',), before, after)
-        self.addUndo([self.getMenu(parent), ('Separator',)])
         self.save()
 
     def editItem(self, item, icon, name, comment, command, use_term, parent=None, final=True):
@@ -267,8 +206,6 @@ class MenuEditor(object):
         #hack, item.get_parent() seems to fail a lot
         if not parent:
             parent = item.get_parent()
-        if final:
-            self.addUndo([self.getMenu(parent), item])
         self.writeItem(item, Icon=icon, Name=name, Comment=comment, Exec=command, Terminal=use_term)
         if final:
             dom = self.getMenu(parent).dom
@@ -287,7 +224,6 @@ class MenuEditor(object):
         self.writeMenu(menu, Icon=icon, Name=name, Comment=comment)
         if final:
             self.addXmlTextElement(menu_xml, 'DirectoryDir', util.getUserDirectoryPath(), dom)
-            self.addUndo([self.getMenu(menu), menu])
         self.save()
 
     def copyItem(self, item, new_parent, before=None, after=None):
@@ -310,22 +246,16 @@ class MenuEditor(object):
 
         self.addItem(new_parent, file_id, dom)
         self.positionItem(new_parent, ('Item', file_id), before, after)
-        self.addUndo([self.getMenu(new_parent), ('Item', file_id)])
         self.save()
         return file_id
 
     def moveItem(self, item, new_parent, before=None, after=None):
-        undo = []
         if item.get_parent() != new_parent:
             #hide old item
             self.deleteItem(item)
-            undo.append(item)
             file_id = self.copyItem(item, new_parent)
             item = ('Item', file_id)
-            undo.append(item)
         self.positionItem(new_parent, item, before, after)
-        undo.append(self.getMenu(new_parent))
-        self.addUndo(undo)
         self.save()
 
     def moveMenu(self, menu, new_parent, before=None, after=None):
@@ -352,23 +282,17 @@ class MenuEditor(object):
             new_path = self.getPath(new_parent)[1:] + [menu.get_menu_id()]
             self.addXmlMove(xml_root, '/'.join(old_path), '/'.join(new_path), dom)
         self.positionItem(new_parent, menu, before, after)
-        self.addUndo([self.getMenu(new_parent),])
         self.save()
 
     def moveSeparator(self, separator, new_parent, before=None, after=None):
-        undo = []
         # remove the original separator if its parent is not the new destination
         if separator.get_parent() != new_parent:
             self.deleteSeparator(separator)
-            undo.append(separator)
         # this adds the new separator to the specified position
         self.positionItem(new_parent, separator, before, after)
-        undo.append(self.getMenu(new_parent))
-        self.addUndo(undo)
         self.save()
 
     def deleteItem(self, item):
-        self.addUndo([item,])
         self.writeItem(item, Hidden=True)
         self.save()
 
@@ -376,7 +300,6 @@ class MenuEditor(object):
         dom = self.getMenu(menu).dom
         menu_xml = self.getXmlMenu(self.getPath(menu), dom.documentElement, dom)
         self.addDeleted(menu_xml, dom)
-        self.addUndo([self.getMenu(menu),])
         self.save()
 
     def deleteSeparator(self, item):
@@ -387,13 +310,11 @@ class MenuEditor(object):
         dom = self.getMenu(parent).dom
         menu_xml = self.getXmlMenu(self.getPath(parent), dom.documentElement, dom)
         self.addXmlLayout(menu_xml, layout, dom)
-        self.addUndo([self.getMenu(item.get_parent()),])
         self.save()
 
     def revertItem(self, item):
         if not self.canRevert(item):
             return
-        self.addUndo([item,])
         try:
             os.remove(item.get_desktop_file_path())
         except OSError:
@@ -406,7 +327,6 @@ class MenuEditor(object):
         #wtf happened here? oh well, just bail
         if not menu.get_desktop_file_path():
             return
-        self.addUndo([menu,])
         file_id = os.path.split(menu.get_desktop_file_path())[1]
         path = os.path.join(util.getUserDirectoryPath(), file_id)
         try:
@@ -414,40 +334,6 @@ class MenuEditor(object):
         except OSError:
             pass
         self.save()
-
-    #private stuff
-    def addUndo(self, items):
-        self._undoItems.append([])
-        for item in items:
-            if isinstance(item, Menu):
-                file_path = item.path
-            elif isinstance(item, tuple):
-                if item[0] == 'Item':
-                    file_path = os.path.join(util.getUserItemPath(), item[1])
-                    if not os.path.isfile(file_path):
-                        file_path = util.getItemPath(item[1])
-                elif item[0] == 'Menu':
-                    file_path = os.path.join(util.getUserDirectoryPath(), item[1])
-                    if not os.path.isfile(file_path):
-                        file_path = util.getDirectoryPath(item[1])
-                else:
-                    continue
-            elif isinstance(item, GMenu.TreeDirectory):
-                if item.get_desktop_file_path() == None:
-                    continue
-                file_path = os.path.join(util.getUserDirectoryPath(), os.path.split(item.get_desktop_file_path())[1])
-                if not os.path.isfile(file_path):
-                    file_path = item.get_desktop_file_path()
-            elif isinstance(item, GMenu.TreeEntry):
-                file_path = os.path.join(util.getUserItemPath(), item.get_desktop_file_id())
-                if not os.path.isfile(file_path):
-                    file_path = item.get_desktop_file_path()
-            else:
-                continue
-            data = open(file_path).read()
-            undo_path = util.getUniqueUndoFile(file_path)
-            open(undo_path, 'w').write(data)
-            self._undoItems[-1].append(undo_path)
 
     def getMenu(self, item):
         return self.applications

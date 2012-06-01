@@ -61,10 +61,6 @@ class MainWindow(object):
         self.tree.get_object('move_down_button').set_sensitive(False)
         self.tree.get_object('new_separator_button').set_sensitive(False)
         accelgroup = Gtk.AccelGroup()
-        keyval, modifier = Gtk.accelerator_parse('<Ctrl>Z')
-        accelgroup.connect(keyval, modifier, Gtk.AccelFlags.VISIBLE, self.on_mainwindow_undo)
-        keyval, modifier = Gtk.accelerator_parse('<Ctrl><Shift>Z')
-        accelgroup.connect(keyval, modifier, Gtk.AccelFlags.VISIBLE, self.on_mainwindow_redo)
         keyval, modifier = Gtk.accelerator_parse('F1')
         accelgroup.connect(keyval, modifier, Gtk.AccelFlags.VISIBLE, self.on_help_button_clicked)
         self.tree.get_object('mainwindow').add_accel_group(accelgroup)
@@ -357,9 +353,7 @@ class MainWindow(object):
         if not os.path.isfile(file_path):
             data = open(item.get_desktop_file_path()).read()
             open(file_path, 'w').write(data)
-            self.editor.addUndo([(file_type, os.path.split(file_path)[1]),])
-        else:
-            self.editor.addUndo([item])
+
         if file_path not in self.edit_pool:
             self.edit_pool.append(file_path)
             process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
@@ -605,12 +599,6 @@ class MainWindow(object):
         elif isinstance(item, GMenu.TreeSeparator):
             self.editor.moveSeparator(item, item.get_parent(), after=after)
 
-    def on_mainwindow_undo(self, accelgroup, window, keyval, modifier):
-        self.editor.undo()
-
-    def on_mainwindow_redo(self, accelgroup, window, keyval, modifier):
-        self.editor.redo()
-
     def on_help_button_clicked(self, *args):
         Gtk.show_uri(Gdk.Screen.get_default(), "ghelp:user-guide#menu-editor", Gtk.get_current_event_time())
 
@@ -634,5 +622,4 @@ class MainWindow(object):
         self.loadUpdates()
 
     def quit(self):
-        self.editor.quit()
         Gtk.main_quit()

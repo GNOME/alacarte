@@ -178,7 +178,7 @@ class MenuEditor(object):
             if item:
                 contents.append(item)
             item_type = item_iter.next()
-        return contents;
+        return contents
 
     def getItems(self, menu):
         item_iter = menu.iter()

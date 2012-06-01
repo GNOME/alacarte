@@ -108,15 +108,15 @@ class MenuEditor(object):
 
     def getMenus(self, parent=None):
         if parent is None:
-            yield self.applications.tree.get_root_directory()
-        else:
-            item_iter = parent.iter()
+            parent = self.applications.tree.get_root_directory()
+
+        item_iter = parent.iter()
+        item_type = item_iter.next()
+        while item_type != GMenu.TreeItemType.INVALID:
+            if item_type == GMenu.TreeItemType.DIRECTORY:
+                item = item_iter.get_directory()
+                yield (item, self.isVisible(item))
             item_type = item_iter.next()
-            while item_type != GMenu.TreeItemType.INVALID:
-                if item_type == GMenu.TreeItemType.DIRECTORY:
-                    item = item_iter.get_directory()
-                    yield (item, self.isVisible(item))
-                item_type = item_iter.next()
 
     def getContents(self, item):
         contents = []
@@ -332,12 +332,10 @@ class MenuEditor(object):
         self.addXmlLayout(menu_xml, layout, dom)
         self.save()
 
-    def findMenu(self, menu_id, parent=None):
-        root_directory = self.applications.tree.get_root_directory()
-        if parent is None and root_directory is not None:
-            return self.findMenu(menu_id, root_directory)
-        if menu_id == root_directory.get_menu_id():
-            return root_directory
+    def findMenu(self, menu_id, parent):
+        if menu_id == parent.get_menu_id():
+            return parent
+
         item_iter = parent.iter()
         item_type = item_iter.next()
         while item_type != GMenu.TreeItemType.INVALID:

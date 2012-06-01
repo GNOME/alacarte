@@ -202,9 +202,8 @@ class MainWindow(object):
 
     def loadMenus(self):
         self.menu_store.clear()
-        for menu in self.editor.getMenus():
-            iters = [None]*20
-            self.loadMenu(iters, menu)
+        self.loadMenu({ None: None })
+
         menu_tree = self.tree.get_object('menu_tree')
         menu_tree.set_model(self.menu_store)
         for menu in self.menu_store:
@@ -212,20 +211,15 @@ class MainWindow(object):
         menu_tree.get_selection().select_path((0,))
         self.on_menu_tree_cursor_changed(menu_tree)
 
-    def loadMenu(self, iters, parent, depth=0):
-        if depth == 0:
-            icon = util.getIcon(parent)
-            iters[depth] = self.menu_store.append(None, (icon, cgi.escape(parent.get_name()), parent))
-        depth += 1
+    def loadMenu(self, iters, parent=None):
         for menu, show in self.editor.getMenus(parent):
             name = cgi.escape(menu.get_name())
             if not show:
                 name = "<small><i>%s</i></small>" % (name,)
 
             icon = util.getIcon(menu)
-            iters[depth] = self.menu_store.append(iters[depth-1], (icon, name, menu))
-            self.loadMenu(iters, menu, depth)
-        depth -= 1
+            iters[menu] = self.menu_store.append(iters[parent], (icon, name, menu))
+            self.loadMenu(iters, menu)
 
     def loadItems(self, menu, menu_path):
         self.item_store.clear()

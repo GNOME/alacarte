@@ -1,4 +1,17 @@
 ==============
+Version 0.13.4
+==============
+Bugs fixed:
+	- Remove old PyGTK+/PyGObject 2 version checks (Alexandre Rostovtsev, #676699)
+        - Crash on exit due to a NULL tree-view selection (Alexandre Rostovtsev, #676702)
+        - Avoid crashing if a .desktop file has no icon defined (Alexandre Rostovtsev, #676700)
+        - Mark Alacarte as a Utility (Antoine Jacoutot, #658880)
+        - Unable to rearrange menu items (Jasper St. Pierre, #676987)
+        - Various code cleanups (Jasper St. Pierre)
+        - MainWindow: Don't select the destination folder after a drop (Antti Kaihola, #551390)
+        - Don't fail when handed corrupt or invalid XML (Jasper St. Pierre, #654167)
+
+==============
 Version 0.13.3
 ==============
 Bugs fixed:

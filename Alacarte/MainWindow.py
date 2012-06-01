@@ -397,7 +397,6 @@ class MainWindow(object):
                     return False
                 item = self.drag_data
                 new_parent = menus[path][2]
-                treeview.get_selection().select_path(path)
                 if isinstance(item, GMenu.TreeEntry):
                     self.editor.copyItem(item, new_parent)
                 elif isinstance(item, GMenu.TreeDirectory):

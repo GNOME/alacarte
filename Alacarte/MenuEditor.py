@@ -16,7 +16,9 @@
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import os, xml.dom.minidom
+import os
+import xml.dom.minidom
+import xml.parsers.expat
 from gi.repository import GMenu, GLib
 from Alacarte import util
 
@@ -32,9 +34,9 @@ class Menu(object):
         self.loadDOM()
 
     def loadDOM(self):
-        if os.path.isfile(self.path):
+        try:
             self.dom = xml.dom.minidom.parse(self.path)
-        else:
+        except (IOError, xml.parsers.expat.ExpatError), e:
             self.dom = xml.dom.minidom.parseString(util.getUserMenuXml(self.tree))
         util.removeWhitespaceNodes(self.dom)
 

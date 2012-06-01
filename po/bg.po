@@ -9,11 +9,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: alacarte\n"
+"Project-Id-Version: alacarte master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-01 17:57+0300\n"
-"PO-Revision-Date: 2012-04-01 17:59+0300\n"
-"Last-Translator: Vladimir Petkov <kaladan@gmail.com>\n"
+"POT-Creation-Date: 2012-06-01 22:00+0300\n"
+"PO-Revision-Date: 2012-06-01 22:00+0300\n"
+"Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../Alacarte/MainWindow.py:167
+#: ../Alacarte/MainWindow.py:155
 msgid "Name"
 msgstr "Име"
 
-#: ../Alacarte/MainWindow.py:182
+#: ../Alacarte/MainWindow.py:168
 msgid "Show"
 msgstr "Показване"
 
-#: ../Alacarte/MainWindow.py:190
+#: ../Alacarte/MainWindow.py:176
 msgid "Item"
 msgstr "Стартер"
 
@@ -38,8 +38,8 @@ msgid "Main Menu"
 msgstr "Основно меню"
 
 #: ../data/alacarte.desktop.in.in.h:2
-msgid "Change which applications are shown on the main menu"
-msgstr "Промяна на програмите в основното меню"
+msgid "Add or remove applications from the main menu"
+msgstr "Добавяне или премахване на програмите в основното меню"
 
 #: ../data/alacarte.ui.h:1
 msgid "_Revert to Original"

@@ -29,10 +29,13 @@ class Menu(object):
         self.load()
 
         self.path = os.path.join(util.getUserMenuPath(), self.tree.props.menu_basename)
-        if not os.path.isfile(self.path):
-            self.dom = xml.dom.minidom.parseString(util.getUserMenuXml(self.tree))
-        else:
+        self.loadDOM()
+
+    def loadDOM(self):
+        if os.path.isfile(self.path):
             self.dom = xml.dom.minidom.parse(self.path)
+        else:
+            self.dom = xml.dom.minidom.parseString(util.getUserMenuXml(self.tree))
         util.removeWhitespaceNodes(self.dom)
 
     def load(self):
@@ -72,19 +75,15 @@ class MenuEditor(object):
                 os.unlink(file_path)
 
     def revert(self):
-        menu = self.applications
-        self.revertTree(menu.tree.get_root_directory())
-        path = os.path.join(util.getUserMenuPath(), os.path.basename(menu.tree.get_canonical_menu_path()))
+        self.revertTree(self.applications.tree.get_root_directory())
+        path = os.path.join(util.getUserMenuPath(), os.path.basename(self.applications.tree.get_canonical_menu_path()))
         try:
             os.unlink(path)
         except OSError:
             pass
-            #reload DOM for each menu
-        if not os.path.isfile(menu.path):
-            menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
-        else:
-            menu.dom = xml.dom.minidom.parse(menu.path)
-            util.removeWhitespaceNodes(menu.dom)
+
+        self.applications.loadDOM()
+
         #reset undo/redo, no way to recover from this
         self._undoItems, self._redoItems = [], []
         self.save()
@@ -116,13 +115,8 @@ class MenuEditor(object):
             open(new_path, 'w').write(data)
             os.unlink(file_path)
             redo.append(redo_path)
-        #reload DOM to make changes stick
-        menu = self.applications
-        if not os.path.isfile(menu.path):
-            menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
-        else:
-            menu.dom = xml.dom.minidom.parse(menu.path)
-        util.removeWhitespaceNodes(menu.dom)
+
+        self.applications.loadDOM()
         self._redoItems.append(redo)
 
     def redo(self):
@@ -139,14 +133,8 @@ class MenuEditor(object):
             open(new_path, 'w').write(data)
             os.unlink(file_path)
             undo.append(undo_path)
-        #reload DOM to make changes stick
-        for name in ('applications',):
-            menu = getattr(self, name)
-            if not os.path.isfile(menu.path):
-                menu.dom = xml.dom.minidom.parseString(util.getUserMenuXml(menu.tree))
-            else:
-                menu.dom = xml.dom.minidom.parse(menu.path)
-            util.removeWhitespaceNodes(menu.dom)
+
+        self.applications.loadDOM()
         self._undoItems.append(undo)
 
     def getMenus(self, parent=None):

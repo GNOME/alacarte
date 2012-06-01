@@ -81,6 +81,29 @@ class MenuEditor(object):
             item_type = item_iter.next()
         self.revertMenu(menu)
 
+    def revertItem(self, item):
+        if not self.canRevert(item):
+            return
+        try:
+            os.remove(item.get_desktop_file_path())
+        except OSError:
+            pass
+        self.save()
+
+    def revertMenu(self, menu):
+        if not self.canRevert(menu):
+            return
+        #wtf happened here? oh well, just bail
+        if not menu.get_desktop_file_path():
+            return
+        file_id = os.path.split(menu.get_desktop_file_path())[1]
+        path = os.path.join(util.getUserDirectoryPath(), file_id)
+        try:
+            os.remove(path)
+        except OSError:
+            pass
+        self.save()
+
     def getMenus(self, parent=None):
         if parent == None:
             yield self.applications.tree.get_root_directory()
@@ -310,29 +333,6 @@ class MenuEditor(object):
         dom = self.getMenu(parent).dom
         menu_xml = self.getXmlMenu(self.getPath(parent), dom.documentElement, dom)
         self.addXmlLayout(menu_xml, layout, dom)
-        self.save()
-
-    def revertItem(self, item):
-        if not self.canRevert(item):
-            return
-        try:
-            os.remove(item.get_desktop_file_path())
-        except OSError:
-            pass
-        self.save()
-
-    def revertMenu(self, menu):
-        if not self.canRevert(menu):
-            return
-        #wtf happened here? oh well, just bail
-        if not menu.get_desktop_file_path():
-            return
-        file_id = os.path.split(menu.get_desktop_file_path())[1]
-        path = os.path.join(util.getUserDirectoryPath(), file_id)
-        try:
-            os.remove(path)
-        except OSError:
-            pass
         self.save()
 
     def getMenu(self, item):

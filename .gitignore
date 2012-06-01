@@ -48,6 +48,7 @@ stamp-h1
 *.pyc
 *.pyo
 *.pyd
+*_flymake.py
 
 *.tar.gz
 *.tar.bz2

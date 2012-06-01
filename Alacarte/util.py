@@ -135,9 +135,11 @@ def getIcon(item):
 
     if isinstance(item, GMenu.TreeDirectory):
         gicon = item.get_icon()
-    else:
+    elif isinstance(item, GMenu.TreeEntry):
         app_info = item.get_app_info()
         gicon = app_info.get_icon()
+    else:
+        return None
 
     if gicon is None:
         return None

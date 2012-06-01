@@ -218,10 +218,10 @@ class MainWindow(object):
             iters[depth] = self.menu_store.append(None, (icon, cgi.escape(parent.get_name()), parent))
         depth += 1
         for menu, show in self.editor.getMenus(parent):
-            if show:
-                name = cgi.escape(menu.get_name())
-            else:
-                name = '<small><i>' + cgi.escape(menu.get_name()) + '</i></small>'
+            name = cgi.escape(menu.get_name())
+            if not show:
+                name = "<small><i>%s</i></small>" % (name,)
+
             icon = util.getIcon(menu)
             iters[depth] = self.menu_store.append(iters[depth-1], (icon, name, menu))
             self.loadMenu(iters, menu, depth)
@@ -230,23 +230,20 @@ class MainWindow(object):
     def loadItems(self, menu, menu_path):
         self.item_store.clear()
         for item, show in self.editor.getItems(menu):
-            menu_icon = None
-            if isinstance(item, GMenu.TreeSeparator):
-                name = '---'
-                icon = None
+            icon = util.getIcon(item)
+            if isinstance(item, GMenu.TreeDirectory):
+                name = item.get_name()
             elif isinstance(item, GMenu.TreeEntry):
-                app_info = item.get_app_info()
-                if show:
-                    name = cgi.escape(app_info.get_display_name())
-                else:
-                    name = '<small><i>' + cgi.escape(app_info.get_display_name()) + '</i></small>'
-                icon = util.getIcon(item)
+                name = item.get_app_info().get_display_name()
+            elif isinstance(item, GMenu.Separator):
+                name = '---'
             else:
-                if show:
-                    name = cgi.escape(item.get_name())
-                else:
-                    name = '<small><i>' + cgi.escape(item.get_name()) + '</i></small>'
-                icon = util.getIcon(item)
+                assert False, 'should not be reached'
+
+            name = cgi.escape(name)
+            if not show:
+                name = "<small><i>%s</i></small>" % (name,)
+
             self.item_store.append((show, icon, name, item))
 
     #this is a little timeout callback to insert new items after

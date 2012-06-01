@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-11 09:49+0100\n"
-"PO-Revision-Date: 2011-02-11 09:50+0100\n"
+"POT-Creation-Date: 2012-06-01 13:08+0200\n"
+"PO-Revision-Date: 2012-06-01 13:09+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -21,66 +21,66 @@ msgstr ""
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: Poland\n"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:160
 msgid "Name"
 msgstr "Nazwa"
 
-#: ../Alacarte/MainWindow.py:180
+#: ../Alacarte/MainWindow.py:175
 msgid "Show"
 msgstr "Wyświetlanie"
 
-#: ../Alacarte/MainWindow.py:188
+#: ../Alacarte/MainWindow.py:183
 msgid "Item"
 msgstr "Element"
 
-#: ../data/alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "Zmiana widoczności programów w menu głównym"
-
-#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.ui.h:2
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:2
 msgid "Main Menu"
 msgstr "Menu główne"
 
+#: ../data/alacarte.desktop.in.in.h:2
+msgid "Add or remove applications from the main menu"
+msgstr "Dodawanie lub usuwanie programów z głównego menu"
+
 #: ../data/alacarte.ui.h:1
-msgid "It_ems:"
-msgstr "_Elementy:"
+msgid "_Revert to Original"
+msgstr "_Przywróć pierwotne"
 
 #: ../data/alacarte.ui.h:3
-msgid "Move Down"
-msgstr "Przenieś w dół"
-
-#: ../data/alacarte.ui.h:4
-msgid "Move Up"
-msgstr "Przenieś w górę"
-
-#: ../data/alacarte.ui.h:5
-msgid "Ne_w Item"
-msgstr "N_owy element"
-
-#: ../data/alacarte.ui.h:6
-msgid "New _Separator"
-msgstr "Nowy _separator"
-
-#: ../data/alacarte.ui.h:7
 msgid "Restore the default menu layout"
 msgstr "Przywraca domyślny układ menu"
 
-#: ../data/alacarte.ui.h:8
-msgid "Revert Changes?"
-msgstr "Cofnąć zmiany?"
-
-#: ../data/alacarte.ui.h:9
-msgid "Revert all menus to original settings?"
-msgstr "Cofnąć zmiany wszystkich menu do oryginalnych ustawień?"
-
-#: ../data/alacarte.ui.h:10
+#: ../data/alacarte.ui.h:4
 msgid "_Menus:"
 msgstr "Men_u:"
 
-#: ../data/alacarte.ui.h:11
+#: ../data/alacarte.ui.h:5
+msgid "It_ems:"
+msgstr "_Elementy:"
+
+#: ../data/alacarte.ui.h:6
 msgid "_New Menu"
 msgstr "_Nowe menu"
 
+#: ../data/alacarte.ui.h:7
+msgid "Ne_w Item"
+msgstr "N_owy element"
+
+#: ../data/alacarte.ui.h:8
+msgid "New _Separator"
+msgstr "Nowy _separator"
+
+#: ../data/alacarte.ui.h:9
+msgid "Move Up"
+msgstr "Przenieś w górę"
+
+#: ../data/alacarte.ui.h:10
+msgid "Move Down"
+msgstr "Przenieś w dół"
+
+#: ../data/alacarte.ui.h:11
+msgid "Revert Changes?"
+msgstr "Cofnąć zmiany?"
+
 #: ../data/alacarte.ui.h:12
-msgid "_Revert to Original"
-msgstr "_Przywróć oryginalne"
+msgid "Revert all menus to original settings?"
+msgstr "Cofnąć zmiany wszystkich menu do pierwotnych ustawień?"

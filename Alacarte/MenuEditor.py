@@ -107,7 +107,7 @@ class MenuEditor(object):
         self.save()
 
     def getMenus(self, parent=None):
-        if parent == None:
+        if parent is None:
             yield self.applications.tree.get_root_directory()
         else:
             item_iter = parent.iter()
@@ -342,7 +342,7 @@ class MenuEditor(object):
 
     def findMenu(self, menu_id, parent=None):
         root_directory = self.applications.tree.get_root_directory()
-        if parent == None and root_directory != None:
+        if parent is None and root_directory is not None:
             return self.findMenu(menu_id, root_directory)
         if menu_id == root_directory.get_menu_id():
             return root_directory
@@ -354,7 +354,7 @@ class MenuEditor(object):
                 if item.get_menu_id() == menu_id:
                     return item
                 menu = self.findMenu(menu_id, item)
-                if menu != None:
+                if menu is not None:
                     return menu
             item_type = item_iter.next()
 
@@ -366,7 +366,7 @@ class MenuEditor(object):
         if menu == self.applications:
             root = self.applications.visible_tree.get_root_directory()
         if isinstance(item, GMenu.TreeDirectory):
-            if self.findMenu(item.get_menu_id(), root) == None:
+            if self.findMenu(item.get_menu_id(), root) is None:
                 return False
         return True
 

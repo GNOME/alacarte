@@ -249,14 +249,14 @@ class MainWindow(object):
     #this is a little timeout callback to insert new items after
     #gnome-desktop-item-edit has finished running
     def waitForNewItemProcess(self, process, parent_id, file_path):
-        if process.poll() != None:
+        if process.poll() is not None:
             if os.path.isfile(file_path):
                 self.editor.insertExternalItem(os.path.split(file_path)[1], parent_id)
             return False
         return True
 
     def waitForNewMenuProcess(self, process, parent_id, file_path):
-        if process.poll() != None:
+        if process.poll() is not None:
             if os.path.isfile(file_path):
                 self.editor.insertExternalMenu(os.path.split(file_path)[1], parent_id)
             return False
@@ -264,7 +264,7 @@ class MainWindow(object):
 
     #this callback keeps you from editing the same item twice
     def waitForEditProcess(self, process, file_path):
-        if process.poll() != None:
+        if process.poll() is not None:
             self.edit_pool.remove(file_path)
             return False
         return True
@@ -390,14 +390,14 @@ class MainWindow(object):
                 context.finish(False, False, etime)
                 return False
             if selection.target in ('ALACARTE_ITEM_ROW', 'ALACARTE_MENU_ROW'):
-                if self.drag_data == None:
+                if self.drag_data is None:
                     return False
                 item = self.drag_data
                 new_parent = menus[path][2]
                 if isinstance(item, GMenu.TreeEntry):
                     self.editor.copyItem(item, new_parent)
                 elif isinstance(item, GMenu.TreeDirectory):
-                    if self.editor.moveMenu(item, new_parent) == False:
+                    if not self.editor.moveMenu(item, new_parent):
                         self.loadUpdates()
                 elif isinstance(item, GMenu.TreeSeparator):
                     self.editor.moveSeparator(item, new_parent)
@@ -462,7 +462,7 @@ class MainWindow(object):
             button = event.button
             event_time = event.time
             info = item_tree.get_path_at_pos(int(event.x), int(event.y))
-            if info != None:
+            if info is not None:
                 path, col, cellx, celly = info
                 item_tree.grab_focus()
                 item_tree.set_cursor(path, col, 0)
@@ -490,7 +490,7 @@ class MainWindow(object):
             drop_info = treeview.get_dest_row_at_pos(x, y)
             before = None
             after = None
-            if self.drag_data == None:
+            if self.drag_data is None:
                 return False
             item = self.drag_data
             # by default we assume, that the items stays in the same menu
@@ -515,13 +515,13 @@ class MainWindow(object):
             if isinstance(item, GMenu.TreeEntry):
                 self.editor.moveItem(item, destination, before, after)
             elif isinstance(item, GMenu.TreeDirectory):
-                if self.editor.moveMenu(item, destination, before, after) == False:
+                if not self.editor.moveMenu(item, destination, before, after):
                     self.loadUpdates()
             elif isinstance(item, GMenu.TreeSeparator):
                 self.editor.moveSeparator(item, destination, before, after)
             context.finish(True, True, etime)
         elif selection.target == 'text/plain':
-            if selection.data == None:
+            if selection.data is None:
                 return False
             menus, iter = self.tree.get_object('menu_tree').get_selection().get_selected()
             parent = menus[iter][2]

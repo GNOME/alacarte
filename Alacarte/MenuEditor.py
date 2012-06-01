@@ -176,7 +176,7 @@ class MenuEditor(object):
         return False
 
     def setVisible(self, item, visible):
-        dom = self.getMenu(item).dom
+        dom = self.applications.dom
         if isinstance(item, GMenu.TreeEntry):
             menu_xml = self.getXmlMenu(self.getPath(item.get_parent()), dom.documentElement, dom)
             if visible:
@@ -204,7 +204,7 @@ class MenuEditor(object):
 
     def insertExternalItem(self, file_id, parent_id, before=None, after=None):
         parent = self.findMenu(parent_id)
-        dom = self.getMenu(parent).dom
+        dom = self.applications.dom
         self.addItem(parent, file_id, dom)
         self.positionItem(parent, ('Item', file_id), before, after)
         self.save()
@@ -212,7 +212,7 @@ class MenuEditor(object):
     def insertExternalMenu(self, file_id, parent_id, before=None, after=None):
         menu_id = file_id.rsplit('.', 1)[0]
         parent = self.findMenu(parent_id)
-        dom = self.getMenu(parent).dom
+        dom = self.applications.dom
         self.addXmlDefaultLayout(self.getXmlMenu(self.getPath(parent), dom.documentElement, dom) , dom)
         menu_xml = self.getXmlMenu(self.getPath(parent) + [menu_id], dom.documentElement, dom)
         self.addXmlTextElement(menu_xml, 'Directory', file_id, dom)
@@ -233,7 +233,7 @@ class MenuEditor(object):
             parent = item.get_parent()
         self.writeItem(item, Icon=icon, Name=name, Comment=comment, Exec=command, Terminal=use_term)
         if final:
-            dom = self.getMenu(parent).dom
+            dom = self.applications.dom
             menu_xml = self.getXmlMenu(self.getPath(parent), dom.documentElement, dom)
             self.addXmlTextElement(menu_xml, 'AppDir', util.getUserItemPath(), dom)
         self.save()
@@ -244,7 +244,7 @@ class MenuEditor(object):
             return
         #we don't use this, we just need to make sure the <Menu> exists
         #otherwise changes won't show up
-        dom = self.getMenu(menu).dom
+        dom = self.applications.dom
         menu_xml = self.getXmlMenu(self.getPath(menu), dom.documentElement, dom)
         self.writeMenu(menu, Icon=icon, Name=name, Comment=comment)
         if final:
@@ -252,7 +252,7 @@ class MenuEditor(object):
         self.save()
 
     def copyItem(self, item, new_parent, before=None, after=None):
-        dom = self.getMenu(new_parent).dom
+        dom = self.applications.dom
         file_path = item.get_desktop_file_path()
         keyfile = GLib.KeyFile()
         keyfile.load_from_file(file_path, util.KEY_FILE_FLAGS)
@@ -295,11 +295,8 @@ class MenuEditor(object):
         if new_parent == menu:
             return False
 
-        #can't move between top-level menus
-        if self.getMenu(menu) != self.getMenu(new_parent):
-            return False
         if menu.get_parent() != new_parent:
-            dom = self.getMenu(menu).dom
+            dom = self.applications.dom
             path = self.getPath(menu)
             root_path = path[0]
             xml_root = self.getXmlMenu(root_path, dom.documentElement, dom)
@@ -322,7 +319,7 @@ class MenuEditor(object):
         self.save()
 
     def deleteMenu(self, menu):
-        dom = self.getMenu(menu).dom
+        dom = self.applications.dom
         menu_xml = self.getXmlMenu(self.getPath(menu), dom.documentElement, dom)
         self.addDeleted(menu_xml, dom)
         self.save()
@@ -332,13 +329,10 @@ class MenuEditor(object):
         contents = self.getContents(parent)
         contents.remove(item)
         layout = self.createLayout(contents)
-        dom = self.getMenu(parent).dom
+        dom = self.applications.dom
         menu_xml = self.getXmlMenu(self.getPath(parent), dom.documentElement, dom)
         self.addXmlLayout(menu_xml, layout, dom)
         self.save()
-
-    def getMenu(self, item):
-        return self.applications
 
     def findMenu(self, menu_id, parent=None):
         root_directory = self.applications.tree.get_root_directory()
@@ -362,9 +356,8 @@ class MenuEditor(object):
         if isinstance(item, GMenu.TreeEntry):
             app_info = item.get_app_info()
             return not (item.get_is_excluded() or app_info.get_nodisplay())
-        menu = self.getMenu(item)
-        if menu == self.applications:
-            root = self.applications.visible_tree.get_root_directory()
+
+        root = self.applications.visible_tree.get_root_directory()
         if isinstance(item, GMenu.TreeDirectory):
             if self.findMenu(item.get_menu_id(), root) is None:
                 return False
@@ -573,7 +566,7 @@ class MenuEditor(object):
             contents.remove(item)
         contents.insert(index, item)
         layout = self.createLayout(contents)
-        dom = self.getMenu(parent).dom
+        dom = self.applications.dom
         menu_xml = self.getXmlMenu(self.getPath(parent), dom.documentElement, dom)
         self.addXmlLayout(menu_xml, layout, dom)
 

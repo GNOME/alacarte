@@ -310,7 +310,7 @@ class MenuEditor(object):
 
         util.fillKeyFile(keyfile, dict(Categories=[], Hidden=False))
 
-        app_info = item.get_info()
+        app_info = item.get_app_info()
         file_id = util.getUniqueFileId(app_info.get_name().replace(os.sep, '-'), '.desktop')
         out_path = os.path.join(util.getUserItemPath(), file_id)
 

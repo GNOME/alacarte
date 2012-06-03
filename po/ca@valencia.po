@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Catalan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-03 19:48+0200\n"
-"PO-Revision-Date: 2012-06-03 18:31+0200\n"
+"PO-Revision-Date: 2012-06-03 19:49+0200\n"
 "Last-Translator: Gil Forcada <gilforcada@guifi.net>\n"
 "Language-Team: catalan <tradgnome@softcatala.org>\n"
 "Language: \n"
@@ -82,47 +82,3 @@ msgstr "Voleu desfer els canvis?"
 msgid "Revert all menus to original settings?"
 msgstr "Voleu tornar tots els menús a la configuració inicial?"
 
-#~ msgid "Menu Layout"
-#~ msgstr "Disposició del menú"
-
-#~ msgid "A name is required."
-#~ msgstr "Es requereix un nom"
-
-#~ msgid "A command is required."
-#~ msgstr "Es requereix una ordre"
-
-#~ msgid "Add, change, remove menu entries"
-#~ msgstr "Afegiu, canvieu, elimineu entrades del menú"
-
-#~ msgid "Browse..."
-#~ msgstr "Navega..."
-
-#~ msgid "Command:"
-#~ msgstr "Ordre:"
-
-#~ msgid "Comment:"
-#~ msgstr "Comentari:"
-
-#~ msgid "Copyright © 2006 Travis Watkins"
-#~ msgstr "Copyright © 2006 Travis Watkins"
-
-#~ msgid "Icon:"
-#~ msgstr "Icona:"
-
-#~ msgid "Menu Item Properties"
-#~ msgstr "Propietats de l'element del menú"
-
-#~ msgid "Menu Properties"
-#~ msgstr "Propietats del menú"
-
-#~ msgid "Name:"
-#~ msgstr "Nom:"
-
-#~ msgid "Run command in a terminal"
-#~ msgstr "Executa l'ordre en un terminal"
-
-#~ msgid "Simple fd.o compliant menu editor"
-#~ msgstr "Editor de menú simple compatible amb fd.o"
-
-#~ msgid "translator-credits"
-#~ msgstr "Esteve Blanch Sanmartí <anakinjinn@gmail.com>"

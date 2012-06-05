@@ -3,81 +3,84 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Raivis Dejus <orvils@gmail.com>, 2006, 2007.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2012.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-17 19:53+0300\n"
-"PO-Revision-Date: 2007-06-17 19:54+0300\n"
-"Last-Translator: Raivis Dejus <orvils@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"POT-Creation-Date: 2012-06-05 17:18+0300\n"
+"PO-Revision-Date: 2012-06-05 17:18+0300\n"
+"Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
+"Language-Team: Latviešu <lata-l10n@googlegroups.com>\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 
-#: ../Alacarte/MainWindow.py:167
+#: ../Alacarte/MainWindow.py:155
 msgid "Name"
 msgstr "Nosaukums"
 
-#: ../Alacarte/MainWindow.py:183
+#: ../Alacarte/MainWindow.py:168
 msgid "Show"
 msgstr "Parādīt"
 
-#: ../Alacarte/MainWindow.py:191
+#: ../Alacarte/MainWindow.py:176
 msgid "Item"
 msgstr "Ieraksts"
 
-#: ../alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "Izmainīt kuras programmas ir redzamas galvenajā izvēlnē"
-
-#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:2
 msgid "Main Menu"
 msgstr "Galvenā izvēlne"
 
-#: ../alacarte.glade.h:1
-msgid "It_ems:"
-msgstr "I_eraksti:"
+#: ../data/alacarte.desktop.in.in.h:2
+msgid "Add or remove applications from the main menu"
+msgstr "Pievienot vai izņemt lietotnes no galvenās izvēlnes"
 
-#: ../alacarte.glade.h:3
-msgid "Move Down"
-msgstr "Pārvietot uz leju"
-
-#: ../alacarte.glade.h:4
-msgid "Move Up"
-msgstr "Pārvietot uz augšu"
-
-#: ../alacarte.glade.h:5
-msgid "Ne_w Item"
-msgstr "Jauns ieraks_ts"
-
-#: ../alacarte.glade.h:6
-msgid "New _Separator"
-msgstr "Jaun_s atdalītājs"
-
-#: ../alacarte.glade.h:7
-msgid "Restore the default menu layout"
-msgstr "Atjaunot noklusēto izvēlnes izkārtojumu"
-
-#: ../alacarte.glade.h:8
-msgid "Revert Changes?"
-msgstr "Atgriezt Izmaiņas?"
-
-#: ../alacarte.glade.h:9
-msgid "Revert all menus to original settings?"
-msgstr "Atjaunot oriģinālos uzstādijumus visās izvēlnēs?"
-
-#: ../alacarte.glade.h:10
-msgid "_Menus:"
-msgstr "_Izvēlnes:"
-
-#: ../alacarte.glade.h:11
-msgid "_New Menu"
-msgstr "Jau_na Izvēlne"
-
-#: ../alacarte.glade.h:12
+#: ../data/alacarte.ui.h:1
 msgid "_Revert to Original"
 msgstr "Atjaunot kā o_riģinālu"
 
+#: ../data/alacarte.ui.h:3
+msgid "Restore the default menu layout"
+msgstr "Atjaunot noklusēto izvēlnes izkārtojumu"
+
+#: ../data/alacarte.ui.h:4
+msgid "_Menus:"
+msgstr "_Izvēlnes:"
+
+#: ../data/alacarte.ui.h:5
+msgid "It_ems:"
+msgstr "I_eraksti:"
+
+#: ../data/alacarte.ui.h:6
+msgid "_New Menu"
+msgstr "Jau_na Izvēlne"
+
+#: ../data/alacarte.ui.h:7
+msgid "Ne_w Item"
+msgstr "Jauns ieraks_ts"
+
+#: ../data/alacarte.ui.h:8
+msgid "New _Separator"
+msgstr "Jaun_s atdalītājs"
+
+#: ../data/alacarte.ui.h:9
+msgid "Move Up"
+msgstr "Pārvietot uz augšu"
+
+#: ../data/alacarte.ui.h:10
+msgid "Move Down"
+msgstr "Pārvietot uz leju"
+
+#: ../data/alacarte.ui.h:11
+msgid "Revert Changes?"
+msgstr "Atgriezt Izmaiņas?"
+
+#: ../data/alacarte.ui.h:12
+msgid "Revert all menus to original settings?"
+msgstr "Atjaunot oriģinālos uzstādijumus visās izvēlnēs?"

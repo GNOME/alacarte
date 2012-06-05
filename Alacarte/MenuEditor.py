@@ -106,9 +106,10 @@ class MenuEditor(object):
             pass
         self.save()
 
-    def getMenus(self, parent=None):
+    def getMenus(self, parent):
         if parent is None:
-            parent = self.applications.tree.get_root_directory()
+            yield (self.applications.tree.get_root_directory(), True)
+            return
 
         item_iter = parent.iter()
         item_type = item_iter.next()

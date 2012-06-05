@@ -18,10 +18,10 @@
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 from gi.repository import Gtk, GObject, Gio, GdkPixbuf, Gdk, GMenu, GLib
-import cgi, os
+import cgi
+import os
 import gettext
 import subprocess
-import urllib
 
 from Alacarte import config
 gettext.bindtextdomain(config.GETTEXT_PACKAGE, config.localedir)

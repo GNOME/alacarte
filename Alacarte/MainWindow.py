@@ -85,7 +85,7 @@ class MainWindow(object):
             elif isinstance(items[iter][3], GMenu.TreeDirectory):
                 item_id = os.path.split(items[iter][3].get_desktop_file_path())[1]
                 update_type = GMenu.TreeItemType.DIRECTORY
-            elif isinstance(items[iter][3], GMenu.Tree.Separator):
+            elif isinstance(items[iter][3], GMenu.TreeSeparator):
                 item_id = items.get_path(iter)
                 update_type = GMenu.TreeItemType.SEPARATOR
         menus, iter = menu_tree.get_selection().get_selected()
@@ -220,7 +220,7 @@ class MainWindow(object):
                 name = item.get_name()
             elif isinstance(item, GMenu.TreeEntry):
                 name = item.get_app_info().get_display_name()
-            elif isinstance(item, GMenu.Separator):
+            elif isinstance(item, GMenu.TreeSeparator):
                 name = '---'
             else:
                 assert False, 'should not be reached'

@@ -21,6 +21,9 @@ import xml.dom.minidom
 from collections import Sequence
 from gi.repository import Gtk, GdkPixbuf, GMenu, GLib
 
+# XXX: look into pygobject error marshalling
+from gi._glib import GError
+
 DESKTOP_GROUP = GLib.KEY_FILE_DESKTOP_GROUP
 KEY_FILE_FLAGS = GLib.KeyFileFlags.KEEP_COMMENTS | GLib.KeyFileFlags.KEEP_TRANSLATIONS
 
@@ -148,7 +151,10 @@ def getIcon(item):
     info = icon_theme.lookup_by_gicon(gicon, 24, 0)
     if info is None:
         return None
-    pixbuf = info.load_icon()
+    try:
+        pixbuf = info.load_icon()
+    except GError:
+        return None
     if pixbuf is None:
         return None
     if pixbuf.get_width() != 24 or pixbuf.get_height() != 24:

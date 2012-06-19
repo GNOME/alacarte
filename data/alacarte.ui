@@ -8,7 +8,7 @@
           <object class="GtkAction" id="edit_properties">
             <property name="stock_id">gtk-properties</property>
             <property name="name">edit_properties</property>
-            <signal handler="on_edit_properties_activate" last_modification_time="Sun, 23 Apr 2006 02:16:34 GMT" name="activate"/>
+            <signal handler="on_edit_properties_activate" name="activate"/>
           </object>
         </child>
         <child>
@@ -16,14 +16,14 @@
             <property name="stock_id">gtk-revert-to-saved</property>
             <property name="name">edit_revert_to_original</property>
             <property name="label" translatable="yes">_Revert to Original</property>
-            <signal handler="on_edit_revert_to_original_activate" last_modification_time="Sun, 23 Apr 2006 02:16:34 GMT" name="activate"/>
+            <signal handler="on_edit_revert_to_original_activate" name="activate"/>
           </object>
         </child>
         <child>
           <object class="GtkAction" id="edit_delete">
             <property name="stock_id">gtk-delete</property>
             <property name="name">edit_delete</property>
-            <signal handler="on_edit_delete_activate" last_modification_time="Sun, 23 Apr 2006 02:16:34 GMT" name="activate"/>
+            <signal handler="on_edit_delete_activate" name="activate"/>
           </object>
         </child>
       </object>
@@ -65,8 +65,8 @@
     <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
     <property name="focus_on_map">True</property>
     <property name="urgency_hint">False</property>
-    <signal handler="on_close_button_clicked" last_modification_time="Wed, 26 Apr 2006 18:46:45 GMT" name="close"/>
-    <signal handler="on_close_button_clicked" last_modification_time="Fri, 28 Apr 2006 10:49:37 GMT" name="destroy"/>
+    <signal handler="on_close_button_clicked" name="close"/>
+    <signal handler="on_close_button_clicked" name="destroy"/>
     <signal handler="on_style_set" name="style-set"/>
     <accelerator key="Escape" modifiers="0" signal="close"/>
     <child internal-child="vbox">
@@ -87,7 +87,7 @@
                 <property name="use_stock">True</property>
                 <property name="relief">GTK_RELIEF_NORMAL</property>
                 <property name="focus_on_click">True</property>
-                <signal handler="on_help_button_clicked" last_modification_time="Wed, 26 Apr 2006 18:38:33 GMT" name="clicked"/>
+                <signal handler="on_help_button_clicked" name="clicked"/>
               </object>
             </child>
             <child>
@@ -100,7 +100,7 @@
                 <property name="use_stock">True</property>
                 <property name="relief">GTK_RELIEF_NORMAL</property>
                 <property name="focus_on_click">True</property>
-                <signal handler="on_revert_button_clicked" last_modification_time="Wed, 26 Apr 2006 18:38:17 GMT" name="clicked"/>
+                <signal handler="on_revert_button_clicked" name="clicked"/>
               </object>
             </child>
             <child>
@@ -113,7 +113,7 @@
                 <property name="use_stock">True</property>
                 <property name="relief">GTK_RELIEF_NORMAL</property>
                 <property name="focus_on_click">True</property>
-                <signal handler="on_close_button_clicked" last_modification_time="Wed, 26 Apr 2006 18:38:03 GMT" name="clicked"/>
+                <signal handler="on_close_button_clicked" name="clicked"/>
               </object>
             </child>
           </object>
@@ -218,9 +218,9 @@
                                     <signal handler="on_item_tree_row_activated" name="row-activated"/>
                                     <signal handler="on_item_tree_popup_menu" name="popup-menu"/>
                                     <signal handler="on_item_tree_cursor_changed" name="cursor-changed"/>
-                                    <signal handler="on_item_tree_popup_menu" last_modification_time="Thu, 06 Apr 2006 01:25:48 GMT" name="button_press_event"/>
-                                    <signal handler="on_item_tree_cursor_changed" last_modification_time="Tue, 18 Apr 2006 15:32:26 GMT" name="cursor_changed"/>
-                                    <signal handler="on_item_tree_key_press_event" last_modification_time="Sun, 23 Apr 2006 02:21:53 GMT" name="key_press_event"/>
+                                    <signal handler="on_item_tree_popup_menu" name="button_press_event"/>
+                                    <signal handler="on_item_tree_cursor_changed" name="cursor_changed"/>
+                                    <signal handler="on_item_tree_key_press_event" name="key_press_event"/>
                                   </object>
                                 </child>
                               </object>
@@ -250,7 +250,7 @@
                                         <property name="relief">GTK_RELIEF_NORMAL</property>
                                         <property name="focus_on_click">True</property>
                                         <property name="image">new_menu_image</property>
-                                        <signal handler="on_new_menu_button_clicked" last_modification_time="Wed, 26 Apr 2006 18:04:38 GMT" name="clicked"/>
+                                        <signal handler="on_new_menu_button_clicked" name="clicked"/>
                                       </object>
                                     </child>
                                     <child>
@@ -263,7 +263,7 @@
                                         <property name="relief">GTK_RELIEF_NORMAL</property>
                                         <property name="focus_on_click">True</property>
                                         <property name="image">new_item_image</property>
-                                        <signal handler="on_new_item_button_clicked" last_modification_time="Wed, 26 Apr 2006 18:04:43 GMT" name="clicked"/>
+                                        <signal handler="on_new_item_button_clicked" name="clicked"/>
                                       </object>
                                     </child>
                                     <child>
@@ -275,7 +275,7 @@
                                         <property name="use_underline">True</property>
                                         <property name="relief">GTK_RELIEF_NORMAL</property>
                                         <property name="focus_on_click">True</property>
-                                        <signal handler="on_new_separator_button_clicked" last_modification_time="Wed, 26 Apr 2006 18:04:48 GMT" name="clicked"/>
+                                        <signal handler="on_new_separator_button_clicked" name="clicked"/>
                                       </object>
                                     </child>
                                   </object>
@@ -310,7 +310,7 @@
                                             <property name="relief">GTK_RELIEF_NORMAL</property>
                                             <property name="focus_on_click">True</property>
                                             <property name="image">move_up_image</property>
-                                            <signal handler="on_move_up_button_clicked" last_modification_time="Wed, 26 Apr 2006 22:09:11 GMT" name="clicked"/>
+                                            <signal handler="on_move_up_button_clicked" name="clicked"/>
                                           </object>
                                         </child>
                                         <child>
@@ -322,7 +322,7 @@
                                             <property name="relief">GTK_RELIEF_NORMAL</property>
                                             <property name="focus_on_click">True</property>
                                             <property name="image">move_down_image</property>
-                                            <signal handler="on_move_down_button_clicked" last_modification_time="Wed, 26 Apr 2006 22:09:15 GMT" name="clicked"/>
+                                            <signal handler="on_move_down_button_clicked" name="clicked"/>
                                           </object>
                                         </child>
                                         <child>

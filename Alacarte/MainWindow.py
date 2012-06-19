@@ -483,8 +483,5 @@ class MainWindow(object):
     def on_delete_button_clicked(self, button):
         self.on_edit_delete_activate(None)
 
-    def on_style_set(self, *args):
-        self.loadUpdates()
-
     def quit(self):
         Gtk.main_quit()

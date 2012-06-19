@@ -67,7 +67,6 @@
     <property name="urgency_hint">False</property>
     <signal handler="on_close_button_clicked" name="close"/>
     <signal handler="on_close_button_clicked" name="destroy"/>
-    <signal handler="on_style_set" name="style-set"/>
     <accelerator key="Escape" modifiers="0" signal="close"/>
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox5">

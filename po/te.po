@@ -1,131 +1,135 @@
 # Telugu translation of alacarte
-# This file is distributed under the same license as the alacarte package.
+# This file is distributed under the same license as the alacarte package. Copy right (C) 2006,2007, 2012 to Swecha telugu localisation team <localization@swecha.net>
 # Copyright (C) 2006 Sree Ganesh <mrthottempudi@yahoo.com>
 # Copyright (C) 2006 Sunil Mohan Adapa <sunilmohan@swecha.org>
 # Copyright (C) 2007 Bharath Kumar <bharath@swecha.net>
-#
+# Bharath Kumar <bharath@swecha.net>, 2012.
+# Sasi Bhushan Boddepalli <sasi@swecha.net>, 2012
+# GVS.Giri <gvs.giri947@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte.HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-05 13:38+0530\n"
-"PO-Revision-Date: 2007-08-03 11:46+0530\n"
-"Last-Translator: Bharath Kumar <bharath@swecha.net>\n"
-"Language-Team: Swecha <localisation@swecha.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-06-01 05:19+0000\n"
+"PO-Revision-Date: 2012-06-13 20:20+0530\n"
+"Last-Translator: GVS.Giri <gvs.giri947@gmail.com>\n"
+"Language-Team: Swecha <indlinux-telugu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:167
+#: ../Alacarte/MainWindow.py:160
 msgid "Name"
 msgstr "పేరు"
 
-#: ../Alacarte/MainWindow.py:183
+#: ../Alacarte/MainWindow.py:175
 msgid "Show"
 msgstr "చూపించు"
 
-#: ../Alacarte/MainWindow.py:191
+#: ../Alacarte/MainWindow.py:183
 msgid "Item"
 msgstr "అంశం"
 
-#: ../alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "ముఖ్య జాబితాలో చూపబడిన కార్యక్షేత్రాలను మార్చుము"
-
-#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:2
 msgid "Main Menu"
 msgstr "ముఖ్య జాబితా"
 
-#: ../alacarte.glade.h:1
-msgid "It_ems:"
-msgstr "అంశాలు:"
+#: ../data/alacarte.desktop.in.in.h:2
+#| msgid "Change which applications are shown on the main menu"
+msgid "Add or remove applications from the main menu"
+msgstr "ప్రధాన జాబితా నుండి అనువర్తనాలు జోడించండి లేదా తొలగించండి"
 
-#: ../alacarte.glade.h:3
-msgid "Move Down"
-msgstr "కిందికి కదుపు"
-
-#: ../alacarte.glade.h:4
-msgid "Move Up"
-msgstr "పైకి కదుపు"
-
-#: ../alacarte.glade.h:5
-msgid "Ne_w Item"
-msgstr "కొత్త అంశం"
-
-#: ../alacarte.glade.h:6
-msgid "New _Separator"
-msgstr "కొత్త విభజన"
-
-#: ../alacarte.glade.h:7
-msgid "Restore the default menu layout"
-msgstr "అసలైన జాబితా అమరికను తిరిగి స్థాపించు"
-
-#: ../alacarte.glade.h:8
-msgid "Revert Changes?"
-msgstr "మార్పులను తీసివేయమంటారా?"
-
-#: ../alacarte.glade.h:9
-msgid "Revert all menus to original settings?"
-msgstr "అన్ని జాబితాలను అసలైన అమరికకు మార్చమంటారా?"
-
-#: ../alacarte.glade.h:10
-msgid "_Menus:"
-msgstr "_జాబితాలు:"
-
-#: ../alacarte.glade.h:11
-msgid "_New Menu"
-msgstr "_కొత్త జాబితా"
-
-#: ../alacarte.glade.h:12
+#: ../data/alacarte.ui.h:1
 msgid "_Revert to Original"
 msgstr "అసలైన అమరికకు మార్చు"
 
-msgid "A name is required."
-msgstr "ఒక పేరు అవసరం."
+#: ../data/alacarte.ui.h:3
+msgid "Restore the default menu layout"
+msgstr "అసలైన జాబితా అమరికను తిరిగి స్థాపించు"
 
-msgid "A command is required."
-msgstr "ఒక ఆదేశం అవసరం."
+#: ../data/alacarte.ui.h:4
+msgid "_Menus:"
+msgstr "_జాబితాలు:"
 
-msgid "Add, change, remove menu entries"
-msgstr "జాబితా అంశాలను కలుపు, మార్చు, తొలగించు"
+#: ../data/alacarte.ui.h:5
+msgid "It_ems:"
+msgstr "అంశాలు:"
 
-msgid "Menu Layout"
-msgstr "జాబితా అమరిక"
+#: ../data/alacarte.ui.h:6
+msgid "_New Menu"
+msgstr "_కొత్త జాబితా"
 
-msgid "Alacarte Menu Editor"
-msgstr "జాబితా మార్చె అలాకార్తె "
+#: ../data/alacarte.ui.h:7
+msgid "Ne_w Item"
+msgstr "కొత్త అంశం"
 
-msgid "Browse..."
-msgstr "అన్వేషించు..."
+#: ../data/alacarte.ui.h:8
+msgid "New _Separator"
+msgstr "కొత్త విభజన"
 
-msgid "Command:"
-msgstr "ఆదేశం:"
+#: ../data/alacarte.ui.h:9
+msgid "Move Up"
+msgstr "పైకి కదుపు"
 
-msgid "Comment:"
-msgstr "వ్యాఖ్యానం:"
+#: ../data/alacarte.ui.h:10
+msgid "Move Down"
+msgstr "కిందికి కదుపు"
 
-msgid "Copyright © 2006 Travis Watkins"
-msgstr "ప్రచురణ హక్కులు © 2006 ట్రావిస్ వాట్కిన్స్"
+#: ../data/alacarte.ui.h:11
+msgid "Revert Changes?"
+msgstr "మార్పులను తీసివేయమంటారా?"
 
-msgid "Icon:"
-msgstr "ప్రతిమ:"
+#: ../data/alacarte.ui.h:12
+msgid "Revert all menus to original settings?"
+msgstr "అన్ని జాబితాలను అసలైన అమరికకు మార్చమంటారా?"
 
-msgid "Menu Item Properties"
-msgstr "జాబితా అంశ లక్షణాలు"
+#~ msgid "A name is required."
+#~ msgstr "ఒక పేరు అవసరం."
 
-msgid "Menu Properties"
-msgstr "జాబితా లక్షణాలు"
+#~ msgid "A command is required."
+#~ msgstr "ఒక ఆదేశం అవసరం."
 
-msgid "Name:"
-msgstr "పేరు:"
+#~ msgid "Add, change, remove menu entries"
+#~ msgstr "జాబితా అంశాలను కలుపు, మార్చు, తొలగించు"
 
-msgid "Run command in a terminal"
-msgstr "టర్మిన‌ల్‌లొ ఆదేశాన్ని ఉపయోగించు"
+#~ msgid "Menu Layout"
+#~ msgstr "జాబితా అమరిక"
 
-msgid "Simple fd.o compliant menu editor"
-msgstr "ఫ్రీ డె‌‌క్స్‌టాప్ ప్రమాణాలను అనుసరింస్తు సరళముగా జాబితా మార్చునది"
+#~ msgid "Alacarte Menu Editor"
+#~ msgstr "జాబితా మార్చె అలాకార్తె "
 
-msgid "translator-credits"
-msgstr ""
-"Sree Ganesh <mrthottempudi@yahoo.com>\n"
-"Sunil Mohan Adapa <sunilmohan@swecha.org>"
+#~ msgid "Browse..."
+#~ msgstr "అన్వేషించు..."
+
+#~ msgid "Command:"
+#~ msgstr "ఆదేశం:"
+
+#~ msgid "Comment:"
+#~ msgstr "వ్యాఖ్యానం:"
+
+#~ msgid "Copyright © 2006 Travis Watkins"
+#~ msgstr "ప్రచురణ హక్కులు © 2006 ట్రావిస్ వాట్కిన్స్"
+
+#~ msgid "Icon:"
+#~ msgstr "ప్రతిమ:"
+
+#~ msgid "Menu Item Properties"
+#~ msgstr "జాబితా అంశ లక్షణాలు"
+
+#~ msgid "Menu Properties"
+#~ msgstr "జాబితా లక్షణాలు"
+
+#~ msgid "Name:"
+#~ msgstr "పేరు:"
+
+#~ msgid "Run command in a terminal"
+#~ msgstr "టర్మిన‌ల్‌లొ ఆదేశాన్ని ఉపయోగించు"
+
+#~ msgid "Simple fd.o compliant menu editor"
+#~ msgstr "ఫ్రీ డె‌‌క్స్‌టాప్ ప్రమాణాలను అనుసరింస్తు సరళముగా జాబితా మార్చునది"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Sree Ganesh <mrthottempudi@yahoo.com>\n"
+#~ "Sunil Mohan Adapa <sunilmohan@swecha.org>"

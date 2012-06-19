@@ -27,7 +27,6 @@ class Menu(object):
         self.name = name
 
         self.tree = GMenu.Tree.new(name, GMenu.TreeFlags.SHOW_EMPTY|GMenu.TreeFlags.INCLUDE_EXCLUDED|GMenu.TreeFlags.INCLUDE_NODISPLAY|GMenu.TreeFlags.SHOW_ALL_SEPARATORS|GMenu.TreeFlags.SORT_DISPLAY_NAME)
-        self.visible_tree = GMenu.Tree.new(name, GMenu.TreeFlags.SORT_DISPLAY_NAME)
         self.load()
 
         self.path = os.path.join(util.getUserMenuPath(), self.tree.props.menu_basename)
@@ -42,8 +41,6 @@ class Menu(object):
 
     def load(self):
         if not self.tree.load_sync():
-            raise ValueError("can not load menu tree %r" % (self.name,))
-        if not self.visible_tree.load_sync():
             raise ValueError("can not load menu tree %r" % (self.name,))
 
 class MenuEditor(object):
@@ -356,11 +353,8 @@ class MenuEditor(object):
         if isinstance(item, GMenu.TreeEntry):
             app_info = item.get_app_info()
             return not (item.get_is_excluded() or app_info.get_nodisplay())
-
-        root = self.applications.visible_tree.get_root_directory()
-        if isinstance(item, GMenu.TreeDirectory):
-            if self.findMenu(item.get_menu_id(), root) is None:
-                return False
+        elif isinstance(item, GMenu.TreeDirectory):
+            return not item.get_is_nodisplay()
         return True
 
     def getPath(self, menu):

@@ -41,7 +41,7 @@ class MainWindow(object):
         self.file_path = datadir
         self.version = version
         self.editor = MenuEditor()
-        self.editor.applications.tree.connect("changed", self.menuChanged)
+        self.editor.tree.connect("changed", self.menuChanged)
         Gtk.Window.set_default_icon_name('alacarte')
         self.tree = Gtk.Builder()
         self.tree.set_translation_domain(config.GETTEXT_PACKAGE)

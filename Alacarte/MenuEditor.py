@@ -22,11 +22,12 @@ import xml.parsers.expat
 from gi.repository import GMenu, GLib
 from Alacarte import util
 
-class Menu(object):
-    def __init__(self, name):
+class MenuEditor(object):
+    def __init__(self, name='applications.menu'):
         self.name = name
 
         self.tree = GMenu.Tree.new(name, GMenu.TreeFlags.SHOW_EMPTY|GMenu.TreeFlags.INCLUDE_EXCLUDED|GMenu.TreeFlags.INCLUDE_NODISPLAY|GMenu.TreeFlags.SHOW_ALL_SEPARATORS|GMenu.TreeFlags.SORT_DISPLAY_NAME)
+        self.tree.connect('changed', self.menuChanged)
         self.load()
 
         self.path = os.path.join(util.getUserMenuPath(), self.tree.props.menu_basename)
@@ -43,28 +44,23 @@ class Menu(object):
         if not self.tree.load_sync():
             raise ValueError("can not load menu tree %r" % (self.name,))
 
-class MenuEditor(object):
-    def __init__(self):
-        self.applications = Menu('applications.menu')
-        self.applications.tree.connect('changed', self.menuChanged)
-
     def menuChanged(self, *a):
-        self.applications.load()
+        self.load()
 
     def save(self):
-        fd = open(self.applications.path, 'w')
-        fd.write(self.applications.dom.toprettyxml())
+        fd = open(self.path, 'w')
+        fd.write(self.dom.toprettyxml())
         fd.close()
 
     def revert(self):
-        self.revertTree(self.applications.tree.get_root_directory())
-        path = os.path.join(util.getUserMenuPath(), os.path.basename(self.applications.tree.get_canonical_menu_path()))
+        self.revertTree(self.tree.get_root_directory())
+        path = os.path.join(util.getUserMenuPath(), os.path.basename(self.tree.get_canonical_menu_path()))
         try:
             os.unlink(path)
         except OSError:
             pass
 
-        self.applications.loadDOM()
+        self.loadDOM()
         self.save()
 
     def revertTree(self, menu):
@@ -105,7 +101,7 @@ class MenuEditor(object):
 
     def getMenus(self, parent):
         if parent is None:
-            yield (self.applications.tree.get_root_directory(), True)
+            yield (self.tree.get_root_directory(), True)
             return
 
         item_iter = parent.iter()
@@ -172,7 +168,7 @@ class MenuEditor(object):
         return False
 
     def setVisible(self, item, visible):
-        dom = self.applications.dom
+        dom = self.dom
         if isinstance(item, GMenu.TreeEntry):
             menu_xml = self.getXmlMenu(self.getPath(item.get_parent()), dom.documentElement, dom)
             if visible:
@@ -200,7 +196,7 @@ class MenuEditor(object):
 
     def insertExternalItem(self, file_id, parent_id, before=None, after=None):
         parent = self.findMenu(parent_id)
-        dom = self.applications.dom
+        dom = self.dom
         self.addItem(parent, file_id, dom)
         self.positionItem(parent, ('Item', file_id), before, after)
         self.save()
@@ -208,7 +204,7 @@ class MenuEditor(object):
     def insertExternalMenu(self, file_id, parent_id, before=None, after=None):
         menu_id = file_id.rsplit('.', 1)[0]
         parent = self.findMenu(parent_id)
-        dom = self.applications.dom
+        dom = self.dom
         self.addXmlDefaultLayout(self.getXmlMenu(self.getPath(parent), dom.documentElement, dom) , dom)
         menu_xml = self.getXmlMenu(self.getPath(parent) + [menu_id], dom.documentElement, dom)
         self.addXmlTextElement(menu_xml, 'Directory', file_id, dom)
@@ -229,7 +225,7 @@ class MenuEditor(object):
             parent = item.get_parent()
         self.writeItem(item, Icon=icon, Name=name, Comment=comment, Exec=command, Terminal=use_term)
         if final:
-            dom = self.applications.dom
+            dom = self.dom
             menu_xml = self.getXmlMenu(self.getPath(parent), dom.documentElement, dom)
             self.addXmlTextElement(menu_xml, 'AppDir', util.getUserItemPath(), dom)
         self.save()
@@ -240,7 +236,7 @@ class MenuEditor(object):
             return
         #we don't use this, we just need to make sure the <Menu> exists
         #otherwise changes won't show up
-        dom = self.applications.dom
+        dom = self.dom
         menu_xml = self.getXmlMenu(self.getPath(menu), dom.documentElement, dom)
         self.writeMenu(menu, Icon=icon, Name=name, Comment=comment)
         if final:
@@ -248,7 +244,7 @@ class MenuEditor(object):
         self.save()
 
     def copyItem(self, item, new_parent, before=None, after=None):
-        dom = self.applications.dom
+        dom = self.dom
         file_path = item.get_desktop_file_path()
         keyfile = GLib.KeyFile()
         keyfile.load_from_file(file_path, util.KEY_FILE_FLAGS)
@@ -292,7 +288,7 @@ class MenuEditor(object):
             return False
 
         if menu.get_parent() != new_parent:
-            dom = self.applications.dom
+            dom = self.dom
             path = self.getPath(menu)
             root_path = path[0]
             xml_root = self.getXmlMenu(root_path, dom.documentElement, dom)
@@ -315,7 +311,7 @@ class MenuEditor(object):
         self.save()
 
     def deleteMenu(self, menu):
-        dom = self.applications.dom
+        dom = self.dom
         menu_xml = self.getXmlMenu(self.getPath(menu), dom.documentElement, dom)
         self.addDeleted(menu_xml, dom)
         self.save()
@@ -325,14 +321,14 @@ class MenuEditor(object):
         contents = self.getContents(parent)
         contents.remove(item)
         layout = self.createLayout(contents)
-        dom = self.applications.dom
+        dom = self.dom
         menu_xml = self.getXmlMenu(self.getPath(parent), dom.documentElement, dom)
         self.addXmlLayout(menu_xml, layout, dom)
         self.save()
 
     def findMenu(self, menu_id, parent=None):
         if parent is None:
-            parent = self.applications.tree.get_root_directory()
+            parent = self.tree.get_root_directory()
 
         if menu_id == parent.get_menu_id():
             return parent
@@ -560,7 +556,7 @@ class MenuEditor(object):
             contents.remove(item)
         contents.insert(index, item)
         layout = self.createLayout(contents)
-        dom = self.applications.dom
+        dom = self.dom
         menu_xml = self.getXmlMenu(self.getPath(parent), dom.documentElement, dom)
         self.addXmlLayout(menu_xml, layout, dom)
 

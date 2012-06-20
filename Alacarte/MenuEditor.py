@@ -488,7 +488,7 @@ class MenuEditor(object):
 
         # add new layout
         node = dom.createElement('Layout')
-        for order in layout.order:
+        for order in layout:
             if order[0] == 'Separator':
                 child = dom.createElement('Separator')
                 node.appendChild(child)
@@ -513,25 +513,18 @@ class MenuEditor(object):
         return element.appendChild(node)
 
     def createLayout(self, items):
-        layout = Layout()
-        layout.order = []
-
-        layout.order.append(['Merge', 'menus'])
+        layout = []
+        layout.append(('Merge', 'menus'))
         for item in items:
-            if isinstance(item, tuple):
-                if item[0] == 'Separator':
-                    layout.parseSeparator()
-                elif item[0] == 'Menu':
-                    layout.parseMenuname(item[1])
-                elif item[0] == 'Item':
-                    layout.parseFilename(item[1])
-            elif isinstance(item, GMenu.TreeDirectory):
-                layout.parseMenuname(item.get_menu_id())
+            if isinstance(item, GMenu.TreeDirectory):
+                layout.append(('Menuname', item.get_menu_id()))
             elif isinstance(item, GMenu.TreeEntry):
-                layout.parseFilename(item.get_desktop_file_id())
+                layout.append(('Filename', item.get_desktop_file_id()))
             elif isinstance(item, GMenu.TreeSeparator):
-                layout.parseSeparator()
-        layout.order.append(['Merge', 'files'])
+                layout.append(('Separator',))
+            else:
+                layout.append(item)
+        layout.append(('Merge', 'files'))
         return layout
 
     def addItem(self, parent, file_id, dom):
@@ -609,19 +602,3 @@ class MenuEditor(object):
             node.appendChild(self.addXmlTextElement(node, 'Old', final_old, dom))
             node.appendChild(self.addXmlTextElement(node, 'New', new, dom))
             return element.appendChild(node)
-
-class Layout(object):
-    def __init__(self):
-        self.order = []
-
-    def parseMenuname(self, value):
-        self.order.append(['Menuname', value])
-
-    def parseSeparator(self):
-        self.order.append(['Separator'])
-
-    def parseFilename(self, value):
-        self.order.append(['Filename', value])
-
-    def parseMerge(self, merge_type='all'):
-        self.order.append(['Merge', merge_type])

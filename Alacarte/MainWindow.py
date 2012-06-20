@@ -34,7 +34,6 @@ from Alacarte import util
 class MainWindow(object):
     timer = None
     #hack to make editing menu properties work
-    allow_update = True
     edit_pool = []
 
     def __init__(self, datadir, version):
@@ -69,8 +68,6 @@ class MainWindow(object):
         self.loadUpdates()
 
     def loadUpdates(self):
-        if not self.allow_update:
-            return False
         menu_tree = self.tree.get_object('menu_tree')
         item_tree = self.tree.get_object('item_tree')
         items, iter = item_tree.get_selection().get_selected()

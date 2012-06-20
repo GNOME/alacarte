@@ -436,12 +436,7 @@ class MainWindow(object):
             return
         item = items[path][3]
         before = items[(path.get_indices()[0] - 1,)][3]
-        if isinstance(item, GMenu.TreeEntry):
-            self.editor.moveItem(item, item.get_parent(), before=before)
-        elif isinstance(item, GMenu.TreeDirectory):
-            self.editor.moveMenu(item, item.get_parent(), before=before)
-        elif isinstance(item, GMenu.TreeSeparator):
-            self.editor.moveSeparator(item, item.get_parent(), before=before)
+        self.editor.moveItem(item.get_parent(), item, before=before)
 
     def on_move_down_button_clicked(self, button):
         item_tree = self.tree.get_object('item_tree')
@@ -454,12 +449,7 @@ class MainWindow(object):
             return
         item = items[path][3]
         after = items[path][3]
-        if isinstance(item, GMenu.TreeEntry):
-            self.editor.moveItem(item, item.get_parent(), after=after)
-        elif isinstance(item, GMenu.TreeDirectory):
-            self.editor.moveMenu(item, item.get_parent(), after=after)
-        elif isinstance(item, GMenu.TreeSeparator):
-            self.editor.moveSeparator(item, item.get_parent(), after=after)
+        self.editor.moveItem(item.get_parent(), item, after=after)
 
     def on_help_button_clicked(self, *args):
         Gtk.show_uri(Gdk.Screen.get_default(), "ghelp:user-guide#menu-editor", Gtk.get_current_event_time())

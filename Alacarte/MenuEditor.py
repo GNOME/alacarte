@@ -266,46 +266,6 @@ class MenuEditor(object):
         self.save()
         return file_id
 
-    def moveItem(self, item, new_parent, before=None, after=None):
-        if item.get_parent() != new_parent:
-            #hide old item
-            self.deleteItem(item)
-            file_id = self.copyItem(item, new_parent)
-            item = ('Item', file_id)
-        self.positionItem(new_parent, item, before, after)
-        self.save()
-
-    def moveMenu(self, menu, new_parent, before=None, after=None):
-        parent = new_parent
-        #don't move a menu into it's child
-        while parent.get_parent():
-            parent = parent.get_parent()
-            if parent == menu:
-                return False
-
-        #don't move a menu into itself
-        if new_parent == menu:
-            return False
-
-        if menu.get_parent() != new_parent:
-            dom = self.dom
-            path = self.getPath(menu)
-            root_path = path[0]
-            xml_root = self.getXmlMenu(root_path, dom.documentElement, dom)
-            old_path = path[1:]
-            new_path = self.getPath(new_parent)[1:] + [menu.get_menu_id()]
-            self.addXmlMove(xml_root, '/'.join(old_path), '/'.join(new_path), dom)
-        self.positionItem(new_parent, menu, before, after)
-        self.save()
-
-    def moveSeparator(self, separator, new_parent, before=None, after=None):
-        # remove the original separator if its parent is not the new destination
-        if separator.get_parent() != new_parent:
-            self.deleteSeparator(separator)
-        # this adds the new separator to the specified position
-        self.positionItem(new_parent, separator, before, after)
-        self.save()
-
     def deleteItem(self, item):
         self.writeItem(item, Hidden=True)
         self.save()
@@ -530,6 +490,10 @@ class MenuEditor(object):
     def addItem(self, parent, file_id, dom):
         xml_parent = self.getXmlMenu(self.getPath(parent), dom.documentElement, dom)
         self.addXmlFilename(xml_parent, dom, file_id, 'Include')
+
+    def moveItem(self, parent, item, before=None, after=None):
+        self.positionItem(parent, item, before=before, after=after)
+        self.save()
 
     def positionItem(self, parent, item, before=None, after=None):
         contents = self.getContents(parent)

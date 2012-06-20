@@ -118,6 +118,7 @@ class MenuEditor(object):
         item_type = item_iter.next()
 
         while item_type != GMenu.TreeItemType.INVALID:
+            item = None
             if item_type == GMenu.TreeItemType.DIRECTORY:
                 item = item_iter.get_directory()
             elif item_type == GMenu.TreeItemType.ENTRY:
@@ -126,6 +127,8 @@ class MenuEditor(object):
                 item = item_iter.get_header()
             elif item_type == GMenu.TreeItemType.ALIAS:
                 item = item_iter.get_alias()
+            elif item_type == GMenu.TreeItemType.SEPARATOR:
+                item = item_iter.get_separator()
             if item:
                 contents.append(item)
             item_type = item_iter.next()

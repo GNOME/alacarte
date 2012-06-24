@@ -1,3 +1,25 @@
+=============
+Version 3.5.3
+=============
+
+Now on the GNOME release schedule and versioning scheme!
+
+Bugs fixed:
+	- Code cleanups
+	- Don't fail when loading a non-existant icon
+	- Fix spurious crashes and asserts by removing the visible_tree stuff
+	- Fix separator support (#677343)
+	- Put back the top-level "Applications" section that was accidentally removed (#677420)
+
+Translation updates:
+	- Catalan / Valencian (Carles Ferrando, Gil Forcada)
+	- Galician (Fran Diéguez)
+	- French (Bruno Brouard)
+	- German (Christian Kirbach)
+	- Slovenian (Matej Urbančič)
+	- Bulgarian (Alexander Shopov)
+	- Serbian (Мирослав Николић)
+
 ==============
 Version 0.13.4
 ==============

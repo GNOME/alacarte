@@ -209,7 +209,7 @@ class MainWindow(object):
             iters[menu] = self.menu_store.append(iters[parent], (icon, name, menu))
             self.loadMenu(iters, menu)
 
-    def loadItems(self, menu, menu_path):
+    def loadItems(self, menu):
         self.item_store.clear()
         for item, show in self.editor.getItems(menu):
             icon = util.getIcon(item)
@@ -348,7 +348,7 @@ class MainWindow(object):
         menu_path = menus.get_path(iter)
         item_tree = self.tree.get_object('item_tree')
         item_tree.get_selection().unselect_all()
-        self.loadItems(self.menu_store[menu_path][2], menu_path)
+        self.loadItems(self.menu_store[menu_path][2])
         self.tree.get_object('edit_delete').set_sensitive(False)
         self.tree.get_object('edit_revert_to_original').set_sensitive(False)
         self.tree.get_object('edit_properties').set_sensitive(False)

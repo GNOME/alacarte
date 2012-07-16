@@ -80,16 +80,16 @@
               </object>
             </child>
             <child>
-              <object class="GtkButton" id="revert_button">
+              <object class="GtkButton" id="restore_button">
                 <property name="visible">True</property>
                 <property name="tooltip-text" translatable="yes">Restore the default menu layout</property>
                 <property name="can_default">True</property>
                 <property name="can_focus">True</property>
-                <property name="label">gtk-revert-to-saved</property>
+                <property name="label" translatable="yes">Restore System Configuration</property>
                 <property name="use_stock">True</property>
                 <property name="relief">GTK_RELIEF_NORMAL</property>
                 <property name="focus_on_click">True</property>
-                <signal handler="on_revert_button_clicked" name="clicked"/>
+                <signal handler="on_restore_button_clicked" name="clicked"/>
               </object>
             </child>
             <child>
@@ -393,7 +393,7 @@
     </child>
     <action-widgets>
       <action-widget response="-11">help_button</action-widget>
-      <action-widget response="0">revert_button</action-widget>
+      <action-widget response="0">restore_button</action-widget>
       <action-widget response="-7">close_button</action-widget>
     </action-widgets>
   </object>

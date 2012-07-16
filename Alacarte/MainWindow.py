@@ -438,12 +438,12 @@ class MainWindow(object):
     def on_help_button_clicked(self, *args):
         Gtk.show_uri(Gdk.Screen.get_default(), "ghelp:user-guide#menu-editor", Gtk.get_current_event_time())
 
-    def on_revert_button_clicked(self, button):
+    def on_restore_button_clicked(self, button):
         dialog = self.tree.get_object('revertdialog')
         dialog.set_transient_for(self.tree.get_object('mainwindow'))
         dialog.show_all()
         if dialog.run() == Gtk.ResponseType.YES:
-            self.editor.revert()
+            self.editor.restoreToSystem()
         dialog.hide()
 
     def on_close_button_clicked(self, button):

@@ -52,8 +52,8 @@ class MenuEditor(object):
         fd.write(self.dom.toprettyxml())
         fd.close()
 
-    def revert(self):
-        self.revertTree(self.tree.get_root_directory())
+    def restoreToSystem(self):
+        self.restoreTree(self.tree.get_root_directory())
         path = os.path.join(util.getUserMenuPath(), os.path.basename(self.tree.get_canonical_menu_path()))
         try:
             os.unlink(path)
@@ -63,20 +63,20 @@ class MenuEditor(object):
         self.loadDOM()
         self.save()
 
-    def revertTree(self, menu):
+    def restoreTree(self, menu):
         item_iter = menu.iter()
         item_type = item_iter.next()
         while item_type != GMenu.TreeItemType.INVALID:
             if item_type == GMenu.TreeItemType.DIRECTORY:
                 item = item_iter.get_directory()
-                self.revertTree(item)
+                self.restoreTree(item)
             elif item_type == GMenu.TreeItemType.ENTRY:
                 item = item_iter.get_entry()
-                self.revertItem(item)
+                self.restoreItem(item)
             item_type = item_iter.next()
-        self.revertMenu(menu)
+        self.restoreMenu(menu)
 
-    def revertItem(self, item):
+    def restoreItem(self, item):
         if not self.canRevert(item):
             return
         try:
@@ -85,7 +85,7 @@ class MenuEditor(object):
             pass
         self.save()
 
-    def revertMenu(self, menu):
+    def restoreMenu(self, menu):
         if not self.canRevert(menu):
             return
         #wtf happened here? oh well, just bail

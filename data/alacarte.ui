@@ -12,14 +12,6 @@
           </object>
         </child>
         <child>
-          <object class="GtkAction" id="edit_revert_to_original">
-            <property name="stock_id">gtk-revert-to-saved</property>
-            <property name="name">edit_revert_to_original</property>
-            <property name="label" translatable="yes">_Revert to Original</property>
-            <signal handler="on_edit_revert_to_original_activate" name="activate"/>
-          </object>
-        </child>
-        <child>
           <object class="GtkAction" id="edit_delete">
             <property name="stock_id">gtk-delete</property>
             <property name="name">edit_delete</property>
@@ -31,8 +23,6 @@
     <ui>
       <popup name="edit_menu">
         <menuitem action="edit_properties"/>
-        <menuitem action="edit_revert_to_original"/>
-        <separator/>
         <menuitem action="edit_delete"/>
       </popup>
     </ui>

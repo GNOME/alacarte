@@ -49,7 +49,6 @@ class MainWindow(object):
         self.setupMenuTree()
         self.setupItemTree()
         self.tree.get_object('edit_delete').set_sensitive(False)
-        self.tree.get_object('edit_revert_to_original').set_sensitive(False)
         self.tree.get_object('edit_properties').set_sensitive(False)
         self.tree.get_object('move_up_button').set_sensitive(False)
         self.tree.get_object('move_down_button').set_sensitive(False)
@@ -302,17 +301,6 @@ class MainWindow(object):
         elif isinstance(item, GMenu.TreeSeparator):
             self.editor.deleteSeparator(item)
 
-    def on_edit_revert_to_original_activate(self, menu):
-        item_tree = self.tree.get_object('item_tree')
-        items, iter = item_tree.get_selection().get_selected()
-        if not iter:
-            return
-        item = items[iter][3]
-        if isinstance(item, GMenu.TreeEntry):
-            self.editor.revertItem(item)
-        elif isinstance(item, GMenu.TreeDirectory):
-            self.editor.revertMenu(item)
-
     def on_edit_properties_activate(self, menu):
         item_tree = self.tree.get_object('item_tree')
         items, iter = item_tree.get_selection().get_selected()
@@ -350,7 +338,6 @@ class MainWindow(object):
         item_tree.get_selection().unselect_all()
         self.loadItems(self.menu_store[menu_path][2])
         self.tree.get_object('edit_delete').set_sensitive(False)
-        self.tree.get_object('edit_revert_to_original').set_sensitive(False)
         self.tree.get_object('edit_properties').set_sensitive(False)
         self.tree.get_object('move_up_button').set_sensitive(False)
         self.tree.get_object('move_down_button').set_sensitive(False)
@@ -380,9 +367,6 @@ class MainWindow(object):
         self.tree.get_object('edit_delete').set_sensitive(True)
         self.tree.get_object('new_separator_button').set_sensitive(True)
         self.tree.get_object('delete_button').set_sensitive(True)
-
-        can_revert = self.editor.canRevert(item)
-        self.tree.get_object('edit_revert_to_original').set_sensitive(can_revert)
 
         can_edit = not isinstance(item, GMenu.TreeSeparator)
         self.tree.get_object('edit_properties').set_sensitive(can_edit)

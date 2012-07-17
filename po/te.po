@@ -1,88 +1,88 @@
 # Telugu translation of alacarte
-# This file is distributed under the same license as the alacarte package. Copy right (C) 2006,2007, 2012 to Swecha telugu localisation team <localization@swecha.net>
+# Copy right (C) 2006,2007, 2012 to Swecha telugu localisation team <localization@swecha.net>
 # Copyright (C) 2006 Sree Ganesh <mrthottempudi@yahoo.com>
 # Copyright (C) 2006 Sunil Mohan Adapa <sunilmohan@swecha.org>
 # Copyright (C) 2007 Bharath Kumar <bharath@swecha.net>
 # Bharath Kumar <bharath@swecha.net>, 2012.
 # Sasi Bhushan Boddepalli <sasi@swecha.net>, 2012
 # GVS.Giri <gvs.giri947@gmail.com>, 2012.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-06-01 05:19+0000\n"
-"PO-Revision-Date: 2012-06-13 20:20+0530\n"
+"POT-Creation-Date: 2012-07-17 00:26+0000\n"
+"PO-Revision-Date: 2012-07-17 16:21+0530\n"
 "Last-Translator: GVS.Giri <gvs.giri947@gmail.com>\n"
 "Language-Team: Swecha <indlinux-telugu@lists.sourceforge.net>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:160
+#: ../Alacarte/MainWindow.py:151
 msgid "Name"
 msgstr "పేరు"
 
-#: ../Alacarte/MainWindow.py:175
+#: ../Alacarte/MainWindow.py:164
 msgid "Show"
 msgstr "చూపించు"
 
-#: ../Alacarte/MainWindow.py:183
+#: ../Alacarte/MainWindow.py:172
 msgid "Item"
 msgstr "అంశం"
 
-#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:2
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "ముఖ్య జాబితా"
 
 #: ../data/alacarte.desktop.in.in.h:2
-#| msgid "Change which applications are shown on the main menu"
 msgid "Add or remove applications from the main menu"
 msgstr "ప్రధాన జాబితా నుండి అనువర్తనాలు జోడించండి లేదా తొలగించండి"
 
-#: ../data/alacarte.ui.h:1
-msgid "_Revert to Original"
-msgstr "అసలైన అమరికకు మార్చు"
-
-#: ../data/alacarte.ui.h:3
+#: ../data/alacarte.ui.h:2
 msgid "Restore the default menu layout"
 msgstr "అసలైన జాబితా అమరికను తిరిగి స్థాపించు"
 
+#: ../data/alacarte.ui.h:3
+msgid "Restore System Configuration"
+msgstr "వ్యవస్థ ఆకృతీకరణ పునరుద్ధరించు"
+
 #: ../data/alacarte.ui.h:4
-msgid "_Menus:"
-msgstr "_జాబితాలు:"
-
-#: ../data/alacarte.ui.h:5
-msgid "It_ems:"
-msgstr "అంశాలు:"
-
-#: ../data/alacarte.ui.h:6
 msgid "_New Menu"
 msgstr "_కొత్త జాబితా"
 
-#: ../data/alacarte.ui.h:7
+#: ../data/alacarte.ui.h:5
 msgid "Ne_w Item"
 msgstr "కొత్త అంశం"
 
-#: ../data/alacarte.ui.h:8
+#: ../data/alacarte.ui.h:6
 msgid "New _Separator"
 msgstr "కొత్త విభజన"
 
-#: ../data/alacarte.ui.h:9
+#: ../data/alacarte.ui.h:7
 msgid "Move Up"
 msgstr "పైకి కదుపు"
 
-#: ../data/alacarte.ui.h:10
+#: ../data/alacarte.ui.h:8
 msgid "Move Down"
 msgstr "కిందికి కదుపు"
 
-#: ../data/alacarte.ui.h:11
-msgid "Revert Changes?"
-msgstr "మార్పులను తీసివేయమంటారా?"
+#~ msgid "_Revert to Original"
+#~ msgstr "అసలైన అమరికకు మార్చు"
 
-#: ../data/alacarte.ui.h:12
-msgid "Revert all menus to original settings?"
-msgstr "అన్ని జాబితాలను అసలైన అమరికకు మార్చమంటారా?"
+#~ msgid "_Menus:"
+#~ msgstr "_జాబితాలు:"
+
+#~ msgid "It_ems:"
+#~ msgstr "అంశాలు:"
+
+#~ msgid "Revert Changes?"
+#~ msgstr "మార్పులను తీసివేయమంటారా?"
+
+#~ msgid "Revert all menus to original settings?"
+#~ msgstr "అన్ని జాబితాలను అసలైన అమరికకు మార్చమంటారా?"
 
 #~ msgid "A name is required."
 #~ msgstr "ఒక పేరు అవసరం."

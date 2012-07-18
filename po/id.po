@@ -8,11 +8,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-06-20 23:01+0000\n"
-"PO-Revision-Date: 2012-07-15 23:49+0700\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-07-17 00:26+0000\n"
+"PO-Revision-Date: 2012-07-18 15:45+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: GNOME Indonesian Translation Team <gnome@i15n.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,37 +23,35 @@ msgstr ""
 "X-Poedit-Language: Indonesian\n"
 "X-Poedit-Country: INDONESIA\n"
 
-#: ../Alacarte/MainWindow.py:152
+#: ../Alacarte/MainWindow.py:151
 msgid "Name"
 msgstr "Nama"
 
 # Ini tombol ceklis untuk memilih menu-menu apa saja yang tampak dalam daftar menu utama.
-#: ../Alacarte/MainWindow.py:165
+#: ../Alacarte/MainWindow.py:164
 msgid "Show"
 msgstr "Tampak"
 
-#: ../Alacarte/MainWindow.py:173
+#: ../Alacarte/MainWindow.py:172
 msgid "Item"
 msgstr "Item"
 
-#: ../data/alacarte.desktop.in.in.h:1
-#: ../data/alacarte.ui.h:2
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "Menu Utama"
 
 #: ../data/alacarte.desktop.in.in.h:2
-#| msgid "Change which applications are shown on the main menu"
 msgid "Add or remove applications from the main menu"
 msgstr "Tambah atau hapus aplikasi dari menu utama"
 
-#: ../data/alacarte.ui.h:1
-msgid "_Revert to Original"
-msgstr "_Kembali ke Asli"
-
 # Tip yang muncul untuk tombol "Revert".
-#: ../data/alacarte.ui.h:3
+#: ../data/alacarte.ui.h:2
 msgid "Restore the default menu layout"
 msgstr "Mengembalikan menu dalam susunan baku"
+
+#: ../data/alacarte.ui.h:3
+msgid "Restore System Configuration"
+msgstr "Pulihkan Konfigurasi Sistem"
 
 #: ../data/alacarte.ui.h:4
 msgid "_New Menu"
@@ -72,12 +72,4 @@ msgstr "Naik"
 #: ../data/alacarte.ui.h:8
 msgid "Move Down"
 msgstr "Turun"
-
-#: ../data/alacarte.ui.h:9
-msgid "Revert Changes?"
-msgstr "Kembalikan Perubahan?"
-
-#: ../data/alacarte.ui.h:10
-msgid "Revert all menus to original settings?"
-msgstr "Kembalikan seluruh menu ke setingan asli?"
 

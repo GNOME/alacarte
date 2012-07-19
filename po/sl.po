@@ -8,11 +8,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-28 03:25+0000\n"
-"PO-Revision-Date: 2010-04-15 08:45+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-07-17 17:09+0000\n"
+"PO-Revision-Date: 2012-07-19 09:04+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,70 +22,71 @@ msgstr ""
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../Alacarte/MainWindow.py:167
+#: ../Alacarte/MainWindow.py:155
 msgid "Name"
 msgstr "Ime"
 
-#: ../Alacarte/MainWindow.py:183
+#: ../Alacarte/MainWindow.py:168
 msgid "Show"
 msgstr "Pokaži"
 
-#: ../Alacarte/MainWindow.py:191
+#: ../Alacarte/MainWindow.py:176
 msgid "Item"
 msgstr "Predmet"
 
-#: ../alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "Določitev programov, ki so prikazani v osnovnem meniju"
-
-#: ../alacarte.desktop.in.in.h:2
-#: ../alacarte.glade.h:2
+#: ../data/alacarte.desktop.in.in.h:1
+#: ../data/alacarte.ui.h:2
 msgid "Main Menu"
 msgstr "Glavni meni"
 
-#: ../alacarte.glade.h:1
-msgid "It_ems:"
-msgstr "_Predmeti:"
+#: ../data/alacarte.desktop.in.in.h:2
+#| msgid "Change which applications are shown on the main menu"
+msgid "Add or remove applications from the main menu"
+msgstr "Dodajanje in odstranjevanje programov iz glavnega menija"
 
-#: ../alacarte.glade.h:3
-msgid "Move Down"
-msgstr "Premakni navzdol"
+#: ../data/alacarte.ui.h:1
+msgid "_Revert to Original"
+msgstr "_Povrni na prvotne vrednosti"
 
-#: ../alacarte.glade.h:4
-msgid "Move Up"
-msgstr "Premakni navzgor"
-
-#: ../alacarte.glade.h:5
-msgid "Ne_w Item"
-msgstr "_Nov predmet"
-
-#: ../alacarte.glade.h:6
-msgid "New _Separator"
-msgstr "Nova _ločilna črta"
-
-#: ../alacarte.glade.h:7
+#: ../data/alacarte.ui.h:3
 msgid "Restore the default menu layout"
 msgstr "Povrni privzeto postavitev menija"
 
-#: ../alacarte.glade.h:8
-msgid "Revert Changes?"
-msgstr "Ali želite povrniti spremembe?"
-
-#: ../alacarte.glade.h:9
-msgid "Revert all menus to original settings?"
-msgstr "Ali želite povrniti vse menije na privzeto določeno obliko?"
-
-#: ../alacarte.glade.h:10
+#: ../data/alacarte.ui.h:4
 msgid "_Menus:"
 msgstr "_Meniji:"
 
-#: ../alacarte.glade.h:11
+#: ../data/alacarte.ui.h:5
+msgid "It_ems:"
+msgstr "_Predmeti:"
+
+#: ../data/alacarte.ui.h:6
 msgid "_New Menu"
 msgstr "Nov _meni"
 
-#: ../alacarte.glade.h:12
-msgid "_Revert to Original"
-msgstr "_Povrni na prvotne vrednosti"
+#: ../data/alacarte.ui.h:7
+msgid "Ne_w Item"
+msgstr "_Nov predmet"
+
+#: ../data/alacarte.ui.h:8
+msgid "New _Separator"
+msgstr "Nova _ločilna črta"
+
+#: ../data/alacarte.ui.h:9
+msgid "Move Up"
+msgstr "Premakni navzgor"
+
+#: ../data/alacarte.ui.h:10
+msgid "Move Down"
+msgstr "Premakni navzdol"
+
+#: ../data/alacarte.ui.h:11
+msgid "Revert Changes?"
+msgstr "Ali želite povrniti spremembe?"
+
+#: ../data/alacarte.ui.h:12
+msgid "Revert all menus to original settings?"
+msgstr "Ali želite povrniti vse menije na privzeto določeno obliko?"
 
 #~ msgid "New menu items need a name"
 #~ msgstr "Novi predmeti menija zahtevajo vpis imena"

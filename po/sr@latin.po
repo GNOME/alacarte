@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=alacar"
 "te&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-06-01 05:19+0000\n"
-"PO-Revision-Date: 2012-06-01 20:13+0200\n"
+"POT-Creation-Date: 2012-08-05 13:17+0000\n"
+"PO-Revision-Date: 2012-08-07 11:00+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -20,70 +20,68 @@ msgstr ""
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
-#: ../Alacarte/MainWindow.py:160
+#: ../Alacarte/MainWindow.py:151
 msgid "Name"
 msgstr "Naziv"
 
-#: ../Alacarte/MainWindow.py:175
+#: ../Alacarte/MainWindow.py:164
 msgid "Show"
 msgstr "Pokaži"
 
-#: ../Alacarte/MainWindow.py:183
+#: ../Alacarte/MainWindow.py:172
 msgid "Item"
 msgstr "Stavka"
 
-#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:2
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "Glavni izbornik"
 
 #: ../data/alacarte.desktop.in.in.h:2
-#| msgid "Change which applications are shown on the main menu"
 msgid "Add or remove applications from the main menu"
 msgstr "Dodajte ili uklonite programe prikazane u glavnom izborniku"
 
-#: ../data/alacarte.ui.h:1
-msgid "_Revert to Original"
-msgstr "_Vrati na izvorno"
-
-#: ../data/alacarte.ui.h:3
+#: ../data/alacarte.ui.h:2
 msgid "Restore the default menu layout"
 msgstr "Povratite podrazumevani raspored izbornika"
 
+#: ../data/alacarte.ui.h:3
+msgid "Restore System Configuration"
+msgstr "Povrati sistemska podešavanja"
+
 #: ../data/alacarte.ui.h:4
-msgid "_Menus:"
-msgstr "_Izbornici:"
+msgid "_New Menu"
+msgstr "Novi _izbornik"
 
 #: ../data/alacarte.ui.h:5
-msgid "It_ems:"
-msgstr "S_tavke:"
-
-#: ../data/alacarte.ui.h:6
-msgid "_New Menu"
-msgstr "_Novi izbornik"
-
-#: ../data/alacarte.ui.h:7
 msgid "Ne_w Item"
 msgstr "Nova _stavka"
 
-#: ../data/alacarte.ui.h:8
+#: ../data/alacarte.ui.h:6
 msgid "New _Separator"
 msgstr "Novi _razdvajač"
 
-#: ../data/alacarte.ui.h:9
+#: ../data/alacarte.ui.h:7
 msgid "Move Up"
 msgstr "Pomeri gore"
 
-#: ../data/alacarte.ui.h:10
+#: ../data/alacarte.ui.h:8
 msgid "Move Down"
 msgstr "Pomeri dole"
 
-#: ../data/alacarte.ui.h:11
-msgid "Revert Changes?"
-msgstr "Da povratim izmene?"
+#~ msgid "_Revert to Original"
+#~ msgstr "_Vrati na izvorno"
 
-#: ../data/alacarte.ui.h:12
-msgid "Revert all menus to original settings?"
-msgstr "Da vratim sve izbornike na izvorna podešavanja?"
+#~ msgid "_Menus:"
+#~ msgstr "_Izbornici:"
+
+#~ msgid "It_ems:"
+#~ msgstr "S_tavke:"
+
+#~ msgid "Revert Changes?"
+#~ msgstr "Da povratim izmene?"
+
+#~ msgid "Revert all menus to original settings?"
+#~ msgstr "Da vratim sve izbornike na izvorna podešavanja?"
 
 #~ msgid "A name is required."
 #~ msgstr "Ime je obavezno."

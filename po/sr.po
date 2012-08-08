@@ -2,131 +2,85 @@
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2006, 2007.
 # This file is distributed under the same license as the alacarte package.
 # Maintainer: Igor Miletić <grejigl-gnomeprevod@yahoo.com>
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=alacarte&component=general\n"
-"POT-Creation-Date: 2011-02-11 08:50+0000\n"
-"PO-Revision-Date: 2011-03-05 22:03+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=alacar"
+"te&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-07-27 10:26+0000\n"
+"PO-Revision-Date: 2012-08-08 22:16+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: Serbian (sr)\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Project-Style: gnome\n"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:155
 msgid "Name"
-msgstr "Име"
+msgstr "Назив"
 
-#: ../Alacarte/MainWindow.py:180
+#: ../Alacarte/MainWindow.py:168
 msgid "Show"
 msgstr "Покажи"
 
-#: ../Alacarte/MainWindow.py:188
+#: ../Alacarte/MainWindow.py:176
 msgid "Item"
 msgstr "Ставка"
 
-#: ../data/alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "Измените програме који се приказују у главном менију"
-
-#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.ui.h:2
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:2
 msgid "Main Menu"
-msgstr "Главни мени"
+msgstr "Главни изборник"
+
+#: ../data/alacarte.desktop.in.in.h:2
+#| msgid "Change which applications are shown on the main menu"
+msgid "Add or remove applications from the main menu"
+msgstr "Додајте или уклоните програме приказане у главном изборнику"
 
 #: ../data/alacarte.ui.h:1
-msgid "It_ems:"
-msgstr "С_тавке:"
-
-#: ../data/alacarte.ui.h:3
-msgid "Move Down"
-msgstr "Помери доле"
-
-#: ../data/alacarte.ui.h:4
-msgid "Move Up"
-msgstr "Помери горе"
-
-#: ../data/alacarte.ui.h:5
-msgid "Ne_w Item"
-msgstr "Нова _ставка"
-
-#: ../data/alacarte.ui.h:6
-msgid "New _Separator"
-msgstr "Нови _раздвајач"
-
-#: ../data/alacarte.ui.h:7
-msgid "Restore the default menu layout"
-msgstr "Поврати подразумевани распоред менија"
-
-#: ../data/alacarte.ui.h:8
-msgid "Revert Changes?"
-msgstr "Отказати измене?"
-
-#: ../data/alacarte.ui.h:9
-msgid "Revert all menus to original settings?"
-msgstr "Да вратим све меније на изворна подешавања?"
-
-#: ../data/alacarte.ui.h:10
-msgid "_Menus:"
-msgstr "_Менији:"
-
-#: ../data/alacarte.ui.h:11
-msgid "_New Menu"
-msgstr "_Нови мени"
-
-#: ../data/alacarte.ui.h:12
 msgid "_Revert to Original"
 msgstr "_Врати на изворно"
 
-#~ msgid "A name is required."
-#~ msgstr "Име је обавезно."
+#: ../data/alacarte.ui.h:3
+msgid "Restore the default menu layout"
+msgstr "Поврати подразумевани распоред изборника"
 
-#~ msgid "A command is required."
-#~ msgstr "Наредба је обавезна."
+#: ../data/alacarte.ui.h:4
+msgid "_Menus:"
+msgstr "_Изборници:"
 
-#~ msgid "Add, change, remove menu entries"
-#~ msgstr "Додај, промени, избаци ставке менија"
+#: ../data/alacarte.ui.h:5
+msgid "It_ems:"
+msgstr "_Ставке:"
 
-#~ msgid "Menu Layout"
-#~ msgstr "Распоред менија"
+#: ../data/alacarte.ui.h:6
+msgid "_New Menu"
+msgstr "Нови _изборник"
 
-#~ msgid "Alacarte Menu Editor"
-#~ msgstr "Alacarte уређивач менија"
+#: ../data/alacarte.ui.h:7
+msgid "Ne_w Item"
+msgstr "Нова _ставка"
 
-#~ msgid "Browse..."
-#~ msgstr "Разгледај..."
+#: ../data/alacarte.ui.h:8
+msgid "New _Separator"
+msgstr "Нови _раздвајач"
 
-#~ msgid "Command:"
-#~ msgstr "Наредба:"
+#: ../data/alacarte.ui.h:9
+msgid "Move Up"
+msgstr "Помери горе"
 
-#~ msgid "Comment:"
-#~ msgstr "Белешка:"
+#: ../data/alacarte.ui.h:10
+msgid "Move Down"
+msgstr "Помери доле"
 
-#~ msgid "Copyright © 2006 Travis Watkins"
-#~ msgstr "Ауторска права © 2006 Travis Watkins"
+#: ../data/alacarte.ui.h:11
+msgid "Revert Changes?"
+msgstr "Да откажем измене?"
 
-#~ msgid "Icon:"
-#~ msgstr "Икона:"
-
-#~ msgid "Menu Item Properties"
-#~ msgstr "Особине ставке менија"
-
-#~ msgid "Menu Properties"
-#~ msgstr "Особине менија"
-
-#~ msgid "Name:"
-#~ msgstr "Име:"
-
-#~ msgid "Run command in a terminal"
-#~ msgstr "Покрени наредбу у терминалу"
-
-#~ msgid "Simple fd.o compliant menu editor"
-#~ msgstr "Једноставни fd.o сагласан уредник менија"
-
-#~ msgid "translator-credits"
-#~ msgstr "Игор Милетић"
+#: ../data/alacarte.ui.h:12
+msgid "Revert all menus to original settings?"
+msgstr "Да вратим све изборнике на изворна подешавања?"

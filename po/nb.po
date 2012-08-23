@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte 0.13.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-25 11:10+0100\n"
-"PO-Revision-Date: 2012-01-25 11:10+0100\n"
+"POT-Creation-Date: 2012-08-23 14:07+0200\n"
+"PO-Revision-Date: 2012-08-23 14:09+0200\n"
 "Last-Translator:  Kjartan Maraas <kmaraas@gnome.org>>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -17,66 +17,50 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 
-#: ../Alacarte/MainWindow.py:167
+#: ../Alacarte/MainWindow.py:151
 msgid "Name"
 msgstr "Navn"
 
-#: ../Alacarte/MainWindow.py:182
+#: ../Alacarte/MainWindow.py:164
 msgid "Show"
 msgstr "Vis"
 
-#: ../Alacarte/MainWindow.py:190
+#: ../Alacarte/MainWindow.py:172
 msgid "Item"
 msgstr "Oppføring"
 
-#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:2
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "Hovedmeny"
 
 #: ../data/alacarte.desktop.in.in.h:2
-msgid "Change which applications are shown on the main menu"
-msgstr "Endrie hvilke programmer som vises i hovedmenyen"
+msgid "Add or remove applications from the main menu"
+msgstr "Legg til eller fjern programmer fra hovedmenyen"
 
-#: ../data/alacarte.ui.h:1
-msgid "_Revert to Original"
-msgstr "_Angre alle endringer"
-
-#: ../data/alacarte.ui.h:3
+#: ../data/alacarte.ui.h:2
 msgid "Restore the default menu layout"
 msgstr "Gjenopprett forvalgt menyutføring"
 
+#: ../data/alacarte.ui.h:3
+msgid "Restore System Configuration"
+msgstr "Gjenopprett systemkonfigurasjon"
+
 #: ../data/alacarte.ui.h:4
-msgid "_Menus:"
-msgstr "_Menyer:"
-
-#: ../data/alacarte.ui.h:5
-msgid "It_ems:"
-msgstr "Oppføring_er:"
-
-#: ../data/alacarte.ui.h:6
 msgid "_New Menu"
 msgstr "_Ny meny"
 
-#: ../data/alacarte.ui.h:7
+#: ../data/alacarte.ui.h:5
 msgid "Ne_w Item"
 msgstr "N_y oppføring"
 
-#: ../data/alacarte.ui.h:8
+#: ../data/alacarte.ui.h:6
 msgid "New _Separator"
 msgstr "Ny _separator"
 
-#: ../data/alacarte.ui.h:9
+#: ../data/alacarte.ui.h:7
 msgid "Move Up"
 msgstr "Flytt opp"
 
-#: ../data/alacarte.ui.h:10
+#: ../data/alacarte.ui.h:8
 msgid "Move Down"
 msgstr "Flytt ned"
-
-#: ../data/alacarte.ui.h:11
-msgid "Revert Changes?"
-msgstr "Angre endringer?"
-
-#: ../data/alacarte.ui.h:12
-msgid "Revert all menus to original settings?"
-msgstr "Sett menyene tilbake til opprinnelig tilstand?"

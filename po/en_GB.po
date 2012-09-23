@@ -2,126 +2,149 @@
 # Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same licence as the alacarte package.
 # David Lodge <dave@cirt.net>, 2006
-#
+# Chris Leonard <cjlhomeaddress@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-16 22:21+0000\n"
-"PO-Revision-Date: 2007-02-16 23:30-0000\n"
-"Last-Translator: David Lodge <dave@cirt.net>\n"
-"Language-Team: en_GB <en@li.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-09-12 19:27+0000\n"
+"PO-Revision-Date: 2012-09-15 18:51-0400\n"
+"Last-Translator: Chris Leonard <cjlhomeaddress@gmail.com>\n"
+"Language-Team: Sugar Labs\n"
+"Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
 
-#: ../Alacarte/MainWindow.py:167
+#: ../Alacarte/MainWindow.py:151
 msgid "Name"
 msgstr "Name"
 
-#: ../Alacarte/MainWindow.py:183
+#: ../Alacarte/MainWindow.py:164
 msgid "Show"
 msgstr "Show"
 
-#: ../Alacarte/MainWindow.py:191
+#: ../Alacarte/MainWindow.py:172
 msgid "Item"
 msgstr "Item"
 
-#: ../alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "Change which applications are shown on the main menu"
-
-#: ../alacarte.desktop.in.in.h:2
-#: ../alacarte.glade.h:2
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "Main Menu"
 
-#: ../alacarte.glade.h:1
-msgid "It_ems:"
-msgstr "It_ems:"
+#: ../data/alacarte.desktop.in.in.h:2
+msgid "Add or remove applications from the main menu"
+msgstr "Add or remove applications from the main menu"
 
-#: ../alacarte.glade.h:3
-msgid "Move Down"
-msgstr "Move Down"
-
-#: ../alacarte.glade.h:4
-msgid "Move Up"
-msgstr "Move Up"
-
-#: ../alacarte.glade.h:5
-msgid "Ne_w Item"
-msgstr "Ne_w Item"
-
-#: ../alacarte.glade.h:6
-msgid "New _Separator"
-msgstr "New _Separator"
-
-#: ../alacarte.glade.h:7
+#: ../data/alacarte.ui.h:2
 msgid "Restore the default menu layout"
 msgstr "Restore the default menu layout"
 
-#: ../alacarte.glade.h:8
-msgid "Revert Changes?"
-msgstr "Revert Changes?"
+#: ../data/alacarte.ui.h:3
+msgid "Restore System Configuration"
+msgstr "Restore System Configuration"
 
-#: ../alacarte.glade.h:9
-msgid "Revert all menus to original settings?"
-msgstr "Revert all menus to original settings?"
-
-#: ../alacarte.glade.h:10
-msgid "_Menus:"
-msgstr "_Menus:"
-
-#: ../alacarte.glade.h:11
+#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "_New Menu"
 
-#: ../alacarte.glade.h:12
-msgid "_Revert to Original"
-msgstr "_Revert to Original"
+#: ../data/alacarte.ui.h:5
+msgid "Ne_w Item"
+msgstr "Ne_w Item"
+
+#: ../data/alacarte.ui.h:6
+msgid "New _Separator"
+msgstr "New _Separator"
+
+#: ../data/alacarte.ui.h:7
+msgid "Move Up"
+msgstr "Move Up"
+
+#: ../data/alacarte.ui.h:8
+msgid "Move Down"
+msgstr "Move Down"
+
+#~ msgid "It_ems:"
+#~ msgstr "It_ems:"
+
+#~ msgid "Revert Changes?"
+#~ msgstr "Revert Changes?"
+
+#~ msgid "Revert all menus to original settings?"
+#~ msgstr "Revert all menus to original settings?"
+
+#~ msgid "_Menus:"
+#~ msgstr "_Menus:"
+
+#~ msgid "_Revert to Original"
+#~ msgstr "_Revert to Original"
 
 #~ msgid "New menu items need a name"
 #~ msgstr "New menu items need a name"
+
 #~ msgid "New menus need a name"
 #~ msgstr "New menus need a name"
+
 #~ msgid "Choose a Program"
 #~ msgstr "Choose a Program"
+
 #~ msgid "Choose an Icon"
 #~ msgstr "Choose an Icon"
+
 #~ msgid "A name is required."
 #~ msgstr "A name is required."
+
 #~ msgid "A command is required."
 #~ msgstr "A command is required."
+
 #~ msgid "No Icon"
 #~ msgstr "No Icon"
+
 #~ msgid "Menu Editor"
 #~ msgstr "Menu Editor"
+
 #~ msgid "Alacarte Menu Editor"
 #~ msgstr "Alacarte Menu Editor"
+
 #~ msgid "Browse..."
 #~ msgstr "Browse..."
+
 #~ msgid "Command:"
 #~ msgstr "Command:"
+
 #~ msgid "Comment:"
 #~ msgstr "Comment:"
+
 #~ msgid "Copyright © 2006 Travis Watkins"
 #~ msgstr "Copyright © 2006 Travis Watkins"
+
 #~ msgid "Icon:"
 #~ msgstr "Icon:"
+
 #~ msgid "Menu Item Properties"
 #~ msgstr "Menu Item Properties"
+
 #~ msgid "Menu Layout"
 #~ msgstr "Menu Layout"
+
 #~ msgid "Menu Properties"
 #~ msgstr "Menu Properties"
+
 #~ msgid "Name:"
 #~ msgstr "Name:"
+
 #~ msgid "Run command in a terminal"
 #~ msgstr "Run command in a terminal"
+
 #~ msgid "Simple fd.o compliant menu editor"
 #~ msgstr "Simple fd.o compliant menu editor"
+
 #~ msgid "translator-credits"
 #~ msgstr "David Lodge <dave@cirt.net>"
+
 #~ msgid "Add, change, remove menu entries"
 #~ msgstr "Add, change, remove menu entries"
-

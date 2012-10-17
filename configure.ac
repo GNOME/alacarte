@@ -5,7 +5,7 @@ AC_INIT(alacarte, 3.5.90, http://bugzilla.gnome.org/enter_bug.cgi?product=alacar
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 AC_CONFIG_SRCDIR(alacarte.in)
 AC_CONFIG_HEADERS([config.h])
-AM_INIT_AUTOMAKE([1.7])
+AM_INIT_AUTOMAKE([1.7 no-dist-gzip dist-xz])
 AM_MAINTAINER_MODE
 
 dnl put the ACLOCAL flags in the makefile

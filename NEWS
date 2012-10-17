@@ -1,4 +1,23 @@
 =============
+Version 3.6.1
+=============
+
+Bugs Fixed:
+        * Respect $XDG_MENU_PREFIX
+
+Translations updates:
+        * Chris Leonard
+        * Fran Diéguez
+        * Kjartan Maraas
+        * Marek Černocký
+        * Matej Urbančič
+        * Piotr Drąg
+        * Rūdolfs Mazurs
+        * Ville-Pekka Vainio
+        * Yuri Myasoedov
+        * Мирослав Николић
+
+=============
 Version 3.5.5
 =============
 

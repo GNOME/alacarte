@@ -23,7 +23,7 @@ from gi.repository import GMenu, GLib
 from Alacarte import util
 
 class MenuEditor(object):
-    def __init__(self, name=os.environ['XDG_MENU_PREFIX'] + 'applications.menu'):
+    def __init__(self, name=os.environ.get('XDG_MENU_PREFIX', '') + 'applications.menu'):
         self.name = name
 
         self.tree = GMenu.Tree.new(name, GMenu.TreeFlags.SHOW_EMPTY|GMenu.TreeFlags.INCLUDE_EXCLUDED|GMenu.TreeFlags.INCLUDE_NODISPLAY|GMenu.TreeFlags.SHOW_ALL_SEPARATORS|GMenu.TreeFlags.SORT_DISPLAY_NAME)

@@ -19,6 +19,7 @@
 
 from gi.repository import Gtk, GObject, Gio, GdkPixbuf, Gdk, GMenu, GLib
 import cgi
+import codecs
 import os
 import gettext
 import subprocess
@@ -319,7 +320,9 @@ class MainWindow(object):
 
         if not os.path.isfile(file_path):
             data = open(item.get_desktop_file_path()).read()
-            open(file_path, 'w').write(data)
+            fd = codecs.open(file_path, 'w', 'utf8')
+            fd.write(data)
+            fd.close()
 
         if file_path not in self.edit_pool:
             self.edit_pool.append(file_path)

@@ -49,9 +49,8 @@ class MenuEditor(object):
         self.load()
 
     def save(self):
-        fd = codecs.open(self.path, 'w', 'utf8')
-        fd.write(self.dom.toprettyxml())
-        fd.close()
+        with codecs.open(self.path, 'w', 'utf8') as f:
+            f.write(self.dom.toprettyxml())
 
     def restoreToSystem(self):
         self.restoreTree(self.tree.get_root_directory())
@@ -260,9 +259,8 @@ class MenuEditor(object):
 
         contents, length = keyfile.to_data()
 
-        f = codecs.open(out_path, 'w', 'utf8')
-        f.write(contents)
-        f.close()
+        with codecs.open(out_path, 'w', 'utf8') as f:
+            f.write(contents)
 
         self.addItem(new_parent, file_id, dom)
         self.positionItem(new_parent, ('Item', file_id), before, after)
@@ -401,9 +399,10 @@ class MenuEditor(object):
 
         contents, length = keyfile.to_data()
 
-        f = codecs.open(os.path.join(util.getUserItemPath(), file_id), 'w', 'utf8')
-        f.write(contents)
-        f.close()
+        path = os.path.join(util.getUserItemPath(), file_id)
+        with codecs.open(path, 'w', 'utf8') as f:
+            f.write(contents)
+
         return file_id
 
     def writeMenu(self, menu, **kwargs):
@@ -422,9 +421,9 @@ class MenuEditor(object):
 
         contents, length = keyfile.to_data()
 
-        f = codecs.open(os.path.join(util.getUserDirectoryPath(), file_id), 'w', 'utf8')
-        f.write(contents)
-        f.close()
+        path = os.path.join(util.getUserDirectoryPath(), file_id)
+        with codecs.open(path, 'w', 'utf8') as f:
+            f.write(contents)
         return file_id
 
     def getXmlNodesByName(self, name, element):

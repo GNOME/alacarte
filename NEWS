@@ -1,4 +1,28 @@
 =============
+Version 3.7.2
+=============
+
+Bugs Fixed:
+        * Deal with the case of having no
+          $XDG_MENU_PREFIX
+        * Fix some crashes when writing out
+          unicode files.
+        * Misc cleanups
+
+Translations updates:
+        * Chris Leonard
+        * Fran Diéguez
+        * Kjartan Maraas
+        * Marek Černocký
+        * Matej Urbančič
+        * Mattias Põldaru
+        * Piotr Drąg
+        * Rūdolfs Mazurs
+        * Ville-Pekka Vainio
+        * Yuri Myasoedov
+        * Мирослав Николић
+
+=============
 Version 3.6.1
 =============
 

@@ -2,82 +2,83 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Zohar Snir <zoharsnir@gmail.com>, 2006.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-12 04:30+0000\n"
-"PO-Revision-Date: 2006-08-26 19:59+0300\n"
-"Last-Translator: Zohar Snir <zoharsnir@gmail.com>\n"
+"POT-Creation-Date: 2012-12-28 14:36+0200\n"
+"PO-Revision-Date: 2012-12-28 14:36+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: he <he@bla.bla>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:167
+#: ../Alacarte/MainWindow.py:152
 msgid "Name"
 msgstr "שם"
 
-#: ../Alacarte/MainWindow.py:183
+#: ../Alacarte/MainWindow.py:165
 msgid "Show"
 msgstr "הצג"
 
-#: ../Alacarte/MainWindow.py:191
+#: ../Alacarte/MainWindow.py:173
 msgid "Item"
 msgstr "פריט"
 
-#: ../alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "שנה את היישומים המופיעים בתפריט הראשי"
-
-#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+#: ../data/alacarte.desktop.in.in.h:1
+#: ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "תפריט ראשי"
 
-#: ../alacarte.glade.h:1
-msgid "It_ems:"
-msgstr "_פריטים:"
+#: ../data/alacarte.desktop.in.in.h:2
+msgid "Add or remove applications from the main menu"
+msgstr "ניתן להוסיף או להסיר יישומים מהתפריט הראשי"
 
-#: ../alacarte.glade.h:3
-msgid "Move Down"
-msgstr "הזז למטה"
-
-#: ../alacarte.glade.h:4
-msgid "Move Up"
-msgstr "הזז למעלה"
-
-#: ../alacarte.glade.h:5
-msgid "Ne_w Item"
-msgstr "פריט _חדש"
-
-#: ../alacarte.glade.h:6
-msgid "New _Separator"
-msgstr "מפרי_ד חדש"
-
-#: ../alacarte.glade.h:7
+#: ../data/alacarte.ui.h:2
 msgid "Restore the default menu layout"
 msgstr "שחזר את תסדיר התפריט לברירת המחדל"
 
-#: ../alacarte.glade.h:8
-msgid "Revert Changes?"
-msgstr "האם לבטל שינויים?"
+#: ../data/alacarte.ui.h:3
+msgid "Restore System Configuration"
+msgstr "שחזור תצורת המערכת"
 
-#: ../alacarte.glade.h:9
-msgid "Revert all menus to original settings?"
-msgstr "האם לשחזר את כל התפריטים להגדרותיהם המקוריות?"
-
-#: ../alacarte.glade.h:10
-msgid "_Menus:"
-msgstr "_תפריטים:"
-
-#: ../alacarte.glade.h:11
+#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "תפ_ריט חדש"
 
-#: ../alacarte.glade.h:12
-msgid "_Revert to Original"
-msgstr "_שחזר להגדרות המקוריות"
+#: ../data/alacarte.ui.h:5
+msgid "Ne_w Item"
+msgstr "פריט _חדש"
+
+#: ../data/alacarte.ui.h:6
+msgid "New _Separator"
+msgstr "מפרי_ד חדש"
+
+#: ../data/alacarte.ui.h:7
+msgid "Move Up"
+msgstr "הזז למעלה"
+
+#: ../data/alacarte.ui.h:8
+msgid "Move Down"
+msgstr "הזז למטה"
+
+#~ msgid "It_ems:"
+#~ msgstr "_פריטים:"
+
+#~ msgid "Revert Changes?"
+#~ msgstr "האם לבטל שינויים?"
+
+#~ msgid "Revert all menus to original settings?"
+#~ msgstr "האם לשחזר את כל התפריטים להגדרותיהם המקוריות?"
+
+#~ msgid "_Menus:"
+#~ msgstr "_תפריטים:"
+
+#~ msgid "_Revert to Original"
+#~ msgstr "_שחזר להגדרות המקוריות"
 
 #~ msgid "New menu items need a name"
 #~ msgstr "פריט תפריט חדש חייב שם"

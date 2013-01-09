@@ -22,11 +22,12 @@ import xml.parsers.expat
 from gi.repository import GMenu, GLib
 from Alacarte import util
 
+
 class Menu(object):
     def __init__(self, name):
         self.name = name
 
-        self.tree = GMenu.Tree.new(name, GMenu.TreeFlags.SHOW_EMPTY|GMenu.TreeFlags.INCLUDE_EXCLUDED|GMenu.TreeFlags.INCLUDE_NODISPLAY|GMenu.TreeFlags.SHOW_ALL_SEPARATORS|GMenu.TreeFlags.SORT_DISPLAY_NAME)
+        self.tree = GMenu.Tree.new(name, GMenu.TreeFlags.SHOW_EMPTY | GMenu.TreeFlags.INCLUDE_EXCLUDED | GMenu.TreeFlags.INCLUDE_NODISPLAY | GMenu.TreeFlags.SHOW_ALL_SEPARATORS | GMenu.TreeFlags.SORT_DISPLAY_NAME)
         self.visible_tree = GMenu.Tree.new(name, GMenu.TreeFlags.SORT_DISPLAY_NAME)
         self.load()
 
@@ -36,7 +37,7 @@ class Menu(object):
     def loadDOM(self):
         try:
             self.dom = xml.dom.minidom.parse(self.path)
-        except (IOError, xml.parsers.expat.ExpatError), e:
+        except (IOError, xml.parsers.expat.ExpatError):
             self.dom = xml.dom.minidom.parseString(util.getUserMenuXml(self.tree))
         util.removeWhitespaceNodes(self.dom)
 
@@ -46,9 +47,10 @@ class Menu(object):
         if not self.visible_tree.load_sync():
             raise ValueError("can not load menu tree %r" % (self.name,))
 
+
 class MenuEditor(object):
     def __init__(self):
-        self.applications = Menu('applications.menu')
+        self.applications = Menu(util.getApplicationsMenu())
         self.applications.tree.connect('changed', self.menuChanged)
 
     def menuChanged(self, *a):
@@ -212,7 +214,7 @@ class MenuEditor(object):
         menu_id = file_id.rsplit('.', 1)[0]
         parent = self.findMenu(parent_id)
         dom = self.applications.dom
-        self.addXmlDefaultLayout(self.getXmlMenu(self.getPath(parent), dom.documentElement, dom) , dom)
+        self.addXmlDefaultLayout(self.getXmlMenu(self.getPath(parent), dom.documentElement, dom), dom)
         menu_xml = self.getXmlMenu(self.getPath(parent) + [menu_id], dom.documentElement, dom)
         self.addXmlTextElement(menu_xml, 'Directory', file_id, dom)
         self.positionItem(parent, ('Menu', menu_id), before, after)
@@ -406,7 +408,7 @@ class MenuEditor(object):
         node.appendChild(text)
         return element.appendChild(node)
 
-    def addXmlFilename(self, element, dom, filename, type = 'Include'):
+    def addXmlFilename(self, element, dom, filename, type='Include'):
         # remove old filenames
         for node in self.getXmlNodesByName(['Include', 'Exclude'], element):
             if node.childNodes[0].nodeName == 'Filename' and node.childNodes[0].childNodes[0].nodeValue == filename:
@@ -619,6 +621,7 @@ class MenuEditor(object):
             node.appendChild(self.addXmlTextElement(node, 'Old', final_old, dom))
             node.appendChild(self.addXmlTextElement(node, 'New', new, dom))
             return element.appendChild(node)
+
 
 class Layout(object):
     def __init__(self):

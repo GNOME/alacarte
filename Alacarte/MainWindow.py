@@ -17,7 +17,7 @@
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-from gi.repository import Gtk, GObject, Gio, GdkPixbuf, Gdk, GMenu, GLib
+from gi.repository import Gtk, GObject, GdkPixbuf, Gdk, GMenu
 import cgi
 import os
 import gettext
@@ -30,6 +30,7 @@ gettext.textdomain(config.GETTEXT_PACKAGE)
 _ = gettext.gettext
 from Alacarte.MenuEditor import MenuEditor
 from Alacarte import util
+
 
 class MainWindow(object):
     timer = None
@@ -59,6 +60,12 @@ class MainWindow(object):
         keyval, modifier = Gtk.accelerator_parse('F1')
         accelgroup.connect(keyval, modifier, Gtk.AccelFlags.VISIBLE, self.on_help_button_clicked)
         self.tree.get_object('mainwindow').add_accel_group(accelgroup)
+
+        # gnome-desktop-item-edit by desktop environment
+        self.desktop_item = 'gnome-desktop-item-edit'
+        de = util.getDesktopEnvironment()
+        if de != 'gnome':
+            self.desktop_item = 'exo-desktop-item-edit'
 
     def run(self):
         self.loadMenus()
@@ -110,9 +117,9 @@ class MainWindow(object):
             for item in item_tree.get_model():
                 found = False
                 if update_type != GMenu.TreeItemType.SEPARATOR:
-                    if isinstance (item[3], GMenu.TreeEntry) and item[3].get_desktop_file_id() == item_id:
+                    if isinstance(item[3], GMenu.TreeEntry) and item[3].get_desktop_file_id() == item_id:
                         found = True
-                    if isinstance (item[3], GMenu.TreeDirectory) and item[3].get_desktop_file_path() and update_type == GMenu.TreeItemType.DIRECTORY:
+                    if isinstance(item[3], GMenu.TreeDirectory) and item[3].get_desktop_file_path() and update_type == GMenu.TreeItemType.DIRECTORY:
                         if os.path.split(item[3].get_desktop_file_path())[1] == item_id:
                             found = True
                 if isinstance(item[3], GMenu.TreeSeparator):
@@ -193,7 +200,7 @@ class MainWindow(object):
 
     def loadMenus(self):
         self.menu_store.clear()
-        self.loadMenu({ None: None })
+        self.loadMenu({None: None})
 
         menu_tree = self.tree.get_object('menu_tree')
         menu_tree.set_model(self.menu_store)
@@ -264,7 +271,7 @@ class MainWindow(object):
         else:
             parent = menus[iter][2]
         file_path = os.path.join(util.getUserDirectoryPath(), util.getUniqueFileId('alacarte-made', '.directory'))
-        process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
+        process = subprocess.Popen([self.desktop_item, file_path], env=os.environ)
         GObject.timeout_add(100, self.waitForNewMenuProcess, process, parent.get_menu_id(), file_path)
 
     def on_new_item_button_clicked(self, button):
@@ -277,7 +284,7 @@ class MainWindow(object):
         else:
             parent = menus[iter][2]
         file_path = os.path.join(util.getUserItemPath(), util.getUniqueFileId('alacarte-made', '.desktop'))
-        process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
+        process = subprocess.Popen([self.desktop_item, file_path], env=os.environ)
         GObject.timeout_add(100, self.waitForNewItemProcess, process, parent.get_menu_id(), file_path)
 
     def on_new_separator_button_clicked(self, button):
@@ -327,10 +334,8 @@ class MainWindow(object):
 
         if isinstance(item, GMenu.TreeEntry):
             file_path = os.path.join(util.getUserItemPath(), item.get_desktop_file_id())
-            file_type = 'Item'
         elif isinstance(item, GMenu.TreeDirectory):
             file_path = os.path.join(util.getUserDirectoryPath(), os.path.split(item.get_desktop_file_path())[1])
-            file_type = 'Menu'
 
         if not os.path.isfile(file_path):
             data = open(item.get_desktop_file_path()).read()
@@ -338,7 +343,7 @@ class MainWindow(object):
 
         if file_path not in self.edit_pool:
             self.edit_pool.append(file_path)
-            process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
+            process = subprocess.Popen([self.desktop_item, file_path], env=os.environ)
             GObject.timeout_add(100, self.waitForEditProcess, process, file_path)
 
     def on_menu_tree_cursor_changed(self, treeview):
@@ -480,6 +485,7 @@ class MainWindow(object):
 
     def on_properties_button_clicked(self, button):
         self.on_edit_properties_activate(None)
+
     def on_delete_button_clicked(self, button):
         self.on_edit_delete_activate(None)
 

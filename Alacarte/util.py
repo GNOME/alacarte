@@ -20,9 +20,12 @@ import os
 import xml.dom.minidom
 from collections import Sequence
 from gi.repository import Gtk, GdkPixbuf, GMenu, GLib
+import commands
+from glob import glob
 
 DESKTOP_GROUP = GLib.KEY_FILE_DESKTOP_GROUP
 KEY_FILE_FLAGS = GLib.KeyFileFlags.KEEP_COMMENTS | GLib.KeyFileFlags.KEEP_TRANSLATIONS
+
 
 def fillKeyFile(keyfile, items):
     for key, item in items.iteritems():
@@ -35,6 +38,7 @@ def fillKeyFile(keyfile, items):
             keyfile.set_string_list(DESKTOP_GROUP, key, item)
         elif isinstance(item, basestring):
             keyfile.set_string(DESKTOP_GROUP, key, item)
+
 
 def getUniqueFileId(name, extension):
     append = 0
@@ -54,6 +58,7 @@ def getUniqueFileId(name, extension):
         append += 1
     return filename
 
+
 def getUniqueRedoFile(filepath):
     append = 0
     while 1:
@@ -63,6 +68,7 @@ def getUniqueRedoFile(filepath):
         else:
             append += 1
     return new_filepath
+
 
 def getUniqueUndoFile(filepath):
     filename, extension = os.path.split(filepath)[1].rsplit('.', 1)
@@ -81,6 +87,7 @@ def getUniqueUndoFile(filepath):
             append += 1
     return new_filepath
 
+
 def getItemPath(file_id):
     for path in GLib.get_system_data_dirs():
         file_path = os.path.join(path, 'applications', file_id)
@@ -88,11 +95,13 @@ def getItemPath(file_id):
             return file_path
     return None
 
+
 def getUserItemPath():
     item_dir = os.path.join(GLib.get_user_data_dir(), 'applications')
     if not os.path.isdir(item_dir):
         os.makedirs(item_dir)
     return item_dir
+
 
 def getDirectoryPath(file_id):
     for path in GLib.get_system_data_dirs():
@@ -101,17 +110,20 @@ def getDirectoryPath(file_id):
             return file_path
     return None
 
+
 def getUserDirectoryPath():
     menu_dir = os.path.join(GLib.get_user_data_dir(), 'desktop-directories')
     if not os.path.isdir(menu_dir):
         os.makedirs(menu_dir)
     return menu_dir
 
+
 def getUserMenuPath():
     menu_dir = os.path.join(GLib.get_user_config_dir(), 'menus')
     if not os.path.isdir(menu_dir):
         os.makedirs(menu_dir)
     return menu_dir
+
 
 def getSystemMenuPath(file_id):
     for path in GLib.get_system_config_dirs():
@@ -120,13 +132,15 @@ def getSystemMenuPath(file_id):
             return file_path
     return None
 
+
 def getUserMenuXml(tree):
     system_file = getSystemMenuPath(os.path.basename(tree.get_canonical_menu_path()))
     name = tree.get_root_directory().get_menu_id()
     menu_xml = "<!DOCTYPE Menu PUBLIC '-//freedesktop//DTD Menu 1.0//EN' 'http://standards.freedesktop.org/menu-spec/menu-1.0.dtd'>\n"
     menu_xml += "<Menu>\n  <Name>" + name + "</Name>\n  "
-    menu_xml += "<MergeFile type=\"parent\">" + system_file +    "</MergeFile>\n</Menu>\n"
+    menu_xml += "<MergeFile type=\"parent\">" + system_file + "</MergeFile>\n</Menu>\n"
     return menu_xml
+
 
 def getIcon(item):
     pixbuf = None
@@ -155,6 +169,7 @@ def getIcon(item):
         pixbuf = pixbuf.scale_simple(24, 24, GdkPixbuf.InterpType.HYPER)
     return pixbuf
 
+
 def removeWhitespaceNodes(node):
     remove_list = []
     for child in node.childNodes:
@@ -166,3 +181,31 @@ def removeWhitespaceNodes(node):
             removeWhitespaceNodes(child)
     for node in remove_list:
         node.parentNode.removeChild(node)
+
+
+# Get the correct applications.menu file name
+def getApplicationsMenu():
+    # Default to applications.menu
+    applications_menu = 'applications.menu'
+    menus_dir = getUserMenuPath()
+    # Assume most recent file is used for Alacarte
+    max_time = 0
+    for f in glob(os.path.join(menus_dir, '*applications.menu')):
+        mtime = os.stat(f).st_mtime
+        if mtime > max_time:
+            max_time = mtime
+            applications_menu = f[len(menus_dir) + 1:]
+    return applications_menu
+
+
+# Get the system's desktop
+def getDesktopEnvironment():
+    de = 'gnome'
+    # XFCE not in os.environ
+    try:
+        info = commands.getoutput('xprop -root _DT_SAVE_MODE')
+        if 'xfce' in info:
+            de = 'xfce'
+    except (OSError, RuntimeError):
+        pass
+    return de

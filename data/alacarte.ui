@@ -28,15 +28,7 @@
     </ui>
   </object>
   <object class="GtkMenu" constructor="uimanager1" id="edit_menu">
-
-  
-
-  
-
-  
-
-  
-</object>
+  </object>
   <object class="GtkDialog" id="mainwindow">
     <property name="border_width">5</property>
     <property name="default_width">675</property>

@@ -22,16 +22,16 @@ import sys
 from Alacarte.MainWindow import MainWindow
 
 def main():
-	try:
-		from Alacarte import config
-		datadir = config.pkgdatadir
-		version = config.VERSION
-	except ImportError:
-		datadir = '.'
-		version = '0.9'
-	app = MainWindow(datadir, version)
-	app.run()
+    try:
+        from Alacarte import config
+        datadir = config.pkgdatadir
+        version = config.VERSION
+    except ImportError:
+        datadir = '.'
+        version = '0.9'
+    app = MainWindow(datadir, version)
+    app.run()
 
 if __name__ == '__main__':
-	main()
+    main()
 

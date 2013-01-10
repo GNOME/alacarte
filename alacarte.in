@@ -35,7 +35,8 @@ def main():
     except ImportError:
         datadir = '.'
         version = '0.9'
-    app = MainWindow(get_menu_basename(), datadir, version)
+    app = MainWindow(datadir, version)
+    app.setMenuBasename(get_menu_basename())
     app.run()
 
 if __name__ == '__main__':

@@ -37,11 +37,9 @@ class MainWindow(object):
     #hack to make editing menu properties work
     edit_pool = []
 
-    def __init__(self, menu_basename, datadir, version):
+    def __init__(self, datadir, version):
         self.file_path = datadir
         self.version = version
-        self.editor = MenuEditor(menu_basename)
-        self.editor.tree.connect("changed", self.menuChanged)
         Gtk.Window.set_default_icon_name('alacarte')
         self.tree = Gtk.Builder()
         self.tree.set_translation_domain(config.GETTEXT_PACKAGE)
@@ -58,6 +56,16 @@ class MainWindow(object):
         keyval, modifier = Gtk.accelerator_parse('F1')
         accelgroup.connect(keyval, modifier, Gtk.AccelFlags.VISIBLE, self.on_help_button_clicked)
         self.tree.get_object('mainwindow').add_accel_group(accelgroup)
+
+        self.editor = None
+
+    def setMenuBasename(self, menu_basename):
+        if self.editor is not None:
+            self.editor.tree.disconnect(self.menuChangedId)
+
+        self.editor = MenuEditor(menu_basename)
+        self.menuChangedId = self.editor.tree.connect("changed", self.menuChanged)
+        self.menuChanged()
 
     def run(self):
         self.loadMenus()

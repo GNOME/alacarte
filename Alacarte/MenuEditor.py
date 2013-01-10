@@ -23,11 +23,15 @@ import xml.parsers.expat
 from gi.repository import GMenu, GLib
 from Alacarte import util
 
-class MenuEditor(object):
-    def __init__(self, name=os.environ.get('XDG_MENU_PREFIX', '') + 'applications.menu'):
-        self.name = name
+def get_default_menu():
+    prefix = os.environ.get('XDG_MENU_PREFIX', '')
+    return prefix + 'applications.menu'
 
-        self.tree = GMenu.Tree.new(name, GMenu.TreeFlags.SHOW_EMPTY|GMenu.TreeFlags.INCLUDE_EXCLUDED|GMenu.TreeFlags.INCLUDE_NODISPLAY|GMenu.TreeFlags.SHOW_ALL_SEPARATORS|GMenu.TreeFlags.SORT_DISPLAY_NAME)
+class MenuEditor(object):
+    def __init__(self, basename=None):
+        basename = basename or get_default_menu()
+
+        self.tree = GMenu.Tree.new(basename, GMenu.TreeFlags.SHOW_EMPTY|GMenu.TreeFlags.INCLUDE_EXCLUDED|GMenu.TreeFlags.INCLUDE_NODISPLAY|GMenu.TreeFlags.SHOW_ALL_SEPARATORS|GMenu.TreeFlags.SORT_DISPLAY_NAME)
         self.tree.connect('changed', self.menuChanged)
         self.load()
 

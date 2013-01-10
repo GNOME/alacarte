@@ -37,10 +37,10 @@ class MainWindow(object):
     #hack to make editing menu properties work
     edit_pool = []
 
-    def __init__(self, datadir, version):
+    def __init__(self, menu_basename, datadir, version):
         self.file_path = datadir
         self.version = version
-        self.editor = MenuEditor()
+        self.editor = MenuEditor(menu_basename)
         self.editor.tree.connect("changed", self.menuChanged)
         Gtk.Window.set_default_icon_name('alacarte')
         self.tree = Gtk.Builder()

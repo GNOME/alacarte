@@ -29,7 +29,7 @@
   </object>
   <object class="GtkMenu" constructor="uimanager1" id="edit_menu">
   </object>
-  <object class="GtkDialog" id="mainwindow">
+  <object class="GtkWindow" id="mainwindow">
     <property name="border_width">5</property>
     <property name="default_width">675</property>
     <property name="default_height">530</property>
@@ -47,18 +47,16 @@
     <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
     <property name="focus_on_map">True</property>
     <property name="urgency_hint">False</property>
-    <signal handler="on_close_button_clicked" name="close"/>
-    <signal handler="on_close_button_clicked" name="destroy"/>
-    <accelerator key="Escape" modifiers="0" signal="close"/>
-    <child internal-child="vbox">
+    <child>
       <object class="GtkVBox" id="dialog-vbox5">
         <property name="visible">True</property>
         <property name="homogeneous">False</property>
         <property name="spacing">2</property>
-        <child internal-child="action_area">
-          <object class="GtkHButtonBox" id="dialog-action_area5">
+        <child>
+          <object class="GtkBox" id="dialog-action_area5">
+            <property name="orientation">horizontal</property>
             <property name="visible">True</property>
-            <property name="layout_style">GTK_BUTTONBOX_END</property>
+            <property name="spacing">6</property>
             <child>
               <object class="GtkButton" id="help_button">
                 <property name="visible">True</property>
@@ -70,6 +68,9 @@
                 <property name="focus_on_click">True</property>
                 <signal handler="on_help_button_clicked" name="clicked"/>
               </object>
+              <packing>
+                <property name="pack_type">start</property>
+              </packing>
             </child>
             <child>
               <object class="GtkButton" id="restore_button">
@@ -83,6 +84,10 @@
                 <property name="focus_on_click">True</property>
                 <signal handler="on_restore_button_clicked" name="clicked"/>
               </object>
+              <packing>
+                <property name="position">1</property>
+                <property name="pack_type">end</property>
+              </packing>
             </child>
             <child>
               <object class="GtkButton" id="close_button">
@@ -96,6 +101,10 @@
                 <property name="focus_on_click">True</property>
                 <signal handler="on_close_button_clicked" name="clicked"/>
               </object>
+              <packing>
+                <property name="position">0</property>
+                <property name="pack_type">end</property>
+              </packing>
             </child>
           </object>
           <packing>
@@ -383,11 +392,6 @@
         </child>
       </object>
     </child>
-    <action-widgets>
-      <action-widget response="-11">help_button</action-widget>
-      <action-widget response="0">restore_button</action-widget>
-      <action-widget response="-7">close_button</action-widget>
-    </action-widgets>
   </object>
   <object class="GtkImage" id="new_menu_image">
     <property name="visible">True</property>

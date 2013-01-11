@@ -180,7 +180,8 @@ class LauncherEditor(ItemEditor):
                     Exec=self.builder.get_object('exec-entry').get_text(),
                     Comment=self.builder.get_object('comment-entry').get_text(),
                     Terminal=self.builder.get_object('terminal-check').get_active(),
-                    Icon=get_icon_string(self.builder.get_object('icon-image')))
+                    Icon=get_icon_string(self.builder.get_object('icon-image')),
+                    Type="Application")
 
     def pick_exec(self, button):
         chooser = Gtk.FileChooserDialog(title=_("Choose a command"),
@@ -224,7 +225,8 @@ class DirectoryEditor(ItemEditor):
     def get_keyfile_edits(self):
         return dict(Name=self.builder.get_object('name-entry').get_text(),
                     Comment=self.builder.get_object('comment-entry').get_text(),
-                    Icon=get_icon_string(self.builder.get_object('icon-image')))
+                    Icon=get_icon_string(self.builder.get_object('icon-image')),
+                    Type="Directory")
 
 def test_editor(path):
     if path.endswith('.directory'):

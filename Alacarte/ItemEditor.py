@@ -120,6 +120,30 @@ class LauncherEditor(object):
 
         self.builder.get_object('ok').set_sensitive(valid)
 
+    def set_text(self, ctl, name):
+        try:
+            val = self.keyfile.get_string(DESKTOP_GROUP, name)
+        except GError:
+            pass
+        else:
+            self.builder.get_object(ctl).set_text(val)
+
+    def set_check(self, ctl, name):
+        try:
+            val = self.keyfile.get_boolean(DESKTOP_GROUP, name)
+        except GError:
+            pass
+        else:
+            self.builder.get_object(ctl).set_active(val)
+
+    def set_icon(self, ctl, name):
+        try:
+            val = self.keyfile.get_string(DESKTOP_GROUP, name)
+        except GError:
+            pass
+        else:
+            set_icon_string(self.builder.get_object(ctl), val)
+
     def load(self):
         self.keyfile = GLib.KeyFile()
         try:
@@ -127,35 +151,11 @@ class LauncherEditor(object):
         except GError:
             return
 
-        def set_text(ctl, name):
-            try:
-                val = self.keyfile.get_string(DESKTOP_GROUP, name)
-            except GError:
-                pass
-            else:
-                self.builder.get_object(ctl).set_text(val)
-
-        def set_check(ctl, name):
-            try:
-                val = self.keyfile.get_boolean(DESKTOP_GROUP, name)
-            except GError:
-                pass
-            else:
-                self.builder.get_object(ctl).set_active(val)
-
-        def set_icon(ctl, name):
-            try:
-                val = self.keyfile.get_string(DESKTOP_GROUP, name)
-            except GError:
-                pass
-            else:
-                set_icon_string(self.builder.get_object(ctl), val)
-
-        set_text('name-entry', "Name")
-        set_text('exec-entry', "Exec")
-        set_text('comment-entry', "Comment")
-        set_check('terminal-check', "Terminal")
-        set_icon('icon-image', "Icon")
+        self.set_text('name-entry', "Name")
+        self.set_text('exec-entry', "Exec")
+        self.set_text('comment-entry', "Comment")
+        self.set_check('terminal-check', "Terminal")
+        self.set_icon('icon-image', "Icon")
 
     def run(self):
         self.dialog.present()

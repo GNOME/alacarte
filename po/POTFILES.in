@@ -5,3 +5,4 @@ Alacarte/ItemEditor.py
 data/alacarte.desktop.in.in
 [type: gettext/glade]data/alacarte.ui
 [type: gettext/glade]data/launcher-editor.ui
+[type: gettext/glade]data/directory-editor.ui

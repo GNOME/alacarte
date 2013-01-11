@@ -91,34 +91,9 @@ class IconPicker(object):
             self.image.props.file = chooser.get_filename()
         chooser.destroy()
 
-class LauncherEditor(object):
-    def __init__(self, item_path):
-        self.builder = Gtk.Builder()
-        self.builder.add_from_file(os.path.join(config.pkgdatadir, 'launcher-editor.ui'))
-
-        self.dialog = self.builder.get_object('launcher-editor')
-        self.dialog.connect('response', self.on_response)
-
-        self.icon_picker = IconPicker(self.dialog,
-                                      self.builder.get_object('icon-button'),
-                                      self.builder.get_object('icon-image'))
-
-        self.builder.get_object('exec-browse').connect('clicked', self.pick_exec)
-
-        self.builder.get_object('name-entry').connect('changed', self.resync_validity)
-        self.builder.get_object('exec-entry').connect('changed', self.resync_validity)
-
-        self.item_path = item_path
-        self.load()
-        self.resync_validity()
-
-    def resync_validity(self, *args):
-        name_text = self.builder.get_object('name-entry').get_text()
-        exec_text = self.builder.get_object('exec-entry').get_text()
-
-        valid = (name_text and exec_text)
-
-        self.builder.get_object('ok').set_sensitive(valid)
+class ItemEditor(object):
+    def get_keyfile_edits(self):
+        raise NotImplementedError()
 
     def set_text(self, ctl, name):
         try:
@@ -149,33 +124,63 @@ class LauncherEditor(object):
         try:
             self.keyfile.load_from_file(self.item_path, util.KEY_FILE_FLAGS)
         except GError:
-            return
+            pass
 
+    def save(self):
+        util.fillKeyFile(self.keyfile, self.get_keyfile_edits())
+        contents, length = self.keyfile.to_data()
+        with open(self.item_path, 'w') as f:
+            f.write(contents)
+
+    def run(self):
+        self.dialog.present()
+
+    def on_response(self, dialog, response):
+        if response == Gtk.ResponseType.OK:
+            self.save()
+        self.dialog.destroy()
+
+class LauncherEditor(ItemEditor):
+    def __init__(self, item_path):
+        self.builder = Gtk.Builder()
+        self.builder.add_from_file(os.path.join(config.pkgdatadir, 'launcher-editor.ui'))
+
+        self.dialog = self.builder.get_object('launcher-editor')
+        self.dialog.connect('response', self.on_response)
+
+        self.icon_picker = IconPicker(self.dialog,
+                                      self.builder.get_object('icon-button'),
+                                      self.builder.get_object('icon-image'))
+
+        self.builder.get_object('exec-browse').connect('clicked', self.pick_exec)
+
+        self.builder.get_object('name-entry').connect('changed', self.resync_validity)
+        self.builder.get_object('exec-entry').connect('changed', self.resync_validity)
+
+        self.item_path = item_path
+        self.load()
+        self.resync_validity()
+
+    def resync_validity(self, *args):
+        name_text = self.builder.get_object('name-entry').get_text()
+        exec_text = self.builder.get_object('exec-entry').get_text()
+        valid = (name_text is not None and exec_text is not None)
+        self.builder.get_object('ok').set_sensitive(valid)
+
+    def load(self):
+        super(LauncherEditor, self).load()
         self.set_text('name-entry', "Name")
         self.set_text('exec-entry', "Exec")
         self.set_text('comment-entry', "Comment")
         self.set_check('terminal-check', "Terminal")
         self.set_icon('icon-image', "Icon")
 
-    def run(self):
-        self.dialog.present()
-
-    def save(self):
-        params = dict(Name=self.builder.get_object('name-entry').get_text(),
-                      Exec=self.builder.get_object('exec-entry').get_text(),
-                      Comment=self.builder.get_object('comment-entry').get_text(),
-                      Terminal=self.builder.get_object('terminal-check').get_active(),
-                      Icon=get_icon_string(self.builder.get_object('icon-image')))
-        util.fillKeyFile(self.keyfile, params)
-
-        contents, length = self.keyfile.to_data()
-        with open(self.item_path, 'w') as f:
-            f.write(contents)
-
-    def on_response(self, dialog, response):
-        if response == Gtk.ResponseType.OK:
-            self.save()
-        self.dialog.destroy()
+    def get_keyfile_edits(self):
+        return dict(Name=self.builder.get_object('name-entry').get_text(),
+                    Exec=self.builder.get_object('exec-entry').get_text(),
+                    Comment=self.builder.get_object('comment-entry').get_text(),
+                    Terminal=self.builder.get_object('terminal-check').get_active(),
+                    Icon=get_icon_string(self.builder.get_object('icon-image')))
 
     def pick_exec(self, button):
         chooser = Gtk.FileChooserDialog(title=_("Choose a command"),
@@ -187,11 +192,53 @@ class LauncherEditor(object):
             self.builder.get_object('exec-entry').set_text(chooser.get_filename())
         chooser.destroy()
 
+class DirectoryEditor(ItemEditor):
+    def __init__(self, item_path):
+        self.builder = Gtk.Builder()
+        self.builder.add_from_file(os.path.join(config.pkgdatadir, 'directory-editor.ui'))
+
+        self.dialog = self.builder.get_object('directory-editor')
+        self.dialog.connect('response', self.on_response)
+
+        self.icon_picker = IconPicker(self.dialog,
+                                      self.builder.get_object('icon-button'),
+                                      self.builder.get_object('icon-image'))
+
+        self.builder.get_object('name-entry').connect('changed', self.resync_validity)
+
+        self.item_path = item_path
+        self.load()
+        self.resync_validity()
+
+    def resync_validity(self, *args):
+        name_text = self.builder.get_object('name-entry').get_text()
+        valid = (name_text is not None)
+        self.builder.get_object('ok').set_sensitive(valid)
+
+    def load(self):
+        super(DirectoryEditor, self).load()
+        self.set_text('name-entry', "Name")
+        self.set_text('comment-entry', "Comment")
+        self.set_icon('icon-image', "Icon")
+
+    def get_keyfile_edits(self):
+        return dict(Name=self.builder.get_object('name-entry').get_text(),
+                    Comment=self.builder.get_object('comment-entry').get_text(),
+                    Icon=get_icon_string(self.builder.get_object('icon-image')))
+
+def test_editor(path):
+    if path.endswith('.directory'):
+        return DirectoryEditor(path)
+    elif path.endswith('.desktop'):
+        return LauncherEditor(path)
+    else:
+        raise ValueError("Invalid filename, %r" % (path,))
+
 def test():
     import sys
 
     Gtk.Window.set_default_icon_name('alacarte')
-    editor = LauncherEditor(sys.argv[1])
+    editor = test_editor(sys.argv[1])
     editor.dialog.connect('destroy', Gtk.main_quit)
     editor.run()
     Gtk.main()

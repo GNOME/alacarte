@@ -30,7 +30,7 @@ gettext.textdomain(config.GETTEXT_PACKAGE)
 
 _ = gettext.gettext
 from Alacarte.MenuEditor import MenuEditor
-from Alacarte.ItemEditor import LauncherEditor
+from Alacarte.ItemEditor import LauncherEditor, DirectoryEditor
 from Alacarte import util
 
 class MainWindow(object):
@@ -233,15 +233,6 @@ class MainWindow(object):
 
             self.item_store.append((show, icon, name, item))
 
-    #this is a little timeout callback to insert new items after
-    #gnome-desktop-item-edit has finished running
-    def waitForNewMenuProcess(self, process, parent_id, file_path):
-        if process.poll() is not None:
-            if os.path.isfile(file_path):
-                self.editor.insertExternalMenu(os.path.split(file_path)[1], parent_id)
-            return False
-        return True
-
     def on_new_menu_button_clicked(self, button):
         menu_tree = self.tree.get_object('menu_tree')
         menus, iter = menu_tree.get_selection().get_selected()
@@ -252,8 +243,9 @@ class MainWindow(object):
         else:
             parent = menus[iter][2]
         file_path = os.path.join(util.getUserDirectoryPath(), util.getUniqueFileId('alacarte-made', '.directory'))
-        process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
-        GObject.timeout_add(100, self.waitForNewMenuProcess, process, parent.get_menu_id(), file_path)
+
+        editor = DirectoryEditor(file_path)
+        editor.run()
 
     def on_new_item_button_clicked(self, button):
         menu_tree = self.tree.get_object('menu_tree')

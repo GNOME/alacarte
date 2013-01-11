@@ -145,7 +145,7 @@ class LauncherEditor(ItemEditor):
         self.builder = Gtk.Builder()
         self.builder.add_from_file(os.path.join(config.pkgdatadir, 'launcher-editor.ui'))
 
-        self.dialog = self.builder.get_object('launcher-editor')
+        self.dialog = self.builder.get_object('editor')
         self.dialog.set_transient_for(parent)
         self.dialog.connect('response', self.on_response)
 
@@ -199,7 +199,7 @@ class DirectoryEditor(ItemEditor):
         self.builder = Gtk.Builder()
         self.builder.add_from_file(os.path.join(config.pkgdatadir, 'directory-editor.ui'))
 
-        self.dialog = self.builder.get_object('directory-editor')
+        self.dialog = self.builder.get_object('editor')
         self.dialog.set_transient_for(parent)
         self.dialog.connect('response', self.on_response)
 

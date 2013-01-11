@@ -34,10 +34,6 @@ from Alacarte.ItemEditor import LauncherEditor
 from Alacarte import util
 
 class MainWindow(object):
-    timer = None
-    #hack to make editing menu properties work
-    edit_pool = []
-
     def __init__(self, datadir, version):
         self.file_path = datadir
         self.version = version

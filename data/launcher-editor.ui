@@ -147,6 +147,7 @@
                   <object class="GtkEntry" id="name-entry">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="has_focus">True</property>
                     <property name="invisible_char">●</property>
                   </object>
                   <packing>

@@ -73,6 +73,24 @@ def set_icon_string(image, icon):
 
 DESKTOP_GROUP = GLib.KEY_FILE_DESKTOP_GROUP
 
+# XXX - replace with a better UI eventually
+class IconPicker(object):
+    def __init__(self, dialog, button, image):
+        self.dialog = dialog
+        self.button = button
+        self.button.connect('clicked', self.pick_icon)
+        self.image = image
+
+    def pick_icon(self, button):
+        chooser = Gtk.FileChooserDialog(title=_("Choose an icon"),
+                                        parent=self.dialog,
+                                        buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                                        Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+        response = chooser.run()
+        if response == Gtk.ResponseType.ACCEPT:
+            self.image.props.file = chooser.get_filename()
+        chooser.destroy()
+
 class LauncherEditor(object):
     def __init__(self, item_path):
         self.builder = Gtk.Builder()
@@ -81,7 +99,10 @@ class LauncherEditor(object):
         self.dialog = self.builder.get_object('launcher-editor')
         self.dialog.connect('response', self.on_response)
 
-        self.builder.get_object('icon-button').connect('clicked', self.pick_icon)
+        self.icon_picker = IconPicker(self.dialog,
+                                      self.builder.get_object('icon-button'),
+                                      self.builder.get_object('icon-image'))
+
         self.builder.get_object('exec-browse').connect('clicked', self.pick_exec)
 
         self.builder.get_object('name-entry').connect('changed', self.resync_validity)
@@ -155,16 +176,6 @@ class LauncherEditor(object):
         if response == Gtk.ResponseType.OK:
             self.save()
         self.dialog.destroy()
-
-    def pick_icon(self, button):
-        chooser = Gtk.FileChooserDialog(title=_("Choose an icon"),
-                                        parent=self.dialog,
-                                        buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                                        Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
-        response = chooser.run()
-        if response == Gtk.ResponseType.ACCEPT:
-            self.builder.get_object('icon-image').props.file = chooser.get_filename()
-        chooser.destroy()
 
     def pick_exec(self, button):
         chooser = Gtk.FileChooserDialog(title=_("Choose a command"),

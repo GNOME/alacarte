@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkActionGroup" id="context_menu_actions">
+    <child>
+      <object class="GtkAction" id="edit_properties">
+        <property name="stock_id">gtk-properties</property>
+        <signal name="activate" handler="on_edit_properties_activate" swapped="no"/>
+      </object>
+    </child>
+    <child>
+      <object class="GtkAction" id="edit_delete">
+        <property name="stock_id">gtk-delete</property>
+        <signal name="activate" handler="on_edit_delete_activate" swapped="no"/>
+      </object>
+    </child>
+  </object>
+  <object class="GtkMenu" id="edit_menu">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkMenuItem" id="menu_properties">
+        <property name="related_action">edit_properties</property>
+        <property name="can_focus">False</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="menu_delete">
+        <property name="related_action">edit_delete</property>
+        <property name="can_focus">False</property>
+      </object>
+    </child>
+  </object>
   <object class="GtkWindow" id="mainwindow">
     <property name="visible">True</property>
     <property name="can_focus">False</property>

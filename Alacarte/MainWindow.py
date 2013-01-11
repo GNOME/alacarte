@@ -235,13 +235,6 @@ class MainWindow(object):
 
     #this is a little timeout callback to insert new items after
     #gnome-desktop-item-edit has finished running
-    def waitForNewItemProcess(self, process, parent_id, file_path):
-        if process.poll() is not None:
-            if os.path.isfile(file_path):
-                self.editor.insertExternalItem(os.path.split(file_path)[1], parent_id)
-            return False
-        return True
-
     def waitForNewMenuProcess(self, process, parent_id, file_path):
         if process.poll() is not None:
             if os.path.isfile(file_path):
@@ -272,8 +265,9 @@ class MainWindow(object):
         else:
             parent = menus[iter][2]
         file_path = os.path.join(util.getUserItemPath(), util.getUniqueFileId('alacarte-made', '.desktop'))
-        process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
-        GObject.timeout_add(100, self.waitForNewItemProcess, process, parent.get_menu_id(), file_path)
+
+        editor = LauncherEditor(file_path)
+        editor.run()
 
     def on_new_separator_button_clicked(self, button):
         item_tree = self.tree.get_object('item_tree')

@@ -298,14 +298,16 @@ class MainWindow(object):
         if isinstance(item, GMenu.TreeEntry):
             file_path = os.path.join(util.getUserItemPath(), item.get_desktop_file_id())
             file_type = 'Item'
+            Editor = LauncherEditor
         elif isinstance(item, GMenu.TreeDirectory):
             file_path = os.path.join(util.getUserDirectoryPath(), os.path.split(item.get_desktop_file_path())[1])
             file_type = 'Menu'
+            Editor = DirectoryEditor
 
         if not os.path.isfile(file_path):
             shutil.copy(item.get_desktop_file_path(), file_path)
 
-        editor = LauncherEditor(file_path)
+        editor = Editor(file_path)
         editor.run()
 
     def on_menu_tree_cursor_changed(self, treeview):

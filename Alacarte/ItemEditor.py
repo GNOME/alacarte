@@ -92,6 +92,25 @@ class IconPicker(object):
         chooser.destroy()
 
 class ItemEditor(object):
+    ui_file = None
+
+    def __init__(self, parent, item_path):
+        self.builder = Gtk.Builder()
+        self.builder.add_from_file(os.path.join(config.pkgdatadir, self.ui_file))
+
+        self.dialog = self.builder.get_object('editor')
+        self.dialog.set_transient_for(parent)
+        self.dialog.connect('response', self.on_response)
+
+        self.build_ui()
+
+        self.item_path = item_path
+        self.load()
+        self.resync_validity()
+
+    def build_ui(self):
+        raise NotImplementedError()
+
     def get_keyfile_edits(self):
         raise NotImplementedError()
 
@@ -141,14 +160,9 @@ class ItemEditor(object):
         self.dialog.destroy()
 
 class LauncherEditor(ItemEditor):
-    def __init__(self, parent, item_path):
-        self.builder = Gtk.Builder()
-        self.builder.add_from_file(os.path.join(config.pkgdatadir, 'launcher-editor.ui'))
+    ui_file = 'launcher-editor.ui'
 
-        self.dialog = self.builder.get_object('editor')
-        self.dialog.set_transient_for(parent)
-        self.dialog.connect('response', self.on_response)
-
+    def build_ui(self):
         self.icon_picker = IconPicker(self.dialog,
                                       self.builder.get_object('icon-button'),
                                       self.builder.get_object('icon-image'))
@@ -157,10 +171,6 @@ class LauncherEditor(ItemEditor):
 
         self.builder.get_object('name-entry').connect('changed', self.resync_validity)
         self.builder.get_object('exec-entry').connect('changed', self.resync_validity)
-
-        self.item_path = item_path
-        self.load()
-        self.resync_validity()
 
     def resync_validity(self, *args):
         name_text = self.builder.get_object('name-entry').get_text()
@@ -195,23 +205,14 @@ class LauncherEditor(ItemEditor):
         chooser.destroy()
 
 class DirectoryEditor(ItemEditor):
-    def __init__(self, parent, item_path):
-        self.builder = Gtk.Builder()
-        self.builder.add_from_file(os.path.join(config.pkgdatadir, 'directory-editor.ui'))
+    ui_file = 'directory-editor.ui'
 
-        self.dialog = self.builder.get_object('editor')
-        self.dialog.set_transient_for(parent)
-        self.dialog.connect('response', self.on_response)
-
+    def build_ui(self):
         self.icon_picker = IconPicker(self.dialog,
                                       self.builder.get_object('icon-button'),
                                       self.builder.get_object('icon-image'))
 
         self.builder.get_object('name-entry').connect('changed', self.resync_validity)
-
-        self.item_path = item_path
-        self.load()
-        self.resync_validity()
 
     def resync_validity(self, *args):
         name_text = self.builder.get_object('name-entry').get_text()

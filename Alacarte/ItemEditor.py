@@ -76,7 +76,7 @@ DESKTOP_GROUP = GLib.KEY_FILE_DESKTOP_GROUP
 class LauncherEditor(object):
     def __init__(self, item_path):
         self.builder = Gtk.Builder()
-        self.builder.add_from_file('data/launcher-editor.ui')
+        self.builder.add_from_file(os.path.join(config.pkgdatadir, 'launcher-editor.ui'))
 
         self.dialog = self.builder.get_object('launcher-editor')
         self.dialog.connect('response', self.on_response)

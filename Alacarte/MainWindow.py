@@ -52,7 +52,9 @@ class MainWindow(object):
         accelgroup = Gtk.AccelGroup()
         keyval, modifier = Gtk.accelerator_parse('F1')
         accelgroup.connect(keyval, modifier, Gtk.AccelFlags.VISIBLE, self.on_help_button_clicked)
-        self.tree.get_object('mainwindow').add_accel_group(accelgroup)
+
+        self.main_window = self.tree.get_object('mainwindow')
+        self.main_window.add_accel_group(accelgroup)
 
         self.editor = None
 
@@ -244,7 +246,7 @@ class MainWindow(object):
             parent = menus[iter][2]
         file_path = os.path.join(util.getUserDirectoryPath(), util.getUniqueFileId('alacarte-made', '.directory'))
 
-        editor = DirectoryEditor(file_path)
+        editor = DirectoryEditor(self.main_window, file_path)
         editor.run()
 
     def on_new_item_button_clicked(self, button):
@@ -258,7 +260,7 @@ class MainWindow(object):
             parent = menus[iter][2]
         file_path = os.path.join(util.getUserItemPath(), util.getUniqueFileId('alacarte-made', '.desktop'))
 
-        editor = LauncherEditor(file_path)
+        editor = LauncherEditor(self.main_window, file_path)
         editor.run()
 
     def on_new_separator_button_clicked(self, button):
@@ -307,7 +309,7 @@ class MainWindow(object):
         if not os.path.isfile(file_path):
             shutil.copy(item.get_desktop_file_path(), file_path)
 
-        editor = Editor(file_path)
+        editor = Editor(self.main_window, file_path)
         editor.run()
 
     def on_menu_tree_cursor_changed(self, treeview):

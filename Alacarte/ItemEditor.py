@@ -141,11 +141,12 @@ class ItemEditor(object):
         self.dialog.destroy()
 
 class LauncherEditor(ItemEditor):
-    def __init__(self, item_path):
+    def __init__(self, parent, item_path):
         self.builder = Gtk.Builder()
         self.builder.add_from_file(os.path.join(config.pkgdatadir, 'launcher-editor.ui'))
 
         self.dialog = self.builder.get_object('launcher-editor')
+        self.dialog.set_transient_for(parent)
         self.dialog.connect('response', self.on_response)
 
         self.icon_picker = IconPicker(self.dialog,
@@ -194,11 +195,12 @@ class LauncherEditor(ItemEditor):
         chooser.destroy()
 
 class DirectoryEditor(ItemEditor):
-    def __init__(self, item_path):
+    def __init__(self, parent, item_path):
         self.builder = Gtk.Builder()
         self.builder.add_from_file(os.path.join(config.pkgdatadir, 'directory-editor.ui'))
 
         self.dialog = self.builder.get_object('directory-editor')
+        self.dialog.set_transient_for(parent)
         self.dialog.connect('response', self.on_response)
 
         self.icon_picker = IconPicker(self.dialog,

@@ -18,6 +18,7 @@
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 from gi.repository import Gtk, GObject, Gio, GdkPixbuf, Gdk, GMenu, GLib
+import sys
 import cgi
 import os
 import gettext
@@ -34,13 +35,11 @@ from Alacarte.ItemEditor import LauncherEditor, DirectoryEditor
 from Alacarte import util
 
 class MainWindow(object):
-    def __init__(self, datadir, version):
-        self.file_path = datadir
-        self.version = version
+    def __init__(self):
         Gtk.Window.set_default_icon_name('alacarte')
         self.tree = Gtk.Builder()
         self.tree.set_translation_domain(config.GETTEXT_PACKAGE)
-        self.tree.add_from_file(os.path.join(self.file_path, 'alacarte.ui'))
+        self.tree.add_from_file(os.path.join(config.pkgdatadir, 'alacarte.ui'))
         self.tree.connect_signals(self)
         self.setupMenuTree()
         self.setupItemTree()
@@ -437,3 +436,13 @@ class MainWindow(object):
 
     def quit(self):
         Gtk.main_quit()
+
+def main():
+    if len(sys.argv) > 1:
+        basename = sys.argv[1]
+    else:
+        basename = None
+
+    app = MainWindow()
+    app.setMenuBasename(basename)
+    app.run()

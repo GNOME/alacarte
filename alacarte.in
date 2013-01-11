@@ -18,26 +18,7 @@
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import sys
-from Alacarte.MainWindow import MainWindow
-
-def get_menu_basename():
-    if len(sys.argv) > 1:
-        return sys.argv[1]
-    else:
-        return None
-
-def main():
-    try:
-        from Alacarte import config
-        datadir = config.pkgdatadir
-        version = config.VERSION
-    except ImportError:
-        datadir = '.'
-        version = '0.9'
-    app = MainWindow(datadir, version)
-    app.setMenuBasename(get_menu_basename())
-    app.run()
+from Alacarte.MainWindow import main
 
 if __name__ == '__main__':
     main()

@@ -19,10 +19,10 @@
 
 from gi.repository import Gtk, GObject, Gio, GdkPixbuf, Gdk, GMenu, GLib
 import cgi
-import codecs
 import os
 import gettext
 import subprocess
+import shutil
 
 from Alacarte import config
 gettext.bindtextdomain(config.GETTEXT_PACKAGE, config.localedir)
@@ -327,9 +327,7 @@ class MainWindow(object):
             file_type = 'Menu'
 
         if not os.path.isfile(file_path):
-            data = open(item.get_desktop_file_path()).read()
-            with codecs.open(file_path, 'w', 'utf8') as f:
-                f.write(data)
+            shutil.copy(item.get_desktop_file_path(), file_path)
 
         if file_path not in self.edit_pool:
             self.edit_pool.append(file_path)

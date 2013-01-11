@@ -84,8 +84,20 @@ class LauncherEditor(object):
         self.builder.get_object('icon-button').connect('clicked', self.pick_icon)
         self.builder.get_object('exec-browse').connect('clicked', self.pick_exec)
 
+        self.builder.get_object('name-entry').connect('changed', self.resync_validity)
+        self.builder.get_object('exec-entry').connect('changed', self.resync_validity)
+
         self.item_path = item_path
         self.load()
+        self.resync_validity()
+
+    def resync_validity(self, *args):
+        name_text = self.builder.get_object('name-entry').get_text()
+        exec_text = self.builder.get_object('exec-entry').get_text()
+
+        valid = (name_text and exec_text)
+
+        self.builder.get_object('ok').set_sensitive(valid)
 
     def load(self):
         self.keyfile = GLib.KeyFile()

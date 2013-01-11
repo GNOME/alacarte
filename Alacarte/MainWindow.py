@@ -30,6 +30,7 @@ gettext.textdomain(config.GETTEXT_PACKAGE)
 
 _ = gettext.gettext
 from Alacarte.MenuEditor import MenuEditor
+from Alacarte.ItemEditor import LauncherEditor
 from Alacarte import util
 
 class MainWindow(object):
@@ -252,13 +253,6 @@ class MainWindow(object):
             return False
         return True
 
-    #this callback keeps you from editing the same item twice
-    def waitForEditProcess(self, process, file_path):
-        if process.poll() is not None:
-            self.edit_pool.remove(file_path)
-            return False
-        return True
-
     def on_new_menu_button_clicked(self, button):
         menu_tree = self.tree.get_object('menu_tree')
         menus, iter = menu_tree.get_selection().get_selected()
@@ -329,10 +323,8 @@ class MainWindow(object):
         if not os.path.isfile(file_path):
             shutil.copy(item.get_desktop_file_path(), file_path)
 
-        if file_path not in self.edit_pool:
-            self.edit_pool.append(file_path)
-            process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
-            GObject.timeout_add(100, self.waitForEditProcess, process, file_path)
+        editor = LauncherEditor(file_path)
+        editor.run()
 
     def on_menu_tree_cursor_changed(self, treeview):
         selection = treeview.get_selection()

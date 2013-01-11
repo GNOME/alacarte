@@ -91,7 +91,7 @@ class LauncherEditor(object):
         self.keyfile = GLib.KeyFile()
         try:
             self.keyfile.load_from_file(self.item_path, util.KEY_FILE_FLAGS)
-        except IOError:
+        except GError:
             return
 
         def set_text(ctl, name):

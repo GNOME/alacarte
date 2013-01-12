@@ -6,14 +6,14 @@
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Artur Flinta <aflinta@at.kernel.pl>, 2006-2007.
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2008.
-# Piotr Drąg <piotrdrag@gmail.com>, 2010-2012.
-# Aviary.pl <gnomepl@aviary.pl>, 2008-2012.
+# Piotr Drąg <piotrdrag@gmail.com>, 2010-2013.
+# Aviary.pl <gnomepl@aviary.pl>, 2008-2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-01 20:30+0200\n"
-"PO-Revision-Date: 2012-09-01 20:32+0200\n"
+"POT-Creation-Date: 2013-01-12 18:37+0100\n"
+"PO-Revision-Date: 2013-01-12 18:38+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -25,17 +25,25 @@ msgstr ""
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: Poland\n"
 
-#: ../Alacarte/MainWindow.py:151
+#: ../Alacarte/MainWindow.py:160
 msgid "Name"
 msgstr "Nazwa"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:173
 msgid "Show"
 msgstr "Wyświetlanie"
 
-#: ../Alacarte/MainWindow.py:172
+#: ../Alacarte/MainWindow.py:181
 msgid "Item"
 msgstr "Element"
+
+#: ../Alacarte/ItemEditor.py:87
+msgid "Choose an icon"
+msgstr "Wybór ikony"
+
+#: ../Alacarte/ItemEditor.py:200
+msgid "Choose a command"
+msgstr "Wybór polecenia"
 
 #: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
@@ -50,25 +58,49 @@ msgid "Restore the default menu layout"
 msgstr "Przywraca domyślny układ menu"
 
 #: ../data/alacarte.ui.h:3
-msgid "Restore System Configuration"
-msgstr "Przywróć konfigurację systemową"
-
-#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "_Nowe menu"
 
-#: ../data/alacarte.ui.h:5
+#: ../data/alacarte.ui.h:4
 msgid "Ne_w Item"
 msgstr "N_owy element"
 
-#: ../data/alacarte.ui.h:6
+#: ../data/alacarte.ui.h:5
 msgid "New _Separator"
 msgstr "Nowy _separator"
+
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Przenieś w dół"
 
 #: ../data/alacarte.ui.h:7
 msgid "Move Up"
 msgstr "Przenieś w górę"
 
-#: ../data/alacarte.ui.h:8
-msgid "Move Down"
-msgstr "Przenieś w dół"
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Właściwości aktywatora"
+
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+msgid "Name:"
+msgstr "Nazwa:"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Polecenie:"
+
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Komentarz:"
+
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Przeglądaj"
+
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "Uruchamiać w terminalu?"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Właściwości katalogu"

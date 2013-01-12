@@ -19,6 +19,9 @@
 import os
 import xml.dom.minidom
 from collections import Sequence
+
+import gi
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, GdkPixbuf, GMenu, GLib
 
 # XXX: look into pygobject error marshalling

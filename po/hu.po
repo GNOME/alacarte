@@ -4,14 +4,14 @@
 #
 # Gabor Burján <buga@buvoshetes.hu>, 2006.
 # Gabor Kelemen <kelemeng@gnome.hu>, 2006, 2007.
-# Balázs Úr <urbalazs at gmail dot com>, 2012.
+# Balázs Úr <urbalazs at gmail dot com>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-17 00:26+0000\n"
-"PO-Revision-Date: 2012-12-26 16:20+0100\n"
+"POT-Creation-Date: 2013-01-11 06:39+0000\n"
+"PO-Revision-Date: 2013-01-13 11:50+0100\n"
 "Last-Translator: Balázs Úr <urbalazs at gmail dot com>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
 "Language: hu\n"
@@ -21,24 +21,31 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../Alacarte/MainWindow.py:151
+#: ../Alacarte/MainWindow.py:159
 msgid "Name"
 msgstr "Név"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:172
 msgid "Show"
 msgstr "Látható"
 
-#: ../Alacarte/MainWindow.py:172
+#: ../Alacarte/MainWindow.py:180
 msgid "Item"
 msgstr "Elem"
+
+#: ../Alacarte/ItemEditor.py:85
+msgid "Choose an icon"
+msgstr "Válasszon ikont"
+
+#: ../Alacarte/ItemEditor.py:198
+msgid "Choose a command"
+msgstr "Válasszon parancsot"
 
 #: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "Főmenü"
 
 #: ../data/alacarte.desktop.in.in.h:2
-#| msgid "Change which applications are shown on the main menu"
 msgid "Add or remove applications from the main menu"
 msgstr "Alkalmazások hozzáadása vagy eltávolítása a főmenüből"
 
@@ -47,28 +54,56 @@ msgid "Restore the default menu layout"
 msgstr "Az alapértelmezett menüelrendezés visszaállítása"
 
 #: ../data/alacarte.ui.h:3
-msgid "Restore System Configuration"
-msgstr "Rendszerbeállítások visszaállítása"
-
-#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "Új _menü"
 
-#: ../data/alacarte.ui.h:5
+#: ../data/alacarte.ui.h:4
 msgid "Ne_w Item"
 msgstr "Ú_j elem"
 
-#: ../data/alacarte.ui.h:6
+#: ../data/alacarte.ui.h:5
 msgid "New _Separator"
 msgstr "Új _elválasztó"
+
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Lefelé"
 
 #: ../data/alacarte.ui.h:7
 msgid "Move Up"
 msgstr "Felfelé"
 
-#: ../data/alacarte.ui.h:8
-msgid "Move Down"
-msgstr "Lefelé"
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Indítóikon tulajdonságai"
+
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+#| msgid "Name"
+msgid "Name:"
+msgstr "Név:"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Parancs:"
+
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Megjegyzés:"
+
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Tallózás"
+
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "Indítás terminálban?"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Könyvtár tulajdonságai"
+
+#~ msgid "Restore System Configuration"
+#~ msgstr "Rendszerbeállítások visszaállítása"
 
 #~ msgid "It_ems:"
 #~ msgstr "_Elemek:"

@@ -3,39 +3,47 @@
 # This file is distributed under the same license as the alacarte package.
 #
 # Matic Žgur <mr.zgur@gmail.com>, 2006 - 2007.
-# Matej Urbančič <mateju@svn.gnome.org>, 2010 - 2012.
+# Matej Urbančič <mateju@svn.gnome.org>, 2010 - 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-07 09:03+0000\n"
-"PO-Revision-Date: 2012-08-07 12:14+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-01-13 10:51+0000\n"
+"PO-Revision-Date: 2013-01-13 14:55+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
-"Language: \n"
+"Language: sl_SI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
-"X-Poedit-Country: SLOVENIA\n"
-"X-Poedit-Language: Slovenian\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.4\n"
 
-#: ../Alacarte/MainWindow.py:151
+#: ../Alacarte/MainWindow.py:160
 msgid "Name"
 msgstr "Ime"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:173
 msgid "Show"
 msgstr "Pokaži"
 
-#: ../Alacarte/MainWindow.py:172
+#: ../Alacarte/MainWindow.py:181
 msgid "Item"
 msgstr "Predmet"
 
-#: ../data/alacarte.desktop.in.in.h:1
-#: ../data/alacarte.ui.h:1
+#: ../Alacarte/ItemEditor.py:87
+msgid "Choose an icon"
+msgstr "Izbor ikone"
+
+#: ../Alacarte/ItemEditor.py:200
+msgid "Choose a command"
+msgstr "Izbor ukaza"
+
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "Glavni meni"
 
@@ -48,28 +56,55 @@ msgid "Restore the default menu layout"
 msgstr "Povrni privzeto postavitev menija"
 
 #: ../data/alacarte.ui.h:3
-msgid "Restore System Configuration"
-msgstr "Obnovi sistemske nastavitve"
-
-#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "Nov _meni"
 
-#: ../data/alacarte.ui.h:5
+#: ../data/alacarte.ui.h:4
 msgid "Ne_w Item"
 msgstr "_Nov predmet"
 
-#: ../data/alacarte.ui.h:6
+#: ../data/alacarte.ui.h:5
 msgid "New _Separator"
 msgstr "Nova _ločilna črta"
+
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Premakni navzdol"
 
 #: ../data/alacarte.ui.h:7
 msgid "Move Up"
 msgstr "Premakni navzgor"
 
-#: ../data/alacarte.ui.h:8
-msgid "Move Down"
-msgstr "Premakni navzdol"
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Lastnosti zaganjalnika"
+
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+msgid "Name:"
+msgstr "Ime:"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Ukaz:"
+
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Opomba:"
+
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Prebrskaj"
+
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "Ali naj se zažene v terminalu?"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Lastnosti imenika"
+
+#~ msgid "Restore System Configuration"
+#~ msgstr "Obnovi sistemske nastavitve"
 
 #~ msgid "_Revert to Original"
 #~ msgstr "_Povrni na prvotne vrednosti"
@@ -95,9 +130,6 @@ msgstr "Premakni navzdol"
 #~ msgid "Choose a Program"
 #~ msgstr "Izbor programa"
 
-#~ msgid "Choose an Icon"
-#~ msgstr "Izbor ikone"
-
 #~ msgid "A name is required."
 #~ msgstr "Zahtevan je vpis imena."
 
@@ -113,15 +145,6 @@ msgstr "Premakni navzdol"
 #~ msgid "Alacarte Menu Editor"
 #~ msgstr "Urejevalnik menijev Alacarte"
 
-#~ msgid "Browse..."
-#~ msgstr "Prebrskaj ..."
-
-#~ msgid "Command:"
-#~ msgstr "Ukaz:"
-
-#~ msgid "Comment:"
-#~ msgstr "Opomba:"
-
 #~ msgid "Copyright © 2006 Travis Watkins"
 #~ msgstr "Avtorske pravice © 2006 Travis Watkins"
 
@@ -133,15 +156,6 @@ msgstr "Premakni navzdol"
 
 #~ msgid "Menu Layout"
 #~ msgstr "Razporeditev menija"
-
-#~ msgid "Menu Properties"
-#~ msgstr "Lastnosti menija"
-
-#~ msgid "Name:"
-#~ msgstr "Ime:"
-
-#~ msgid "Run command in a terminal"
-#~ msgstr "Zagon ukaza v terminalu"
 
 #~ msgid "Simple fd.o compliant menu editor"
 #~ msgstr "Enostaven s fd.o združljiv urejevalnik menija"

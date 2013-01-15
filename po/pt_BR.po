@@ -4,15 +4,15 @@
 # Licio Fonseca <licio@ubuntu.com>, 2006.
 # Og Maciel <ogmaciel@ubuntu.com>, 2006.
 # Djavan Fagundes <djavanf@gnome.org>, 2012.
+# Enrico Nicoletto <liverig@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-11-29 22:44+0000\n"
-"PO-Revision-Date: 2012-12-09 22:52-0300\n"
-"Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-01-11 06:39+0000\n"
+"PO-Revision-Date: 2013-01-15 11:18-0300\n"
+"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -20,19 +20,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../Alacarte/MainWindow.py:152
+#: ../Alacarte/MainWindow.py:159
 msgid "Name"
 msgstr "Nome"
 
-#: ../Alacarte/MainWindow.py:165
+#: ../Alacarte/MainWindow.py:172
 msgid "Show"
 msgstr "Mostrar"
 
-#: ../Alacarte/MainWindow.py:173
+# Para lembrar: Paroxítonas com "-em/-ens" no fim, como "item/itens", não levam acento.
+#: ../Alacarte/MainWindow.py:180
 msgid "Item"
 msgstr "Item"
 
-#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
+#: ../Alacarte/ItemEditor.py:85
+msgid "Choose an icon"
+msgstr "Escolha um ícone"
+
+#: ../Alacarte/ItemEditor.py:198
+msgid "Choose a command"
+msgstr "Escolha um comando"
+
+#: ../data/alacarte.desktop.in.in.h:1
+#: ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "Menu principal"
 
@@ -45,28 +55,58 @@ msgid "Restore the default menu layout"
 msgstr "Restaurar a disposição padrão do menu"
 
 #: ../data/alacarte.ui.h:3
-msgid "Restore System Configuration"
-msgstr "Restaurar configuração do sistema"
-
-#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "_Novo menu"
 
-#: ../data/alacarte.ui.h:5
+#: ../data/alacarte.ui.h:4
 msgid "Ne_w Item"
 msgstr "No_vo item"
 
-#: ../data/alacarte.ui.h:6
+#: ../data/alacarte.ui.h:5
 msgid "New _Separator"
 msgstr "Novo _separador"
+
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Mover para baixo"
 
 #: ../data/alacarte.ui.h:7
 msgid "Move Up"
 msgstr "Mover para cima"
 
-#: ../data/alacarte.ui.h:8
-msgid "Move Down"
-msgstr "Mover para baixo"
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Propriedades do lançador"
+
+#: ../data/launcher-editor.ui.h:2
+#: ../data/directory-editor.ui.h:2
+#| msgid "Name"
+msgid "Name:"
+msgstr "Nome:"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Comando:"
+
+#: ../data/launcher-editor.ui.h:4
+#: ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Comentário:"
+
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Navegar"
+
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "Lançar no terminal?"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Propriedades do diretório"
+
+#~ msgid "Restore System Configuration"
+#~ msgstr "Restaurar configuração do sistema"
 
 #~ msgid "_Revert to Original"
 #~ msgstr "_Restaurar ao original"

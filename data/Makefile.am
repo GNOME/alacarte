@@ -3,7 +3,7 @@ SUBDIRS = icons
 @INTLTOOL_DESKTOP_RULE@
 
 desktopdir = $(datadir)/applications
-ndesktop_in_files = alacarte.desktop.in
+desktop_in_files = alacarte.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
 pkgdata_DATA = alacarte.ui launcher-editor.ui directory-editor.ui

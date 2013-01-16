@@ -24,9 +24,6 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, GdkPixbuf, GMenu, GLib
 
-# XXX: look into pygobject error marshalling
-from gi._glib import GError
-
 DESKTOP_GROUP = GLib.KEY_FILE_DESKTOP_GROUP
 KEY_FILE_FLAGS = GLib.KeyFileFlags.KEEP_COMMENTS | GLib.KeyFileFlags.KEEP_TRANSLATIONS
 
@@ -156,7 +153,7 @@ def getIcon(item):
         return None
     try:
         pixbuf = info.load_icon()
-    except GError:
+    except GLib.GError:
         return None
     if pixbuf is None:
         return None

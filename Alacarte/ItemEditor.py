@@ -23,8 +23,6 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import GLib, Gtk
 from Alacarte import config, util
 
-from gi._glib import GError
-
 _ = gettext.gettext
 
 EXTENSIONS = (".png", ".xpm", ".svg")
@@ -119,7 +117,7 @@ class ItemEditor(object):
     def set_text(self, ctl, name):
         try:
             val = self.keyfile.get_string(DESKTOP_GROUP, name)
-        except GError:
+        except GLib.GError:
             pass
         else:
             self.builder.get_object(ctl).set_text(val)
@@ -127,7 +125,7 @@ class ItemEditor(object):
     def set_check(self, ctl, name):
         try:
             val = self.keyfile.get_boolean(DESKTOP_GROUP, name)
-        except GError:
+        except GLib.GError:
             pass
         else:
             self.builder.get_object(ctl).set_active(val)
@@ -135,7 +133,7 @@ class ItemEditor(object):
     def set_icon(self, ctl, name):
         try:
             val = self.keyfile.get_string(DESKTOP_GROUP, name)
-        except GError:
+        except GLib.GError:
             pass
         else:
             set_icon_string(self.builder.get_object(ctl), val)
@@ -144,7 +142,7 @@ class ItemEditor(object):
         self.keyfile = GLib.KeyFile()
         try:
             self.keyfile.load_from_file(self.item_path, util.KEY_FILE_FLAGS)
-        except GError:
+        except GLib.GError:
             pass
 
     def save(self):

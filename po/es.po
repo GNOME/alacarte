@@ -6,15 +6,15 @@
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2006.
 # Jorge González <jorge.gonzalez.gonzalez@hispalinux.es>, 2007.
 # Jorge González <jorgegonz@svn.gnome.org>, 200, 2009.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-17 00:26+0000\n"
-"PO-Revision-Date: 2012-07-17 16:18+0200\n"
+"POT-Creation-Date: 2013-01-11 06:39+0000\n"
+"PO-Revision-Date: 2013-01-16 12:58+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -24,17 +24,25 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: ../Alacarte/MainWindow.py:151
+#: ../Alacarte/MainWindow.py:159
 msgid "Name"
 msgstr "Nombre"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:172
 msgid "Show"
 msgstr "Mostrar"
 
-#: ../Alacarte/MainWindow.py:172
+#: ../Alacarte/MainWindow.py:180
 msgid "Item"
 msgstr "Elemento"
+
+#: ../Alacarte/ItemEditor.py:85
+msgid "Choose an icon"
+msgstr "Elegir un icono"
+
+#: ../Alacarte/ItemEditor.py:198
+msgid "Choose a command"
+msgstr "Elegir un comando"
 
 #: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
@@ -49,28 +57,56 @@ msgid "Restore the default menu layout"
 msgstr "Restaurar la distribución de menú predeterminada"
 
 #: ../data/alacarte.ui.h:3
-msgid "Restore System Configuration"
-msgstr "Restaurar la configuración del sistema"
-
-#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "Menú _nuevo"
 
-#: ../data/alacarte.ui.h:5
+#: ../data/alacarte.ui.h:4
 msgid "Ne_w Item"
 msgstr "Ele_mento nuevo"
 
-#: ../data/alacarte.ui.h:6
+#: ../data/alacarte.ui.h:5
 msgid "New _Separator"
 msgstr "_Separador nuevo"
+
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Bajar"
 
 #: ../data/alacarte.ui.h:7
 msgid "Move Up"
 msgstr "Subir"
 
-#: ../data/alacarte.ui.h:8
-msgid "Move Down"
-msgstr "Bajar"
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Propiedades del lanzador"
+
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+#| msgid "Name"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Comando:"
+
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Comentario:"
+
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Examinar"
+
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "¿Ejecutar en una terminal?"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Propiedades de la carpeta"
+
+#~ msgid "Restore System Configuration"
+#~ msgstr "Restaurar la configuración del sistema"
 
 #~ msgid "_Revert to Original"
 #~ msgstr "_Revertir al original"

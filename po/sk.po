@@ -1,80 +1,132 @@
 # Slovak translation of alacarte.
-# Copyright (C) 2008 Free Software Foundation, Inc.
+# Copyright (C) 2008, 2013 Free Software Foundation, Inc.
 # This file is distributed under the same license as the alacarte package.
 # Marcel Telka <marcel@telka.sk>, 2008.
-#
+# Ján Kyselica <kyselica.jan@gmail.com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-04 10:22+0200\n"
-"PO-Revision-Date: 2008-08-04 10:30+0200\n"
-"Last-Translator: Marcel Telka <marcel@telka.sk>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-01-22 08:23+0000\n"
+"PO-Revision-Date: 2013-01-25 20:15+0100\n"
+"Last-Translator: Ján Kyselica <kyselica.jan@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:168
+# treeview column
+#: ../Alacarte/MainWindow.py:160
 msgid "Name"
 msgstr "Názov"
 
-#: ../Alacarte/MainWindow.py:184
+# treeview column
+#: ../Alacarte/MainWindow.py:173
 msgid "Show"
 msgstr "Ukázať"
 
-#: ../Alacarte/MainWindow.py:192
+# treeview column
+#: ../Alacarte/MainWindow.py:181
 msgid "Item"
 msgstr "Položka"
 
-#: ../alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "Zmeniť, ktoré aplikácie sú viditeľné v hlavnej ponuke"
+# filechooser dialog title
+#: ../Alacarte/ItemEditor.py:85
+msgid "Choose an icon"
+msgstr "Vyber ikony"
 
-#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+# filechooser dialog title
+#: ../Alacarte/ItemEditor.py:198
+msgid "Choose a command"
+msgstr "Vyber príkazu"
+
+# desktop entry name; GtkWindow title
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "Hlavná ponuka"
 
-#: ../alacarte.glade.h:1
-msgid "It_ems:"
-msgstr "Po_ložky:"
+# desktop entry comment
+#: ../data/alacarte.desktop.in.in.h:2
+msgid "Add or remove applications from the main menu"
+msgstr "Pridáva alebo odstraňuje aplikácie z hlavnej ponuky"
 
-#: ../alacarte.glade.h:3
-msgid "Move Down"
-msgstr "Presunúť dole"
-
-#: ../alacarte.glade.h:4
-msgid "Move Up"
-msgstr "Presunúť hore"
-
-#: ../alacarte.glade.h:5
-msgid "Ne_w Item"
-msgstr "No_vá položka"
-
-#: ../alacarte.glade.h:6
-msgid "New _Separator"
-msgstr "Nový _oddeľovač"
-
-#: ../alacarte.glade.h:7
+# GtkButton label
+#: ../data/alacarte.ui.h:2
 msgid "Restore the default menu layout"
 msgstr "Obnoviť štandardné rozloženie ponuky"
 
-#: ../alacarte.glade.h:8
-msgid "Revert Changes?"
-msgstr "Vrátiť zmeny?"
-
-#: ../alacarte.glade.h:9
-msgid "Revert all menus to original settings?"
-msgstr "Vrátiť všetky ponuky na pôvodné nastavenia?"
-
-#: ../alacarte.glade.h:10
-msgid "_Menus:"
-msgstr "_Ponuky:"
-
-#: ../alacarte.glade.h:11
+# GtkButton label
+#: ../data/alacarte.ui.h:3
 msgid "_New Menu"
 msgstr "_Nová ponuka"
 
-#: ../alacarte.glade.h:12
-msgid "_Revert to Original"
-msgstr "V_rátiť na originál"
+# GtkButton label
+#: ../data/alacarte.ui.h:4
+msgid "Ne_w Item"
+msgstr "No_vá položka"
+
+# GtkButton label
+#: ../data/alacarte.ui.h:5
+msgid "New _Separator"
+msgstr "Nový _oddeľovač"
+
+# GtkButton label
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Presunúť dole"
+
+# GtkButton label
+#: ../data/alacarte.ui.h:7
+msgid "Move Up"
+msgstr "Presunúť hore"
+
+# GtkDialog title
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Vlastnosti spúštača"
+
+# GtkLabel label
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+msgid "Name:"
+msgstr "Názov:"
+
+# GtkLabel label
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Príkaz:"
+
+# GtkLabel label
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Komentár:"
+
+# GtkButton label
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Prehliadať"
+
+# GtkCheckButton label
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "Spustiť v termináli?"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Vlastnosti adresára"
+
+#~ msgid "It_ems:"
+#~ msgstr "Po_ložky:"
+
+#~ msgid "Revert Changes?"
+#~ msgstr "Vrátiť zmeny?"
+
+#~ msgid "Revert all menus to original settings?"
+#~ msgstr "Vrátiť všetky ponuky na pôvodné nastavenia?"
+
+#~ msgid "_Menus:"
+#~ msgstr "_Ponuky:"
+
+#~ msgid "_Revert to Original"
+#~ msgstr "V_rátiť na originál"

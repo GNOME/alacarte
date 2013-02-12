@@ -132,28 +132,31 @@ def getIcon(item):
     pixbuf = None
     if item is None:
         return None
+    try:
+        if isinstance(item, GMenu.TreeDirectory):
+            gicon = item.get_icon()
+        elif isinstance(item, GMenu.TreeEntry):
+            app_info = item.get_app_info()
+            gicon = app_info.get_icon()
+        else:
+            return None
 
-    if isinstance(item, GMenu.TreeDirectory):
-        gicon = item.get_icon()
-    elif isinstance(item, GMenu.TreeEntry):
-        app_info = item.get_app_info()
-        gicon = app_info.get_icon()
-    else:
-        return None
+        if gicon is None:
+            return None
 
-    if gicon is None:
-        return None
-
-    icon_theme = Gtk.IconTheme.get_default()
-    info = icon_theme.lookup_by_gicon(gicon, 24, 0)
-    if info is None:
-        return None
-    pixbuf = info.load_icon()
-    if pixbuf is None:
-        return None
-    if pixbuf.get_width() != 24 or pixbuf.get_height() != 24:
-        pixbuf = pixbuf.scale_simple(24, 24, GdkPixbuf.InterpType.HYPER)
-    return pixbuf
+        icon_theme = Gtk.IconTheme.get_default()
+        info = icon_theme.lookup_by_gicon(gicon, 24, 0)
+        if info is None:
+            return None
+        pixbuf = info.load_icon()
+        if pixbuf is None:
+            return None
+        if pixbuf.get_width() != 24 or pixbuf.get_height() != 24:
+            pixbuf = pixbuf.scale_simple(24, 24, GdkPixbuf.InterpType.HYPER)
+        return pixbuf
+    except Exception as e:
+        print e
+        retun None
 
 def removeWhitespaceNodes(node):
     remove_list = []

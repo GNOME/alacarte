@@ -47,7 +47,7 @@ class MenuEditor(object):
 
     def load(self):
         if not self.tree.load_sync():
-            raise ValueError("can not load menu tree %r" % (self.name,))
+            raise ValueError("can not load menu tree %r" % (self.tree.props.menu_basename,))
 
     def menuChanged(self, *a):
         self.load()

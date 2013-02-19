@@ -2,14 +2,14 @@
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2006, 2007.
 # This file is distributed under the same license as the alacarte package.
 # Maintainer: Igor Miletić <grejigl-gnomeprevod@yahoo.com>
-# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2011, 2012.
+# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=alacar"
 "te&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-05 13:17+0000\n"
-"PO-Revision-Date: 2012-08-07 11:00+0200\n"
+"POT-Creation-Date: 2013-01-11 06:39+0000\n"
+"PO-Revision-Date: 2013-02-19 20:29+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -20,17 +20,25 @@ msgstr ""
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
-#: ../Alacarte/MainWindow.py:151
+#: ../Alacarte/MainWindow.py:159
 msgid "Name"
 msgstr "Naziv"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:172
 msgid "Show"
 msgstr "Pokaži"
 
-#: ../Alacarte/MainWindow.py:172
+#: ../Alacarte/MainWindow.py:180
 msgid "Item"
 msgstr "Stavka"
+
+#: ../Alacarte/ItemEditor.py:85
+msgid "Choose an icon"
+msgstr "Izaberite ikonicu"
+
+#: ../Alacarte/ItemEditor.py:198
+msgid "Choose a command"
+msgstr "Izaberite naredbu"
 
 #: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
@@ -45,88 +53,53 @@ msgid "Restore the default menu layout"
 msgstr "Povratite podrazumevani raspored izbornika"
 
 #: ../data/alacarte.ui.h:3
-msgid "Restore System Configuration"
-msgstr "Povrati sistemska podešavanja"
-
-#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "Novi _izbornik"
 
-#: ../data/alacarte.ui.h:5
+#: ../data/alacarte.ui.h:4
 msgid "Ne_w Item"
 msgstr "Nova _stavka"
 
-#: ../data/alacarte.ui.h:6
+#: ../data/alacarte.ui.h:5
 msgid "New _Separator"
 msgstr "Novi _razdvajač"
+
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Pomeri dole"
 
 #: ../data/alacarte.ui.h:7
 msgid "Move Up"
 msgstr "Pomeri gore"
 
-#: ../data/alacarte.ui.h:8
-msgid "Move Down"
-msgstr "Pomeri dole"
+#: ../data/launcher-editor.ui.h:1
+#| msgid "Menu Properties"
+msgid "Launcher Properties"
+msgstr "Svojstva pokretača"
 
-#~ msgid "_Revert to Original"
-#~ msgstr "_Vrati na izvorno"
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+msgid "Name:"
+msgstr "Naziv:"
 
-#~ msgid "_Menus:"
-#~ msgstr "_Izbornici:"
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Naredba:"
 
-#~ msgid "It_ems:"
-#~ msgstr "S_tavke:"
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Napomena:"
 
-#~ msgid "Revert Changes?"
-#~ msgstr "Da povratim izmene?"
+#: ../data/launcher-editor.ui.h:5
+#| msgid "Browse..."
+msgid "Browse"
+msgstr "Pregledaj"
 
-#~ msgid "Revert all menus to original settings?"
-#~ msgstr "Da vratim sve izbornike na izvorna podešavanja?"
+#: ../data/launcher-editor.ui.h:6
+#| msgid "Run command in a terminal"
+msgid "Launch in Terminal?"
+msgstr "Da pokrenem u terminalu?"
 
-#~ msgid "A name is required."
-#~ msgstr "Ime je obavezno."
-
-#~ msgid "A command is required."
-#~ msgstr "Naredba je obavezna."
-
-#~ msgid "Add, change, remove menu entries"
-#~ msgstr "Dodaj, promeni, izbaci stavke menija"
-
-#~ msgid "Menu Layout"
-#~ msgstr "Raspored menija"
-
-#~ msgid "Alacarte Menu Editor"
-#~ msgstr "Alacarte uređivač menija"
-
-#~ msgid "Browse..."
-#~ msgstr "Razgledaj..."
-
-#~ msgid "Command:"
-#~ msgstr "Naredba:"
-
-#~ msgid "Comment:"
-#~ msgstr "Beleška:"
-
-#~ msgid "Copyright © 2006 Travis Watkins"
-#~ msgstr "Autorska prava © 2006 Travis Watkins"
-
-#~ msgid "Icon:"
-#~ msgstr "Ikona:"
-
-#~ msgid "Menu Item Properties"
-#~ msgstr "Osobine stavke menija"
-
-#~ msgid "Menu Properties"
-#~ msgstr "Osobine menija"
-
-#~ msgid "Name:"
-#~ msgstr "Ime:"
-
-#~ msgid "Run command in a terminal"
-#~ msgstr "Pokreni naredbu u terminalu"
-
-#~ msgid "Simple fd.o compliant menu editor"
-#~ msgstr "Jednostavni fd.o saglasan urednik menija"
-
-#~ msgid "translator-credits"
-#~ msgstr "Igor Miletić"
+#: ../data/directory-editor.ui.h:1
+#| msgid "Menu Properties"
+msgid "Directory Properties"
+msgstr "Svojstva direktorijuma"

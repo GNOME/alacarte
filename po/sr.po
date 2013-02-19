@@ -2,14 +2,14 @@
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2006, 2007.
 # This file is distributed under the same license as the alacarte package.
 # Maintainer: Igor Miletić <grejigl-gnomeprevod@yahoo.com>
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011, 2012.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=alacar"
 "te&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-08-05 13:17+0000\n"
-"PO-Revision-Date: 2012-08-07 11:00+0200\n"
+"POT-Creation-Date: 2013-01-11 06:39+0000\n"
+"PO-Revision-Date: 2013-02-19 20:29+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -20,17 +20,25 @@ msgstr ""
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
-#: ../Alacarte/MainWindow.py:151
+#: ../Alacarte/MainWindow.py:159
 msgid "Name"
 msgstr "Назив"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:172
 msgid "Show"
 msgstr "Покажи"
 
-#: ../Alacarte/MainWindow.py:172
+#: ../Alacarte/MainWindow.py:180
 msgid "Item"
 msgstr "Ставка"
+
+#: ../Alacarte/ItemEditor.py:85
+msgid "Choose an icon"
+msgstr "Изаберите иконицу"
+
+#: ../Alacarte/ItemEditor.py:198
+msgid "Choose a command"
+msgstr "Изаберите наредбу"
 
 #: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
@@ -45,88 +53,53 @@ msgid "Restore the default menu layout"
 msgstr "Повратите подразумевани распоред изборника"
 
 #: ../data/alacarte.ui.h:3
-msgid "Restore System Configuration"
-msgstr "Поврати системска подешавања"
-
-#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "Нови _изборник"
 
-#: ../data/alacarte.ui.h:5
+#: ../data/alacarte.ui.h:4
 msgid "Ne_w Item"
 msgstr "Нова _ставка"
 
-#: ../data/alacarte.ui.h:6
+#: ../data/alacarte.ui.h:5
 msgid "New _Separator"
 msgstr "Нови _раздвајач"
+
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Помери доле"
 
 #: ../data/alacarte.ui.h:7
 msgid "Move Up"
 msgstr "Помери горе"
 
-#: ../data/alacarte.ui.h:8
-msgid "Move Down"
-msgstr "Помери доле"
+#: ../data/launcher-editor.ui.h:1
+#| msgid "Menu Properties"
+msgid "Launcher Properties"
+msgstr "Својства покретача"
 
-#~ msgid "_Revert to Original"
-#~ msgstr "_Врати на изворно"
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+msgid "Name:"
+msgstr "Назив:"
 
-#~ msgid "_Menus:"
-#~ msgstr "_Изборници:"
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Наредба:"
 
-#~ msgid "It_ems:"
-#~ msgstr "С_тавке:"
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Напомена:"
 
-#~ msgid "Revert Changes?"
-#~ msgstr "Да повратим измене?"
+#: ../data/launcher-editor.ui.h:5
+#| msgid "Browse..."
+msgid "Browse"
+msgstr "Прегледај"
 
-#~ msgid "Revert all menus to original settings?"
-#~ msgstr "Да вратим све изборнике на изворна подешавања?"
+#: ../data/launcher-editor.ui.h:6
+#| msgid "Run command in a terminal"
+msgid "Launch in Terminal?"
+msgstr "Да покренем у терминалу?"
 
-#~ msgid "A name is required."
-#~ msgstr "Име је обавезно."
-
-#~ msgid "A command is required."
-#~ msgstr "Наредба је обавезна."
-
-#~ msgid "Add, change, remove menu entries"
-#~ msgstr "Додај, промени, избаци ставке менија"
-
-#~ msgid "Menu Layout"
-#~ msgstr "Распоред менија"
-
-#~ msgid "Alacarte Menu Editor"
-#~ msgstr "Alacarte уређивач менија"
-
-#~ msgid "Browse..."
-#~ msgstr "Разгледај..."
-
-#~ msgid "Command:"
-#~ msgstr "Наредба:"
-
-#~ msgid "Comment:"
-#~ msgstr "Белешка:"
-
-#~ msgid "Copyright © 2006 Travis Watkins"
-#~ msgstr "Ауторска права © 2006 Travis Watkins"
-
-#~ msgid "Icon:"
-#~ msgstr "Икона:"
-
-#~ msgid "Menu Item Properties"
-#~ msgstr "Особине ставке менија"
-
-#~ msgid "Menu Properties"
-#~ msgstr "Особине менија"
-
-#~ msgid "Name:"
-#~ msgstr "Име:"
-
-#~ msgid "Run command in a terminal"
-#~ msgstr "Покрени наредбу у терминалу"
-
-#~ msgid "Simple fd.o compliant menu editor"
-#~ msgstr "Једноставни fd.o сагласан уредник менија"
-
-#~ msgid "translator-credits"
-#~ msgstr "Игор Милетић"
+#: ../data/directory-editor.ui.h:1
+#| msgid "Menu Properties"
+msgid "Directory Properties"
+msgstr "Својства директоријума"

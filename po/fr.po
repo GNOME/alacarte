@@ -11,27 +11,37 @@ msgstr ""
 "Project-Id-Version: alacarte 0.9.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-06-01 19:48+0000\n"
-"PO-Revision-Date: 2012-06-02 20:35+0200\n"
-"Last-Translator: Bruno Brouard <annoa.b@gmail.com>\n"
+"POT-Creation-Date: 2013-02-16 01:49+0000\n"
+"PO-Revision-Date: 2013-02-19 17:38+0100\n"
+"Last-Translator: Pierre Henry <pierrehenry73@yahoo.fr>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
 
-#: ../Alacarte/MainWindow.py:155
+#: ../Alacarte/MainWindow.py:160
 msgid "Name"
 msgstr "Nom"
 
-#: ../Alacarte/MainWindow.py:168
+#: ../Alacarte/MainWindow.py:173
 msgid "Show"
 msgstr "Afficher"
 
-#: ../Alacarte/MainWindow.py:176
+#: ../Alacarte/MainWindow.py:181
 msgid "Item"
 msgstr "Élément"
 
-#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:2
+#: ../Alacarte/ItemEditor.py:85
+msgid "Choose an icon"
+msgstr "Choisissez une icône"
+
+#: ../Alacarte/ItemEditor.py:198
+msgid "Choose a command"
+msgstr "Choisissez une commande"
+
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "Menu principal"
 
@@ -40,47 +50,72 @@ msgstr "Menu principal"
 msgid "Add or remove applications from the main menu"
 msgstr "Ajouter ou supprimer des applications à partir du menu principal"
 
-#: ../data/alacarte.ui.h:1
-msgid "_Revert to Original"
-msgstr "_Revenir à l'original"
-
-#: ../data/alacarte.ui.h:3
+#: ../data/alacarte.ui.h:2
 msgid "Restore the default menu layout"
 msgstr "Restaurer l'agencement de menu par défaut"
 
-#: ../data/alacarte.ui.h:4
-msgid "_Menus:"
-msgstr "_Menus :"
-
-#: ../data/alacarte.ui.h:5
-msgid "It_ems:"
-msgstr "É_léments :"
-
-#: ../data/alacarte.ui.h:6
+#: ../data/alacarte.ui.h:3
 msgid "_New Menu"
 msgstr "_Nouveau menu"
 
-#: ../data/alacarte.ui.h:7
+#: ../data/alacarte.ui.h:4
 msgid "Ne_w Item"
 msgstr "Nouvel élé_ment"
 
-#: ../data/alacarte.ui.h:8
+#: ../data/alacarte.ui.h:5
 msgid "New _Separator"
 msgstr "Nouveau _séparateur"
 
-#: ../data/alacarte.ui.h:9
-msgid "Move Up"
-msgstr "Monter"
-
-#: ../data/alacarte.ui.h:10
+#: ../data/alacarte.ui.h:6
 msgid "Move Down"
 msgstr "Descendre"
 
-#: ../data/alacarte.ui.h:11
-msgid "Revert Changes?"
-msgstr "Annuler les modifications ?"
+#: ../data/alacarte.ui.h:7
+msgid "Move Up"
+msgstr "Monter"
 
-#: ../data/alacarte.ui.h:12
-msgid "Revert all menus to original settings?"
-msgstr "Revenir à la configuration d'origine de tous les menus ?"
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Propriétés du lanceur"
 
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+msgid "Name:"
+msgstr "Nom :"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Commande :"
+
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Commentaire :"
+
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Parcourir"
+
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "Lancer dans un terminal ?"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Propriétés du répertoire"
+
+#~ msgid "Restore System Configuration"
+#~ msgstr "Restaurer la configuration du système"
+
+#~ msgid "_Revert to Original"
+#~ msgstr "_Revenir à l'original"
+
+#~ msgid "_Menus:"
+#~ msgstr "_Menus :"
+
+#~ msgid "It_ems:"
+#~ msgstr "É_léments :"
+
+#~ msgid "Revert Changes?"
+#~ msgstr "Annuler les modifications ?"
+
+#~ msgid "Revert all menus to original settings?"
+#~ msgstr "Revenir à la configuration d'origine de tous les menus ?"

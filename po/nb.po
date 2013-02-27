@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte 0.13.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-23 14:07+0200\n"
-"PO-Revision-Date: 2012-08-23 14:09+0200\n"
+"POT-Creation-Date: 2013-02-27 18:29+0100\n"
+"PO-Revision-Date: 2013-02-27 18:30+0100\n"
 "Last-Translator:  Kjartan Maraas <kmaraas@gnome.org>>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -17,17 +17,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 
-#: ../Alacarte/MainWindow.py:151
+#: ../Alacarte/MainWindow.py:160
 msgid "Name"
 msgstr "Navn"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:173
 msgid "Show"
 msgstr "Vis"
 
-#: ../Alacarte/MainWindow.py:172
+#: ../Alacarte/MainWindow.py:181
 msgid "Item"
 msgstr "Oppføring"
+
+#: ../Alacarte/ItemEditor.py:85
+msgid "Choose an icon"
+msgstr "Velg et ikon"
+
+#: ../Alacarte/ItemEditor.py:198
+msgid "Choose a command"
+msgstr "Velg en kommando"
 
 #: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
@@ -42,25 +50,49 @@ msgid "Restore the default menu layout"
 msgstr "Gjenopprett forvalgt menyutføring"
 
 #: ../data/alacarte.ui.h:3
-msgid "Restore System Configuration"
-msgstr "Gjenopprett systemkonfigurasjon"
-
-#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "_Ny meny"
 
-#: ../data/alacarte.ui.h:5
+#: ../data/alacarte.ui.h:4
 msgid "Ne_w Item"
 msgstr "N_y oppføring"
 
-#: ../data/alacarte.ui.h:6
+#: ../data/alacarte.ui.h:5
 msgid "New _Separator"
 msgstr "Ny _separator"
+
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Flytt ned"
 
 #: ../data/alacarte.ui.h:7
 msgid "Move Up"
 msgstr "Flytt opp"
 
-#: ../data/alacarte.ui.h:8
-msgid "Move Down"
-msgstr "Flytt ned"
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Egenskaper for oppstarter"
+
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+msgid "Name:"
+msgstr "Navn:"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Kommando:"
+
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Kommentar:"
+
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Bla gjennom"
+
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "Start i terminal?"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Egenskaper for katalog"

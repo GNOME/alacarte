@@ -1,3 +1,29 @@
+==============
+Version 3.7.90
+==============
+
+Bugs Fixed:
+        * Remove dependency on gnome-panel by rewriting the
+          menu/item editor
+        * Cleanups to the UI
+        * Allow editing menus other than applications.menu
+
+Translations updates:
+        * Alexandre Franke
+        * Aurimas Černius
+        * Balázs Úr
+        * Daniel Mustieles
+        * Enrico Nicoletto
+        * Ján Kyselica
+        * Jasper St. Pierre
+        * Kjartan Maraas
+        * Marek Černocký
+        * Matej Urbančič
+        * Piotr Drąg
+        * Rafael Ferreira
+        * Yaron Shahrabani
+        * Мирослав Николић
+
 =============
 Version 3.7.2
 =============

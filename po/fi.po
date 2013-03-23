@@ -7,16 +7,16 @@
 # Niklas Laxström
 # Elias Julkunen <vililikku@gmail.com>, 2006.
 # Ilkka Tuohela <hile@iki.fi>, 2006.
-# Jiri Grönroos <jiri.gronroos@iki.fi>, 2012.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-07-17 00:26+0000\n"
-"PO-Revision-Date: 2012-09-08 14:58+0300\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <>\n"
+"POT-Creation-Date: 2013-01-11 06:39+0000\n"
+"PO-Revision-Date: 2013-03-23 18:14+0200\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
+"Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,24 +25,31 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../Alacarte/MainWindow.py:151
+#: ../Alacarte/MainWindow.py:159
 msgid "Name"
 msgstr "Nimi"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:172
 msgid "Show"
 msgstr "Näytä"
 
-#: ../Alacarte/MainWindow.py:172
+#: ../Alacarte/MainWindow.py:180
 msgid "Item"
 msgstr "Toiminto"
+
+#: ../Alacarte/ItemEditor.py:85
+msgid "Choose an icon"
+msgstr "Valitse kuvake"
+
+#: ../Alacarte/ItemEditor.py:198
+msgid "Choose a command"
+msgstr "Valitse komento"
 
 #: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "Päävalikko"
 
 #: ../data/alacarte.desktop.in.in.h:2
-#| msgid "Change which applications are shown on the main menu"
 msgid "Add or remove applications from the main menu"
 msgstr "Lisää tai poista päävalikossa näytettäviä sovelluksia"
 
@@ -51,28 +58,56 @@ msgid "Restore the default menu layout"
 msgstr "Palauta valikkojen oletusasettelu"
 
 #: ../data/alacarte.ui.h:3
-msgid "Restore System Configuration"
-msgstr "Palauta oletusasetukset"
-
-#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "Uusi v_alikko"
 
-#: ../data/alacarte.ui.h:5
+#: ../data/alacarte.ui.h:4
 msgid "Ne_w Item"
 msgstr "Uu_si toiminto"
 
-#: ../data/alacarte.ui.h:6
+#: ../data/alacarte.ui.h:5
 msgid "New _Separator"
 msgstr "Uusi _erotin"
+
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Siirrä alas"
 
 #: ../data/alacarte.ui.h:7
 msgid "Move Up"
 msgstr "Siirrä ylös"
 
-#: ../data/alacarte.ui.h:8
-msgid "Move Down"
-msgstr "Siirrä alas"
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Käynnistimen ominaisuudet"
+
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+#| msgid "Name"
+msgid "Name:"
+msgstr "Nimi:"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Komento:"
+
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Kommentti:"
+
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Selaa"
+
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "Käynnistetäänkö päätteessä?"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Hakemiston ominaisuudet"
+
+#~ msgid "Restore System Configuration"
+#~ msgstr "Palauta oletusasetukset"
 
 #~ msgid "_Revert to Original"
 #~ msgstr "_Palauta alkuperäinen"

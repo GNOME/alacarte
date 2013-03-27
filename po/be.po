@@ -3,8 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte.master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-24 22:07+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-01-11 06:39+0000\n"
 "PO-Revision-Date: 2011-07-24 22:07+0300\n"
 "Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
@@ -13,66 +14,83 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:159
 msgid "Name"
 msgstr "Назва"
 
-#: ../Alacarte/MainWindow.py:180
+#: ../Alacarte/MainWindow.py:172
 msgid "Show"
 msgstr "Паказаць"
 
-#: ../Alacarte/MainWindow.py:188
+#: ../Alacarte/MainWindow.py:180
 msgid "Item"
 msgstr "Элемент"
 
-#: ../data/alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "Вызначыць праграмы, якія трэба паказваць у галоўным меню"
+#: ../Alacarte/ItemEditor.py:85
+msgid "Choose an icon"
+msgstr "Выберыце значок"
 
-#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.ui.h:2
+#: ../Alacarte/ItemEditor.py:198
+msgid "Choose a command"
+msgstr "Выберыце загад"
+
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "Галоўнае меню"
 
-#: ../data/alacarte.ui.h:1
-msgid "It_ems:"
-msgstr "_Элементы:"
+#: ../data/alacarte.desktop.in.in.h:2
+msgid "Add or remove applications from the main menu"
+msgstr "Рэдагаванне галоўнага меню праграм"
 
-#: ../data/alacarte.ui.h:3
-msgid "Move Down"
-msgstr "Пасунуць ніжэй"
-
-#: ../data/alacarte.ui.h:4
-msgid "Move Up"
-msgstr "Пасунуць вышэй"
-
-#: ../data/alacarte.ui.h:5
-msgid "Ne_w Item"
-msgstr "_Новы элемент"
-
-#: ../data/alacarte.ui.h:6
-msgid "New _Separator"
-msgstr "Новы _падзяляльнік"
-
-#: ../data/alacarte.ui.h:7
+#: ../data/alacarte.ui.h:2
 msgid "Restore the default menu layout"
 msgstr "Аднавіць прадвызначаны склад меню"
 
-#: ../data/alacarte.ui.h:8
-msgid "Revert Changes?"
-msgstr "Адрабіць змены назад?"
-
-#: ../data/alacarte.ui.h:9
-msgid "Revert all menus to original settings?"
-msgstr "Адрабіць склад усіх меню да пачатковай канфігурацыі?"
-
-#: ../data/alacarte.ui.h:10
-msgid "_Menus:"
-msgstr "_Меню:"
-
-#: ../data/alacarte.ui.h:11
+#: ../data/alacarte.ui.h:3
 msgid "_New Menu"
 msgstr "_Новае меню"
 
-#: ../data/alacarte.ui.h:12
-msgid "_Revert to Original"
-msgstr "_Адрабіць да пачатковай канфігурацыі"
+#: ../data/alacarte.ui.h:4
+msgid "Ne_w Item"
+msgstr "_Новы элемент"
+
+#: ../data/alacarte.ui.h:5
+msgid "New _Separator"
+msgstr "Новы _падзяляльнік"
+
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Пасунуць ніжэй"
+
+#: ../data/alacarte.ui.h:7
+msgid "Move Up"
+msgstr "Пасунуць вышэй"
+
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Уласцівасці стартара"
+
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+msgid "Name:"
+msgstr "Назва:"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Загад:"
+
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Каментарый:"
+
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Аглядзець"
+
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "Запускаць у тэрмінале?"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Уласцівасці каталога"
+

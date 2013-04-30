@@ -59,7 +59,7 @@ class MenuEditor(object):
     def restoreToSystem(self):
         self.restoreTree(self.tree.get_root_directory())
         try:
-            os.unlink(self.path)
+            os.remove(self.path)
         except OSError:
             pass
 

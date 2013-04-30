@@ -210,8 +210,6 @@ class MainWindow(object):
     def loadMenu(self, iters, parent=None):
         for menu, show in self.editor.getMenus(parent):
             name = cgi.escape(menu.get_name())
-            if not show:
-                name = "<small><i>%s</i></small>" % (name,)
 
             icon = util.getIcon(menu)
             iters[menu] = self.menu_store.append(iters[parent], (icon, name, menu))
@@ -231,8 +229,6 @@ class MainWindow(object):
                 assert False, 'should not be reached'
 
             name = cgi.escape(name)
-            if not show:
-                name = "<small><i>%s</i></small>" % (name,)
 
             self.item_store.append((show, icon, name, item))
 

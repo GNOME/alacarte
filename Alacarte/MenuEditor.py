@@ -263,7 +263,7 @@ class MenuEditor(object):
 
         contents, length = keyfile.to_data()
 
-        with codecs.open(out_path, 'w', 'utf8') as f:
+        with open(out_path, 'w') as f:
             f.write(contents)
 
         self.addItem(new_parent, file_id, dom)
@@ -404,7 +404,7 @@ class MenuEditor(object):
         contents, length = keyfile.to_data()
 
         path = os.path.join(util.getUserItemPath(), file_id)
-        with codecs.open(path, 'w', 'utf8') as f:
+        with open(path, 'w') as f:
             f.write(contents)
 
         return file_id
@@ -426,7 +426,7 @@ class MenuEditor(object):
         contents, length = keyfile.to_data()
 
         path = os.path.join(util.getUserDirectoryPath(), file_id)
-        with codecs.open(path, 'w', 'utf8') as f:
+        with open(path, 'w') as f:
             f.write(contents)
         return file_id
 

@@ -58,14 +58,12 @@ class MenuEditor(object):
 
     def restoreToSystem(self):
         self.restoreTree(self.tree.get_root_directory())
-        path = os.path.join(util.getUserMenuPath(), os.path.basename(self.tree.get_canonical_menu_path()))
         try:
-            os.unlink(path)
+            os.unlink(self.path)
         except OSError:
             pass
 
         self.loadDOM()
-        self.save()
 
     def restoreTree(self, menu):
         item_iter = menu.iter()

@@ -3,37 +3,45 @@
 # This file is distributed under the same license as the alacarte package.
 #
 # Leonid Kanter <leon@asplinux.ru>, 2006, 2007.
-# Stas Solovey <whats_up@tut.by>, 2012.
-# Yuri Myasoedov <omerta13@yandex.ru>, 2012.
+# Stas Solovey <whats_up@tut.by>, 2012, 2013.
+# Yuri Myasoedov <omerta13@yandex.ru>, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte trunk\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-09-23 11:04+0000\n"
-"PO-Revision-Date: 2012-09-29 12:06+0400\n"
+"POT-Creation-Date: 2013-02-28 02:14+0000\n"
+"PO-Revision-Date: 2013-05-14 09:11+0400\n"
 "Last-Translator: Yuri Myasoedov <omerta13@yandex.ru>\n"
 "Language-Team: русский <gnome-cyr@gnome.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.5\n"
+"X-Generator: Gtranslator 2.91.6\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: ../Alacarte/MainWindow.py:151
+#: ../Alacarte/MainWindow.py:160
 msgid "Name"
 msgstr "Имя"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:173
 msgid "Show"
 msgstr "Показать"
 
-#: ../Alacarte/MainWindow.py:172
+#: ../Alacarte/MainWindow.py:181
 msgid "Item"
 msgstr "Элемент"
+
+#: ../Alacarte/ItemEditor.py:85
+msgid "Choose an icon"
+msgstr "Выберите значок"
+
+#: ../Alacarte/ItemEditor.py:198
+msgid "Choose a command"
+msgstr "Выберите команду"
 
 #: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
@@ -48,40 +56,49 @@ msgid "Restore the default menu layout"
 msgstr "Восстановить первоначальный вид меню"
 
 #: ../data/alacarte.ui.h:3
-msgid "Restore System Configuration"
-msgstr "Восстановить системные настройки"
-
-#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "Создать _меню"
 
-#: ../data/alacarte.ui.h:5
+#: ../data/alacarte.ui.h:4
 msgid "Ne_w Item"
 msgstr "Создать _элемент"
 
-#: ../data/alacarte.ui.h:6
+#: ../data/alacarte.ui.h:5
 msgid "New _Separator"
 msgstr "Создать _разделитель"
+
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Переместить вниз"
 
 #: ../data/alacarte.ui.h:7
 msgid "Move Up"
 msgstr "Переместить вверх"
 
-#: ../data/alacarte.ui.h:8
-msgid "Move Down"
-msgstr "Переместить вниз"
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Параметры запуска"
 
-#~ msgid "_Revert to Original"
-#~ msgstr "_Вернуть исходное состояние"
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+msgid "Name:"
+msgstr "Имя:"
 
-#~ msgid "_Menus:"
-#~ msgstr "_Меню:"
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Команда:"
 
-#~ msgid "It_ems:"
-#~ msgstr "_Элементы:"
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Примечание:"
 
-#~ msgid "Revert Changes?"
-#~ msgstr "Откатить изменения?"
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Просмотреть"
 
-#~ msgid "Revert all menus to original settings?"
-#~ msgstr "Вернуть все меню к первоначальному состоянию?"
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "Запускать в терминале"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Параметры каталога"

@@ -20,7 +20,7 @@ import gettext
 import os
 import gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import GLib, Gtk
+from gi.repository import GLib, GObject, Gtk
 from Alacarte import config, util
 
 _ = gettext.gettext
@@ -91,10 +91,15 @@ class IconPicker(object):
             self.image.props.file = chooser.get_filename()
         chooser.destroy()
 
-class ItemEditor(object):
+class ItemEditor(GObject.GObject):
     ui_file = None
 
+    __gsignals__ = {
+        'response': (GObject.SIGNAL_RUN_FIRST, None, (bool,))
+    }
+
     def __init__(self, parent, item_path):
+        GObject.GObject.__init__(self)
         self.builder = Gtk.Builder()
         self.builder.add_from_file(os.path.join(config.pkgdatadir, self.ui_file))
 
@@ -158,6 +163,7 @@ class ItemEditor(object):
         if response == Gtk.ResponseType.OK:
             self.save()
         self.dialog.destroy()
+        self.emit('response', response == Gtk.ResponseType.OK)
 
 class LauncherEditor(ItemEditor):
     ui_file = 'launcher-editor.ui'

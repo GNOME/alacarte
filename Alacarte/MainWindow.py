@@ -303,11 +303,18 @@ class MainWindow(object):
             file_type = 'Menu'
             Editor = DirectoryEditor
 
+        copied = False
         if not os.path.isfile(file_path):
             shutil.copy(item.get_desktop_file_path(), file_path)
+            copied = True
 
         editor = Editor(self.main_window, file_path)
+        editor.connect('response', self.on_editor_response, file_path if copied else None)
         editor.run()
+
+    def on_editor_response(self, editor, modified, file_path):
+        if not modified and file_path is not None:
+            os.remove(file_path)
 
     def on_menu_tree_cursor_changed(self, treeview):
         selection = treeview.get_selection()

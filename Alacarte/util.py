@@ -28,7 +28,7 @@ DESKTOP_GROUP = GLib.KEY_FILE_DESKTOP_GROUP
 KEY_FILE_FLAGS = GLib.KeyFileFlags.KEEP_COMMENTS | GLib.KeyFileFlags.KEEP_TRANSLATIONS
 
 def fillKeyFile(keyfile, items):
-    for key, item in items.iteritems():
+    for key, item in items.items():
         if item is None:
             continue
 

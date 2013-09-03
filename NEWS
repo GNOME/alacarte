@@ -1,4 +1,21 @@
 ==============
+Version 3.9.91
+==============
+
+Bugs Fixed:
+        * Fix Unicode/binary screwups causing UnicodeDecodeErrors
+        * Add python3 compatibility
+        * Don't leave behind stale .desktop files
+        * Actually quit when hitting the close button
+
+Translations updates:
+        * Dimitris Spingos
+        * Ihar Hrachyshka
+        * Joe Hansen
+        * Stas Solovey
+        * Ville-Pekka Vainio
+
+==============
 Version 3.7.90
 ==============
 

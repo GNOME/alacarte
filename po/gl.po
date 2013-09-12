@@ -1,41 +1,48 @@
 # Galician translation of Alacarte.
 # Copyright (C) 2010 Francisco Diéguez <frandieguez@ubuntu.com>
 # This file is distributed under the same license as the alacarte package.
-#
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
 # colaborar connosco, podes atopar máis información en http://www.trasno.net
-#
 # Ignacio Casal Quinteiro <nacho.resa@gmail.com>, 2006.
 # Ignacio Casal Quinteiro <icq@cvs.gnome.org>, 2007, 2008.
 # Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun.org>, 2009.
 # Fran Diéguez <frandieguez@gnome.org>, 2010, 2012.
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.
+# Fran Dieguez <frandieguez@gnome.org>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-19 22:56+0200\n"
-"PO-Revision-Date: 2012-08-17 19:42+0200\n"
-"Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
-"Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
+"POT-Creation-Date: 2013-09-12 19:26+0200\n"
+"PO-Revision-Date: 2013-09-12 19:27+0200\n"
+"Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
+"Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 
-#: ../Alacarte/MainWindow.py:151
+#: ../Alacarte/MainWindow.py:158
 msgid "Name"
 msgstr "Nome"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:171
 msgid "Show"
 msgstr "Mostrar"
 
-#: ../Alacarte/MainWindow.py:172
+#: ../Alacarte/MainWindow.py:179
 msgid "Item"
 msgstr "Elemento"
+
+#: ../Alacarte/ItemEditor.py:85
+msgid "Choose an icon"
+msgstr "Seleccione unha icona"
+
+#: ../Alacarte/ItemEditor.py:204
+msgid "Choose a command"
+msgstr "Seleccione unha orde"
 
 #: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
@@ -50,28 +57,55 @@ msgid "Restore the default menu layout"
 msgstr "Restaurar a disposición do menú por omisión"
 
 #: ../data/alacarte.ui.h:3
-msgid "Restore System Configuration"
-msgstr "Restabelecer a configuración do sistema"
-
-#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "Menú _novo"
 
-#: ../data/alacarte.ui.h:5
+#: ../data/alacarte.ui.h:4
 msgid "Ne_w Item"
 msgstr "Elemento no_vo"
 
-#: ../data/alacarte.ui.h:6
+#: ../data/alacarte.ui.h:5
 msgid "New _Separator"
 msgstr "_Separador novo"
+
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Mover abaixo"
 
 #: ../data/alacarte.ui.h:7
 msgid "Move Up"
 msgstr "Mover arriba"
 
-#: ../data/alacarte.ui.h:8
-msgid "Move Down"
-msgstr "Mover abaixo"
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Propiedades do iniciador"
+
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+msgid "Name:"
+msgstr "Nome:"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Orde:"
+
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Comentario:"
+
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Examinar"
+
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "Executar nun terminal?"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Propiedades do cartafol"
+
+#~ msgid "Restore System Configuration"
+#~ msgstr "Restabelecer a configuración do sistema"
 
 #~ msgid "_Revert to Original"
 #~ msgstr "_Recuperar o orixinal"

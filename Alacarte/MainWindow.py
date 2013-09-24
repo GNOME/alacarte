@@ -19,7 +19,7 @@
 
 import gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk, GObject, Gio, GdkPixbuf, Gdk, GMenu, GLib
+from gi.repository import Gtk, GdkPixbuf, Gdk, GMenu
 import sys
 import cgi
 import os

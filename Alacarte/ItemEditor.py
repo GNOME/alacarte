@@ -33,8 +33,6 @@ def try_icon_name(filename):
     if not filename.endswith(EXTENSIONS):
         return filename
 
-    filename = filename[:-4]
-
     theme = Gtk.IconTheme.get_default()
     resolved_path = None
     for path in theme.get_search_path():
@@ -50,7 +48,10 @@ def try_icon_name(filename):
     if len(parts) != 4:
         return filename
 
-    return parts[3]
+    icon_name = parts[3]
+
+    # strip extension
+    return icon_name[:-4]
 
 def get_icon_string(image):
     filename = image.props.file

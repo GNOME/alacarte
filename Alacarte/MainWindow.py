@@ -50,6 +50,8 @@ class MainWindow(object):
         self.tree.get_object('move_down_button').set_sensitive(False)
         self.tree.get_object('new_separator_button').set_sensitive(False)
 
+        self.main_window = self.tree.get_object('mainwindow')
+
         self.editor = None
 
     def setMenuBasename(self, menu_basename):

@@ -182,7 +182,7 @@ class LauncherEditor(ItemEditor):
     def resync_validity(self, *args):
         name_text = self.builder.get_object('name-entry').get_text()
         exec_text = self.builder.get_object('exec-entry').get_text()
-        valid = (name_text != "" and exec_text != "")
+        valid = (name_text != "" and GLib.find_program_in_path(exec_text) is not None)
         self.builder.get_object('ok').set_sensitive(valid)
 
     def load(self):

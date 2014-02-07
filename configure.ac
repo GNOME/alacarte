@@ -22,6 +22,18 @@ AM_PATH_PYTHON_VERSION(2.7, 2.7.0, 2.6, 2.6.0, 2.5, 2.5.0, 2.4, 2.4.0)
 
 PKG_CHECK_MODULES(ALACARTE, libgnome-menu-3.0 >= 3.5.3 pygobject-3.0)
 
+AC_ARG_ENABLE(documentation,
+              AS_HELP_STRING([--enable-documentation],
+                             [build documentation]),,
+              enable_documentation=yes)
+if test x$enable_documentation = xyes; then
+   AC_PATH_PROG([XSLTPROC], [xsltproc])
+   if test x$XSLTPROC = x; then
+      AC_MSG_ERROR([xsltproc is required to build documentation])
+   fi
+fi
+AM_CONDITIONAL(BUILD_DOCUMENTATION, test x$enable_documentation = xyes)
+
 AC_CONFIG_FILES([
         Makefile
         po/Makefile.in
@@ -29,6 +41,7 @@ AC_CONFIG_FILES([
         data/alacarte.desktop.in
 	data/Makefile
 	data/icons/Makefile
+	man/Makefile
         ])
 
 AC_OUTPUT

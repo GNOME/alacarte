@@ -2,6 +2,10 @@
 
 SUBDIRS = data po Alacarte
 
+if BUILD_DOCUMENTATION
+SUBDIRS += man
+endif
+
 CLEANFILES=
 
 bin_SCRIPTS = alacarte

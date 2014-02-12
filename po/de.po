@@ -14,15 +14,16 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-06-01 19:48+0000\n"
-"PO-Revision-Date: 2012-06-02 00:10+0100\n"
-"Last-Translator: Christian Kirbach <Christian.Kirbach@googlemail.com>\n"
+"POT-Creation-Date: 2013-12-18 13:49+0000\n"
+"PO-Revision-Date: 2014-02-11 11:21+0100\n"
+"Last-Translator: Jonatan Zeidler <jonatan_zeidler@gmx.de>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.2\n"
+"X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
 
 #: ../Alacarte/MainWindow.py:155
 msgid "Name"
@@ -36,7 +37,15 @@ msgstr "Anzeigen"
 msgid "Item"
 msgstr "Eintrag"
 
-#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:2
+#: ../Alacarte/ItemEditor.py:86
+msgid "Choose an icon"
+msgstr "Ein Symbol wählen"
+
+#: ../Alacarte/ItemEditor.py:205
+msgid "Choose a command"
+msgstr "Einen Befehl wählen"
+
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "Hauptmenü"
 
@@ -44,49 +53,76 @@ msgstr "Hauptmenü"
 msgid "Add or remove applications from the main menu"
 msgstr "Anwendungen dem Hauptmenü hinzufügen oder löschen"
 
-#: ../data/alacarte.ui.h:1
-msgid "_Revert to Original"
-msgstr "_Original wiederherstellen"
-
-#: ../data/alacarte.ui.h:3
+#: ../data/alacarte.ui.h:2
 msgid "Restore the default menu layout"
 msgstr "Die Standardstruktur des Menüs wiederherstellen"
 
-#: ../data/alacarte.ui.h:4
-msgid "_Menus:"
-msgstr "_Menüs:"
-
-#: ../data/alacarte.ui.h:5
-msgid "It_ems:"
-msgstr "_Einträge:"
-
-#: ../data/alacarte.ui.h:6
+#: ../data/alacarte.ui.h:3
 msgid "_New Menu"
 msgstr "_Neues Menü"
 
-#: ../data/alacarte.ui.h:7
+#: ../data/alacarte.ui.h:4
 msgid "Ne_w Item"
 msgstr "N_euer Eintrag"
 
-#: ../data/alacarte.ui.h:8
+#: ../data/alacarte.ui.h:5
 msgid "New _Separator"
 msgstr "Neue _Trennlinie"
 
-#: ../data/alacarte.ui.h:9
-msgid "Move Up"
-msgstr "Nach oben verschieben"
-
-#: ../data/alacarte.ui.h:10
+#: ../data/alacarte.ui.h:6
 msgid "Move Down"
 msgstr "Nach unten verschieben"
 
-#: ../data/alacarte.ui.h:11
-msgid "Revert Changes?"
-msgstr "Änderungen rückgängig machen?"
+#: ../data/alacarte.ui.h:7
+msgid "Move Up"
+msgstr "Nach oben verschieben"
 
-#: ../data/alacarte.ui.h:12
-msgid "Revert all menus to original settings?"
-msgstr "Möchten Sie alle Menüs in ihren Ursprungszustand zurück versetzen?"
+#: ../data/launcher-editor.ui.h:1
+#| msgid "Menu Properties"
+msgid "Launcher Properties"
+msgstr "Startereigenschaften"
+
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+msgid "Name:"
+msgstr "Name:"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Befehl:"
+
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Kommentar:"
+
+#: ../data/launcher-editor.ui.h:5
+#| msgid "Browse..."
+msgid "Browse"
+msgstr "Durchsuchen"
+
+#: ../data/launcher-editor.ui.h:6
+#| msgid "Run command in a terminal"
+msgid "Launch in Terminal?"
+msgstr "Befehl im Terminal ausführen?"
+
+#: ../data/directory-editor.ui.h:1
+#| msgid "Menu Properties"
+msgid "Directory Properties"
+msgstr "Ordnereigenschaften"
+
+#~ msgid "_Revert to Original"
+#~ msgstr "_Original wiederherstellen"
+
+#~ msgid "_Menus:"
+#~ msgstr "_Menüs:"
+
+#~ msgid "It_ems:"
+#~ msgstr "_Einträge:"
+
+#~ msgid "Revert Changes?"
+#~ msgstr "Änderungen rückgängig machen?"
+
+#~ msgid "Revert all menus to original settings?"
+#~ msgstr "Möchten Sie alle Menüs in ihren Ursprungszustand zurück versetzen?"
 
 #~ msgid "Menu Layout"
 #~ msgstr "Menüstruktur"
@@ -100,15 +136,6 @@ msgstr "Möchten Sie alle Menüs in ihren Ursprungszustand zurück versetzen?"
 #~ msgid "Add, change, remove menu entries"
 #~ msgstr "Menüeinträge hinzufügen, ändern oder entfernen"
 
-#~ msgid "Browse..."
-#~ msgstr "Durchsuchen..."
-
-#~ msgid "Command:"
-#~ msgstr "Befehl:"
-
-#~ msgid "Comment:"
-#~ msgstr "Kommentar:"
-
 #~ msgid "Copyright © 2006 Travis Watkins"
 #~ msgstr "Copyright © 2006 Travis Watkins"
 
@@ -117,15 +144,6 @@ msgstr "Möchten Sie alle Menüs in ihren Ursprungszustand zurück versetzen?"
 
 #~ msgid "Menu Item Properties"
 #~ msgstr "Eigenschaften des Menüeintrags"
-
-#~ msgid "Menu Properties"
-#~ msgstr "Menüeigenschaften"
-
-#~ msgid "Name:"
-#~ msgstr "Name:"
-
-#~ msgid "Run command in a terminal"
-#~ msgstr "Befehl in einem Terminal ausführen"
 
 #~ msgid "Simple fd.o compliant menu editor"
 #~ msgstr "Ein einfacher, Freedesktop.org-konformer Menüeditor"

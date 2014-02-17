@@ -77,7 +77,7 @@
                 <property name="receives_default">False</property>
                 <property name="tooltip_text" translatable="yes">Restore the default menu layout</property>
                 <property name="use_stock">True</property>
-                <signal name="clicked" handler="on_restore_button_clicked" swapped="no"/>
+                <signal name="clicked" handler="on_restore_button_clicked" swapped="yes"/>
               </object>
               <packing>
                 <property name="expand">False</property>

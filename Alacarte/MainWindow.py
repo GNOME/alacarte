@@ -239,10 +239,18 @@ class MainWindow(object):
             menu_tree.get_selection().select_path((0,))
         else:
             parent = menus[iter][2]
-        file_path = os.path.join(util.getUserDirectoryPath(), util.getUniqueFileId('alacarte-made', '.directory'))
+	file_name = util.getUniqueFileId('alacarte-made', '.directory')
+        file_path = os.path.join(util.getUserDirectoryPath(), file_name)
 
         editor = DirectoryEditor(self.main_window, file_path)
+        editor.file_name = file_name;
+        editor.parent = parent.get_menu_id()
+        editor.connect ('response', self.on_directory_created)
         editor.run()
+
+    def on_directory_created(self, editor, response):
+        if response == True:
+            self.editor.insertExternalMenu(editor.file_name, editor.parent)
 
     def on_new_item_button_clicked(self, button):
         menu_tree = self.tree.get_object('menu_tree')

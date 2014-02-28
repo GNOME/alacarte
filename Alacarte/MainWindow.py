@@ -261,10 +261,18 @@ class MainWindow(object):
             menu_tree.get_selection().select_path((0,))
         else:
             parent = menus[iter][2]
-        file_path = os.path.join(util.getUserItemPath(), util.getUniqueFileId('alacarte-made', '.desktop'))
+        file_name = util.getUniqueFileId('alacarte-made', '.desktop')
+        file_path = os.path.join(util.getUserItemPath(), file_name)
 
         editor = LauncherEditor(self.main_window, file_path)
+        editor.file_name = file_name;
+        editor.parent = parent.get_menu_id()
+        editor.connect ('response', self.on_item_created)
         editor.run()
+
+    def on_item_created(self, editor, response):
+        if response == True:
+            self.editor.insertExternalItem(editor.file_name, editor.parent)
 
     def on_new_separator_button_clicked(self, button):
         item_tree = self.tree.get_object('item_tree')

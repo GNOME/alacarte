@@ -1,4 +1,22 @@
 ==============
+Version 3.11.91
+==============
+
+Changes:
+	Drop Help button
+	Ensure items have valid Exec
+	Add a man page
+	Make Restore button work again
+	Fix createing menus
+	Fix creating items
+
+Translation updates:
+	German
+	Indonesian
+	Portuguese
+	Simplified Chinese
+
+==============
 Version 3.10.0
 ==============
 

@@ -239,7 +239,7 @@ class MainWindow(object):
             menu_tree.get_selection().select_path((0,))
         else:
             parent = menus[iter][2]
-	file_name = util.getUniqueFileId('alacarte-made', '.directory')
+        file_name = util.getUniqueFileId('alacarte-made', '.directory')
         file_path = os.path.join(util.getUserDirectoryPath(), file_name)
 
         editor = DirectoryEditor(self.main_window, file_path)

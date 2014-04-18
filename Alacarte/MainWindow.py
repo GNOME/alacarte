@@ -249,7 +249,7 @@ class MainWindow(object):
         editor.run()
 
     def on_directory_created(self, editor, response):
-        if response == True:
+        if response:
             self.editor.insertExternalMenu(editor.file_name, editor.parent)
 
     def on_new_item_button_clicked(self, button):
@@ -271,7 +271,7 @@ class MainWindow(object):
         editor.run()
 
     def on_item_created(self, editor, response):
-        if response == True:
+        if response:
             self.editor.insertExternalItem(editor.file_name, editor.parent)
 
     def on_new_separator_button_clicked(self, button):

@@ -179,10 +179,24 @@ class LauncherEditor(ItemEditor):
         self.builder.get_object('name-entry').connect('changed', self.resync_validity)
         self.builder.get_object('exec-entry').connect('changed', self.resync_validity)
 
+    def exec_line_is_valid(self, exec_text):
+        try:
+            # Attempting to parse command - commands are not simply program names or paths... Errors are raised for blank or invalid input (e.g. missing closing quote)
+            result = GLib.shell_parse_argv(exec_text)
+            if result[0]:
+                # Parsing succeeded - making sure program (first part of the command) is in the path
+                command = result[1][0]
+                return (GLib.find_program_in_path(command) is not None)
+            else:
+                # Parsing failure, but not reported via raised GError?
+                return False
+        except GLib.GError:
+            return False
+
     def resync_validity(self, *args):
         name_text = self.builder.get_object('name-entry').get_text()
         exec_text = self.builder.get_object('exec-entry').get_text()
-        valid = (name_text != "" and GLib.find_program_in_path(exec_text) is not None)
+        valid = (name_text != "" and self.exec_line_is_valid(exec_text))
         self.builder.get_object('ok').set_sensitive(valid)
 
     def load(self):

@@ -181,15 +181,11 @@ class LauncherEditor(ItemEditor):
 
     def exec_line_is_valid(self, exec_text):
         try:
-            # Attempting to parse command - commands are not simply program names or paths... Errors are raised for blank or invalid input (e.g. missing closing quote)
-            result = GLib.shell_parse_argv(exec_text)
-            if result[0]:
-                # Parsing succeeded - making sure program (first part of the command) is in the path
-                command = result[1][0]
-                return (GLib.find_program_in_path(command) is not None)
-            else:
-                # Parsing failure, but not reported via raised GError?
-                return False
+            success, parsed = GLib.shell_parse_argv(exec_text)
+
+            # Make sure program (first part of the command) is in the path
+            command = parsed[0]
+            return (GLib.find_program_in_path(command) is not None)
         except GLib.GError:
             return False
 

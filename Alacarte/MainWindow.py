@@ -245,7 +245,7 @@ class MainWindow(object):
         editor = DirectoryEditor(self.main_window, file_path)
         editor.file_name = file_name;
         editor.parent = parent.get_menu_id()
-        editor.connect ('response', self.on_directory_created)
+        editor.connect('response', self.on_directory_created)
         editor.run()
 
     def on_directory_created(self, editor, response):
@@ -267,7 +267,7 @@ class MainWindow(object):
         editor = LauncherEditor(self.main_window, file_path)
         editor.file_name = file_name;
         editor.parent = parent.get_menu_id()
-        editor.connect ('response', self.on_item_created)
+        editor.connect('response', self.on_item_created)
         editor.run()
 
     def on_item_created(self, editor, response):

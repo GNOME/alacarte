@@ -1,297 +1,109 @@
 # Swedish messages for alacarte.
-# Copyright (C) 2006, 2007, 2009 Free Software Foundation, Inc.
+# Copyright © 2006, 2007, 2009, 2014 Free Software Foundation, Inc.
 # Christian Rose <menthos@menthos.com>, 2006.
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2009.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014.
 #
 # $Id: sv.po,v 1.3 2006/12/28 06:52:28 dnylande Exp $
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-07 12:09+0200\n"
-"PO-Revision-Date: 2009-07-07 13:16+0100\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-02-08 15:31+0000\n"
+"PO-Revision-Date: 2014-04-12 13:35+0100\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
 
-#: ../Alacarte/MainWindow.py:163
+#: ../Alacarte/MainWindow.py:155
 msgid "Name"
 msgstr "Namn"
 
-#: ../Alacarte/MainWindow.py:179
+#: ../Alacarte/MainWindow.py:168
 msgid "Show"
 msgstr "Visa"
 
-#: ../Alacarte/MainWindow.py:187
+#: ../Alacarte/MainWindow.py:176
 msgid "Item"
 msgstr "Objekt"
 
-#: ../data/alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "Ändra vilka program som visas på huvudmenyn"
+#: ../Alacarte/ItemEditor.py:86
+#| msgid "Choose an Icon"
+msgid "Choose an icon"
+msgstr "Välj en ikon"
 
-#: ../data/alacarte.desktop.in.in.h:2
-#: ../data/alacarte.ui.h:2
+#: ../Alacarte/ItemEditor.py:205
+#| msgid "Choose an Icon"
+msgid "Choose a command"
+msgstr "Välj ett kommando"
+
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "Huvudmeny"
 
-#: ../data/alacarte.ui.h:1
-msgid "It_ems:"
-msgstr "Obje_kt:"
+#: ../data/alacarte.desktop.in.in.h:2
+#| msgid "Change which applications are shown on the main menu"
+msgid "Add or remove applications from the main menu"
+msgstr "Lägg till eller ta bort program från huvudmenyn"
 
-#: ../data/alacarte.ui.h:3
-msgid "Move Down"
-msgstr "Flytta nedåt"
-
-#: ../data/alacarte.ui.h:4
-msgid "Move Up"
-msgstr "Flytta uppåt"
-
-#: ../data/alacarte.ui.h:5
-msgid "Ne_w Item"
-msgstr "N_ytt objekt"
-
-#: ../data/alacarte.ui.h:6
-msgid "New _Separator"
-msgstr "Ny _avgränsare"
-
-#: ../data/alacarte.ui.h:7
+#: ../data/alacarte.ui.h:2
 msgid "Restore the default menu layout"
 msgstr "Återställ standardmenylayouten"
 
-#: ../data/alacarte.ui.h:8
-msgid "Revert Changes?"
-msgstr "Återställ ändringar?"
-
-#: ../data/alacarte.ui.h:9
-msgid "Revert all menus to original settings?"
-msgstr "Återställ alla menyer till ursprungsinställningarna?"
-
-#: ../data/alacarte.ui.h:10
-msgid "_Menus:"
-msgstr "_Menyer:"
-
-#: ../data/alacarte.ui.h:11
+#: ../data/alacarte.ui.h:3
 msgid "_New Menu"
 msgstr "_Ny meny"
 
-#: ../data/alacarte.ui.h:12
-msgid "_Revert to Original"
-msgstr "_Återställ till ursprunglig"
+#: ../data/alacarte.ui.h:4
+msgid "Ne_w Item"
+msgstr "N_ytt objekt"
 
-#~ msgid "Menu Layout"
-#~ msgstr "Menylayout"
-#~ msgid "New menu items need a name"
-#~ msgstr "Nya menyposter behöver ett namn"
-#~ msgid "New menus need a name"
-#~ msgstr "Nya menyer behöver ett namn"
-#~ msgid "Choose a Program"
-#~ msgstr "Välj ett program"
-#~ msgid "Choose an Icon"
-#~ msgstr "Välj en ikon"
-#~ msgid "A name is required."
-#~ msgstr "Ett namn krävs."
-#~ msgid "A command is required."
-#~ msgstr "Ett kommando krävs."
-#~ msgid "No Icon"
-#~ msgstr "Ingen ikon"
-#~ msgid "Menu Editor"
-#~ msgstr "Menyredigerare"
-#~ msgid "Alacarte Menu Editor"
-#~ msgstr "Menyredigeraren Alacarte"
-#~ msgid "Browse..."
-#~ msgstr "Bläddra..."
-#~ msgid "Command:"
-#~ msgstr "Kommando:"
-#~ msgid "Comment:"
-#~ msgstr "Kommentar:"
-#~ msgid "Copyright © 2006 Travis Watkins"
-#~ msgstr "Copyright © 2006 Travis Watkins"
-#~ msgid "Icon:"
-#~ msgstr "Ikon:"
-#~ msgid "Menu Item Properties"
-#~ msgstr "Egenskaper för menypost"
-#~ msgid "Menu Properties"
-#~ msgstr "Menyegenskaper"
-#~ msgid "Name:"
-#~ msgstr "Namn:"
-#~ msgid "Run command in a terminal"
-#~ msgstr "Kör kommandot i en terminal"
-#~ msgid "Simple fd.o compliant menu editor"
-#~ msgstr "Enkel, fd.o-kompatibel menyredigerare"
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "Daniel Nylander\n"
-#~ "Christian Rose\n"
-#~ "\n"
-#~ "Skicka synpunkter på översättningen till\n"
-#~ "tp-sv@listor.tp-sv.se"
-#~ msgid "Add, change, remove menu entries"
-#~ msgstr "Lägg till, ändra, ta bort menyposter"
-#~ msgid "_Browse..."
-#~ msgstr "_Bläddra..."
-#~ msgid "_Icon:"
-#~ msgstr "_Ikon:"
-#~ msgid "Items:"
-#~ msgstr "Objekt:"
-#~ msgid "Properties"
-#~ msgstr "Egenskaper"
-#~ msgid "Move _Down"
-#~ msgstr "Flytta _ned"
-#~ msgid "Move _Up"
-#~ msgstr "Flytta _upp"
-#~ msgid "New Item"
-#~ msgstr "Ny post"
-#~ msgid "New Separator"
-#~ msgstr "Ny avgränsare"
-#~ msgid "New Menu"
-#~ msgstr "Ny meny"
-#~ msgid "Accessibility"
-#~ msgstr "Tillgänglighet"
-#~ msgid "Accessibility Settings"
-#~ msgstr "Tillgänglighetsinställningar"
-#~ msgid "Accessories"
-#~ msgstr "Tillbehör"
-#~ msgid "Desktop accessories"
-#~ msgstr "Skrivbordstillbehör"
-#~ msgid "Applications"
-#~ msgstr "Program"
-#~ msgid "Desktop"
-#~ msgstr "Skrivbord"
-#~ msgid "Personal preferences and administration settings"
-#~ msgstr "Personliga inställningar och administrationsinställningar"
-#~ msgid "Programming"
-#~ msgstr "Programmering"
-#~ msgid "Tools for software development"
-#~ msgstr "Verktyg för programutveckling"
-#~ msgid "Education"
-#~ msgstr "Utbildning"
-#~ msgid "Games"
-#~ msgstr "Spel"
-#~ msgid "Games and amusements"
-#~ msgstr "Spel och underhållning"
-#~ msgid "Graphics"
-#~ msgstr "Grafik"
-#~ msgid "Graphics applications"
-#~ msgstr "Grafikprogram"
-#~ msgid "Internet"
-#~ msgstr "Internet"
-#~ msgid "Programs for Internet access such as web and email"
-#~ msgstr "Program för Internetåtkomst som till exempel webben och e-post"
-#~ msgid "Multimedia menu"
-#~ msgstr "Multimediameny"
-#~ msgid "Sound & Video"
-#~ msgstr "Ljud och video"
-#~ msgid "Office"
-#~ msgstr "Kontor"
-#~ msgid "Office Applications"
-#~ msgstr "Kontorsprogram"
-#~ msgid "Applications that did not fit in other categories"
-#~ msgstr "Program som inte passade in i någon annan kategori"
-#~ msgid "Other"
-#~ msgstr "Annat"
-#~ msgid "Personal preferences"
-#~ msgstr "Personliga inställningar"
-#~ msgid "Preferences"
-#~ msgstr "Inställningar"
-#~ msgid "Accessibility related preferences"
-#~ msgstr "Tillgänglighetsrelaterade inställningar"
-#~ msgid "Personal preferences and settings"
-#~ msgstr "Personliga inställningar"
-#~ msgid "Administration"
-#~ msgstr "Administration"
-#~ msgid "Change systemwide settings (affects all users)"
-#~ msgstr "Ändra globala systeminställningar (påverkar alla användare)"
-#~ msgid "System Tools"
-#~ msgstr "Systemverktyg"
-#~ msgid "System configuration and monitoring"
-#~ msgstr "Systemkonfiguration och systemövervakning"
-#~ msgid "Edit Menus"
-#~ msgstr "Redigera menyer"
-#~ msgid "_Applications:"
-#~ msgstr "_Program"
-#~ msgid "_Defaults"
-#~ msgstr "_Standardalternativ"
-#~ msgid ""
-#~ "Cannot find home directory: not set in /etc/passwd and no value for $HOME "
-#~ "in environment"
-#~ msgstr ""
-#~ "Kan inte hitta hemkatalogen: inte angiven i /etc/passwd och inget värde "
-#~ "på $HOME i miljön"
-#~ msgid "Menu file"
-#~ msgstr "Menyfil"
-#~ msgid "MENU_FILE"
-#~ msgstr "MENYFIL"
-#~ msgid "Monitor for menu changes"
-#~ msgstr "Övervaka menyändringar"
-#~ msgid "Include <Exclude>d entries"
-#~ msgstr "Inkludera exkluderade poster"
-#~ msgid "Include NoDisplay=true entries"
-#~ msgstr "Inkludera poster med NoDisplay=true"
-#~ msgid "Invalid desktop file ID"
-#~ msgstr "Ogiltigt id på desktopfil"
-#~ msgid "[Invalid Filename]"
-#~ msgstr "[Ogiltigt filnamn]"
-#~ msgid " <excluded>"
-#~ msgstr " <exkluderad>"
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "\n"
-#~ "==== Menu changed, reloading ====\n"
-#~ "\n"
-#~ "\n"
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "\n"
-#~ "==== Menyn ändrad, läser om ====\n"
-#~ "\n"
-#~ "\n"
-#~ msgid "Menu tree is empty"
-#~ msgstr "Menyträdet är tomt"
-#~ msgid "- test GNOME's implementation of the Desktop Menu Specification"
-#~ msgstr ""
-#~ "- testa GNOMEs implementation av specifikationen för skrivbordsmenyer"
-#~ msgid "Personal Preferences"
-#~ msgstr "Personliga inställningar"
-#~ msgid "Applications:"
-#~ msgstr "Program"
-#~ msgid "Invalid Filename"
-#~ msgstr "Ogiltigt filnamn"
-#~ msgid "<excluded>"
-#~ msgstr "<exkluderad>"
-#~ msgid "excluded"
-#~ msgstr "exkluderad"
-#~ msgid "Excluded"
-#~ msgstr "Exkluderad"
-#~ msgid "==== Menu changed, reloading ===="
-#~ msgstr "==== Menyn ändrad, läser om ===="
-#~ msgid "Menu changed, reloading"
-#~ msgstr "Menyn ändrad, läser om"
-#~ msgid "test GNOME's implementation of the Desktop Menu Specification"
-#~ msgstr "testa GNOMEs implementation av specifikationen för skrivbordsmenyer"
-#~ msgid "Test GNOME's implementation of the Desktop Menu Specification"
-#~ msgstr "Testa GNOMEs implementation av specifikationen för skrivbordsmenyer"
-#~ msgid "System Settings"
-#~ msgstr "Systeminställningar"
-#~ msgid "Desktop Accessories"
-#~ msgstr "Skrivbordstillbehör"
-#~ msgid "System"
-#~ msgstr "System"
-#~ msgid "Software development"
-#~ msgstr "Programutveckling"
-#~ msgid "Software Development"
-#~ msgstr "Programutveckling"
-#~ msgid "Games and Amusements"
-#~ msgstr "Spel och underhållning"
-#~ msgid "Graphics Applications"
-#~ msgstr "Grafikprogram"
-#~ msgid "Multimedia"
-#~ msgstr "Multimedia"
-#~ msgid "Office applications"
-#~ msgstr "Kontorsprogram"
+#: ../data/alacarte.ui.h:5
+msgid "New _Separator"
+msgstr "Ny _avgränsare"
 
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Flytta nedåt"
+
+#: ../data/alacarte.ui.h:7
+msgid "Move Up"
+msgstr "Flytta uppåt"
+
+#: ../data/launcher-editor.ui.h:1
+#| msgid "Menu Properties"
+msgid "Launcher Properties"
+msgstr "Egenskaper för startare"
+
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+msgid "Name:"
+msgstr "Namn:"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Kommando:"
+
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Kommentar:"
+
+#: ../data/launcher-editor.ui.h:5
+#| msgid "Browse..."
+msgid "Browse"
+msgstr "Bläddra"
+
+#: ../data/launcher-editor.ui.h:6
+#| msgid "Run command in a terminal"
+msgid "Launch in Terminal?"
+msgstr "Starta i en terminal?"
+
+#: ../data/directory-editor.ui.h:1
+#| msgid "Menu Properties"
+msgid "Directory Properties"
+msgstr "Katalogegenskaper"

@@ -6,80 +6,117 @@
 #
 # Volkan Güney <guneyvolkan@gmail.com>, 2006.
 # Baris Cicek <baris@teamforce.name.tr>, 2006, 2007.
+# Muhammet Kara <muhammetk@gmail.com>, 2014.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-15 02:17+0400\n"
-"PO-Revision-Date: 2007-03-11 13:52+0200\n"
-"Last-Translator: Volkan Güney <guneyvolkan@gmail.com>\n"
-"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-04-18 14:31+0000\n"
+"PO-Revision-Date: 2014-06-19 15:35+0300\n"
+"Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
+"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=1; plural=0;\n"
-"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:155
 msgid "Name"
 msgstr "Ad"
 
-#: ../Alacarte/MainWindow.py:180
+#: ../Alacarte/MainWindow.py:168
 msgid "Show"
 msgstr "Göster"
 
-#: ../Alacarte/MainWindow.py:188
+#: ../Alacarte/MainWindow.py:176
 msgid "Item"
 msgstr "Öğe"
 
-#: ../data/alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "Ana menüde gösterilecek uygulamaları değiştir"
+#: ../Alacarte/ItemEditor.py:86
+msgid "Choose an icon"
+msgstr "Bir simge seçin"
 
-#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.ui.h:2
+#: ../Alacarte/ItemEditor.py:215
+msgid "Choose a command"
+msgstr "Bir komut seçin"
+
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "Ana Menü"
 
-#: ../data/alacarte.ui.h:1
-msgid "It_ems:"
-msgstr "Öğ_eler:"
+#: ../data/alacarte.desktop.in.in.h:2
+#| msgid "Change which applications are shown on the main menu"
+msgid "Add or remove applications from the main menu"
+msgstr "Ana menüye uygulama ekleyin ya da kaldırın"
 
-#: ../data/alacarte.ui.h:3
-msgid "Move Down"
-msgstr "Aşağı Taşı"
-
-#: ../data/alacarte.ui.h:4
-msgid "Move Up"
-msgstr "Yukarı Taşı"
-
-#: ../data/alacarte.ui.h:5
-msgid "Ne_w Item"
-msgstr "_Yeni Öğe"
-
-#: ../data/alacarte.ui.h:6
-msgid "New _Separator"
-msgstr "_Yeni Ayıraç"
-
-#: ../data/alacarte.ui.h:7
+#: ../data/alacarte.ui.h:2
 msgid "Restore the default menu layout"
 msgstr "Öntanımlı menü düzenini geri yükle"
 
-#: ../data/alacarte.ui.h:8
-msgid "Revert Changes?"
-msgstr "Değişiklikler Geri Alınsın mı?"
-
-#: ../data/alacarte.ui.h:9
-msgid "Revert all menus to original settings?"
-msgstr "Bütün menüler ilk ayarlara döndürsün mü?"
-
-#: ../data/alacarte.ui.h:10
-msgid "_Menus:"
-msgstr "_Menüler:"
-
-#: ../data/alacarte.ui.h:11
+#: ../data/alacarte.ui.h:3
 msgid "_New Menu"
 msgstr "_Yeni Menü"
 
-#: ../data/alacarte.ui.h:12
-msgid "_Revert to Original"
-msgstr "Özgün Haline _Döndür"
+#: ../data/alacarte.ui.h:4
+msgid "Ne_w Item"
+msgstr "_Yeni Öğe"
+
+#: ../data/alacarte.ui.h:5
+msgid "New _Separator"
+msgstr "_Yeni Ayıraç"
+
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Aşağı Taşı"
+
+#: ../data/alacarte.ui.h:7
+msgid "Move Up"
+msgstr "Yukarı Taşı"
+
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Başlatıcı Özellikleri"
+
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+#| msgid "Name"
+msgid "Name:"
+msgstr "Ad:"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Komut:"
+
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Yorum:"
+
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Gözat"
+
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "Uçbirimde Çalıştırılsın mı?"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Dizin Özellikleri"
+
+#~ msgid "It_ems:"
+#~ msgstr "Öğ_eler:"
+
+#~ msgid "Revert Changes?"
+#~ msgstr "Değişiklikler Geri Alınsın mı?"
+
+#~ msgid "Revert all menus to original settings?"
+#~ msgstr "Bütün menüler ilk ayarlara döndürsün mü?"
+
+#~ msgid "_Menus:"
+#~ msgstr "_Menüler:"
+
+#~ msgid "_Revert to Original"
+#~ msgstr "Özgün Haline _Döndür"

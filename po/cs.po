@@ -51,7 +51,7 @@ msgstr "Hlavní nabídka"
 
 #: ../data/alacarte.desktop.in.in.h:2
 msgid "Add or remove applications from the main menu"
-msgstr "Přidat aplikace do nebo odebrat z hlavní nabídky"
+msgstr "Přidat nebo odebrat aplikace v hlavní nabídce"
 
 #: ../data/alacarte.ui.h:2
 msgid "Restore the default menu layout"

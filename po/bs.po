@@ -1,0 +1,100 @@
+# Bosnian translation for bosnianuniversetranslation
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the bosnianuniversetranslation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bosnianuniversetranslation\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=alacarte&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-02-27 03:33+0000\n"
+"PO-Revision-Date: 2015-02-05 00:35+0000\n"
+"Last-Translator: Samir Ribić <Unknown>\n"
+"Language-Team: Bosnian <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-02-05 06:46+0000\n"
+"X-Generator: Launchpad (build 17331)\n"
+
+#: ../Alacarte/MainWindow.py:155
+msgid "Name"
+msgstr "Ime"
+
+#: ../Alacarte/MainWindow.py:168
+msgid "Show"
+msgstr "Prikaži"
+
+#: ../Alacarte/MainWindow.py:176
+msgid "Item"
+msgstr "Predmet"
+
+#: ../Alacarte/ItemEditor.py:86
+msgid "Choose an icon"
+msgstr "Izaberite ikonicu"
+
+#: ../Alacarte/ItemEditor.py:215
+msgid "Choose a command"
+msgstr "Izaberite naredbu"
+
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
+msgid "Main Menu"
+msgstr "Glavni meni"
+
+#: ../data/alacarte.desktop.in.in.h:2
+msgid "Add or remove applications from the main menu"
+msgstr "Dodaj ili obriši programe sa glavnog menija"
+
+#: ../data/alacarte.ui.h:2
+msgid "Restore the default menu layout"
+msgstr "Povrati podrazumijevani raspored menija"
+
+#: ../data/alacarte.ui.h:3
+msgid "_New Menu"
+msgstr "_Novi meni"
+
+#: ../data/alacarte.ui.h:4
+msgid "Ne_w Item"
+msgstr "Nova _stavka"
+
+#: ../data/alacarte.ui.h:5
+msgid "New _Separator"
+msgstr "Novi _separator"
+
+#: ../data/alacarte.ui.h:6
+msgid "Move Down"
+msgstr "Pomjeri dolje"
+
+#: ../data/alacarte.ui.h:7
+msgid "Move Up"
+msgstr "Pomjeri gore"
+
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Postavke pokretača"
+
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+msgid "Name:"
+msgstr "Ime:"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Naredba:"
+
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Komentar:"
+
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Potraži"
+
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "Pokrenuti u terminalu?"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Osobine direktorijuma"

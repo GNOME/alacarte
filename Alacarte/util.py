@@ -24,6 +24,13 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, GdkPixbuf, GMenu, GLib
 
+# Python 2/3 compatibility
+try:
+    basestring
+except NameError:
+    # Must be python3
+    basestring = (str, bytes)
+
 DESKTOP_GROUP = GLib.KEY_FILE_DESKTOP_GROUP
 KEY_FILE_FLAGS = GLib.KeyFileFlags.KEEP_COMMENTS | GLib.KeyFileFlags.KEEP_TRANSLATIONS
 

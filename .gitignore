@@ -19,6 +19,7 @@ config.rpath
 config.sub
 config
 configure
+compile
 depcomp
 gnome-doc-utils.make
 help/*/*.mo
@@ -40,6 +41,7 @@ po/Makevars.template
 po/POTFILES
 po/Rules-quot
 po/stamp-it
+man/alacarte.1
 stamp-h1
 *~
 \#*\#

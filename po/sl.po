@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the alacarte package.
 #
 # Matic Žgur <mr.zgur@gmail.com>, 2006–2007.
-# Matej Urbančič <mateju@svn.gnome.org>, 2010–2017.
+# Matej Urbančič <mateju@svn.gnome.org>, + 2010–2017.
 #
 msgid ""
 msgstr ""
@@ -11,16 +11,18 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=alacarte&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2013-01-13 10:51+0000\n"
-"PO-Revision-Date: 2017-07-28 14:09+0200\n"
+"PO-Revision-Date: 2017-10-15 20:55+0200\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
-"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language-Team: Slovenian GNOME Translation Team <gnome-"
+"si@googlegroups.com>\n"
 "Language: sl_SI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n"
+"%100==3 || n%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.0.4\n"
 
 #: ../Alacarte/MainWindow.py:160
 msgid "Name"
@@ -96,7 +98,7 @@ msgstr "Prebrskaj"
 
 #: ../data/launcher-editor.ui.h:6
 msgid "Launch in Terminal?"
-msgstr "Ali ali želite program  zagnati v terminalu?"
+msgstr "Ali želite program zagnati v terminalskem oknu?"
 
 #: ../data/directory-editor.ui.h:1
 msgid "Directory Properties"

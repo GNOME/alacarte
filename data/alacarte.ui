@@ -70,7 +70,7 @@
             </child>
             <child>
               <object class="GtkButton" id="restore_button">
-                <property name="label">Restore System Configuration</property>
+                <property name="label" translatable="yes">Restore System Configuration</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>

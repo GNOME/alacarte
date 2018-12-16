@@ -9,7 +9,7 @@
   <download-page rdf:resource="http://download.gnome.org/sources/alacarte/" />
   <bug-database rdf:resource="https://gitlab.gnome.org/GNOME/alacarte/issues/" />
 
-  <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" />
+  <!-- <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" /> -->
 
   <maintainer>
     <foaf:Person>

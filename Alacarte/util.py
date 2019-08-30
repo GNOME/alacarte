@@ -34,7 +34,7 @@ def fillKeyFile(keyfile, items):
 
         if isinstance(item, bool):
             keyfile.set_boolean(DESKTOP_GROUP, key, item)
-        elif isinstance(item, basestring):
+        elif isinstance(item, str):
             keyfile.set_string(DESKTOP_GROUP, key, item)
         elif isinstance(item, Sequence):
             keyfile.set_string_list(DESKTOP_GROUP, key, item)

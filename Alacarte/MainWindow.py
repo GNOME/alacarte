@@ -22,7 +22,7 @@ gi.require_version('GMenu', '3.0')
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, GdkPixbuf, Gdk, GMenu
 import sys
-import cgi
+import html
 import os
 import gettext
 import shutil
@@ -205,7 +205,7 @@ class MainWindow(object):
 
     def loadMenu(self, iters, parent=None):
         for menu, show in self.editor.getMenus(parent):
-            name = cgi.escape(menu.get_name())
+            name = html.escape(menu.get_name(), quote=False)
 
             icon = util.getIcon(menu)
             iters[menu] = self.menu_store.append(iters[parent], (icon, name, menu))
@@ -224,7 +224,7 @@ class MainWindow(object):
             else:
                 assert False, 'should not be reached'
 
-            name = cgi.escape(name)
+            name = html.escape(name, quote=False)
 
             self.item_store.append((show, icon, name, item))
 

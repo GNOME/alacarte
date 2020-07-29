@@ -16,11 +16,12 @@
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
+import cairo
 import gettext
 import os
 import gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import GLib, GObject, Gtk
+from gi.repository import GLib, GObject, Gtk, Gdk, GdkPixbuf
 from Alacarte import config, util
 
 _ = gettext.gettext
@@ -66,9 +67,26 @@ def strip_extensions(icon):
     else:
         return icon
 
+def set_icon_file(image, file_name):
+    scale = image.get_scale_factor()
+    size = 64 * scale
+
+    pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(file_name, size, size)
+    surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, size, size)
+
+    context = cairo.Context(surface)
+    Gdk.cairo_set_source_pixbuf(context,
+                                pixbuf,
+                                (size - pixbuf.get_width()) / 2,
+                                (size - pixbuf.get_height()) / 2)
+    context.paint()
+
+    surface.set_device_scale(scale, scale)
+    image.props.surface = surface
+
 def set_icon_string(image, icon):
     if GLib.path_is_absolute(icon):
-        image.props.file = icon
+        set_icon_file(image, icon)
     else:
         image.props.icon_name = strip_extensions(icon)
 
@@ -89,7 +107,7 @@ class IconPicker(object):
                                         Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
         response = chooser.run()
         if response == Gtk.ResponseType.ACCEPT:
-            self.image.props.file = chooser.get_filename()
+            set_icon_file(self.image, chooser.get_filename())
         chooser.destroy()
 
 class ItemEditor(GObject.GObject):

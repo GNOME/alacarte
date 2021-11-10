@@ -18,7 +18,7 @@
 
 import os
 import xml.dom.minidom
-from collections import Sequence
+from collections.abc import Sequence
 
 import gi
 gi.require_version('Gtk', '3.0')

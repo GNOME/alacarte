@@ -199,6 +199,7 @@
                   <object class="GtkEntry" id="comment-entry">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="hexpand">True</property>
                     <property name="invisible_char">●</property>
                   </object>
                   <packing>

@@ -1,4 +1,16 @@
 ==============
+Version 3.42.0
+==============
+
+Changes:
+        * Fix icon size in launcher properties window (#4)
+        * Resize input field with launcher dialog (#5)
+        * Support Python 3.10+ (!6)
+
+Translation updates:
+        * Hungarian
+
+==============
 Version 3.36.0
 ==============
 

@@ -196,6 +196,7 @@ class LauncherEditor(ItemEditor):
 
         self.builder.get_object('name-entry').connect('changed', self.resync_validity)
         self.builder.get_object('exec-entry').connect('changed', self.resync_validity)
+        self.dialog.connect('focus-in-event', self.resync_validity)
 
     def exec_line_is_valid(self, exec_text):
         try:

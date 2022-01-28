@@ -16,9 +16,11 @@
 #   License along with this library; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
+from urllib import response
 import cairo
 import gettext
 import os
+import stat
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import GLib, GObject, Gtk, Gdk, GdkPixbuf
@@ -236,8 +238,50 @@ class LauncherEditor(ItemEditor):
                                         Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
         response = chooser.run()
         if response == Gtk.ResponseType.ACCEPT:
-            self.builder.get_object('exec-entry').set_text(chooser.get_filename())
+            file_name = chooser.get_filename()
+            self.check_propose_make_executable(file_name)
+            self.builder.get_object('exec-entry').set_text(file_name)
         chooser.destroy()
+
+    def check_propose_make_executable(self, filename):
+        if filename[0] != '/':
+            return
+        is_executable = os.access(filename, os.X_OK)
+        if is_executable:
+            return
+        dialog = Gtk.MessageDialog(
+            title=_("Executable"),
+            text=_("The file does appear to not be executable. Should I attempt to make it executable?"),
+            parent=self.dialog,
+            buttons=(_("No"), 0, _("Yes, executable only for me"), 1, _("Yes, executable for everyone"), 2)
+        )
+        response = dialog.run()
+        dialog.destroy()
+
+        if response == 0:
+            return
+            
+        permissions = os.stat(filename).st_mode
+
+        permissions |= stat.S_IXUSR
+
+        if response == 2:
+            permissions |= stat.S_IXGRP
+            permissions |= stat.S_IXOTH
+
+        try:
+            os.chmod(filename, permissions)
+        except:
+            dialog = Gtk.MessageDialog(
+                title=_("Error"),
+                text=_("There was an error making the file executable."),
+                parent=self.dialog,
+                buttons=(Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
+            )
+            dialog.run()
+            dialog.destroy()
+        
+
 
 class DirectoryEditor(ItemEditor):
     ui_file = 'directory-editor.ui'

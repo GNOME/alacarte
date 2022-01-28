@@ -267,6 +267,7 @@ class MainWindow(object):
 
         editor = LauncherEditor(self.main_window, file_path)
         editor.file_name = file_name;
+        editor.can_change_file_name = True
         editor.parent = parent.get_menu_id()
         editor.connect('response', self.on_item_created)
         editor.run()
@@ -324,6 +325,7 @@ class MainWindow(object):
             copied = True
 
         editor = Editor(self.main_window, file_path)
+        editor.can_change_file_name = False
         editor.connect('response', self.on_editor_response, file_path if copied else None)
         editor.run()
 

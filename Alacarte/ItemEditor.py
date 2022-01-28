@@ -129,6 +129,7 @@ class ItemEditor(GObject.GObject):
         self.build_ui()
 
         self.item_path = item_path
+        self.can_change_file_name = False
         self.load()
         self.resync_validity()
 
@@ -209,6 +210,8 @@ class LauncherEditor(ItemEditor):
             return False
 
     def set_file_name(self, *args):
+        if not self.can_change_file_name:
+            return
         name_text = self.builder.get_object('name-entry').get_text()
         name_text = name_text.lower()
         name_text = ''.join([c if c in 'abcdefghijklmnopqrstuvwxyz0123456789 ' else '' for c in name_text])

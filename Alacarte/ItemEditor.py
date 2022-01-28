@@ -195,6 +195,7 @@ class LauncherEditor(ItemEditor):
         self.builder.get_object('exec-browse').connect('clicked', self.pick_exec)
 
         self.builder.get_object('name-entry').connect('changed', self.resync_validity)
+        self.builder.get_object('name-entry').connect('changed', self.set_file_name)
         self.builder.get_object('exec-entry').connect('changed', self.resync_validity)
 
     def exec_line_is_valid(self, exec_text):
@@ -206,6 +207,14 @@ class LauncherEditor(ItemEditor):
             return (GLib.find_program_in_path(command) is not None)
         except GLib.GError:
             return False
+
+    def set_file_name(self, *args):
+        name_text = self.builder.get_object('name-entry').get_text()
+        name_text = name_text.lower()
+        name_text = ''.join([c if c in 'abcdefghijklmnopqrstuvwxyz0123456789 ' else '' for c in name_text])
+        name_text = ''.join(['-' if c == ' ' else c for c in name_text])
+        self.file_name = util.getUniqueFileId(f'alacarte-made-{name_text}', '.desktop')
+        self.item_path = os.path.join(util.getUserItemPath(), self.file_name)
 
     def resync_validity(self, *args):
         name_text = self.builder.get_object('name-entry').get_text()

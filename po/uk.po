@@ -1,81 +1,122 @@
 # Ukrainian translation of alacarte.
 # Copyright (C) 2006 Free Software Foundation
 # This file is distributed under the same license as the PACKAGE package.
-# Maxim Dziumanenko <dziumanenko@gmail.com>, 2006-2007.
 #
+# Maxim Dziumanenko <dziumanenko@gmail.com>, 2006-2007.
+# Yuri Chornoivan <yurchor@ukr.net>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-19 13:00+0200\n"
-"PO-Revision-Date: 2007-02-19 13:56+0200\n"
-"Last-Translator: Maxim Dziumanenko <dziumanenko@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
+"POT-Creation-Date: 2022-03-17 11:11+0000\n"
+"PO-Revision-Date: 2022-03-18 09:52+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 20.12.0\n"
 
-#: ../Alacarte/MainWindow.py:167
+#: ../Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "Назва"
 
-#: ../Alacarte/MainWindow.py:183
+#: ../Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "Показати"
 
-#: ../Alacarte/MainWindow.py:191
+#: ../Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "Елемент"
 
-#: ../alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "Вибір програм, що відображаються у головному меню"
+#: ../Alacarte/ItemEditor.py:104
+msgid "Choose an icon"
+msgstr "Виберіть піктограму"
 
-#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+#: ../Alacarte/ItemEditor.py:233
+msgid "Choose a command"
+msgstr "Виберіть команду"
+
+#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
 msgid "Main Menu"
 msgstr "головне меню"
 
-#: ../alacarte.glade.h:1
-msgid "It_ems:"
-msgstr "_Елементи:"
+#: ../data/alacarte.desktop.in.in.h:2
+#| msgid "Change which applications are shown on the main menu"
+msgid "Add or remove applications from the main menu"
+msgstr "Додавання програм до головного меню або вилучення їх з нього"
 
-#: ../alacarte.glade.h:3
-msgid "Move Down"
-msgstr "Перемістити вниз"
+#: ../data/alacarte.ui.h:2
+msgid "Restore System Configuration"
+msgstr "Відновити налаштування системи"
 
-#: ../alacarte.glade.h:4
-msgid "Move Up"
-msgstr "Перемістити вгору"
-
-#: ../alacarte.glade.h:5
-msgid "Ne_w Item"
-msgstr "С_творити елемент"
-
-#: ../alacarte.glade.h:6
-msgid "New _Separator"
-msgstr "Створити _розділювач"
-
-#: ../alacarte.glade.h:7
+#: ../data/alacarte.ui.h:3
 msgid "Restore the default menu layout"
 msgstr "Відновити початковий вигляд меню"
 
-#: ../alacarte.glade.h:8
-msgid "Revert Changes?"
-msgstr "Повернути зміни?"
-
-#: ../alacarte.glade.h:9
-msgid "Revert all menus to original settings?"
-msgstr "Повернути усі меню до початкового стану? "
-
-#: ../alacarte.glade.h:10
-msgid "_Menus:"
-msgstr "_Меню:"
-
-#: ../alacarte.glade.h:11
+#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "_Створити меню"
 
-#: ../alacarte.glade.h:12
-msgid "_Revert to Original"
-msgstr "_Повернути до початкового стану"
+#: ../data/alacarte.ui.h:5
+msgid "Ne_w Item"
+msgstr "С_творити елемент"
 
+#: ../data/alacarte.ui.h:6
+msgid "New _Separator"
+msgstr "Створити _розділювач"
+
+#: ../data/alacarte.ui.h:7
+msgid "Move Down"
+msgstr "Перемістити вниз"
+
+#: ../data/alacarte.ui.h:8
+msgid "Move Up"
+msgstr "Перемістити вгору"
+
+#: ../data/launcher-editor.ui.h:1
+msgid "Launcher Properties"
+msgstr "Властивості кнопки запуску"
+
+#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+#| msgid "Name"
+msgid "Name:"
+msgstr "Назва:"
+
+#: ../data/launcher-editor.ui.h:3
+msgid "Command:"
+msgstr "Команда:"
+
+#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+msgid "Comment:"
+msgstr "Коментар:"
+
+#: ../data/launcher-editor.ui.h:5
+msgid "Browse"
+msgstr "Вибрати"
+
+#: ../data/launcher-editor.ui.h:6
+msgid "Launch in Terminal?"
+msgstr "Запустити у Терміналі?"
+
+#: ../data/directory-editor.ui.h:1
+msgid "Directory Properties"
+msgstr "Властивості каталогу"
+
+#~ msgid "It_ems:"
+#~ msgstr "_Елементи:"
+
+#~ msgid "Revert Changes?"
+#~ msgstr "Повернути зміни?"
+
+#~ msgid "Revert all menus to original settings?"
+#~ msgstr "Повернути усі меню до початкового стану? "
+
+#~ msgid "_Menus:"
+#~ msgstr "_Меню:"
+
+#~ msgid "_Revert to Original"
+#~ msgstr "_Повернути до початкового стану"

@@ -7,15 +7,14 @@
 #
 # Lukas Novotny <lukasnov@cvs.gnome.org>, 2006.
 # Jakub Friedl <jfriedl@suse.cz>, 2007, 2012.
-# Marek Černocký <marek@manet.cz>, 2013.
+# Marek Černocký <marek@manet.cz>, 2013, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-11 06:39+0000\n"
-"PO-Revision-Date: 2013-01-22 09:22+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
+"POT-Creation-Date: 2022-03-17 11:11+0000\n"
+"PO-Revision-Date: 2022-03-18 15:15+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -25,23 +24,23 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.6\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ../Alacarte/MainWindow.py:159
+#: ../Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "Název"
 
-#: ../Alacarte/MainWindow.py:172
+#: ../Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "Zobrazit"
 
-#: ../Alacarte/MainWindow.py:180
+#: ../Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "Položka"
 
-#: ../Alacarte/ItemEditor.py:85
+#: ../Alacarte/ItemEditor.py:104
 msgid "Choose an icon"
 msgstr "Vybírání ikony"
 
-#: ../Alacarte/ItemEditor.py:198
+#: ../Alacarte/ItemEditor.py:233
 msgid "Choose a command"
 msgstr "Vybírání příkazu"
 
@@ -54,26 +53,30 @@ msgid "Add or remove applications from the main menu"
 msgstr "Přidat nebo odebrat aplikace v hlavní nabídce"
 
 #: ../data/alacarte.ui.h:2
+msgid "Restore System Configuration"
+msgstr "Obnovit systémové nastavení"
+
+#: ../data/alacarte.ui.h:3
 msgid "Restore the default menu layout"
 msgstr "Obnovit výchozí uspořádání nabídky"
 
-#: ../data/alacarte.ui.h:3
+#: ../data/alacarte.ui.h:4
 msgid "_New Menu"
 msgstr "_Nová nabídka"
 
-#: ../data/alacarte.ui.h:4
+#: ../data/alacarte.ui.h:5
 msgid "Ne_w Item"
 msgstr "No_vá položka"
 
-#: ../data/alacarte.ui.h:5
+#: ../data/alacarte.ui.h:6
 msgid "New _Separator"
 msgstr "Nový _oddělovač"
 
-#: ../data/alacarte.ui.h:6
+#: ../data/alacarte.ui.h:7
 msgid "Move Down"
 msgstr "Přesunout níž"
 
-#: ../data/alacarte.ui.h:7
+#: ../data/alacarte.ui.h:8
 msgid "Move Up"
 msgstr "Přesunout výš"
 

@@ -54,8 +54,8 @@ def try_icon_name(filename):
     # strip extension
     return icon_name[:-4]
 
-def get_icon_string(image):
-    filename = image.props.file
+def get_icon_string(editor, image):
+    filename = editor.icon_file
     if filename is not None:
         return try_icon_name(filename)
 
@@ -67,7 +67,9 @@ def strip_extensions(icon):
     else:
         return icon
 
-def set_icon_file(image, file_name):
+def set_icon_file(editor, image, file_name):
+    editor.icon_file = file_name
+
     scale = image.get_scale_factor()
     size = 64 * scale
 
@@ -84,9 +86,9 @@ def set_icon_file(image, file_name):
     surface.set_device_scale(scale, scale)
     image.props.surface = surface
 
-def set_icon_string(image, icon):
+def set_icon_string(editor, image, icon):
     if GLib.path_is_absolute(icon):
-        set_icon_file(image, icon)
+        set_icon_file(editor, image, icon)
     else:
         image.props.icon_name = strip_extensions(icon)
 
@@ -94,7 +96,8 @@ DESKTOP_GROUP = GLib.KEY_FILE_DESKTOP_GROUP
 
 # XXX - replace with a better UI eventually
 class IconPicker(object):
-    def __init__(self, dialog, button, image):
+    def __init__(self, editor, dialog, button, image):
+        self.editor = editor
         self.dialog = dialog
         self.button = button
         self.button.connect('clicked', self.pick_icon)
@@ -107,7 +110,7 @@ class IconPicker(object):
                                         Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
         response = chooser.run()
         if response == Gtk.ResponseType.ACCEPT:
-            set_icon_file(self.image, chooser.get_filename())
+            set_icon_file(self.editor, self.image, chooser.get_filename())
         chooser.destroy()
 
 class ItemEditor(GObject.GObject):
@@ -160,7 +163,7 @@ class ItemEditor(GObject.GObject):
         except GLib.GError:
             pass
         else:
-            set_icon_string(self.builder.get_object(ctl), val)
+            set_icon_string(self, self.builder.get_object(ctl), val)
 
     def load(self):
         self.keyfile = GLib.KeyFile()
@@ -188,7 +191,8 @@ class LauncherEditor(ItemEditor):
     ui_file = 'launcher-editor.ui'
 
     def build_ui(self):
-        self.icon_picker = IconPicker(self.dialog,
+        self.icon_picker = IconPicker(self,
+                                      self.dialog,
                                       self.builder.get_object('icon-button'),
                                       self.builder.get_object('icon-image'))
 
@@ -226,7 +230,7 @@ class LauncherEditor(ItemEditor):
                     Exec=self.builder.get_object('exec-entry').get_text(),
                     Comment=self.builder.get_object('comment-entry').get_text(),
                     Terminal=self.builder.get_object('terminal-check').get_active(),
-                    Icon=get_icon_string(self.builder.get_object('icon-image')),
+                    Icon=get_icon_string(self, self.builder.get_object('icon-image')),
                     Type="Application")
 
     def pick_exec(self, button):
@@ -243,7 +247,8 @@ class DirectoryEditor(ItemEditor):
     ui_file = 'directory-editor.ui'
 
     def build_ui(self):
-        self.icon_picker = IconPicker(self.dialog,
+        self.icon_picker = IconPicker(self,
+                                      self.dialog,
                                       self.builder.get_object('icon-button'),
                                       self.builder.get_object('icon-image'))
 
@@ -263,7 +268,7 @@ class DirectoryEditor(ItemEditor):
     def get_keyfile_edits(self):
         return dict(Name=self.builder.get_object('name-entry').get_text(),
                     Comment=self.builder.get_object('comment-entry').get_text(),
-                    Icon=get_icon_string(self.builder.get_object('icon-image')),
+                    Icon=get_icon_string(self, self.builder.get_object('icon-image')),
                     Type="Directory")
 
 def test_editor(path):

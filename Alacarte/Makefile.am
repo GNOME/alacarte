@@ -22,3 +22,4 @@ EXTRA_DIST = config.py.in
 
 all-local: config.py
 
+-include $(top_srcdir)/git.mk

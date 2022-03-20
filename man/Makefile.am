@@ -16,3 +16,5 @@ xml_files = ${patsubst %.1,%.xml,${patsubst %.7,%.xml,$(man_MANS)}}
 EXTRA_DIST = $(xml_files)
 
 CLEANFILES = $(man_MANS)
+
+-include $(top_srcdir)/git.mk

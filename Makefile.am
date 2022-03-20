@@ -1,5 +1,7 @@
 ## Process this file with automake to produce Makefile.in
 
+NULL =
+
 SUBDIRS = data po Alacarte
 
 if BUILD_DOCUMENTATION
@@ -24,6 +26,19 @@ EXTRA_DIST = \
 	MAINTAINERS \
 	ChangeLog.pre-git
 
+MAINTAINERCLEANFILES = \
+	$(GITIGNORE_MAINTAINERCLEANFILES_TOPLEVEL) \
+	$(GITIGNORE_MAINTAINERCLEANFILES_MAKEFILE_IN) \
+	$(GITIGNORE_MAINTAINERCLEANFILES_M4_LIBTOOL) \
+	$(GITIGNORE_MAINTAINERCLEANFILES_M4_GETTEXT) \
+	$(srcdir)/ABOUT-NLS \
+	$(srcdir)/INSTALL \
+	$(srcdir)/config.h.in~ \
+	$(srcdir)/configure \
+	$(srcdir)/po/.intltool-merge-cache.lock \
+	$(srcdir)/py-compile \
+	$(NULL)
+
 ChangeLog:
 	@echo Creating $@
 	@if test -d "$(srcdir)/.git"; then \
@@ -39,4 +54,5 @@ ChangeLog:
 	fi
 
 .PHONY: ChangeLog
-	
+
+-include $(top_srcdir)/git.mk

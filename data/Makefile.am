@@ -1,6 +1,8 @@
 SUBDIRS = icons
 
-@INTLTOOL_DESKTOP_RULE@
+%.desktop: %.desktop.in
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -o $@-t \
+		-d $(top_srcdir)/po && mv $@-t $@
 
 desktopdir = $(datadir)/applications
 desktop_in_files = alacarte.desktop.in

@@ -36,6 +36,7 @@ MAINTAINERCLEANFILES = \
 	$(srcdir)/INSTALL \
 	$(srcdir)/config.h.in~ \
 	$(srcdir)/configure \
+	$(srcdir)/build-aux/py-compile \
 	$(srcdir)/po/Makefile.in.in \
 	$(srcdir)/po/Makevars.template \
 	$(srcdir)/po/Rules-quot \
@@ -47,7 +48,6 @@ MAINTAINERCLEANFILES = \
 	$(srcdir)/po/quot.sed \
 	$(srcdir)/po/remove-potcdate.sin \
 	$(srcdir)/po/stamp-po \
-	$(srcdir)/py-compile \
 	$(NULL)
 
 ChangeLog:

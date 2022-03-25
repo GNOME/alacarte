@@ -3,85 +3,83 @@
 # This file is distributed under the same license as the Alacarte package.
 # Niels Abspoel <niels.abspoel@wanadoo.nl>, 2005.
 # Tino Meinen <a.t.meinen@chello.nl>, 2006, 2007.
+# Nathan Follens <nfollens@gnome.org>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Alacarte VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-12 04:30+0000\n"
-"PO-Revision-Date: 2007-02-24 00:13+0100\n"
-"Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
-"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
+"POT-Creation-Date: 2022-03-21 12:06+0000\n"
+"PO-Revision-Date: 2022-03-25 21:10+0100\n"
+"Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
+"Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
 
-#: ../Alacarte/MainWindow.py:167
+#: ../Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "Naam"
 
-#: ../Alacarte/MainWindow.py:183
+#: ../Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "Tonen"
 
-#: ../Alacarte/MainWindow.py:191
+#: ../Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "Item"
 
+#: ../Alacarte/ItemEditor.py:107
+msgid "Choose an icon"
+msgstr "Kies een pictogram"
+
+#: ../Alacarte/ItemEditor.py:238
+msgid "Choose a command"
+msgstr "Kies een opdracht"
+
 # instellen/wijzigen
-#: ../alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "Instellen welke toepassingen in het hoofdmenu getoond worden"
+#~ msgid "Change which applications are shown on the main menu"
+#~ msgstr "Instellen welke toepassingen in het hoofdmenu getoond worden"
 
-#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
-msgid "Main Menu"
-msgstr "Hoofdmenu"
+#~ msgid "Main Menu"
+#~ msgstr "Hoofdmenu"
 
-#: ../alacarte.glade.h:1
-msgid "It_ems:"
-msgstr "It_ems:"
+#~ msgid "It_ems:"
+#~ msgstr "It_ems:"
 
-#: ../alacarte.glade.h:3
-msgid "Move Down"
-msgstr "Naar beneden"
+#~ msgid "Move Down"
+#~ msgstr "Naar beneden"
 
-#: ../alacarte.glade.h:4
-msgid "Move Up"
-msgstr "Naar boven"
+#~ msgid "Move Up"
+#~ msgstr "Naar boven"
 
-#: ../alacarte.glade.h:5
-msgid "Ne_w Item"
-msgstr "_Nieuw item"
+#~ msgid "Ne_w Item"
+#~ msgstr "_Nieuw item"
 
-#: ../alacarte.glade.h:6
-msgid "New _Separator"
-msgstr "Nieuw _scheidingsteken"
+#~ msgid "New _Separator"
+#~ msgstr "Nieuw _scheidingsteken"
 
-#: ../alacarte.glade.h:7
-msgid "Restore the default menu layout"
-msgstr "De standaard menu-indeling herstellen"
+#~ msgid "Restore the default menu layout"
+#~ msgstr "De standaard menu-indeling herstellen"
 
 # wijzigingen/wijzigen
-#: ../alacarte.glade.h:8
-msgid "Revert Changes?"
-msgstr "Wijzigen ongedaan maken?"
+#~ msgid "Revert Changes?"
+#~ msgstr "Wijzigen ongedaan maken?"
 
-#: ../alacarte.glade.h:9
-msgid "Revert all menus to original settings?"
-msgstr "Alle oorspronkelijke menu-instellingen terugzetten?"
+#~ msgid "Revert all menus to original settings?"
+#~ msgstr "Alle oorspronkelijke menu-instellingen terugzetten?"
 
-#: ../alacarte.glade.h:10
-msgid "_Menus:"
-msgstr "_Menus:"
+#~ msgid "_Menus:"
+#~ msgstr "_Menus:"
 
 # waarom de _m en niet de _n hier? (tino)
-#: ../alacarte.glade.h:11
-msgid "_New Menu"
-msgstr "Nieuw _menu"
+#~ msgid "_New Menu"
+#~ msgstr "Nieuw _menu"
 
-#: ../alacarte.glade.h:12
-msgid "_Revert to Original"
-msgstr "_Terugzetten"
+#~ msgid "_Revert to Original"
+#~ msgstr "_Terugzetten"
 
 # vereisen/moeten hebben
 #~ msgid "New menu items need a name"
@@ -93,9 +91,6 @@ msgstr "_Terugzetten"
 
 #~ msgid "Choose a Program"
 #~ msgstr "Kies een programma"
-
-#~ msgid "Choose an Icon"
-#~ msgstr "Kies een pictogram"
 
 # krijg je te zien als je geen naam invult voor een nieuw menu-item
 # (zou volgens HIG niet mogen verschijnen, als er niets is ingevuld
@@ -169,9 +164,7 @@ msgstr "_Terugzetten"
 #~ msgstr "Zichtbaar"
 
 #~ msgid "Simple freedesktop.org Compliant Menu Editor"
-#~ msgstr ""
-#~ "Eenvoudig programma om menu's te bewerken volgens de freedesktop.org "
-#~ "standaard"
+#~ msgstr "Eenvoudig programma om menu's te bewerken volgens de freedesktop.org standaard"
 
 #~ msgid "Entry Editor"
 #~ msgstr "Menu-item editor"

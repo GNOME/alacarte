@@ -114,6 +114,7 @@ class IconPicker(object):
         chooser.destroy()
 
 class ItemEditor(GObject.GObject):
+    icon_file = None
     ui_file = None
 
     __gsignals__ = {

@@ -1,7 +1,7 @@
 dnl -*- Mode: autoconf -*-
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.53)
-AC_INIT(alacarte, 3.44.1, http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte)
+AC_INIT(alacarte, 3.44.2, https://gitlab.gnome.org/GNOME/alacarte/-/issues)
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 AC_CONFIG_SRCDIR(alacarte.in)
 AC_CONFIG_HEADERS([config.h])
@@ -18,7 +18,7 @@ GETTEXT_PACKAGE=alacarte
 AC_SUBST([GETTEXT_PACKAGE])
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [Gettext package])
 
-AM_PATH_PYTHON(3.3)
+AM_PATH_PYTHON(3.7)
 
 PKG_CHECK_MODULES(ALACARTE, libgnome-menu-3.0 >= 3.5.3 pygobject-3.0)
 

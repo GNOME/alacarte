@@ -59,7 +59,7 @@ msgstr "Odaberi naredbu"
 #~ msgstr "No_va stavka"
 
 #~ msgid "New _Separator"
-#~ msgstr "Nova _razdjelnik"
+#~ msgstr "Novi _razdjelnik"
 
 #~ msgid "Restore the default menu layout"
 #~ msgstr "Vrati zadani raspored izbornika"

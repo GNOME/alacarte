@@ -55,9 +55,8 @@ def try_icon_name(filename):
     return icon_name[:-4]
 
 def get_icon_string(editor, image):
-    filename = editor.icon_file
-    if filename is not None:
-        return try_icon_name(filename)
+    if hasattr(editor, "icon_file"):
+        return try_icon_name(editor.icon_file)
 
     return image.props.icon_name
 

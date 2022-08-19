@@ -41,13 +41,13 @@ msgid "Choose a command"
 msgstr "Odaberi naredbu"
 
 #~ msgid "Change which applications are shown on the main menu"
-#~ msgstr "Izmjenite popis programa na ovom izborniku"
+#~ msgstr "Promjenite prikaz aplikacija u glavnom izborniku"
 
 #~ msgid "Main Menu"
 #~ msgstr "Glavni izbornik"
 
 #~ msgid "It_ems:"
-#~ msgstr "_Stavke:"
+#~ msgstr "St_avke:"
 
 #~ msgid "Move Down"
 #~ msgstr "Pomakni dolje"
@@ -56,19 +56,19 @@ msgstr "Odaberi naredbu"
 #~ msgstr "Pomakni gore"
 
 #~ msgid "Ne_w Item"
-#~ msgstr "Nova _stavka"
+#~ msgstr "No_va stavka"
 
 #~ msgid "New _Separator"
-#~ msgstr "Nova _razmaknica"
+#~ msgstr "Nova _razdjelnik"
 
 #~ msgid "Restore the default menu layout"
-#~ msgstr "Vrati na uobičajeni raspored izbornika"
+#~ msgstr "Vrati zadani raspored izbornika"
 
 #~ msgid "Revert Changes?"
-#~ msgstr "Vratiti promjene?"
+#~ msgstr "Vrati promjene?"
 
 #~ msgid "Revert all menus to original settings?"
-#~ msgstr "Vratiti sve izbornike na originalne postavke?"
+#~ msgstr "Vrati sve izbornike na izvorne postavke?"
 
 #~ msgid "_Menus:"
 #~ msgstr "_Izbornici:"
@@ -77,4 +77,4 @@ msgstr "Odaberi naredbu"
 #~ msgstr "_Novi izbornik"
 
 #~ msgid "_Revert to Original"
-#~ msgstr "Vrati na originalno"
+#~ msgstr "_Vrati na izvorno"

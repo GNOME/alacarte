@@ -8,83 +8,76 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte HEAD\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-04-03 00:31+0000\n"
-"PO-Revision-Date: 2011-04-22 23:51+0330\n"
-"Last-Translator: Arash Mousavi <mousavi.arash@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
+"POT-Creation-Date: 2022-07-13 14:59+0000\n"
+"PO-Revision-Date: 2022-08-16 17:30+0430\n"
+"Last-Translator: MohammadSaleh Kamyab <mskf1383@envs.net>\n"
 "Language-Team: Persian <translate@ifsug.org>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Persian\n"
-"X-Poedit-Country: IRAN, ISLAMIC REPUBLIC OF\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 3.1\n"
 
-#: ../Alacarte/MainWindow.py:164
+#: ../Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "نام"
 
-#: ../Alacarte/MainWindow.py:180
+#: ../Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "نمایش"
 
-#: ../Alacarte/MainWindow.py:188
+#: ../Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "مورد"
 
-#: ../data/alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "تغییر اینکه کدام یک از برنامه‌ها در منوی اصلی نمایش داده شوند"
+#: ../Alacarte/ItemEditor.py:107
+msgid "Choose an icon"
+msgstr "انتخاب یک نقشک"
 
-#: ../data/alacarte.desktop.in.in.h:2
-#: ../data/alacarte.ui.h:2
-msgid "Main Menu"
-msgstr "منوی اصلی"
+#: ../Alacarte/ItemEditor.py:239
+msgid "Choose a command"
+msgstr "انتخاب یک دستور"
 
-#: ../data/alacarte.ui.h:1
-msgid "It_ems:"
-msgstr "_موارد:"
+#~ msgid "Change which applications are shown on the main menu"
+#~ msgstr "تغییر اینکه کدام یک از برنامه‌ها در منوی اصلی نمایش داده شوند"
 
-#: ../data/alacarte.ui.h:3
-msgid "Move Down"
-msgstr "جابه‌جایی به پایین"
+#~ msgid "Main Menu"
+#~ msgstr "منوی اصلی"
 
-#: ../data/alacarte.ui.h:4
-msgid "Move Up"
-msgstr "جابه‌جایی به بالا"
+#~ msgid "It_ems:"
+#~ msgstr "_موارد:"
 
-#: ../data/alacarte.ui.h:5
-msgid "Ne_w Item"
-msgstr "مورد _جدید"
+#~ msgid "Move Down"
+#~ msgstr "جابه‌جایی به پایین"
 
-#: ../data/alacarte.ui.h:6
-msgid "New _Separator"
-msgstr "ج_داساز جدید"
+#~ msgid "Move Up"
+#~ msgstr "جابه‌جایی به بالا"
 
-#: ../data/alacarte.ui.h:7
-msgid "Restore the default menu layout"
-msgstr "برگرداندن چیدمان پیش‌فرض منو"
+#~ msgid "Ne_w Item"
+#~ msgstr "مورد _جدید"
 
-#: ../data/alacarte.ui.h:8
-msgid "Revert Changes?"
-msgstr "تغییرات بازگشت داده شود؟"
+#~ msgid "New _Separator"
+#~ msgstr "ج_داساز جدید"
 
-#: ../data/alacarte.ui.h:9
-msgid "Revert all menus to original settings?"
-msgstr "تنظیمات همه‌ی منوها به حالت اصلی بازگشت داده شود؟"
+#~ msgid "Restore the default menu layout"
+#~ msgstr "برگرداندن چیدمان پیش‌فرض منو"
 
-#: ../data/alacarte.ui.h:10
-msgid "_Menus:"
-msgstr "_منوها:"
+#~ msgid "Revert Changes?"
+#~ msgstr "تغییرات بازگشت داده شود؟"
 
-#: ../data/alacarte.ui.h:11
-msgid "_New Menu"
-msgstr "منوی _جدید"
+#~ msgid "Revert all menus to original settings?"
+#~ msgstr "تنظیمات همه‌ی منوها به حالت اصلی بازگشت داده شود؟"
 
-#: ../data/alacarte.ui.h:12
-msgid "_Revert to Original"
-msgstr "_بازگشت به حالت اصلی"
+#~ msgid "_Menus:"
+#~ msgstr "_منوها:"
+
+#~ msgid "_New Menu"
+#~ msgstr "منوی _جدید"
+
+#~ msgid "_Revert to Original"
+#~ msgstr "_بازگشت به حالت اصلی"
 
 #~ msgid "A name is required."
 #~ msgstr "دادن نام ضروری است."

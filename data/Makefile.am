@@ -12,7 +12,10 @@ pkgdata_DATA = alacarte.ui launcher-editor.ui directory-editor.ui
 
 CLEANFILES = $(desktop_DATA)
 
-EXTRA_DIST = $(pkgdata_DATA)
+EXTRA_DIST = \
+	$(desktop_in_files) \
+	$(pkgdata_DATA) \
+	$(NULL)
 
 install-data-hook: $(UPDATE_DESKTOP)
 

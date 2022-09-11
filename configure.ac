@@ -38,7 +38,6 @@ AC_CONFIG_FILES([
         Makefile
         po/Makefile.in
         Alacarte/Makefile
-        data/alacarte.desktop.in
 	data/Makefile
 	data/icons/Makefile
 	man/Makefile

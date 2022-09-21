@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-07-13 14:59+0000\n"
-"PO-Revision-Date: 2022-08-20 00:12+0200\n"
+"POT-Creation-Date: 2022-09-20 07:13+0000\n"
+"PO-Revision-Date: 2022-09-21 13:47+0200\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
@@ -20,49 +20,92 @@ msgstr ""
 "X-Launchpad-Export-Date: 2008-05-28 03:05+0000\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: ../Alacarte/MainWindow.py:156
+#: Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "Naziv"
 
-#: ../Alacarte/MainWindow.py:169
+#: Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "Prikaži"
 
-#: ../Alacarte/MainWindow.py:177
+#: Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "Stavka"
 
-#: ../Alacarte/ItemEditor.py:107
+#: Alacarte/ItemEditor.py:107
 msgid "Choose an icon"
 msgstr "Odaberi ikonu"
 
-#: ../Alacarte/ItemEditor.py:239
+#: Alacarte/ItemEditor.py:239
 msgid "Choose a command"
 msgstr "Odaberi naredbu"
 
-#~ msgid "Change which applications are shown on the main menu"
-#~ msgstr "Promjenite prikaz aplikacija u glavnom izborniku"
+#: data/alacarte.desktop.in.in:3 data/alacarte.ui:38
+msgid "Main Menu"
+msgstr "Glavni izbornik"
 
-#~ msgid "Main Menu"
-#~ msgstr "Glavni izbornik"
+#: data/alacarte.desktop.in.in:4
+msgid "Add or remove applications from the main menu"
+msgstr "Dodaj ili ukloni aplikaciju iz glavnog izbornika"
+
+#: data/alacarte.ui:73
+msgid "Restore System Configuration"
+msgstr "Vrati podešavanja sustava"
+
+#: data/alacarte.ui:78
+msgid "Restore the default menu layout"
+msgstr "Vrati zadani raspored izbornika"
+
+#: data/alacarte.ui:166
+msgid "_New Menu"
+msgstr "_Novi izbornik"
+
+#: data/alacarte.ui:183
+msgid "Ne_w Item"
+msgstr "No_va stavka"
+
+#: data/alacarte.ui:200
+msgid "New _Separator"
+msgstr "Novi _razdjelnik"
+
+#: data/alacarte.ui:246
+msgid "Move Down"
+msgstr "Pomakni dolje"
+
+#: data/alacarte.ui:262
+msgid "Move Up"
+msgstr "Pomakni gore"
+
+#: data/launcher-editor.ui:7
+msgid "Launcher Properties"
+msgstr "Osobitosti pokretača"
+
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
+msgid "Name:"
+msgstr "Naziv:"
+
+#: data/launcher-editor.ui:117
+msgid "Command:"
+msgstr "Naredba:"
+
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
+msgid "Comment:"
+msgstr "Komentar:"
+
+#: data/launcher-editor.ui:179
+msgid "Browse"
+msgstr "Pregledaj"
+
+#: data/launcher-editor.ui:214
+msgid "Launch in Terminal?"
+msgstr "Pokreni u terminalu?"
+
+#: data/directory-editor.ui:7
+msgid "Directory Properties"
+msgstr "Svojstva direktorija"
 
 #~ msgid "It_ems:"
 #~ msgstr "St_avke:"
-
-#~ msgid "Move Down"
-#~ msgstr "Pomakni dolje"
-
-#~ msgid "Move Up"
-#~ msgstr "Pomakni gore"
-
-#~ msgid "Ne_w Item"
-#~ msgstr "No_va stavka"
-
-#~ msgid "New _Separator"
-#~ msgstr "Novi _razdjelnik"
-
-#~ msgid "Restore the default menu layout"
-#~ msgstr "Vrati zadani raspored izbornika"
 
 #~ msgid "Revert Changes?"
 #~ msgstr "Vrati promjene?"
@@ -72,9 +115,6 @@ msgstr "Odaberi naredbu"
 
 #~ msgid "_Menus:"
 #~ msgstr "_Izbornici:"
-
-#~ msgid "_New Menu"
-#~ msgstr "_Novi izbornik"
 
 #~ msgid "_Revert to Original"
 #~ msgstr "_Vrati na izvorno"

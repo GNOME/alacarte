@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-06-26 13:39+0000\n"
-"PO-Revision-Date: 2022-07-13 16:58+0200\n"
+"POT-Creation-Date: 2022-09-20 07:13+0000\n"
+"PO-Revision-Date: 2022-10-24 23:31+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <(nothing)>\n"
 "Language: ka\n"
@@ -16,24 +16,88 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
-#: ../Alacarte/MainWindow.py:156
+#: Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "სახელი"
 
-#: ../Alacarte/MainWindow.py:169
+#: Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "ჩვენება"
 
-#: ../Alacarte/MainWindow.py:177
+#: Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "ელემენტი"
 
-#: ../Alacarte/ItemEditor.py:107
+#: Alacarte/ItemEditor.py:107
 msgid "Choose an icon"
 msgstr "აირჩიეთ ხატულა"
 
-#: ../Alacarte/ItemEditor.py:239
+#: Alacarte/ItemEditor.py:239
 msgid "Choose a command"
 msgstr "ბრძანების არჩევა"
+
+#: data/alacarte.desktop.in.in:3 data/alacarte.ui:38
+msgid "Main Menu"
+msgstr "მთავარი მენიუ"
+
+#: data/alacarte.desktop.in.in:4
+msgid "Add or remove applications from the main menu"
+msgstr ""
+
+#: data/alacarte.ui:73
+msgid "Restore System Configuration"
+msgstr ""
+
+#: data/alacarte.ui:78
+msgid "Restore the default menu layout"
+msgstr ""
+
+#: data/alacarte.ui:166
+msgid "_New Menu"
+msgstr "_ახალი მენიუ"
+
+#: data/alacarte.ui:183
+msgid "Ne_w Item"
+msgstr "_ახალი ჩანაწერი"
+
+#: data/alacarte.ui:200
+msgid "New _Separator"
+msgstr "ახალი _გამყოფი"
+
+#: data/alacarte.ui:246
+msgid "Move Down"
+msgstr "ჩამოწევა"
+
+#: data/alacarte.ui:262
+msgid "Move Up"
+msgstr "აწევა"
+
+#: data/launcher-editor.ui:7
+msgid "Launcher Properties"
+msgstr "გამშვების ფუნქციები"
+
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
+msgid "Name:"
+msgstr "სახელი:"
+
+#: data/launcher-editor.ui:117
+msgid "Command:"
+msgstr "ბრძანება:"
+
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
+msgid "Comment:"
+msgstr "კომენტარი:"
+
+#: data/launcher-editor.ui:179
+msgid "Browse"
+msgstr "არჩევა"
+
+#: data/launcher-editor.ui:214
+msgid "Launch in Terminal?"
+msgstr ""
+
+#: data/directory-editor.ui:7
+msgid "Directory Properties"
+msgstr "საქაღალდის თვისებები"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-09-20 07:13+0000\n"
-"PO-Revision-Date: 2022-10-24 23:31+0200\n"
+"POT-Creation-Date: 2022-10-24 21:32+0000\n"
+"PO-Revision-Date: 2022-11-26 09:11+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <(nothing)>\n"
 "Language: ka\n"
@@ -44,15 +44,15 @@ msgstr "მთავარი მენიუ"
 
 #: data/alacarte.desktop.in.in:4
 msgid "Add or remove applications from the main menu"
-msgstr ""
+msgstr "წაშალეთ და დაამატეთ აპლიკაციები მთავარი მენიუდან"
 
 #: data/alacarte.ui:73
 msgid "Restore System Configuration"
-msgstr ""
+msgstr "სისტემის კონფიგურაციის აღდგენა"
 
 #: data/alacarte.ui:78
 msgid "Restore the default menu layout"
-msgstr ""
+msgstr "მენიუს ნაგულისხმები განლაგების აღდგენა"
 
 #: data/alacarte.ui:166
 msgid "_New Menu"
@@ -96,7 +96,7 @@ msgstr "არჩევა"
 
 #: data/launcher-editor.ui:214
 msgid "Launch in Terminal?"
-msgstr ""
+msgstr "გავუშვა ტერმინალში?"
 
 #: data/directory-editor.ui:7
 msgid "Directory Properties"

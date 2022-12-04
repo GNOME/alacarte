@@ -8,60 +8,102 @@
 msgid ""
 msgstr "Project-Id-Version: alacarte.HEAD\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-03-21 12:06+0000\n"
-"PO-Revision-Date: 2022-03-26 10:00+0100\n"
+"POT-Creation-Date: 2022-09-20 07:13+0000\n"
+"PO-Revision-Date: 2022-12-04 10:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../Alacarte/MainWindow.py:156
+#: Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "Izena"
 
-#: ../Alacarte/MainWindow.py:169
+#: Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "Erakutsi"
 
-#: ../Alacarte/MainWindow.py:177
+#: Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "Elementua"
 
-#: ../Alacarte/ItemEditor.py:107
+#: Alacarte/ItemEditor.py:107
 msgid "Choose an icon"
 msgstr "Aukeratu ikono bat"
 
-#: ../Alacarte/ItemEditor.py:238
+#: Alacarte/ItemEditor.py:239
 msgid "Choose a command"
 msgstr "Aukeratu komando bat"
 
-#~ msgid "Change which applications are shown on the main menu"
-#~ msgstr "Aldatu zein aplikazio erakutsiko diren menu nagusian"
+#: data/alacarte.desktop.in.in:3 data/alacarte.ui:38
+msgid "Main Menu"
+msgstr "Menu nagusia"
 
-#~ msgid "Main Menu"
-#~ msgstr "Menu nagusia"
+#: data/alacarte.desktop.in.in:4
+msgid "Add or remove applications from the main menu"
+msgstr "Gehitu edo kendu aplikazioak menu nagusitik"
+
+#: data/alacarte.ui:73
+msgid "Restore System Configuration"
+msgstr "Leheneratu sistemaren konfigurazioa"
+
+#: data/alacarte.ui:78
+msgid "Restore the default menu layout"
+msgstr "Berrezarri menuaren diseinu lehenetsia"
+
+#: data/alacarte.ui:166
+msgid "_New Menu"
+msgstr "Menu _berria"
+
+#: data/alacarte.ui:183
+msgid "Ne_w Item"
+msgstr "_Elementu berria"
+
+#: data/alacarte.ui:200
+msgid "New _Separator"
+msgstr "_Bereizle berria"
+
+#: data/alacarte.ui:246
+msgid "Move Down"
+msgstr "Eraman behera"
+
+#: data/alacarte.ui:262
+msgid "Move Up"
+msgstr "Eraman gora"
+
+#: data/launcher-editor.ui:7
+msgid "Launcher Properties"
+msgstr "Abiarazlearen propietateak"
+
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
+msgid "Name:"
+msgstr "Izena:"
+
+#: data/launcher-editor.ui:117
+msgid "Command:"
+msgstr "Komandoa:"
+
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
+msgid "Comment:"
+msgstr "Iruzkina:"
+
+#: data/launcher-editor.ui:179
+msgid "Browse"
+msgstr "Arakatu"
+
+#: data/launcher-editor.ui:214
+msgid "Launch in Terminal?"
+msgstr "Abiarazi terminalean"
+
+#: data/directory-editor.ui:7
+msgid "Directory Properties"
+msgstr "Direktorioaren propietateak"
 
 #~ msgid "It_ems:"
 #~ msgstr "_Elementuak:"
-
-#~ msgid "Move Down"
-#~ msgstr "Eraman behera"
-
-#~ msgid "Move Up"
-#~ msgstr "Eraman gora"
-
-#~ msgid "Ne_w Item"
-#~ msgstr "_Elementu berria"
-
-#~ msgid "New _Separator"
-#~ msgstr "_Bereizle berria"
-
-#~ msgid "Restore the default menu layout"
-#~ msgstr "Berrezarri menuaren diseinu lehenetsia"
 
 #~ msgid "Revert Changes?"
 #~ msgstr "Leheneratu aldaketak?"
@@ -71,9 +113,6 @@ msgstr "Aukeratu komando bat"
 
 #~ msgid "_Menus:"
 #~ msgstr "_Menuak:"
-
-#~ msgid "_New Menu"
-#~ msgstr "Menu _berria"
 
 #~ msgid "_Revert to Original"
 #~ msgstr "_Leheneratu jatorrizkora"

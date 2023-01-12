@@ -3,94 +3,98 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte.master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-11 06:39+0000\n"
-"PO-Revision-Date: 2011-07-24 22:07+0300\n"
-"Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
+"POT-Creation-Date: 2022-12-28 19:11+0000\n"
+"PO-Revision-Date: 2023-01-12 13:24+0300\n"
+"Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.2.2\n"
 
-#: ../Alacarte/MainWindow.py:159
+#: Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "Назва"
 
-#: ../Alacarte/MainWindow.py:172
+#: Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "Паказаць"
 
-#: ../Alacarte/MainWindow.py:180
+#: Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "Элемент"
 
-#: ../Alacarte/ItemEditor.py:85
+#: Alacarte/ItemEditor.py:107
 msgid "Choose an icon"
 msgstr "Выберыце значок"
 
-#: ../Alacarte/ItemEditor.py:198
+#: Alacarte/ItemEditor.py:239
 msgid "Choose a command"
 msgstr "Выберыце загад"
 
-#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
+#: data/alacarte.desktop.in.in:3 data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Галоўнае меню"
 
-#: ../data/alacarte.desktop.in.in.h:2
+#: data/alacarte.desktop.in.in:4
 msgid "Add or remove applications from the main menu"
 msgstr "Рэдагаванне галоўнага меню праграм"
 
-#: ../data/alacarte.ui.h:2
+#: data/alacarte.ui:73
+msgid "Restore System Configuration"
+msgstr "Аднавіць налады сістэмы"
+
+#: data/alacarte.ui:78
 msgid "Restore the default menu layout"
 msgstr "Аднавіць прадвызначаны склад меню"
 
-#: ../data/alacarte.ui.h:3
+#: data/alacarte.ui:166
 msgid "_New Menu"
 msgstr "_Новае меню"
 
-#: ../data/alacarte.ui.h:4
+#: data/alacarte.ui:183
 msgid "Ne_w Item"
 msgstr "_Новы элемент"
 
-#: ../data/alacarte.ui.h:5
+#: data/alacarte.ui:200
 msgid "New _Separator"
-msgstr "Новы _падзяляльнік"
+msgstr "Новы _раздзяляльнік"
 
-#: ../data/alacarte.ui.h:6
+#: data/alacarte.ui:246
 msgid "Move Down"
 msgstr "Пасунуць ніжэй"
 
-#: ../data/alacarte.ui.h:7
+#: data/alacarte.ui:262
 msgid "Move Up"
 msgstr "Пасунуць вышэй"
 
-#: ../data/launcher-editor.ui.h:1
+#: data/launcher-editor.ui:7
 msgid "Launcher Properties"
 msgstr "Уласцівасці стартара"
 
-#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
 msgid "Name:"
 msgstr "Назва:"
 
-#: ../data/launcher-editor.ui.h:3
+#: data/launcher-editor.ui:117
 msgid "Command:"
 msgstr "Загад:"
 
-#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
 msgid "Comment:"
 msgstr "Каментарый:"
 
-#: ../data/launcher-editor.ui.h:5
+#: data/launcher-editor.ui:179
 msgid "Browse"
-msgstr "Аглядзець"
+msgstr "Агляд"
 
-#: ../data/launcher-editor.ui.h:6
+#: data/launcher-editor.ui:214
 msgid "Launch in Terminal?"
 msgstr "Запускаць у тэрмінале?"
 
-#: ../data/directory-editor.ui.h:1
+#: data/directory-editor.ui:7
 msgid "Directory Properties"
 msgstr "Уласцівасці каталога"
-

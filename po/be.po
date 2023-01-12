@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: alacarte.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
 "POT-Creation-Date: 2022-12-28 19:11+0000\n"
-"PO-Revision-Date: 2023-01-12 13:24+0300\n"
+"PO-Revision-Date: 2023-01-12 15:42+0300\n"
 "Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
@@ -33,7 +33,7 @@ msgstr "Выберыце значок"
 
 #: Alacarte/ItemEditor.py:239
 msgid "Choose a command"
-msgstr "Выберыце загад"
+msgstr "Выберыце каманду"
 
 #: data/alacarte.desktop.in.in:3 data/alacarte.ui:38
 msgid "Main Menu"
@@ -41,11 +41,11 @@ msgstr "Галоўнае меню"
 
 #: data/alacarte.desktop.in.in:4
 msgid "Add or remove applications from the main menu"
-msgstr "Рэдагаванне галоўнага меню праграм"
+msgstr "Дадаванне або выдаленне праграм з галоўнага меню"
 
 #: data/alacarte.ui:73
 msgid "Restore System Configuration"
-msgstr "Аднавіць налады сістэмы"
+msgstr "Аднавіць сістэмныя налады"
 
 #: data/alacarte.ui:78
 msgid "Restore the default menu layout"
@@ -57,7 +57,7 @@ msgstr "_Новае меню"
 
 #: data/alacarte.ui:183
 msgid "Ne_w Item"
-msgstr "_Новы элемент"
+msgstr "Новы _элемент"
 
 #: data/alacarte.ui:200
 msgid "New _Separator"
@@ -81,7 +81,7 @@ msgstr "Назва:"
 
 #: data/launcher-editor.ui:117
 msgid "Command:"
-msgstr "Загад:"
+msgstr "Каманда:"
 
 #: data/launcher-editor.ui:134 data/directory-editor.ui:117
 msgid "Comment:"

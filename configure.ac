@@ -7,7 +7,7 @@ AC_CONFIG_SRCDIR(alacarte.in)
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_AUX_DIR([build-aux])
-AM_INIT_AUTOMAKE([1.7 no-dist-gzip dist-xz])
+AM_INIT_AUTOMAKE([1.14 no-dist-gzip dist-xz tar-ustar -Wno-portability])
 AM_MAINTAINER_MODE
 
 AM_GNU_GETTEXT([external])

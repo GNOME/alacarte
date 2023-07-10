@@ -1,0 +1,27 @@
+stages:
+  - build
+
+.install-ubuntu-dependencies: &install-ubuntu-dependencies
+  apt-get install -q -y --no-install-recommends
+                  autoconf
+                  automake
+                  autopoint
+                  build-essential
+                  docbook-xsl
+                  gettext
+                  libgnome-menu-3-dev
+                  python-gi-dev
+                  xsltproc
+
+ubuntu:
+  image: ubuntu:devel
+  stage: build
+  except:
+    - tags
+  before_script:
+    - apt-get update
+    - *install-ubuntu-dependencies
+  script:
+    - ./autogen.sh
+    - make
+    - make distcheck

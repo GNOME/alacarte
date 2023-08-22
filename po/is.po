@@ -1,0 +1,103 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ingirafn <ingirafn@this.is>, 2023.
+# Sveinn í Felli <sv1@fellsnet.is>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
+"POT-Creation-Date: 2023-08-20 13:25+0000\n"
+"PO-Revision-Date: 2023-08-22 08:54+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic\n"
+"Language: is_IS\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: Alacarte/MainWindow.py:156
+msgid "Name"
+msgstr "Nafn"
+
+#: Alacarte/MainWindow.py:169
+msgid "Show"
+msgstr "Birta"
+
+#: Alacarte/MainWindow.py:177
+msgid "Item"
+msgstr "Atriði"
+
+#: Alacarte/ItemEditor.py:107
+msgid "Choose an icon"
+msgstr "Veldu táknmynd"
+
+#: Alacarte/ItemEditor.py:239
+msgid "Choose a command"
+msgstr "Veldu skipun"
+
+#: data/alacarte.desktop.in:3 data/alacarte.ui:38
+msgid "Main Menu"
+msgstr "Aðalvalmynd"
+
+#: data/alacarte.desktop.in:4
+msgid "Add or remove applications from the main menu"
+msgstr "Bæta við eða fjarlægja forrit úr aðalvalmynd"
+
+#: data/alacarte.ui:73
+msgid "Restore System Configuration"
+msgstr "Endurheimta kerfisuppsetningu"
+
+#: data/alacarte.ui:78
+msgid "Restore the default menu layout"
+msgstr "Endurheimta sjálfgefna framsetningu valmyndar"
+
+#: data/alacarte.ui:166
+msgid "_New Menu"
+msgstr "_Ný valmynd"
+
+#: data/alacarte.ui:183
+msgid "Ne_w Item"
+msgstr "Nýr hlutur"
+
+#: data/alacarte.ui:200
+msgid "New _Separator"
+msgstr "Nýr _aðgreinir"
+
+#: data/alacarte.ui:246
+msgid "Move Down"
+msgstr "Færa niður"
+
+#: data/alacarte.ui:262
+msgid "Move Up"
+msgstr "Færa upp"
+
+#: data/launcher-editor.ui:7
+msgid "Launcher Properties"
+msgstr "Eiginleikar ræsis"
+
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
+msgid "Name:"
+msgstr "Heiti:"
+
+#: data/launcher-editor.ui:117
+msgid "Command:"
+msgstr "Skipun:"
+
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
+msgid "Comment:"
+msgstr "Athugasemd:"
+
+#: data/launcher-editor.ui:179
+msgid "Browse"
+msgstr "Skoða"
+
+#: data/launcher-editor.ui:214
+msgid "Launch in Terminal?"
+msgstr "Opna í skjáhermi?"
+
+#: data/directory-editor.ui:7
+msgid "Directory Properties"
+msgstr "Eiginleikar möppu"

@@ -1,7 +1,7 @@
 dnl -*- Mode: autoconf -*-
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.53)
-AC_INIT(alacarte, 3.44.3, https://gitlab.gnome.org/GNOME/alacarte/-/issues)
+AC_INIT(alacarte, 3.50.0, https://gitlab.gnome.org/GNOME/alacarte/-/issues)
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 AC_CONFIG_SRCDIR(alacarte.in)
 AC_CONFIG_HEADERS([config.h])

@@ -108,6 +108,12 @@ class IconPicker(object):
                                         parent=self.dialog,
                                         buttons=(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
                                         Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+
+        filter = Gtk.FileFilter()
+        filter.set_name(_("Images"));
+        filter.add_mime_type("image/*")
+        chooser.add_filter(filter)
+
         response = chooser.run()
         if response == Gtk.ResponseType.ACCEPT:
             set_icon_file(self.editor, self.image, chooser.get_filename())

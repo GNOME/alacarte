@@ -8,161 +8,100 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-13 10:51+0000\n"
-"PO-Revision-Date: 2017-10-15 20:55+0200\n"
-"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
-"Language-Team: Slovenian GNOME Translation Team <gnome-"
-"si@googlegroups.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
+"POT-Creation-Date: 2022-12-28 19:11+0000\n"
+"PO-Revision-Date: 2024-04-08 16:46+0200\n"
+"Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
+"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n"
-"%100==3 || n%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.2.1\n"
 
-#: ../Alacarte/MainWindow.py:160
+#: Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "Ime"
 
-#: ../Alacarte/MainWindow.py:173
+#: Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "Pokaži"
 
-#: ../Alacarte/MainWindow.py:181
+#: Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "Predmet"
 
-#: ../Alacarte/ItemEditor.py:87
+#: Alacarte/ItemEditor.py:107
 msgid "Choose an icon"
 msgstr "Izbor ikone"
 
-#: ../Alacarte/ItemEditor.py:200
+#: Alacarte/ItemEditor.py:239
 msgid "Choose a command"
 msgstr "Izbor ukaza"
 
-#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
+#: data/alacarte.desktop.in.in:3 data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Glavni meni"
 
-#: ../data/alacarte.desktop.in.in.h:2
+#: data/alacarte.desktop.in.in:4
 msgid "Add or remove applications from the main menu"
 msgstr "Dodajanje in odstranjevanje programov v osnovnem meniju"
 
-#: ../data/alacarte.ui.h:2
+#: data/alacarte.ui:73
+msgid "Restore System Configuration"
+msgstr "Obnovi sistemske nastavitve"
+
+#: data/alacarte.ui:78
 msgid "Restore the default menu layout"
 msgstr "Povrni privzeto postavitev menija"
 
-#: ../data/alacarte.ui.h:3
+#: data/alacarte.ui:166
 msgid "_New Menu"
 msgstr "Nov _meni"
 
-#: ../data/alacarte.ui.h:4
+#: data/alacarte.ui:183
 msgid "Ne_w Item"
 msgstr "_Nov predmet"
 
-#: ../data/alacarte.ui.h:5
+#: data/alacarte.ui:200
 msgid "New _Separator"
 msgstr "Nova _ločilna črta"
 
-#: ../data/alacarte.ui.h:6
+#: data/alacarte.ui:246
 msgid "Move Down"
 msgstr "Premakni navzdol"
 
-#: ../data/alacarte.ui.h:7
+#: data/alacarte.ui:262
 msgid "Move Up"
 msgstr "Premakni navzgor"
 
-#: ../data/launcher-editor.ui.h:1
+#: data/launcher-editor.ui:7
 msgid "Launcher Properties"
 msgstr "Lastnosti zaganjalnika"
 
-#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
 msgid "Name:"
 msgstr "Ime:"
 
-#: ../data/launcher-editor.ui.h:3
+#: data/launcher-editor.ui:117
 msgid "Command:"
 msgstr "Ukaz:"
 
-#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
 msgid "Comment:"
 msgstr "Opomba:"
 
-#: ../data/launcher-editor.ui.h:5
+#: data/launcher-editor.ui:179
 msgid "Browse"
 msgstr "Prebrskaj"
 
-#: ../data/launcher-editor.ui.h:6
+#: data/launcher-editor.ui:214
 msgid "Launch in Terminal?"
 msgstr "Ali želite program zagnati v terminalskem oknu?"
 
-#: ../data/directory-editor.ui.h:1
+#: data/directory-editor.ui:7
 msgid "Directory Properties"
 msgstr "Lastnosti imenika"
-
-#~ msgid "Restore System Configuration"
-#~ msgstr "Obnovi sistemske nastavitve"
-
-#~ msgid "_Revert to Original"
-#~ msgstr "_Povrni na prvotne vrednosti"
-
-#~ msgid "_Menus:"
-#~ msgstr "_Meniji:"
-
-#~ msgid "It_ems:"
-#~ msgstr "_Predmeti:"
-
-#~ msgid "Revert Changes?"
-#~ msgstr "Ali želite povrniti spremembe?"
-
-#~ msgid "Revert all menus to original settings?"
-#~ msgstr "Ali želite povrniti vse menije na privzeto določeno obliko?"
-
-#~ msgid "New menu items need a name"
-#~ msgstr "Novi predmeti menija zahtevajo vpis imena"
-
-#~ msgid "New menus need a name"
-#~ msgstr "Novi meniji zahtevajo vpis imena"
-
-#~ msgid "Choose a Program"
-#~ msgstr "Izbor programa"
-
-#~ msgid "A name is required."
-#~ msgstr "Zahtevan je vpis imena."
-
-#~ msgid "A command is required."
-#~ msgstr "Zahtevan je vpis ukaza."
-
-#~ msgid "No Icon"
-#~ msgstr "Brez ikone"
-
-#~ msgid "Menu Editor"
-#~ msgstr "Urejevalnik menijev"
-
-#~ msgid "Alacarte Menu Editor"
-#~ msgstr "Urejevalnik menijev Alacarte"
-
-#~ msgid "Copyright © 2006 Travis Watkins"
-#~ msgstr "Avtorske pravice © 2006 Travis Watkins"
-
-#~ msgid "Icon:"
-#~ msgstr "Ikona:"
-
-#~ msgid "Menu Item Properties"
-#~ msgstr "Lastnosti predmeta menija"
-
-#~ msgid "Menu Layout"
-#~ msgstr "Razporeditev menija"
-
-#~ msgid "Simple fd.o compliant menu editor"
-#~ msgstr "Enostaven s fd.o združljiv urejevalnik menija"
-
-#~ msgid "translator-credits"
-#~ msgstr "Matic Žgur <mr.zgur@gmail.com>"
-
-#~ msgid "Add, change, remove menu entries"
-#~ msgstr "Dodajanje, spreminjanje in odstranjevanje predmetov menija"

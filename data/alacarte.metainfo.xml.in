@@ -1,0 +1,22 @@
+<component type="desktop-application">
+  <id>org.gnome.alacarte</id>
+  <launchable type="desktop-id">alacarte.desktop</launchable>
+  <name>Main Menu</name>
+  <summary>A simple menu editor for the GNOME desktop</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LGPL-2.0-or-later</project_license>
+  <description>
+    <p>Easy-to-use menu editor for the GNOME desktop environment. It allows you to add, remove, and modify the entries in your main menu. With this tool, you can organize your applications and system tools into categories that make sense to you, improving your workflow and productivity.</p>
+    <p>Whether you're looking to tidy up your menu by hiding rarely used items or creating a custom menu layout that suits your needs, it provides a straightforward interface to get the job done.</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://gitlab.gnome.org/GNOME/alacarte/-/raw/master/alacarte.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://gitlab.gnome.org/GNOME/alacarte</url>
+  <url type="bugtracker">https://gitlab.gnome.org/GNOME/alacarte/issues</url>
+  <url type="translate">https://l10n.gnome.org/module/alacarte/</url>
+  <url type="vcs-browser">https://gitlab.gnome.org/GNOME/alacarte</url>
+  <translation type="gettext">alacarte</translation>
+</component>

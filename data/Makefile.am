@@ -8,12 +8,23 @@ desktopdir = $(datadir)/applications
 desktop_in_files = alacarte.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
+%.xml:	%.xml.in
+	$(AM_V_GEN) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
+
+metainfodir = $(datadir)/metainfo
+metainfo_in_files = alacarte.metainfo.xml.in
+metainfo_DATA = $(metainfo_in_files:.xml.in=.xml)
+
 pkgdata_DATA = alacarte.ui launcher-editor.ui directory-editor.ui
 
-CLEANFILES = $(desktop_DATA)
+CLEANFILES = \
+	$(desktop_DATA) \
+	$(metainfo_DATA) \
+	$(NULL)
 
 EXTRA_DIST = \
 	$(desktop_in_files) \
+	$(metainfo_in_files) \
 	$(pkgdata_DATA) \
 	$(NULL)
 

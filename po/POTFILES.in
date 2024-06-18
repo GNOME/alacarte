@@ -2,6 +2,7 @@ Alacarte/MainWindow.py
 Alacarte/MenuEditor.py
 Alacarte/ItemEditor.py
 data/alacarte.desktop.in
+data/alacarte.metainfo.xml.in
 data/alacarte.ui
 data/launcher-editor.ui
 data/directory-editor.ui

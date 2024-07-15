@@ -3,106 +3,137 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Maxim Dziumanenko <dziumanenko@gmail.com>, 2006-2007.
-# Yuri Chornoivan <yurchor@ukr.net>, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2022, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-03-17 11:11+0000\n"
-"PO-Revision-Date: 2022-03-18 09:52+0200\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2024-07-13 12:16+0000\n"
+"PO-Revision-Date: 2024-07-15 09:00+0300\n"
+"Last-Translator: Fracture dept <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
-"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 20.12.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 23.04.3\n"
 
-#: ../Alacarte/MainWindow.py:156
+#: Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "Назва"
 
-#: ../Alacarte/MainWindow.py:169
+#: Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "Показати"
 
-#: ../Alacarte/MainWindow.py:177
+#: Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "Елемент"
 
-#: ../Alacarte/ItemEditor.py:104
+#: Alacarte/ItemEditor.py:107
 msgid "Choose an icon"
 msgstr "Виберіть піктограму"
 
-#: ../Alacarte/ItemEditor.py:233
+#: Alacarte/ItemEditor.py:113
+msgid "Images"
+msgstr "Зображення"
+
+#: Alacarte/ItemEditor.py:245
 msgid "Choose a command"
 msgstr "Виберіть команду"
 
-#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
+#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "головне меню"
 
-#: ../data/alacarte.desktop.in.in.h:2
-#| msgid "Change which applications are shown on the main menu"
+#: data/alacarte.desktop.in:4
 msgid "Add or remove applications from the main menu"
 msgstr "Додавання програм до головного меню або вилучення їх з нього"
 
-#: ../data/alacarte.ui.h:2
+#: data/alacarte.metainfo.xml.in:5
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "Простий редактор меню для стільниці GNOME"
+
+#: data/alacarte.metainfo.xml.in:9
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"Простий у користуванні редактор меню для стільниці GNOME. За його допомогою"
+" ви зможете додавати, вилучати та змінювати пункти у головному меню"
+" середовища. Він надасть вам змогу упорядкувати ваші програми та інструменти"
+" системи за зручними для вас категоріями, що спростить вашу роботу та"
+" підвищить продуктивність."
+
+#: data/alacarte.metainfo.xml.in:10
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"Шукаєте спосіб спростити меню приховуванням пунктів, якими не користуєтеся,"
+" чи хочете створити компонування меню, яке відповідає вашим потребам, у"
+" програмі ви знайдете простий інтерфейс, який надасть вам змогу досягти"
+" вашої мети."
+
+#: data/alacarte.ui:73
 msgid "Restore System Configuration"
 msgstr "Відновити налаштування системи"
 
-#: ../data/alacarte.ui.h:3
+#: data/alacarte.ui:78
 msgid "Restore the default menu layout"
 msgstr "Відновити початковий вигляд меню"
 
-#: ../data/alacarte.ui.h:4
+#: data/alacarte.ui:166
 msgid "_New Menu"
 msgstr "_Створити меню"
 
-#: ../data/alacarte.ui.h:5
+#: data/alacarte.ui:183
 msgid "Ne_w Item"
 msgstr "С_творити елемент"
 
-#: ../data/alacarte.ui.h:6
+#: data/alacarte.ui:200
 msgid "New _Separator"
 msgstr "Створити _розділювач"
 
-#: ../data/alacarte.ui.h:7
+#: data/alacarte.ui:246
 msgid "Move Down"
 msgstr "Перемістити вниз"
 
-#: ../data/alacarte.ui.h:8
+#: data/alacarte.ui:262
 msgid "Move Up"
 msgstr "Перемістити вгору"
 
-#: ../data/launcher-editor.ui.h:1
+#: data/launcher-editor.ui:7
 msgid "Launcher Properties"
 msgstr "Властивості кнопки запуску"
 
-#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
-#| msgid "Name"
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
 msgid "Name:"
 msgstr "Назва:"
 
-#: ../data/launcher-editor.ui.h:3
+#: data/launcher-editor.ui:117
 msgid "Command:"
 msgstr "Команда:"
 
-#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
 msgid "Comment:"
 msgstr "Коментар:"
 
-#: ../data/launcher-editor.ui.h:5
+#: data/launcher-editor.ui:179
 msgid "Browse"
 msgstr "Вибрати"
 
-#: ../data/launcher-editor.ui.h:6
+#: data/launcher-editor.ui:214
 msgid "Launch in Terminal?"
 msgstr "Запустити у Терміналі?"
 
-#: ../data/directory-editor.ui.h:1
+#: data/directory-editor.ui:7
 msgid "Directory Properties"
 msgstr "Властивості каталогу"
 

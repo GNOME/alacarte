@@ -1,104 +1,135 @@
 # Swedish messages for alacarte.
-# Copyright © 2006-2022 Free Software Foundation, Inc.
+# Copyright © 2006-2024 Free Software Foundation, Inc.
 # Christian Rose <menthos@menthos.com>, 2006.
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2009.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2022.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2014, 2022, 2024.
 # Luna Jernberg <droidbittin@gmail.com>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-03-17 11:11+0000\n"
-"PO-Revision-Date: 2022-03-17 16:21+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2024-07-13 12:16+0000\n"
+"PO-Revision-Date: 2024-07-16 12:51+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.4\n"
 
-#: ../Alacarte/MainWindow.py:156
+#: Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "Namn"
 
-#: ../Alacarte/MainWindow.py:169
+#: Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "Visa"
 
-#: ../Alacarte/MainWindow.py:177
+#: Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "Objekt"
 
-#: ../Alacarte/ItemEditor.py:104
+#: Alacarte/ItemEditor.py:107
 msgid "Choose an icon"
 msgstr "Välj en ikon"
 
-#: ../Alacarte/ItemEditor.py:233
+#: Alacarte/ItemEditor.py:113
+msgid "Images"
+msgstr "Bilder"
+
+#: Alacarte/ItemEditor.py:245
 msgid "Choose a command"
 msgstr "Välj ett kommando"
 
-#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
+#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Huvudmeny"
 
-#: ../data/alacarte.desktop.in.in.h:2
+#: data/alacarte.desktop.in:4
 msgid "Add or remove applications from the main menu"
 msgstr "Lägg till eller ta bort program från huvudmenyn"
 
-#: ../data/alacarte.ui.h:2
+#: data/alacarte.metainfo.xml.in:5
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "En enkel menyredigerare för GNOME-skrivbordet"
+
+#: data/alacarte.metainfo.xml.in:9
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"Lättanvänd menyredigerare för skrivbordsmiljön GNOME. Den låter dig lägga "
+"till, ta bort och ändra objekten i din huvudmeny. Med detta verktyg kan du "
+"organisera dina program och systemverktyg i kategorier som är vettiga för "
+"dig, vilket förbättrar ditt arbetsflöde och din produktivitet."
+
+#: data/alacarte.metainfo.xml.in:10
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"Vare sig du vill rensa din meny genom att dölja sällan använda objekt eller "
+"skapa en anpassad menylayout som passar dina behov så tillhandahåller det "
+"ett enkelt gränssnitt för att få jobbet gjort."
+
+#: data/alacarte.ui:73
 msgid "Restore System Configuration"
 msgstr "Återställ systemkonfiguration"
 
-#: ../data/alacarte.ui.h:3
+#: data/alacarte.ui:78
 msgid "Restore the default menu layout"
 msgstr "Återställ standardmenylayouten"
 
-#: ../data/alacarte.ui.h:4
+#: data/alacarte.ui:166
 msgid "_New Menu"
 msgstr "_Ny meny"
 
-#: ../data/alacarte.ui.h:5
+#: data/alacarte.ui:183
 msgid "Ne_w Item"
 msgstr "N_ytt objekt"
 
-#: ../data/alacarte.ui.h:6
+#: data/alacarte.ui:200
 msgid "New _Separator"
 msgstr "Ny _avgränsare"
 
-#: ../data/alacarte.ui.h:7
+#: data/alacarte.ui:246
 msgid "Move Down"
 msgstr "Flytta nedåt"
 
-#: ../data/alacarte.ui.h:8
+#: data/alacarte.ui:262
 msgid "Move Up"
 msgstr "Flytta uppåt"
 
-#: ../data/launcher-editor.ui.h:1
+#: data/launcher-editor.ui:7
 msgid "Launcher Properties"
 msgstr "Egenskaper för startare"
 
-#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
 msgid "Name:"
 msgstr "Namn:"
 
-#: ../data/launcher-editor.ui.h:3
+#: data/launcher-editor.ui:117
 msgid "Command:"
 msgstr "Kommando:"
 
-#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
 msgid "Comment:"
 msgstr "Kommentar:"
 
-#: ../data/launcher-editor.ui.h:5
+#: data/launcher-editor.ui:179
 msgid "Browse"
 msgstr "Bläddra"
 
-#: ../data/launcher-editor.ui.h:6
+#: data/launcher-editor.ui:214
 msgid "Launch in Terminal?"
 msgstr "Starta i en terminal?"
 
-#: ../data/directory-editor.ui.h:1
+#: data/directory-editor.ui:7
 msgid "Directory Properties"
 msgstr "Katalogegenskaper"

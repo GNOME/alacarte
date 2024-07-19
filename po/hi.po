@@ -1,25 +1,24 @@
-# translation of alacarte.master.po to Hindi
-# This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-#
+# Hindi translation for alacarte.
+# Copyright (C) 2024 alacarte's COPYRIGHT HOLDER
+# This file is distributed under the same license as the alacarte package.
 # Rajesh Ranjan <rranjan@redhat.com>, 2006.
 # Rajesh Ranjan <rajesh672@gmail.com>, 2009.
 # Scrambled777 <weblate.scrambled777@simplelogin.com>, 2024.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: alacarte.master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-12-28 19:11+0000\n"
-"PO-Revision-Date: 2024-04-02 22:11+0530\n"
+"Project-Id-Version: alacarte master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2024-07-13 12:16+0000\n"
+"PO-Revision-Date: 2024-07-13 19:46+0530\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
-"Language-Team: Hindi\n"
+"Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 46.0\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Gtranslator 46.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 "\n"
 "\n"
@@ -30,7 +29,7 @@ msgstr "नाम"
 
 #: Alacarte/MainWindow.py:169
 msgid "Show"
-msgstr "दिखाएँ"
+msgstr "दिखाएं"
 
 #: Alacarte/MainWindow.py:177
 msgid "Item"
@@ -40,17 +39,48 @@ msgstr "वस्तु"
 msgid "Choose an icon"
 msgstr "एक आइकन चुनें"
 
-#: Alacarte/ItemEditor.py:239
+#: Alacarte/ItemEditor.py:113
+msgid "Images"
+msgstr "छवियां"
+
+#: Alacarte/ItemEditor.py:245
 msgid "Choose a command"
 msgstr "कोई कमांड चुनें"
 
-#: data/alacarte.desktop.in.in:3 data/alacarte.ui:38
+#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.ui:38
 msgid "Main Menu"
-msgstr "मुख्य मेन्यू"
+msgstr "मुख्य मेनू"
 
-#: data/alacarte.desktop.in.in:4
+#: data/alacarte.desktop.in:4
 msgid "Add or remove applications from the main menu"
 msgstr "मुख्य मेनू से एप्लिकेशन जोड़ें या हटाएं"
+
+#: data/alacarte.metainfo.xml.in:5
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "गनोम डेस्कटॉप के लिए एक सरल मेनू संपादक"
+
+#: data/alacarte.metainfo.xml.in:9
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"गनोम डेस्कटॉप वातावरण के लिए उपयोग में आसान मेनू संपादक। यह आपको अपने मुख्य मेनू में "
+"प्रविष्टियां जोड़ने, हटाने और संशोधित करने की अनुमति देता है। इस टूल के साथ, आप अपने "
+"अनुप्रयोगों और सिस्टम टूल्स को उन श्रेणियों में व्यवस्थित कर सकते हैं जो आपके लिए सार्थक हों, "
+"जिससे आपके कार्यप्रवाह और उत्पादकता में सुधार होगा।"
+
+#: data/alacarte.metainfo.xml.in:10
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"चाहे आप शायद ही कभी इस्तेमाल की जाने वाली वस्तुओं को छिपाकर अपने मेनू को व्यवस्थित करना "
+"चाहते हों या अपनी आवश्यकताओं के अनुरूप तदनुकूल मेनू अभिन्यास बनाना चाहते हों, यह काम पूरा "
+"करने के लिए एक सरल इंटरफ़ेस प्रदान करता है।"
 
 #: data/alacarte.ui:73
 msgid "Restore System Configuration"
@@ -66,7 +96,7 @@ msgstr "नया मेनू (_N)"
 
 #: data/alacarte.ui:183
 msgid "Ne_w Item"
-msgstr "नई वस्तु (_w)"
+msgstr "नया मद (_w)"
 
 #: data/alacarte.ui:200
 msgid "New _Separator"
@@ -74,11 +104,11 @@ msgstr "नया विभाजक (_S)"
 
 #: data/alacarte.ui:246
 msgid "Move Down"
-msgstr "नीचे ले जाएँ"
+msgstr "नीचे ले जाएं"
 
 #: data/alacarte.ui:262
 msgid "Move Up"
-msgstr "ऊपर ले जाएँ"
+msgstr "ऊपर ले जाएं"
 
 #: data/launcher-editor.ui:7
 msgid "Launcher Properties"
@@ -98,11 +128,11 @@ msgstr "टिप्पणी:"
 
 #: data/launcher-editor.ui:179
 msgid "Browse"
-msgstr "ब्राउज़"
+msgstr "देखें"
 
 #: data/launcher-editor.ui:214
 msgid "Launch in Terminal?"
-msgstr "टर्मिनल में लॉन्च करें?"
+msgstr "टर्मिनल में शुरू करें?"
 
 #: data/directory-editor.ui:7
 msgid "Directory Properties"

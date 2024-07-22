@@ -9,9 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte trunk\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-09-20 07:13+0000\n"
-"PO-Revision-Date: 2022-09-20 20:15+1000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2024-07-13 12:16+0000\n"
+"PO-Revision-Date: 2024-07-14 00:18+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -38,17 +38,50 @@ msgstr "Элемент"
 msgid "Choose an icon"
 msgstr "Выберите значок"
 
-#: Alacarte/ItemEditor.py:239
+#: Alacarte/ItemEditor.py:113
+msgid "Images"
+msgstr "Изображения"
+
+#: Alacarte/ItemEditor.py:245
 msgid "Choose a command"
 msgstr "Выберите команду"
 
-#: data/alacarte.desktop.in.in:3 data/alacarte.ui:38
+#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Главное меню"
 
-#: data/alacarte.desktop.in.in:4
+#: data/alacarte.desktop.in:4
 msgid "Add or remove applications from the main menu"
 msgstr "Добавить или удалить приложения из главного меню"
+
+#: data/alacarte.metainfo.xml.in:5
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "Простой редактор меню для рабочего стола GNOME"
+
+#: data/alacarte.metainfo.xml.in:9
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"Простой в использовании редактор меню для среды рабочего стола GNOME. Он "
+"позволяет добавлять, удалять и изменять записи в главном меню. С помощью "
+"этого инструмента вы можете организовать свои приложения и системные "
+"инструменты по понятным вам категориям, улучшая рабочий процесс и "
+"производительность."
+
+#: data/alacarte.metainfo.xml.in:10
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"Хотите ли вы привести в порядок свое меню, скрыв редко используемые "
+"элементы, или создать собственный макет меню, соответствующий вашим "
+"потребностям, приложение предоставляет простой интерфейс для выполнения "
+"этой работы."
 
 #: data/alacarte.ui:73
 msgid "Restore System Configuration"

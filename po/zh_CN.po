@@ -3,22 +3,22 @@
 # This file is distributed under the same license as the alacarte package.
 # Funda Wang <fundawang@linux.net.cn>, 2006.
 # zhouxiaobo <zhouxiaobo.500@gmail.com>, 2014.
-# lumingzh <lumingzh@qq.com>, 2023.
+# lumingzh <lumingzh@qq.com>, 2023-2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-12-28 19:11+0000\n"
-"PO-Revision-Date: 2023-10-05 21:11+0800\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2024-08-03 21:56+0000\n"
+"PO-Revision-Date: 2024-08-15 14:06+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
-"Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
+"Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 45.2\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: Gtranslator 46.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: Alacarte/MainWindow.py:156
 msgid "Name"
@@ -36,17 +36,46 @@ msgstr "项目"
 msgid "Choose an icon"
 msgstr "选择一个图标"
 
-#: Alacarte/ItemEditor.py:239
+#: Alacarte/ItemEditor.py:113
+msgid "Images"
+msgstr "图像"
+
+#: Alacarte/ItemEditor.py:245
 msgid "Choose a command"
 msgstr "选择一条命令"
 
-#: data/alacarte.desktop.in.in:3 data/alacarte.ui:38
+#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "主菜单"
 
-#: data/alacarte.desktop.in.in:4
+#: data/alacarte.desktop.in:4
 msgid "Add or remove applications from the main menu"
 msgstr "从主菜单中增加或移除应用程序"
+
+#: data/alacarte.metainfo.xml.in:5
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "用于 GNOME 桌面的简单菜单编辑器"
+
+#: data/alacarte.metainfo.xml.in:9
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"用于 GNOME 桌面环境的易用菜单编辑器。可让您添加、移除和修改您主菜单中的条目。"
+"通过该工具，您可以将应用程序和系统工具组织成适合您的分类，来提高您的工作流程"
+"和生产力。"
+
+#: data/alacarte.metainfo.xml.in:10
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"无论是您想通过隐藏很少使用的项目来缩减菜单还是创建适合您需求的自定义菜单布"
+"局，它都提供了完成工作的简单易懂的用户界面。"
 
 #: data/alacarte.ui:73
 msgid "Restore System Configuration"

@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the alacarte package.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2006, 2007.
 # Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2020, 2021, 2022.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2020, 2021, 2022, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.18\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-03-17 11:11+0000\n"
-"PO-Revision-Date: 2022-03-20 22:09+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2024-08-03 21:56+0000\n"
+"PO-Revision-Date: 2024-08-16 11:43+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Português <hugokarvalho@hotmail.com>\n"
 "Language: pt\n"
@@ -20,89 +20,121 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: ../Alacarte/MainWindow.py:156
+#: Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "Nome"
 
-#: ../Alacarte/MainWindow.py:169
+#: Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "Mostrar"
 
-#: ../Alacarte/MainWindow.py:177
+#: Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "Item"
 
-#: ../Alacarte/ItemEditor.py:104
+#: Alacarte/ItemEditor.py:107
 msgid "Choose an icon"
 msgstr "Escolha um ícone"
 
-#: ../Alacarte/ItemEditor.py:233
+#: Alacarte/ItemEditor.py:113
+msgid "Images"
+msgstr "Imagens"
+
+#: Alacarte/ItemEditor.py:245
 msgid "Choose a command"
 msgstr "Escolha um comando"
 
-#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
+#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: ../data/alacarte.desktop.in.in.h:2
+#: data/alacarte.desktop.in:4
 msgid "Add or remove applications from the main menu"
 msgstr "Adicionar ou remover aplicações do menu principal"
 
-#: ../data/alacarte.ui.h:2
+#: data/alacarte.metainfo.xml.in:5
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "Um editor de menus simples para o ambiente de trabalho GNOME"
+
+#: data/alacarte.metainfo.xml.in:9
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"Editor de menus fácil de usar para o ambiente de trabalho GNOME. Permite-"
+"lhe adicionar, remover e modificar as entradas no seu menu principal. Com "
+"esta ferramenta, pode organizar as suas aplicações e ferramentas de sistema "
+"em categorias que fazem sentido para si, melhorando o seu fluxo de trabalho "
+"e produtividade."
+
+#: data/alacarte.metainfo.xml.in:10
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"Quer pretenda arrumar o seu menu ocultando itens raramente utilizados ou "
+"criar uma disposição de menu personalizada que se adeqúe às suas "
+"necessidades, fornece uma interface simples para realizar a tarefa."
+
+#: data/alacarte.ui:73
 msgid "Restore System Configuration"
-msgstr "Restaurar configuração do sistema"
+msgstr "Restaurar a configuração do sistema"
 
-#: ../data/alacarte.ui.h:3
+#: data/alacarte.ui:78
 msgid "Restore the default menu layout"
-msgstr "Repor a disposição predefinida do menu"
+msgstr "Restaurar a disposição predefinida do menu"
 
-#: ../data/alacarte.ui.h:4
+#: data/alacarte.ui:166
 msgid "_New Menu"
 msgstr "_Novo menu"
 
-#: ../data/alacarte.ui.h:5
+#: data/alacarte.ui:183
 msgid "Ne_w Item"
 msgstr "Novo _item"
 
-#: ../data/alacarte.ui.h:6
+#: data/alacarte.ui:200
 msgid "New _Separator"
 msgstr "Novo _separador"
 
-#: ../data/alacarte.ui.h:7
+#: data/alacarte.ui:246
 msgid "Move Down"
-msgstr "Mover abaixo"
+msgstr "Mover para baixo"
 
-#: ../data/alacarte.ui.h:8
+#: data/alacarte.ui:262
 msgid "Move Up"
-msgstr "Mover acima"
+msgstr "Mover para cima"
 
-#: ../data/launcher-editor.ui.h:1
+#: data/launcher-editor.ui:7
 msgid "Launcher Properties"
-msgstr "Propriedades do atalho"
+msgstr "Propriedades do lançador"
 
-#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
 msgid "Name:"
 msgstr "Nome:"
 
-#: ../data/launcher-editor.ui.h:3
+#: data/launcher-editor.ui:117
 msgid "Command:"
 msgstr "Comando:"
 
-#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
 msgid "Comment:"
 msgstr "Comentário:"
 
-#: ../data/launcher-editor.ui.h:5
+#: data/launcher-editor.ui:179
 msgid "Browse"
 msgstr "Procurar"
 
-#: ../data/launcher-editor.ui.h:6
+#: data/launcher-editor.ui:214
 msgid "Launch in Terminal?"
 msgstr "Executar no terminal?"
 
-#: ../data/directory-editor.ui.h:1
+#: data/directory-editor.ui:7
 msgid "Directory Properties"
-msgstr "Propriedades da pasta"
+msgstr "Propriedades do diretório"
 
 #~ msgid "It_ems:"
 #~ msgstr "It_ens:"

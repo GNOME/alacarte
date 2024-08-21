@@ -3,17 +3,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte.master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-12-28 19:11+0000\n"
-"PO-Revision-Date: 2023-01-12 15:42+0300\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2024-08-03 21:56+0000\n"
+"PO-Revision-Date: 2024-08-21 05:22+0300\n"
 "Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.2.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: Alacarte/MainWindow.py:156
 msgid "Name"
@@ -31,17 +32,48 @@ msgstr "Элемент"
 msgid "Choose an icon"
 msgstr "Выберыце значок"
 
-#: Alacarte/ItemEditor.py:239
+#: Alacarte/ItemEditor.py:113
+msgid "Images"
+msgstr "Выявы"
+
+#: Alacarte/ItemEditor.py:245
 msgid "Choose a command"
 msgstr "Выберыце каманду"
 
-#: data/alacarte.desktop.in.in:3 data/alacarte.ui:38
+#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Галоўнае меню"
 
-#: data/alacarte.desktop.in.in:4
+#: data/alacarte.desktop.in:4
 msgid "Add or remove applications from the main menu"
 msgstr "Дадаванне або выдаленне праграм з галоўнага меню"
+
+#: data/alacarte.metainfo.xml.in:5
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "Просты рэдактар ​​меню для працоўнага асяроддзя GNOME"
+
+#: data/alacarte.metainfo.xml.in:9
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"Зручны рэдактар меню для працоўнага асяроддзя GNOME. Ён дазваляе дадаваць, "
+"выдаляць і мяняць пункты галоўнага меню. З яго дапамогай вы можаце "
+"арганізаваць свае праграмы і інструменты сістэмы па катэгорыях, якія маюць "
+"сэнс для вас, і гэтак палепшыць працоўны працэс і прадукцыйнасць."
+
+#: data/alacarte.metainfo.xml.in:10
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"Калі вы хочаце навесці парадак у меню, схаваць пункты, якімі карыстаецеся "
+"рэдка або стварыць уласны макет меню, які адпавядае вашым патрэбам, "
+"праграма дае зручны інтэрфейс для выканання гэтай працы."
 
 #: data/alacarte.ui:73
 msgid "Restore System Configuration"
@@ -65,15 +97,15 @@ msgstr "Новы _раздзяляльнік"
 
 #: data/alacarte.ui:246
 msgid "Move Down"
-msgstr "Пасунуць ніжэй"
+msgstr "Перамясціць ніжэй"
 
 #: data/alacarte.ui:262
 msgid "Move Up"
-msgstr "Пасунуць вышэй"
+msgstr "Перамясціць вышэй"
 
 #: data/launcher-editor.ui:7
 msgid "Launcher Properties"
-msgstr "Уласцівасці стартара"
+msgstr "Уласцівасці запуску"
 
 #: data/launcher-editor.ui:100 data/directory-editor.ui:100
 msgid "Name:"

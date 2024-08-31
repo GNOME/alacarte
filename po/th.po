@@ -8,78 +8,146 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-12 12:51+0700\n"
-"PO-Revision-Date: 2007-02-12 12:52+0700\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2024-08-03 21:56+0000\n"
+"PO-Revision-Date: 2024-08-31 15:43+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <l10n@opentle.org>\n"
+"Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
 
-#: ../Alacarte/MainWindow.py:167
+#: Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "ชื่อ"
 
-#: ../Alacarte/MainWindow.py:183
+#: Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "แสดง"
 
-#: ../Alacarte/MainWindow.py:191
+#: Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "รายการ"
 
-#: ../alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "ปรับเปลี่ยนการแสดงโปรแกรมในเมนูหลัก"
+#: Alacarte/ItemEditor.py:107
+msgid "Choose an icon"
+msgstr "เลือกไอคอน"
 
-#: ../alacarte.desktop.in.in.h:2 ../alacarte.glade.h:2
+#: Alacarte/ItemEditor.py:113
+msgid "Images"
+msgstr "ภาพ"
+
+#: Alacarte/ItemEditor.py:245
+msgid "Choose a command"
+msgstr "เลือกคำสั่ง"
+
+#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "เมนูหลัก"
 
-#: ../alacarte.glade.h:1
-msgid "It_ems:"
-msgstr "รา_ยการ:"
+#: data/alacarte.desktop.in:4
+msgid "Add or remove applications from the main menu"
+msgstr "เพิ่มหรือลบแอปพลิเคชันต่างๆ ในเมนูหลัก"
 
-#: ../alacarte.glade.h:3
-msgid "Move Down"
-msgstr "ย้ายลง"
+#: data/alacarte.metainfo.xml.in:5
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "เครื่องมือแก้ไขเมนูอย่างง่ายสำหรับเดสก์ท็อป GNOME"
 
-#: ../alacarte.glade.h:4
-msgid "Move Up"
-msgstr "ย้ายขึ้น"
+#: data/alacarte.metainfo.xml.in:9
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"เครื่องมือแก้ไขเมนูที่ใช้งานง่ายสำหรับสภาพแวดล้อมเดสก์ท็อป GNOME ซึ่งให้คุณสามารถเพิ่ม ลบ "
+"และแก้ไขรายการต่างๆ ในเมนูหลักของคุณได้ ด้วยเครื่องมือนี้ "
+"คุณสามารถจัดระเบียบแอปพลิเคชันและเครื่องมือระบบของคุณโดยแบ่งเป็นหมวดต่างๆ ที่คุณต้องการได้ "
+"เพื่อให้คุณทำงานได้อย่างลื่นไหลและมีประสิทธิภาพยิ่งขึ้น"
 
-#: ../alacarte.glade.h:5
-msgid "Ne_w Item"
-msgstr "รายการใ_หม่"
+#: data/alacarte.metainfo.xml.in:10
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"เครื่องมือนี้มีส่วนติดต่อผู้ใช้ที่ตรงไปตรงมาเพื่อช่วยให้คุณจัดเมนูได้อย่างสะดวก "
+"ไม่ว่าคุณจะจัดระเบียบเมนูของคุณด้วยการซ่อนรายการที่ไม่ค่อยได้ใช้ "
+"หรือการสร้างเค้าโครงเมนูกำหนดเองตามความต้องการของคุณก็ตาม"
 
-#: ../alacarte.glade.h:6
-msgid "New _Separator"
-msgstr "เส้นแ_บ่งใหม่"
+#: data/alacarte.ui:73
+msgid "Restore System Configuration"
+msgstr "เรียกคืนการตั้งค่าระบบ"
 
-#: ../alacarte.glade.h:7
+#: data/alacarte.ui:78
 msgid "Restore the default menu layout"
 msgstr "คืนโครงสร้างเมนูสู่สภาพเดิมที่กำหนดไว้"
 
-#: ../alacarte.glade.h:8
-msgid "Revert Changes?"
-msgstr "คืนสู่สภาพเดิมหรือไม่?"
-
-#: ../alacarte.glade.h:9
-msgid "Revert all menus to original settings?"
-msgstr "คืนทุกเมนูกลับสู่ี่ค่าเดิมที่กำหนดไว้หรือไม่?"
-
-#: ../alacarte.glade.h:10
-msgid "_Menus:"
-msgstr "เ_มนู:"
-
-#: ../alacarte.glade.h:11
+#: data/alacarte.ui:166
 msgid "_New Menu"
 msgstr "เ_มนูใหม่"
 
-#: ../alacarte.glade.h:12
-msgid "_Revert to Original"
-msgstr "_คืนสู่สภาพเดิม"
+#: data/alacarte.ui:183
+msgid "Ne_w Item"
+msgstr "รายการใ_หม่"
+
+#: data/alacarte.ui:200
+msgid "New _Separator"
+msgstr "เส้นแ_บ่งใหม่"
+
+#: data/alacarte.ui:246
+msgid "Move Down"
+msgstr "ย้ายลง"
+
+#: data/alacarte.ui:262
+msgid "Move Up"
+msgstr "ย้ายขึ้น"
+
+#: data/launcher-editor.ui:7
+msgid "Launcher Properties"
+msgstr "คุณสมบัติของตัวเรียก"
+
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
+msgid "Name:"
+msgstr "ชื่อ:"
+
+#: data/launcher-editor.ui:117
+msgid "Command:"
+msgstr "คำสั่ง:"
+
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
+msgid "Comment:"
+msgstr "คำอธิบาย:"
+
+#: data/launcher-editor.ui:179
+msgid "Browse"
+msgstr "เรียกดู"
+
+#: data/launcher-editor.ui:214
+msgid "Launch in Terminal?"
+msgstr "เรียกใช้งานในเทอร์มินัลหรือไม่?"
+
+#: data/directory-editor.ui:7
+msgid "Directory Properties"
+msgstr "คุณสมบัติของไดเรกทอรี"
+
+#~ msgid "It_ems:"
+#~ msgstr "รา_ยการ:"
+
+#~ msgid "Revert Changes?"
+#~ msgstr "คืนสู่สภาพเดิมหรือไม่?"
+
+#~ msgid "Revert all menus to original settings?"
+#~ msgstr "คืนทุกเมนูกลับสู่ี่ค่าเดิมที่กำหนดไว้หรือไม่?"
+
+#~ msgid "_Menus:"
+#~ msgstr "เ_มนู:"
+
+#~ msgid "_Revert to Original"
+#~ msgstr "_คืนสู่สภาพเดิม"
 
 #~ msgid "New menu items need a name"
 #~ msgstr "รายการเมนูใหม่ต้องมีชื่อ"
@@ -89,9 +157,6 @@ msgstr "_คืนสู่สภาพเดิม"
 
 #~ msgid "Choose a Program"
 #~ msgstr "เลือกโปรแกรม"
-
-#~ msgid "Choose an Icon"
-#~ msgstr "เลือกไอคอน"
 
 #~ msgid "A name is required."
 #~ msgstr "ต้องป้อนชื่อด้วย"
@@ -108,15 +173,6 @@ msgstr "_คืนสู่สภาพเดิม"
 #~ msgid "Alacarte Menu Editor"
 #~ msgstr "Alacarte โปรแกรมแก้ไขเมนู"
 
-#~ msgid "Browse..."
-#~ msgstr "เรียกดู..."
-
-#~ msgid "Command:"
-#~ msgstr "คำสั่ง:"
-
-#~ msgid "Comment:"
-#~ msgstr "คำอธิบาย:"
-
 #~ msgid "Copyright © 2006 Travis Watkins"
 #~ msgstr "Copyright © 2006 Travis Watkins"
 
@@ -128,15 +184,6 @@ msgstr "_คืนสู่สภาพเดิม"
 
 #~ msgid "Menu Layout"
 #~ msgstr "โครงสร้างเมนู"
-
-#~ msgid "Menu Properties"
-#~ msgstr "คุณสมบัติของเมนู"
-
-#~ msgid "Name:"
-#~ msgstr "ชื่อ:"
-
-#~ msgid "Run command in a terminal"
-#~ msgstr "เรียกคำสั่งในเทอร์มินัล"
 
 #~ msgid "Simple fd.o compliant menu editor"
 #~ msgstr "โปรแกรมแก้ไขเมนูอย่างง่าย ตามมาตรฐาน freedesktop.org"

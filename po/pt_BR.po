@@ -5,14 +5,15 @@
 # Og Maciel <ogmaciel@ubuntu.com>, 2006.
 # Djavan Fagundes <djavanf@gnome.org>, 2012.
 # Enrico Nicoletto <liverig@gmail.com>, 2013, 2022.
+# Jhonata Fernandes <fjhonata14@gmail.com>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-09-20 07:13+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2024-08-03 21:56+0000\n"
 "PO-Revision-Date: 2022-12-28 16:09-0300\n"
-"Last-Translator: Enrico Nicoletto <hiko@duck.com>\n"
+"Last-Translator: Jhonata Fernandes <fjhonata14@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -38,17 +39,49 @@ msgstr "Item"
 msgid "Choose an icon"
 msgstr "Escolha um ícone"
 
-#: Alacarte/ItemEditor.py:239
+#: Alacarte/ItemEditor.py:113
+msgid "Images"
+msgstr "Imagens"
+
+#: Alacarte/ItemEditor.py:245
 msgid "Choose a command"
 msgstr "Escolha um comando"
 
-#: data/alacarte.desktop.in.in:3 data/alacarte.ui:38
+#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: data/alacarte.desktop.in.in:4
+#: data/alacarte.desktop.in:4
 msgid "Add or remove applications from the main menu"
 msgstr "Altere quais aplicativos são mostrados no menu principal"
+
+#: data/alacarte.metainfo.xml.in:5
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "Um editor de menus simples para o ambiente GNOME"
+
+#: data/alacarte.metainfo.xml.in:9
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"Editor de menus fácil de usar para o ambiente de desktop GNOME. Ele permite "
+"adicionar, remover e modificar as entradas no seu menu principal. Com esta "
+"ferramenta, você pode organizar suas aplicações e ferramentas do sistema em "
+"categorias que fazem sentido para você, melhorando seu fluxo de trabalho e "
+"produtividade."
+
+#: data/alacarte.metainfo.xml.in:10
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"Se você deseja organizar seu menu ocultando itens raramente usados ou "
+"criando um layout de menu personalizado que atenda às suas necessidades, "
+"ele oferece uma interface simples para realizar a tarefa."
 
 #: data/alacarte.ui:73
 msgid "Restore System Configuration"

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
   <id>org.gnome.alacarte</id>
   <launchable type="desktop-id">alacarte.desktop</launchable>

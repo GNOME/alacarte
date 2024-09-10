@@ -12,7 +12,7 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 	$(AM_V_GEN) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 
 metainfodir = $(datadir)/metainfo
-metainfo_in_files = alacarte.metainfo.xml.in
+metainfo_in_files = org.gnome.alacarte.metainfo.xml.in
 metainfo_DATA = $(metainfo_in_files:.xml.in=.xml)
 
 pkgdata_DATA = alacarte.ui launcher-editor.ui directory-editor.ui

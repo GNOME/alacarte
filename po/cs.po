@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
-"POT-Creation-Date: 2024-08-03 21:56+0000\n"
-"PO-Revision-Date: 2024-09-10 01:32+0200\n"
+"POT-Creation-Date: 2024-09-16 13:02+0000\n"
+"PO-Revision-Date: 2024-09-16 18:12+0200\n"
 "Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #: Alacarte/MainWindow.py:156
 msgid "Name"
@@ -48,7 +48,7 @@ msgstr "Obrázky"
 msgid "Choose a command"
 msgstr "Vybírání příkazu"
 
-#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.desktop.in:3 data/org.gnome.alacarte.metainfo.xml.in:5
 #: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Hlavní nabídka"
@@ -57,23 +57,27 @@ msgstr "Hlavní nabídka"
 msgid "Add or remove applications from the main menu"
 msgstr "Přidat nebo odebrat aplikace v hlavní nabídce"
 
-#: data/alacarte.metainfo.xml.in:5
+#: data/org.gnome.alacarte.metainfo.xml.in:6
+msgid "The GNOME Project"
+msgstr "Projekt GNOME"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:10
 msgid "A simple menu editor for the GNOME desktop"
 msgstr "Jednoduchý editor nabídek pro prostředí GNOME"
 
-#: data/alacarte.metainfo.xml.in:9
+#: data/org.gnome.alacarte.metainfo.xml.in:14
 msgid ""
 "Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
 "add, remove, and modify the entries in your main menu. With this tool, you "
 "can organize your applications and system tools into categories that make "
 "sense to you, improving your workflow and productivity."
 msgstr ""
-"Snadno použitelný editor nabídek pro uživatelské prostředí GNOME. Umožní "
-"vám přidávat, odebírat a upravovat položky v hlavní nabídce. Pomocí tohoto "
+"Snadno použitelný editor nabídek pro uživatelské prostředí GNOME. Umožní vám "
+"přidávat, odebírat a upravovat položky v hlavní nabídce. Pomocí tohoto "
 "nástroje můžete organizovat své aplikace a systémové nástroje do kategorií, "
 "které vám dávají smysl, a zlepšit tak svůj pracovní postup a produktivitu."
 
-#: data/alacarte.metainfo.xml.in:10
+#: data/org.gnome.alacarte.metainfo.xml.in:15
 msgid ""
 "Whether you're looking to tidy up your menu by hiding rarely used items or "
 "creating a custom menu layout that suits your needs, it provides a "

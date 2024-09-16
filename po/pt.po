@@ -1,5 +1,5 @@
 # alacarte's Portuguese translation.
-# Copyright © 2006, 2007 alacarte
+# Copyright © 2006-2024 alacarte
 # This file is distributed under the same license as the alacarte package.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2006, 2007.
 # Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.18\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
-"POT-Creation-Date: 2024-08-03 21:56+0000\n"
-"PO-Revision-Date: 2024-08-16 11:43+0100\n"
+"POT-Creation-Date: 2024-09-16 13:02+0000\n"
+"PO-Revision-Date: 2024-09-16 14:48+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Português <hugokarvalho@hotmail.com>\n"
 "Language: pt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.5\n"
 
 #: Alacarte/MainWindow.py:156
 msgid "Name"
@@ -44,7 +44,7 @@ msgstr "Imagens"
 msgid "Choose a command"
 msgstr "Escolha um comando"
 
-#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.desktop.in:3 data/org.gnome.alacarte.metainfo.xml.in:5
 #: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Menu principal"
@@ -53,24 +53,28 @@ msgstr "Menu principal"
 msgid "Add or remove applications from the main menu"
 msgstr "Adicionar ou remover aplicações do menu principal"
 
-#: data/alacarte.metainfo.xml.in:5
+#: data/org.gnome.alacarte.metainfo.xml.in:6
+msgid "The GNOME Project"
+msgstr "O Projeto GNOME"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:10
 msgid "A simple menu editor for the GNOME desktop"
 msgstr "Um editor de menus simples para o ambiente de trabalho GNOME"
 
-#: data/alacarte.metainfo.xml.in:9
+#: data/org.gnome.alacarte.metainfo.xml.in:14
 msgid ""
 "Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
 "add, remove, and modify the entries in your main menu. With this tool, you "
 "can organize your applications and system tools into categories that make "
 "sense to you, improving your workflow and productivity."
 msgstr ""
-"Editor de menus fácil de usar para o ambiente de trabalho GNOME. Permite-"
-"lhe adicionar, remover e modificar as entradas no seu menu principal. Com "
-"esta ferramenta, pode organizar as suas aplicações e ferramentas de sistema "
-"em categorias que fazem sentido para si, melhorando o seu fluxo de trabalho "
-"e produtividade."
+"Editor de menus fácil de usar para o ambiente de trabalho GNOME. Permite-lhe "
+"adicionar, remover e modificar as entradas no seu menu principal. Com esta "
+"ferramenta, pode organizar as suas aplicações e ferramentas de sistema em "
+"categorias que fazem sentido para si, melhorando o seu fluxo de trabalho e "
+"produtividade."
 
-#: data/alacarte.metainfo.xml.in:10
+#: data/org.gnome.alacarte.metainfo.xml.in:15
 msgid ""
 "Whether you're looking to tidy up your menu by hiding rarely used items or "
 "creating a custom menu layout that suits your needs, it provides a "

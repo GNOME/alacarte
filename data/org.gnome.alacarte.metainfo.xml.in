@@ -3,6 +3,10 @@
   <id>org.gnome.alacarte</id>
   <launchable type="desktop-id">alacarte.desktop</launchable>
   <name>Main Menu</name>
+  <developer_name>The GNOME Project</developer_name>
+  <developer id="org.gnome">
+    <name>The GNOME Project</name>
+  </developer>
   <summary>A simple menu editor for the GNOME desktop</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-2.0-or-later</project_license>
@@ -20,4 +24,5 @@
   <url type="translate">https://l10n.gnome.org/module/alacarte/</url>
   <url type="vcs-browser">https://gitlab.gnome.org/GNOME/alacarte</url>
   <translation type="gettext">alacarte</translation>
+  <content_rating type="oars-1.1" />
 </component>

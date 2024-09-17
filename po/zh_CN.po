@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
-"POT-Creation-Date: 2024-08-03 21:56+0000\n"
-"PO-Revision-Date: 2024-08-15 14:06+0800\n"
+"POT-Creation-Date: 2024-09-16 13:02+0000\n"
+"PO-Revision-Date: 2024-09-17 09:29+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -44,7 +44,7 @@ msgstr "图像"
 msgid "Choose a command"
 msgstr "选择一条命令"
 
-#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.desktop.in:3 data/org.gnome.alacarte.metainfo.xml.in:5
 #: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "主菜单"
@@ -53,11 +53,15 @@ msgstr "主菜单"
 msgid "Add or remove applications from the main menu"
 msgstr "从主菜单中增加或移除应用程序"
 
-#: data/alacarte.metainfo.xml.in:5
+#: data/org.gnome.alacarte.metainfo.xml.in:6
+msgid "The GNOME Project"
+msgstr "GNOME 项目"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:10
 msgid "A simple menu editor for the GNOME desktop"
 msgstr "用于 GNOME 桌面的简单菜单编辑器"
 
-#: data/alacarte.metainfo.xml.in:9
+#: data/org.gnome.alacarte.metainfo.xml.in:14
 msgid ""
 "Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
 "add, remove, and modify the entries in your main menu. With this tool, you "
@@ -68,7 +72,7 @@ msgstr ""
 "通过该工具，您可以将应用程序和系统工具组织成适合您的分类，来提高您的工作流程"
 "和生产力。"
 
-#: data/alacarte.metainfo.xml.in:10
+#: data/org.gnome.alacarte.metainfo.xml.in:15
 msgid ""
 "Whether you're looking to tidy up your menu by hiding rarely used items or "
 "creating a custom menu layout that suits your needs, it provides a "

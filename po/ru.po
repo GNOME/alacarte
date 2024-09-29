@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte trunk\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
-"POT-Creation-Date: 2024-07-13 12:16+0000\n"
-"PO-Revision-Date: 2024-07-14 00:18+1000\n"
+"POT-Creation-Date: 2024-09-16 13:02+0000\n"
+"PO-Revision-Date: 2024-09-21 22:32+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -46,7 +46,7 @@ msgstr "Изображения"
 msgid "Choose a command"
 msgstr "Выберите команду"
 
-#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.desktop.in:3 data/org.gnome.alacarte.metainfo.xml.in:5
 #: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Главное меню"
@@ -55,11 +55,15 @@ msgstr "Главное меню"
 msgid "Add or remove applications from the main menu"
 msgstr "Добавить или удалить приложения из главного меню"
 
-#: data/alacarte.metainfo.xml.in:5
+#: data/org.gnome.alacarte.metainfo.xml.in:6
+msgid "The GNOME Project"
+msgstr "Проект GNOME"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:10
 msgid "A simple menu editor for the GNOME desktop"
 msgstr "Простой редактор меню для рабочего стола GNOME"
 
-#: data/alacarte.metainfo.xml.in:9
+#: data/org.gnome.alacarte.metainfo.xml.in:14
 msgid ""
 "Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
 "add, remove, and modify the entries in your main menu. With this tool, you "
@@ -72,7 +76,7 @@ msgstr ""
 "инструменты по понятным вам категориям, улучшая рабочий процесс и "
 "производительность."
 
-#: data/alacarte.metainfo.xml.in:10
+#: data/org.gnome.alacarte.metainfo.xml.in:15
 msgid ""
 "Whether you're looking to tidy up your menu by hiding rarely used items or "
 "creating a custom menu layout that suits your needs, it provides a "
@@ -80,8 +84,8 @@ msgid ""
 msgstr ""
 "Хотите ли вы привести в порядок свое меню, скрыв редко используемые "
 "элементы, или создать собственный макет меню, соответствующий вашим "
-"потребностям, приложение предоставляет простой интерфейс для выполнения "
-"этой работы."
+"потребностям, приложение предоставляет простой интерфейс для выполнения этой "
+"работы."
 
 #: data/alacarte.ui:73
 msgid "Restore System Configuration"

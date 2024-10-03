@@ -1,4 +1,30 @@
 ==============
+Version 3.54.0
+==============
+
+Changes:
+        * Show only images in icon picker (#21)
+        * Add AppStream metadata (!16, !17)
+
+Translation updates:
+        * Belarusian
+        * Brazilian Portuguese
+        * Chinese
+        * Czech
+        * Finnish
+        * German
+        * Hebrew
+        * Hindi
+        * Hungarian
+        * Italian
+        * Portuguese
+        * Russian
+        * Slovenian
+        * Swedish
+        * Thai
+        * Ukrainian
+
+==============
 Version 3.52.0
 ==============
 

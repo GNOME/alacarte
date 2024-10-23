@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
-"POT-Creation-Date: 2024-08-03 21:56+0000\n"
-"PO-Revision-Date: 2024-08-21 05:22+0300\n"
+"POT-Creation-Date: 2024-09-16 13:02+0000\n"
+"PO-Revision-Date: 2024-10-23 22:11+0300\n"
 "Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #: Alacarte/MainWindow.py:156
 msgid "Name"
@@ -40,7 +40,7 @@ msgstr "Выявы"
 msgid "Choose a command"
 msgstr "Выберыце каманду"
 
-#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.desktop.in:3 data/org.gnome.alacarte.metainfo.xml.in:5
 #: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Галоўнае меню"
@@ -49,11 +49,15 @@ msgstr "Галоўнае меню"
 msgid "Add or remove applications from the main menu"
 msgstr "Дадаванне або выдаленне праграм з галоўнага меню"
 
-#: data/alacarte.metainfo.xml.in:5
+#: data/org.gnome.alacarte.metainfo.xml.in:6
+msgid "The GNOME Project"
+msgstr "Праект GNOME"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:10
 msgid "A simple menu editor for the GNOME desktop"
 msgstr "Просты рэдактар ​​меню для працоўнага асяроддзя GNOME"
 
-#: data/alacarte.metainfo.xml.in:9
+#: data/org.gnome.alacarte.metainfo.xml.in:14
 msgid ""
 "Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
 "add, remove, and modify the entries in your main menu. With this tool, you "
@@ -65,15 +69,15 @@ msgstr ""
 "арганізаваць свае праграмы і інструменты сістэмы па катэгорыях, якія маюць "
 "сэнс для вас, і гэтак палепшыць працоўны працэс і прадукцыйнасць."
 
-#: data/alacarte.metainfo.xml.in:10
+#: data/org.gnome.alacarte.metainfo.xml.in:15
 msgid ""
 "Whether you're looking to tidy up your menu by hiding rarely used items or "
 "creating a custom menu layout that suits your needs, it provides a "
 "straightforward interface to get the job done."
 msgstr ""
 "Калі вы хочаце навесці парадак у меню, схаваць пункты, якімі карыстаецеся "
-"рэдка або стварыць уласны макет меню, які адпавядае вашым патрэбам, "
-"праграма дае зручны інтэрфейс для выканання гэтай працы."
+"рэдка або стварыць уласны макет меню, які адпавядае вашым патрэбам, праграма "
+"дае зручны інтэрфейс для выканання гэтай працы."
 
 #: data/alacarte.ui:73
 msgid "Restore System Configuration"

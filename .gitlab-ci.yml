@@ -1,5 +1,6 @@
 stages:
   - build
+  - release
 
 .install-ubuntu-dependencies: &install-ubuntu-dependencies
   apt-get install -q -y --no-install-recommends
@@ -17,8 +18,6 @@ stages:
 ubuntu:
   image: ubuntu:devel
   stage: build
-  except:
-    - tags
   before_script:
     - apt-get update
     - *install-ubuntu-dependencies
@@ -26,3 +25,35 @@ ubuntu:
     - ./autogen.sh
     - make
     - make distcheck
+  artifacts:
+    name: "${CI_JOB_NAME}-${CI_COMMIT_REF_NAME}"
+    when: always
+    paths:
+      - "${CI_PROJECT_NAME}-*.tar.xz"
+
+release:
+  image: ubuntu:devel
+  stage: release
+  needs:
+    - job: ubuntu
+      artifacts: true
+  before_script:
+    - apt-get update
+    - apt-get install -q -y --no-install-recommends
+                      ca-certificates
+                      curl
+  variables:
+    GNOME_RELEASE_SERVICE_API_URL: "https://gnome-release-route-gnome-release-service.apps.openshift.gnome.org"
+    GNOME_RELEASE_SERVICE_API_INSTALL_MODULE_RELEASE_ENDPOINT: "$GNOME_RELEASE_SERVICE_API_URL/install-module-release"
+    TARBALL_ARTIFACT_PATH: "${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tar.xz"
+  id_tokens:
+    JWT_TOKEN:
+      aud: gnome-release-service
+  script:
+    - ls -al "${TARBALL_ARTIFACT_PATH}"
+    - >
+      curl --fail-with-body -X POST "$GNOME_RELEASE_SERVICE_API_INSTALL_MODULE_RELEASE_ENDPOINT"
+      -H "Authorization: Bearer $JWT_TOKEN"
+      -F "tarball=@${TARBALL_ARTIFACT_PATH}"
+  rules:
+    - if: $CI_COMMIT_TAG && $CI_COMMIT_REF_PROTECTED

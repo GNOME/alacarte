@@ -73,7 +73,11 @@ def set_icon_file(editor, image, file_name):
     scale = image.get_scale_factor()
     size = 64 * scale
 
-    pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(file_name, size, size)
+    try:
+        pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(file_name, size, size)
+    except GLib.GError:
+        return
+
     surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, size, size)
 
     context = cairo.Context(surface)

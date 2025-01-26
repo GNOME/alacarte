@@ -1,24 +1,25 @@
 # Serbian translation of alacarte
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2006–2022.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2006–2025.
 # This file is distributed under the same license as the alacarte package.
 # Maintainer: Igor Miletić <grejigl-gnomeprevod@yahoo.com>
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011–2022.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011–2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-09-20 07:13+0000\n"
-"PO-Revision-Date: 2022-10-10 09:38+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2024-11-24 12:09+0000\n"
+"PO-Revision-Date: 2025-01-21 21:34+0100\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <српски <gnome-sr@googlegroups.org>>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
-"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
+"X-Generator: Poedit 3.5\n"
 
 #: Alacarte/MainWindow.py:156
 msgid "Name"
@@ -36,17 +37,53 @@ msgstr "Ставка"
 msgid "Choose an icon"
 msgstr "Изаберите иконицу"
 
-#: Alacarte/ItemEditor.py:239
+#: Alacarte/ItemEditor.py:113
+msgid "Images"
+msgstr "Слике"
+
+#: Alacarte/ItemEditor.py:245
 msgid "Choose a command"
 msgstr "Изаберите наредбу"
 
-#: data/alacarte.desktop.in.in:3 data/alacarte.ui:38
+#: data/alacarte.desktop.in:3 data/org.gnome.alacarte.metainfo.xml.in:5
+#: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Главни изборник"
 
-#: data/alacarte.desktop.in.in:4
+#: data/alacarte.desktop.in:4
 msgid "Add or remove applications from the main menu"
 msgstr "Додајте или уклоните програме приказане у главном изборнику"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:6
+msgid "The GNOME Project"
+msgstr "Гномов пројекат"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:10
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "Једноставан уређивач изборника за Гномову радну површ"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:14
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"Једноставан уређивач изборника за окружење Гномове радне површи. Омогућава "
+"вам да додајете, уклањате и мењате уносе у главном изборнику. Са овим "
+"алатом можете да организујете своје апликације и системске алате у "
+"категорије које за вас имају смисла, побољшавајући ток посла и "
+"продуктивност."
+
+#: data/org.gnome.alacarte.metainfo.xml.in:15
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"Без обзира да ли желите да средите свој изборник скривањем ретко коришћених "
+"ставки или стварањем прилагођеног распореда изборника који одговара вашим "
+"потребама, пружа вам једноставно сучеље за обављање посла."
 
 #: data/alacarte.ui:73
 msgid "Restore System Configuration"

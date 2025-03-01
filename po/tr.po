@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
-"POT-Creation-Date: 2024-09-16 13:02+0000\n"
-"PO-Revision-Date: 2024-10-27 16:08+0300\n"
+"POT-Creation-Date: 2025-02-10 15:58+0000\n"
+"PO-Revision-Date: 2025-02-13 00:22+0300\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Türkçe <takim@gnome.org.tr>\n"
 "Language: tr\n"
@@ -35,15 +35,15 @@ msgstr "Göster"
 msgid "Item"
 msgstr "Öge"
 
-#: Alacarte/ItemEditor.py:107
+#: Alacarte/ItemEditor.py:111
 msgid "Choose an icon"
 msgstr "Simge seç"
 
-#: Alacarte/ItemEditor.py:113
+#: Alacarte/ItemEditor.py:117
 msgid "Images"
 msgstr "Resimler"
 
-#: Alacarte/ItemEditor.py:245
+#: Alacarte/ItemEditor.py:249
 msgid "Choose a command"
 msgstr "Komut seç"
 
@@ -71,6 +71,10 @@ msgid ""
 "can organize your applications and system tools into categories that make "
 "sense to you, improving your workflow and productivity."
 msgstr ""
+"GNOME masaüstü ortamı için kullanımı kolay menü düzenleyicisi. Ana menünüze "
+"girdiler eklemenizi, kaldırmanızı ve değiştirmenizi sağlar. Bu araçla, "
+"uygulamalarınızı ve sistem araçlarınızı sizin için anlamlı olan kategoriler "
+"biçiminde düzenleyebilir, iş akışınızı ve üretkenliğinizi artırabilirsiniz."
 
 #: data/org.gnome.alacarte.metainfo.xml.in:15
 msgid ""
@@ -78,6 +82,9 @@ msgid ""
 "creating a custom menu layout that suits your needs, it provides a "
 "straightforward interface to get the job done."
 msgstr ""
+"İster az kullanılan ögeleri gizleyerek menünüzü düzenlemek, ister "
+"gereksinimlerinize uygun özel menü düzeni oluşturmak olsun işinizi "
+"halletmek için anlaşılır arayüz sağlar."
 
 #: data/alacarte.ui:73
 msgid "Restore System Configuration"

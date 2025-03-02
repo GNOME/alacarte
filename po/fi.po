@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
-"POT-Creation-Date: 2024-08-03 21:56+0000\n"
-"PO-Revision-Date: 2024-08-25 13:08+0300\n"
+"POT-Creation-Date: 2024-11-24 12:09+0000\n"
+"PO-Revision-Date: 2025-03-02 12:42+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -48,7 +48,7 @@ msgstr "Kuvat"
 msgid "Choose a command"
 msgstr "Valitse komento"
 
-#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.desktop.in:3 data/org.gnome.alacarte.metainfo.xml.in:5
 #: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Päävalikko"
@@ -57,11 +57,15 @@ msgstr "Päävalikko"
 msgid "Add or remove applications from the main menu"
 msgstr "Lisää tai poista päävalikossa näytettäviä sovelluksia"
 
-#: data/alacarte.metainfo.xml.in:5
+#: data/org.gnome.alacarte.metainfo.xml.in:6
+msgid "The GNOME Project"
+msgstr "Gnome-projekti"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:10
 msgid "A simple menu editor for the GNOME desktop"
 msgstr "Yksinkertainen valikkomuokkain Gnome-työpöydälle"
 
-#: data/alacarte.metainfo.xml.in:9
+#: data/org.gnome.alacarte.metainfo.xml.in:14
 msgid ""
 "Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
 "add, remove, and modify the entries in your main menu. With this tool, you "
@@ -69,11 +73,11 @@ msgid ""
 "sense to you, improving your workflow and productivity."
 msgstr ""
 "Helppokäyttöinen valikkomuokkain Gnome-työpöytäympäristöön. Sen avulla voit "
-"lisätä, poistaa ja muokata päävalikon tietueita. Voit asettaa sovellukset "
-"ja järjestelmän työkalut omiin luokkiin mieltymystesi mukaan ja siten "
-"parantaa työnkulkua sekä tuottavuutta."
+"lisätä, poistaa ja muokata päävalikon tietueita. Voit asettaa sovellukset ja "
+"järjestelmän työkalut omiin luokkiin mieltymystesi mukaan ja siten parantaa "
+"työnkulkua sekä tuottavuutta."
 
-#: data/alacarte.metainfo.xml.in:10
+#: data/org.gnome.alacarte.metainfo.xml.in:15
 msgid ""
 "Whether you're looking to tidy up your menu by hiding rarely used items or "
 "creating a custom menu layout that suits your needs, it provides a "

@@ -1,82 +1,142 @@
 # Japanese message catalog for Alacarte, a simple menu editor for GNOME.
-# Copyright (C) 2006,2007 Free Software Foundation, Inc.
+# Copyright (C) 2006-2025 Free Software Foundation, Inc.
 # This file is distributed under the same license as the 'alacarte' package.
 # Satoru SATOH <ss@gnome.gr.jp>, 2006.
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2006,2007.
+# victory <https://l10n.gnome.org/users/victory/>, 2013.
+# Takayuki KUSANO <https://bsky.app/profile/tkusano.jp>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=alacarte&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-08-25 10:03+0000\n"
-"PO-Revision-Date: 2011-09-10 23:37+0900\n"
-"Last-Translator: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2025-04-10 11:04+0000\n"
+"PO-Revision-Date: 2025-04-14 21:41+0900\n"
+"Last-Translator: Takayuki KUSANO <https://bsky.app/profile/tkusano.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../Alacarte/MainWindow.py:167
+#: Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "名前"
 
-#: ../Alacarte/MainWindow.py:182
+#: Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "表示"
 
-#: ../Alacarte/MainWindow.py:190
+#: Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "アイテム"
 
-#: ../data/alacarte.desktop.in.in.h:1
-msgid "Change which applications are shown on the main menu"
-msgstr "メニュー・アイテムを編集します"
+#: Alacarte/ItemEditor.py:111
+msgid "Choose an icon"
+msgstr "アイコンを選択してください"
 
-#: ../data/alacarte.desktop.in.in.h:2 ../data/alacarte.ui.h:2
+#: Alacarte/ItemEditor.py:117
+msgid "Images"
+msgstr "画像"
+
+#: Alacarte/ItemEditor.py:249
+msgid "Choose a command"
+msgstr "コマンドを選択してください"
+
+#: data/alacarte.desktop.in:3 data/org.gnome.alacarte.metainfo.xml.in:5
+#: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "メイン・メニュー"
 
-#: ../data/alacarte.ui.h:1
-msgid "It_ems:"
-msgstr "アイテム(_E):"
+#: data/alacarte.desktop.in:4
+msgid "Add or remove applications from the main menu"
+msgstr "メニュー・アイテムを追加、削除します"
 
-#: ../data/alacarte.ui.h:3
-msgid "Move Down"
-msgstr "下へ"
+#: data/org.gnome.alacarte.metainfo.xml.in:6
+msgid "The GNOME Project"
+msgstr "GNOMEプロジェクト"
 
-#: ../data/alacarte.ui.h:4
-msgid "Move Up"
-msgstr "上へ"
+#: data/org.gnome.alacarte.metainfo.xml.in:10
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "GNOMEデスクトップ用のシンプルなメニューエディタ"
 
-#: ../data/alacarte.ui.h:5
-msgid "Ne_w Item"
-msgstr "新しいアイテム(_W)"
+#: data/org.gnome.alacarte.metainfo.xml.in:14
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"GNOMEデスクトップ環境用の使いやすいメニューエディタです。メインメニューの項目"
+"を追加、削除、変更できます。このツールを使用すると、アプリケーションやシステ"
+"ムツールを自分にとって意味のあるカテゴリに整理でき、ワークフローと生産性が向"
+"上します。"
 
-#: ../data/alacarte.ui.h:6
-msgid "New _Separator"
-msgstr "新しいセパレーター(_S)"
+#: data/org.gnome.alacarte.metainfo.xml.in:15
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"めったに使用しない項目を非表示にしてメニューを整理したり、必要に応じてカスタ"
+"ムメニュー レイアウトを作成したりする場合でも、目的を達成するための簡単なイン"
+"ターフェイスを提供します。"
 
-#: ../data/alacarte.ui.h:7
+#: data/alacarte.ui:73
+msgid "Restore System Configuration"
+msgstr "システム設定の復元"
+
+#: data/alacarte.ui:78
 msgid "Restore the default menu layout"
 msgstr "デフォルトのメニュー構成に戻します"
 
-#: ../data/alacarte.ui.h:8
-msgid "Revert Changes?"
-msgstr "変更点を元に戻しますか?"
-
-#: ../data/alacarte.ui.h:9
-msgid "Revert all menus to original settings?"
-msgstr "すべてのメニューを元の設定に戻しますか?"
-
-#: ../data/alacarte.ui.h:10
-msgid "_Menus:"
-msgstr "メニュー(_M):"
-
-#: ../data/alacarte.ui.h:11
+#: data/alacarte.ui:166
 msgid "_New Menu"
 msgstr "新しいメニュー(_N)"
 
-#: ../data/alacarte.ui.h:12
-msgid "_Revert to Original"
-msgstr "元に戻す(_R)"
+#: data/alacarte.ui:183
+msgid "Ne_w Item"
+msgstr "新しいアイテム(_W)"
+
+#: data/alacarte.ui:200
+msgid "New _Separator"
+msgstr "新しいセパレーター(_S)"
+
+#: data/alacarte.ui:246
+msgid "Move Down"
+msgstr "下へ"
+
+#: data/alacarte.ui:262
+msgid "Move Up"
+msgstr "上へ"
+
+#: data/launcher-editor.ui:7
+msgid "Launcher Properties"
+msgstr "ランチャーのプロパティ"
+
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
+msgid "Name:"
+msgstr "名前:"
+
+#: data/launcher-editor.ui:117
+msgid "Command:"
+msgstr "コマンド:"
+
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
+msgid "Comment:"
+msgstr "コメント:"
+
+# Translator's NOTE: exec-browse
+# Translator's NOTE: ItemEditor.py:
+# Translator's NOTE: self.builder.get_object('exec-browse').connect('clicked', self.pick_exec)
+#: data/launcher-editor.ui:179
+msgid "Browse"
+msgstr "参照"
+
+#: data/launcher-editor.ui:214
+msgid "Launch in Terminal?"
+msgstr "ターミナル内で起動しますか?"
+
+#: data/directory-editor.ui:7
+msgid "Directory Properties"
+msgstr "ディレクトリのプロパティ"

@@ -1,0 +1,136 @@
+# Azerbaijani translation for alacarte.
+# Copyright (C) 2025 alacarte's COPYRIGHT HOLDER
+# This file is distributed under the same license as the alacarte package.
+# Ramal Rəhimov <jhonaluman@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2025-05-10 11:04+0000\n"
+"PO-Revision-Date: 2025-06-04 01:02+0400\n"
+"Last-Translator: Ramal Rəhimov <jhonaluman@gmail.com>\n"
+"Language-Team: Azerbaijani <az@li.org>\n"
+"Language: az\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Alacarte/MainWindow.py:156
+msgid "Name"
+msgstr "Ad"
+
+#: Alacarte/MainWindow.py:169
+msgid "Show"
+msgstr "Göstər"
+
+#: Alacarte/MainWindow.py:177
+msgid "Item"
+msgstr "Element"
+
+#: Alacarte/ItemEditor.py:111
+msgid "Choose an icon"
+msgstr "İkon seçin"
+
+#: Alacarte/ItemEditor.py:117
+msgid "Images"
+msgstr "Şəkillər"
+
+#: Alacarte/ItemEditor.py:249
+msgid "Choose a command"
+msgstr "Əmr seçin"
+
+#: data/alacarte.desktop.in:3 data/org.gnome.alacarte.metainfo.xml.in:5
+#: data/alacarte.ui:38
+msgid "Main Menu"
+msgstr "Əsas Menyu"
+
+#: data/alacarte.desktop.in:4
+msgid "Add or remove applications from the main menu"
+msgstr "Əsas menyudan tətbiqləri əlavə edin və ya silin"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:6
+msgid "The GNOME Project"
+msgstr "GNOME Layihəsi"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:10
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "GNOME masaüstü üçün sadə meny redaktoru"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:14
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"GNOME masaüstü mühiti üçün asan istifadə edilən meny redaktoru. Bu, əsas "
+"menyunuzdakı girişləri əlavə etməyə, silməyə və dəyişdirməyə imkan verir. Bu "
+"alət ilə tətbiqlərinizi və sistem alətlərinizi sizin üçün mənalı kateqoriyalara "
+"ayıraraq iş axınınızı və produktivliyinizi yaxşılaşdıra bilərsiniz."
+
+#: data/org.gnome.alacarte.metainfo.xml.in:15
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"Az istifadə edilən elementləri gizləyərək menyunuzu təşkil etmək və ya ehtiyaclarınıza "
+"uyğun xüsusi meny düzümü yaradmaq istəsəniz belə, bu işləri yerinə yetirmək üçün "
+"sadə bir interfeys təmin edir."
+
+#: data/alacarte.ui:73
+msgid "Restore System Configuration"
+msgstr "Sistem Konfiqurasiyasını Bərpa Et"
+
+#: data/alacarte.ui:78
+msgid "Restore the default menu layout"
+msgstr "Susmaya görə meny düzümünü bərpa et"
+
+#: data/alacarte.ui:166
+msgid "_New Menu"
+msgstr "_Yeni Menyu"
+
+#: data/alacarte.ui:183
+msgid "Ne_w Item"
+msgstr "Ne_w Element"
+
+#: data/alacarte.ui:200
+msgid "New _Separator"
+msgstr "Yeni _Ayracaq"
+
+#: data/alacarte.ui:246
+msgid "Move Down"
+msgstr "Aşağı Hərəkət Et"
+
+#: data/alacarte.ui:262
+msgid "Move Up"
+msgstr "Yuxarı Hərəkət Et"
+
+#: data/launcher-editor.ui:7
+msgid "Launcher Properties"
+msgstr "Başlatıcı Xüsusiyyətləri"
+
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
+msgid "Name:"
+msgstr "Ad:"
+
+#: data/launcher-editor.ui:117
+msgid "Command:"
+msgstr "Əmr:"
+
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
+msgid "Comment:"
+msgstr "Şərh:"
+
+#: data/launcher-editor.ui:179
+msgid "Browse"
+msgstr "Gözlə"
+
+#: data/launcher-editor.ui:214
+msgid "Launch in Terminal?"
+msgstr "Terminalda Başladılsın?"
+
+#: data/directory-editor.ui:7
+msgid "Directory Properties"
+msgstr "Kataloq Xüsusiyyətləri"

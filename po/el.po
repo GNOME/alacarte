@@ -6,11 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=alacar"
-"te&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-11 06:39+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2024-07-13 12:16+0000\n"
 "PO-Revision-Date: 2013-04-10 17:35+0300\n"
-"Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
+"Last-Translator: Giannis Antypas <gianni.antypas@gmail.com>\n"
 "Language-Team: team@gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -20,87 +19,118 @@ msgstr ""
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: ../Alacarte/MainWindow.py:159
+#: Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "Όνομα"
 
-#: ../Alacarte/MainWindow.py:172
+#: Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "Προβολή"
 
-#: ../Alacarte/MainWindow.py:180
+#: Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "Αντικείμενο"
 
-#: ../Alacarte/ItemEditor.py:85
+#: Alacarte/ItemEditor.py:107
 msgid "Choose an icon"
 msgstr "Επιλογή εικονιδίου"
 
-#: ../Alacarte/ItemEditor.py:198
+#: Alacarte/ItemEditor.py:113
+msgid "Images"
+msgstr "Εικόνες"
+
+#: Alacarte/ItemEditor.py:245
 msgid "Choose a command"
 msgstr "Επιλογή εντολής"
 
-#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:1
+#: data/alacarte.desktop.in:3 data/alacarte.metainfo.xml.in:4
+#: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Κυρίως μενού"
 
-#: ../data/alacarte.desktop.in.in.h:2
+#: data/alacarte.desktop.in:4
 msgid "Add or remove applications from the main menu"
 msgstr "Προσθέστε ή αφαιρέστε εφαρμογές από το κύριο μενού"
 
-#: ../data/alacarte.ui.h:2
+#: data/alacarte.metainfo.xml.in:5
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "Ένας απλός επεξεργαστής μενού για την επιφάνεια εργασίας GNOME"
+
+#: data/alacarte.metainfo.xml.in:9
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"Εύχρηστος επεξεργαστής μενού για το περιβάλλον επιφάνειας εργασίας GNOME. Σας επιτρέπει να "
+"προσθέτετε, αφαιρείτε, και τροποποιείτε τις καταχωρήσεις στο κύριο μενού σας. Με αυτό το εργαλείο, "
+"μπορείτε να οργανώσετε τις εφαρμογές σας και τα εργαλεία συστήματος σε κατηγορίες που έχουν "
+"νόημα για εσάς, βελτιώνοντας την εργονομία και την παραγωγικότητά σας."
+
+#: data/alacarte.metainfo.xml.in:10
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"Αν σκοπεύετε να τακτοποιήσετε το μενού σας αποκρύπτοντας σπανίως χρησιμοποιούμενα αντικείμενα ή "
+"δημιουργώντας μια εξατομικευμένη διαρρύθμιση μενού που ταιριάζει στις ανάγκες σας, αυτό προσφέρει "
+"μια καθαρή διεπαφή για να κάνετε τη δουλειά σας."
+
+#: data/alacarte.ui:73
+msgid "Restore System Configuration"
+msgstr "Επαναφορά διαμόρφωσης συστήματος"
+
+#: data/alacarte.ui:78
 msgid "Restore the default menu layout"
 msgstr "Επαναφορά της προεπιλεγμένης διάταξης"
 
-#: ../data/alacarte.ui.h:3
+#: data/alacarte.ui:166
 msgid "_New Menu"
 msgstr "Νέο _μενού"
 
-#: ../data/alacarte.ui.h:4
+#: data/alacarte.ui:183
 msgid "Ne_w Item"
 msgstr "Νέ_ο αντικείμενο"
 
-#: ../data/alacarte.ui.h:5
+#: data/alacarte.ui:200
 msgid "New _Separator"
 msgstr "Νέο δια_χωριστικό"
 
-#: ../data/alacarte.ui.h:6
+#: data/alacarte.ui:246
 msgid "Move Down"
 msgstr "Μετακίνηση κάτω"
 
-#: ../data/alacarte.ui.h:7
+#: data/alacarte.ui:262
 msgid "Move Up"
 msgstr "Μετακίνηση πάνω"
 
-#: ../data/launcher-editor.ui.h:1
-#| msgid "Menu Properties"
+#: data/launcher-editor.ui:7
 msgid "Launcher Properties"
 msgstr "Ιδιότητες εκκινητή"
 
-#: ../data/launcher-editor.ui.h:2 ../data/directory-editor.ui.h:2
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
 msgid "Name:"
 msgstr "Όνομα:"
 
-#: ../data/launcher-editor.ui.h:3
+#: data/launcher-editor.ui:117
 msgid "Command:"
 msgstr "Εντολή:"
 
-#: ../data/launcher-editor.ui.h:4 ../data/directory-editor.ui.h:3
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
 msgid "Comment:"
 msgstr "Σχόλιο:"
 
-#: ../data/launcher-editor.ui.h:5
-#| msgid "Browse..."
+#: data/launcher-editor.ui:179
 msgid "Browse"
 msgstr "Περιήγηση"
 
-#: ../data/launcher-editor.ui.h:6
-#| msgid "Run command in a terminal"
+#: data/launcher-editor.ui:214
 msgid "Launch in Terminal?"
 msgstr "Εκκίνηση σε τερματικό;"
 
-#: ../data/directory-editor.ui.h:1
-#| msgid "Menu Properties"
+#: data/directory-editor.ui:7
 msgid "Directory Properties"
 msgstr "Ιδιότητες καταλόγου"
 

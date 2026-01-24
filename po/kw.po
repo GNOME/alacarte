@@ -1,0 +1,145 @@
+# Cornish translation for alacarte.
+# Copyright (C) 2026 alacarte's COPYRIGHT HOLDER
+# This file is distributed under the same license as the alacarte package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Flynn Peck <cirilla@tuta.io>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: alacarte master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2025-01-17 22:26+0000\n"
+"PO-Revision-Date: 2026-01-24 19:00+0000\n"
+"Last-Translator: Flynn Peck <cirilla@tuta.io>\n"
+"Language-Team: kw\n"
+"Language: kw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-DL-VCS-Web: https://gitlab.gnome.org/GNOME/alacarte/\n"
+"X-DL-Lang: kw\n"
+"X-DL-Module: alacarte\n"
+"X-DL-Branch: master\n"
+"X-DL-Domain: po\n"
+"X-DL-State: Translating\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 49.0\n"
+
+#: Alacarte/MainWindow.py:156
+msgid "Name"
+msgstr "Hanow"
+
+#: Alacarte/MainWindow.py:169
+msgid "Show"
+msgstr "Diskwedhes"
+
+#: Alacarte/MainWindow.py:177
+msgid "Item"
+msgstr "Tra"
+
+#: Alacarte/ItemEditor.py:111
+msgid "Choose an icon"
+msgstr "Dewis unn arwodhik"
+
+#: Alacarte/ItemEditor.py:117
+msgid "Images"
+msgstr "Avenyow"
+
+#: Alacarte/ItemEditor.py:249
+msgid "Choose a command"
+msgstr "Dewis unn arghadow"
+
+#: data/alacarte.desktop.in:2 data/org.gnome.alacarte.metainfo.xml.in:5
+#: data/alacarte.ui:38
+msgid "Main Menu"
+msgstr "Rol Chif"
+
+#: data/alacarte.desktop.in:3
+msgid "Add or remove applications from the main menu"
+msgstr "Addya po remova appys rag an rol chif"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:6
+msgid "The GNOME Project"
+msgstr "An Ragdres GNOME"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:10
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "Unn chanjyell rol sempel rag an desktop GNOME"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:14
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"Chanjyell rol es rag an kerghynnedh desktop GNOME. Yth ow gasa ty addya, "
+"remova, ha chanjya an ynworrans manylyon yn dha rol chif. Gans an toul ma, "
+"ty gallos orna dha appys ha toulys system yn klassys fur rag ty, ow gwellhe "
+"dha ober ha askorruster."
+
+#: data/org.gnome.alacarte.metainfo.xml.in:15
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"Po ty owth assaya kempenna dha rol gans kudha taklow devnydhys namenowgh po "
+"ow gul unn aray rol a-vusur ow desedha dha edhommow, yth ow provia unn "
+"ynterfas sempel rag gul an oberen deu."
+
+#: data/alacarte.ui:73
+msgid "Restore System Configuration"
+msgstr "Daskor Selyans System"
+
+#: data/alacarte.ui:78
+msgid "Restore the default menu layout"
+msgstr "Daskor an aray rol defowt"
+
+#: data/alacarte.ui:166
+msgid "_New Menu"
+msgstr "Rol _Nowydh"
+
+#: data/alacarte.ui:183
+msgid "Ne_w Item"
+msgstr "_Tra Nowydh"
+
+#: data/alacarte.ui:200
+msgid "New _Separator"
+msgstr "_Diberthyer Nowydh"
+
+#: data/alacarte.ui:246
+msgid "Move Down"
+msgstr "Diyskynna"
+
+#: data/alacarte.ui:262
+msgid "Move Up"
+msgstr "Yskynna"
+
+#: data/launcher-editor.ui:7
+msgid "Launcher Properties"
+msgstr "Oberadow Lonchyer"
+
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
+msgid "Name:"
+msgstr "Hanow:"
+
+#: data/launcher-editor.ui:117
+msgid "Command:"
+msgstr "Arghadow:"
+
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
+msgid "Comment:"
+msgstr "Kampol:"
+
+#: data/launcher-editor.ui:179
+msgid "Browse"
+msgstr "Peuri"
+
+#: data/launcher-editor.ui:214
+msgid "Launch in Terminal?"
+msgstr "Lonchya yn Termynal?"
+
+#: data/directory-editor.ui:7
+msgid "Directory Properties"
+msgstr "Oberadow Restrenva"

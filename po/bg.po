@@ -5,82 +5,155 @@
 # Stanimir Djevelekov <kori.mendocino@gmail.com>, 2005.
 # Alexander Shopov <ash@kambanaria.org>, 2006, 2007.
 # Vladimir "Kaladan" Petkov <kaladan@gmail.com>, 2006, 2007.
-#
+# twlvnn kraftwerk <kraft_werk@tutanota.com>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-01 22:00+0300\n"
-"PO-Revision-Date: 2012-06-01 22:00+0300\n"
-"Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2025-01-17 22:26+0000\n"
+"PO-Revision-Date: 2026-02-24 14:08+0100\n"
+"Last-Translator: twlvnn kraftwerk <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.8\n"
 
-#: ../Alacarte/MainWindow.py:155
+#: Alacarte/MainWindow.py:156
 msgid "Name"
 msgstr "Име"
 
-#: ../Alacarte/MainWindow.py:168
+#: Alacarte/MainWindow.py:169
 msgid "Show"
 msgstr "Показване"
 
-#: ../Alacarte/MainWindow.py:176
+#: Alacarte/MainWindow.py:177
 msgid "Item"
 msgstr "Стартер"
 
-#: ../data/alacarte.desktop.in.in.h:1 ../data/alacarte.ui.h:2
+#: Alacarte/ItemEditor.py:111
+msgid "Choose an icon"
+msgstr "Изберете иконка"
+
+#: Alacarte/ItemEditor.py:117
+msgid "Images"
+msgstr "Изображения"
+
+#: Alacarte/ItemEditor.py:249
+msgid "Choose a command"
+msgstr "Изберете команда"
+
+#: data/alacarte.desktop.in:2 data/org.gnome.alacarte.metainfo.xml.in:5
+#: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Основно меню"
 
-#: ../data/alacarte.desktop.in.in.h:2
+#: data/alacarte.desktop.in:3
 msgid "Add or remove applications from the main menu"
 msgstr "Добавяне или премахване на програмите в основното меню"
 
-#: ../data/alacarte.ui.h:1
-msgid "_Revert to Original"
-msgstr "_Връщане към началните стойности"
+#: data/org.gnome.alacarte.metainfo.xml.in:6
+msgid "The GNOME Project"
+msgstr "Проектът GNOME"
 
-#: ../data/alacarte.ui.h:3
+#: data/org.gnome.alacarte.metainfo.xml.in:10
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "Прост редактор на менюта за работната среда GNOME"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:14
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"Лесен за използване редактор на менюта за работната среда GNOME. Той ви "
+"позволява да добавяте, премахвате и променяте елементите в основното меню. "
+"С този инструмент може да организирате програмите и системните инструменти "
+"в категории, които са подходящи за вас, като по този начин подобрите "
+"работния си процес и производителността си."
+
+#: data/org.gnome.alacarte.metainfo.xml.in:15
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"Независимо дали искате да подредите менюто си, като скриете рядко "
+"използваните елементи, или да създадете лично оформление на менюто, което "
+"отговаря на вашите нужди, той ви предоставя лесен за използване интерфейс, "
+"с който да свършите работата."
+
+#: data/alacarte.ui:73
+msgid "Restore System Configuration"
+msgstr "Възстановяване на системните настройки"
+
+#: data/alacarte.ui:78
 msgid "Restore the default menu layout"
 msgstr "Възстановяване на първоначалната подредба на менюто"
 
-#: ../data/alacarte.ui.h:4
-msgid "_Menus:"
-msgstr "М_енюта:"
-
-#: ../data/alacarte.ui.h:5
-msgid "It_ems:"
-msgstr "С_тартери:"
-
-#: ../data/alacarte.ui.h:6
+#: data/alacarte.ui:166
 msgid "_New Menu"
 msgstr "Ново _меню"
 
-#: ../data/alacarte.ui.h:7
+#: data/alacarte.ui:183
 msgid "Ne_w Item"
 msgstr "Нов _стартер"
 
-#: ../data/alacarte.ui.h:8
+#: data/alacarte.ui:200
 msgid "New _Separator"
 msgstr "Нов _разделител"
 
-#: ../data/alacarte.ui.h:9
-msgid "Move Up"
-msgstr "Нагоре"
-
-#: ../data/alacarte.ui.h:10
+#: data/alacarte.ui:246
 msgid "Move Down"
 msgstr "Надолу"
 
-#: ../data/alacarte.ui.h:11
-msgid "Revert Changes?"
-msgstr "Връщане на промените?"
+#: data/alacarte.ui:262
+msgid "Move Up"
+msgstr "Нагоре"
 
-#: ../data/alacarte.ui.h:12
-msgid "Revert all menus to original settings?"
-msgstr "Връщане на всички менюта към първоначалните им стойности?"
+#: data/launcher-editor.ui:7
+msgid "Launcher Properties"
+msgstr "Свойства на стартера"
+
+#: data/launcher-editor.ui:100 data/directory-editor.ui:100
+msgid "Name:"
+msgstr "Име:"
+
+#: data/launcher-editor.ui:117
+msgid "Command:"
+msgstr "Команда:"
+
+#: data/launcher-editor.ui:134 data/directory-editor.ui:117
+msgid "Comment:"
+msgstr "Коментар:"
+
+#: data/launcher-editor.ui:179
+msgid "Browse"
+msgstr "Разглеждане"
+
+#: data/launcher-editor.ui:214
+msgid "Launch in Terminal?"
+msgstr "Стартиране в Терминал?"
+
+#: data/directory-editor.ui:7
+msgid "Directory Properties"
+msgstr "Свойства на папката"
+
+#~ msgid "_Revert to Original"
+#~ msgstr "_Връщане към началните стойности"
+
+#~ msgid "_Menus:"
+#~ msgstr "М_енюта:"
+
+#~ msgid "It_ems:"
+#~ msgstr "С_тартери:"
+
+#~ msgid "Revert Changes?"
+#~ msgstr "Връщане на промените?"
+
+#~ msgid "Revert all menus to original settings?"
+#~ msgstr "Връщане на всички менюта към първоначалните им стойности?"

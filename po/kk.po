@@ -4,13 +4,13 @@
 #
 # Erzhan Shaniev <erzhan.jktl@gmail.com>, 2008
 # Moldabekov Margulan <moldabekov@gmail.com>, 2008
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2010
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2010-2026
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte trunk\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-12-28 19:11+0000\n"
-"PO-Revision-Date: 2023-08-20 19:25+0600\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2025-01-17 22:26+0000\n"
+"PO-Revision-Date: 2026-03-14 17:49+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <>\n"
 "Language: kk\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.9\n"
 
 #: Alacarte/MainWindow.py:156
 msgid "Name"
@@ -32,21 +32,58 @@ msgstr "Көрсету"
 msgid "Item"
 msgstr "Элемент"
 
-#: Alacarte/ItemEditor.py:107
+#: Alacarte/ItemEditor.py:111
 msgid "Choose an icon"
 msgstr "Таңбашаны таңдау"
 
-#: Alacarte/ItemEditor.py:239
+#: Alacarte/ItemEditor.py:117
+msgid "Images"
+msgstr "Суреттер"
+
+#: Alacarte/ItemEditor.py:249
 msgid "Choose a command"
 msgstr "Команданы таңдау"
 
-#: data/alacarte.desktop.in.in:3 data/alacarte.ui:38
+#: data/alacarte.desktop.in:2 data/org.gnome.alacarte.metainfo.xml.in:5
+#: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "Бас мәзір"
 
-#: data/alacarte.desktop.in.in:4
+#: data/alacarte.desktop.in:3
 msgid "Add or remove applications from the main menu"
 msgstr "Басты мәзірге қолданбаларды қосу немесе өшіру"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:6
+msgid "The GNOME Project"
+msgstr "GNOME жобасы"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:10
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "GNOME жұмыс үстеліне арналған қарапайым мәзір түзеткіші"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:14
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"GNOME жұмыс үстелі ортасына арналған пайдалануға оңай мәзір түзеткіші. Ол "
+"негізгі мәзірдегі элементтерді қосуға, өшіруге және өзгертуге мүмкіндік "
+"береді. Осы сайманның көмегімен сіз қолданбаларды және жүйелік саймандарды "
+"өзіңізге ыңғайлы санаттарға топтап, жұмыс барысы мен өнімділігін арттыра "
+"аласыз."
+
+#: data/org.gnome.alacarte.metainfo.xml.in:15
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"Сирек қолданылатын элементтерді жасыру арқылы мәзірді реттегіңіз келсе де, "
+"немесе қажеттіліктеріңізге сай келетін реттелмелі мәзір жаймасын жасағыңыз "
+"келсе де, бұл бағдарлама тапсырманы орындау үшін қарапайым интерфейсті "
+"ұсынады."
 
 #: data/alacarte.ui:73
 msgid "Restore System Configuration"

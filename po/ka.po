@@ -1,22 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Georgian translation for alacarte.
+# Copyright (C) 2025 alacarte's authors
+# This file is distributed under the same license as the alacarte package.
+# Ekaterine Papava <papava.e@gtu.ge>, 2025-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: alacarte\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues\n"
-"POT-Creation-Date: 2022-10-24 21:32+0000\n"
-"PO-Revision-Date: 2022-11-26 09:11+0100\n"
-"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/alacarte/issues/\n"
+"POT-Creation-Date: 2025-01-17 22:26+0000\n"
+"PO-Revision-Date: 2026-04-25 06:45+0200\n"
+"Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <(nothing)>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.9\n"
 
 #: Alacarte/MainWindow.py:156
 msgid "Name"
@@ -30,21 +30,57 @@ msgstr "ჩვენება"
 msgid "Item"
 msgstr "ელემენტი"
 
-#: Alacarte/ItemEditor.py:107
+#: Alacarte/ItemEditor.py:111
 msgid "Choose an icon"
 msgstr "აირჩიეთ ხატულა"
 
-#: Alacarte/ItemEditor.py:239
+#: Alacarte/ItemEditor.py:117
+msgid "Images"
+msgstr "გამოსახულებები"
+
+#: Alacarte/ItemEditor.py:249
 msgid "Choose a command"
 msgstr "ბრძანების არჩევა"
 
-#: data/alacarte.desktop.in.in:3 data/alacarte.ui:38
+#: data/alacarte.desktop.in:2 data/org.gnome.alacarte.metainfo.xml.in:5
+#: data/alacarte.ui:38
 msgid "Main Menu"
 msgstr "მთავარი მენიუ"
 
-#: data/alacarte.desktop.in.in:4
+#: data/alacarte.desktop.in:3
 msgid "Add or remove applications from the main menu"
 msgstr "წაშალეთ და დაამატეთ აპლიკაციები მთავარი მენიუდან"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:6
+msgid "The GNOME Project"
+msgstr "პროექტი \"GNOME\""
+
+#: data/org.gnome.alacarte.metainfo.xml.in:10
+msgid "A simple menu editor for the GNOME desktop"
+msgstr "მარტივი მენიუს რედაქტორი GNOME-ისთვის"
+
+#: data/org.gnome.alacarte.metainfo.xml.in:14
+msgid ""
+"Easy-to-use menu editor for the GNOME desktop environment. It allows you to "
+"add, remove, and modify the entries in your main menu. With this tool, you "
+"can organize your applications and system tools into categories that make "
+"sense to you, improving your workflow and productivity."
+msgstr ""
+"იოლი მენიუს რედაქტორი GNOME-ისთვის. საშუალებსა გაძლევთ, დაამატოთ, წაშალოთ "
+"და შეცვალოთ თქვენი მთავარი მენიუს პუნქტები. ამ პროგრამით შეგიძლიათ, "
+"დაალაგოთ თქვენი აპლიკაციები და სისტემური პროგრამები კატეგორიებში, რომ ეს "
+"უფრო მოსახერხებელი იყოს თქვენთვის და გააუმჯობესოს თქვენი პროდუქტიულობა."
+
+#: data/org.gnome.alacarte.metainfo.xml.in:15
+msgid ""
+"Whether you're looking to tidy up your menu by hiding rarely used items or "
+"creating a custom menu layout that suits your needs, it provides a "
+"straightforward interface to get the job done."
+msgstr ""
+"როცა თქვენ ეძებთ, როგორ დააპატარავოთ მენიუ იმ პუნქტების დამალვით, რომლებსაც "
+"იშვიათად იყენებთ, ან შექმნათ საკუთარი მენიუს განლაგება, რომელიც თქვენს "
+"მოთხოვნებს აკმაყოფილებს, ამ პროგრამას აქვს შესაბამისი ინტერფეისი, რომ ეს "
+"საქმე გააკეთოს."
 
 #: data/alacarte.ui:73
 msgid "Restore System Configuration"

@@ -20,7 +20,7 @@
     </screenshot>
   </screenshots>
   <url type="homepage">https://gitlab.gnome.org/GNOME/alacarte</url>
-  <url type="bugtracker">https://gitlab.gnome.org/GNOME/alacarte/issues</url>
+  <url type="bugtracker">https://gitlab.gnome.org/GNOME/alacarte/-/work_items</url>
   <url type="translate">https://l10n.gnome.org/module/alacarte/</url>
   <url type="vcs-browser">https://gitlab.gnome.org/GNOME/alacarte</url>
   <translation type="gettext">alacarte</translation>
